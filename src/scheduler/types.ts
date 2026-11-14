@@ -28,6 +28,8 @@ export interface Settings {
   examDate: string;
   dayStartHour: number;
   appearance: Appearance;
+  /** Every card should have been seen this many days before the exam (milestone 5 decision: 60). */
+  introBufferDays: number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -38,6 +40,7 @@ export const DEFAULT_SETTINGS: Settings = {
   examDate: '2027-10-01',
   dayStartHour: 4,
   appearance: 'auto',
+  introBufferDays: 60,
 };
 
 /** A card as the planner sees it: its id and where it sits in the catalog. Catalog order = new-card order. */
