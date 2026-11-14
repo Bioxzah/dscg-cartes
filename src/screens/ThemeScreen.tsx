@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { searchCards, TYPE_LABELS } from '../cards/catalog.ts';
-import { catalog } from '../cards/load.ts';
+import { MasteryCounts } from '../components/MasteryCounts.tsx';
+import { useAppData } from '../data/AppData.tsx';
+import { countMastery } from '../scheduler/stats.ts';
 import { themeStyle } from '../components/themeStyle.ts';
 import { NotFound } from './NotFound.tsx';
 
 export function ThemeScreen() {
   const { deckId = '', themeId = '' } = useParams();
+  const { catalog, memory } = useAppData();
   const node = catalog.findTheme(deckId, themeId);
   const [query, setQuery] = useState('');
   const results = useMemo(() => (node ? searchCards(node.cards, query) : []), [node, query]);
@@ -20,7 +23,12 @@ export function ThemeScreen() {
       <header className="theme-head">
         <div className="label">{deck.ue} · Chapitre {deck.chapitre} · {deck.titre}</div>
         <h1 className="screen-title">{theme.titre}</h1>
+        <MasteryCounts counts={countMastery(cards.map((c) => c.id), memory)} />
       </header>
+      <Link className="secondary block" to={`/session/libre/${deck.id}/${theme.id}`}>
+        Session libre sur ce thème
+      </Link>
+      <p className="muted small hint">20 cartes au plus : celles que tu risques le plus d’avoir oubliées, puis des nouvelles. Ne compte pas dans tes limites du jour.</p>
       <input
         className="search"
         type="search"
