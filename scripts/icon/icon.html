@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- Source of the app icon. Rendered to PNG by scripts/icon/render.mjs (headless Chrome). -->
+<html><head><meta charset="utf-8"><style>
+/* The B font (Bricolage Grotesque 800) is injected by render.mjs. */
+html, body { margin: 0; }
+.icon { --s: 512px; position: relative; width: var(--s); height: var(--s); background: #172033; overflow: hidden; }
+.band { position: absolute; inset: 0 0 auto 0; height: calc(var(--s) * .09); background: #2a5bd7; }
+.d { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+     font: 800 calc(var(--s) * .62)/1 B; color: #fff; padding-top: calc(var(--s) * .06); letter-spacing: -.02em; }
+.maskable .band { height: calc(var(--s) * .16); }
+.maskable .d { font-size: calc(var(--s) * .5); padding-top: calc(var(--s) * .07); }
+</style></head><body>
+<div class="icon" id="icon"><div class="band"></div><div class="d">D</div></div>
+<script>
+const p = new URLSearchParams(location.search);
+const el = document.getElementById('icon');
+el.style.setProperty('--s', (p.get('size') || 512) + 'px');
+if (p.has('maskable')) el.classList.add('maskable');
+</script>
+</body></html>
