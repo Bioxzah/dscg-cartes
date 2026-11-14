@@ -63,4 +63,4 @@ Organisation : `src/cards/` (types, validation, catalogue), `src/scheduler/` (FS
 
 ## Ajouter un chapitre
 
-Déposer le fichier JSON dans `cards/`, lancer la validation, puis pousser sur `main`. Aucun changement de code ne doit être nécessaire.
+Automatique pour l'UE 1 : déposer le PDF du cours dans `Mon Drive > DSCG > UE 1 - droit` (dans `Chap N - …` ou à la racine). Le pipeline du Mac (`pipeline/README.md`) range la fiche PDF à côté du cours et publie les cartes. Sinon, à la main : déposer le fichier JSON dans `cards/`, lancer la validation, puis pousser sur `main`. Aucun changement de code ne doit être nécessaire.
