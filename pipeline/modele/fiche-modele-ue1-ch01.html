@@ -1,0 +1,574 @@
+<title>Fiche UE1 Ch1 Contrats</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout : chaque notion est une bande à trois colonnes fixes, Majeure | Mineure | Conclusion.
+   La position ne change jamais, pour que la mémoire spatiale aide. Une teinte par étape de la vie du contrat. */
+:root{
+  --bg:#f4f6fa; --surface:#ffffff; --ink:#172033; --muted:#566178; --line:#dce1ea; --wash:#eef1f6;
+  --s0:#44506a; --s0s:#e9ecf2;
+  --s1:#0b7a75; --s1s:#dff3f1;
+  --s2:#2a5bd7; --s2s:#e3ebfd;
+  --s3:#7440c4; --s3s:#efe6fb;
+  --s4:#33793a; --s4s:#e3f2e4;
+  --s5:#bf3350; --s5s:#fbe5ea;
+  --nul:#b3261e; --nuls:#fde7e5; --di:#8a5a00; --dis:#fdf0d0; --exe:#1f6f43; --exes:#def3e6; --cl:#5b3fb5; --cls:#ebe6fb;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding-block:28px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:36px}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--s2);outline-offset:2px;border-radius:4px}
+
+/* En-tête */
+.top{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.lede{max-width:62ch;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px;color:var(--muted)}
+
+/* Pastilles de sanction : la couleur dit la famille */
+.chip{display:inline-block;font-weight:700;font-size:13.5px;line-height:1.25;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.chip.nul{background:var(--nuls);color:var(--nul)}
+.chip.di{background:var(--dis);color:var(--di)}
+.chip.exe{background:var(--exes);color:var(--exe)}
+.chip.cl{background:var(--cls);color:var(--cl)}
+.art{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.stage:not(#arrets) .art{display:none}
+.core{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--h);border:1.5px solid var(--h);border-radius:4px;padding:1px 6px;white-space:nowrap}
+
+/* Parcours : les 4 questions */
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.path a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;border-top:5px solid var(--h)}
+.path b{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2}
+.path span{font-size:13.5px;color:var(--muted)}
+.path .no{color:var(--h);font-weight:700}
+
+/* Méthode */
+.method{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.method li{padding:12px 14px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.method li:first-child{border-left:0}
+.method b{font-family:var(--display);font-weight:600;font-size:16px}
+.method span{font-size:13.5px;color:var(--muted)}
+.method i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Étapes */
+.stage{display:flex;flex-direction:column;gap:16px;--h:var(--s0);--hs:var(--s0s)}
+.t0{--h:var(--s0);--hs:var(--s0s)} .t1{--h:var(--s1);--hs:var(--s1s)} .t2{--h:var(--s2);--hs:var(--s2s)}
+.t3{--h:var(--s3);--hs:var(--s3s)} .t4{--h:var(--s4);--hs:var(--s4s)} .t5{--h:var(--s5);--hs:var(--s5s)}
+.stage>h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.01em;line-height:1.1}
+.stage>h2 .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--h);color:var(--surface);font-size:20px}
+.stage>h2 small{font-family:var(--body);font-weight:400;font-size:14px;color:var(--muted);letter-spacing:0}
+
+/* Carte syllogisme */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card>header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 18px 0}
+.card h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;margin-right:auto}
+.q{padding:6px 18px 14px;font-size:17px;color:var(--h);font-weight:700}
+.q::before{content:"? ";font-family:var(--display);font-weight:800}
+.syl{display:grid;grid-template-columns:1.25fr 1fr 1fr;border-top:1px solid var(--line)}
+.zone{padding:14px 18px 16px;min-width:0;border-left:1px solid var(--line);position:relative}
+.zone:first-child{border-left:0}
+.zone h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.zone h4 b{color:var(--h);font-weight:500}
+.maj{background:var(--hs)}
+.zbody{display:flex;flex-direction:column;gap:8px}
+.zbody ul{display:flex;flex-direction:column;gap:6px}
+.check li{padding-left:26px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.28em;width:15px;height:15px;border:2px solid var(--h);border-radius:3px}
+.dots li{padding-left:16px;position:relative}
+.dots li::before{content:"";position:absolute;left:2px;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--h)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.never{color:var(--muted);font-size:15px}
+.foot{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.ex,.trap,.memo{padding:10px 18px;font-size:15.5px}
+.ex+.trap,.ex+.memo,.trap+.memo,.memo+.ex,.memo+.trap,.trap+.ex{border-top:1px dashed var(--line)}
+.tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:8px;padding:1px 6px;border-radius:4px;background:var(--wash);color:var(--muted)}
+.trap .tag{background:var(--nuls);color:var(--nul)}
+.memo .tag{background:var(--hs);color:var(--h)}
+.memo b{font-family:var(--display);font-weight:800;letter-spacing:.04em;color:var(--h)}
+
+/* Tuiles */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tiles.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tile h3{font-family:var(--display);font-weight:600;font-size:19px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.tile p{font-size:15.5px}
+
+/* Tableaux de comparaison */
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+caption{caption-side:top;text-align:left;padding:12px 16px 10px;font-family:var(--display);font-weight:600;font-size:19px}
+th,td{text-align:left;vertical-align:top;padding:9px 14px;border-top:1px solid var(--line)}
+thead th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--hs)}
+tbody th{font-weight:700;min-width:8.5em;color:var(--h)}
+td .chip{margin:1px 0}
+td .art{margin-left:2px}
+
+.eg{font-size:14.5px;color:var(--muted)}
+.eg b{color:var(--h)}
+td.eg{font-size:14.5px;color:var(--muted);min-width:11em}
+.note{font-size:15.5px;color:var(--muted);max-width:75ch}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+footer a{text-decoration:underline;text-underline-offset:2px}
+
+/* Mode test : on cache la règle et la sanction, on récite, on touche pour vérifier */
+#toggle{position:fixed;z-index:20;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));font:700 16px var(--body);color:var(--surface);background:var(--ink);border:0;border-radius:999px;padding:12px 20px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#toggle[aria-pressed="true"]{background:var(--s5);color:var(--surface)}
+body.test .hideable{cursor:pointer}
+body.test .hideable:not(.shown)>.zbody{visibility:hidden}
+body.test .zone.hideable:not(.shown)::after{content:"Récite, puis touche pour vérifier";position:absolute;inset:38px 18px auto 18px;font-size:14.5px;color:var(--muted);border:1.5px dashed var(--h);border-radius:8px;padding:10px 12px;background:var(--surface)}
+body.test tbody tr{cursor:pointer}
+body.test tbody tr:not(.shown) td{color:transparent}
+body.test tbody tr:not(.shown) td *{visibility:hidden}
+body.test tbody tr:not(.shown) td{background:repeating-linear-gradient(135deg,transparent 0 7px,var(--wash) 7px 9px)}
+body.test .hid:not(.shown){cursor:pointer}
+body.test .hid:not(.shown) .v{visibility:hidden}
+.teststate{display:none}
+body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;color:var(--muted)}
+
+@media (max-width:820px){
+  .path{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .method{grid-template-columns:1fr}
+  .method li{border-left:0;border-top:1px solid var(--line);flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .method li:first-child{border-top:0}
+  .syl{grid-template-columns:1fr}
+  .zone{border-left:0;border-top:1px solid var(--line)}
+  .zone:first-child{border-top:0}
+  .tiles,.tiles.two{grid-template-columns:1fr}
+  .tw table{min-width:620px}
+}
+@media (max-width:460px){ .path{grid-template-columns:1fr} }
+@media print{
+  #toggle,.teststate{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .wrap{gap:18px;padding-block:0}
+  .card,.tile,.tw,.path a,.method{break-inside:avoid}
+  .stage>h2{break-after:avoid}
+  body.test .hideable>.zbody,body.test td *{visibility:visible!important}
+}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">DSCG · UE 1 · Chapitre 1</p>
+  <h1>Droit des contrats</h1>
+  <p class="lede">Chaque notion est rédigée comme à l'examen : la règle à gauche, ce qu'il faut chercher dans les faits au milieu, la solution à droite. Apprends la colonne de gauche par cœur, entraîne les deux autres sur les exercices.</p>
+  <div class="legend">
+    <span>Sanctions :</span>
+    <span class="chip nul">Le contrat disparaît</span>
+    <span class="chip di">De l'argent</span>
+    <span class="chip exe">Le contrat est maintenu</span>
+    <span class="chip cl">Une clause est neutralisée</span>
+    <span class="core" style="--h:var(--s0)">Par cœur</span>
+  </div>
+</header>
+
+<nav class="path" aria-label="Les quatre questions">
+  <a class="t2" href="#formation"><span class="no">Question 1</span><b>Un contrat est-il formé ?</b><span>Non : pourparlers, dommages-intérêts possibles.</span></a>
+  <a class="t3" href="#validite"><span class="no">Question 2</span><b>Est-il valable ?</b><span>Non : nullité et restitutions.</span></a>
+  <a class="t5" href="#inexecution"><span class="no">Question 3</span><b>Est-il bien exécuté ?</b><span>Non : sanctions de l'inexécution.</span></a>
+  <a class="t4" href="#imprevision"><span class="no">Question 4</span><b>Reste-t-il supportable ?</b><span>Non : clause d'adaptation ou imprévision.</span></a>
+</nav>
+
+<ol class="method" aria-label="Le syllogisme en cinq étapes">
+  <li><i>1</i><b>Faits</b><span>Parties, contrat, dates.</span></li>
+  <li><i>2</i><b>Problème</b><span>La question de droit, en une phrase.</span></li>
+  <li><i>3</i><b>Majeure</b><span>La règle, l'article, les conditions.</span></li>
+  <li><i>4</i><b>Mineure</b><span>Chaque condition face aux faits.</span></li>
+  <li><i>5</i><b>Conclusion</b><span>La réponse, puis la sanction.</span></li>
+</ol>
+
+<!-- 1 -->
+<section class="stage t0" id="principes">
+  <h2><span class="n">1</span>Principes et qualification</h2>
+  <div class="tiles">
+    <div class="tile"><h3>Liberté contractuelle <span class="art">Art. 1102</span></h3><p>Contracter ou non, choisir son cocontractant, fixer le contenu. Limite : l'ordre public.</p><p class="eg"><b>Ex.</b> Une entreprise choisit librement son fournisseur.</p></div>
+    <div class="tile"><h3>Force obligatoire <span class="art">Art. 1103</span></h3><p>Le contrat s'impose aux parties comme une loi. Il ne change que d'un commun accord.</p><p class="eg"><b>Ex.</b> Le prix convenu reste dû, même si l'affaire devient moins rentable.</p></div>
+    <div class="tile"><h3>Bonne foi <span class="art">Art. 1104</span></h3><p>Exigée à la négociation, à la formation et à l'exécution. D'ordre public.</p><p class="eg"><b>Ex.</b> Négocier dans le seul but d'obtenir les secrets d'un concurrent est déloyal.</p></div>
+  </div>
+  <div class="card"><div class="foot">
+    <p class="trap"><span class="tag">Piège</span>La bonne foi sanctionne la <b>manière</b> d'exercer un droit, jamais le <b>contenu</b> du contrat (Les Maréchaux). Le juge peut écarter une clause résolutoire invoquée pour un jour de retard après un an de tolérance. Il ne peut pas baisser un prix.</p>
+  </div></div>
+  <div class="tw"><table>
+    <caption>Qualifier le contrat, seulement si cela déclenche une règle</caption>
+    <thead><tr><th>Si le contrat est…</th><th>C'est-à-dire</th><th>Conséquence</th></tr></thead>
+    <tbody>
+      <tr><th>Synallagmatique <span class="art">1106</span></th><td>Obligations réciproques, comme la vente.</td><td>Exception d'inexécution possible.</td></tr>
+      <tr><th>Solennel <span class="art">1109</span></th><td>La loi impose une forme pour sa validité, comme l'acte notarié de la donation.</td><td><span class="chip nul">Nullité</span> sans cette forme.</td></tr>
+      <tr><th>D'adhésion <span class="art">1110</span></th><td>Clauses non négociables, fixées à l'avance par une partie.</td><td><span class="chip cl">Clause abusive non écrite</span> Doute interprété contre le rédacteur.</td></tr>
+      <tr><th>Successif <span class="art">1111-1</span></th><td>Il s'exécute dans le temps, comme un bail.</td><td>Il prend fin pour l'avenir, sans tout restituer.</td></tr>
+      <tr><th>Contrat-cadre <span class="art">1111</span></th><td>Il fixe les règles de relations futures.</td><td>Prix fixé par une seule partie, sous contrôle de l'abus.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 2 -->
+<section class="stage t1" id="avant">
+  <h2><span class="n">2</span>Avant le contrat</h2>
+
+  <article class="card">
+    <header><h3>Rupture des pourparlers</h3><span class="art">Art. 1112</span></header>
+    <p class="q">L'auteur de la rupture doit-il indemniser l'autre partie ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>La rupture des négociations est <b>libre</b>, mais elle doit respecter la <b>bonne foi</b>. Ses circonstances peuvent la rendre fautive.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Négociations longues et avancées</li><li>Rupture soudaine ou sans motif</li><li>Comportement déloyal</li><li>Frais engagés par la victime</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip di">Dommages-intérêts</span></div><p>Pour les frais engagés (responsabilité extracontractuelle).</p><p class="never">Jamais le contrat forcé, ni les gains espérés, ni la perte de chance de les obtenir (Manoukian).</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Exemple</span>Après huit mois de négociation, l'acheteur rompt la veille de la signature pour traiter avec un concurrent contacté en secret. Le vendeur récupère ses frais d'audit, pas le bénéfice de la vente.</p></div>
+  </article>
+
+  <article class="card">
+    <header><h3>Devoir d'information</h3><span class="art">Art. 1112-1</span></header>
+    <p class="q">Une partie devait-elle révéler une information avant la signature ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Celui qui connaît une information <b>déterminante</b> doit la donner à l'autre, si celui-ci l'<b>ignore légitimement</b> ou lui fait confiance.</p><p>Exclu : l'estimation de la valeur (Baldus). Règle d'ordre public.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Information connue de l'autre partie</li><li>Déterminante pour le consentement</li><li>Ignorance légitime</li><li>Preuve : la victime prouve que l'information était due, l'autre qu'il l'a donnée</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip di">Dommages-intérêts</span></div><p>Et, seulement en cas de dol :</p><div class="chips"><span class="chip nul">Nullité relative</span></div></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Le vendeur d'un fonds de commerce tait le départ de son principal client. Simple oubli : dommages-intérêts. Silence volontaire pour conclure : dol, donc nullité possible.</p>
+      <p class="trap"><span class="tag">À côté</span>Les informations confidentielles reçues en négociant ne peuvent être ni utilisées ni divulguées sans autorisation.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Pacte de préférence ou promesse unilatérale ?</caption>
+    <thead><tr><th>Critère</th><th>Pacte de préférence</th><th>Promesse unilatérale</th></tr></thead>
+    <tbody>
+      <tr><th>Engagement</th><td>Proposer en priorité au bénéficiaire, s'il décide un jour de contracter.</td><td>Il a déjà consenti. Le bénéficiaire n'a plus qu'à lever l'option.</td></tr>
+      <tr><th>Rétractation</th><td>Il reste libre de ne pas contracter.</td><td>Sans effet : le contrat se forme si l'option est levée dans le délai.</td></tr>
+      <tr><th>Vente à un tiers qui savait</th><td><span class="chip nul">Nullité</span> ou <span class="chip exe">Substitution</span> si le tiers connaissait le pacte <b>et</b> l'intention du bénéficiaire.</td><td><span class="chip nul">Nullité</span> si le tiers connaissait la promesse, puis <span class="chip exe">Exécution forcée</span></td></tr>
+      <tr><th>Tiers de bonne foi</th><td><span class="chip di">Dommages-intérêts</span> contre le promettant.</td><td><span class="chip di">Dommages-intérêts</span> contre le promettant.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot">
+    <p class="ex"><span class="tag">Pacte</span>Un bailleur s'engage à proposer son local en priorité à son locataire, s'il le vend un jour. Il reste libre de ne jamais vendre.</p>
+    <p class="ex"><span class="tag">Promesse</span>Paul promet de vendre sa maison à Marie pour 300 000 €, option de trois mois. Il se rétracte après un mois, Marie lève l'option le mois suivant : la vente est formée.</p>
+    <p class="memo"><span class="tag">Réflexe</span>Qualifie d'abord : le promettant a-t-il <b>déjà accepté</b> de conclure à des conditions fixées ? Oui : promesse. Non : pacte.</p>
+  </div></div>
+</section>
+
+<!-- 3 -->
+<section class="stage t2" id="formation">
+  <h2><span class="n">3</span>Formation du contrat</h2>
+  <article class="card">
+    <header><h3>Offre et acceptation</h3><span class="art">Art. 1113 à 1121</span><span class="core">Par cœur</span></header>
+    <p class="q">Un contrat est-il formé, et à quelle date ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le contrat se forme par la rencontre d'une <b>offre</b> et d'une <b>acceptation</b>. Il est conclu quand l'acceptation <b>parvient</b> à l'offrant.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Reconstitue la chronologie</li><li>Qualifie chaque message : offre, contre-proposition, acceptation, rétractation</li><li>Vérifie les délais</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la solution</h4><div class="zbody"><p>Contrat formé ou non, <b>à telle date</b>.</p><p>S'il ne l'est pas, vérifie si des <span class="chip di">Dommages-intérêts</span> sont dus.</p></div></div>
+    </div>
+  </article>
+  <div class="tw"><table>
+    <caption>Les règles à réciter</caption>
+    <thead><tr><th>Notion</th><th>Règle</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Offre <span class="art">1114</span></th><td>Éléments essentiels du contrat <b>et</b> volonté d'être lié. Sinon, simple invitation à négocier.</td><td class="eg">« 50 ordinateurs à 800 € pièce » : offre. « Prix à discuter » : invitation à négocier.</td></tr>
+      <tr><th>Rétractation <span class="art">1115 · 1116</span></th><td>Libre avant réception. Ensuite, offre maintenue pendant le délai fixé ou, à défaut, un délai raisonnable.</td><td class="eg">Offre « valable 15 jours » : pas de retrait avant la fin du délai.</td></tr>
+      <tr><th>Rétractation irrégulière <span class="art">1116</span></th><td>Pas de contrat. <span class="chip di">Dommages-intérêts</span> sans les gains attendus du contrat.</td><td class="eg">Retrait au 5e jour : pas de vente, mais les frais du destinataire sont indemnisés.</td></tr>
+      <tr><th>Caducité <span class="art">1117</span></th><td>Fin du délai, incapacité ou décès de l'offrant, décès du destinataire.</td><td class="eg">L'offrant décède avant toute réponse : l'offre tombe.</td></tr>
+      <tr><th>Acceptation <span class="art">1118</span></th><td>Accord sur les termes de l'offre. Une réponse qui les modifie est une nouvelle offre.</td><td class="eg">« D'accord, si vous livrez sous 8 jours » : nouvelle offre.</td></tr>
+      <tr><th>Silence <span class="art">1120</span></th><td>Ne vaut pas acceptation, sauf loi, usages, relations d'affaires ou circonstances particulières.</td><td class="eg">Un client livré chaque mois sans jamais confirmer : son silence habituel peut valoir accord.</td></tr>
+      <tr><th>Conditions générales <span class="art">1119</span></th><td>Applicables seulement si elles ont été connues et acceptées.</td><td class="eg">Conditions imprimées au dos d'une facture reçue après la commande : non acceptées.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Exemple</span>A offre un stock à B, « valable jusqu'au 30 ». A retire son offre le 20, B accepte le 25. Pas de contrat, mais A doit des dommages-intérêts à B.</p></div></div>
+</section>
+
+<!-- 4 -->
+<section class="stage t3" id="validite">
+  <h2><span class="n">4</span>Validité du contrat</h2>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Mémo</span><b>3 C</b> : <b>C</b>onsentement, <b>C</b>apacité, <b>C</b>ontenu licite et certain. S'il en manque un : nullité.</p></div></div>
+
+  <article class="card">
+    <header><h3>Vices du consentement</h3><span class="art">Art. 1130 à 1144</span><span class="core">Par cœur</span></header>
+    <p class="q">Le client peut-il faire annuler le contrat parce que son consentement a été vicié ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>L'erreur, le dol et la violence vicient le consentement s'ils sont <b>déterminants</b> : sans eux, la victime n'aurait pas contracté, ou à des conditions substantiellement différentes.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Qualifie le vice</li><li>Vérifie ses conditions propres</li><li>Démontre le caractère déterminant</li><li>Calcule le délai</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip nul">Nullité relative</span></div><p>Dans les 5 ans. Avec <span class="chip di">Dommages-intérêts</span> si l'autre partie a commis une faute.</p></div></div>
+    </div>
+    <div class="foot"><p class="memo"><span class="tag">Mémo</span><b>E D V</b> : je me trompe (<b>E</b>rreur), on me trompe (<b>D</b>ol), on me force (<b>V</b>iolence).</p></div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Les trois vices, côte à côte</caption>
+    <thead><tr><th>Critère</th><th>Erreur</th><th>Dol</th><th>Violence</th></tr></thead>
+    <tbody>
+      <tr><th>Définition</th><td>La victime se trompe seule.</td><td>L'autre la trompe volontairement : manœuvres, mensonges, silence intentionnel.</td><td>L'autre la contraint : crainte d'un mal considérable ou abus de dépendance.</td></tr>
+      <tr><th>Exemple</th><td class="eg">Acheter comme authentique un tableau qui est une copie.</td><td class="eg">Le vendeur trafique le compteur de la voiture.</td><td class="eg">Signer sous la menace de voir un secret révélé.</td></tr>
+      <tr><th>Porte sur</th><td>Une qualité essentielle. Jamais la seule valeur ni un simple motif.</td><td>Tout, même la valeur ou un motif.</td><td>La personne, sa fortune, ses proches.</td></tr>
+      <tr><th>Excusable ?</th><td>Il le faut.</td><td>Toujours.</td><td>Sans objet.</td></tr>
+      <tr><th>Auteur</th><td>Sans objet.</td><td>Le cocontractant, son représentant, son préposé, un tiers complice.</td><td>Le cocontractant ou n'importe quel tiers.</td></tr>
+      <tr><th>Sanction</th><td><span class="chip nul">Nullité relative</span></td><td><span class="chip nul">Nullité relative</span> <span class="chip di">Dommages-intérêts</span></td><td><span class="chip nul">Nullité relative</span> <span class="chip di">Dommages-intérêts</span></td></tr>
+      <tr><th>Délai de 5 ans</th><td>Depuis la découverte.</td><td>Depuis la découverte.</td><td>Depuis la fin de la violence.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tiles two">
+    <div class="tile"><h3>Excusable</h3><p>L'erreur que la victime ne pouvait pas facilement éviter. On excuse un profane, rarement un professionnel dans son métier.</p><p class="eg"><b>Ex.</b> L'antiquaire qui achète un tableau sans l'examiner : inexcusable.</p></div>
+    <div class="tile"><h3>Motif</h3><p>La raison personnelle de contracter, comme une mutation espérée. Il ne compte que s'il figure au contrat ou s'il est provoqué par un dol.</p><p class="eg"><b>Ex.</b> Acheter à Lyon pour une mutation finalement annulée : pas de nullité.</p></div>
+    <div class="tile"><h3>Dol</h3><p>Il faut prouver l'<b>intention</b> de tromper. Un manquement au devoir d'information ne suffit pas. Taire sa propre estimation de la valeur n'est pas un dol.</p><p class="eg"><b>Ex.</b> Le vendeur cache volontairement que le terrain est inconstructible.</p></div>
+    <div class="tile"><h3>Abus de dépendance <span class="art">Art. 1143</span></h3><p>Dépendance, abus, engagement qui n'aurait pas été pris autrement, avantage manifestement excessif. Aucune menace n'est exigée.</p><p class="eg"><b>Ex.</b> Un salarié aux abois cède ses droits à son employeur pour un prix dérisoire.</p></div>
+  </div>
+
+  <div class="tiles two">
+    <div class="tile"><h3>Capacité <span class="art">Art. 1146 · 1147</span></h3><p>L'aptitude à contracter. Mineur non émancipé ou majeur protégé : <span class="chip nul">Nullité relative</span></p><p class="eg"><b>Ex.</b> Un mineur de 16 ans achète seul une moto.</p></div>
+    <div class="tile"><h3>Pouvoir <span class="art">Art. 1156</span></h3><p>Le droit d'agir pour autrui, comme un dirigeant pour sa société. Acte sans pouvoir : <span class="chip cl">Inopposable</span> au représenté, sauf apparence légitime.</p><p class="eg"><b>Ex.</b> Un salarié signe un bail au nom de la société, sans y être autorisé.</p></div>
+  </div>
+
+  <div class="tw"><table>
+    <caption>Contenu licite et certain</caption>
+    <thead><tr><th>Exigence</th><th>Règle</th><th>Contre-exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Licite <span class="art">1162</span></th><td>Ne pas déroger à l'ordre public, ni par ses clauses, ni par son but.</td><td>Un contrat pour vendre de la drogue.</td></tr>
+      <tr><th>Certain <span class="art">1163</span></th><td>Une prestation possible, déterminée ou déterminable sans nouvel accord.</td><td>« Je te vends des marchandises », sans dire lesquelles.</td></tr>
+      <tr><th>Contrepartie réelle <span class="art">1169</span></th><td>Dans un contrat onéreux, une contrepartie ni illusoire ni dérisoire.</td><td>Une entreprise rentable vendue 1 € symbolique.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot">
+    <p class="trap"><span class="tag">Piège</span>Un simple déséquilibre entre les prestations, la lésion, n'entraîne pas la nullité. Un prix bas n'est pas forcément dérisoire.</p>
+    <p class="ex"><span class="tag">Prix</span>Contrat-cadre : une partie peut le fixer seule si c'est convenu. Prestation de service : le créancier le fixe à défaut d'accord préalable. Il doit le justifier. Abus : dommages-intérêts, voire résolution.</p>
+  </div></div>
+</section>
+
+<!-- 5 -->
+<section class="stage t3" id="nullite">
+  <h2><span class="n">5</span>Nullité</h2>
+  <article class="card">
+    <header><h3>Absolue ou relative ?</h3><span class="art">Art. 1178 à 1182</span><span class="core">Par cœur</span></header>
+    <p class="q">Qui peut demander la nullité, et avec quels effets ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>La nullité sanctionne l'absence d'une condition de validité. Son régime dépend de <b>l'intérêt que protège la règle violée</b>.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quelle règle est violée ?</li><li>Qui protège-t-elle : tout le monde ou une seule partie ?</li><li>Le contrat a-t-il été exécuté en connaissance du vice ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> les effets</h4><div class="zbody"><div class="chips"><span class="chip nul">Contrat effacé</span></div><p>Depuis l'origine : chacun restitue ce qu'il a reçu. Délai : 5 ans. Dommages-intérêts possibles en plus.</p></div></div>
+    </div>
+  </article>
+  <div class="tw"><table>
+    <thead><tr><th>Critère</th><th>Nullité absolue</th><th>Nullité relative</th></tr></thead>
+    <tbody>
+      <tr><th>Règle violée</th><td>Elle protège l'intérêt général.</td><td>Elle protège seulement une partie.</td></tr>
+      <tr><th>Qui peut agir</th><td>Tout intéressé et le ministère public.</td><td>La seule partie protégée.</td></tr>
+      <tr><th>Confirmation</th><td>Impossible.</td><td>Possible : par un acte, ou en exécutant volontairement le contrat en connaissance du vice.</td></tr>
+      <tr><th>Exemple</th><td>Contrat de vente de drogue.</td><td>Vice du consentement, incapacité, prix dérisoire.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Exemple</span>Trompé par son vendeur, un acheteur découvre le dol puis continue de payer ses échéances sans réserve. Il a confirmé le contrat : il ne peut plus demander la nullité.</p></div></div>
+  <div class="tw"><table>
+    <caption>Trois façons de finir, à ne pas confondre</caption>
+    <thead><tr><th>Fin du contrat</th><th>Cause</th><th>Effet</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Nullité</th><td>Un défaut à la formation.</td><td>Contrat effacé, restitutions.</td><td class="eg">Une vente obtenue par dol.</td></tr>
+      <tr><th>Résolution</th><td>Une inexécution.</td><td>Fin du contrat, restitutions selon l'utilité de ce qui a été fourni.</td><td class="eg">Un vendeur qui ne livre jamais.</td></tr>
+      <tr><th>Caducité <span class="art">1186</span></th><td>Un élément essentiel disparaît après la formation.</td><td>Fin du contrat.</td><td class="eg">Le crédit-bail tombe quand la vente du matériel financé est anéantie.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section class="stage t4" id="tiers">
+  <h2><span class="n">6</span>Effets envers les tiers</h2>
+  <article class="card">
+    <header><h3>Effet relatif et opposabilité</h3><span class="art">Art. 1199 · 1200</span></header>
+    <p class="q">Un tiers peut-il se prévaloir du contrat, ou se le voir imposer ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le contrat n'<b>oblige</b> que les parties. Les tiers doivent <b>respecter</b> la situation qu'il crée et peuvent l'invoquer comme un fait.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>La personne est-elle partie au contrat ?</li><li>Sinon, profite-t-elle d'un mécanisme particulier ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> l'action</h4><div class="zbody"><p>Partie : action <b>contractuelle</b>.</p><p>Tiers : action <b>extracontractuelle</b>, sauf exception.</p></div></div>
+    </div>
+  </article>
+  <div class="tw"><table>
+    <thead><tr><th>Situation</th><th>Règle</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Porte-fort <span class="art">1204</span></th><td>Celui qui promet le fait d'un tiers doit des <span class="chip di">Dommages-intérêts</span> si le tiers refuse. Le tiers n'est pas engagé.</td><td class="eg">Un dirigeant promet que sa société signera le bail.</td></tr>
+      <tr><th>Stipulation pour autrui <span class="art">1205</span></th><td>Le bénéficiaire désigné a un droit direct contre le promettant, comme en assurance-vie.</td><td class="eg">L'assuré désigne son conjoint comme bénéficiaire du capital.</td></tr>
+      <tr><th>Tiers victime d'une mauvaise exécution</th><td>Responsabilité extracontractuelle. Le manquement contractuel suffit s'il a causé son dommage (Boot shop, Bois rouge).</td><td class="eg">Le bailleur n'entretient pas l'immeuble : l'exploitant du fonds, tiers au bail, est indemnisé.</td></tr>
+      <tr><th>Ventes successives</th><td>Le sous-acquéreur a une action contractuelle directe contre le fabricant.</td><td class="eg">L'acheteur d'une voiture d'occasion agit contre le constructeur pour un vice caché.</td></tr>
+      <tr><th>Sous-traitance</th><td>Le maître d'ouvrage agit contre le sous-traitant en responsabilité extracontractuelle (Besse).</td><td class="eg">Malfaçons du plombier sous-traitant : le client agit contre lui en responsabilité extracontractuelle.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 7 -->
+<section class="stage t4" id="imprevision">
+  <h2><span class="n">7</span>Imprévision</h2>
+  <article class="card">
+    <header><h3>Changement de circonstances</h3><span class="art">Art. 1195</span><span class="core">Par cœur</span></header>
+    <p class="q">Une partie peut-elle faire adapter un contrat devenu trop coûteux ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>En principe, le contrat ne se modifie que d'un commun accord. Par exception, trois conditions :</p><ul class="dots"><li>un changement <b>imprévisible</b> à la conclusion</li><li>une exécution <b>excessivement onéreuse</b></li><li>un risque <b>non accepté</b></li></ul></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Date du contrat, date de l'événement</li><li>Ampleur du surcoût</li><li>Clause qui écarte l'imprévision ou prévoit déjà une révision</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la marche à suivre</h4><div class="zbody"><ul class="dots"><li>Demander une <b>renégociation</b>, en continuant d'exécuter</li><li>Échec : résolution d'un commun accord, ou juge saisi ensemble</li><li>À défaut : le juge <span class="chip exe">révise</span> ou <span class="chip nul">met fin</span> au contrat</li></ul></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un fournisseur s'est engagé à prix fixe sur cinq ans. Une crise imprévisible triple le coût de sa matière première : il peut demander la renégociation, sans suspendre ses livraisons.</p>
+      <p class="trap"><span class="tag">À côté</span>Rompre une relation commerciale établie sans préavis écrit suffisant engage la responsabilité de son auteur (Code de commerce). C'est un autre texte.</p>
+    </div>
+  </article>
+</section>
+
+<!-- 8 -->
+<section class="stage t5" id="inexecution">
+  <h2><span class="n">8</span>Inexécution du contrat</h2>
+  <article class="card">
+    <header><h3>Les sanctions</h3><span class="art">Art. 1217</span><span class="core">Par cœur</span></header>
+    <p class="q">Quels recours pour le client dont le cocontractant n'exécute pas, ou mal ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le créancier <b>choisit</b> parmi cinq sanctions. Elles se cumulent si elles sont compatibles, et des dommages-intérêts peuvent toujours s'y ajouter.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quelle obligation est inexécutée ?</li><li>L'inexécution est-elle grave ?</li><li>Une mise en demeure a-t-elle été envoyée ?</li><li>Une clause s'applique-t-elle ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> le conseil</h4><div class="zbody"><p>Pars de <b>ce que veut le client</b>, puis propose la sanction adaptée.</p></div></div>
+    </div>
+  </article>
+  <div class="tw"><table>
+    <caption>Que veut le client ? Fil rouge : un menuisier doit poser une cuisine</caption>
+    <thead><tr><th>Le client veut…</th><th>Sanction</th><th>Conditions</th><th>Dans le fil rouge</th></tr></thead>
+    <tbody>
+      <tr><th>Faire pression sans rompre</th><td><span class="chip exe">Exception d'inexécution</span> <span class="art">1219 · 1220</span></td><td>Inexécution suffisamment grave, actuelle ou manifestement à venir.</td><td class="eg">Il retient le solde tant que la cuisine n'est pas terminée.</td></tr>
+      <tr><th>Obtenir ce qui était promis</th><td><span class="chip exe">Exécution forcée</span> <span class="art">1221</span> ou remplacement aux frais du débiteur <span class="art">1222</span></td><td>Mise en demeure. Exécution possible, sans disproportion manifeste entre son coût et son intérêt.</td><td class="eg">Il exige la pose des meubles manquants, ou la fait finir par un autre artisan aux frais du premier.</td></tr>
+      <tr><th>Garder une prestation imparfaite</th><td><span class="chip di">Réduction du prix</span> <span class="art">1223</span></td><td>Mise en demeure. Prix non payé : notification. Prix payé : accord ou juge.</td><td class="eg">Le plan de travail est rayé : il le garde et paie moins.</td></tr>
+      <tr><th>Sortir du contrat</th><td><span class="chip nul">Résolution</span> <span class="art">1224</span></td><td>Inexécution suffisamment grave.</td><td class="eg">Chantier abandonné depuis trois mois : il met fin au contrat.</td></tr>
+      <tr><th>Être indemnisé</th><td><span class="chip di">Dommages-intérêts</span> <span class="art">1231-1</span></td><td>Voir plus bas.</td><td class="eg">Il réclame les deux mois de loyer payés en attendant.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tw"><table>
+    <caption>Résolution : trois voies</caption>
+    <thead><tr><th>Voie</th><th>Conditions</th><th>Dans le fil rouge</th></tr></thead>
+    <tbody>
+      <tr><th>Clause résolutoire <span class="art">1225</span></th><td>La clause vise le manquement en cause. Mise en demeure qui la mentionne.</td><td class="eg">« Tout retard de plus de 30 jours entraîne la résolution de plein droit. »</td></tr>
+      <tr><th>Notification <span class="art">1226</span></th><td>Mise en demeure, sauf urgence, puis notification motivée. Aux risques du créancier, qui devra prouver la gravité.</td><td class="eg">« Sans reprise du chantier sous 15 jours, je mettrai fin au contrat », puis lettre de résolution.</td></tr>
+      <tr><th>Juge <span class="art">1227</span></th><td>Il apprécie la gravité et peut aussi accorder un délai au débiteur.</td><td class="eg">Le client assigne le menuisier et demande la résolution.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="trap"><span class="tag">Effets</span>Restitution intégrale si le contrat n'avait d'utilité qu'exécuté en entier. Sinon, il prend fin pour l'avenir seulement : c'est la <b>résiliation</b>.</p></div></div>
+
+  <article class="card">
+    <header><h3>Dommages-intérêts</h3><span class="art">Art. 1231 à 1231-3</span><span class="core">Par cœur</span></header>
+    <p class="q">Le client peut-il être indemnisé ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Après mise en demeure, trois conditions :</p><ul class="dots"><li>une <b>inexécution</b></li><li>un <b>préjudice</b></li><li>un <b>lien de causalité</b></li></ul></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Obligation de résultat : l'absence de résultat suffit</li><li>Obligation de moyens : prouver un manque de diligence</li><li>Chiffrer la perte subie et le gain manqué</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> l'étendue</h4><div class="zbody"><div class="chips"><span class="chip di">Dommages-intérêts</span></div><p>Limités au dommage <b>prévisible</b> à la conclusion, sauf faute lourde ou dolosive.</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Exemple</span>Cuisine livrée avec deux mois de retard malgré une mise en demeure : le client obtient ses deux mois de loyer supplémentaires, pas le manque à gagner d'un projet dont le menuisier ignorait tout.</p><p class="memo"><span class="tag">Mémo</span><b>I P L</b> : <b>I</b>nexécution, <b>P</b>réjudice, <b>L</b>ien de causalité.</p></div>
+  </article>
+
+  <article class="card">
+    <header><h3>Force majeure</h3><span class="art">Art. 1218</span><span class="core">Par cœur</span></header>
+    <p class="q">Le débiteur peut-il échapper à sa responsabilité ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Un événement qui <b>empêche</b> l'exécution et qui :</p><ul class="dots"><li>échappe au <b>contrôle</b> du débiteur</li><li>était <b>imprévisible</b> à la conclusion</li><li>a des effets <b>inévitables</b></li></ul></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>L'événement était-il prévisible à la date du contrat ?</li><li>Des mesures pouvaient-elles l'éviter ?</li><li>Exécution impossible, ou seulement plus coûteuse ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> les effets</h4><div class="zbody"><p>Pas de dommages-intérêts.</p><ul class="dots"><li>Temporaire : exécution <span class="chip exe">suspendue</span></li><li>Définitif : contrat <span class="chip nul">résolu de plein droit</span></li></ul></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Une inondation détruit l'atelier du menuisier : exécution suspendue, sans dommages-intérêts. Le prix du bois augmente de 30 % : pas de force majeure.</p>
+      <p class="memo"><span class="tag">Mémo</span><b>3 I</b> : <b>I</b>ncontrôlable, <b>I</b>mprévisible, <b>I</b>névitable.</p>
+      <p class="trap"><span class="tag">Piège</span>Une exécution seulement plus coûteuse n'est pas un empêchement. Pense alors à l'imprévision.</p>
+    </div>
+  </article>
+</section>
+
+<!-- 9 -->
+<section class="stage t5" id="clauses">
+  <h2><span class="n">9</span>Clauses à connaître</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Clause</th><th>Effet</th><th>Limite à vérifier</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Limitative de responsabilité</th><td>Plafonne les dommages-intérêts.</td><td><span class="chip cl">Réputée non écrite</span> si elle vide l'obligation essentielle de sa substance (Chronopost, Faurecia II). Écartée en cas de faute lourde ou dolosive.</td><td class="eg">Un transporteur express promet la rapidité, mais plafonne l'indemnité de retard au prix du transport.</td></tr>
+      <tr><th>Pénale <span class="art">1231-5</span></th><td>Fixe à l'avance la somme due en cas d'inexécution.</td><td>Le juge peut la réduire ou l'augmenter si elle est manifestement excessive ou dérisoire.</td><td class="eg">« 500 € par jour de retard. »</td></tr>
+      <tr><th>Résolutoire <span class="art">1225</span></th><td>Met fin au contrat pour les manquements qu'elle vise.</td><td>Mise en demeure qui la mentionne. Mise en œuvre de bonne foi.</td><td class="eg">« Résolution de plein droit après deux loyers impayés. »</td></tr>
+      <tr><th>Non négociable, dans un contrat d'adhésion <span class="art">1171</span></th><td>Variable.</td><td><span class="chip cl">Réputée non écrite</span> si elle crée un déséquilibre significatif. Pas de contrôle du prix ni de l'objet principal.</td><td class="eg">L'opérateur peut résilier à tout moment, l'abonné reste engagé 24 mois.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot">
+    <p class="memo"><span class="tag">Réflexe</span>Une clause n'est jamais la réponse à elle seule : énonce-la, puis vérifie sa validité et ses conditions.</p>
+    <p class="ex"><span class="tag">Lecture</span>Clause ambiguë : le juge recherche la commune intention des parties. Clause claire et précise : il l'applique sans l'interpréter.</p>
+  </div></div>
+</section>
+
+<!-- 10 -->
+<section class="stage t0" id="arrets">
+  <h2><span class="n">10</span>Arrêts à connaître</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Arrêt</th><th>Règle</th></tr></thead>
+    <tbody>
+      <tr><th>Manoukian <span class="art">2003</span></th><td>Rupture fautive des pourparlers : ni gains espérés, ni perte de chance de les obtenir.</td></tr>
+      <tr><th>Baldus <span class="art">2000</span></th><td>L'acheteur n'a pas à informer le vendeur de la valeur du bien.</td></tr>
+      <tr><th>Chambre mixte <span class="art">26 mai 2006</span></th><td>Pacte de préférence : substitution si le tiers connaissait le pacte et l'intention du bénéficiaire.</td></tr>
+      <tr><th>3e civ. <span class="art">23 juin 2021</span></th><td>Promesse unilatérale : la rétractation du promettant n'empêche pas la vente.</td></tr>
+      <tr><th>3e civ. <span class="art">4 juin 2026</span></th><td>Abus de dépendance : aucune menace exigée, une vulnérabilité connue peut suffire.</td></tr>
+      <tr><th>Les Maréchaux <span class="art">2007</span></th><td>La bonne foi sanctionne l'usage déloyal d'un droit, pas le contenu du contrat.</td></tr>
+      <tr><th>Chronopost <span class="art">1996</span> Faurecia II <span class="art">2010</span></th><td>La clause limitative tombe si elle vide l'obligation essentielle de sa substance.</td></tr>
+      <tr><th>Boot shop <span class="art">2006</span> Bois rouge <span class="art">2020</span></th><td>Le tiers peut invoquer un manquement contractuel qui lui cause un dommage.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Cite l'arrêt à l'appui de la majeure, sans le raconter.</p>
+</section>
+
+<footer>
+  <p>En cas d'écart avec le support de cours, cette fiche prime sur le dol, la force majeure, la nullité, la confirmation et les dommages-intérêts. Les numéros d'articles sont volontairement absents. Pour vérifier une règle, consulte <a href="https://www.legifrance.gouv.fr/">Légifrance</a>.</p>
+  <p>Sources : <a href="https://idai.pantheonsorbonne.fr/sites/default/files/inline-files/21-22%20TD%20Droit%20des%20obligations%201%20s%C3%A9ance%209.pdf">art. 1217 à 1231-7</a> · <a href="https://www.labase-lextenso.fr/ouvrages/droit-des-obligations-9782275160986/3-le-dol-9782275160986-44">art. 1137 à 1139</a> · <a href="https://jcl06.fr/la-nullite-du-contrat/">art. 1178 à 1185</a> · <a href="https://www.dalloz-actualite.fr/document/com-22-mars-2016-fs-pb-n-14-14218">Com., 22 mars 2016</a> · <a href="https://actu.dalloz-etudiant.fr/fileadmin/actualites/pdfs/MAI_2014/mix_26_mai_2006.pdf">Ch. mixte, 26 mai 2006</a> · <a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000054218401">3e civ., 4 juin 2026</a></p>
+</footer>
+
+</div>
+
+<button id="toggle" type="button" aria-pressed="false">Me tester</button>
+<p class="teststate" aria-live="polite">Récite la règle et la sanction, puis touche la zone pour vérifier.</p>
+
+<script>
+(function(){
+  var btn=document.getElementById('toggle');
+  function reveal(el){ el.classList.add('shown'); }
+  btn.addEventListener('click',function(){
+    var on=!document.body.classList.contains('test');
+    document.body.classList.toggle('test',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+    btn.textContent=on?'Tout afficher':'Me tester';
+    document.querySelectorAll('.shown').forEach(function(e){e.classList.remove('shown')});
+    document.querySelectorAll('.hideable, tbody tr').forEach(function(e){
+      if(on){e.setAttribute('tabindex','0')}else{e.removeAttribute('tabindex')}
+    });
+  });
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    var t=ev.target.closest('.hideable, tbody tr');
+    if(t)reveal(t);
+  });
+  document.addEventListener('keydown',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    if(ev.key!=='Enter'&&ev.key!==' ')return;
+    var t=ev.target.closest&&ev.target.closest('.hideable, tbody tr');
+    if(t&&t===ev.target){ev.preventDefault();reveal(t)}
+  });
+})();
+</script>

@@ -1,0 +1,62 @@
+{
+ "schema": 1,
+ "deck": {
+  "id": "ue1-ch01",
+  "ue": "UE1",
+  "ueTitre": "Gestion juridique, fiscale et sociale",
+  "chapitre": 1,
+  "titre": "Droit des contrats",
+  "themes": [
+   {
+    "id": "formation",
+    "titre": "Formation du contrat",
+    "couleur": "bleu",
+    "ordre": 1
+   },
+   {
+    "id": "validite",
+    "titre": "Validité et nullité",
+    "couleur": "violet",
+    "ordre": 2
+   },
+   {
+    "id": "sanctions",
+    "titre": "Sanctions et clauses",
+    "couleur": "rouge",
+    "ordre": 3
+   },
+   {
+    "id": "reste",
+    "titre": "Principes, négociation, tiers",
+    "couleur": "sarcelle",
+    "ordre": 4
+   }
+  ]
+ },
+ "cards": [
+  {
+   "id": "ue1-ch01-001",
+   "theme": "formation",
+   "type": "regle",
+   "question": "Comment se forme un contrat ?",
+   "reponse": "Par la rencontre d'une offre et d'une acceptation par lesquelles les parties manifestent leur volonté de s'engager.",
+   "source": "Art. 1113"
+  },
+  {
+   "id": "ue1-ch01-021",
+   "theme": "formation",
+   "type": "cas",
+   "question": "« Je vends mon stock, prix à débattre. » Est-ce une offre ?",
+   "reponse": "Non. Il manque un élément essentiel, le prix : c'est une simple invitation à négocier.",
+   "source": "Art. 1114"
+  },
+  {
+   "id": "ue1-ch01-076",
+   "theme": "validite",
+   "type": "memo",
+   "question": "Que désignent les « 3 C » de la validité ?",
+   "reponse": "Consentement, Capacité, Contenu licite et certain.\nS'il en manque un : nullité.",
+   "source": "Art. 1128"
+  }
+ ]
+}
