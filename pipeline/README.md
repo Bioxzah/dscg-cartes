@@ -9,12 +9,16 @@ Sur le Mac de Hugo : quand un cours (PDF) arrive dans `Mon Drive > DSCG > UE 1 -
 5. `tools/fiche-pdf.cjs` tire le PDF A4 (Chrome installé), rangé à côté du cours. Les cartes vont dans `cards/`, sont validées, commitées seules et poussées : l'app se met à jour.
 6. Une notification macOS annonce le résultat.
 
+**Documents arrivés plus tard** (fiches d'arrêts, définitions, exercices du professeur) : quand un dossier qui a déjà sa fiche reçoit un nouveau PDF, le pipeline relance Claude avec `UPDATE_PROMPT.md`. La fiche est complétée et remplacée sous le même nom (Google Drive garde l'ancienne dans l'historique des versions), avec un bloc « Mise à jour du … » à la fin de la synthèse. Les nouvelles cartes s'ajoutent à la suite ; les cartes existantes ne changent jamais (`check-cards.mjs --extends` le vérifie), un désaccord est seulement signalé dans la fiche. L'état de chaque chapitre (documents utilisés, source HTML de la fiche) est gardé dans `chapters/`.
+
 Garde-fous : un seul traitement à la fois ; un chapitre dont les cartes existent déjà n'est jamais régénéré (identifiants définitifs) ; un échec n'est pas retenté tant que les PDF du chapitre ne changent pas ; Claude n'a accès qu'à son dossier de travail, au web et au contrôle des cartes.
 
 ## Commandes
 
 - Installer ou mettre à jour : `pipeline/bin/install.sh`
 - Lancer à la main, sans attendre : `DSCG_SETTLE=0 pipeline/bin/process.sh`
+- Tester sans toucher au vrai Drive : variables `DSCG_DRIVE`, `DSCG_STATE`, `DSCG_CLAUDE` (un faux Claude) et `DSCG_NO_PUSH=1` (voir l'en-tête de `process.sh`)
+- Modifier `process.sh` pendant un traitement : écrire un nouveau fichier puis le renommer (`mv`), jamais l'éditer sur place
 - Journaux et dossiers de travail : `~/Library/Application Support/dscg-pipeline/` (`logs/`, `work/`)
 - Retraiter un chapitre en échec : supprimer `failed/<clé>` dans ce dossier.
 - Désinstaller : `launchctl bootout gui/$(id -u)/com.dscg.pipeline`, puis supprimer `~/Library/LaunchAgents/com.dscg.pipeline.plist`.

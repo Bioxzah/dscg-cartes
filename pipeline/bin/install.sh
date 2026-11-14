@@ -4,7 +4,7 @@
 set -euo pipefail
 PIPE="$(cd "$(dirname "$0")/.." && pwd)"
 STATE="$HOME/Library/Application Support/dscg-pipeline"
-DRIVE="$(ls -d "$HOME"/Library/CloudStorage/GoogleDrive-*/"Mon Drive"/DSCG "$HOME"/Library/CloudStorage/GoogleDrive-*/"My Drive"/DSCG 2>/dev/null | head -1)"
+DRIVE="$(ls -d "$HOME"/Library/CloudStorage/GoogleDrive-*/"Mon Drive"/DSCG "$HOME"/Library/CloudStorage/GoogleDrive-*/"My Drive"/DSCG 2>/dev/null | head -1 || true)"
 [ -n "$DRIVE" ] || { echo "Dossier DSCG introuvable dans Google Drive"; exit 1; }
 mkdir -p "$STATE/logs" "$PIPE/.build" "$HOME/Library/LaunchAgents"
 
