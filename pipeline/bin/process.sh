@@ -114,6 +114,19 @@ verify() {
     P_DATE="$(date '+%-d/%m/%Y')" fill "$PIPE/VERIFY_PROMPT.md")"
   (cd "$work" && with_timeout 7200 nice -n 15 "$CLAUDE" -p "$prompt" --permission-mode acceptEdits --allowedTools "$TOOLS" --output-format text > verify.log 2>&1)
   log "Vérification terminée (code $?) : $(grep -c '' "$work/verification.md" 2>/dev/null || echo 0) lignes de rapport"
+  ! interrupted "$work/verify.log"
+}
+
+# A run that did not finish because of the Claude usage limit (or a network/API error) is
+# retried later (next drop or the 6-hourly check) instead of being marked as failed.
+interrupted() {
+  local logfile="$1"
+  grep -q "TERMINÉ" "$logfile" 2>/dev/null && return 1
+  grep -qiE "usage limit|limit reached|rate limit|quota|overloaded|resets at|API Error|ECONN|ETIMEDOUT|network" "$logfile" 2>/dev/null
+}
+retry_later() {
+  log "Interrompu (limite d'usage ou réseau) : nouvel essai plus tard"
+  notify "Traitement reporté" "$1 : limite d'usage Claude atteinte ou réseau coupé. Nouvel essai automatique plus tard."
 }
 
 fail() {
@@ -156,6 +169,7 @@ process_new() {
     P_FILES="$LIST" P_MAIN="$MAIN" P_KNOWN="$(cd "$REPO/cards" && ls *.json | sed 's/\.json$//' | tr '\n' ' ')" P_CHECK="$CHECK" \
     fill "$PIPE/PROMPT.md")"
   run_claude "$work" "$prompt" 10800
+  if interrupted "$work/claude.log"; then retry_later "$(basename "$folder")"; return; fi
 
   if [ ! -s "$work/fiche.html" ] || [ ! -s "$work/cartes.json" ] || [ ! -s "$work/meta.json" ]; then
     fail "$key" "$sig" "Fiche non générée" "$(basename "$folder") : livrables incomplets. Journal : $work"; return
@@ -171,7 +185,7 @@ process_new() {
   if ! check_cards "$work" "$deck"; then
     fail "$key" "$sig" "Cartes refusées" "Chapitre $num : les cartes ne passent pas le contrôle. Journal : $work"; return
   fi
-  verify "$work" "$ue" "$num" "$deck" "Vérifie toute la fiche et toutes les cartes." ""
+  if ! verify "$work" "$ue" "$num" "$deck" "Vérifie toute la fiche et toutes les cartes." ""; then retry_later "Chapitre $num"; return; fi
   if ! check_cards "$work" "$deck"; then
     fail "$key" "$sig" "Cartes refusées" "Chapitre $num : les cartes ne passent plus le contrôle après vérification. Journal : $work"; return
   fi
@@ -245,6 +259,7 @@ process_update() {
   prompt="$(P_UE="$ue" P_NUM="$num" P_DECK="$deck" P_NEW="${newlist#, }" P_OLD="${oldlist#, }" P_NEXT="$next" \
     P_DATE="$(date '+%-d/%m/%Y')" P_CHECK="$CHECK" fill "$PIPE/UPDATE_PROMPT.md")"
   run_claude "$work" "$prompt" 7200
+  if interrupted "$work/claude.log"; then retry_later "Chapitre $num"; return; fi
 
   if [ ! -s "$work/fiche.html" ] || [ ! -s "$work/cartes.json" ]; then
     fail "$key" "$sig" "Mise à jour non faite" "Chapitre $num : livrables incomplets. Journal : $work"; return
@@ -252,7 +267,8 @@ process_update() {
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent pas le contrôle. Journal : $work"; return
   fi
-  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans le bloc « Mise à jour » de la fiche avec la correction proposée." " --extends cartes-actuelles.json"
+  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans le bloc « Mise à jour » de la fiche avec la correction proposée." " --extends cartes-actuelles.json" \
+    || { retry_later "Chapitre $num"; return; }
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent plus le contrôle après vérification. Journal : $work"; return
   fi
