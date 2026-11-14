@@ -56,6 +56,7 @@ N'ajoute pas de dépendance sans demander.
 - `npm run build` : validation des cartes, vérification TypeScript, build dans `dist/`.
 - `npm run validate:cards` : valide `cards/*.json` (Node 22.18 ou plus, qui exécute le TypeScript directement).
 - `npm run preview` : sert le build local.
+- `npm run lock:refresh` : régénère `package-lock.json`. À lancer après tout ajout ou mise à jour de dépendance : sur Mac, npm oublie des dépendances optionnelles Linux et `npm ci` échoue dans GitHub Actions.
 
 Organisation : `src/cards/` (types, validation, catalogue, modules purs), `src/components/`, `src/screens/`, `scripts/validate-cards.ts`. Le déploiement est dans `.github/workflows/deploy.yml`.
 
