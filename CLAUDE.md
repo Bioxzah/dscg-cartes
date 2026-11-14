@@ -51,7 +51,13 @@ N'ajoute pas de dépendance sans demander.
 
 ## Commandes
 
-À renseigner au jalon 1 : `npm run dev`, `npm test`, `npm run build`, `npm run validate:cards`.
+- `npm run dev` : serveur de développement (http://localhost:5173/dscg-cartes/).
+- `npm test` : tests Vitest (`npm run test:watch` en continu).
+- `npm run build` : validation des cartes, vérification TypeScript, build dans `dist/`.
+- `npm run validate:cards` : valide `cards/*.json` (Node 22.18 ou plus, qui exécute le TypeScript directement).
+- `npm run preview` : sert le build local.
+
+Organisation : `src/cards/` (types, validation, catalogue, modules purs), `src/components/`, `src/screens/`, `scripts/validate-cards.ts`. Le déploiement est dans `.github/workflows/deploy.yml`.
 
 ## Ajouter un chapitre
 
