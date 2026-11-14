@@ -5,13 +5,16 @@ import { CardScreen } from './screens/CardScreen.tsx';
 import { DashboardScreen } from './screens/DashboardScreen.tsx';
 import { DecksScreen } from './screens/DecksScreen.tsx';
 import { NotFound } from './screens/NotFound.tsx';
+import { DailySessionScreen, FreeSessionScreen } from './screens/SessionScreen.tsx';
 import { SettingsScreen } from './screens/SettingsScreen.tsx';
 import { ThemeScreen } from './screens/ThemeScreen.tsx';
 import { TodayScreen } from './screens/TodayScreen.tsx';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 
@@ -25,6 +28,9 @@ function Root() {
 }
 
 const router = createHashRouter([
+  // Sessions are full screen: no tab bar.
+  { path: '/session', element: <DailySessionScreen /> },
+  { path: '/session/libre/:deckId/:themeId', element: <FreeSessionScreen /> },
   {
     element: <Root />,
     children: [

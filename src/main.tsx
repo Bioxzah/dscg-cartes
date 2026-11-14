@@ -8,9 +8,16 @@ import '@fontsource/ibm-plex-mono/500.css';
 import '../docs/design-tokens.css';
 import './styles/app.css';
 import { App } from './App.tsx';
+import { catalog } from './cards/load.ts';
+import { AppDataProvider } from './data/AppData.tsx';
+import { createScheduler } from './scheduler/fsrs.ts';
+
+const scheduler = await createScheduler();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <AppDataProvider catalog={catalog} scheduler={scheduler}>
+      <App />
+    </AppDataProvider>
   </StrictMode>,
 );

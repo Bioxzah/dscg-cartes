@@ -7,13 +7,20 @@ interface Props {
   card: Card;
   theme: Theme;
   showAnswer: boolean;
+  /** When set, tapping the card reveals the answer. */
+  onReveal?: () => void;
 }
 
 /** One card: theme band, labels, question and, when asked, the answer. */
-export function CardView({ card, theme, showAnswer }: Props) {
+export function CardView({ card, theme, showAnswer, onReveal }: Props) {
   const typeLabel = TYPE_LABELS[card.type];
+  const tappable = !showAnswer && onReveal;
   return (
-    <article className="panel card" style={themeStyle(theme.couleur)}>
+    <article
+      className={`panel card${tappable ? ' tappable' : ''}`}
+      style={themeStyle(theme.couleur)}
+      onClick={tappable ? onReveal : undefined}
+    >
       <div className="card-band" />
       <div className="card-body">
         <div className="card-tags">
