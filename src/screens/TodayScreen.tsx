@@ -1,5 +1,6 @@
 import { catalog } from '../cards/load.ts';
-import { DEFAULT_EXAM_DATE, daysUntil } from '../lib/dates.ts';
+import { daysUntil } from '../scheduler/day.ts';
+const DEFAULT_EXAM_DATE = new Date(2027, 9, 1);
 
 export function TodayScreen() {
   const days = daysUntil(DEFAULT_EXAM_DATE, new Date());
