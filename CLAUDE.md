@@ -58,7 +58,7 @@ N'ajoute pas de dépendance sans demander.
 - `npm run preview` : sert le build local.
 - `npm run lock:refresh` : régénère `package-lock.json`. À lancer après tout ajout ou mise à jour de dépendance : sur Mac, npm oublie des dépendances optionnelles Linux et `npm ci` échoue dans GitHub Actions.
 
-Organisation : `src/cards/` (types, validation, catalogue, modules purs), `src/components/`, `src/screens/`, `scripts/validate-cards.ts`. Le déploiement est dans `.github/workflows/deploy.yml`.
+Organisation : `src/cards/` (types, validation, catalogue), `src/scheduler/` (FSRS, rejeu du journal, composition des sessions : modules purs et testés), `src/data/` (IndexedDB via Dexie, contexte React, pilotage de session), `src/components/`, `src/screens/`, `scripts/validate-cards.ts`. Le déploiement est dans `.github/workflows/deploy.yml`.
 
 ## Ajouter un chapitre
 
