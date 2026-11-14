@@ -56,9 +56,10 @@ N'ajoute pas de dépendance sans demander.
 - `npm run build` : validation des cartes, vérification TypeScript, build dans `dist/`.
 - `npm run validate:cards` : valide `cards/*.json` (Node 22.18 ou plus, qui exécute le TypeScript directement).
 - `npm run preview` : sert le build local.
+- `node scripts/icon/render.mjs` : régénère les icônes de `public/` depuis `scripts/icon/icon.html` (nécessite Google Chrome).
 - `npm run lock:refresh` : régénère `package-lock.json`. À lancer après tout ajout ou mise à jour de dépendance : sur Mac, npm oublie des dépendances optionnelles Linux et `npm ci` échoue dans GitHub Actions.
 
-Organisation : `src/cards/` (types, validation, catalogue), `src/scheduler/` (FSRS, rejeu du journal, composition des sessions : modules purs et testés), `src/data/` (IndexedDB via Dexie, contexte React, pilotage de session), `src/components/`, `src/screens/`, `scripts/validate-cards.ts`. Le déploiement est dans `.github/workflows/deploy.yml`.
+Organisation : `src/cards/` (types, validation, catalogue), `src/scheduler/` (FSRS, rejeu du journal, composition des sessions : modules purs et testés), `src/data/` (IndexedDB via Dexie, contexte React, pilotage de session, sauvegarde), `src/components/`, `src/screens/`, `scripts/validate-cards.ts`. Le déploiement est dans `.github/workflows/deploy.yml`.
 
 ## Ajouter un chapitre
 
