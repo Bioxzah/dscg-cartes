@@ -1,4 +1,5 @@
 import type { Card, Deck, DeckFile, Theme } from './types.ts';
+import type { PlannerCard } from '../scheduler/types.ts';
 
 export interface ThemeNode {
   deck: Deck;
@@ -86,3 +87,10 @@ export const TYPE_LABELS: Partial<Record<Card['type'], string>> = {
   cas: 'Cas pratique',
   memo: 'Mémo',
 };
+
+/** Every card in catalog order (UE, chapter, theme order, file order), as the planner needs it. */
+export function plannerCards(catalog: Catalog): PlannerCard[] {
+  return catalog.tree.flatMap((ue) =>
+    ue.chapters.flatMap((ch) => ch.themes.flatMap((t) => t.cards.map((c) => ({ id: c.id, deckId: ch.deck.id, themeId: t.theme.id })))),
+  );
+}
