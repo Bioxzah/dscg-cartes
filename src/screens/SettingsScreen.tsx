@@ -48,6 +48,10 @@ export function SettingsScreen() {
           <Stepper label="Plafond de révisions" value={settings.reviewCap} min={10} max={500} step={10} onChange={(v) => void updateSettings({ reviewCap: v })} />
         </div>
         <div className="kv">
+          <span>Jours de révision par semaine<br /><span className="muted small">le jour de repos est libre</span></span>
+          <Stepper label="Jours de révision par semaine" value={settings.daysPerWeek} min={3} max={7} step={1} onChange={(v) => void updateSettings({ daysPerWeek: v })} />
+        </div>
+        <div className="kv">
           <span>Finir les nouvelles cartes<br /><span className="muted small">jours avant l’examen</span></span>
           <Stepper label="Jours avant l’examen pour avoir vu toutes les cartes" value={settings.introBufferDays} min={0} max={180} step={15} onChange={(v) => void updateSettings({ introBufferDays: v })} />
         </div>

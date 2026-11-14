@@ -14,6 +14,7 @@ import {
   type LoadDay,
 } from '../scheduler/dashboard.ts';
 import { countMastery } from '../scheduler/stats.ts';
+import type { Projection } from '../scheduler/dashboard.ts';
 
 const pct = (x: number) => `${Math.round(x * 100)} %`;
 const fmtDay = new Intl.DateTimeFormat('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
@@ -55,27 +56,51 @@ function ProjectionPanel({ data }: { data: AppData }) {
             <div className="panel tile">
               <div className="label">Maîtrisées à l’examen</div>
               <div className="tile-value">{p.masteredAtExam} <span className="tile-of">/ {p.totalCards}</span></div>
-              <div className="muted small">le {fmtLong(p.examDate)}, au rythme actuel : {fmtPace(p.pace)} nouvelle{p.pace >= 2 ? 's' : ''} carte{p.pace >= 2 ? 's' : ''} par jour{p.paceFromHistory ? '' : ' (ton réglage, faute d’historique)'}</div>
+              <div className="muted small">le {fmtLong(p.examDate)}, en gardant ton rythme ({fmtPace(p.pace)} nouvelle{p.pace >= 2 ? 's' : ''} carte{p.pace >= 2 ? 's' : ''} par jour de révision{p.paceFromHistory ? '' : ', ton réglage'})</div>
             </div>
-            <div className="panel tile">
-              <div className="label">Rythme nécessaire</div>
-              <div className="tile-value">{p.neededPace === null ? '—' : fmtPace(p.neededPace)} <span className="tile-of">/ jour</span></div>
-              <div className="muted small">
-                {p.unseenActive === 0
-                  ? 'Toutes les cartes actives sont déjà vues.'
-                  : p.neededPace === null
-                    ? `La date limite (${fmtLong(p.introDeadline)}) est passée.`
-                    : `pour voir les ${p.unseenActive} cartes restantes avant le ${fmtLong(p.introDeadline)}`}
-              </div>
-            </div>
+            <PaceTile p={p} data={data} />
           </div>
           <p className="muted small hint">
-            Simulation FSRS jour par jour avec ton taux de réussite ({pct(p.successRate)}), sur les {p.totalCards} cartes déjà dans l’app.
-            La marge avant l’examen se règle dans Réglages.
+            Simulation FSRS sur {data.settings.daysPerWeek} jours de révision par semaine, avec ton taux de réussite ({pct(p.successRate)}),
+            sur les {p.totalCards} cartes déjà dans l’app. Chaque nouveau chapitre ajouté met la projection à jour.
           </p>
         </div>
       )}
     </section>
+  );
+}
+
+/** Either a reassurance, or one gentle adjustment the user can apply in one tap. */
+function PaceTile({ p, data }: { p: Projection; data: AppData }) {
+  const needed = p.neededPace === null ? null : Math.ceil(p.neededPace);
+  return (
+    <div className="panel tile">
+      <div className="label">Pour tout voir à temps</div>
+      {p.unseenActive === 0 ? (
+        <>
+          <div className="tile-value goal-done">Tout vu</div>
+          <div className="muted small">Place aux révisions : chaque jour consolide ce que tu sais.</div>
+        </>
+      ) : needed === null ? (
+        <>
+          <div className="tile-value">{p.unseenActive}</div>
+          <div className="muted small">cartes encore à découvrir, à ton rythme : chacune compte.</div>
+        </>
+      ) : p.settingIsEnough ? (
+        <>
+          <div className="tile-value goal-done">C’est bon</div>
+          <div className="muted small">Tes {data.settings.newPerDay} nouvelles cartes par jour suffisent pour tout voir avant le {fmtLong(p.introDeadline)}.</div>
+        </>
+      ) : (
+        <>
+          <div className="tile-value">{needed} <span className="tile-of">/ jour</span></div>
+          <div className="muted small">nouvelles cartes par jour de révision pour tout voir avant le {fmtLong(p.introDeadline)}.</div>
+          <button type="button" className="secondary small-btn" onClick={() => void data.updateSettings({ newPerDay: needed })}>
+            Passer à {needed} par jour
+          </button>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -293,9 +318,9 @@ function WeakPanel({ data, ids, now }: { data: AppData; ids: string[]; now: Date
 
   return (
     <section aria-labelledby="weak-title">
-      <h2 className="section-title" id="weak-title">Cartes faibles {items.length > 0 && `(${items.length})`}</h2>
+      <h2 className="section-title" id="weak-title">À consolider {items.length > 0 && `(${items.length})`}</h2>
       {items.length === 0 ? (
-        <div className="panel notice">Aucune carte faible pour l’instant : une carte y entre quand tu la rates deux fois, ou à sa dernière révision.</div>
+        <div className="panel notice">Rien à consolider pour l’instant. Une carte apparaît ici quand elle t’a résisté deux fois, ou à sa dernière révision : c’est la liste à travailler avec Claude.</div>
       ) : (
         <>
           <button type="button" className="primary" onClick={() => void copy()}>Copier mes points faibles</button>

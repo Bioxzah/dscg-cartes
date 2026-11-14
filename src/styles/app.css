@@ -480,7 +480,8 @@ label.kv { cursor: pointer; }
    activity = --vert at 50 / 68 / 84 / 100 %; load bars = --bleu (80 % in dark mode). */
 
 .dashboard section + section { margin-top: 8px; }
-.tiles.two { grid-template-columns: repeat(2, 1fr); margin-top: 0; }
+.tiles.two { grid-template-columns: repeat(2, 1fr); }
+.dashboard .tiles.two { margin-top: 0; }
 .tile-of { font-size: 15px; font-weight: 400; color: var(--muted); }
 .stale { opacity: .6; }
 
@@ -580,3 +581,25 @@ label.kv { cursor: pointer; }
 
 /* Hero and tile figures use the body face (dataviz guidance), proportional digits. */
 .stat-value, .tile-value { font-family: var(--font-body); font-weight: 700; letter-spacing: -.01em; }
+
+/* ---------- Weekly goal ---------- */
+
+.week-tile { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 2px 16px; }
+.week-tile .label, .week-tile .muted { grid-column: 1 / -1; }
+.week-dots { display: flex; justify-content: flex-end; gap: 6px; margin: 4px 0; }
+.week-dot {
+  flex: 1;
+  max-width: 32px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--wash);
+  color: var(--muted);
+  font: 500 12px/1 var(--font-mono);
+}
+.week-dot.on { background: var(--vert); color: var(--surface); }
+.week-dot.today { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.goal-done { color: var(--vert); }
+.small-btn { min-height: 44px; margin-top: 10px; padding: 8px 12px; font-size: 14px; }

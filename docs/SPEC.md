@@ -79,7 +79,7 @@ Conséquence : fusionner deux appareils revient à réunir leurs journaux. Il n'
 
 ### 4.3 Réglages
 
-Un seul objet par utilisateur : nouvelles cartes par jour (15 par défaut), plafond de révisions par jour (100), thèmes en pause, date de l'examen (25 octobre 2027 par défaut, modifiable ; dates officielles des épreuves à confirmer), heure de changement de jour (4 h), marge avant l'examen pour avoir vu toutes les cartes (60 jours par défaut, décision du jalon 5). En cas de conflit, la version la plus récente l'emporte.
+Un seul objet par utilisateur : nouvelles cartes par jour (15 par défaut), plafond de révisions par jour (100), thèmes en pause, date de l'examen (25 octobre 2027 par défaut, modifiable ; dates officielles des épreuves à confirmer), heure de changement de jour (4 h), marge avant l'examen pour avoir vu toutes les cartes (60 jours par défaut, décision du jalon 5), jours de révision par semaine (6 par défaut, jour de repos libre). En cas de conflit, la version la plus récente l'emporte.
 
 ### 4.4 Schéma Supabase
 
@@ -145,7 +145,8 @@ La logique de planification et de composition de session est un module pur, sans
 
 - Bouton principal « Réviser » avec le nombre de cartes : dues, nouvelles, en apprentissage.
 - Compte à rebours jusqu'à l'examen.
-- Série de jours consécutifs et temps passé aujourd'hui.
+- Objectif de la semaine (6 jours sur 7 par défaut, jour de repos libre) avec le nombre de semaines réussies de suite, et temps passé aujourd'hui. Pas de série de jours consécutifs : un jour de repos ne doit jamais rien casser.
+- Ton : l'app motive, elle ne culpabilise pas. Jamais de compteur de « retard » ni de couleur d'alerte sur la progression.
 - État de synchronisation.
 - État vide : « Rien à réviser aujourd'hui », avec la prochaine échéance et l'accès à la session libre.
 
