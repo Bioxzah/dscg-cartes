@@ -1,5 +1,7 @@
 // The only place that writes to IndexedDB. The journal is append-only: no delete anywhere.
 import { DEFAULT_SETTINGS, type Grade, type Review, type Settings } from '../scheduler/types.ts';
+import { mergeReviews, pickSettings } from '../scheduler/merge.ts';
+import { BACKUP_APP, BACKUP_FORMAT, type Backup } from './backup.ts';
 import { db, type StoredReview } from './db.ts';
 
 function deviceLabel(): string {
@@ -49,4 +51,45 @@ export async function saveSettings(data: Settings): Promise<void> {
 
 export function withDefaults(data: Partial<Settings> | undefined): Settings {
   return { ...DEFAULT_SETTINGS, ...data };
+}
+
+// ---------- Backup ----------
+
+export async function buildBackup(now: Date): Promise<Backup> {
+  const [rows, settings] = await Promise.all([db.reviews.toArray(), db.settings.get('me')]);
+  return {
+    app: BACKUP_APP,
+    format: BACKUP_FORMAT,
+    exported_at: now.toISOString(),
+    device: await getDevice(),
+    reviews: rows.map(({ synced: _synced, ...review }) => review),
+    settings: settings ? { data: settings.data, updated_at: settings.updated_at } : null,
+  };
+}
+
+export async function markExported(at: Date): Promise<void> {
+  await db.meta.put({ key: 'lastExport', value: at.toISOString() });
+}
+
+export interface ImportResult {
+  added: number;
+  cancelled: number;
+  settingsUpdated: boolean;
+}
+
+/** Merges a backup into the local data. Never deletes anything. */
+export async function importBackup(backup: Backup): Promise<ImportResult> {
+  return db.transaction('rw', db.reviews, db.settings, async () => {
+    const local = await db.reviews.toArray();
+    const { toAdd, toCancel } = mergeReviews(local, backup.reviews);
+    await db.reviews.bulkAdd(toAdd.map((r) => ({ ...r, synced: 0 as const })));
+    for (const id of toCancel) await db.reviews.update(id, { annulee: true, synced: 0 });
+
+    const current = (await db.settings.get('me')) ?? null;
+    const chosen = pickSettings(current && { data: current.data, updated_at: current.updated_at }, backup.settings);
+    const settingsUpdated = chosen !== null && chosen === backup.settings && chosen.updated_at !== current?.updated_at;
+    if (chosen && settingsUpdated) await db.settings.put({ key: 'me', data: chosen.data, updated_at: chosen.updated_at });
+
+    return { added: toAdd.length, cancelled: toCancel.length, settingsUpdated };
+  });
 }

@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { BackupPanel } from '../components/BackupPanel.tsx';
 import { useAppData } from '../data/AppData.tsx';
 import type { Appearance } from '../scheduler/types.ts';
 
@@ -21,6 +23,11 @@ function Stepper({ value, min, max, step, onChange, label }: { value: number; mi
 
 export function SettingsScreen() {
   const { settings, updateSettings } = useAppData();
+  const [persisted, setPersisted] = useState<boolean | null>(null);
+  useEffect(() => {
+    if (navigator.storage?.persisted) void navigator.storage.persisted().then(setPersisted);
+    else setPersisted(false);
+  }, []);
 
   return (
     <main className="screen">
@@ -68,8 +75,12 @@ export function SettingsScreen() {
         </div>
       </div>
 
+      <h2 className="section-title">Sauvegarde</h2>
+      <BackupPanel />
+
       <h2 className="section-title">Application</h2>
       <div className="panel">
+        <div className="kv"><span>Stockage protégé</span><span className="muted">{persisted === null ? '…' : persisted ? 'oui' : 'non'}</span></div>
         <div className="kv"><span>Version</span><span className="muted">{__APP_VERSION__}</span></div>
         <div className="kv"><span>Déployée le</span><span className="muted">{buildDate}</span></div>
       </div>
