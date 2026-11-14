@@ -11,13 +11,16 @@ import { App } from './App.tsx';
 import { catalog } from './cards/load.ts';
 import { AppDataProvider } from './data/AppData.tsx';
 import { createScheduler } from './scheduler/fsrs.ts';
+import { SyncProvider } from './sync/SyncProvider.tsx';
 
 const scheduler = await createScheduler();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppDataProvider catalog={catalog} scheduler={scheduler}>
-      <App />
+      <SyncProvider>
+        <App />
+      </SyncProvider>
     </AppDataProvider>
   </StrictMode>,
 );
