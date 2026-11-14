@@ -1,0 +1,64 @@
+/* Variables de style reprises des fiches DSCG.
+   Une teinte par thème : --<couleur> pour le trait et le texte d'accent, --<couleur>-soft pour les fonds.
+   Pastilles de sanction : nul (le contrat disparaît), di (de l'argent), exe (le contrat est maintenu), cl (une clause est neutralisée). */
+
+:root {
+  --bg: #f4f6fa; --surface: #ffffff; --ink: #172033; --muted: #566178; --line: #dce1ea; --wash: #eef1f6;
+
+  --ardoise: #44506a;  --ardoise-soft: #e9ecf2;
+  --sarcelle: #0b7a75; --sarcelle-soft: #dff3f1;
+  --bleu: #2a5bd7;     --bleu-soft: #e3ebfd;
+  --violet: #7440c4;   --violet-soft: #efe6fb;
+  --vert: #33793a;     --vert-soft: #e3f2e4;
+  --rouge: #bf3350;    --rouge-soft: #fbe5ea;
+
+  --nul: #b3261e; --nul-soft: #fde7e5;
+  --di: #8a5a00;  --di-soft: #fdf0d0;
+  --exe: #1f6f43; --exe-soft: #def3e6;
+  --cl: #5b3fb5;  --cl-soft: #ebe6fb;
+
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --radius-card: 12px;
+  --radius-pill: 999px;
+}
+
+/* Sombre : selon le système, sauf choix explicite de l'utilisateur. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10141c; --surface: #181d28; --ink: #e9edf5; --muted: #9ba6bb; --line: #2b3344; --wash: #1f2532;
+    --ardoise: #aab4c8;  --ardoise-soft: #232a38;
+    --sarcelle: #4fd0c8; --sarcelle-soft: #12302f;
+    --bleu: #86a8ff;     --bleu-soft: #1a2747;
+    --violet: #c19bff;   --violet-soft: #2a1f45;
+    --vert: #7fd088;     --vert-soft: #182f1c;
+    --rouge: #ff8fa5;    --rouge-soft: #3d1a24;
+    --nul: #ff9a92; --nul-soft: #3f1b19;
+    --di: #f2c261;  --di-soft: #3a2c0c;
+    --exe: #7fd9a4; --exe-soft: #143021;
+    --cl: #bfaaff;  --cl-soft: #2a2148;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10141c; --surface: #181d28; --ink: #e9edf5; --muted: #9ba6bb; --line: #2b3344; --wash: #1f2532;
+  --ardoise: #aab4c8;  --ardoise-soft: #232a38;
+  --sarcelle: #4fd0c8; --sarcelle-soft: #12302f;
+  --bleu: #86a8ff;     --bleu-soft: #1a2747;
+  --violet: #c19bff;   --violet-soft: #2a1f45;
+  --vert: #7fd088;     --vert-soft: #182f1c;
+  --rouge: #ff8fa5;    --rouge-soft: #3d1a24;
+  --nul: #ff9a92; --nul-soft: #3f1b19;
+  --di: #f2c261;  --di-soft: #3a2c0c;
+  --exe: #7fd9a4; --exe-soft: #143021;
+  --cl: #bfaaff;  --cl-soft: #2a2148;
+  color-scheme: dark;
+}
+
+/* Repères typographiques
+   Titre d'écran : var(--font-display) 800, 28 à 34 px
+   Question de carte : var(--font-body) 700, 20 à 22 px
+   Texte : var(--font-body) 400, 16 à 17 px, interligne 1.5
+   Étiquettes : var(--font-mono) 500, 12 px, capitales, espacement .08em */
