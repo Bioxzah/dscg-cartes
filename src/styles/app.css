@@ -441,3 +441,35 @@ label.kv { cursor: pointer; }
 .kv.actions .secondary { flex: 1 1 180px; min-height: 48px; font-size: 15px; }
 .backup-msg { margin: 10px 2px 0; color: var(--exe); font-weight: 700; }
 .backup-msg.error { color: var(--nul); }
+
+/* ---------- Sync ---------- */
+
+.sync-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  margin: -12px 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.sync-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+.sync-status.ok .sync-dot { background: var(--exe); }
+.sync-status.bad .sync-dot { background: var(--nul); }
+.sync-status.bad { color: var(--nul); }
+.sync-text.ok { color: var(--exe); }
+.sync-text.bad { color: var(--nul); }
+.sync-text { text-align: right; }
+.ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+
+.login { display: flex; flex-direction: column; gap: 10px; padding: 16px; }
+.login p { margin: 0 0 4px; }
+.login input {
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  font-size: 16px;
+}

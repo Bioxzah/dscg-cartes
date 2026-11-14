@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { CardView } from '../components/CardView.tsx';
 import { useAppData } from '../data/AppData.tsx';
+import { useSync } from '../sync/SyncProvider.tsx';
 import { useSession, type SessionMode } from '../data/useSession.ts';
 import { formatDuration, formatInterval } from '../scheduler/format.ts';
 import { recap, remaining } from '../scheduler/session.ts';
@@ -28,6 +29,14 @@ function SessionScreen({ mode }: { mode: SessionMode }) {
   const data = useAppData();
   const navigate = useNavigate();
   const { session, rate, undo, preview, canUndo } = useSession(data, mode);
+  const { requestSync } = useSync();
+
+  // Sync at the end of a session (spec §4.5), and when leaving it early.
+  const finished = session.current === null;
+  useEffect(() => {
+    if (finished) requestSync();
+  }, [finished, requestSync]);
+  useEffect(() => () => requestSync(), [requestSync]);
   // The answer is visible for one session state only: any answer or undo hides it again.
   const [revealedFor, setRevealedFor] = useState<typeof session | null>(null);
   const revealed = revealedFor === session;

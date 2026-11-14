@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { SyncStatus } from '../components/SyncStatus.tsx';
 import { useAppData, useNow } from '../data/AppData.tsx';
 import { planFor } from '../data/useSession.ts';
 import { daysUntil, parseLocalDate } from '../scheduler/day.ts';
@@ -24,6 +25,7 @@ export function TodayScreen() {
   return (
     <main className="screen">
       <h1 className="screen-title">Aujourd’hui</h1>
+      <SyncStatus />
 
       {total > 0 ? (
         <Link className="panel start" to="/session">

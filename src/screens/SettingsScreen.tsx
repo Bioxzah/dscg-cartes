@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AccountPanel } from '../components/AccountPanel.tsx';
 import { BackupPanel } from '../components/BackupPanel.tsx';
 import { useAppData } from '../data/AppData.tsx';
 import type { Appearance } from '../scheduler/types.ts';
@@ -32,6 +33,9 @@ export function SettingsScreen() {
   return (
     <main className="screen">
       <h1 className="screen-title">Réglages</h1>
+
+      <h2 className="section-title">Compte et synchronisation</h2>
+      <AccountPanel />
 
       <h2 className="section-title">Révisions</h2>
       <div className="panel">
