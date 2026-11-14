@@ -7,7 +7,7 @@
 #   pipeline/bin/process.sh                  process what is pending
 #   DSCG_SETTLE=0 pipeline/bin/process.sh    same, without waiting for Drive to settle
 #   Tests: DSCG_DRIVE, DSCG_STATE and DSCG_CLAUDE replace the Drive folder, the state folder and
-#   the Claude binary; DSCG_NO_PUSH=1 commits without pushing.
+#   the Claude binary; DSCG_NO_PUSH=1 commits without pushing and shows no notification.
 #
 # Note: replace this file with `mv` (new inode), never edit it in place while a run is going on.
 
@@ -22,7 +22,7 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 renice -n 15 -p $$ >/dev/null 2>&1 || true
 
 log() { echo "[$(date '+%F %T')] $*"; }
-notify() { osascript -e "display notification \"${2//\"/\'}\" with title \"DSCG Cartes\" subtitle \"${1//\"/\'}\"" >/dev/null 2>&1 || true; }
+notify() { [ -n "${DSCG_NO_PUSH:-}" ] && return; osascript -e "display notification \"${2//\"/\'}\" with title \"DSCG Cartes\" subtitle \"${1//\"/\'}\"" >/dev/null 2>&1 || true; }
 
 # One run at a time. A stale lock (older than 4 h) is from a crashed run.
 LOCK="$STATE/lock"
