@@ -105,6 +105,17 @@ Corrige cartes.json (et meta.json si besoin) jusqu'à ce que « $CHECK cartes.js
   (cd "$work" && $CHECK cartes.json "$deck" "$@" > check.log 2>&1)
 }
 
+# Second pass by a separate Claude run: checks every rule and source, fixes errors in place.
+verify() {
+  local work="$1" ue="$2" num="$3" deck="$4" scope="$5" extends="$6"
+  log "Vérification par une seconde passe"
+  local prompt
+  prompt="$(P_UE="$ue" P_NUM="$num" P_DECK="$deck" P_SCOPE="$scope" P_EXTENDS="$extends" P_CHECK="$CHECK" \
+    P_DATE="$(date '+%-d/%m/%Y')" fill "$PIPE/VERIFY_PROMPT.md")"
+  (cd "$work" && with_timeout 7200 nice -n 15 "$CLAUDE" -p "$prompt" --permission-mode acceptEdits --allowedTools "$TOOLS" --output-format text > verify.log 2>&1)
+  log "Vérification terminée (code $?) : $(grep -c '' "$work/verification.md" 2>/dev/null || echo 0) lignes de rapport"
+}
+
 fail() {
   local key="$1" sig="$2" title="$3" text="$4"
   log "Échec : $text"
@@ -159,6 +170,10 @@ process_new() {
   fi
   if ! check_cards "$work" "$deck"; then
     fail "$key" "$sig" "Cartes refusées" "Chapitre $num : les cartes ne passent pas le contrôle. Journal : $work"; return
+  fi
+  verify "$work" "$ue" "$num" "$deck" "Vérifie toute la fiche et toutes les cartes." ""
+  if ! check_cards "$work" "$deck"; then
+    fail "$key" "$sig" "Cartes refusées" "Chapitre $num : les cartes ne passent plus le contrôle après vérification. Journal : $work"; return
   fi
   grep -q "Ce qui change par rapport au cours" "$work/fiche.html" || log "Attention : synthèse de fin de fiche absente"
 
@@ -236,6 +251,10 @@ process_update() {
   fi
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent pas le contrôle. Journal : $work"; return
+  fi
+  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans le bloc « Mise à jour » de la fiche avec la correction proposée." " --extends cartes-actuelles.json"
+  if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
+    fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent plus le contrôle après vérification. Journal : $work"; return
   fi
   if ! (cd "$PIPE" && node tools/fiche-pdf.cjs "$work/fiche.html" "$work/$pdfname" >> "$work/claude.log" 2>&1); then
     fail "$key" "$sig" "Mise à jour non faite" "Chapitre $num : le PDF n'a pas pu être créé. Journal : $work"; return

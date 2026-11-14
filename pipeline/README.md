@@ -6,6 +6,7 @@ Sur le Mac de Hugo : quand un cours (PDF) arrive dans `Mon Drive > DSCG > UE 1 -
 2. `bin/process.sh` cherche les dossiers `Chap N…` qui contiennent un PDF mais pas de `Fiche - Chapitre N - ….pdf`, ainsi que les PDF déposés directement dans le dossier de l'UE (il crée alors `Chap N - <Titre>` et y range le cours).
 3. Il extrait le texte de tous les PDF du chapitre (cours et documents du professeur), puis lance Claude Code sans interface avec `PROMPT.md` et `CONVENTIONS.md` (le kit de fiches, adapté). Claude écrit `fiche.html`, `cartes.json` et `meta.json`.
 4. Les cartes passent `tools/check-cards.mjs` (règles de l'app, identifiants globaux). En cas d'erreur, Claude a un tour de correction.
+4 bis. **Seconde passe de vérification** (`VERIFY_PROMPT.md`) : une autre exécution de Claude contrôle chaque règle, délai, sanction, arrêt et numéro d'article en vigueur (Légifrance via WebSearch, la lecture directe étant bloquée), corrige la fiche et les cartes avant publication, et écrit `verification.md` dans le dossier de travail.
 5. `tools/fiche-pdf.cjs` tire le PDF A4 (Chrome installé), rangé à côté du cours. Les cartes vont dans `cards/`, sont validées, commitées seules et poussées : l'app se met à jour.
 6. Une notification macOS annonce le résultat.
 

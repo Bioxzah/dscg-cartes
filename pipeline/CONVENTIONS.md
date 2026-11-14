@@ -28,7 +28,7 @@ Les textes du cours et des documents du professeur sont dans `entrees/` (extrait
 
 1. **Lis tout le PDF** avant d'écrire. Liste les notions du chapitre et leur logique d'enchaînement.
 2. **Compare avec le programme 2027 de l'UE 1.** Repère ce qui manque et ce qui est hors programme.
-3. **Vérifie le droit.** Chaque règle, condition, délai, sanction et arrêt doit être contrôlé sur une source fiable : Légifrance en priorité, puis la doctrine ou les sites spécialisés. Les cours contiennent des erreurs : ne les recopie jamais.
+3. **Vérifie le droit.** Chaque règle, condition, délai, sanction et arrêt doit être contrôlé sur une source fiable : Légifrance en priorité, puis la doctrine ou les sites spécialisés. Les cours contiennent des erreurs : ne les recopie jamais. Légifrance refuse la lecture directe : interroge-le avec WebSearch limité au domaine `legifrance.gouv.fr`. Cite toujours le numéro d'article **en vigueur** (plusieurs codes ont été renumérotés). Une seconde passe indépendante vérifiera ensuite ton travail.
 4. **Arrête ton plan** : sections, notions traitées en cartes syllogisme, tableaux, corrections importantes. Personne ne le valide : il doit tenir seul.
 5. **Rédige la fiche**, puis les cartes, puis la synthèse de fin de fiche.
 6. **Vérifie les cartes** avec `node <pipeline>/tools/check-cards.mjs cartes.json` (le chemin exact t'est donné dans la consigne) et corrige jusqu'à ce qu'il n'y ait plus d'erreur.
