@@ -37,7 +37,7 @@ export const DEFAULT_SETTINGS: Settings = {
   reviewCap: 100,
   pausedThemes: [],
   pausedDecks: [],
-  examDate: '2027-10-01',
+  examDate: '2027-10-25',
   dayStartHour: 4,
   appearance: 'auto',
   introBufferDays: 60,
