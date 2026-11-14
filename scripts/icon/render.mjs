@@ -31,6 +31,7 @@ const waiting = new Map();
 ws.addEventListener('message', (e) => { const m = JSON.parse(e.data); waiting.get(m.id)?.(m); });
 const send = (method, params = {}) => new Promise((r) => { waiting.set(++id, r); ws.send(JSON.stringify({ id, method, params })); });
 
+try {
 for (const t of targets) {
   await send('Emulation.setDeviceMetricsOverride', { width: t.size, height: t.size, deviceScaleFactor: 1, mobile: false });
   await send('Page.navigate', { url: `file://${join(here, 'icon.html')}?size=${t.size}${t.maskable ? '&maskable' : ''}` });
@@ -49,5 +50,7 @@ for (const t of targets) {
   writeFileSync(join(out, t.file), Buffer.from(shot.result.data, 'base64'));
   console.log('wrote', t.file);
 }
-ws.close();
-proc.kill();
+} finally {
+  ws.close();
+  proc.kill();
+}
