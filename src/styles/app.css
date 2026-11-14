@@ -405,3 +405,39 @@ label.kv { cursor: pointer; }
 
 .recap { display: grid; grid-template-columns: repeat(3, 1fr); padding: 16px 8px; text-align: center; }
 .recap .stat-value { font-size: 28px; }
+
+/* ---------- Update banner ---------- */
+
+.update-banner {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 680px;
+  margin: 8px auto 0;
+  padding: 8px 8px 8px 16px;
+  border-radius: var(--radius-card);
+  background: var(--bleu-soft);
+  color: var(--bleu);
+  font-weight: 700;
+}
+.update-banner button {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--bleu);
+  color: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ---------- Backup ---------- */
+
+.kv.actions { flex-wrap: wrap; gap: 8px; }
+.kv.actions .secondary { flex: 1 1 180px; min-height: 48px; font-size: 15px; }
+.backup-msg { margin: 10px 2px 0; color: var(--exe); font-weight: 700; }
+.backup-msg.error { color: var(--nul); }
