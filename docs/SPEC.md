@@ -73,7 +73,7 @@ Règles :
 
 La source de vérité est le journal des révisions. L'état de chaque carte (stabilité, difficulté, échéance) est recalculé en rejouant le journal avec FSRS, puis mis en cache localement.
 
-Une révision : `id` (uuid créé sur l'appareil), `card_id`, `rating` (1 à revoir, 3 correct, 4 facile), `reviewed_at`, `duration_ms`, `device`, `annulee` (booléen).
+Une révision : `id` (uuid créé sur l'appareil), `card_id`, `rating` (1 à revoir, 3 correct, 4 facile), `reviewed_at`, `duration_ms`, `device`, `annulee` (booléen), `libre` (booléen : révision faite en session libre, qui ne compte pas dans les limites du jour).
 
 Conséquence : fusionner deux appareils revient à réunir leurs journaux. Il n'y a pas de conflit d'état à arbitrer. Le rejeu doit être déterministe : mêmes révisions, même état, quel que soit l'appareil.
 
@@ -93,6 +93,7 @@ create table reviews (
   duration_ms integer,
   device text,
   annulee boolean not null default false,
+  libre boolean not null default false,
   updated_at timestamptz not null default now()
 );
 create index reviews_user_updated on reviews (user_id, updated_at);
@@ -126,6 +127,7 @@ Ajouter un déclencheur qui met `updated_at` à `now()` à chaque écriture sur 
 ## 5. Planification
 
 - FSRS via `ts-fsrs`, rétention visée 0,90, étapes courtes activées : une carte ratée revient dans la même session.
+- Étapes courtes de 5 minutes (décision du jalon 2, fondée sur la recherche sur la pratique du rappel : Karpicke et Roediger 2007, Pyc et Rawson 2009, Rawson et Dunlosky 2011). Une carte ratée, ou une nouvelle carte notée « Correct », revient environ 5 minutes plus tard ; un rappel réussi après ce délai la confie à FSRS pour les jours suivants. « Facile » sur une nouvelle carte la fait passer directement aux jours suivants.
 - Trois boutons : « À revoir » (1), « Correct » (3), « Facile » (4). La note « Difficile » (2) n'est pas proposée.
 - Session du jour, dans cet ordre de priorité :
   1. cartes en cours d'apprentissage arrivées à échéance ;
@@ -133,7 +135,7 @@ Ajouter un déclencheur qui met `updated_at` à `now()` à chaque écriture sur 
   3. nouvelles cartes, jusqu'à la limite du jour, prises dans les thèmes actifs, par ordre de thème puis de fichier, et réparties au fil de la session.
 - Une journée commence à 4 h, heure locale.
 - Une carte ratée ne revient pas avant au moins trois autres cartes, sauf s'il n'en reste plus.
-- « Session libre » : réviser un thème choisi sans attendre l'échéance. Ces révisions comptent dans le journal.
+- « Session libre » : réviser un thème choisi sans attendre l'échéance. Ces révisions comptent dans le journal. Au plus 20 cartes : d'abord celles dont la probabilité de rappel est la plus faible, puis des nouvelles. Elles ne comptent pas dans les limites du jour (champ `libre`).
 
 La logique de planification et de composition de session est un module pur, sans accès au stockage ni à l'horloge (l'heure est passée en paramètre), couvert par des tests.
 
