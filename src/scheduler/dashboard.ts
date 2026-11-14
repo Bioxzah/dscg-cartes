@@ -149,7 +149,7 @@ export interface Projection {
   totalCards: number;
   seenNow: number;
   unseenActive: number;
-  /** New cards per day over the last 14 days (or the daily setting without history). */
+  /** New cards per study day over the last 14 days (or the daily setting without history). */
   pace: number;
   paceFromHistory: boolean;
   /** Success rate used for the simulation. */
@@ -158,8 +158,10 @@ export interface Projection {
   seenAtExam: number;
   /** Date by which every card should have been seen (exam minus the buffer). */
   introDeadline: Date;
-  /** New cards per day needed to see every active card by the deadline (null when the deadline is past). */
+  /** New cards per study day needed to see every active card by the deadline (null when the deadline is past). */
   neededPace: number | null;
+  /** True when the daily new-card setting is enough to see every active card by the deadline. */
+  settingIsEnough: boolean;
 }
 
 /** Deterministic pseudo-random in [0, 1) from a string. */
@@ -181,9 +183,10 @@ interface ProjectionInput {
 }
 
 /**
- * Simulates day by day until the exam: due cards are reviewed at noon, answered correctly with
- * the observed success rate (a failure is relearned 5 minutes later); new cards are introduced at
- * the observed pace, in catalog order, from active themes. A card counts as mastered on exam day
+ * Simulates day by day until the exam, with `daysPerWeek` study days per week (rest days carry
+ * their due cards over to the next study day): due cards are reviewed at noon, answered correctly
+ * with the observed success rate (a failure is relearned 5 minutes later); new cards are introduced
+ * at the observed pace, in catalog order, from active themes. A card counts as mastered on exam day
  * when its stability reaches 21 days.
  */
 export function project({ cards, memory, log, settings, scheduler, now }: ProjectionInput): Projection {
@@ -200,8 +203,9 @@ export function project({ cards, memory, log, settings, scheduler, now }: Projec
     activeDays.add(studyDayKey(new Date(l.review.reviewed_at), settings.dayStartHour));
     if (l.before === State.New && Date.parse(l.review.reviewed_at) >= since) started.add(l.review.card_id);
   }
+  const studyShare = Math.min(7, Math.max(1, settings.daysPerWeek)) / 7;
   const paceFromHistory = activeDays.size >= 3;
-  const pace = paceFromHistory ? started.size / 14 : settings.newPerDay;
+  const pace = paceFromHistory ? started.size / (14 * studyShare) : settings.newPerDay;
 
   const observed = successRate(log, now);
   const p = observed.count >= 30 && observed.rate !== null ? observed.rate : SCHEDULER_OPTIONS.desiredRetention;
@@ -217,6 +221,8 @@ export function project({ cards, memory, log, settings, scheduler, now }: Projec
 
   let budget = 0;
   for (let d = 0; d < daysLeft; d++) {
+    // Rest days: the last (7 - daysPerWeek) days of each simulated week.
+    if (d % 7 >= settings.daysPerWeek) continue;
     const noon = new Date(today.getFullYear(), today.getMonth(), today.getDate() + d, 12);
     const dayEnd = new Date(today.getFullYear(), today.getMonth(), today.getDate() + d + 1, settings.dayStartHour).getTime();
     const review = (id: string, card: FsrsCard, at: Date): FsrsCard => {
@@ -247,7 +253,9 @@ export function project({ cards, memory, log, settings, scheduler, now }: Projec
 
   const introDeadline = new Date(examDate.getFullYear(), examDate.getMonth(), examDate.getDate() - settings.introBufferDays);
   const daysToDeadline = Math.round((introDeadline.getTime() - today.getTime()) / DAY_MS);
-  const neededPace = unseenActive === 0 ? 0 : daysToDeadline > 0 ? unseenActive / daysToDeadline : null;
+  const studyDaysToDeadline = daysToDeadline * studyShare;
+  const neededPace = unseenActive === 0 ? 0 : studyDaysToDeadline >= 1 ? unseenActive / studyDaysToDeadline : null;
+  const settingIsEnough = neededPace !== null && settings.newPerDay >= neededPace;
 
   return {
     examDate,
@@ -262,5 +270,6 @@ export function project({ cards, memory, log, settings, scheduler, now }: Projec
     seenAtExam: state.size,
     introDeadline,
     neededPace,
+    settingIsEnough,
   };
 }

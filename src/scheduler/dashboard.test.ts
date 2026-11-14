@@ -97,7 +97,8 @@ describe('project', () => {
     expect(p.seenAtExam).toBe(200);
     expect(p.masteredAtExam).toBeGreaterThan(180);
     expect(p.introDeadline).toEqual(new Date(2027, 7, 2));
-    expect(p.neededPace).toBeCloseTo(200 / 260, 2);
+    expect(p.neededPace).toBeCloseTo(200 / (260 * 6 / 7), 2);
+    expect(p.settingIsEnough).toBe(true);
   });
 
   it('with a slow observed pace, does not see every card', () => {
@@ -105,9 +106,24 @@ describe('project', () => {
     const { cards: memory, log } = replay(journal, s);
     const p = project({ cards, memory, log, settings: { ...settings, examDate: '2027-01-10' }, scheduler: s, now: t0 });
     expect(p.paceFromHistory).toBe(true);
-    expect(p.pace).toBeCloseTo(4 / 14, 5);
+    expect(p.pace).toBeCloseTo(4 / 12, 5); // 4 cards over 14 days at 6 study days a week
     expect(p.seenAtExam).toBeLessThan(40);
     expect(p.neededPace).toBeNull(); // deadline (exam - 60 days) already past
+  });
+
+  it('rests one day a week: fewer cards seen than at 7 days a week, same pace per study day', () => {
+    const short = { ...settings, examDate: '2026-12-15', newPerDay: 2 };
+    const six = project({ cards, memory: new Map(), log: [], settings: short, scheduler: s, now: t0 });
+    const seven = project({ cards, memory: new Map(), log: [], settings: { ...short, daysPerWeek: 7 }, scheduler: s, now: t0 });
+    expect(seven.seenAtExam).toBe(60);
+    expect(six.seenAtExam).toBeLessThan(seven.seenAtExam);
+    expect(six.seenAtExam).toBeGreaterThanOrEqual(50);
+  });
+
+  it('says when the daily setting is not enough', () => {
+    const p = project({ cards, memory: new Map(), log: [], settings: { ...settings, examDate: '2027-02-15', newPerDay: 1 }, scheduler: s, now: t0 });
+    expect(p.settingIsEnough).toBe(false);
+    expect(p.neededPace).toBeGreaterThan(1);
   });
 
   it('skips paused themes for new cards and is deterministic', () => {

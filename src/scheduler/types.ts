@@ -30,6 +30,8 @@ export interface Settings {
   appearance: Appearance;
   /** Every card should have been seen this many days before the exam (milestone 5 decision: 60). */
   introBufferDays: number;
+  /** Weekly goal: study days per week. The rest day is free to choose (decision after milestone 5: 6). */
+  daysPerWeek: number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -41,6 +43,7 @@ export const DEFAULT_SETTINGS: Settings = {
   dayStartHour: 4,
   appearance: 'auto',
   introBufferDays: 60,
+  daysPerWeek: 6,
 };
 
 /** A card as the planner sees it: its id and where it sits in the catalog. Catalog order = new-card order. */
