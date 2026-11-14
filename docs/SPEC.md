@@ -79,7 +79,7 @@ Conséquence : fusionner deux appareils revient à réunir leurs journaux. Il n'
 
 ### 4.3 Réglages
 
-Un seul objet par utilisateur : nouvelles cartes par jour (15 par défaut), plafond de révisions par jour (100), thèmes en pause, date de l'examen (1er octobre 2027 par défaut, modifiable), heure de changement de jour (4 h). En cas de conflit, la version la plus récente l'emporte.
+Un seul objet par utilisateur : nouvelles cartes par jour (15 par défaut), plafond de révisions par jour (100), thèmes en pause, date de l'examen (1er octobre 2027 par défaut, modifiable), heure de changement de jour (4 h), marge avant l'examen pour avoir vu toutes les cartes (60 jours par défaut, décision du jalon 5). En cas de conflit, la version la plus récente l'emporte.
 
 ### 4.4 Schéma Supabase
 
@@ -174,7 +174,7 @@ La logique de planification et de composition de session est un module pur, sans
 - Activité des 12 dernières semaines (une case par jour).
 - Cartes faibles : ratées au moins deux fois, ou ratées à la dernière révision. Tri par nombre d'échecs.
 - Bouton « Copier mes points faibles » : copie en texte la liste des cartes faibles (thème, question, nombre d'échecs), pour la transmettre à Claude et cibler les exercices.
-- Projection : nombre de cartes qui seront maîtrisées à la date de l'examen au rythme actuel, et nombre de nouvelles cartes par jour nécessaire pour tout voir avant.
+- Projection : nombre de cartes qui seront maîtrisées à la date de l'examen au rythme actuel, et nombre de nouvelles cartes par jour nécessaire pour tout voir avant. Simulation FSRS jour par jour (taux de réussite observé, rythme des 14 derniers jours), calculée dans un Web Worker. « Tout voir avant » vise la date de l'examen moins la marge réglable (60 jours par défaut).
 
 ### 6.5 Réglages
 
