@@ -1,0 +1,442 @@
+{
+  "schema": 1,
+  "deck": {
+    "id": "ue4-ch13",
+    "ue": "UE4",
+    "ueTitre": "Comptabilité et audit",
+    "chapitre": 13,
+    "titre": "Audit : notion, cadre légal et acteurs",
+    "themes": [
+      {
+        "id": "notion",
+        "titre": "La notion d'audit",
+        "couleur": "bleu",
+        "ordre": 1
+      },
+      {
+        "id": "origines",
+        "titre": "Les origines",
+        "couleur": "ardoise",
+        "ordre": 2
+      },
+      {
+        "id": "cadre",
+        "titre": "Le cadre légal",
+        "couleur": "violet",
+        "ordre": 3
+      },
+      {
+        "id": "acteurs",
+        "titre": "Trois professions",
+        "couleur": "sarcelle",
+        "ordre": 4
+      },
+      {
+        "id": "missions",
+        "titre": "Les missions d'audit",
+        "couleur": "vert",
+        "ordre": 5
+      },
+      {
+        "id": "durabilite",
+        "titre": "Reporting de durabilité",
+        "couleur": "rouge",
+        "ordre": 6
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "ue4-ch13-001",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Définissez l'audit (méthode du prof : nom commun puis qualificatifs).",
+      "reponse": "Un **examen** critique, sélectif et progressif, mené par un **professionnel indépendant**, pour donner une **opinion** sur la conformité de l'objet examiné à un **référentiel**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-002",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Quel est l'objectif de l'audit des comptes ?",
+      "reponse": "Obtenir l'**assurance raisonnable** que les comptes, pris dans leur ensemble, ne contiennent pas d'**anomalies significatives**, pour exprimer une opinion.",
+      "source": "NEP 200"
+    },
+    {
+      "id": "ue4-ch13-003",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Que certifie le CAC lorsqu'il certifie sans réserve ?",
+      "reponse": "Que les comptes sont **réguliers**, **sincères** et donnent une **image fidèle** du patrimoine, de la situation financière et du résultat.",
+      "source": "C. com., certification"
+    },
+    {
+      "id": "ue4-ch13-004",
+      "theme": "notion",
+      "type": "memo",
+      "question": "Que signifient « sélectif » et « progressif » dans la définition de l'audit ?",
+      "reponse": "**Sélectif** : l'auditeur choisit ce qu'il contrôle, il ne vérifie pas tout.\n**Progressif** : le travail s'étale dans le temps, une partie avant la clôture, une partie après.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-005",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une anomalie significative ?",
+      "reponse": "Une erreur ou une omission assez importante pour influencer la décision d'un lecteur des comptes.",
+      "source": "NEP 320"
+    },
+    {
+      "id": "ue4-ch13-006",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Quels sont les trois temps d'une mission d'audit ?",
+      "reponse": "1. **Orientation et planification** (NEP 210, 300, 315, 320)\n2. **Obtention d'éléments probants** (NEP 330, 500)\n3. **Opinion et rapport** (NEP 700)",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-007",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Qu'est-ce que le seuil de signification ?",
+      "reponse": "Le montant au-delà duquel une erreur devient significative pour le lecteur des comptes. Il est fixé pendant la planification.",
+      "source": "NEP 320"
+    },
+    {
+      "id": "ue4-ch13-008",
+      "theme": "notion",
+      "type": "regle",
+      "question": "Tests de procédures et contrôles de substance : quelle différence ?",
+      "reponse": "**Tests de procédures** : vérifier que le contrôle interne fonctionne.\n**Contrôles de substance** : vérifier directement que les montants sont justes.",
+      "source": "NEP 330"
+    },
+    {
+      "id": "ue4-ch13-009",
+      "theme": "notion",
+      "type": "memo",
+      "question": "Que signifie le sigle NEP ?",
+      "reponse": "**Normes d'exercice professionnel** : elles fixent les diligences du CAC. Adoptées par la H2A, homologuées par arrêté du garde des Sceaux.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-010",
+      "theme": "origines",
+      "type": "regle",
+      "question": "Quelle est l'origine latine du mot audit, et quelle conséquence pratique le prof en tire-t-il ?",
+      "reponse": "*Audire* : écouter.\nL'auditeur doit s'entretenir avec trois personnes : le **dirigeant**, le **directeur financier ou comptable**, la personne qui détient le **savoir-faire** de l'entreprise.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-011",
+      "theme": "origines",
+      "type": "regle",
+      "question": "Quelle est l'origine anglo-saxonne du mot audit ?",
+      "reponse": "*To audit* : inspecter, investiguer. L'auditeur **observe physiquement** (inventaire, visite des sites).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-012",
+      "theme": "origines",
+      "type": "memo",
+      "question": "Deux qualités et deux défauts de l'auditeur selon le prof ?",
+      "reponse": "Qualités : **clairvoyance** et **discernement**.\nDéfauts : **naïveté** (tout croire) et **suspicion** (ne rien croire).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-013",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quel texte crée l'Ordre des experts-comptables ?",
+      "reponse": "L'**ordonnance du 19 septembre 1945**, toujours le texte de base de la profession.",
+      "source": "Ord. 45-2138"
+    },
+    {
+      "id": "ue4-ch13-014",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Qu'apporte la loi comptable du 30 avril 1983 ?",
+      "reponse": "Le référentiel comptable (le **PCG**), et l'obligation d'un document qui décrit les procédures et l'organisation comptables.",
+      "source": "Loi 83-353"
+    },
+    {
+      "id": "ue4-ch13-015",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Qu'apporte la loi de sécurité financière d'août 2003 ?",
+      "reponse": "Elle crée le **H3C**, autorité publique de contrôle des CAC, et impose au président des SA un rapport sur le contrôle interne.",
+      "source": "Loi 2003-706"
+    },
+    {
+      "id": "ue4-ch13-016",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Que devient le H3C le 1er janvier 2024, et pourquoi ?",
+      "reponse": "Il devient la **H2A** (Haute autorité de l'audit), à la suite de l'ordonnance du 6 décembre 2023 qui transpose la CSRD. Elle supervise désormais aussi les **auditeurs de durabilité**.",
+      "source": "Ord. 2023-1142"
+    },
+    {
+      "id": "ue4-ch13-017",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Qu'a changé la réforme européenne de l'audit de 2016 ?",
+      "reponse": "Elle renforce l'**indépendance** des CAC, surtout dans les entités d'intérêt public : durée des mandats, services interdits, rôle du comité d'audit.",
+      "source": "Ord. 2016-315"
+    },
+    {
+      "id": "ue4-ch13-018",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quelles sociétés doivent avoir un comité d'audit ?",
+      "reponse": "Les sociétés **cotées** et les autres **entités d'intérêt public** (banques, assurances…).",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-019",
+      "theme": "cadre",
+      "type": "memo",
+      "question": "Quels sont les deux codes de déontologie à connaître ?",
+      "reponse": "Le **code de déontologie des CAC** (indépendance, incompatibilités) et celui des **experts-comptables**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-020",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Quelles institutions encadrent les experts-comptables ?",
+      "reponse": "L'**Ordre** : le Conseil national (**CNOEC**) et les conseils régionaux (**CROEC**).",
+      "source": "Ord. 1945"
+    },
+    {
+      "id": "ue4-ch13-021",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Quelles institutions encadrent les commissaires aux comptes ?",
+      "reponse": "Supervision publique : la **H2A**.\nProfession : la Compagnie nationale (**CNCC**) et les compagnies régionales (**CRCC**).",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-022",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Qui peut certifier les informations de durabilité ?",
+      "reponse": "Un **CAC** formé à la durabilité, ou un **organisme tiers indépendant (OTI)**, inscrit sur la liste tenue par la **H2A**.",
+      "source": "Ord. 2023-1142"
+    },
+    {
+      "id": "ue4-ch13-023",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Conditions d'accès : EC et CAC ?",
+      "reponse": "**EC** : DEC, puis inscription au tableau de l'Ordre.\n**CAC** : DEC (ou certificat d'aptitude) et stage, puis inscription sur la liste tenue par la H2A.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-024",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Pour combien de temps et par qui le CAC est-il nommé ?",
+      "reponse": "Par l'**assemblée des associés**, pour **6 exercices**.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-025",
+      "theme": "acteurs",
+      "type": "cas",
+      "question": "Le cabinet qui tient la comptabilité d'une société peut-il en être le CAC ?",
+      "reponse": "**Non.** Il certifierait des comptes qu'il a lui-même établis : atteinte à l'indépendance.",
+      "source": "Code de déontologie des CAC"
+    },
+    {
+      "id": "ue4-ch13-026",
+      "theme": "acteurs",
+      "type": "memo",
+      "question": "EC, CAC, auditeur de durabilité : la phrase pour les distinguer ?",
+      "reponse": "L'EC **fait** les comptes, le CAC les **certifie**, l'auditeur de durabilité certifie le rapport de **durabilité**. La H2A supervise les deux derniers.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-027",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Seuils de nomination d'un CAC pour une société commerciale indépendante ?",
+      "reponse": "Dépasser **2 des 3 seuils** : **5 M€** de total de bilan, **10 M€** de chiffre d'affaires HT, **50 salariés**.\n(Relevés en 2024 ; avant : 4 M€ et 8 M€.)",
+      "source": "Décret 2024-152"
+    },
+    {
+      "id": "ue4-ch13-028",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Seuils de nomination d'un CAC pour une société d'un groupe ?",
+      "reponse": "2 des 3 seuils : **2,5 M€** de bilan, **5 M€** de CA HT, **25 salariés**.",
+      "source": "Décret 2024-152"
+    },
+    {
+      "id": "ue4-ch13-029",
+      "theme": "acteurs",
+      "type": "cas",
+      "question": "SAS : CA 12 M€, bilan 4,8 M€, 62 salariés, aucun groupe. CAC obligatoire ?",
+      "reponse": "**Oui.** Elle dépasse 2 seuils sur 3 : le CA (12 > 10 M€) et l'effectif (62 > 50). Le bilan (4,8 < 5 M€) ne compte pas.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-030",
+      "theme": "acteurs",
+      "type": "regle",
+      "question": "Combien de CAC pour une société qui établit des comptes consolidés ?",
+      "reponse": "**Deux** (co-commissariat).",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-031",
+      "theme": "missions",
+      "type": "regle",
+      "question": "Audit légal ou contractuel ?",
+      "reponse": "**Légal** : imposé par la loi, fait par le CAC (certification).\n**Contractuel** : demandé librement, par exemple avant un rachat.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-032",
+      "theme": "missions",
+      "type": "regle",
+      "question": "Audit externe ou interne ?",
+      "reponse": "**Externe** : un professionnel indépendant de l'entité.\n**Interne** : un service de l'entreprise, au service de la direction.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-033",
+      "theme": "missions",
+      "type": "regle",
+      "question": "Audit des comptes sociaux ou consolidés ?",
+      "reponse": "**Sociaux** : une seule société, selon le PCG.\n**Consolidés** : le groupe vu comme une seule entité ; deux CAC obligatoires.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-034",
+      "theme": "missions",
+      "type": "regle",
+      "question": "Assurance raisonnable ou limitée : quelle différence de formulation ?",
+      "reponse": "**Raisonnable** (audit) : formulation positive, « les comptes sont réguliers et sincères ».\n**Limitée** (examen limité, durabilité) : formulation négative, « nous n'avons pas relevé d'anomalies ».",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-035",
+      "theme": "missions",
+      "type": "memo",
+      "question": "Quels sont les trois moyens d'action du CAC ?",
+      "reponse": "**I C H** : droit d'**I**nformation (vérifications à tout moment, toutes pièces), **C**onfirmation directe auprès des tiers, droit aux **H**onoraires.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-036",
+      "theme": "missions",
+      "type": "cas",
+      "question": "Une société peut-elle s'opposer à ce que son CAC écrive à sa banque pour confirmer ses soldes ?",
+      "reponse": "**Non.** C'est le droit de confirmation directe auprès des tiers (circularisation).",
+      "source": "NEP 505"
+    },
+    {
+      "id": "ue4-ch13-037",
+      "theme": "durabilite",
+      "type": "regle",
+      "question": "Qu'impose la CSRD ?",
+      "reponse": "La publication d'informations **environnementales, sociales et de gouvernance** selon les normes ESRS, puis leur **certification** par un CAC ou un OTI, avec une **assurance limitée**.",
+      "source": "Dir. 2022/2464, ord. 2023-1142"
+    },
+    {
+      "id": "ue4-ch13-038",
+      "theme": "durabilite",
+      "type": "regle",
+      "question": "Qu'a changé la directive Omnibus I (2026) ?",
+      "reponse": "Elle réserve le rapport de durabilité aux entreprises de **plus de 1 000 salariés et plus de 450 M€** de CA (critères cumulés). En vigueur depuis le 18 mars 2026, pas encore transposée en France.",
+      "source": "Dir. 2026/470"
+    },
+    {
+      "id": "ue4-ch13-039",
+      "theme": "durabilite",
+      "type": "regle",
+      "question": "Qu'est-ce que la double matérialité ?",
+      "reponse": "Regarder à la fois l'**impact de l'entreprise** sur l'environnement et la société, et l'**impact de ces enjeux sur ses finances**.",
+      "source": "ESRS"
+    },
+    {
+      "id": "ue4-ch13-040",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quel est le statut de la H2A ?",
+      "reponse": "**Autorité publique indépendante** dotée de la personnalité morale : elle peut agir en justice, conclure des contrats et a un budget propre. Indépendante de l'État et de la profession.",
+      "source": "Ord. 2023-1142"
+    },
+    {
+      "id": "ue4-ch13-041",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Comment la H2A est-elle organisée ?",
+      "reponse": "Un **collège** de 14 membres (magistrats, AMF, ACPR, Trésor, personnalités qualifiées) qui fixe les règles et **engage les poursuites**.\nUne **commission des sanctions** de 5 membres, distincte, qui **juge**.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-042",
+      "theme": "cadre",
+      "type": "memo",
+      "question": "Pourquoi la H2A a-t-elle un collège et une commission des sanctions séparés ?",
+      "reponse": "Pour que **celui qui poursuit ne soit pas celui qui juge**. Les membres de la commission des sanctions ne peuvent pas siéger au collège.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch13-043",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quelles sont les missions de la H2A envers les CAC ?",
+      "reponse": "Tenir la **liste** des CAC (inscription), adopter les **normes** (NEP), fixer les orientations de la **formation** continue, **contrôler** la qualité des cabinets, mener des **enquêtes** et **sanctionner**.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-044",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quelles sanctions un CAC risque-t-il devant la H2A ?",
+      "reponse": "Avertissement, blâme, interdiction temporaire d'exercer, radiation de la liste, et sanction pécuniaire (jusqu'à 250 000 € pour une personne physique).",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-045",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Qui compose le comité d'audit ?",
+      "reponse": "Des membres du conseil d'administration ou de surveillance **sans fonctions de direction**, dont au moins un membre **indépendant** et **compétent** en finance, comptabilité ou audit.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-046",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quelles sont les missions du comité d'audit ?",
+      "reponse": "Suivre l'élaboration de l'**information financière** (et de durabilité), l'efficacité du **contrôle interne** et de la gestion des risques, le **contrôle légal** des comptes, et l'**indépendance** du CAC.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-047",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quel rôle a le comité d'audit dans le choix du CAC d'une EIP ?",
+      "reponse": "Il émet une **recommandation**, après une procédure d'**appel d'offres**. C'est l'assemblée qui nomme.",
+      "source": "Règl. UE 537/2014"
+    },
+    {
+      "id": "ue4-ch13-048",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Que sont les SACC, et quel est le rôle du comité d'audit à leur égard ?",
+      "reponse": "**Services autres que la certification des comptes** que le CAC propose à l'entité qu'il audite. Le comité d'audit les **autorise ou non**, pour protéger l'indépendance du CAC.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch13-049",
+      "theme": "cadre",
+      "type": "cas",
+      "question": "Le comité d'audit peut-il arrêter les comptes à la place du conseil ?",
+      "reponse": "**Non.** C'est un organe de **suivi** : il prépare les décisions du conseil et lui rend compte. La responsabilité reste au conseil.",
+      "source": ""
+    }
+  ]
+}

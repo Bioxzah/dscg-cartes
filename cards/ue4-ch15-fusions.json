@@ -1,0 +1,434 @@
+{
+  "schema": 1,
+  "deck": {
+    "id": "ue4-ch15",
+    "ue": "UE4",
+    "ueTitre": "Comptabilité et audit",
+    "chapitre": 15,
+    "titre": "Fusions : formes et démarche",
+    "themes": [
+      {
+        "id": "restructurations",
+        "titre": "Les restructurations",
+        "couleur": "ardoise",
+        "ordre": 1
+      },
+      {
+        "id": "formes",
+        "titre": "Les formes de fusion",
+        "couleur": "sarcelle",
+        "ordre": 2
+      },
+      {
+        "id": "evaluations",
+        "titre": "Les évaluations",
+        "couleur": "bleu",
+        "ordre": 3
+      },
+      {
+        "id": "parite",
+        "titre": "Parité et soulte",
+        "couleur": "violet",
+        "ordre": 4
+      },
+      {
+        "id": "titres",
+        "titre": "Titres, capital, prime",
+        "couleur": "vert",
+        "ordre": 5
+      },
+      {
+        "id": "participations",
+        "titre": "Quand les sociétés se détiennent",
+        "couleur": "rouge",
+        "ordre": 6
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "ue4-ch15-001",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une fusion ?",
+      "reponse": "Une société transmet **tout** son patrimoine à une autre, existante ou nouvelle.\nElle disparaît (dissolution sans liquidation).\nSes associés reçoivent des titres de la société qui absorbe, et éventuellement une soulte.",
+      "source": "C. com., fusions"
+    },
+    {
+      "id": "ue4-ch15-002",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une scission ?",
+      "reponse": "Une société transmet son patrimoine à **plusieurs** sociétés, existantes ou nouvelles.\nElle disparaît.\nSes associés reçoivent des titres de chacune des sociétés bénéficiaires.",
+      "source": "C. com., scissions"
+    },
+    {
+      "id": "ue4-ch15-003",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Qu'est-ce qu'un apport partiel d'actif ?",
+      "reponse": "Une société apporte une **branche d'activité** à une autre.\nElle reçoit **elle-même** les titres en échange.\nElle continue d'exister.",
+      "source": "C. com., apports partiels d'actif"
+    },
+    {
+      "id": "ue4-ch15-004",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une scission partielle ?",
+      "reponse": "Nouveauté de la réforme de 2023.\nUne société apporte une branche d'activité, mais les titres reçus vont **directement à ses associés**.\nElle continue d'exister.",
+      "source": "Ord. 2023-393 du 24 mai 2023"
+    },
+    {
+      "id": "ue4-ch15-005",
+      "theme": "restructurations",
+      "type": "memo",
+      "question": "Deux questions pour distinguer fusion, scission, apport partiel et scission partielle ?",
+      "reponse": "1. La société qui apporte **disparaît-elle** ? Oui : fusion ou scission. Non : apport partiel ou scission partielle.\n2. **Qui reçoit les titres** ? Les associés (fusion, scission, scission partielle) ou la société elle-même (apport partiel).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-006",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Que signifie « transmission universelle du patrimoine » ?",
+      "reponse": "L'actif **et** le passif passent en bloc à la société qui absorbe, sans céder chaque bien un par un.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-007",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Que signifie « dissolution sans liquidation » ?",
+      "reponse": "La société absorbée disparaît sans vendre ses biens ni payer ses dettes : tout est repris par l'absorbante.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-008",
+      "theme": "restructurations",
+      "type": "memo",
+      "question": "Citez quatre raisons économiques ou financières d'une fusion.",
+      "reponse": "Croissance externe (taille critique, parts de marché).\nSynergies (achats groupés, frais fixes partagés).\nSimplification d'un groupe (absorber une filiale).\nRaisons financières (regrouper la trésorerie, faciliter le financement).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-009",
+      "theme": "restructurations",
+      "type": "regle",
+      "question": "Que permet le régime fiscal de faveur des fusions ?",
+      "reponse": "Sans lui, l'absorbée est imposée sur ses plus-values latentes, comme si elle vendait tout.\nAvec lui, l'imposition est **reportée** : l'absorbante prend des engagements pour la supporter plus tard.",
+      "source": "CGI art. 210 A"
+    },
+    {
+      "id": "ue4-ch15-010",
+      "theme": "formes",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une fusion-création (fusion-réunion) ?",
+      "reponse": "A et B disparaissent **toutes les deux**.\nUne société **nouvelle** C reçoit les deux patrimoines et donne ses titres aux associés de A et de B.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-011",
+      "theme": "formes",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une fusion-absorption simple ?",
+      "reponse": "A absorbe B alors qu'il n'existe **aucun lien de capital** entre elles.\nA crée des titres pour **100 %** des associés de B.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-012",
+      "theme": "formes",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une fusion-renonciation ?",
+      "reponse": "L'absorbante A détient déjà x % de B.\nA ne reçoit pas de titres pour sa propre part : elle ne crée des titres que pour les **autres** associés de B, soit (100 − x) %.",
+      "source": "C. com., interdiction d'échange"
+    },
+    {
+      "id": "ue4-ch15-013",
+      "theme": "formes",
+      "type": "cas",
+      "question": "La renonciation est-elle un choix de l'absorbante ?",
+      "reponse": "Non. La loi **interdit** d'échanger les titres de l'absorbée détenus par l'absorbante. Le nom « renonciation » vient de l'ancienne pratique.",
+      "source": "C. com., interdiction d'échange"
+    },
+    {
+      "id": "ue4-ch15-014",
+      "theme": "formes",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une fusion suivie d'une réduction de capital ?",
+      "reponse": "C'est l'**absorbée B** qui détient des titres de l'absorbante A.\nEn absorbant B, A récupère ses propres titres. Elle les **annule** : son capital diminue.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-015",
+      "theme": "formes",
+      "type": "memo",
+      "question": "Comment savoir s'il faut une renonciation ou une réduction de capital ?",
+      "reponse": "Regarde le sens de la participation.\nA (absorbante) détient B : **renonciation**.\nB (absorbée) détient A : **réduction de capital**.\nLes deux (participations croisées) : les deux mécanismes.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-016",
+      "theme": "formes",
+      "type": "regle",
+      "question": "Quelle valeur d'apport retenir selon le contrôle des sociétés ?",
+      "reponse": "Contrôle **commun** : valeur **comptable**.\nContrôle distinct, fusion **à l'endroit** : valeur **réelle**.\nContrôle distinct, fusion **à l'envers** : valeur **comptable**.",
+      "source": "PCG, règles des fusions"
+    },
+    {
+      "id": "ue4-ch15-017",
+      "theme": "formes",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une fusion à l'envers ?",
+      "reponse": "Après l'opération, les anciens associés de l'**absorbée** prennent le contrôle de la société **absorbante**.\nLes apports sont alors repris à la valeur comptable.",
+      "source": "PCG, règles des fusions"
+    },
+    {
+      "id": "ue4-ch15-018",
+      "theme": "formes",
+      "type": "cas",
+      "question": "Une PME absorbe une société plus grosse. Après l'opération, les associés de la grosse société détiennent 70 % de la PME. Valeur d'apport ?",
+      "reponse": "Fusion **à l'envers** (contrôle distinct) : apports à la **valeur comptable**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-019",
+      "theme": "formes",
+      "type": "cas",
+      "question": "La valeur d'apport sert-elle à calculer la parité ?",
+      "reponse": "Non. La valeur d'apport sert à calculer la **prime de fusion**.\nLa parité se calcule toujours avec les **valeurs réelles**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-020",
+      "theme": "evaluations",
+      "type": "regle",
+      "question": "Comment calcule-t-on l'actif net corrigé (ANC) ?",
+      "reponse": "Capitaux propres (après répartition)\n+ plus-values − moins-values\n− actifs fictifs\n(− impôts différés passif, si l'énoncé les donne)",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-021",
+      "theme": "evaluations",
+      "type": "regle",
+      "question": "Comment calcule-t-on la VMI ?",
+      "reponse": "**VMI** (valeur mathématique intrinsèque) = ANC ÷ nombre d'actions.\nC'est la part d'actif net corrigé qui revient à une action.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-022",
+      "theme": "evaluations",
+      "type": "regle",
+      "question": "Qu'est-ce qu'un actif fictif ? Donnez deux exemples.",
+      "reponse": "Un poste inscrit à l'actif qui ne vaut rien si on cède l'entreprise.\nEx. : frais d'établissement, charges à répartir.\nOn le **retire** de l'ANC.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-023",
+      "theme": "evaluations",
+      "type": "cas",
+      "question": "Faut-il évaluer l'absorbante, ou seulement l'absorbée ?",
+      "reponse": "Les **deux**. Si on oublie une plus-value chez l'absorbante, sa valeur par titre est trop faible et les associés de l'absorbée reçoivent trop de titres.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-024",
+      "theme": "evaluations",
+      "type": "calcul",
+      "question": "BETA : capitaux propres 1 000 000, frais d'établissement 40 000, fonds commercial non inscrit 120 000, 4 000 actions. VMI ?",
+      "reponse": "ANC = 1 000 000 − 40 000 + 120 000 = **1 080 000**\nVMI = 1 080 000 ÷ 4 000 = **270 €**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-025",
+      "theme": "evaluations",
+      "type": "calcul",
+      "question": "ALPHA : capitaux propres 3 000 000, terrain sous-évalué de 600 000, 10 000 actions. VMI ?",
+      "reponse": "ANC = 3 000 000 + 600 000 = **3 600 000**\nVMI = 3 600 000 ÷ 10 000 = **360 €**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-026",
+      "theme": "evaluations",
+      "type": "memo",
+      "question": "Que faire des impôts différés passif donnés dans un énoncé de fusion ?",
+      "reponse": "Les **retirer** de l'ANC : ce sont des impôts qu'il faudra payer sur les plus-values.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-027",
+      "theme": "parite",
+      "type": "regle",
+      "question": "Formule de la parité d'échange ?",
+      "reponse": "**Parité** = valeur d'un titre de l'absorbée ÷ valeur d'un titre de l'absorbante.\nOn la simplifie en « x titres A pour y titres B ».",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-028",
+      "theme": "parite",
+      "type": "memo",
+      "question": "Quelle société va au numérateur de la parité ?",
+      "reponse": "L'**absorbée** : on la paie, elle est en haut.\n« Ce que je donne (B) sur ce avec quoi je paie (A). »",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-029",
+      "theme": "parite",
+      "type": "calcul",
+      "question": "VMI de B 270 €, VMI de A 360 €. Parité ?",
+      "reponse": "270 ÷ 360 = 0,75 = **3/4**\nSoit **3 actions A pour 4 actions B**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-030",
+      "theme": "parite",
+      "type": "calcul",
+      "question": "Simplifier 140/112.",
+      "reponse": "140/112 = (14 × 10)/(14 × 8) = 10/8 = **5/4** (= 1,25).\nPiège : 112 = 56 × 2, pas 64 × 2.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-031",
+      "theme": "parite",
+      "type": "regle",
+      "question": "Qu'est-ce qu'une soulte ?",
+      "reponse": "Un complément versé **en argent** aux associés de l'absorbée, pour arrondir la parité.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-032",
+      "theme": "parite",
+      "type": "regle",
+      "question": "Quelle est la limite de la soulte ?",
+      "reponse": "Au plus **10 % de la valeur nominale** des titres remis aux associés de l'absorbée.",
+      "source": "C. com., fusions"
+    },
+    {
+      "id": "ue4-ch15-033",
+      "theme": "parite",
+      "type": "calcul",
+      "question": "4 titres B valent 1 100 €, 3 titres A (nominal 100 €) valent 1 080 €. Soulte par lot et respect de la limite ?",
+      "reponse": "Soulte = 1 100 − 1 080 = **20 €** par lot de 4 titres B.\nLimite : 10 % × 3 × 100 € = 30 €. **Respectée.**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-034",
+      "theme": "titres",
+      "type": "regle",
+      "question": "Combien de titres l'absorbante doit-elle créer ?",
+      "reponse": "**Titres créés** = titres de l'absorbée échangés × parité.\nTitres échangés : tous, **sauf** ceux que l'absorbante détient déjà.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-035",
+      "theme": "titres",
+      "type": "regle",
+      "question": "Comment calcule-t-on l'augmentation de capital ?",
+      "reponse": "Titres créés × valeur nominale de l'**absorbante** (jamais celle de l'absorbée).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-036",
+      "theme": "titres",
+      "type": "regle",
+      "question": "Comment calcule-t-on la prime de fusion ?",
+      "reponse": "**Prime de fusion** = valeur des apports rémunérés − augmentation de capital − soulte éventuelle.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-037",
+      "theme": "titres",
+      "type": "calcul",
+      "question": "4 000 titres B, parité 3 A pour 4 B, nominal A 100 €, apports 1 080 000. Titres, capital, prime ?",
+      "reponse": "Titres : 4 000 × 3/4 = **3 000**\nCapital : 3 000 × 100 = **300 000**\nPrime : 1 080 000 − 300 000 = **780 000**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-038",
+      "theme": "titres",
+      "type": "memo",
+      "question": "Quel contrôle rapide après avoir calculé le nombre de titres ?",
+      "reponse": "Titres créés × valeur d'un titre A = valeur des apports rémunérés.\nEx. : 3 000 × 360 = 1 080 000. Sinon, une étape est fausse.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-039",
+      "theme": "titres",
+      "type": "cas",
+      "question": "Pourquoi une parité fondée sur les VMI ne lèse-t-elle personne ?",
+      "reponse": "Après la fusion, la VMI de l'absorbante reste **la même** qu'avant.\nEx. : (3 600 000 + 1 080 000) ÷ 13 000 = 360 €, comme avant.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-040",
+      "theme": "participations",
+      "type": "calcul",
+      "question": "A détient 1 000 des 4 000 titres B. Parité 3 A pour 4 B, nominal A 100 €. Titres créés et augmentation de capital ?",
+      "reponse": "Titres échangés : 4 000 − 1 000 = 3 000\nTitres créés : 3 000 × 3/4 = **2 250**\nCapital : **+ 225 000**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-041",
+      "theme": "participations",
+      "type": "regle",
+      "question": "Que deviennent les apports qui correspondent aux titres B déjà détenus par A ?",
+      "reponse": "Ils ne sont pas rémunérés par des titres. On les compare au coût d'achat des titres B chez A : l'écart est un **boni** ou un **mali** de fusion (vu avec l'analyse de la prime).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-042",
+      "theme": "participations",
+      "type": "calcul",
+      "question": "B détient 500 actions A. A (10 000 actions) crée 3 000 actions pour absorber B. Nombre d'actions A après annulation ?",
+      "reponse": "A récupère ses 500 actions et les annule.\n10 000 + 3 000 − 500 = **12 500 actions**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-043",
+      "theme": "participations",
+      "type": "regle",
+      "question": "Comment évaluer A et B en cas de participations croisées ?",
+      "reponse": "On pose deux équations :\na × N_A = ANC_A hors titres B + n_B × b\nb × N_B = ANC_B hors titres A + n_A × a\npuis on résout par substitution.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-044",
+      "theme": "participations",
+      "type": "memo",
+      "question": "Participations croisées : quels mécanismes après le calcul de la parité ?",
+      "reponse": "**Renonciation** pour les titres B détenus par A.\n**Réduction de capital** pour les titres A détenus par B.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-045",
+      "theme": "evaluations",
+      "type": "memo",
+      "question": "Dans quel ordre évaluer les sociétés quand l'une détient l'autre ?",
+      "reponse": "D'abord la société **détenue**, puis celle qui la **détient** : la valeur de la seconde comprend les titres de la première.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-046",
+      "theme": "evaluations",
+      "type": "regle",
+      "question": "Méthode complète et méthode rapide de l'ANC : laquelle pour quelle société ?",
+      "reponse": "**Absorbée** : méthode complète, actifs à leur valeur réelle − dettes à leur valeur réelle.\n**Absorbante** : méthode rapide, capitaux propres ± plus et moins-values.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-047",
+      "theme": "parite",
+      "type": "memo",
+      "question": "Comment vérifier qu'une parité est équitable ?",
+      "reponse": "Par un **produit en croix** : titres B du lot × valeur B = titres A du lot × valeur A.\nEx. : 4 × 270 = 1 080 = 3 × 360.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch15-048",
+      "theme": "parite",
+      "type": "calcul",
+      "question": "Écart de 20 € par lot de 4 titres B, 4 000 titres B échangés. Soulte unitaire et globale ?",
+      "reponse": "**Soulte unitaire** = 20 ÷ 4 = **5 €** par titre B.\n**Soulte globale** = 5 × 4 000 = **20 000 €**.",
+      "source": ""
+    }
+  ]
+}
