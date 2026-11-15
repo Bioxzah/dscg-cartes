@@ -1,0 +1,284 @@
+{
+  "schema": 1,
+  "deck": {
+    "id": "ue4-ch00",
+    "ue": "UE4",
+    "ueTitre": "Comptabilité et audit",
+    "chapitre": 0,
+    "titre": "Prérequis DCG pour la consolidation",
+    "themes": [
+      {
+        "id": "id",
+        "titre": "L'impôt différé",
+        "couleur": "ardoise",
+        "ordre": 1
+      },
+      {
+        "id": "fiscal",
+        "titre": "Écritures fiscales",
+        "couleur": "violet",
+        "ordre": 2
+      },
+      {
+        "id": "methodes",
+        "titre": "Méthodes à harmoniser",
+        "couleur": "bleu",
+        "ordre": 3
+      },
+      {
+        "id": "ifrs",
+        "titre": "Points propres aux IFRS",
+        "couleur": "sarcelle",
+        "ordre": 4
+      },
+      {
+        "id": "base",
+        "titre": "Bases",
+        "couleur": "vert",
+        "ordre": 5
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "ue4-ch00-001",
+      "theme": "id",
+      "type": "regle",
+      "question": "Qu'est-ce qu'un impôt différé ?",
+      "reponse": "L'impôt lié à l'écart entre la valeur d'un élément dans les comptes du groupe et sa valeur fiscale.\n**Impôt différé = écart × taux d'IS (25 %)**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-002",
+      "theme": "id",
+      "type": "regle",
+      "question": "Impôt différé passif ou actif : comment choisir ?",
+      "reponse": "Le retraitement **augmente** le résultat ou un actif : impôt à payer plus tard, **IDP**.\nIl le **diminue** : impôt payé d'avance, **IDA**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-003",
+      "theme": "id",
+      "type": "memo",
+      "question": "Pourquoi un retraitement ne joue-t-il que pour 75 % sur le résultat du groupe ?",
+      "reponse": "Parce qu'il s'accompagne d'un impôt différé de 25 % en sens inverse.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-004",
+      "theme": "id",
+      "type": "regle",
+      "question": "Les impôts différés sont-ils actualisés ?",
+      "reponse": "**Non**, ni en normes françaises ni en IFRS.",
+      "source": "IAS 12"
+    },
+    {
+      "id": "ue4-ch00-005",
+      "theme": "id",
+      "type": "calcul",
+      "question": "Un retraitement augmente le résultat de 40 000. Impôt différé et effet net ?",
+      "reponse": "**IDP 10 000** (40 000 × 25 %). Effet net sur le résultat : **+ 30 000**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-006",
+      "theme": "fiscal",
+      "type": "ecriture",
+      "question": "Écriture d'une dotation aux amortissements dérogatoires ?",
+      "reponse": "Débit **6872** Dotation aux provisions réglementées\nCrédit **145** Amortissements dérogatoires",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-007",
+      "theme": "fiscal",
+      "type": "regle",
+      "question": "Où figurent les amortissements dérogatoires au bilan ?",
+      "reponse": "Dans les **capitaux propres**, en provisions réglementées (compte 145).",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-008",
+      "theme": "fiscal",
+      "type": "regle",
+      "question": "Que fait la consolidation des amortissements dérogatoires ?",
+      "reponse": "Elle les **élimine** : le solde rejoint les réserves, la dotation de l'année est annulée (résultat +), et on constate un **IDP**.",
+      "source": "ANC 2020-01 · IAS 12"
+    },
+    {
+      "id": "ue4-ch00-009",
+      "theme": "fiscal",
+      "type": "calcul",
+      "question": "Solde 145 : 40 000, dont 8 000 dotés cette année. Effet de l'élimination ?",
+      "reponse": "Réserves **+ 24 000** (32 000 − 25 %)\nRésultat **+ 6 000** (8 000 − 25 %)\nIDP **10 000**",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-010",
+      "theme": "fiscal",
+      "type": "regle",
+      "question": "Qu'est-ce que la provision pour hausse des prix, et que devient-elle en consolidation ?",
+      "reponse": "Une provision **réglementée** (fiscale) sur la hausse du coût des stocks, compte 1431 en capitaux propres. En consolidation : **éliminée**, avec un IDP.",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-011",
+      "theme": "fiscal",
+      "type": "memo",
+      "question": "Quel retraitement « fiscal » le programme exige-t-il ?",
+      "reponse": "Uniquement l'élimination des **provisions réglementées** (amortissements dérogatoires, provision pour hausse des prix), en normes françaises et en IFRS.",
+      "source": "Guide pédagogique UE 4"
+    },
+    {
+      "id": "ue4-ch00-012",
+      "theme": "methodes",
+      "type": "regle",
+      "question": "Contrats à long terme : méthode à l'achèvement ou à l'avancement ?",
+      "reponse": "**Achèvement** : marge reconnue à la fin, coûts en en-cours.\n**Avancement** : chiffre d'affaires et marge selon le % réalisé.\nLe groupe retient l'**avancement** (IFRS 15 si les conditions sont remplies).",
+      "source": "IFRS 15"
+    },
+    {
+      "id": "ue4-ch00-013",
+      "theme": "methodes",
+      "type": "calcul",
+      "question": "Contrat de 1 000 000, coût total 800 000, réalisé à 60 %. Marge à l'avancement et impôt différé ?",
+      "reponse": "CA 600 000 − coûts 480 000 = marge **120 000**. IDP **30 000** si la société était à l'achèvement.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-014",
+      "theme": "methodes",
+      "type": "regle",
+      "question": "Frais de développement : PCG et IFRS ?",
+      "reponse": "**PCG** : choix entre charge et immobilisation.\n**IFRS** : activation **obligatoire** si les critères sont remplis (faisabilité, rentabilité…).",
+      "source": "IAS 38"
+    },
+    {
+      "id": "ue4-ch00-015",
+      "theme": "methodes",
+      "type": "cas",
+      "question": "Une filiale a passé 100 000 de frais de développement activables en charges. Retraitement IFRS ?",
+      "reponse": "Immobilisation **+ 100 000**, résultat **+ 75 000**, IDP **25 000** (avant amortissement).",
+      "source": "IAS 38"
+    },
+    {
+      "id": "ue4-ch00-016",
+      "theme": "methodes",
+      "type": "regle",
+      "question": "Frais d'acquisition de titres : PCG, normes françaises de consolidation, IFRS ?",
+      "reponse": "**PCG** : charge ou ajout au coût des titres.\n**Consolidation en normes françaises** : inclus dans le coût d'acquisition.\n**IFRS** : toujours en **charges**.",
+      "source": "IFRS 3"
+    },
+    {
+      "id": "ue4-ch00-017",
+      "theme": "methodes",
+      "type": "regle",
+      "question": "Comment un crédit-bail apparaît-il dans les comptes sociaux ?",
+      "reponse": "Le bien n'est **pas** au bilan (engagement en annexe). Les loyers sont une charge : Débit **612** / Crédit 512.",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-018",
+      "theme": "methodes",
+      "type": "regle",
+      "question": "Que devient un contrat de location en consolidation ?",
+      "reponse": "Comme un achat à crédit : **actif** (droit d'utilisation) + **dette**. Le loyer est remplacé par **amortissement + intérêts**.\nIFRS 16 : presque toutes les locations ; normes françaises : les locations-financements.",
+      "source": "IFRS 16"
+    },
+    {
+      "id": "ue4-ch00-019",
+      "theme": "methodes",
+      "type": "memo",
+      "question": "Quel principe le retraitement du crédit-bail illustre-t-il ?",
+      "reponse": "La **prééminence de la substance sur la forme** : le groupe contrôle économiquement le bien.",
+      "source": "Cadre conceptuel"
+    },
+    {
+      "id": "ue4-ch00-020",
+      "theme": "ifrs",
+      "type": "regle",
+      "question": "Emprunt obligataire en PCG : que trouve-t-on au bilan ?",
+      "reponse": "La dette au montant **remboursé** ; à l'actif, les **primes de remboursement** (169) et les **frais d'émission** (4816), étalés.",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-021",
+      "theme": "ifrs",
+      "type": "regle",
+      "question": "Emprunt obligataire en IFRS 9 ?",
+      "reponse": "Dette au **coût amorti** : montant reçu net des frais. Primes et frais quittent l'actif. Charge d'intérêts au **taux d'intérêt effectif**.",
+      "source": "IFRS 9"
+    },
+    {
+      "id": "ue4-ch00-022",
+      "theme": "ifrs",
+      "type": "memo",
+      "question": "Le taux d'intérêt effectif est-il à calculer à l'examen ?",
+      "reponse": "**Non** : il faut l'expliquer et le justifier, les montants sont donnés en annexe.",
+      "source": "Guide pédagogique UE 4"
+    },
+    {
+      "id": "ue4-ch00-023",
+      "theme": "ifrs",
+      "type": "ecriture",
+      "question": "Subvention d'investissement en PCG : écritures ?",
+      "reponse": "Réception : crédit **131** (capitaux propres).\nChaque année : Débit **139** / Crédit **747**, au rythme de l'amortissement du bien.",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-024",
+      "theme": "ifrs",
+      "type": "regle",
+      "question": "Que devient une subvention d'investissement en IFRS ?",
+      "reponse": "Elle n'est **pas** dans les capitaux propres : **produit différé au passif**, ou déduction du coût du bien.",
+      "source": "IAS 20"
+    },
+    {
+      "id": "ue4-ch00-025",
+      "theme": "ifrs",
+      "type": "regle",
+      "question": "Que signifient les comptes 476 et 477 ?",
+      "reponse": "**476** Écart de conversion actif : **perte** de change latente (couverte par une provision).\n**477** Écart de conversion passif : **gain** latent, ignoré dans le résultat.",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-026",
+      "theme": "ifrs",
+      "type": "regle",
+      "question": "Gains et pertes de change latents en IFRS ?",
+      "reponse": "Ils passent **tous les deux** en résultat. On supprime 476, 477 et la provision pour perte de change.",
+      "source": "IAS 21"
+    },
+    {
+      "id": "ue4-ch00-027",
+      "theme": "base",
+      "type": "regle",
+      "question": "Comment calcule-t-on les achats consommés ?",
+      "reponse": "**Achats + stock initial − stock final.** La variation de stock fait le lien entre le bilan et le compte de résultat.",
+      "source": "PCG"
+    },
+    {
+      "id": "ue4-ch00-028",
+      "theme": "base",
+      "type": "regle",
+      "question": "Une hausse du stock augmente-t-elle ou diminue-t-elle le résultat ?",
+      "reponse": "Elle l'**augmente** : moins d'achats sont consommés dans l'exercice.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-029",
+      "theme": "base",
+      "type": "calcul",
+      "question": "Une filiale vend à sa sœur pour 100 des biens qui lui ont coûté 60, encore en stock. Retraitement ?",
+      "reponse": "Élimination de la marge interne : stock **− 40**, résultat **− 30**, **IDA 10**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch00-030",
+      "theme": "base",
+      "type": "ecriture",
+      "question": "Écriture de la participation des salariés ?",
+      "reponse": "Débit **691** Participation des salariés / Crédit **4284** Dettes envers le personnel. En IFRS : reclassée en charges de personnel.",
+      "source": "PCG"
+    }
+  ]
+}

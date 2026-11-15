@@ -1,0 +1,350 @@
+{
+  "schema": 1,
+  "deck": {
+    "id": "ue4-ch01",
+    "ue": "UE4",
+    "ueTitre": "Comptabilité et audit",
+    "chapitre": 1,
+    "titre": "IFRS : normalisation, cadre conceptuel, états financiers",
+    "themes": [
+      {
+        "id": "normalisation",
+        "titre": "La normalisation internationale",
+        "couleur": "ardoise",
+        "ordre": 1
+      },
+      {
+        "id": "cadre",
+        "titre": "Le cadre conceptuel",
+        "couleur": "bleu",
+        "ordre": 2
+      },
+      {
+        "id": "etats",
+        "titre": "Les états financiers",
+        "couleur": "sarcelle",
+        "ordre": 3
+      },
+      {
+        "id": "communication",
+        "titre": "La communication financière",
+        "couleur": "vert",
+        "ordre": 4
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "ue4-ch01-001",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Quel organisme élabore les normes IFRS, depuis quand ?",
+      "reponse": "L'**IASB**, depuis **2001**, à Londres, sous l'égide de la Fondation IFRS. Organisme **privé** et indépendant.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-002",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Quel organisme précédait l'IASB, et pourquoi a-t-il été remplacé ?",
+      "reponse": "L'**IASC** (1973). Ses normes (IAS) étaient d'application volontaire, souvent trop générales, et il manquait de pouvoir pour les imposer.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-003",
+      "theme": "normalisation",
+      "type": "memo",
+      "question": "IAS et IFRS : quelle différence ?",
+      "reponse": "**IAS** : normes de l'IASC, toujours en vigueur si non remplacées.\n**IFRS** : normes publiées par l'IASB depuis 2001.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-004",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Rôle de la Fondation IFRS ?",
+      "reponse": "Organe stratégique et financier (22 trustees) : **stratégie**, **financement**, nomination des membres de l'IASB et de l'IFRIC.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-005",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Rôle du Monitoring Board ?",
+      "reponse": "Il réunit des **autorités publiques** (Commission européenne, SEC…) : veille à l'intérêt général et approuve la nomination des trustees.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-006",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Rôle de l'IFRIC ?",
+      "reponse": "Comité d'**interprétation** : répond aux questions d'application. Ses interprétations, approuvées par l'IASB, ont la **même valeur que les normes**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-007",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Qu'est-ce que l'ISSB ?",
+      "reponse": "Créé en **2021** dans la Fondation IFRS, il élabore les normes de **durabilité** : IFRS S1 (principes généraux) et IFRS S2 (climat).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-008",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Comment une norme IFRS devient-elle applicable dans l'UE ?",
+      "reponse": "Par l'**adoption** (endorsement) : avis technique de l'**EFRAG**, vote de l'**ARC**, adoption par la **Commission**, contrôle du Parlement et du Conseil, publication au JOUE sous forme de règlement.",
+      "source": "Règl. CE 1606/2002"
+    },
+    {
+      "id": "ue4-ch01-009",
+      "theme": "normalisation",
+      "type": "memo",
+      "question": "Mémo de la procédure d'adoption européenne ?",
+      "reponse": "**E A C** : l'**E**FRAG conseille, l'**A**RC vote, la **C**ommission adopte.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-010",
+      "theme": "normalisation",
+      "type": "cas",
+      "question": "L'Union européenne peut-elle modifier une norme IFRS ?",
+      "reponse": "**Non** : elle peut l'adopter ou la rejeter, en tout ou en partie, mais jamais la modifier.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-011",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Quelles entreprises doivent établir leurs comptes consolidés en IFRS ?",
+      "reponse": "Depuis 2005, les sociétés dont les titres sont admis sur un **marché réglementé** de l'UE.",
+      "source": "Règl. CE 1606/2002"
+    },
+    {
+      "id": "ue4-ch01-012",
+      "theme": "normalisation",
+      "type": "cas",
+      "question": "Une société cotée sur Euronext Growth doit-elle consolider en IFRS ?",
+      "reponse": "**Non** : Euronext Growth n'est pas un marché réglementé. Normes françaises ou IFRS sur option.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-013",
+      "theme": "normalisation",
+      "type": "regle",
+      "question": "Dans quel référentiel sont établis les comptes individuels d'une société française cotée ?",
+      "reponse": "Le **PCG** (normes françaises), même si ses comptes consolidés sont en IFRS.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-014",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Qu'est-ce que le cadre conceptuel de l'IASB ?",
+      "reponse": "Un ensemble de **principes généraux** qui donne une base commune aux normes : objectifs des états financiers, éléments, principes d'établissement. Version actuelle : **2018**.",
+      "source": "Cadre conceptuel 2018"
+    },
+    {
+      "id": "ue4-ch01-015",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Les quatre fonctions du cadre conceptuel ?",
+      "reponse": "Guider l'IASB dans l'écriture des normes ; aider l'entreprise quand **aucune norme** ne s'applique ; aider auditeurs et analystes ; garantir la cohérence entre normes.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-016",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Objectif de l'information financière selon le cadre conceptuel ?",
+      "reponse": "Fournir des informations **utiles aux investisseurs, prêteurs et autres créanciers** pour leurs décisions.",
+      "source": "Cadre conceptuel 2018"
+    },
+    {
+      "id": "ue4-ch01-017",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Les deux caractéristiques qualitatives essentielles ?",
+      "reponse": "La **pertinence** et la **représentation fidèle**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-018",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Les quatre caractéristiques qualitatives complémentaires ?",
+      "reponse": "**Comparabilité**, **vérifiabilité**, **rapidité**, **compréhensibilité**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-019",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Quand une information est-elle pertinente ?",
+      "reponse": "Quand elle peut **influencer une décision**, par sa valeur prédictive ou de confirmation.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-020",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Que signifie « représentation fidèle » ?",
+      "reponse": "Une information **exhaustive**, **neutre** et **sans erreur significative**, qui traduit la réalité économique : la **substance prime sur la forme**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-021",
+      "theme": "cadre",
+      "type": "cas",
+      "question": "Comptes publiés avec six semaines de retard : quelle caractéristique est atteinte ?",
+      "reponse": "La **rapidité** : l'information perd de son utilité.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-022",
+      "theme": "cadre",
+      "type": "cas",
+      "question": "Méthode d'amortissement changée sans explication : quelle caractéristique est atteinte ?",
+      "reponse": "La **comparabilité** (et la représentation fidèle, faute d'information).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-023",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Définition d'un actif selon le cadre conceptuel ?",
+      "reponse": "Une ressource économique **contrôlée** par l'entité, issue d'événements passés, qui générera des **avantages économiques futurs**.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-024",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Définition d'un passif selon le cadre conceptuel ?",
+      "reponse": "Une **obligation actuelle** de transférer une ressource économique, née d'événements passés.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-025",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Comptabilisation et décomptabilisation ?",
+      "reponse": "**Comptabilisation** : entrée au bilan quand l'élément répond à sa définition et s'évalue de façon fiable.\n**Décomptabilisation** : sortie quand il ne répond plus aux critères (bien vendu, dette remboursée).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-026",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Les deux grandes méthodes d'évaluation en IFRS ?",
+      "reponse": "**Coût historique** et **valeur actuelle** (juste valeur, valeur d'utilité, valeur de remboursement).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-027",
+      "theme": "cadre",
+      "type": "regle",
+      "question": "Qu'est-ce que la juste valeur ?",
+      "reponse": "Le prix qu'on obtiendrait dans une **transaction normale sur le marché** à la date d'évaluation.",
+      "source": "IFRS 13"
+    },
+    {
+      "id": "ue4-ch01-028",
+      "theme": "cadre",
+      "type": "memo",
+      "question": "Coût historique ou juste valeur : avantage et limite de chacun ?",
+      "reponse": "**Coût historique** : stable, mais déconnecté du marché.\n**Juste valeur** : fidèle au marché, mais amplifie la volatilité en crise.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch01-029",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Composition d'un jeu complet d'états financiers selon IAS 1 ?",
+      "reponse": "État de la situation financière ; état du résultat net et des autres éléments du résultat global ; état des variations des capitaux propres ; état des flux de trésorerie ; notes annexes.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-030",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Quand un actif est-il courant ?",
+      "reponse": "Quand il sera réalisé, vendu ou consommé dans le **cycle d'exploitation** ou dans les **12 mois**, ou s'il s'agit de trésorerie.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-031",
+      "theme": "etats",
+      "type": "cas",
+      "question": "Classez selon IAS 1 : un brevet, la part à moins d'un an d'un emprunt, une provision pour démantèlement dans 10 ans.",
+      "reponse": "Brevet : **actif non courant**. Part à moins d'un an : **passif courant**. Provision pour démantèlement : **passif non courant**.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-032",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Qu'est-ce que le résultat global ?",
+      "reponse": "**Résultat net + autres éléments du résultat global** (OCI), comptabilisés directement en capitaux propres.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-033",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Exemples d'autres éléments du résultat global ?",
+      "reponse": "Écarts de **conversion**, **réévaluations** d'actifs, écarts **actuariels** sur retraites, couvertures de flux de trésorerie.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-034",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Deux présentations possibles du résultat global ?",
+      "reponse": "Un **état unique**, ou **deux états** séparés (compte de résultat + état du résultat global).",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-035",
+      "theme": "etats",
+      "type": "calcul",
+      "question": "Résultat net 500 000, écarts de conversion + 20 000, écarts actuariels − 8 000. Résultat global ?",
+      "reponse": "500 000 + 20 000 − 8 000 = **512 000**.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-036",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Les trois catégories de flux du tableau des flux de trésorerie ?",
+      "reponse": "Activités **opérationnelles**, d'**investissement**, de **financement**. Méthode directe ou indirecte.",
+      "source": "IAS 7"
+    },
+    {
+      "id": "ue4-ch01-037",
+      "theme": "etats",
+      "type": "regle",
+      "question": "Principes de présentation d'IAS 1 ?",
+      "reponse": "Image fidèle, continuité d'exploitation, permanence des méthodes, information comparative, **non-compensation**, comptabilité d'engagement.",
+      "source": "IAS 1"
+    },
+    {
+      "id": "ue4-ch01-038",
+      "theme": "communication",
+      "type": "regle",
+      "question": "Information périodique et information permanente : différence ?",
+      "reponse": "**Périodique** : comptes annuels, semestriels, trimestriels.\n**Permanente** : tout événement pouvant influencer le cours, publié **sans délai** (règlement MAR).",
+      "source": "Règl. MAR"
+    },
+    {
+      "id": "ue4-ch01-039",
+      "theme": "communication",
+      "type": "regle",
+      "question": "Rôle du prospectus ?",
+      "reponse": "Document publié pour **lever des fonds** : risques, gouvernance, comptes, stratégie. Il engage la responsabilité de l'émetteur.",
+      "source": ""
+    }
+  ]
+}

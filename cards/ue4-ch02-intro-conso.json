@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "deck": {
+    "id": "ue4-ch02",
+    "ue": "UE4",
+    "ueTitre": "Comptabilité et audit",
+    "chapitre": 2,
+    "titre": "Introduction à la consolidation",
+    "themes": [
+      {
+        "id": "groupe",
+        "titre": "La notion de groupe",
+        "couleur": "vert",
+        "ordre": 1
+      },
+      {
+        "id": "obligation",
+        "titre": "L'obligation de consolider",
+        "couleur": "bleu",
+        "ordre": 2
+      },
+      {
+        "id": "exemptions",
+        "titre": "Exemptions et clôture",
+        "couleur": "violet",
+        "ordre": 3
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "ue4-ch02-001",
+      "theme": "groupe",
+      "type": "regle",
+      "question": "Un groupe a-t-il la personnalité juridique ?",
+      "reponse": "**Non** : c'est une réalité économique. Chaque société garde sa personnalité juridique.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch02-002",
+      "theme": "groupe",
+      "type": "regle",
+      "question": "Définition du groupe selon le Code de commerce ?",
+      "reponse": "Une entreprise et l'ensemble des entreprises qu'elle **contrôle**, directement ou indirectement, de manière exclusive ou conjointe.",
+      "source": "C. com. L. 233-16"
+    },
+    {
+      "id": "ue4-ch02-003",
+      "theme": "groupe",
+      "type": "regle",
+      "question": "Filiale et participation : quels seuils ?",
+      "reponse": "**Filiale** : plus de **50 %** du capital.\n**Participation** : entre **10 et 50 %**.",
+      "source": "C. com. L. 233-1, L. 233-2"
+    },
+    {
+      "id": "ue4-ch02-004",
+      "theme": "groupe",
+      "type": "regle",
+      "question": "Les quatre types de liens entre sociétés ?",
+      "reponse": "**Direct** (M détient A), **indirect** (M détient A qui détient B), **réciproque** (M détient A qui détient M), **circulaire** (M → A → B → M).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch02-005",
+      "theme": "groupe",
+      "type": "memo",
+      "question": "Pourquoi la consolidation n'est-elle pas une simple addition des comptes ?",
+      "reponse": "Il faut **harmoniser** les méthodes comptables et **éliminer** les opérations entre sociétés du groupe (créances, ventes, dividendes internes).",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch02-006",
+      "theme": "obligation",
+      "type": "regle",
+      "question": "Les trois étapes pour savoir si une société doit consolider ?",
+      "reponse": "1. **Contrôle-t-elle** au moins une entreprise ?\n2. Est-elle **cotée sur un marché réglementé** ? Si oui : IFRS obligatoires.\n3. Sinon, l'ensemble dépasse-t-il **2 des 3 seuils** ?",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch02-007",
+      "theme": "obligation",
+      "type": "regle",
+      "question": "Seuils de l'obligation de consolider pour une société non cotée ?",
+      "reponse": "Dépasser **2 des 3 seuils** sur les **deux derniers exercices** : **30 M€** de total de bilan, **60 M€** de chiffre d'affaires HT, **250 salariés**.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch02-008",
+      "theme": "obligation",
+      "type": "cas",
+      "question": "Seuils dépassés en N−1 mais pas en N−2. Consolidation obligatoire en N ?",
+      "reponse": "**Non** : il faut les deux exercices précédents.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch02-009",
+      "theme": "obligation",
+      "type": "regle",
+      "question": "Sur quelle base apprécie-t-on les seuils de consolidation ?",
+      "reponse": "Sur l'**ensemble** de la mère et des entreprises contrôlées (chiffres cumulés). Les sociétés sous simple influence notable ne comptent pas.",
+      "source": ""
+    },
+    {
+      "id": "ue4-ch02-010",
+      "theme": "obligation",
+      "type": "regle",
+      "question": "Quel référentiel pour les comptes consolidés d'un groupe non coté ?",
+      "reponse": "Normes françaises (**règlement ANC 2020-01**) ou **IFRS sur option**.",
+      "source": "ANC 2020-01"
+    },
+    {
+      "id": "ue4-ch02-011",
+      "theme": "obligation",
+      "type": "regle",
+      "question": "Combien de CAC pour une société qui publie des comptes consolidés ?",
+      "reponse": "Au moins **deux**.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch02-012",
+      "theme": "exemptions",
+      "type": "regle",
+      "question": "Exemptions de consolidation en normes françaises ?",
+      "reponse": "**Sous-consolidation** : la mère est incluse dans les comptes consolidés publiés d'un groupe plus large (sauf opposition d'associés détenant 10 % du capital).\n**Intérêt négligeable** de toutes les filiales.",
+      "source": "C. com."
+    },
+    {
+      "id": "ue4-ch02-013",
+      "theme": "exemptions",
+      "type": "regle",
+      "question": "Les deux exemptions de consolidation en IFRS 10 ?",
+      "reponse": "**Mère intermédiaire** (sa propre mère publie des comptes IFRS, non cotée, pas d'opposition des autres actionnaires).\n**Entité d'investissement** (évalue ses filiales à la juste valeur).",
+      "source": "IFRS 10"
+    },
+    {
+      "id": "ue4-ch02-014",
+      "theme": "exemptions",
+      "type": "regle",
+      "question": "Pourquoi une entité d'investissement ne consolide-t-elle pas ses filiales ?",
+      "reponse": "Ce sont des **placements** destinés à être revendus : leur **juste valeur** informe mieux que leur chiffre d'affaires ou leurs dettes.",
+      "source": "IFRS 10"
+    },
+    {
+      "id": "ue4-ch02-015",
+      "theme": "exemptions",
+      "type": "regle",
+      "question": "Date de clôture d'une filiale décalée de plus de 3 mois : que faire ?",
+      "reponse": "Normes françaises : établir des **comptes intermédiaires** à la date de clôture de la consolidation.\nIFRS 10 : écart jamais supérieur à **3 mois**.",
+      "source": "ANC 2020-01, IFRS 10"
+    }
+  ]
+}
