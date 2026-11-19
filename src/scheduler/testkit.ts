@@ -17,5 +17,5 @@ export function rev(card_id: string, rating: Grade, at: string | Date, extra: Pa
   };
 }
 
-export const pc = (id: string, deckId = 'd1', themeId = 't1'): PlannerCard => ({ id, deckId, themeId });
+export const pc = (id: string, deckId = 'd1', themeId = 't1', ue = 'UE1'): PlannerCard => ({ id, deckId, themeId, ue });
 export const min = (d: Date, n: number) => new Date(d.getTime() + n * 60_000);

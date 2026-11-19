@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { buildDailyPlan, buildFreePlan, dayUsage, type Plan } from '../scheduler/plan.ts';
+import { buildDailyPlan, buildFreePlan, dayUsage, newCardsUe, type Plan } from '../scheduler/plan.ts';
 import { studyDayBounds, studyDayKey } from '../scheduler/day.ts';
 import type { FsrsCard } from '../scheduler/fsrs.ts';
 import { applyGrade, newFsrsCard } from '../scheduler/replay.ts';
@@ -31,6 +31,7 @@ export function planFor(data: AppData, mode: SessionMode, now: Date): Plan {
       usage,
       now,
       seed: studyDayKey(now, data.settings.dayStartHour),
+      newUe: newCardsUe(data.cards, data.memory, data.log, data.settings, now),
     });
   }
   const cards = data.cards.filter((c) => c.deckId === mode.deckId && c.themeId === mode.themeId);

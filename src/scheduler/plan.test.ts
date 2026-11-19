@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import { createScheduler, type Scheduler } from './fsrs.ts';
-import { buildDailyPlan, buildFreePlan, dayUsage, interleave, shuffle } from './plan.ts';
+import { buildDailyPlan, buildFreePlan, dayUsage, interleave, newCardsUe, shuffle } from './plan.ts';
 import { replay } from './replay.ts';
 import { min, pc, rev } from './testkit.ts';
 import { DEFAULT_SETTINGS, type Review, type Settings } from './types.ts';
@@ -117,5 +117,70 @@ describe('buildFreePlan', () => {
     const r = (m: { failures: number }) => (m.failures ? 0.2 : 0.9);
     expect(buildFreePlan({ cards, memory, retrievability: r }).queue).toEqual(['x4', 'x2', 'x1', 'x3']);
     expect(buildFreePlan({ cards, memory, retrievability: r, limit: 3 }).counts).toEqual({ learning: 0, due: 2, new: 1 });
+  });
+});
+
+describe('new cards, one UE per study day', () => {
+  const two = [
+    ...Array.from({ length: 20 }, (_, i) => pc(`u1-${String(i).padStart(2, '0')}`, 'ue1-ch01', 't1', 'UE1')),
+    ...Array.from({ length: 20 }, (_, i) => pc(`u4-${String(i).padStart(2, '0')}`, 'ue4-ch01', 't1', 'UE4')),
+  ];
+  const day = (d: number, h = 9) => new Date(2026, 10, d, h);
+
+  function today(journal: Review[], now: Date, o: Partial<Settings> = {}) {
+    const { cards, log } = replay(journal, s);
+    const st = settings(o);
+    const ue = newCardsUe(two, cards, log, st, now);
+    const p = buildDailyPlan({ cards: two, memory: cards, settings: st, usage: dayUsage(log, now, st.dayStartHour), now, seed: 'x', newUe: ue });
+    return { ue, p };
+  }
+
+  it('starts with the first UE of the catalog', () => {
+    const { ue, p } = today([], day(16));
+    expect(ue).toBe('UE1');
+    expect(p.queue.every((id) => id.startsWith('u1-'))).toBe(true);
+    expect(p.newUe).toBe('UE1');
+  });
+
+  it('takes the other UE the next study day, even after a rest day', () => {
+    const journal = [rev('u1-00', 4, day(16)), rev('u1-01', 4, day(16))];
+    expect(today(journal, day(17)).ue).toBe('UE4');
+    expect(today(journal, day(19)).ue).toBe('UE4');
+    const next = [...journal, rev('u4-00', 4, day(19))];
+    expect(today(next, day(20)).ue).toBe('UE1');
+  });
+
+  it('keeps the UE already started today', () => {
+    const journal = [rev('u1-00', 4, day(16)), rev('u4-00', 4, day(17, 8))];
+    expect(today(journal, day(17, 20)).ue).toBe('UE4');
+  });
+
+  it('ignores free sessions when choosing the UE', () => {
+    const journal = [rev('u1-00', 4, day(16)), rev('u4-00', 4, day(17), { libre: true })];
+    expect(today(journal, day(18)).ue).toBe('UE4');
+  });
+
+  it('fills the daily limit with the other UE when today\'s UE runs out', () => {
+    const journal = Array.from({ length: 15 }, (_, i) => rev(`u4-${String(i).padStart(2, '0')}`, 4, day(15)));
+    const { ue, p } = today(journal, day(16), { newPerDay: 10, pausedDecks: ['ue1-ch01'] });
+    expect(ue).toBeNull();
+    expect(p.counts.new).toBe(5);
+    const mixed = today(journal, day(16), { newPerDay: 10 });
+    expect(mixed.ue).toBe('UE1');
+    expect(mixed.p.counts.new).toBe(10);
+  });
+
+  it('tops up from the other UE when only a few cards of today\'s UE are left', () => {
+    const journal = Array.from({ length: 17 }, (_, i) => rev(`u1-${String(i).padStart(2, '0')}`, 4, day(14)));
+    journal.push(rev('u4-00', 4, day(15)));
+    const { ue, p } = today(journal, day(16));
+    expect(ue).toBe('UE1');
+    expect(p.queue.filter((id) => id.startsWith('u1-')).length).toBe(3);
+    expect(p.counts.new).toBe(15);
+  });
+
+  it('returns null when a single UE has new cards left', () => {
+    const { ue } = today([], day(16), { pausedDecks: ['ue4-ch01'] });
+    expect(ue).toBeNull();
   });
 });

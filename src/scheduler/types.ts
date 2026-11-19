@@ -51,4 +51,6 @@ export interface PlannerCard {
   id: string;
   deckId: string;
   themeId: string;
+  /** UE of the deck, e.g. "UE1". New cards alternate between UEs, one per study day. */
+  ue: string;
 }

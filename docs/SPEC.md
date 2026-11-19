@@ -133,6 +133,7 @@ Ajouter un déclencheur qui met `updated_at` à `now()` à chaque écriture sur 
   1. cartes en cours d'apprentissage arrivées à échéance ;
   2. révisions dues, mélangées entre thèmes et chapitres, jusqu'au plafond ;
   3. nouvelles cartes, jusqu'à la limite du jour, prises dans les thèmes actifs, par ordre de thème puis de fichier, et réparties au fil de la session.
+- Une UE par jour pour les nouvelles cartes (décision du 19 novembre 2026) : les jours de révision alternent entre les UE qui ont encore des nouvelles cartes (UE 1, puis UE 4, puis UE 1…). Les jours de repos ne décalent pas le tour, et les sessions libres ne comptent pas. Si l'UE du jour n'a plus assez de nouvelles cartes, l'autre complète la limite. Les révisions restent mélangées entre UE.
 - Une journée commence à 4 h, heure locale.
 - Une carte ratée ne revient pas avant au moins trois autres cartes, sauf s'il n'en reste plus.
 - « Session libre » : réviser un thème choisi sans attendre l'échéance. Ces révisions comptent dans le journal. Au plus 20 cartes : d'abord celles dont la probabilité de rappel est la plus faible, puis des nouvelles. Elles ne comptent pas dans les limites du jour (champ `libre`).

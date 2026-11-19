@@ -35,7 +35,7 @@ export function TodayScreen() {
           </span>
           <span className="start-split">
             <span><b>{plan.counts.due}</b> à revoir</span>
-            <span><b>{plan.counts.new}</b> nouvelles</span>
+            <span><b>{plan.counts.new}</b> nouvelles{plan.newUe && plan.counts.new > 0 ? ` en ${plan.newUe.replace(/^UE\s*/, 'UE ')}` : ''}</span>
             <span><b>{plan.counts.learning}</b> en cours</span>
           </span>
         </Link>

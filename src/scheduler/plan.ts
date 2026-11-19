@@ -1,4 +1,4 @@
-import { studyDayBounds } from './day.ts';
+import { studyDayBounds, studyDayKey } from './day.ts';
 import { State, type CardMemory, type ReplayedReview } from './replay.ts';
 import type { PlannerCard, Settings } from './types.ts';
 
@@ -14,6 +14,8 @@ export interface Plan {
   /** Learning cards due later today: they join when due. */
   pending: Pending[];
   counts: { learning: number; due: number; new: number };
+  /** UE of today's new cards, or null when only one UE still has new cards. */
+  newUe?: string | null;
 }
 
 export interface DayUsage {
@@ -89,6 +91,53 @@ export function interleave<T>(base: readonly T[], extra: readonly T[]): T[] {
   return keyed.map((k) => k.item);
 }
 
+/**
+ * UE whose new cards come today. New cards alternate one UE per study day (decision of 2026-11-19), so the
+ * new notions of a day follow one course. Rest days do not shift the turn: today's UE is the one after the UE
+ * of the last day that introduced new cards, or the UE already started today. Free sessions do not count.
+ * Returns null when at most one UE still has new cards.
+ */
+export function newCardsUe(
+  cards: readonly PlannerCard[],
+  memory: ReadonlyMap<string, CardMemory>,
+  log: readonly ReplayedReview[],
+  settings: Settings,
+  now: Date,
+): string | null {
+  const order: string[] = [];
+  const open: string[] = [];
+  for (const card of cards) {
+    if (!order.includes(card.ue)) order.push(card.ue);
+    if (!open.includes(card.ue) && !memory.has(card.id) && !isPaused(card, settings)) open.push(card.ue);
+  }
+  if (open.length <= 1) return null;
+
+  const ueOf = new Map(cards.map((c) => [c.id, c.ue]));
+  const today = studyDayKey(now, settings.dayStartHour);
+  let todayUe: string | null = null;
+  let lastDay: string | null = null;
+  let lastUe: string | null = null;
+  for (const { review, before } of log) {
+    if (review.libre || before !== State.New) continue;
+    const ue = ueOf.get(review.card_id);
+    if (!ue) continue;
+    const day = studyDayKey(new Date(review.reviewed_at), settings.dayStartHour);
+    if (day === today) todayUe ??= ue;
+    else if (day < today && day !== lastDay) {
+      lastDay = day;
+      lastUe = ue;
+    }
+  }
+  if (todayUe && open.includes(todayUe)) return todayUe;
+  if (lastUe === null) return open[0] ?? null;
+  const from = order.indexOf(lastUe);
+  for (let k = 1; k <= order.length; k++) {
+    const ue = order[(from + k) % order.length] as string;
+    if (open.includes(ue)) return ue;
+  }
+  return open[0] ?? null;
+}
+
 interface DailyInput {
   /** Every card of the catalog, in catalog order (deck, theme order, file order). */
   cards: readonly PlannerCard[];
@@ -98,6 +147,8 @@ interface DailyInput {
   now: Date;
   /** Seed for the review shuffle, normally the study day key. */
   seed: string;
+  /** UE of today's new cards (see `newCardsUe`). When it runs out, other UEs fill the daily limit. */
+  newUe?: string | null;
 }
 
 /**
@@ -105,19 +156,22 @@ interface DailyInput {
  * 1. learning cards already due; 2. due reviews, shuffled, up to the cap;
  * 3. new cards from active themes, up to the daily limit, spread through the session.
  */
-export function buildDailyPlan({ cards, memory, settings, usage, now, seed }: DailyInput): Plan {
+export function buildDailyPlan({ cards, memory, settings, usage, now, seed, newUe = null }: DailyInput): Plan {
   const nowMs = now.getTime();
   const dayEnd = studyDayBounds(now, settings.dayStartHour).end.getTime();
   const learningNow: Pending[] = [];
   const pending: Pending[] = [];
   const due: string[] = [];
   const fresh: string[] = [];
+  const filler: string[] = [];
   const newLeft = Math.max(0, settings.newPerDay - usage.newDone);
 
   for (const card of cards) {
     const mem = memory.get(card.id);
     if (!mem) {
-      if (fresh.length < newLeft && !isPaused(card, settings)) fresh.push(card.id);
+      if (isPaused(card, settings)) continue;
+      const list = newUe === null || card.ue === newUe ? fresh : filler;
+      if (list.length < newLeft) list.push(card.id);
       continue;
     }
     const dueAt = mem.fsrs.dueAt.getTime();
@@ -133,11 +187,13 @@ export function buildDailyPlan({ cards, memory, settings, usage, now, seed }: Da
   learningNow.sort((a, b) => a.dueAt - b.dueAt || (a.cardId < b.cardId ? -1 : 1));
   pending.sort((a, b) => a.dueAt - b.dueAt);
   const reviews = shuffle(due.sort(), seed).slice(0, Math.max(0, settings.reviewCap - usage.reviewsDone));
+  fresh.push(...filler.slice(0, newLeft - fresh.length));
 
   return {
     queue: [...learningNow.map((p) => p.cardId), ...interleave(reviews, fresh)],
     pending,
     counts: { learning: learningNow.length + pending.length, due: reviews.length, new: fresh.length },
+    newUe,
   };
 }
 
@@ -160,5 +216,5 @@ export function buildFreePlan({ cards, memory, retrievability, limit = 20 }: Fre
   const fresh = cards.filter((c) => !memory.has(c.id)).map((c) => c.id);
   const queue = [...seen, ...fresh].slice(0, limit);
   const nNew = queue.filter((id) => !memory.has(id)).length;
-  return { queue, pending: [], counts: { learning: 0, due: queue.length - nNew, new: nNew } };
+  return { queue, pending: [], counts: { learning: 0, due: queue.length - nNew, new: nNew }, newUe: null };
 }
