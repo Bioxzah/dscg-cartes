@@ -1,0 +1,139 @@
+@eyebrow DSCG · UE 4 · IFRS et consolidation · Chapitres 1 et 2
+@title IFRS et consolidation : le cadre
+@lede Chapitre 1 : qui fait les normes IFRS, comment l'Europe les adopte, le cadre conceptuel et les états financiers. Chapitre 2 : la notion de groupe et l'obligation de consolider. Fil rouge : le groupe ORVAL.
+@footer Fiche bâtie sur les cours de la prof (chapitres 1 et 2) et le programme 2027. Fil rouge ORVAL inventé : les exercices de la prof ne sont pas repris.
+
+== 1 | t0 | normalisation | La normalisation internationale
+-- table | De l'IASC à l'IASB | Date | Événement | À retenir
+| 1973 | Création de l'IASC par des organisations comptables nationales | Premières normes : les IAS. Application volontaire, faible pouvoir.
+| 2001 | L'IASB remplace l'IASC, à Londres, sous la Fondation IFRS | Organisme privé et indépendant. Nouvelles normes : les IFRS.
+| 2005 | Règlement européen de 2002 en vigueur | Comptes consolidés des sociétés cotées sur un marché réglementé en IFRS.
+| 2021 | Création de l'ISSB | Normes de durabilité IFRS S1 (principes généraux) et S2 (climat).
+-- table | Qui fait quoi dans la Fondation IFRS | Organe | Rôle
+| Monitoring Board | Autorités publiques (Commission européenne, SEC…). Veille à l'intérêt général, approuve la nomination des trustees.
+| Fondation IFRS (22 trustees) | Stratégie, financement, nomination des membres de l'IASB et de l'IFRIC.
+| IASB (14 membres) | Élabore et adopte les normes IFRS, après consultation publique.
+| ISSB | Élabore les normes de durabilité (IFRS S1, S2).
+| IFRIC (comité d'interprétation) | Répond aux questions d'application. Ses interprétations, approuvées par l'IASB, ont la même valeur que les normes.
+| Advisory Council, ASAF | Conseil stratégique ; lien avec les normalisateurs nationaux (ANC, EFRAG…).
+-- card | L'adoption des IFRS dans l'Union européenne | Une norme IFRS publiée par l'IASB s'applique-t-elle directement en France ? | *
+1: **Non** : l'IASB est un organisme privé. La norme doit être **adoptée par l'Union européenne** (procédure d'« endorsement »).
+1: - EFRAG : avis technique
+1: - ARC (représentants des États) : vote
+1: - Commission : adopte le règlement
+1: - Parlement et Conseil : contrôle, puis publication au Journal officiel de l'UE
+2: La norme respecte-t-elle l'image fidèle ?
+2: Sert-elle l'intérêt public européen ?
+2: Est-elle compréhensible, pertinente, fiable, comparable ?
+3: L'UE peut **adopter ou rejeter** une norme, en tout ou en partie, mais **jamais la modifier**.
+3: D'où la mention : « normes IFRS telles qu'adoptées par l'UE ».
+memo: **E A C** : l'EFRAG conseille, l'ARC vote, la Commission adopte.
+-- card | Qui doit appliquer les IFRS ? | Quel référentiel pour quels comptes ? | *
+1: Depuis 2005, les sociétés **cotées sur un marché réglementé** de l'UE établissent leurs **comptes consolidés** en IFRS.
+1: Les comptes individuels des sociétés françaises restent au **PCG**.
+2: Cotation : marché réglementé (Euronext Paris) ou non (Euronext Growth)
+2: Comptes consolidés ou comptes individuels ?
+3: Cotée sur marché réglementé : **IFRS obligatoires**.
+3: Non cotée : normes françaises ou IFRS sur option.
+fil: ORVAL, cotée sur Euronext Paris : comptes consolidés en IFRS, mais comptes individuels d'ORVAL au PCG.
+trap: Euronext Growth n'est pas un marché réglementé : pas d'obligation IFRS.
+
+== 2 | t2 | cadre | Le cadre conceptuel
+-- card | Le cadre conceptuel (2018) | À quoi sert le cadre conceptuel de l'IASB ? | *
+1: Un ensemble de **principes généraux** qui donne une base commune aux normes. Il **ne prime pas** sur une norme.
+1: Objectif de l'information financière : être **utile aux investisseurs, prêteurs et créanciers** pour leurs décisions.
+2: Guider l'IASB quand il écrit les normes
+2: Guider l'entreprise quand aucune norme ne traite une opération
+2: Aider auditeurs et analystes à interpréter
+2: Garantir la cohérence entre les normes
+3: Quatre fonctions : **orienter, combler les vides, interpréter, harmoniser**.
+-- table | Les caractéristiques qualitatives de l'information utile | Type | Caractéristique | Exemple
+| Essentielle | **Pertinence** : peut influencer une décision (valeur prédictive ou de confirmation) | Une dépréciation annonce une baisse de performance.
+| Essentielle | **Représentation fidèle** : exhaustive, neutre, sans erreur significative ; la substance prime sur la forme | Un crédit-bail est traité comme un achat à crédit.
+| Complémentaire | Comparabilité | Mêmes méthodes d'amortissement d'une année à l'autre.
+| Complémentaire | Vérifiabilité | L'audit peut confirmer les chiffres.
+| Complémentaire | Rapidité | Publication à temps, pas six semaines en retard.
+| Complémentaire | Compréhensibilité | Présentation claire et normalisée.
+-- table | Les cinq éléments des états financiers | Élément | Définition
+| Actif | Ressource économique contrôlée, issue d'événements passés, qui générera des avantages futurs.
+| Passif | Obligation actuelle de transférer une ressource, née d'événements passés.
+| Capitaux propres | Ce qui reste des actifs après déduction des passifs.
+| Produits | Hausse d'actif ou baisse de passif qui augmente les capitaux propres, hors apports des actionnaires.
+| Charges | Baisse d'actif ou hausse de passif qui diminue les capitaux propres, hors distributions.
+-- card | Comptabiliser, décomptabiliser, évaluer | Faut-il inscrire, sortir ou réévaluer cet élément ?
+1: **Comptabilisation** : entrée au bilan quand l'élément répond à sa définition et s'évalue de façon fiable.
+1: **Décomptabilisation** : sortie quand il ne répond plus aux critères.
+1: **Évaluation** : coût historique ou valeur actuelle (juste valeur, valeur d'utilité, valeur de remboursement).
+2: Achat ou création : comptabilisation
+2: Vente, perte, extinction : décomptabilisation
+2: Écart entre coût et valeur de marché : évaluation
+3: **Juste valeur** (IFRS 13) : le prix d'une transaction normale sur le marché. Plus pertinente pour les titres cotés, mais plus volatile.
+fil: ORVAL vend un véhicule (sortie : décomptabilisation) et détient des actions cotées achetées 50 000, valant 65 000 (évaluation à la juste valeur).
+trap[Débat]: Coût historique : stable mais déconnecté du marché. Juste valeur : fidèle au marché mais amplifie les crises.
+
+== 3 | t1 | etats | Les états financiers (IAS 1 et 7)
+-- table | IAS 1 : un jeu complet d'états financiers | État | Ce qu'il montre
+| État de la situation financière (bilan) | Actifs et passifs, séparés en courants (moins de 12 mois ou cycle d'exploitation) et non courants.
+| État du résultat net et des autres éléments du résultat global | La performance : résultat net, puis résultat global.
+| État des variations des capitaux propres | Résultat, dividendes, augmentations de capital, changements de méthode.
+| État des flux de trésorerie (IAS 7) | Flux opérationnels, d'investissement, de financement ; méthode directe ou indirecte.
+| Notes annexes | Méthodes comptables, jugements, détails chiffrés.
+-- card | Résultat net et résultat global | Quelle différence entre résultat net et résultat global ? | *
+1: **Résultat global = résultat net + autres éléments du résultat global (OCI)**.
+1: Les OCI sont comptabilisés directement en capitaux propres : écarts de conversion, réévaluations d'actifs, écarts actuariels sur retraites, couvertures de flux.
+2: Le résultat net
+2: Les gains ou pertes passés directement en capitaux propres
+3: Deux présentations possibles : un état unique, ou deux états (compte de résultat + état du résultat global).
+3: Certains OCI seront plus tard **recyclés** en résultat net, d'autres jamais.
+fil: Résultat net d'ORVAL 500 000, écart de conversion + 20 000, écarts actuariels − 8 000 : résultat global 512 000.
+-- tiles
+tile: Courant ou non courant ?
+Courant : réalisé ou réglé dans les 12 mois ou dans le cycle d'exploitation. Le reste est non courant.
+tile: Principes de présentation
+Image fidèle, continuité d'exploitation, permanence des méthodes, information comparative, non-compensation, comptabilité d'engagement.
+tile: Maintien du capital
+Financier (en euros) ou physique (capacité de production) : pas de bénéfice tant que le capital de départ n'est pas maintenu.
+-- table | La communication financière d'une société cotée | Type | Contenu
+| Périodique | Comptes annuels, semestriels, parfois trimestriels.
+| Permanente | Tout événement qui peut influencer le cours, publié sans délai (règlement européen MAR), comme un avertissement sur résultats.
+| Prospectus | Document publié pour lever des fonds : risques, gouvernance, comptes, stratégie.
+| Durabilité | Informations environnementales, sociales et de gouvernance (normes ISSB, CSRD).
+
+== 4 | t4 | groupe | La consolidation : groupe et obligation
+-- card | La notion de groupe | Ces sociétés forment-elles un groupe ?
+1: Un groupe **n'a pas de personnalité juridique** : c'est une réalité économique. Il réunit une société mère et les entreprises qu'elle **contrôle**, directement ou indirectement, seule ou conjointement.
+2: Plus de 50 % du capital : **filiale**
+2: De 10 à 50 % : **participation**
+2: Liens directs, indirects, réciproques, circulaires
+3: Les comptes consolidés présentent le groupe **comme une seule entité**.
+trap: La consolidation n'est pas une simple addition : il faut harmoniser les méthodes et éliminer les opérations entre sociétés du groupe.
+-- card | L'obligation de consolider | La société mère doit-elle établir des comptes consolidés, et dans quel référentiel ? | *
+1: Contrôle d'au moins une entreprise ? Sinon, pas de groupe.
+1: Cotée sur un marché réglementé ? Consolidation en **IFRS obligatoire**, sans condition de taille.
+1: Sinon, **2 des 3 seuils** dépassés sur les **deux derniers exercices** : **30 M€** de bilan, **60 M€** de chiffre d'affaires, **250 salariés** (ensemble mère + sociétés contrôlées).
+2: Liens de contrôle
+2: Cotation et type de marché
+2: Chiffres cumulés des deux exercices précédents
+3: Non cotée : normes françaises (règlement ANC 2020-01) ou IFRS sur option.
+3: Comptes consolidés : **deux commissaires aux comptes**.
+fil: ORVAL, non cotée, contrôle trois filiales. Ensemble : 35 M€ de bilan et 70 M€ de chiffre d'affaires en N−2 et N−1. Deux seuils dépassés deux fois : consolidation obligatoire en N.
+trap: Un seul exercice au-dessus des seuils ne suffit pas : il faut les deux derniers.
+-- table | Les exemptions | Référentiel | Cas d'exemption
+| Normes françaises | Sous-consolidation : la mère est elle-même incluse dans les comptes consolidés publiés d'un groupe plus large (sauf opposition d'associés détenant 10 % du capital). Intérêt négligeable de toutes les filiales.
+| IFRS 10 | Mère intermédiaire : filiale d'un groupe qui publie des comptes IFRS, non cotée, sans opposition des autres actionnaires. Entité d'investissement : elle évalue ses filiales à la juste valeur au lieu de les consolider.
+-- tiles
+tile: Date de clôture
+En général celle de la mère.
+Normes françaises : écart de plus de 3 mois avec une filiale = comptes intermédiaires obligatoires.
+IFRS 10 : même date pour toutes, sinon informations complémentaires. Écart jamais supérieur à 3 mois.
+tile: Contrôle
+Les comptes consolidés sont certifiés par au moins deux CAC.
+
+== 5 | t0 | reciter | À réciter
+-- table | | Question | Réponse
+| Qui adopte les IFRS en Europe ? | La Commission, après avis de l'EFRAG et vote de l'ARC.
+| Qui doit consolider en IFRS ? | Les sociétés cotées sur un marché réglementé.
+| Les deux caractéristiques essentielles | Pertinence et représentation fidèle.
+| Résultat global | Résultat net + autres éléments du résultat global.
+| Seuils de consolidation | 2 sur 3, deux exercices : 30 M€ de bilan, 60 M€ de CA, 250 salariés.
+| Filiale ou participation | Plus de 50 % ; de 10 à 50 %.

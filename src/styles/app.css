@@ -653,3 +653,4 @@ label.kv { cursor: pointer; }
 .sheet-title { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .sheet-frame { flex: 1; width: 100%; border: 0; background: var(--bg); opacity: 0; }
 .sheet-frame.ready { opacity: 1; }
+.sheet-error { padding: 24px 16px; }

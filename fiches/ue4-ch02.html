@@ -1,0 +1,418 @@
+<title>IFRS et consolidation : le cadre</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout : chaque notion est une bande à trois colonnes fixes, Majeure | Mineure | Conclusion.
+   La position ne change jamais, pour que la mémoire spatiale aide. Une teinte par étape de la vie du contrat. */
+:root{
+  --bg:#f4f6fa; --surface:#ffffff; --ink:#172033; --muted:#566178; --line:#dce1ea; --wash:#eef1f6;
+  --s0:#44506a; --s0s:#e9ecf2;
+  --s1:#0b7a75; --s1s:#dff3f1;
+  --s2:#2a5bd7; --s2s:#e3ebfd;
+  --s3:#7440c4; --s3s:#efe6fb;
+  --s4:#33793a; --s4s:#e3f2e4;
+  --s5:#bf3350; --s5s:#fbe5ea;
+  --nul:#b3261e; --nuls:#fde7e5; --di:#8a5a00; --dis:#fdf0d0; --exe:#1f6f43; --exes:#def3e6; --cl:#5b3fb5; --cls:#ebe6fb;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding-block:28px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:36px}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--s2);outline-offset:2px;border-radius:4px}
+
+/* En-tête */
+.top{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.lede{max-width:62ch;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px;color:var(--muted)}
+
+/* Pastilles de sanction : la couleur dit la famille */
+.chip{display:inline-block;font-weight:700;font-size:13.5px;line-height:1.25;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.chip.nul{background:var(--nuls);color:var(--nul)}
+.chip.di{background:var(--dis);color:var(--di)}
+.chip.exe{background:var(--exes);color:var(--exe)}
+.chip.cl{background:var(--cls);color:var(--cl)}
+.art{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.stage:not(#arrets) .art{display:none}
+.core{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--h);border:1.5px solid var(--h);border-radius:4px;padding:1px 6px;white-space:nowrap}
+
+/* Parcours : les 4 questions */
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.path a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;border-top:5px solid var(--h)}
+.path b{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2}
+.path span{font-size:13.5px;color:var(--muted)}
+.path .no{color:var(--h);font-weight:700}
+
+/* Méthode */
+.method{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.method li{padding:12px 14px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.method li:first-child{border-left:0}
+.method b{font-family:var(--display);font-weight:600;font-size:16px}
+.method span{font-size:13.5px;color:var(--muted)}
+.method i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Étapes */
+.stage{display:flex;flex-direction:column;gap:16px;--h:var(--s0);--hs:var(--s0s)}
+.t0{--h:var(--s0);--hs:var(--s0s)} .t1{--h:var(--s1);--hs:var(--s1s)} .t2{--h:var(--s2);--hs:var(--s2s)}
+.t3{--h:var(--s3);--hs:var(--s3s)} .t4{--h:var(--s4);--hs:var(--s4s)} .t5{--h:var(--s5);--hs:var(--s5s)}
+.stage>h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.01em;line-height:1.1}
+.stage>h2 .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--h);color:var(--surface);font-size:20px}
+.stage>h2 small{font-family:var(--body);font-weight:400;font-size:14px;color:var(--muted);letter-spacing:0}
+
+/* Carte syllogisme */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card>header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 18px 0}
+.card h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;margin-right:auto}
+.q{padding:6px 18px 14px;font-size:17px;color:var(--h);font-weight:700}
+.syl{display:grid;grid-template-columns:1.25fr 1fr 1fr;border-top:1px solid var(--line)}
+.zone{padding:14px 18px 16px;min-width:0;border-left:1px solid var(--line);position:relative}
+.zone:first-child{border-left:0}
+.zone h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.zone h4 b{color:var(--h);font-weight:500}
+.maj{background:var(--hs)}
+.zbody{display:flex;flex-direction:column;gap:8px}
+.zbody ul{display:flex;flex-direction:column;gap:6px}
+.check li{padding-left:26px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.28em;width:15px;height:15px;border:2px solid var(--h);border-radius:3px}
+.dots li{padding-left:16px;position:relative}
+.dots li::before{content:"";position:absolute;left:2px;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--h)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.never{color:var(--muted);font-size:15px}
+.foot{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.ex,.trap,.memo{padding:10px 18px;font-size:15.5px}
+.ex+.trap,.ex+.memo,.trap+.memo,.memo+.ex,.memo+.trap,.trap+.ex{border-top:1px dashed var(--line)}
+.tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:8px;padding:1px 6px;border-radius:4px;background:var(--wash);color:var(--muted)}
+.trap .tag{background:var(--nuls);color:var(--nul)}
+.memo .tag{background:var(--hs);color:var(--h)}
+.memo b{font-family:var(--display);font-weight:800;letter-spacing:.04em;color:var(--h)}
+
+/* Tuiles */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tiles.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tile h3{font-family:var(--display);font-weight:600;font-size:19px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.tile p{font-size:15.5px}
+
+/* Tableaux de comparaison */
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+caption{caption-side:top;text-align:left;padding:12px 16px 10px;font-family:var(--display);font-weight:600;font-size:19px}
+th,td{text-align:left;vertical-align:top;padding:9px 14px;border-top:1px solid var(--line)}
+thead th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--hs)}
+tbody th{font-weight:700;min-width:8.5em;color:var(--h)}
+td .chip{margin:1px 0}
+td .art{margin-left:2px}
+
+.eg{font-size:14.5px;color:var(--muted)}
+.eg b{color:var(--h)}
+td.eg{font-size:14.5px;color:var(--muted);min-width:11em}
+.note{font-size:15.5px;color:var(--muted);max-width:75ch}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+footer a{text-decoration:underline;text-underline-offset:2px}
+
+/* Mode test : on cache la règle et la sanction, on récite, on touche pour vérifier */
+#toggle{position:fixed;z-index:20;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));font:700 16px var(--body);color:var(--surface);background:var(--ink);border:0;border-radius:999px;padding:12px 20px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#toggle[aria-pressed="true"]{background:var(--s5);color:var(--surface)}
+body.test .hideable{cursor:pointer}
+body.test .hideable:not(.shown)>.zbody{visibility:hidden}
+body.test .zone.hideable:not(.shown)::after{content:"Récite, puis touche pour vérifier";position:absolute;inset:38px 18px auto 18px;font-size:14.5px;color:var(--muted);border:1.5px dashed var(--h);border-radius:8px;padding:10px 12px;background:var(--surface)}
+body.test tbody tr{cursor:pointer}
+body.test tbody tr:not(.shown) td{color:transparent}
+body.test tbody tr:not(.shown) td *{visibility:hidden}
+body.test tbody tr:not(.shown) td{background:repeating-linear-gradient(135deg,transparent 0 7px,var(--wash) 7px 9px)}
+body.test .hid:not(.shown){cursor:pointer}
+body.test .hid:not(.shown) .v{visibility:hidden}
+.teststate{display:none}
+body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;color:var(--muted)}
+
+@media (max-width:820px){
+  .path{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .method{grid-template-columns:1fr}
+  .method li{border-left:0;border-top:1px solid var(--line);flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .method li:first-child{border-top:0}
+  .syl{grid-template-columns:1fr}
+  .zone{border-left:0;border-top:1px solid var(--line)}
+  .zone:first-child{border-top:0}
+  .tiles,.tiles.two{grid-template-columns:1fr}
+  .tw table{min-width:620px}
+}
+@media (max-width:460px){ .path{grid-template-columns:1fr} }
+@media print{
+  #toggle,.teststate{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .wrap{gap:18px;padding-block:0}
+  .card,.tile,.tw,.path a,.method{break-inside:avoid}
+  .stage>h2{break-after:avoid}
+  body.test .hideable>.zbody,body.test td *{visibility:visible!important}
+}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">DSCG · UE 4 · IFRS et consolidation · Chapitres 1 et 2</p>
+  <h1>IFRS et consolidation : le cadre</h1>
+  <p class="lede">Chapitre 1 : qui fait les normes IFRS, comment l'Europe les adopte, le cadre conceptuel et les états financiers. Chapitre 2 : la notion de groupe et l'obligation de consolider. Fil rouge : le groupe ORVAL.</p>
+</header>
+
+<section class="stage t0" id="normalisation">
+  <h2><span class="n">1</span>La normalisation internationale</h2>
+  <div class="tw"><table>
+    <caption>De l'IASC à l'IASB</caption>
+    <thead><tr><th>Date</th><th>Événement</th><th>À retenir</th></tr></thead>
+    <tbody>
+      <tr><th>1973</th><td>Création de l'IASC par des organisations comptables nationales</td><td>Premières normes : les IAS. Application volontaire, faible pouvoir.</td></tr>
+      <tr><th>2001</th><td>L'IASB remplace l'IASC, à Londres, sous la Fondation IFRS</td><td>Organisme privé et indépendant. Nouvelles normes : les IFRS.</td></tr>
+      <tr><th>2005</th><td>Règlement européen de 2002 en vigueur</td><td>Comptes consolidés des sociétés cotées sur un marché réglementé en IFRS.</td></tr>
+      <tr><th>2021</th><td>Création de l'ISSB</td><td>Normes de durabilité IFRS S1 (principes généraux) et S2 (climat).</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <caption>Qui fait quoi dans la Fondation IFRS</caption>
+    <thead><tr><th>Organe</th><th>Rôle</th></tr></thead>
+    <tbody>
+      <tr><th>Monitoring Board</th><td>Autorités publiques (Commission européenne, SEC…). Veille à l'intérêt général, approuve la nomination des trustees.</td></tr>
+      <tr><th>Fondation IFRS (22 trustees)</th><td>Stratégie, financement, nomination des membres de l'IASB et de l'IFRIC.</td></tr>
+      <tr><th>IASB (14 membres)</th><td>Élabore et adopte les normes IFRS, après consultation publique.</td></tr>
+      <tr><th>ISSB</th><td>Élabore les normes de durabilité (IFRS S1, S2).</td></tr>
+      <tr><th>IFRIC (comité d'interprétation)</th><td>Répond aux questions d'application. Ses interprétations, approuvées par l'IASB, ont la même valeur que les normes.</td></tr>
+      <tr><th>Advisory Council, ASAF</th><td>Conseil stratégique ; lien avec les normalisateurs nationaux (ANC, EFRAG…).</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="card">
+    <header><h3>L'adoption des IFRS dans l'Union européenne</h3><span class="core">Par cœur</span></header>
+    <p class="q">Une norme IFRS publiée par l'IASB s'applique-t-elle directement en France ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>Non</b> : l'IASB est un organisme privé. La norme doit être <b>adoptée par l'Union européenne</b> (procédure d'« endorsement »).</p><ul><li>EFRAG : avis technique</li><li>ARC (représentants des États) : vote</li><li>Commission : adopte le règlement</li><li>Parlement et Conseil : contrôle, puis publication au Journal officiel de l'UE</li></ul></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>La norme respecte-t-elle l'image fidèle ?</li><li>Sert-elle l'intérêt public européen ?</li><li>Est-elle compréhensible, pertinente, fiable, comparable ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>L'UE peut <b>adopter ou rejeter</b> une norme, en tout ou en partie, mais <b>jamais la modifier</b>.</p><p>D'où la mention : « normes IFRS telles qu'adoptées par l'UE ».</p></div></div>
+    </div>
+    <div class="foot"><p class="memo"><span class="tag">Mémo</span><b>E A C</b> : l'EFRAG conseille, l'ARC vote, la Commission adopte.</p></div>
+  </article>
+
+  <article class="card">
+    <header><h3>Qui doit appliquer les IFRS ?</h3><span class="core">Par cœur</span></header>
+    <p class="q">Quel référentiel pour quels comptes ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Depuis 2005, les sociétés <b>cotées sur un marché réglementé</b> de l'UE établissent leurs <b>comptes consolidés</b> en IFRS.</p><p>Les comptes individuels des sociétés françaises restent au <b>PCG</b>.</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Cotation : marché réglementé (Euronext Paris) ou non (Euronext Growth)</li><li>Comptes consolidés ou comptes individuels ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Cotée sur marché réglementé : <b>IFRS obligatoires</b>.</p><p>Non cotée : normes françaises ou IFRS sur option.</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>ORVAL, cotée sur Euronext Paris : comptes consolidés en IFRS, mais comptes individuels d'ORVAL au PCG.</p><p class="trap"><span class="tag">Piège</span>Euronext Growth n'est pas un marché réglementé : pas d'obligation IFRS.</p></div>
+  </article>
+</section>
+
+<section class="stage t2" id="cadre">
+  <h2><span class="n">2</span>Le cadre conceptuel</h2>
+  <article class="card">
+    <header><h3>Le cadre conceptuel (2018)</h3><span class="core">Par cœur</span></header>
+    <p class="q">À quoi sert le cadre conceptuel de l'IASB ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Un ensemble de <b>principes généraux</b> qui donne une base commune aux normes. Il <b>ne prime pas</b> sur une norme.</p><p>Objectif de l'information financière : être <b>utile aux investisseurs, prêteurs et créanciers</b> pour leurs décisions.</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Guider l'IASB quand il écrit les normes</li><li>Guider l'entreprise quand aucune norme ne traite une opération</li><li>Aider auditeurs et analystes à interpréter</li><li>Garantir la cohérence entre les normes</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Quatre fonctions : <b>orienter, combler les vides, interpréter, harmoniser</b>.</p></div></div>
+    </div>
+    
+  </article>
+
+  <div class="tw"><table>
+    <caption>Les caractéristiques qualitatives de l'information utile</caption>
+    <thead><tr><th>Type</th><th>Caractéristique</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Essentielle</th><td><b>Pertinence</b> : peut influencer une décision (valeur prédictive ou de confirmation)</td><td>Une dépréciation annonce une baisse de performance.</td></tr>
+      <tr><th>Essentielle</th><td><b>Représentation fidèle</b> : exhaustive, neutre, sans erreur significative ; la substance prime sur la forme</td><td>Un crédit-bail est traité comme un achat à crédit.</td></tr>
+      <tr><th>Complémentaire</th><td>Comparabilité</td><td>Mêmes méthodes d'amortissement d'une année à l'autre.</td></tr>
+      <tr><th>Complémentaire</th><td>Vérifiabilité</td><td>L'audit peut confirmer les chiffres.</td></tr>
+      <tr><th>Complémentaire</th><td>Rapidité</td><td>Publication à temps, pas six semaines en retard.</td></tr>
+      <tr><th>Complémentaire</th><td>Compréhensibilité</td><td>Présentation claire et normalisée.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <caption>Les cinq éléments des états financiers</caption>
+    <thead><tr><th>Élément</th><th>Définition</th></tr></thead>
+    <tbody>
+      <tr><th>Actif</th><td>Ressource économique contrôlée, issue d'événements passés, qui générera des avantages futurs.</td></tr>
+      <tr><th>Passif</th><td>Obligation actuelle de transférer une ressource, née d'événements passés.</td></tr>
+      <tr><th>Capitaux propres</th><td>Ce qui reste des actifs après déduction des passifs.</td></tr>
+      <tr><th>Produits</th><td>Hausse d'actif ou baisse de passif qui augmente les capitaux propres, hors apports des actionnaires.</td></tr>
+      <tr><th>Charges</th><td>Baisse d'actif ou hausse de passif qui diminue les capitaux propres, hors distributions.</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="card">
+    <header><h3>Comptabiliser, décomptabiliser, évaluer</h3></header>
+    <p class="q">Faut-il inscrire, sortir ou réévaluer cet élément ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>Comptabilisation</b> : entrée au bilan quand l'élément répond à sa définition et s'évalue de façon fiable.</p><p><b>Décomptabilisation</b> : sortie quand il ne répond plus aux critères.</p><p><b>Évaluation</b> : coût historique ou valeur actuelle (juste valeur, valeur d'utilité, valeur de remboursement).</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Achat ou création : comptabilisation</li><li>Vente, perte, extinction : décomptabilisation</li><li>Écart entre coût et valeur de marché : évaluation</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p><b>Juste valeur</b> (IFRS 13) : le prix d'une transaction normale sur le marché. Plus pertinente pour les titres cotés, mais plus volatile.</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>ORVAL vend un véhicule (sortie : décomptabilisation) et détient des actions cotées achetées 50 000, valant 65 000 (évaluation à la juste valeur).</p><p class="trap"><span class="tag">Débat</span>Coût historique : stable mais déconnecté du marché. Juste valeur : fidèle au marché mais amplifie les crises.</p></div>
+  </article>
+</section>
+
+<section class="stage t1" id="etats">
+  <h2><span class="n">3</span>Les états financiers (IAS 1 et 7)</h2>
+  <div class="tw"><table>
+    <caption>IAS 1 : un jeu complet d'états financiers</caption>
+    <thead><tr><th>État</th><th>Ce qu'il montre</th></tr></thead>
+    <tbody>
+      <tr><th>État de la situation financière (bilan)</th><td>Actifs et passifs, séparés en courants (moins de 12 mois ou cycle d'exploitation) et non courants.</td></tr>
+      <tr><th>État du résultat net et des autres éléments du résultat global</th><td>La performance : résultat net, puis résultat global.</td></tr>
+      <tr><th>État des variations des capitaux propres</th><td>Résultat, dividendes, augmentations de capital, changements de méthode.</td></tr>
+      <tr><th>État des flux de trésorerie (IAS 7)</th><td>Flux opérationnels, d'investissement, de financement ; méthode directe ou indirecte.</td></tr>
+      <tr><th>Notes annexes</th><td>Méthodes comptables, jugements, détails chiffrés.</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="card">
+    <header><h3>Résultat net et résultat global</h3><span class="core">Par cœur</span></header>
+    <p class="q">Quelle différence entre résultat net et résultat global ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>Résultat global = résultat net + autres éléments du résultat global (OCI)</b>.</p><p>Les OCI sont comptabilisés directement en capitaux propres : écarts de conversion, réévaluations d'actifs, écarts actuariels sur retraites, couvertures de flux.</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Le résultat net</li><li>Les gains ou pertes passés directement en capitaux propres</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Deux présentations possibles : un état unique, ou deux états (compte de résultat + état du résultat global).</p><p>Certains OCI seront plus tard <b>recyclés</b> en résultat net, d'autres jamais.</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Résultat net d'ORVAL 500 000, écart de conversion + 20 000, écarts actuariels − 8 000 : résultat global 512 000.</p></div>
+  </article>
+
+  <div class="tiles">
+    <div class="tile"><h3>Courant ou non courant ?</h3><p>Courant : réalisé ou réglé dans les 12 mois ou dans le cycle d'exploitation. Le reste est non courant.</p></div>
+    <div class="tile"><h3>Principes de présentation</h3><p>Image fidèle, continuité d'exploitation, permanence des méthodes, information comparative, non-compensation, comptabilité d'engagement.</p></div>
+    <div class="tile"><h3>Maintien du capital</h3><p>Financier (en euros) ou physique (capacité de production) : pas de bénéfice tant que le capital de départ n'est pas maintenu.</p></div>
+  </div>
+
+  <div class="tw"><table>
+    <caption>La communication financière d'une société cotée</caption>
+    <thead><tr><th>Type</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><th>Périodique</th><td>Comptes annuels, semestriels, parfois trimestriels.</td></tr>
+      <tr><th>Permanente</th><td>Tout événement qui peut influencer le cours, publié sans délai (règlement européen MAR), comme un avertissement sur résultats.</td></tr>
+      <tr><th>Prospectus</th><td>Document publié pour lever des fonds : risques, gouvernance, comptes, stratégie.</td></tr>
+      <tr><th>Durabilité</th><td>Informations environnementales, sociales et de gouvernance (normes ISSB, CSRD).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stage t4" id="groupe">
+  <h2><span class="n">4</span>La consolidation : groupe et obligation</h2>
+  <article class="card">
+    <header><h3>La notion de groupe</h3></header>
+    <p class="q">Ces sociétés forment-elles un groupe ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Un groupe <b>n'a pas de personnalité juridique</b> : c'est une réalité économique. Il réunit une société mère et les entreprises qu'elle <b>contrôle</b>, directement ou indirectement, seule ou conjointement.</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Plus de 50 % du capital : <b>filiale</b></li><li>De 10 à 50 % : <b>participation</b></li><li>Liens directs, indirects, réciproques, circulaires</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Les comptes consolidés présentent le groupe <b>comme une seule entité</b>.</p></div></div>
+    </div>
+    <div class="foot"><p class="trap"><span class="tag">Piège</span>La consolidation n'est pas une simple addition : il faut harmoniser les méthodes et éliminer les opérations entre sociétés du groupe.</p></div>
+  </article>
+
+  <article class="card">
+    <header><h3>L'obligation de consolider</h3><span class="core">Par cœur</span></header>
+    <p class="q">La société mère doit-elle établir des comptes consolidés, et dans quel référentiel ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Contrôle d'au moins une entreprise ? Sinon, pas de groupe.</p><p>Cotée sur un marché réglementé ? Consolidation en <b>IFRS obligatoire</b>, sans condition de taille.</p><p>Sinon, <b>2 des 3 seuils</b> dépassés sur les <b>deux derniers exercices</b> : <b>30 M€</b> de bilan, <b>60 M€</b> de chiffre d'affaires, <b>250 salariés</b> (ensemble mère + sociétés contrôlées).</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Liens de contrôle</li><li>Cotation et type de marché</li><li>Chiffres cumulés des deux exercices précédents</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Non cotée : normes françaises (règlement ANC 2020-01) ou IFRS sur option.</p><p>Comptes consolidés : <b>deux commissaires aux comptes</b>.</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>ORVAL, non cotée, contrôle trois filiales. Ensemble : 35 M€ de bilan et 70 M€ de chiffre d'affaires en N−2 et N−1. Deux seuils dépassés deux fois : consolidation obligatoire en N.</p><p class="trap"><span class="tag">Piège</span>Un seul exercice au-dessus des seuils ne suffit pas : il faut les deux derniers.</p></div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Les exemptions</caption>
+    <thead><tr><th>Référentiel</th><th>Cas d'exemption</th></tr></thead>
+    <tbody>
+      <tr><th>Normes françaises</th><td>Sous-consolidation : la mère est elle-même incluse dans les comptes consolidés publiés d'un groupe plus large (sauf opposition d'associés détenant 10 % du capital). Intérêt négligeable de toutes les filiales.</td></tr>
+      <tr><th>IFRS 10</th><td>Mère intermédiaire : filiale d'un groupe qui publie des comptes IFRS, non cotée, sans opposition des autres actionnaires. Entité d'investissement : elle évalue ses filiales à la juste valeur au lieu de les consolider.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tiles two">
+    <div class="tile"><h3>Date de clôture</h3><p>En général celle de la mère.</p><p>Normes françaises : écart de plus de 3 mois avec une filiale = comptes intermédiaires obligatoires.</p><p>IFRS 10 : même date pour toutes, sinon informations complémentaires. Écart jamais supérieur à 3 mois.</p></div>
+    <div class="tile"><h3>Contrôle</h3><p>Les comptes consolidés sont certifiés par au moins deux CAC.</p></div>
+  </div>
+</section>
+
+<section class="stage t0" id="reciter">
+  <h2><span class="n">5</span>À réciter</h2>
+  <div class="tw"><table>
+    
+    <thead><tr><th>Question</th><th>Réponse</th></tr></thead>
+    <tbody>
+      <tr><th>Qui adopte les IFRS en Europe ?</th><td>La Commission, après avis de l'EFRAG et vote de l'ARC.</td></tr>
+      <tr><th>Qui doit consolider en IFRS ?</th><td>Les sociétés cotées sur un marché réglementé.</td></tr>
+      <tr><th>Les deux caractéristiques essentielles</th><td>Pertinence et représentation fidèle.</td></tr>
+      <tr><th>Résultat global</th><td>Résultat net + autres éléments du résultat global.</td></tr>
+      <tr><th>Seuils de consolidation</th><td>2 sur 3, deux exercices : 30 M€ de bilan, 60 M€ de CA, 250 salariés.</td></tr>
+      <tr><th>Filiale ou participation</th><td>Plus de 50 % ; de 10 à 50 %.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <p>Fiche bâtie sur les cours de la prof (chapitres 1 et 2) et le programme 2027. Fil rouge ORVAL inventé : les exercices de la prof ne sont pas repris.</p>
+</footer>
+
+</div>
+
+<button id="toggle" type="button" aria-pressed="false">Me tester</button>
+<p class="teststate" aria-live="polite">Récite la règle et la sanction, puis touche la zone pour vérifier.</p>
+
+<script>
+(function(){
+  var btn=document.getElementById('toggle');
+  function reveal(el){ el.classList.add('shown'); }
+  btn.addEventListener('click',function(){
+    var on=!document.body.classList.contains('test');
+    document.body.classList.toggle('test',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+    btn.textContent=on?'Tout afficher':'Me tester';
+    document.querySelectorAll('.shown').forEach(function(e){e.classList.remove('shown')});
+    document.querySelectorAll('.hideable, tbody tr').forEach(function(e){
+      if(on){e.setAttribute('tabindex','0')}else{e.removeAttribute('tabindex')}
+    });
+  });
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    var t=ev.target.closest('.hideable, tbody tr');
+    if(t)reveal(t);
+  });
+  document.addEventListener('keydown',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    if(ev.key!=='Enter'&&ev.key!==' ')return;
+    var t=ev.target.closest&&ev.target.closest('.hideable, tbody tr');
+    if(t&&t===ev.target){ev.preventDefault();reveal(t)}
+  });
+})();
+</script>

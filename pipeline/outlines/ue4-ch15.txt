@@ -1,0 +1,138 @@
+@eyebrow DSCG · UE 4 · Fusions · Séance du 6 novembre 2026
+@title Fusions : formes et démarche
+@lede Ce que le prof a traité en séance : les restructurations, les formes de fusion, puis la démarche jusqu'au nombre de titres à émettre (organigramme, sens de la fusion, évaluations, parité, soulte, nombre de titres, augmentation de capital). Les écritures comptables et l'analyse de la prime de fusion viendront à la séance suivante. Fil rouge : ALPHA absorbe BETA.
+@footer Fiche bâtie sur le plan du prof (« 15 Plan FUSION 2027 »), la séance du 6 novembre et tes notes. Le fil rouge ALPHA BETA est inventé, pour ne pas dévoiler ANNA BELLA. Sources : Code de commerce, fusions et scissions · CNB, réforme de 2023 et scission partielle · BOFiP, soulte de 10 %.
+
+== 1 | t0 | restructurations | Les restructurations
+-- tiles
+tile: Fusion
+Une société transmet **tout son patrimoine** à une autre, existante ou nouvelle. Elle **disparaît**. Ses associés reçoivent des titres de la société qui absorbe.
+tile: Scission
+Une société transmet son patrimoine à **plusieurs** sociétés. Elle **disparaît**. Ses associés reçoivent des titres de chacune.
+tile: Apport partiel d'actif
+Une société apporte une **branche d'activité** à une autre et reçoit **elle-même** les titres en échange. Elle continue d'exister.
+tile: Scission partielle
+Nouveauté depuis 2023. Même apport d'une branche, mais les titres vont **directement aux associés** de la société qui apporte. Elle continue d'exister.
+memo: La société qui apporte disparaît-elle ? Oui : fusion ou scission. Non : apport partiel ou scission partielle. Qui reçoit les titres ? Les associés (fusion, scission, scission partielle) ou la société elle-même (apport partiel).
+trap[Vocabulaire]: **Transmission universelle du patrimoine** : l'actif et le passif passent en bloc, sans céder chaque bien un par un. **Dissolution sans liquidation** : la société absorbée disparaît sans vendre ses biens ni payer ses dettes, puisque tout est repris.
+-- tiles
+tile: Pourquoi fusionner ?
+- Grandir vite : parts de marché, taille critique (croissance externe).
+- Synergies : achats groupés, frais fixes partagés.
+- Simplifier un groupe : absorber une filiale.
+- Raisons financières : regrouper la trésorerie, faciliter le financement.
+Ex. Deux boulangeries industrielles fusionnent pour acheter leur farine ensemble et fermer un dépôt.
+tile: Régime fiscal de faveur
+Sans lui, la société absorbée paie l'impôt sur ses plus-values latentes, comme si elle vendait tout. Avec lui, cet impôt est **reporté** : la société qui absorbe s'engage à le payer plus tard, au fil du temps.
+On l'appelle souvent le « 210 A ». Les engagements de l'absorbante seront vus avec les écritures.
+
+== 2 | t1 | formes | Les formes de fusion
+-- tiles
+tile: Fusion-création (réunion)
+A et B disparaissent toutes les deux. Une société nouvelle C reçoit les deux patrimoines et donne ses titres aux associés de A et de B.
+tile: Fusion-absorption simple
+A et B n'ont **aucun lien de capital**. A crée des titres pour tous les associés de B : ils sont payés à 100 % en titres A. C'est le cas d'ANNA BELLA.
+tile: Fusion-renonciation
+**A détient déjà x % de B**. A ne peut pas se payer elle-même : elle renonce à recevoir des titres pour sa part et n'en crée que pour les autres associés de B (100 − x %). Cas de POLY KROME.
+tile: Fusion suivie d'une réduction de capital
+**B détient y % de A**. En absorbant B, A reçoit ses propres titres dans le patrimoine de B. Elle les annule : son capital diminue.
+memo: Regarde le sens de la flèche de participation. A détient B : renonciation. B détient A : réduction de capital. Les deux à la fois (participations croisées) : on applique les deux mécanismes.
+trap: Le nom « renonciation » vient de l'ancienne pratique. Aujourd'hui, la loi **interdit** d'échanger les titres de B détenus par A : ce n'est pas un choix.
+-- card | Sens de la fusion | À quelle valeur la société qui absorbe reprend-elle les biens de l'absorbée ? | *
+1: La valeur d'apport dépend du **contrôle** :
+1: - sociétés sous **contrôle commun** (même groupe) : **valeur comptable**
+1: - contrôle distinct, fusion **à l'endroit** : **valeur réelle**
+1: - contrôle distinct, fusion **à l'envers** : **valeur comptable**
+2: Les deux sociétés ont-elles le même actionnaire de contrôle ?
+2: Après la fusion, qui contrôle l'absorbante : ses anciens associés (à l'endroit) ou ceux de l'absorbée (à l'envers) ?
+2: L'énoncé impose-t-il une valeur ?
+3: Une valeur d'apport : comptable ou réelle.
+3: Elle sert à calculer la **prime de fusion**, pas la parité.
+ex: Une PME absorbe une société plus grosse ; après l'opération, les anciens associés de la grosse société détiennent 70 % de la PME. C'est une fusion à l'envers : apports à la valeur comptable.
+trap: Si l'énoncé précise la valeur d'apport (comme ANNA BELLA : « valeur d'usage »), suis l'énoncé.
+
+== 3 | t2 | evaluations | Les évaluations
+-- table | Le fil rouge : ALPHA absorbe BETA, aucun lien de capital | | ALPHA | BETA
+| Nombre d'actions | 10 000 | 4 000
+| Valeur nominale | 100 € | 50 €
+| Capitaux propres | 3 000 000 | 1 000 000
+| Rapport de l'expert | Terrain sous-évalué de 600 000 | Frais d'établissement 40 000 · fonds commercial non inscrit 120 000
+-- card | Actif net corrigé et VMI | Combien vaut une action de chaque société ? | *
+1: **ANC = capitaux propres + plus-values − moins-values − actifs fictifs**
+1: **VMI = ANC ÷ nombre d'actions**
+1: ANC : actif net corrigé, ce que vaut vraiment la société. VMI : valeur mathématique intrinsèque, la part d'ANC d'une action.
+2: Les capitaux propres après répartition du résultat
+2: Chaque plus-value ou moins-value du rapport d'expert
+2: Les actifs sans valeur : frais d'établissement, charges à répartir
+2: Des impôts différés à déduire ?
+3: ALPHA : 3 000 000 + 600 000 = 3 600 000, VMI = **360 €**
+3: BETA : 1 000 000 − 40 000 + 120 000 = 1 080 000, VMI = **270 €**
+trap: On évalue **les deux sociétés**, l'absorbante comprise. Si on oublie la plus-value d'ALPHA, sa VMI tombe à 300 € et les associés de BETA reçoivent trop de titres.
+trap: Si l'énoncé donne des impôts différés passif sur les plus-values, retire-les de l'ANC (cas POLY KROME).
+memo[Ordre]: Évalue d'abord la société détenue, puis celle qui la détient : la valeur de la seconde comprend les titres de la première.
+memo[Méthodes]: Pour l'absorbée, méthode complète : actifs à leur valeur réelle − dettes à leur valeur réelle. Pour l'absorbante, méthode rapide : capitaux propres ± plus et moins-values. Les deux donnent l'ANC.
+memo[À venir]: Autres méthodes : valeur de rendement, goodwill par la rente (POLY KROME). On les combine parfois en moyenne.
+
+== 4 | t3 | parite | Parité et soulte
+-- card | La parité d'échange | Combien de titres A un associé de B reçoit-il pour ses titres B ? | *
+1: **Parité = valeur d'un titre B ÷ valeur d'un titre A**
+1: On la simplifie en fraction de nombres entiers : « x titres A pour y titres B ».
+1: Elle se calcule avec les **valeurs réelles**, que les apports soient repris à la valeur comptable ou non.
+2: La méthode imposée par le traité (VMI, moyenne de méthodes…)
+2: Mettre l'absorbée au numérateur
+2: Simplifier, puis vérifier à la calculatrice
+3: 270 ÷ 360 = 0,75 = 3/4 : **3 ALPHA pour 4 BETA**.
+memo: On paie l'absorbée, donc elle est en haut : « ce que je donne (B) sur ce avec quoi je paie (A) ».
+ex[Équité]: Vérifie par un produit en croix : 4 BETA × 270 = 1 080 = 3 ALPHA × 360. Les deux côtés sont égaux : l'échange est équitable.
+memo[Astuce]: Quotient difficile à mettre en fraction ? Calcule l'inverse. 125/275 = 0,4545… mais 275/125 = 2,2 = 11/5, donc la parité vaut 5/11.
+trap: Vérifie toujours une simplification en divisant : 140/112 = 1,25 = 5/4. Une parité fausse fausse tout le reste du cas.
+-- card | La soulte | Comment payer l'écart quand la parité ne tombe pas juste ?
+1: Une **soulte** est un complément versé **en argent** aux associés de l'absorbée, pour arrondir la parité.
+1: Elle ne peut pas dépasser **10 % de la valeur nominale** des titres remis.
+2: Une parité arrondie imposée par le traité
+2: Calculer l'écart par groupe de titres
+2: Comparer à 10 % de la valeur nominale des titres A remis
+3: Variante : si la VMI de BETA valait 275 € : 4 BETA = 1 100 € contre 3 ALPHA = 1 080 €.
+3: Soulte = 20 € par lot de 4 BETA. Limite : 10 % × 3 × 100 € = 30 €. Respectée.
+memo[Méthode du prof]: Une parité « excluante » (59 titres pour 25, par exemple) écarte les petits porteurs. On l'arrondit à une fraction simple, et la soulte paie l'écart. Soulte unitaire = écart ÷ titres B du lot (ici 20 ÷ 4 = 5 € par titre BETA). Soulte globale = soulte unitaire × titres B échangés (5 × 4 000 = 20 000 €).
+trap: La soulte vient en déduction de la valeur des apports pour calculer la prime de fusion : elle sort de la trésorerie.
+
+== 5 | t4 | titres | Titres à créer, capital, prime
+-- card | Du nombre de titres à la prime | Combien de titres A créer, de combien augmente le capital, et quelle est la prime de fusion ? | *
+1: **Titres à créer = titres B échangés × parité**
+1: **Augmentation de capital = titres créés × nominal de A**
+1: **Prime de fusion = valeur des apports rémunérés − augmentation de capital (− soulte)**
+2: Titres B échangés : tous, sauf ceux que A détient déjà
+2: Le nominal de A, jamais celui de B
+2: La valeur des apports retenue (comptable ou réelle)
+3: 4 000 × 3/4 = **3 000 titres**
+3: 3 000 × 100 € = **300 000 €**
+3: 1 080 000 − 300 000 = **780 000 €**
+memo[Contrôle]: Titres créés × VMI de A = valeur des apports : 3 000 × 360 = 1 080 000. Si ça ne tombe pas juste, une étape est fausse.
+ex[Équité]: Après la fusion, ALPHA vaut 3 600 000 + 1 080 000 = 4 680 000 pour 13 000 actions : 360 €, comme avant. Une parité calculée sur les VMI ne lèse personne.
+
+== 6 | t5 | participations | Quand les sociétés se détiennent
+-- table | Le fil rouge, en changeant seulement les participations (même parité supposée) | Situation | Titres A créés | Ce qui change
+| ALPHA détient 1 000 BETA (25 %) | (4 000 − 1 000) × 3/4 = 2 250 | Capital + 225 000. Prime de fusion = 3 000 × 270 − 225 000 = 585 000. Les apports qui correspondent aux 1 000 titres BETA déjà détenus (270 000) sont comparés à leur coût d'achat : c'est le boni ou mali, à la séance suivante.
+| BETA détient 500 ALPHA | 4 000 × 3/4 = 3 000, dont 500 qui reviennent à ALPHA | ALPHA annule ses 500 propres actions : capital final 10 000 + 3 000 − 500 = 12 500 actions.
+| Participations croisées | On cumule les deux lignes ci-dessus | La valeur de chaque société dépend de celle de l'autre : on pose deux équations et on les résout ensemble.
+-- card | Participations croisées : le système | Comment évaluer A et B quand chacune détient des titres de l'autre ?
+1: **a × NA = ANC A hors titres B + nB × b**
+1: **b × NB = ANC B hors titres A + nA × a**
+1: a et b : valeur d'un titre A et d'un titre B. N : nombre total de titres. nB : titres B détenus par A. nA : titres A détenus par B.
+2: Le nombre de titres détenus de chaque côté
+2: L'ANC sans la ligne « titres de participation »
+2: Résoudre par substitution
+3: Les valeurs a et b, puis la parité b ÷ a.
+3: Ensuite : renonciation pour les titres B de A, réduction de capital pour les titres A de B.
+
+== 7 | t0 | reciter | À réciter avant le cas
+-- table | | Question | Réponse
+| Parité | Valeur d'un titre absorbé ÷ valeur d'un titre absorbant, en valeurs réelles.
+| ANC | Capitaux propres + plus-values − moins-values − actifs fictifs (− impôts différés si l'énoncé les donne).
+| Titres créés | Titres de l'absorbée hors ceux détenus par l'absorbante × parité.
+| Augmentation de capital | Titres créés × nominal de l'absorbante.
+| Prime de fusion | Apports rémunérés − augmentation de capital − soulte.
+| Soulte | Complément en argent, au plus 10 % du nominal des titres remis.
+| Valeur d'apport | Contrôle commun ou fusion à l'envers : comptable. Contrôle distinct à l'endroit : réelle.
+| Absorbée détient l'absorbante | L'absorbante récupère ses propres titres et les annule : réduction de capital.

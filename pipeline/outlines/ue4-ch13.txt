@@ -1,0 +1,138 @@
+@eyebrow DSCG · UE 4 · Audit · Séance du 6 novembre 2026
+@title Audit : notion, cadre légal et acteurs
+@lede Ce que le prof a traité en séance : la notion d'audit, ses origines, le cadre légal, puis les trois professions (expert-comptable, commissaire aux comptes, auditeur de durabilité). Un fil rouge, la SAS VERDIER (meubles, 12 M€ de chiffre d'affaires, 4,8 M€ de bilan, 62 salariés, hors groupe, comptabilité tenue par le cabinet FAUVEL), sert d'exemple à chaque étape.
+@footer Fiche bâtie sur tes notes de la séance du 6 novembre, tes plans détaillés sur la H2A et le comité d'audit, le plan du prof (« 13 Plan AUDIT & CAC 2027 ») et le programme 2027. Le fil rouge VERDIER est inventé. Seuils du rapport de durabilité ajoutés le 19 novembre 2026 (C. com. L. 232-6-3, L. 230-1, D. 230-1 ; loi 2025-391 ; directive 2026/470).
+
+== 1 | t2 | notion | La notion d'audit
+-- card | Définir l'audit | Qu'est-ce qu'un audit, en une phrase ? | *
+1: L'audit est un **examen**, mené par un **professionnel indépendant**, pour donner une **opinion** sur la conformité de l'objet examiné à un **référentiel**.
+1: Audit des comptes : obtenir l'**assurance raisonnable** que les comptes, pris dans leur ensemble, ne contiennent pas d'**anomalies significatives**.
+2: Commencer par le nom commun précis : « un examen »
+2: Puis les qualificatifs : critique, sélectif, progressif
+2: Nommer le référentiel : PCG pour les comptes sociaux
+3: Le CAC certifie que les comptes sont **réguliers, sincères** et donnent une **image fidèle**.
+3: Il peut aussi certifier avec réserves, refuser de certifier ou être dans l'impossibilité de certifier.
+memo[Méthode du prof]: Nom commun, puis qualificatifs. « L'audit est un examen critique, sélectif et progressif… »
+trap[Vocabulaire]: **Sélectif** : l'auditeur choisit ce qu'il contrôle, il ne vérifie pas tout. **Progressif** : le travail s'étale dans le temps, une partie avant la clôture, une partie après. **Anomalie significative** : une erreur ou une omission assez importante pour influencer la décision d'un lecteur des comptes.
+-- table | La mission en trois temps | Étape | Ce que fait l'auditeur | Normes (NEP)
+| 1. Orientation et planification | Lettre de mission, connaissance de l'entité, évaluation des risques, seuil de signification (le montant au-delà duquel une erreur devient significative). | NEP 210, 300, 315, 320
+| 2. Éléments probants | Tests de procédures (le contrôle interne fonctionne-t-il ?) et contrôles de substance (les montants sont-ils justes ?). | NEP 330, 500
+| 3. Opinion et rapport | Conclure et rédiger le rapport sur les comptes. | NEP 700
+fil: Chez VERDIER, le CAC fixe d'abord un seuil de signification, puis teste la procédure de facturation, puis envoie des demandes de confirmation à des clients avant de signer son rapport.
+memo[À apporter]: Le prof demande d'avoir la NEP 315 au prochain cours, et le recueil des NEP en permanence (site de la CNCC).
+
+== 2 | t0 | origines | Les origines de l'audit
+-- tiles
+tile: Racine latine : audire, écouter
+L'auditeur doit s'entretenir avec trois personnes :
+- le dirigeant (président) ;
+- le directeur financier ou comptable ;
+- la personne qui détient le savoir-faire de l'entreprise.
+Ex. Chez VERDIER : le président, la directrice comptable et le chef d'atelier.
+tile: Racine anglo-saxonne : to audit
+Inspecter, investiguer : l'auditeur observe physiquement (inventaire, visite d'usine).
+Deux qualités : **clairvoyance** et **discernement**.
+Deux défauts à éviter : la **naïveté** (tout croire) et la **suspicion** (ne rien croire). Le juste milieu, c'est l'**esprit critique**.
+memo: Écouter (latin) puis vérifier (anglais) : on interroge les trois personnes clés, puis on va voir sur place.
+
+== 3 | t3 | cadre | Le cadre légal
+-- table | Les textes à citer, dans l'ordre | Date | Texte | Ce qu'il apporte
+| 1945 | Ordonnance du 19 septembre 1945 | Crée l'Ordre des experts-comptables. C'est toujours le texte de base de la profession.
+| 1966 | Loi sur les sociétés commerciales | Organise la mission du commissaire aux comptes dans les sociétés.
+| 1983 | Loi comptable du 30 avril 1983 et son décret | Fixe le référentiel comptable (le PCG) et impose un document qui décrit les procédures et l'organisation comptables, pour comprendre et contrôler la comptabilité.
+| 2003 | Loi de sécurité financière (août 2003) | Crée le H3C, autorité publique de contrôle des CAC. Impose au président des SA un rapport sur le contrôle interne.
+| 2016 | Réforme européenne de l'audit | Renforce l'indépendance des CAC, surtout dans les entités d'intérêt public (sociétés cotées, banques, assurances) : durée des mandats, services interdits, comité d'audit.
+| 2019 | Loi PACTE | Les seuils de nomination d'un CAC deviennent les mêmes pour toutes les sociétés commerciales.
+| 2023 | Ordonnance du 6 décembre 2023 (transposition de la CSRD) | Crée la certification des informations de durabilité. Le H3C devient la H2A le 1er janvier 2024.
+| 2024 | Décret de février 2024 | Relève les seuils de nomination du CAC.
+| 2026 | Directive européenne « Omnibus I » | Réduit fortement le nombre d'entreprises soumises au rapport de durabilité. Pas encore transposée en France.
+-- tiles
+tile: Les normes (NEP)
+Normes d'exercice professionnel : elles disent quelles diligences le CAC doit faire. Elles sont adoptées par la H2A puis homologuées par arrêté du garde des Sceaux.
+tile: La déontologie
+Deux codes distincts : le code de déontologie des CAC (indépendance, incompatibilités) et celui des experts-comptables.
+memo[Devoir]: Fiches A4 sur la H2A et sur le comité d'audit pour le 27 novembre. Format demandé : introduction, plan en trois parties, conclusion. Objectif : expliquer leur rôle.
+
+-- table | La H2A, Haute autorité de l'audit : son rôle | Axe | Ce qu'il faut savoir
+| Statut | Autorité publique indépendante, avec la personnalité morale et un budget propre. Indépendante de l'État et de la profession. Remplace le H3C depuis le 1er janvier 2024.
+| Organisation | Un **collège** de 14 membres (magistrats, AMF, ACPR, Trésor, personnalités qualifiées) fixe les règles et lance les poursuites. Une **commission des sanctions** séparée juge : celui qui poursuit n'est pas celui qui juge.
+| Accès et exercice des CAC | Tient la liste des CAC. Adopte les NEP, homologuées ensuite par le garde des Sceaux.
+| Contrôle et sanctions | Contrôle la qualité du travail des cabinets. Sanctions : avertissement, blâme, interdiction temporaire, radiation, amende.
+| Durabilité | Inscrit et contrôle les auditeurs de durabilité (CAC formés et OTI).
+| Coopération | En France avec l'AMF et l'ACPR, en Europe avec les autres autorités de l'audit.
+-- table | Le comité d'audit : son rôle | Axe | Ce qu'il faut savoir
+| Entités concernées | Comité spécialisé du conseil d'administration ou de surveillance, obligatoire dans les EIP (sociétés cotées, banques, assurances). Certaines filiales peuvent en être dispensées si leur mère en a un.
+| Composition | Membres du conseil **sans fonctions de direction**, dont au moins un **indépendant** et compétent en finance, comptabilité ou audit.
+| Suivi de l'information | Processus d'élaboration de l'information financière et de durabilité ; efficacité du contrôle interne, de la gestion des risques et de l'audit interne.
+| Suivi du CAC | **Recommande le choix du CAC** après appel d'offres. Vérifie son indépendance et autorise ou non les **services autres que la certification des comptes (SACC)**.
+| Place dans la gouvernance | Rôle de **conseil** : il ne décide pas à la place du conseil (il n'arrête pas les comptes), il prépare ses décisions et lui rend compte. Échange régulièrement avec le CAC.
+
+== 4 | t1 | acteurs | Trois professions, trois cadres
+-- table | Expert-comptable, commissaire aux comptes, auditeur de durabilité | Critère | Expert-comptable | Commissaire aux comptes | Auditeur de durabilité
+| Texte de base | Ordonnance de 1945 | Code de commerce | Code de commerce (réforme de 2023)
+| Institutions | Ordre : Conseil national (CNOEC) et conseils régionaux (CROEC) | Supervision : H2A. Profession : Compagnie nationale (CNCC) et compagnies régionales (CRCC) | Supervision : H2A
+| Accès | Diplôme d'expertise comptable (DEC), inscription au tableau de l'Ordre | DEC (ou certificat d'aptitude) et stage, inscription sur la liste tenue par la H2A | Un CAC formé à la durabilité, ou un organisme tiers indépendant (OTI), inscrit sur la liste de la H2A
+| Mission type | Tenue et présentation des comptes, conseil (fiscal, social, gestion) | Certification des comptes : mission légale d'intérêt général | Certification des informations de durabilité
+| Relation | Contrat avec le client (lettre de mission) | Nommé par l'assemblée des associés pour 6 exercices | Nommé par l'entité soumise au rapport de durabilité
+| Niveau d'assurance | Attestation sur des comptes présentés (pas un audit) | Raisonnable | Limitée
+| Indépendance | Au service du client | Stricte : il ne peut pas conseiller ni tenir les comptes qu'il certifie | Mêmes exigences que le CAC
+fil: Le cabinet FAUVEL tient la comptabilité de VERDIER : il ne peut pas en être le CAC. Il certifierait des comptes qu'il a lui-même établis.
+memo: L'EC fait les comptes, le CAC les certifie, l'auditeur de durabilité certifie le rapport de durabilité. Un seul gendarme pour les deux derniers : la H2A.
+trap: Le programme n'exige pas l'organisation détaillée des instances, ni les formalités d'inscription. Retiens les noms, les rôles et les conditions d'accès.
+-- card | Obligation de nommer un CAC | La société doit-elle nommer un commissaire aux comptes ? | *
+1: Une société commerciale doit nommer un CAC si elle dépasse **2 des 3 seuils** :
+1: - **5 M€** de total de bilan
+1: - **10 M€** de chiffre d'affaires hors taxes
+1: - **50 salariés**
+1: Société d'un groupe : 2,5 M€, 5 M€, 25 salariés. Comptes consolidés : deux CAC.
+2: Les trois chiffres à la clôture
+2: L'appartenance à un groupe
+2: L'obligation d'établir des comptes consolidés
+2: Une demande d'associés (10 % du capital peuvent demander au juge un CAC)
+3: VERDIER dépasse le chiffre d'affaires (12 M€) et l'effectif (62). Le bilan (4,8 M€) reste sous 5 M€.
+3: **2 seuils sur 3 : CAC obligatoire**.
+trap: Les anciens seuils (4 M€ et 8 M€) traînent encore dans les manuels. Ils ont été relevés en 2024.
+
+== 5 | t4 | missions | Les missions d'audit
+-- table | Typologie : savoir situer une mission | Distinction | D'un côté | De l'autre
+| Source | Audit légal : imposé par la loi, fait par le CAC (certification). | Audit contractuel : demandé librement, par exemple avant un rachat.
+| Position de l'auditeur | Audit externe : un professionnel indépendant de l'entité. | Audit interne : un service de l'entreprise, au service de la direction.
+| Comptes audités | Comptes sociaux : une seule société, selon le PCG. | Comptes consolidés : le groupe vu comme une seule entité, deux CAC obligatoires.
+| Niveau d'assurance | Raisonnable (audit) : opinion formulée de façon positive, « les comptes sont réguliers et sincères ». | Limitée (examen limité, durabilité) : formulée de façon négative, « nous n'avons pas relevé d'anomalies ».
+-- tiles
+tile: Droit d'information
+Le CAC peut faire toutes vérifications, à tout moment, et se faire remettre toutes les pièces utiles.
+tile: Confirmation directe
+Il peut interroger directement les tiers : clients, fournisseurs, banques (circularisation).
+tile: Droit aux honoraires
+Il est rémunéré par l'entité, sans que ses honoraires dépendent du résultat de sa mission.
+memo: Les moyens d'action du CAC : **I C H**, comme Information, Confirmation, Honoraires.
+fil: Le CAC de VERDIER écrit directement à la banque pour confirmer le solde des comptes et des emprunts. VERDIER ne peut pas s'y opposer.
+trap[Hors sujet ici]: Procédure d'alerte, révélation des faits délictueux et conventions réglementées : vus en UE 1. Contrôle interne et gestion des risques : vus en UE 3.
+
+== 6 | t5 | durabilite | La nouveauté : le reporting de durabilité
+-- card | Rapport de durabilité et sa certification | L'entreprise doit-elle publier et faire certifier un rapport de durabilité ?
+1: La directive européenne CSRD, transposée en 2023, impose aux **grandes entreprises** de publier des informations environnementales, sociales et de gouvernance selon les normes européennes **ESRS**.
+1: Grande entreprise : dépasse **2 des 3 seuils** : **250 salariés**, **50 M€** de chiffre d'affaires, **25 M€** de total de bilan.
+1: Calendrier : entités d'intérêt public de plus de 500 salariés depuis l'exercice 2024 ; autres grandes entreprises reportées aux exercices ouverts en **2027** (loi du 30 avril 2025).
+1: Ces informations sont certifiées par un CAC ou un OTI, avec une **assurance limitée**.
+2: Effectif, chiffre d'affaires et total de bilan
+2: Société cotée ou non, entité d'intérêt public ou non
+2: La date de la réglementation retenue par le sujet
+3: VERDIER (62 salariés, 12 M€ de CA, 4,8 M€ de bilan) ne dépasse aucun seuil.
+3: **Pas de rapport de durabilité obligatoire**. Elle peut publier un rapport volontaire simplifié (norme VSME).
+trap[Attention]: La directive **Omnibus I**, en vigueur depuis le 18 mars 2026, réserve l'obligation aux entreprises de **plus de 1 000 salariés et plus de 450 M€** de chiffre d'affaires (deux critères cumulés). À transposer avant le 19 mars 2027 : pas encore fait en France. Demande au prof quels seuils retenir pour l'examen.
+memo[Vocabulaire]: **Double matérialité** : on regarde à la fois l'impact de l'entreprise sur l'environnement et la société, et l'impact de ces enjeux sur ses finances. Sera vue plus tard.
+
+== 7 | t0 | reciter | À réciter
+-- table | | Question | Réponse
+| Audit | Un examen critique, sélectif et progressif, par un professionnel indépendant, pour donner une opinion sur la conformité à un référentiel.
+| Objectif de l'audit des comptes | Une assurance raisonnable que les comptes ne contiennent pas d'anomalies significatives.
+| Les 3 temps | Planification, éléments probants, rapport.
+| Les 3 personnes à rencontrer | Dirigeant, directeur financier ou comptable, détenteur du savoir-faire.
+| H2A | Haute autorité de l'audit, ancien H3C depuis le 1er janvier 2024. Supervise CAC et auditeurs de durabilité.
+| Seuils du CAC | 2 sur 3 : 5 M€ de bilan, 10 M€ de CA, 50 salariés.
+| Mandat du CAC | 6 exercices, nommé par l'assemblée des associés.
+| Moyens d'action du CAC | Information, confirmation directe des tiers, honoraires.
+| Assurance | Raisonnable pour l'audit des comptes, limitée pour la durabilité.
+| Seuils du rapport de durabilité | Aujourd'hui : 2 sur 3, 250 salariés, 50 M€ de CA, 25 M€ de bilan. Omnibus I : plus de 1 000 salariés et plus de 450 M€ de CA.
