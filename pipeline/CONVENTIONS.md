@@ -135,6 +135,7 @@ Règles :
 - **Question autonome :** compréhensible sans contexte, sans numéro d'article. Les cas commencent par les faits et finissent par la question.
 - **Réponse courte :** une à trois lignes. Retours à la ligne conservés, seul `**gras**` est interprété.
 - **`source` :** l'article ou l'arrêt. C'est le seul endroit où figure le numéro d'article.
+- **Arrêts :** chaque arrêt de la fiche, et en particulier chaque arrêt d'une fiche de jurisprudence du professeur, a sa propre carte : la question nomme l'arrêt (nom ou juridiction et date), la réponse donne sa solution en une à deux lignes. Un arrêt cité seulement dans `source` ne compte pas. Si la fiche du professeur se trompe sur un arrêt (formation, date), la carte prend la référence exacte et la synthèse le signale.
 - **Couverture :** chaque condition de chaque majeure, chaque sanction, chaque piège et chaque terme défini de la fiche a au moins une carte.
 - **Proportions indicatives :** environ 70 % de `regle`, 25 % de `cas`, quelques `memo`.
 - **Volume indicatif :** 150 à 250 cartes par chapitre.
