@@ -101,7 +101,7 @@ function SessionScreen({ mode }: { mode: SessionMode }) {
       </header>
 
       <main className="session-body">
-        <CardView card={card} theme={place.theme} showAnswer={revealed} onReveal={reveal} />
+        <CardView card={card} theme={place.theme} deckId={place.deck.id} showAnswer={revealed} onReveal={reveal} />
 
         {isCas && !revealed && (
           <textarea

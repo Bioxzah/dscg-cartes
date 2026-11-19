@@ -603,3 +603,53 @@ label.kv { cursor: pointer; }
 .week-dot.today { box-shadow: inset 0 0 0 1.5px var(--ink); }
 .goal-done { color: var(--vert); }
 .small-btn { min-height: 44px; margin-top: 10px; padding: 8px 12px; font-size: 14px; }
+
+/* ---------- Fiche sheet ---------- */
+
+.fiche-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--accent, var(--ink));
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+.sheet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  height: calc(88dvh - env(safe-area-inset-top));
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  background: var(--surface);
+  overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.sheet-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 4px 4px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.sheet-title { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sheet-frame { flex: 1; width: 100%; border: 0; background: var(--bg); opacity: 0; }
+.sheet-frame.ready { opacity: 1; }

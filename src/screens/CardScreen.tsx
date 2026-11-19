@@ -23,7 +23,7 @@ export function CardScreen() {
   return (
     <main className="screen">
       <Link className="back" to={`/paquets/${place.deck.id}/${place.theme.id}`}>‹ {place.theme.titre}</Link>
-      <CardView card={card} theme={place.theme} showAnswer />
+      <CardView card={card} theme={place.theme} deckId={place.deck.id} showAnswer />
       <p className="label card-id">{card.id}</p>
 
       <h2 className="section-title">Historique</h2>

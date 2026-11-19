@@ -162,6 +162,8 @@ La logique de planification et de composition de session est un module pur, sans
 - Fin de session : récapitulatif (cartes vues, taux de réussite, temps), puis retour à l'accueil.
 - Aucune animation bloquante. Le passage d'une carte à l'autre est immédiat.
 
+- « Voir dans la fiche » (décision du 19 novembre 2026) : une fois la réponse affichée, si le paquet a une fiche (`fiches/<deckId>.html`, embarquée et disponible hors ligne), un bouton ouvre la fiche dans un panneau par-dessus la carte, au passage qui explique la carte, encadré. Le passage est trouvé par proximité de texte entre la carte et les blocs de la fiche (`src/fiches/match.ts`) ; aucune donnée n'est ajoutée aux cartes. Fermer le panneau rend la carte telle quelle.
+
 ### 6.3 Paquets
 
 - Arborescence UE, chapitre, thème, avec pour chaque thème : nouvelles, en apprentissage, maîtrisées.
