@@ -56,13 +56,8 @@ fact: **250** salariés (effectif moyen)
 out: blue | Si oui | **Comptes consolidés obligatoires** : règlement **ANC 2020-01** (ou, sur option, normes IFRS).
 out: nul | Si non | **Pas d'obligation** de consolider (consolidation volontaire possible).
 memo[Sur la copie]: Ce schéma tombe chaque année. Rédige dans cet ordre : **contrôle** (avec l'article), **cotation** (marché réglementé ou non), **seuils** (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'**obligation** et le **référentiel**. Pense ensuite aux **exemptions** (section 3).
+trap[Seuils]: Il faut dépasser 2 des 3 seuils sur les **deux derniers exercices** (N−2 et N−1, jamais N). Un seul exercice ne suffit pas.
 trap: **Euronext Growth** n'est pas un marché réglementé : la société passe à l'étape 3, comme une société non cotée.
--- table | Seuils : faut-il consolider à la clôture du 31/12/2025 ? | 2 seuils dépassés au 31/12/2023 ? | Au 31/12/2024 ? | Obligation au 31/12/2025
-| Oui | Oui | **Comptes consolidés obligatoires**
-| Oui | Non | Exemption
-| Non | Oui | Exemption
-| Non | Non | Exemption
-trap: Un seul exercice au-dessus des seuils ne suffit pas : il faut les **deux derniers**. On regarde N−2 et N−1, jamais N.
 -- card | Quelles sociétés compter dans les seuils ? | Dans l'organigramme, quelles sociétés additionner pour tester les seuils ?
 zones: Règle|le principe;Dans l'organigramme|qui compter;Conclusion|à rédiger
 1: Les seuils s'apprécient sur l'**ensemble** formé par la mère et les entreprises qu'elle **contrôle** (exclusif ou conjoint), en **cumulant** les montants de chacune.
