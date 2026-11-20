@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Card } from '../cards/types.ts';
+import { prepareFiche, shareTheme } from '../fiches/frame.ts';
 import { BLOCK_SELECTOR, indexFiche } from '../fiches/match.ts';
 
 interface Props {
@@ -18,33 +19,6 @@ tr.dscg-here>th,tr.dscg-here>td{background:color-mix(in srgb,#ffc928 26%,transpa
 .dscg-here.dscg-flash{animation:dscg-flash 1.2s ease-out 1}
 @keyframes dscg-flash{from{outline-color:#ffb300;outline-width:6px}to{outline-color:#e0a100;outline-width:3px}}
 html{scroll-behavior:auto}`;
-
-/** The app's own @font-face rules, with absolute URLs, so the fiche needs no web font from the network. */
-function appFontFaces(): string {
-  const rules: string[] = [];
-  for (const sheet of Array.from(document.styleSheets)) {
-    let list: CSSRuleList;
-    try {
-      list = sheet.cssRules;
-    } catch {
-      continue;
-    }
-    const base = sheet.href ?? document.baseURI;
-    for (const rule of Array.from(list)) {
-      if (rule instanceof CSSFontFaceRule) {
-        rules.push(rule.cssText.replace(/url\((['"]?)([^'")]+)\1\)/g, (_, q: string, u: string) => `url(${q}${new URL(u, base).href}${q})`));
-      }
-    }
-  }
-  return rules.join('\n');
-}
-
-/** The fiche's HTML, made self-contained: no Google Fonts request (it can hang offline), app fonts, highlight style. */
-function prepare(html: string): string {
-  const style = `<style>${appFontFaces()}\n${HIGHLIGHT_CSS}</style>`;
-  const clean = html.replace(/<link[^>]+fonts\.(googleapis|gstatic)\.com[^>]*>/g, '');
-  return clean.includes('</head>') ? clean.replace('</head>', `${style}</head>`) : style + clean;
-}
 
 /** Outermost passages of the fiche, in document order. */
 function passages(doc: Document): HTMLElement[] {
@@ -71,7 +45,7 @@ export function FicheSheet({ url, card, title, onClose }: Props) {
     let alive = true;
     fetch(url)
       .then((r) => (r.ok ? r.text() : Promise.reject(new Error(String(r.status)))))
-      .then((text) => alive && setHtml(prepare(text)))
+      .then((text) => alive && setHtml(prepareFiche(text, HIGHLIGHT_CSS)))
       .catch(() => alive && setFailed(true));
     return () => {
       alive = false;
@@ -96,8 +70,7 @@ export function FicheSheet({ url, card, title, onClose }: Props) {
   const onLoad = () => {
     const doc = frame.current?.contentDocument;
     if (!doc || !html) return;
-    const theme = document.documentElement.dataset.theme;
-    if (theme) doc.documentElement.dataset.theme = theme;
+    shareTheme(doc);
     doc.addEventListener('keydown', (e) => e.key === 'Escape' && onClose());
     const blocks = passages(doc);
     if (blocks.length > 0) {

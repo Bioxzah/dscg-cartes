@@ -7,3 +7,7 @@ const byDeck = new Map(Object.entries(urls).map(([path, url]) => [path.slice('/f
 export function ficheUrl(deckId: string): string | undefined {
   return byDeck.get(deckId);
 }
+
+export function hasFiche(deckId: string): boolean {
+  return byDeck.has(deckId);
+}
