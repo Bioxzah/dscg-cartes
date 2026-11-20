@@ -118,21 +118,29 @@ let usesFlow = false;
 const FLOW_CSS = `<style>
 .flow{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
 .flow figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
-.frow,.fnext{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;align-items:center}
-.fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden}
+.frow,.fnext{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:44px}
+.frow{align-items:stretch}
+.fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden;background:var(--surface)}
 .fn{background:var(--h);color:var(--surface);font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px}
 .fq{padding:10px 12px 4px;font-weight:700}
 .fsrc{padding:0 12px 10px;font-size:13.5px;color:var(--muted);font-style:italic}
-.fouts{display:flex;flex-direction:column;gap:10px}
-.fout{border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
+.fouts{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.fout{position:relative;border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
+.fout::before{content:"";position:absolute;right:100%;top:50%;width:44px;height:2px;margin-top:-1px;background:currentColor}
+.fout::after{content:"";position:absolute;right:100%;top:50%;margin-top:-6px;border-left:9px solid currentColor;border-block:6px solid transparent}
 .fout p{color:var(--ink);font-size:15.5px}
 .fout.nul{background:var(--nuls);color:var(--nul)} .fout.exe{background:var(--exes);color:var(--exe)} .fout.blue{background:var(--s2s);color:var(--s2)}
 .fchip{font-family:var(--mono);font-weight:500;font-size:12px;border:1.5px solid currentColor;border-radius:6px;padding:1px 6px;white-space:nowrap;background:var(--surface)}
-.fnext>div{display:flex;flex-direction:column;align-items:center;color:var(--h)}
-.fnext>div::before,.fnext>div::after{content:"";width:2px;height:12px;background:currentColor}
-.fnext>div::after{height:14px;clip-path:polygon(0 0,100% 0,100% 60%,100% 60%,50% 100%,0 60%)}
+.fnext>div{display:flex;flex-direction:column;align-items:center;padding-top:14px;color:var(--h);background:linear-gradient(currentColor,currentColor) center top/2px calc(100% - 8px) no-repeat}
+.fnext>div::after{content:"";margin-top:6px;border-top:9px solid currentColor;border-inline:6px solid transparent}
 .fnote{margin-top:16px;background:var(--wash);border-radius:10px;padding:10px 12px;font-size:15px}
-@media (max-width:640px){.frow,.fnext{grid-template-columns:1fr;gap:8px}}
+@media (max-width:640px){
+  .frow,.fnext{grid-template-columns:1fr}
+  .fouts{margin-top:20px}
+  .fout::before,.fout::after{display:none}
+  .fout:first-child::before{display:block;right:auto;left:31px;top:auto;bottom:100%;width:2px;height:20px;margin:0 0 1px}
+  .fout:first-child::after{display:block;right:auto;left:26px;top:auto;bottom:100%;margin:0;border:0;border-top:9px solid currentColor;border-inline:6px solid transparent}
+}
 @media print{.flow{break-inside:avoid}}
 </style>
 `;

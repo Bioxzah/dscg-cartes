@@ -46,10 +46,10 @@ memo[Plan de réponse]: **Harmoniser, éliminer, présenter comme une seule enti
 -- flow | Le schéma de la prof : faut-il établir des comptes consolidés ?
 step: Étape 1 | La société contrôle-t-elle une ou plusieurs sociétés, de manière exclusive ou conjointe ? | Art. L. 233-16 C. com.
 out: nul | Si non | **Pas de consolidation** : pas de groupe.
-next: Si oui ↓
+next: Si oui
 step: Étape 2 | Ses titres sont-ils admis sur un marché réglementé (ex. : Euronext Paris) ? | Règlement (CE) n° 1606/2002
 out: exe | Si oui | **Comptes consolidés obligatoires**, en normes **IFRS adoptées par l'UE**.
-next: Si non ↓
+next: Si non
 step: Étape 3 | Le groupe dépasse-t-il 2 des 3 seuils sur 2 exercices consécutifs ? | Art. L. 233-17 et D. 230-2 C. com.
 out: blue | Si oui | **Comptes consolidés obligatoires** : règlement **ANC 2020-01** (ou, sur option, normes IFRS).
 out: nul | Si non | **Pas d'obligation** de consolider (consolidation volontaire possible).
