@@ -1,7 +1,7 @@
-@eyebrow DSCG · UE 4 · IFRS et consolidation · Chapitres 1 et 2
-@title IFRS et consolidation : le cadre
-@lede Chapitre 1 : qui fait les normes IFRS, comment l'Europe les adopte, le cadre conceptuel et les états financiers. Chapitre 2 : la notion de groupe et l'obligation de consolider. Fil rouge : le groupe ORVAL.
-@footer Fiche bâtie sur les cours de la prof (chapitres 1 et 2) et le programme 2027. Fil rouge ORVAL inventé : les exercices de la prof ne sont pas repris.
+@eyebrow DSCG · UE 4 · IFRS et consolidation · Chapitre 1
+@title Introduction aux normes IFRS
+@lede Qui fait les normes IFRS, comment l'Europe les adopte, le cadre conceptuel de l'IASB et les états financiers. La consolidation commence au chapitre 2, qui a sa propre fiche. Fil rouge : le groupe ORVAL.
+@footer Fiche bâtie sur le cours de la prof (chapitre 1) et le programme 2027. Fil rouge ORVAL inventé : les exercices de la prof ne sont pas repris.
 
 == 1 | t0 | normalisation | La normalisation internationale
 -- table | De l'IASC à l'IASB | Date | Événement | À retenir
@@ -99,41 +99,9 @@ Financier (en euros) ou physique (capacité de production) : pas de bénéfice t
 | Prospectus | Document publié pour lever des fonds : risques, gouvernance, comptes, stratégie.
 | Durabilité | Informations environnementales, sociales et de gouvernance (normes ISSB, CSRD).
 
-== 4 | t4 | groupe | La consolidation : groupe et obligation
--- card | La notion de groupe | Ces sociétés forment-elles un groupe ?
-1: Un groupe **n'a pas de personnalité juridique** : c'est une réalité économique. Il réunit une société mère et les entreprises qu'elle **contrôle**, directement ou indirectement, seule ou conjointement.
-2: Plus de 50 % du capital : **filiale**
-2: De 10 à 50 % : **participation**
-2: Liens directs, indirects, réciproques, circulaires
-3: Les comptes consolidés présentent le groupe **comme une seule entité**.
-trap: La consolidation n'est pas une simple addition : il faut harmoniser les méthodes et éliminer les opérations entre sociétés du groupe.
--- card | L'obligation de consolider | La société mère doit-elle établir des comptes consolidés, et dans quel référentiel ? | *
-1: Contrôle d'au moins une entreprise ? Sinon, pas de groupe.
-1: Cotée sur un marché réglementé ? Consolidation en **IFRS obligatoire**, sans condition de taille.
-1: Sinon, **2 des 3 seuils** dépassés sur les **deux derniers exercices** : **30 M€** de bilan, **60 M€** de chiffre d'affaires, **250 salariés** (ensemble mère + sociétés contrôlées).
-2: Liens de contrôle
-2: Cotation et type de marché
-2: Chiffres cumulés des deux exercices précédents
-3: Non cotée : normes françaises (règlement ANC 2020-01) ou IFRS sur option.
-3: Comptes consolidés : **deux commissaires aux comptes**.
-fil: ORVAL, non cotée, contrôle trois filiales. Ensemble : 35 M€ de bilan et 70 M€ de chiffre d'affaires en N−2 et N−1. Deux seuils dépassés deux fois : consolidation obligatoire en N.
-trap: Un seul exercice au-dessus des seuils ne suffit pas : il faut les deux derniers.
--- table | Les exemptions | Référentiel | Cas d'exemption
-| Normes françaises | Sous-consolidation : la mère est elle-même incluse dans les comptes consolidés publiés d'un groupe plus large (sauf opposition d'associés détenant 10 % du capital). Intérêt négligeable de toutes les filiales.
-| IFRS 10 | Mère intermédiaire : filiale d'un groupe qui publie des comptes IFRS, non cotée, sans opposition des autres actionnaires. Entité d'investissement : elle évalue ses filiales à la juste valeur au lieu de les consolider.
--- tiles
-tile: Date de clôture
-En général celle de la mère.
-Normes françaises : écart de plus de 3 mois avec une filiale = comptes intermédiaires obligatoires.
-IFRS 10 : même date pour toutes, sinon informations complémentaires. Écart jamais supérieur à 3 mois.
-tile: Contrôle
-Les comptes consolidés sont certifiés par au moins deux CAC.
-
-== 5 | t0 | reciter | À réciter
+== 4 | t0 | reciter | À réciter
 -- table | | Question | Réponse
 | Qui adopte les IFRS en Europe ? | La Commission, après avis de l'EFRAG et vote de l'ARC.
 | Qui doit consolider en IFRS ? | Les sociétés cotées sur un marché réglementé.
 | Les deux caractéristiques essentielles | Pertinence et représentation fidèle.
 | Résultat global | Résultat net + autres éléments du résultat global.
-| Seuils de consolidation | 2 sur 3, deux exercices : 30 M€ de bilan, 60 M€ de CA, 250 salariés.
-| Filiale ou participation | Plus de 50 % ; de 10 à 50 %.
