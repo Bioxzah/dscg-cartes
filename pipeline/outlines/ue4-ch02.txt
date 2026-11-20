@@ -20,16 +20,16 @@ trap: Ces seuils sont ceux du **capital**. Le contrôle, qui décide de la conso
 -- tiles
 tile: Participation directe
 M détient des actions de A.
-- M → A
+graph: M@0,0 A@1.6,0 | M>A 70 %
 tile: Participation indirecte
-M détient A, qui détient B : M tient B à travers A.
-- M → A → B
+M détient A, qui détient B : M tient B **à travers A**.
+graph: M@0,0 A@1,0 B@2,0 | M>A 70 % | A>B 60 %
 tile: Participation réciproque (croisée)
 M détient A, et A détient M en retour.
-- M → A → M
+graph: M@0,0 A@1.6,0 | M>A 70 % | A>M 5 %
 tile: Participation circulaire
-La boucle passe par une société de plus.
-- M → A → B → M
+La boucle passe par une société de plus : B détient M.
+graph: M@0,0 A@1.6,0 B@0.8,1 | M>A 70 % | A>B 60 % | B>M 4 %
 -- card | Pourquoi consolider ? | Pourquoi la consolidation ne peut-elle pas se limiter à additionner les comptes individuels ? | *
 1: Les comptes consolidés présentent la mère et ses filiales **comme une seule entité économique** : patrimoine, situation financière et performance de l'ensemble.
 1: L'addition brute donnerait une image fausse, pour deux raisons :

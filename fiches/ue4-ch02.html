@@ -175,6 +175,15 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 }
 </style>
 
+<style>
+.graph{display:block;max-width:100%;height:auto;margin:6px auto 2px;overflow:visible}
+.graph path{fill:none;stroke:var(--h);stroke-width:2}
+.graph polygon{fill:var(--h)}
+.graph circle{fill:var(--surface);stroke:var(--h);stroke-width:2}
+.graph circle.mother{fill:var(--hs)}
+.graph text{font-family:var(--display);font-weight:600;font-size:16px;text-anchor:middle;fill:var(--ink)}
+.graph text.lb{font-family:var(--mono);font-weight:500;font-size:12px;fill:var(--muted)}
+</style>
 <div class="wrap">
 
 <header class="top">
@@ -207,11 +216,11 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
   </table></div>
   <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Ces seuils sont ceux du <b>capital</b>. Le contrôle, qui décide de la consolidation, s'apprécie avec les <b>droits de vote</b> et d'autres critères : chapitre suivant (périmètre).</p></div></div>
 
-  <div class="tiles">
-    <div class="tile"><h3>Participation directe</h3><p>M détient des actions de A.</p><ul><li>M → A</li></ul></div>
-    <div class="tile"><h3>Participation indirecte</h3><p>M détient A, qui détient B : M tient B à travers A.</p><ul><li>M → A → B</li></ul></div>
-    <div class="tile"><h3>Participation réciproque (croisée)</h3><p>M détient A, et A détient M en retour.</p><ul><li>M → A → M</li></ul></div>
-    <div class="tile"><h3>Participation circulaire</h3><p>La boucle passe par une société de plus.</p><ul><li>M → A → B → M</li></ul></div>
+  <div class="tiles two">
+    <div class="tile"><h3>Participation directe</h3><p>M détient des actions de A.</p><svg class="graph" viewBox="0 0 247.20000000000002 68" width="247.20000000000002" height="68" role="img" aria-label="M détient A à 70 %"><path d="M55.0 34.0 Q123.6 34.0 190.2 34.0"/><polygon points="192.2,34.0 183.2,38.5 183.2,29.5"/><text class="lb" x="123.1" y="27.0">70 %</text><circle class="mother" cx="34" cy="34" r="21"/><text x="34" y="39">M</text><circle class="" cx="213.20000000000002" cy="34" r="21"/><text x="213.20000000000002" y="39">A</text></svg></div>
+    <div class="tile"><h3>Participation indirecte</h3><p>M détient A, qui détient B : M tient B <b>à travers A</b>.</p><svg class="graph" viewBox="0 0 292 68" width="292" height="68" role="img" aria-label="M détient A à 70 %, A détient B à 60 %"><path d="M55.0 34.0 Q90.0 34.0 123.0 34.0"/><polygon points="125.0,34.0 116.0,38.5 116.0,29.5"/><text class="lb" x="89.5" y="27.0">70 %</text><path d="M167.0 34.0 Q202.0 34.0 235.0 34.0"/><polygon points="237.0,34.0 228.0,38.5 228.0,29.5"/><text class="lb" x="201.5" y="27.0">60 %</text><circle class="mother" cx="34" cy="34" r="21"/><text x="34" y="39">M</text><circle class="" cx="146" cy="34" r="21"/><text x="146" y="39">A</text><circle class="" cx="258" cy="34" r="21"/><text x="258" y="39">B</text></svg></div>
+    <div class="tile"><h3>Participation réciproque (croisée)</h3><p>M détient A, et A détient M en retour.</p><svg class="graph" viewBox="0 0 247.20000000000002 68" width="247.20000000000002" height="68" role="img" aria-label="M détient A à 70 %, A détient M à 5 %"><path d="M54.3 28.6 Q123.6 10.0 191.0 28.0"/><polygon points="192.9,28.6 183.1,30.6 185.4,21.9"/><text class="lb" x="123.1" y="11.2">70 %</text><path d="M192.9 39.4 Q123.6 58.0 56.2 40.0"/><polygon points="54.3,39.4 64.1,37.4 61.8,46.1"/><text class="lb" x="124.1" y="64.8">5 %</text><circle class="mother" cx="34" cy="34" r="21"/><text x="34" y="39">M</text><circle class="" cx="213.20000000000002" cy="34" r="21"/><text x="213.20000000000002" y="39">A</text></svg></div>
+    <div class="tile"><h3>Participation circulaire</h3><p>La boucle passe par une société de plus : B détient M.</p><svg class="graph" viewBox="0 0 247.20000000000002 152" width="247.20000000000002" height="152" role="img" aria-label="M détient A à 70 %, A détient B à 60 %, B détient M à 4 %"><path d="M55.0 34.0 Q123.6 34.0 190.2 34.0"/><polygon points="192.2,34.0 183.2,38.5 183.2,29.5"/><text class="lb" x="123.1" y="27.0">70 %</text><path d="M197.9 48.4 Q168.4 76.0 140.4 102.3"/><polygon points="138.9,103.6 142.4,94.2 148.6,100.8"/><text class="lb" x="182.8" y="94.7">60 %</text><path d="M108.3 103.6 Q78.8 76.0 50.8 49.7"/><polygon points="49.3,48.4 59.0,51.2 52.8,57.8"/><text class="lb" x="65.1" y="95.4">4 %</text><circle class="mother" cx="34" cy="34" r="21"/><text x="34" y="39">M</text><circle class="" cx="213.20000000000002" cy="34" r="21"/><text x="213.20000000000002" y="39">A</text><circle class="" cx="123.60000000000001" cy="118" r="21"/><text x="123.60000000000001" y="123">B</text></svg></div>
   </div>
 
   <article class="card">

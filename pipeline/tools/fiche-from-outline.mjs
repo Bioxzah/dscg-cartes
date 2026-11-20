@@ -55,13 +55,52 @@ ${b.rows.map((r) => `      <tr><th>${il(r[0])}</th>${r.slice(1).map((c) => `<td>
   </table></div>${b.foot.length ? `\n  <div class="card">${foot(b.foot)}</div>` : ''}`;
   }
   if (b.type === 'tiles') {
-    return `<div class="tiles${b.tiles.length === 2 ? ' two' : ''}">
-${b.tiles.map((t) => `    <div class="tile"><h3>${il(t.title)}</h3>${t.lines.map((l) => (l.startsWith('- ') ? `<ul><li>${il(l.slice(2))}</li></ul>` : l.startsWith('Ex. ') ? `<p class="eg"><b>Ex.</b> ${il(l.slice(4))}</p>` : `<p>${il(l)}</p>`)).join('').replace(/<\/ul><ul>/g, '')}</div>`).join('\n')}
+    return `<div class="tiles${b.tiles.length === 2 || b.tiles.length === 4 ? ' two' : ''}">
+${b.tiles.map((t) => `    <div class="tile"><h3>${il(t.title)}</h3>${t.lines.map((l) => (l.startsWith('graph:') ? graph(l.slice(6)) : l.startsWith('- ') ? `<ul><li>${il(l.slice(2))}</li></ul>` : l.startsWith('Ex. ') ? `<p class="eg"><b>Ex.</b> ${il(l.slice(4))}</p>` : `<p>${il(l)}</p>`)).join('').replace(/<\/ul><ul>/g, '')}</div>`).join('\n')}
   </div>${b.foot.length ? `\n  <div class="card">${foot(b.foot)}</div>` : ''}`;
   }
   if (b.type === 'foot') return `<div class="card">${foot(b.foot)}</div>`;
   throw new Error(b.type);
 }
+// A small diagram of shareholdings: "graph: M@0,0 A@1,0 | M>A 70 % | A>M 5 %".
+// Nodes sit on a grid; an arrow goes from the holder to the company held, with an optional label.
+// Two opposite arrows between the same nodes are curved so both stay visible.
+let usesGraph = false;
+function graph(spec) {
+  usesGraph = true;
+  const [nodeSpec, ...edgeSpecs] = spec.split('|').map((s) => s.trim());
+  const X = 112, Y = 84, P = 34, R = 21;
+  const nodes = new Map(nodeSpec.split(/\s+/).map((n) => { const [name, xy] = n.split('@'); const [x, y] = xy.split(',').map(Number); return [name, { x: P + x * X, y: P + y * Y }]; }));
+  const edges = edgeSpecs.map((e) => { const m = e.match(/^(\S+)>(\S+)\s*(.*)$/); return { from: m[1], to: m[2], label: m[3] }; });
+  const w = Math.max(...[...nodes.values()].map((n) => n.x)) + P, h = Math.max(...[...nodes.values()].map((n) => n.y)) + P;
+  const f = (n) => n.toFixed(1);
+  const parts = edges.map(({ from, to, label }) => {
+    const a = nodes.get(from), b = nodes.get(to);
+    const dx = b.x - a.x, dy = b.y - a.y, len = Math.hypot(dx, dy), ux = dx / len, uy = dy / len;
+    const bend = edges.some((e) => e.from === to && e.to === from) ? 24 : 0;
+    const cx = (a.x + b.x) / 2 + uy * bend, cy = (a.y + b.y) / 2 - ux * bend; // control point, left of the arrow
+    const dir = (px, py, qx, qy) => { const l = Math.hypot(qx - px, qy - py); return [(qx - px) / l, (qy - py) / l]; };
+    const [sx, sy] = dir(a.x, a.y, cx, cy), [ex, ey] = dir(cx, cy, b.x, b.y);
+    const s = [a.x + sx * R, a.y + sy * R], t = [b.x - ex * (R + 2), b.y - ey * (R + 2)];
+    const tip = [b.x - ex * R, b.y - ey * R], base = [tip[0] - ex * 9, tip[1] - ey * 9];
+    const head = `${f(tip[0])},${f(tip[1])} ${f(base[0] - ey * 4.5)},${f(base[1] + ex * 4.5)} ${f(base[0] + ey * 4.5)},${f(base[1] - ex * 4.5)}`;
+    const mx = (s[0] + 2 * cx + t[0]) / 4, my = (s[1] + 2 * cy + t[1]) / 4; // middle of the curve
+    const off = (bend ? 12 : 11) + 14 * Math.abs(uy), lx = mx + uy * off, ly = my - ux * off + 4;
+    return `<path d="M${f(s[0])} ${f(s[1])} Q${f(cx)} ${f(cy)} ${f(t[0])} ${f(t[1])}"/><polygon points="${head}"/>${label ? `<text class="lb" x="${f(lx)}" y="${f(ly)}">${esc(label)}</text>` : ''}`;
+  });
+  const circles = [...nodes].map(([name, n], i) => `<circle class="${i === 0 ? 'mother' : ''}" cx="${n.x}" cy="${n.y}" r="${R}"/><text x="${n.x}" y="${n.y + 5}">${esc(name)}</text>`);
+  return `<svg class="graph" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="${esc(edges.map((e) => `${e.from} détient ${e.to}${e.label ? ' à ' + e.label : ''}`).join(', '))}">${parts.join('')}${circles.join('')}</svg>`;
+}
+const GRAPH_CSS = `<style>
+.graph{display:block;max-width:100%;height:auto;margin:6px auto 2px;overflow:visible}
+.graph path{fill:none;stroke:var(--h);stroke-width:2}
+.graph polygon{fill:var(--h)}
+.graph circle{fill:var(--surface);stroke:var(--h);stroke-width:2}
+.graph circle.mother{fill:var(--hs)}
+.graph text{font-family:var(--display);font-weight:600;font-size:16px;text-anchor:middle;fill:var(--ink)}
+.graph text.lb{font-family:var(--mono);font-weight:500;font-size:12px;fill:var(--muted)}
+</style>
+`;
 const FOOT = { ex: ['ex', 'Exemple'], fil: ['ex', 'Fil rouge'], trap: ['trap', 'Piège'], memo: ['memo', 'Mémo'] };
 for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   const line = raw.trim();
@@ -93,7 +132,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   throw new Error('ligne non comprise : ' + line);
 }
 close();
-const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}<div class="wrap">
+const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}<div class="wrap">
 
 <header class="top">
   <p class="eyebrow">${esc(meta.eyebrow)}</p>
