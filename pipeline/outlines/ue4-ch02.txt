@@ -1,0 +1,141 @@
+@eyebrow DSCG · UE 4 · IFRS et consolidation · Chapitre 2
+@title Introduction à la consolidation
+@lede Ce qu'est un groupe, quand il doit publier des comptes consolidés, dans quel référentiel, et quand il en est dispensé. Trois questions à se poser dans l'ordre : contrôle, cotation, seuils. Fil rouge : le groupe HÉLIA, fabricant de panneaux solaires.
+@footer Fiche bâtie sur le cours de la prof (chapitre 2, V2) et le programme 2027. Fil rouge HÉLIA inventé : les exercices de la prof ne sont pas repris. Le contrôle exclusif ou conjoint et l'influence notable sont détaillés au chapitre sur le périmètre.
+
+== 1 | t4 | groupe | La notion de groupe
+-- card | Le groupe | Qu'est-ce qu'un groupe, au sens du Code de commerce ? | *
+1: Un groupe **n'a pas de personnalité juridique** : c'est une **réalité économique**. Chaque société garde sa personnalité juridique, mais perd une partie de son autonomie au profit d'une logique d'ensemble.
+1: **Art. L. 233-16 C. com.** : une entreprise et l'ensemble des entreprises qu'elle **contrôle**, directement ou indirectement, de manière **exclusive ou conjointe**.
+2: Une société mère qui détient des titres d'autres sociétés
+2: Un contrôle direct ou par l'intermédiaire d'une filiale
+2: Un contrôle seul (exclusif) ou partagé (conjoint)
+3: Pourquoi se grouper : **taille critique**, mutualiser les ressources, diversifier les activités, réduire les risques, peser face aux concurrents, fournisseurs et financeurs.
+fil: HÉLIA SA contrôle HÉLIA Pose et HÉLIA Italia. Trois personnes morales, trois comptes individuels, mais une seule entreprise aux yeux d'un banquier : le groupe.
+-- table | Filiale ou participation (Code de commerce) | Statut | Fraction du capital détenue | Texte
+| Filiale | **Plus de 50 %** du capital, sans compter les actions privées du droit de vote | Art. L. 233-1
+| Participation | **De 10 % à 50 %** du capital | Art. L. 233-2
+| Simple placement | Moins de 10 % | (hors définitions légales)
+trap: Ces seuils sont ceux du **capital**. Le contrôle, qui décide de la consolidation, s'apprécie avec les **droits de vote** et d'autres critères : chapitre suivant (périmètre).
+-- tiles
+tile: Participation directe
+M détient des actions de A.
+- M → A
+tile: Participation indirecte
+M détient A, qui détient B : M tient B à travers A.
+- M → A → B
+tile: Participation réciproque (croisée)
+M détient A, et A détient M en retour.
+- M → A → M
+tile: Participation circulaire
+La boucle passe par une société de plus.
+- M → A → B → M
+-- card | Pourquoi consolider ? | Pourquoi la consolidation ne peut-elle pas se limiter à additionner les comptes individuels ? | *
+1: Les comptes consolidés présentent la mère et ses filiales **comme une seule entité économique** : patrimoine, situation financière et performance de l'ensemble.
+1: L'addition brute donnerait une image fausse, pour deux raisons :
+1: - les sociétés n'appliquent pas toutes les mêmes méthodes : il faut les **harmoniser** (retraitements) ;
+1: - le groupe ne réalise pas de chiffre d'affaires avec lui-même : il faut **neutraliser les relations internes**.
+2: Ventes, prêts, dividendes entre sociétés du groupe
+2: Méthodes différentes (amortissements, stocks, provisions…)
+2: Titres de participation de la mère face aux capitaux propres des filiales
+3: Difficultés techniques : définir le **périmètre** et le contrôle, **harmoniser** les méthodes, **éliminer** les opérations et soldes réciproques, **éliminer les titres** contre les capitaux propres, gérer les **intérêts minoritaires**, les **dates de clôture** décalées et les **devises**.
+fil: HÉLIA SA vend 2 M€ de panneaux à HÉLIA Pose. Additionner les deux chiffres d'affaires compterait ces 2 M€ deux fois : la consolidation les élimine.
+memo[Plan de réponse]: **Harmoniser, éliminer, présenter comme une seule entité.** C'est la question de cours de la prof : cite les difficultés une par une, avec un exemple chacune.
+
+== 2 | t2 | obligation | L'obligation de consolider
+-- card | Les trois étapes | La société mère doit-elle consolider, et dans quel référentiel ? | *
+1: **Étape 1 : contrôle.** Contrôle-t-elle, seule ou conjointement, au moins une entreprise ? Non : pas de groupe, pas de consolidation.
+1: **Étape 2 : cotation.** Ses titres sont-ils admis sur un **marché réglementé** ? Oui : comptes consolidés en **IFRS obligatoires**, **sans condition de seuils** (droit européen).
+1: **Étape 3 : seuils.** Sinon, l'ensemble dépasse-t-il **2 des 3 seuils** sur les **deux exercices précédents** ? Oui : consolidation obligatoire. Non : facultative.
+2: Liens de contrôle (étape 1)
+2: Euronext Paris = réglementé ; Euronext Growth = **non** réglementé (étape 2)
+2: Chiffres cumulés de N−2 et N−1 (étape 3)
+3: Base légale : **art. L. 233-16 C. com.** (obligation, avec un rapport sur la gestion du groupe) et **L. 233-21** (image fidèle de l'ensemble consolidé).
+3: Règles françaises : **règlement ANC 2020-01** du 6 mars 2020, applicable depuis le 1er janvier 2021 (il remplace le CRC 99-02).
+trap: Une société cotée sur **Euronext Growth** n'est pas sur un marché réglementé : elle passe à l'étape 3, comme une société non cotée.
+-- table | Les seuils : 2 sur 3, deux exercices de suite | Critère | Seuil à dépasser
+| Total de bilan | Plus de **30 M€**
+| Chiffre d'affaires hors taxes | Plus de **60 M€**
+| Effectif moyen | Plus de **250 salariés**
+memo: **30 / 60 / 250**, comme pour les « grandes entreprises » : retiens « 2 sur 3, 2 ans de suite ».
+-- table | Clôture au 31/12/2025 : faut-il consolider ? | 2 seuils dépassés au 31/12/2023 ? | Au 31/12/2024 ? | Obligation au 31/12/2025
+| Oui | Oui | **Comptes consolidés obligatoires**
+| Oui | Non | Exemption
+| Non | Oui | Exemption
+| Non | Non | Exemption
+trap: Un seul exercice au-dessus des seuils ne suffit pas : il faut les **deux derniers**. On regarde N−2 et N−1, jamais N.
+-- card | Sur quels chiffres apprécier les seuils ? | Quelles sociétés additionner pour tester les seuils ?
+1: Les seuils s'apprécient sur l'**ensemble** formé par la mère et les entreprises qu'elle **contrôle** (exclusif ou conjoint), en **cumulant** les montants de chacune.
+2: Sociétés sous contrôle exclusif : comptées
+2: Sociétés sous contrôle conjoint : comptées
+2: Sociétés sous **influence notable** : **exclues du calcul**
+3: Si les seuils sont dépassés, les sociétés sous influence notable **entrent quand même dans le périmètre** de consolidation.
+fil: HÉLIA (non cotée) : mère 14 M€ de bilan, filiales contrôlées 19 M€, soit 33 M€ ; CA cumulé 58 M€ ; 310 salariés, en N−2 comme en N−1. Bilan et effectif dépassés deux ans de suite : consolidation obligatoire en N. Les 9 M€ de CA d'une société sous influence notable ne changent rien au test.
+trap: Ne mets pas la société sous influence notable dans le calcul des seuils, mais n'oublie pas de la consolider ensuite.
+-- table | Quel référentiel pour quels comptes ? | Comptes | Société non cotée | Cotée sur marché réglementé (Euronext Paris) | Cotée sur marché non réglementé (Euronext Growth)
+| Comptes consolidés | ANC 2020-01 ou **IFRS sur option** | **IFRS obligatoires** | ANC 2020-01 ou **IFRS sur option**
+| Comptes sociaux (individuels) | **PCG obligatoire** | **PCG obligatoire** | **PCG obligatoire**
+memo[Option IFRS]: Le Code de commerce dispense des règles françaises de consolidation la société qui applique les IFRS adoptées par l'UE. Une société non cotée peut donc choisir les IFRS ; elle n'applique alors pas l'ANC 2020-01.
+trap: Même cotée, une société française tient ses **comptes sociaux au PCG**. Les IFRS ne concernent que ses comptes consolidés.
+
+== 3 | t3 | exemptions | Exemptions, date de clôture, certification
+-- card | Les exemptions en normes françaises | Une mère non cotée qui dépasse les seuils peut-elle quand même échapper à la consolidation ? | *
+1: Conditions préalables : ne pas être **cotée sur un marché réglementé** et ne pas émettre de **titres de créances négociables**.
+1: **Sous-consolidation** : la mère est elle-même contrôlée par une entreprise qui l'**inclut dans ses comptes consolidés publiés**, sauf opposition d'actionnaires représentant **au moins 10 %** de son capital.
+1: **Intérêt négligeable** : toutes les sociétés contrôlées présentent, **seules et ensemble**, un intérêt négligeable au regard de l'image fidèle.
+2: La mère a-t-elle elle-même une mère qui consolide et publie ?
+2: Des minoritaires à 10 % ou plus s'y opposent-ils ?
+2: Les filiales pèsent-elles réellement dans l'ensemble ?
+3: Exemption = pas de comptes consolidés **ni de rapport sur la gestion du groupe**.
+3: S'y ajoute l'exemption de base : seuils non dépassés.
+fil: HÉLIA SA est rachetée à 85 % par un groupe allemand qui la consolide et publie ses comptes. Les 15 % restants ne s'y opposent pas : HÉLIA SA n'a plus à publier ses propres comptes consolidés.
+-- card | IFRS 10 : la mère intermédiaire | À quelles conditions une mère intermédiaire est-elle dispensée en IFRS ? | *
+1: Les **quatre conditions** doivent être réunies :
+1: - elle est **filiale** à 100 %, ou partiellement détenue et ses autres propriétaires (même sans droit de vote), **informés**, **ne s'y opposent pas** ;
+1: - ses titres de dette ou de capital **ne sont pas négociés** sur un marché public, même local ou régional ;
+1: - elle n'a pas déposé, et ne dépose pas, ses états financiers auprès d'un régulateur **pour émettre des titres** sur un marché organisé ;
+1: - sa mère ultime ou une mère intermédiaire publie des **comptes consolidés IFRS** accessibles au public.
+2: Qui détient le reste du capital, et ont-ils été informés ?
+2: Cotation ou projet de cotation de la société
+2: Qui, plus haut dans la chaîne, publie des comptes IFRS
+3: Logique : l'information existe déjà, plus haut dans le groupe, au même standard.
+memo: **Filiale, non cotée, pas de projet de cotation, mère qui publie en IFRS.**
+-- card | IFRS 10 : l'entité d'investissement | Pourquoi une entité d'investissement ne consolide-t-elle pas ses filiales ?
+1: Entité d'investissement : elle **obtient des fonds** d'investisseurs pour leur offrir une gestion d'investissement, s'engage à investir **uniquement pour des plus-values ou des revenus**, et suit la quasi-totalité de ses investissements à la **juste valeur**.
+1: Elle **ne consolide pas** ses filiales : elle les évalue à la **juste valeur**.
+2: Fonds levés auprès d'investisseurs
+2: Objet : rendement, pas exploitation
+2: Pilotage à la juste valeur
+3: Ses filiales sont des **placements destinés à être revendus**. Leur chiffre d'affaires, leurs stocks ou leurs dettes n'intéressent pas ses investisseurs : la **valeur du portefeuille** les intéresse, et la juste valeur la montre mieux.
+fil: Un fonds de capital-investissement détient 70 % d'HÉLIA Italia pour la revendre dans cinq ans. Il présente cette ligne à sa juste valeur, sans intégrer les comptes d'HÉLIA Italia.
+-- table | La date de clôture des comptes consolidés | Question | Normes françaises | IFRS 10
+| Date des comptes consolidés | En général celle de la mère. Par exception, celle de la majorité des sociétés consolidées, à justifier dans l'annexe. | La même pour la mère et toutes les filiales.
+| Filiale qui clôture à une autre date | Écart de **plus de 3 mois** : **comptes intermédiaires** obligatoires, contrôlés par un CAC ou un professionnel. Écart de **3 mois au plus** : ses comptes annuels, ajustés des opérations significatives entre les deux dates. | Informations financières **supplémentaires** à la date de la mère, sauf si c'est impraticable. Alors : derniers comptes de la filiale, ajustés des événements importants. Écart **jamais supérieur à 3 mois**, et constant d'une période à l'autre.
+fil: HÉLIA clôture au 31/12. HÉLIA Italia clôture au 30/09 (3 mois d'écart) : ses comptes annuels suffisent, ajustés des opérations importantes d'octobre à décembre. Une filiale qui clôturerait au 30/06 (6 mois) devrait établir des comptes intermédiaires au 31/12.
+-- tiles
+tile: Certification
+Au moins **deux commissaires aux comptes** titulaires (art. L. 823-2 C. com.) pour toute entité qui publie des comptes consolidés.
+tile: Secret professionnel
+Les CAC de la mère et ceux des sociétés consolidées sont **libérés du secret professionnel** les uns envers les autres.
+tile: Ce que certifient les CAC
+Des comptes consolidés **réguliers et sincères**, qui donnent une **image fidèle** du patrimoine, de la situation financière et du résultat de l'ensemble consolidé.
+
+== 4 | t0 | reciter | À réciter
+-- table | | Question | Réponse
+| Personnalité juridique du groupe ? | Aucune : réalité économique.
+| Définition du groupe | Une entreprise et celles qu'elle contrôle, directement ou indirectement, de façon exclusive ou conjointe (L. 233-16).
+| Filiale ou participation | Plus de 50 % du capital ; de 10 à 50 %.
+| Les quatre liens | Direct, indirect, réciproque, circulaire.
+| Les trois étapes | Contrôle, cotation sur marché réglementé, seuils.
+| Seuils | 2 sur 3 pendant les deux exercices précédents : 30 M€ de bilan, 60 M€ de CA HT, 250 salariés.
+| Influence notable et seuils | Exclue du calcul, incluse dans le périmètre si obligation.
+| Règlement français | ANC 2020-01, applicable depuis le 1er janvier 2021.
+| Groupe coté sur marché réglementé | IFRS obligatoires, sans seuils. Comptes sociaux au PCG.
+| Exemptions françaises | Sous-consolidation (sauf opposition de 10 %), intérêt négligeable.
+| Exemptions IFRS 10 | Mère intermédiaire, entité d'investissement.
+| Écart de clôture | Plus de 3 mois : comptes intermédiaires (FR). Jamais plus de 3 mois (IFRS).
+| Combien de CAC ? | Au moins deux.
+-- table | Les questions de cours de la prof : le plan | Question | Plan de réponse
+| Pourquoi la consolidation n'est-elle pas une simple addition ? | 1. But : une seule entité économique. 2. Harmoniser les méthodes. 3. Éliminer les opérations internes et les titres. 4. Difficultés : périmètre, minoritaires, clôtures, devises.
+| Quand une mère non cotée doit-elle consolider ? | 1. Contrôle d'au moins une entreprise. 2. Pas de cotation sur marché réglementé. 3. 2 des 3 seuils (30 / 60 / 250) sur deux exercices, sur l'ensemble contrôlé. 4. Exemptions possibles. 5. Référentiel : ANC 2020-01 ou IFRS sur option.
+| Qu'est-ce que la cotation change ? | 1. Marché réglementé : obligation sans seuils, droit européen. 2. Référentiel : IFRS obligatoires. 3. Comptes sociaux toujours au PCG. 4. Euronext Growth : régime des non cotées.
