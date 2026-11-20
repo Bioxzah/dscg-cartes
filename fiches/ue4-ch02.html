@@ -212,24 +212,27 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 }
 @media print{.flow{break-inside:avoid}}
 </style>
+<style>
+.box .bbody{padding:4px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.box .blist{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.box .blist li::marker{color:var(--h)}
+.zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.zbody ul:not(.check) li::marker{color:var(--h)}
+</style>
 <div class="wrap">
 
 <header class="top">
   <p class="eyebrow">DSCG · UE 4 · IFRS et consolidation · Chapitre 2</p>
   <h1>Introduction à la consolidation</h1>
-  <p class="lede">Ce qu'est un groupe, quand il doit publier des comptes consolidés, dans quel référentiel, et quand il en est dispensé. Trois questions à se poser dans l'ordre : contrôle, cotation, seuils. Fil rouge : le groupe HÉLIA, fabricant de panneaux solaires.</p>
+  <p class="lede">Ce qu'est un groupe, quand il doit publier des comptes consolidés, dans quel référentiel, et quand il en est dispensé. Le cœur du chapitre est un raisonnement en trois questions (contrôle, cotation, seuils), à dérouler dans l'ordre sur la copie. Fil rouge : le groupe HÉLIA, fabricant de panneaux solaires.</p>
 </header>
 
 <section class="stage t4" id="groupe">
   <h2><span class="n">1</span>La notion de groupe</h2>
-  <article class="card">
+  <article class="card box">
     <header><h3>Le groupe</h3><span class="core">Par cœur</span></header>
     <p class="q">Qu'est-ce qu'un groupe, au sens du Code de commerce ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Un groupe <b>n'a pas de personnalité juridique</b> : c'est une <b>réalité économique</b>. Chaque société garde sa personnalité juridique, mais perd une partie de son autonomie au profit d'une logique d'ensemble.</p><p><b>Art. L. 233-16 C. com.</b> : une entreprise et l'ensemble des entreprises qu'elle <b>contrôle</b>, directement ou indirectement, de manière <b>exclusive ou conjointe</b>.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Une société mère qui détient des titres d'autres sociétés</li><li>Un contrôle direct ou par l'intermédiaire d'une filiale</li><li>Un contrôle seul (exclusif) ou partagé (conjoint)</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Pourquoi se grouper : <b>taille critique</b>, mutualiser les ressources, diversifier les activités, réduire les risques, peser face aux concurrents, fournisseurs et financeurs.</p></div></div>
-    </div>
+    <div class="bbody"><p><b>Art. L. 233-16 C. com.</b> : une entreprise et l'ensemble des entreprises qu'elle <b>contrôle</b>, directement ou indirectement, de manière <b>exclusive ou conjointe</b>.</p><p>Un groupe <b>n'a pas de personnalité juridique</b> : c'est une <b>réalité économique</b>. Chaque société garde sa personnalité juridique, mais perd une partie de son autonomie au profit d'une logique d'ensemble.</p><p>Pourquoi se grouper :</p><ul class="blist"><li>atteindre une <b>taille critique</b> ;</li><li>mutualiser les ressources, diversifier les activités, réduire les risques ;</li><li>peser face aux concurrents, fournisseurs et financeurs.</li></ul></div>
     <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA contrôle HÉLIA Pose et HÉLIA Italia. Trois personnes morales, trois comptes individuels, mais une seule entreprise aux yeux d'un banquier : le groupe.</p></div>
   </article>
 
@@ -250,16 +253,13 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     <div class="tile"><h3>Participation réciproque (croisée)</h3><p>M détient A, et A détient M en retour.</p><svg class="graph" viewBox="0 0 247.20000000000002 68" width="247.20000000000002" height="68" role="img" aria-label="M détient A à 70 %, A détient M à 5 %"><path d="M54.3 28.6 Q123.6 10.0 191.0 28.0"/><polygon points="192.9,28.6 183.1,30.6 185.4,21.9"/><text class="lb" x="123.1" y="11.2">70 %</text><path d="M192.9 39.4 Q123.6 58.0 56.2 40.0"/><polygon points="54.3,39.4 64.1,37.4 61.8,46.1"/><text class="lb" x="124.1" y="64.8">5 %</text><circle class="mother" cx="34" cy="34" r="21"/><text x="34" y="39">M</text><circle class="" cx="213.20000000000002" cy="34" r="21"/><text x="213.20000000000002" y="39">A</text></svg></div>
     <div class="tile"><h3>Participation circulaire</h3><p>La boucle passe par une société de plus : B détient M.</p><svg class="graph" viewBox="0 0 247.20000000000002 152" width="247.20000000000002" height="152" role="img" aria-label="M détient A à 70 %, A détient B à 60 %, B détient M à 4 %"><path d="M55.0 34.0 Q123.6 34.0 190.2 34.0"/><polygon points="192.2,34.0 183.2,38.5 183.2,29.5"/><text class="lb" x="123.1" y="27.0">70 %</text><path d="M197.9 48.4 Q168.4 76.0 140.4 102.3"/><polygon points="138.9,103.6 142.4,94.2 148.6,100.8"/><text class="lb" x="182.8" y="94.7">60 %</text><path d="M108.3 103.6 Q78.8 76.0 50.8 49.7"/><polygon points="49.3,48.4 59.0,51.2 52.8,57.8"/><text class="lb" x="65.1" y="95.4">4 %</text><circle class="mother" cx="34" cy="34" r="21"/><text x="34" y="39">M</text><circle class="" cx="213.20000000000002" cy="34" r="21"/><text x="213.20000000000002" y="39">A</text><circle class="" cx="123.60000000000001" cy="118" r="21"/><text x="123.60000000000001" y="123">B</text></svg></div>
   </div>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Programme 2027</span>Sache <b>reconnaître</b> les quatre liens. Les calculs de pourcentages sur des participations <b>croisées ou circulaires</b> sont <b>exclus</b> du programme.</p></div></div>
 
-  <article class="card">
+  <article class="card box">
     <header><h3>Pourquoi consolider ?</h3><span class="core">Par cœur</span></header>
     <p class="q">Pourquoi la consolidation ne peut-elle pas se limiter à additionner les comptes individuels ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Les comptes consolidés présentent la mère et ses filiales <b>comme une seule entité économique</b> : patrimoine, situation financière et performance de l'ensemble.</p><p>L'addition brute donnerait une image fausse, pour deux raisons :</p><ul><li>les sociétés n'appliquent pas toutes les mêmes méthodes : il faut les <b>harmoniser</b> (retraitements) ;</li><li>le groupe ne réalise pas de chiffre d'affaires avec lui-même : il faut <b>neutraliser les relations internes</b>.</li></ul></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Ventes, prêts, dividendes entre sociétés du groupe</li><li>Méthodes différentes (amortissements, stocks, provisions…)</li><li>Titres de participation de la mère face aux capitaux propres des filiales</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Difficultés techniques : définir le <b>périmètre</b> et le contrôle, <b>harmoniser</b> les méthodes, <b>éliminer</b> les opérations et soldes réciproques, <b>éliminer les titres</b> contre les capitaux propres, gérer les <b>intérêts minoritaires</b>, les <b>dates de clôture</b> décalées et les <b>devises</b>.</p></div></div>
-    </div>
-    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA vend 2 M€ de panneaux à HÉLIA Pose. Additionner les deux chiffres d'affaires compterait ces 2 M€ deux fois : la consolidation les élimine.</p><p class="memo"><span class="tag">Plan de réponse</span><b>Harmoniser, éliminer, présenter comme une seule entité.</b> C'est la question de cours de la prof : cite les difficultés une par une, avec un exemple chacune.</p></div>
+    <div class="bbody"><p><b>Objectif</b> : présenter la mère et ses filiales <b>comme une seule entité économique</b>, avec le patrimoine, la situation financière et la performance de l'ensemble.</p><p><b>Deux opérations</b> rendent l'addition insuffisante :</p><ul class="blist"><li><b>harmoniser</b> : les sociétés n'appliquent pas toutes les mêmes méthodes (amortissements, stocks, provisions) ; on les retraite ;</li><li><b>éliminer</b> : le groupe ne réalise pas de chiffre d'affaires avec lui-même ; on neutralise les ventes, prêts et dividendes internes, et les titres de la mère face aux capitaux propres des filiales.</li></ul><p><b>Difficultés techniques</b> : définir le <b>périmètre</b> et le contrôle, gérer les <b>intérêts minoritaires</b>, les <b>dates de clôture</b> décalées et les <b>devises</b>.</p></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA vend 2 M€ de panneaux à HÉLIA Pose. Additionner les deux chiffres d'affaires compterait ces 2 M€ deux fois : la consolidation les élimine.</p><p class="memo"><span class="tag">Plan de réponse</span>1. Objectif : une seule entité. 2. Harmoniser. 3. Éliminer. 4. Difficultés. Un exemple chiffré par point.</p></div>
   </article>
 </section>
 
@@ -283,41 +283,10 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </div>
     <p class="fnote"><b>Seuils (art. D. 230-2 C. com.)</b> : total du bilan <b>30 M€</b> · chiffre d'affaires net HT <b>60 M€</b> · effectif moyen <b>250 salariés</b>.</p>
   </figure>
-  <div class="card"><div class="foot"><p class="memo"><span class="tag">Sur la copie</span>Ce schéma tombe chaque année. Rédige dans cet ordre : <b>contrôle</b> (avec l'article), <b>cotation</b> (marché réglementé ou non), <b>seuils</b> (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'<b>obligation</b> et le <b>référentiel</b>. Pense ensuite aux <b>exemptions</b> (section 3).</p></div></div>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Sur la copie</span>Ce schéma tombe chaque année. Rédige dans cet ordre : <b>contrôle</b> (avec l'article), <b>cotation</b> (marché réglementé ou non), <b>seuils</b> (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'<b>obligation</b> et le <b>référentiel</b>. Pense ensuite aux <b>exemptions</b> (section 3).</p><p class="trap"><span class="tag">Piège</span><b>Euronext Growth</b> n'est pas un marché réglementé : la société passe à l'étape 3, comme une société non cotée.</p></div></div>
 
   <div class="tw"><table>
-    <caption>Principaux règlements et normes de la consolidation</caption>
-    <thead><tr><th>Référentiel</th><th>Textes</th></tr></thead>
-    <tbody>
-      <tr><th>Normes françaises</th><td>Code de commerce · règlement CRC 99-02 (avant 2021) · <b>règlement ANC 2020-01</b> (depuis le 1er janvier 2021)</td></tr>
-      <tr><th>Normes IAS/IFRS</th><td><b>IFRS 10</b> États financiers consolidés · IFRS 3 Regroupements · IFRS 11 Partenariats · IAS 27 États financiers individuels · IAS 28 Entreprises associées et coentreprises · IFRS 12 Informations à fournir</td></tr>
-    </tbody>
-  </table></div>
-
-  <article class="card">
-    <header><h3>Les trois étapes</h3><span class="core">Par cœur</span></header>
-    <p class="q">La société mère doit-elle consolider, et dans quel référentiel ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>Étape 1 : contrôle.</b> Contrôle-t-elle, seule ou conjointement, au moins une entreprise ? Non : pas de groupe, pas de consolidation.</p><p><b>Étape 2 : cotation.</b> Ses titres sont-ils admis sur un <b>marché réglementé</b> ? Oui : comptes consolidés en <b>IFRS obligatoires</b>, <b>sans condition de seuils</b> (droit européen).</p><p><b>Étape 3 : seuils.</b> Sinon, l'ensemble dépasse-t-il <b>2 des 3 seuils</b> sur les <b>deux exercices précédents</b> ? Oui : consolidation obligatoire. Non : facultative.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Liens de contrôle (étape 1)</li><li>Euronext Paris = réglementé ; Euronext Growth = <b>non</b> réglementé (étape 2)</li><li>Chiffres cumulés de N−2 et N−1 (étape 3)</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Base légale : <b>art. L. 233-16 C. com.</b> (obligation, avec un rapport sur la gestion du groupe) et <b>L. 233-21</b> (image fidèle de l'ensemble consolidé).</p><p>Règles françaises : <b>règlement ANC 2020-01</b> du 6 mars 2020, applicable depuis le 1er janvier 2021 (il remplace le CRC 99-02).</p></div></div>
-    </div>
-    <div class="foot"><p class="trap"><span class="tag">Piège</span>Une société cotée sur <b>Euronext Growth</b> n'est pas sur un marché réglementé : elle passe à l'étape 3, comme une société non cotée.</p></div>
-  </article>
-
-  <div class="tw"><table>
-    <caption>Les seuils (art. D. 230-2 C. com.) : 2 sur 3, deux exercices de suite</caption>
-    <thead><tr><th>Critère</th><th>Seuil à dépasser</th></tr></thead>
-    <tbody>
-      <tr><th>Total de bilan</th><td>Plus de <b>30 M€</b></td></tr>
-      <tr><th>Chiffre d'affaires hors taxes</th><td>Plus de <b>60 M€</b></td></tr>
-      <tr><th>Effectif moyen</th><td>Plus de <b>250 salariés</b></td></tr>
-    </tbody>
-  </table></div>
-  <div class="card"><div class="foot"><p class="memo"><span class="tag">Mémo</span><b>30 / 60 / 250</b>, comme pour les « grandes entreprises » : retiens « 2 sur 3, 2 ans de suite ».</p></div></div>
-
-  <div class="tw"><table>
-    <caption>Clôture au 31/12/2025 : faut-il consolider ?</caption>
+    <caption>Seuils : faut-il consolider à la clôture du 31/12/2025 ?</caption>
     <thead><tr><th>2 seuils dépassés au 31/12/2023 ?</th><th>Au 31/12/2024 ?</th><th>Obligation au 31/12/2025</th></tr></thead>
     <tbody>
       <tr><th>Oui</th><td>Oui</td><td><b>Comptes consolidés obligatoires</b></td></tr>
@@ -329,14 +298,14 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
   <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Un seul exercice au-dessus des seuils ne suffit pas : il faut les <b>deux derniers</b>. On regarde N−2 et N−1, jamais N.</p></div></div>
 
   <article class="card">
-    <header><h3>Sur quels chiffres apprécier les seuils ?</h3></header>
-    <p class="q">Quelles sociétés additionner pour tester les seuils ?</p>
+    <header><h3>Quelles sociétés compter dans les seuils ?</h3></header>
+    <p class="q">Dans l'organigramme, quelles sociétés additionner pour tester les seuils ?</p>
     <div class="syl">
       <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Les seuils s'apprécient sur l'<b>ensemble</b> formé par la mère et les entreprises qu'elle <b>contrôle</b> (exclusif ou conjoint), en <b>cumulant</b> les montants de chacune.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Sociétés sous contrôle exclusif : comptées</li><li>Sociétés sous contrôle conjoint : comptées</li><li>Sociétés sous <b>influence notable</b> : <b>exclues du calcul</b></li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Si les seuils sont dépassés, les sociétés sous influence notable <b>entrent quand même dans le périmètre</b> de consolidation.</p></div></div>
+      <div class="zone"><h4><b>Dans l'organigramme</b> qui compter</h4><div class="zbody"><ul class="check"><li>Contrôle exclusif : compté</li><li>Contrôle conjoint : compté</li><li><b>Influence notable</b> : <b>exclue du calcul</b></li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> à rédiger</h4><div class="zbody"><p>Si les seuils sont dépassés, les sociétés sous influence notable <b>entrent quand même dans le périmètre</b> de consolidation.</p></div></div>
     </div>
-    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA (non cotée) : mère 14 M€ de bilan, filiales contrôlées 19 M€, soit 33 M€ ; CA cumulé 58 M€ ; 310 salariés, en N−2 comme en N−1. Bilan et effectif dépassés deux ans de suite : consolidation obligatoire en N. Les 9 M€ de CA d'une société sous influence notable ne changent rien au test.</p><p class="trap"><span class="tag">Piège</span>Ne mets pas la société sous influence notable dans le calcul des seuils, mais n'oublie pas de la consolider ensuite.</p></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA (non cotée) : mère 14 M€ de bilan, filiales contrôlées 19 M€, soit 33 M€ ; CA cumulé 58 M€ ; 310 salariés, en N−2 comme en N−1. Bilan et effectif dépassés deux ans de suite : consolidation obligatoire en N. Les 9 M€ de CA d'une société sous influence notable ne changent rien au test.</p></div>
   </article>
 
   <div class="tw"><table>
@@ -348,40 +317,44 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </tbody>
   </table></div>
   <div class="card"><div class="foot"><p class="memo"><span class="tag">Option IFRS</span>Le Code de commerce dispense des règles françaises de consolidation la société qui applique les IFRS adoptées par l'UE. Une société non cotée peut donc choisir les IFRS ; elle n'applique alors pas l'ANC 2020-01.</p><p class="trap"><span class="tag">Piège</span>Même cotée, une société française tient ses <b>comptes sociaux au PCG</b>. Les IFRS ne concernent que ses comptes consolidés.</p></div></div>
+
+  <article class="card box">
+    <header><h3>Normes françaises ou IFRS : ce que le choix change</h3></header>
+    <p class="q">Pourquoi un groupe non coté opterait-il pour les IFRS, et avec quelles conséquences ?</p>
+    <div class="bbody"><p><b>Pourquoi choisir les IFRS</b> :</p><ul class="blist"><li>parler la <b>même langue</b> que des investisseurs, banques ou partenaires étrangers, et être <b>comparable</b> aux concurrents cotés ;</li><li><b>préparer une cotation</b> sur un marché réglementé ;</li><li>n'avoir qu'<b>un seul reporting</b> quand le groupe appartient lui-même à un groupe qui publie en IFRS.</li></ul><p><b>Ce qu'il faut accepter</b> : un référentiel plus <b>complexe et plus coûteux</b> à appliquer (systèmes, formation, auditeurs), une <b>annexe</b> plus lourde, et des résultats plus <b>volatils</b> là où la juste valeur est utilisée.</p><p><b>Ce qui change dans les comptes</b>, par exemple :</p><ul class="blist"><li><b>goodwill</b> : en IFRS, jamais amorti mais testé chaque année (IAS 36) ; en normes françaises, amorti s'il a une durée d'utilisation limitée ;</li><li><b>locations</b> : en IFRS 16, presque tous les contrats du preneur passent au bilan ; en normes françaises, seul le crédit-bail est retraité ;</li><li><b>performance</b> : les IFRS présentent un <b>résultat global</b> (avec les autres éléments du résultat global), sans équivalent en normes françaises.</li></ul></div>
+    <div class="foot"><p class="memo"><span class="tag">Programme 2027</span>Le programme demande d'« analyser les conséquences du référentiel de consolidation sur l'information financière ». Le cours ne le traite pas : cet encadré sert de base pour une question rédactionnelle.</p></div>
+  </article>
 </section>
 
 <section class="stage t3" id="exemptions">
   <h2><span class="n">3</span>Exemptions, date de clôture, certification</h2>
-  <article class="card">
-    <header><h3>Les exemptions en normes françaises</h3><span class="core">Par cœur</span></header>
-    <p class="q">Une mère non cotée qui dépasse les seuils peut-elle quand même échapper à la consolidation ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Conditions préalables : ne pas être <b>cotée sur un marché réglementé</b> et ne pas émettre de <b>titres de créances négociables</b>.</p><p><b>Sous-consolidation</b> : la mère est elle-même contrôlée par une entreprise qui l'<b>inclut dans ses comptes consolidés publiés</b>, sauf opposition d'actionnaires représentant <b>au moins 10 %</b> de son capital.</p><p><b>Intérêt négligeable</b> : toutes les sociétés contrôlées présentent, <b>seules et ensemble</b>, un intérêt négligeable au regard de l'image fidèle.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>La mère a-t-elle elle-même une mère qui consolide et publie ?</li><li>Des minoritaires à 10 % ou plus s'y opposent-ils ?</li><li>Les filiales pèsent-elles réellement dans l'ensemble ?</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Exemption = pas de comptes consolidés <b>ni de rapport sur la gestion du groupe</b>.</p><p>S'y ajoute l'exemption de base : seuils non dépassés.</p></div></div>
-    </div>
-    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA est rachetée à 85 % par un groupe allemand qui la consolide et publie ses comptes. Les 15 % restants ne s'y opposent pas : HÉLIA SA n'a plus à publier ses propres comptes consolidés.</p></div>
-  </article>
+  <div class="tw"><table>
+    <caption>Les exemptions : normes françaises ou IFRS 10</caption>
+    <thead><tr><th>Cas</th><th>Normes françaises (C. com., ANC 2020-01)</th><th>IFRS 10</th></tr></thead>
+    <tbody>
+      <tr><th>Qui peut en profiter</th><td>Mère <b>non cotée</b> sur un marché réglementé, qui n'émet pas de <b>titres de créances négociables</b></td><td>Mère dont les titres ne sont <b>pas négociés</b> sur un marché public et qui ne prépare pas d'émission</td></tr>
+      <tr><th>La mère est elle-même contrôlée</th><td><b>Sous-consolidation</b> : sa mère l'inclut dans des comptes consolidés <b>publiés</b>, sauf opposition d'associés détenant <b>au moins 10 %</b> de son capital</td><td><b>Mère intermédiaire</b> : sa mère ultime ou intermédiaire publie des comptes <b>IFRS</b>, et ses autres propriétaires, <b>informés</b>, ne s'y opposent pas</td></tr>
+      <tr><th>Les filiales pèsent peu</th><td><b>Intérêt négligeable</b> de toutes les sociétés contrôlées, seules et ensemble</td><td>Pas d'exemption propre (principe général de matérialité)</td></tr>
+      <tr><th>Société de placement</th><td>Pas d'exemption propre</td><td><b>Entité d'investissement</b> : filiales évaluées à la <b>juste valeur</b>, pas consolidées</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Différence clé</span>Les deux référentiels dispensent la mère <b>déjà incluse plus haut</b> dans des comptes publiés. Seul IFRS 10 connaît l'<b>entité d'investissement</b> ; seules les normes françaises font de l'<b>intérêt négligeable</b> un cas d'exemption.</p></div></div>
 
   <article class="card">
     <header><h3>IFRS 10 : la mère intermédiaire</h3><span class="core">Par cœur</span></header>
-    <p class="q">À quelles conditions une mère intermédiaire est-elle dispensée en IFRS ?</p>
+    <p class="q">Une mère intermédiaire est-elle dispensée de consolider en IFRS ?</p>
     <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Les <b>quatre conditions</b> doivent être réunies :</p><ul><li>elle est <b>filiale</b> à 100 %, ou partiellement détenue et ses autres propriétaires (même sans droit de vote), <b>informés</b>, <b>ne s'y opposent pas</b> ;</li><li>ses titres de dette ou de capital <b>ne sont pas négociés</b> sur un marché public, même local ou régional ;</li><li>elle n'a pas déposé, et ne dépose pas, ses états financiers auprès d'un régulateur <b>pour émettre des titres</b> sur un marché organisé ;</li><li>sa mère ultime ou une mère intermédiaire publie des <b>comptes consolidés IFRS</b> accessibles au public.</li></ul></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Qui détient le reste du capital, et ont-ils été informés ?</li><li>Cotation ou projet de cotation de la société</li><li>Qui, plus haut dans la chaîne, publie des comptes IFRS</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Logique : l'information existe déjà, plus haut dans le groupe, au même standard.</p></div></div>
+      <div class="zone maj hideable"><h4><b>Règle</b> les 4 conditions</h4><div class="zbody"><p>Les <b>quatre conditions</b> doivent être réunies :</p><ul><li>elle est <b>filiale</b> à 100 %, ou partiellement détenue et ses autres propriétaires (même sans droit de vote), <b>informés</b>, <b>ne s'y opposent pas</b> ;</li><li>ses titres de dette ou de capital <b>ne sont pas négociés</b> sur un marché public, même local ou régional ;</li><li>elle n'a pas déposé, et ne dépose pas, ses états financiers auprès d'un régulateur <b>pour émettre des titres</b> sur un marché organisé ;</li><li>sa mère ultime ou une mère intermédiaire publie des <b>comptes consolidés IFRS</b> accessibles au public.</li></ul></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à vérifier</h4><div class="zbody"><ul class="check"><li>Qui détient le reste du capital ? Ont-ils été informés ?</li><li>Cotation ou projet de cotation de la société</li><li>Qui, plus haut dans la chaîne, publie des comptes IFRS</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> à rédiger</h4><div class="zbody"><p>Les quatre conditions sont remplies : <b>exemptée</b>, car l'information existe déjà plus haut dans le groupe, au même standard. Une seule manque : elle consolide.</p></div></div>
     </div>
-    <div class="foot"><p class="memo"><span class="tag">Mémo</span><b>Filiale, non cotée, pas de projet de cotation, mère qui publie en IFRS.</b></p></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA est rachetée à 85 % par un groupe allemand qui publie des comptes consolidés IFRS. Les 15 % restants, informés, ne s'y opposent pas, et HÉLIA SA n'est pas cotée : elle n'a plus à publier ses propres comptes consolidés.</p></div>
   </article>
 
-  <article class="card">
+  <article class="card box">
     <header><h3>IFRS 10 : l'entité d'investissement</h3></header>
     <p class="q">Pourquoi une entité d'investissement ne consolide-t-elle pas ses filiales ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Entité d'investissement : elle <b>obtient des fonds</b> d'investisseurs pour leur offrir une gestion d'investissement, s'engage à investir <b>uniquement pour des plus-values ou des revenus</b>, et suit la quasi-totalité de ses investissements à la <b>juste valeur</b>.</p><p>Elle <b>ne consolide pas</b> ses filiales : elle les évalue à la <b>juste valeur</b>.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Fonds levés auprès d'investisseurs</li><li>Objet : rendement, pas exploitation</li><li>Pilotage à la juste valeur</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Ses filiales sont des <b>placements destinés à être revendus</b>. Leur chiffre d'affaires, leurs stocks ou leurs dettes n'intéressent pas ses investisseurs : la <b>valeur du portefeuille</b> les intéresse, et la juste valeur la montre mieux.</p></div></div>
-    </div>
+    <div class="bbody"><p><b>Définition</b> : une entité qui <b>obtient des fonds</b> d'investisseurs pour leur offrir une gestion d'investissement, s'engage à investir <b>uniquement pour des plus-values ou des revenus</b>, et suit la quasi-totalité de ses investissements à la <b>juste valeur</b>.</p><p><b>Traitement</b> : elle <b>ne consolide pas</b> ses filiales ; elle les évalue à la <b>juste valeur</b>.</p><p><b>Pourquoi</b> : ses filiales sont des <b>placements destinés à être revendus</b>. Leur chiffre d'affaires, leurs stocks ou leurs dettes n'intéressent pas ses investisseurs ; la <b>valeur du portefeuille</b> les intéresse, et la juste valeur la montre mieux.</p></div>
     <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Un fonds de capital-investissement détient 70 % d'HÉLIA Italia pour la revendre dans cinq ans. Il présente cette ligne à sa juste valeur, sans intégrer les comptes d'HÉLIA Italia.</p></div>
   </article>
 
@@ -404,6 +377,15 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t0" id="reciter">
   <h2><span class="n">4</span>À réciter</h2>
+  <div class="tw"><table>
+    <caption>Principaux règlements et normes de la consolidation</caption>
+    <thead><tr><th>Référentiel</th><th>Textes</th></tr></thead>
+    <tbody>
+      <tr><th>Normes françaises</th><td>Code de commerce · règlement CRC 99-02 (avant 2021) · <b>règlement ANC 2020-01</b> (depuis le 1er janvier 2021)</td></tr>
+      <tr><th>Normes IAS/IFRS</th><td><b>IFRS 10</b> États financiers consolidés · IFRS 3 Regroupements · IFRS 11 Partenariats · IAS 27 États financiers individuels · IAS 28 Entreprises associées et coentreprises · IFRS 12 Informations à fournir</td></tr>
+    </tbody>
+  </table></div>
+
   <div class="tw"><table>
     
     <thead><tr><th>Question</th><th>Réponse</th></tr></thead>
@@ -429,14 +411,14 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     <thead><tr><th>Question</th><th>Plan de réponse</th></tr></thead>
     <tbody>
       <tr><th>Pourquoi la consolidation n'est-elle pas une simple addition ?</th><td>1. But : une seule entité économique. 2. Harmoniser les méthodes. 3. Éliminer les opérations internes et les titres. 4. Difficultés : périmètre, minoritaires, clôtures, devises.</td></tr>
-      <tr><th>Quand une mère non cotée doit-elle consolider ?</th><td>1. Contrôle d'au moins une entreprise. 2. Pas de cotation sur marché réglementé. 3. 2 des 3 seuils (30 / 60 / 250) sur deux exercices, sur l'ensemble contrôlé. 4. Exemptions possibles. 5. Référentiel : ANC 2020-01 ou IFRS sur option.</td></tr>
+      <tr><th>Quand une mère non cotée doit-elle consolider ?</th><td>1. Contrôle d'au moins une entreprise. 2. Pas de cotation sur marché réglementé. 3. 2 des 3 seuils (30 / 60 / 250) sur deux exercices, sur l'ensemble contrôlé. 4. Exemptions possibles. 5. Référentiel : ANC 2020-01 ou IFRS sur option. 6. Conséquences du choix du référentiel.</td></tr>
       <tr><th>Qu'est-ce que la cotation change ?</th><td>1. Marché réglementé : obligation sans seuils, droit européen. 2. Référentiel : IFRS obligatoires. 3. Comptes sociaux toujours au PCG. 4. Euronext Growth : régime des non cotées.</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <footer>
-  <p>Fiche bâtie sur le cours de la prof (chapitre 2, V2) et le programme 2027. Fil rouge HÉLIA inventé : les exercices de la prof ne sont pas repris. Le contrôle exclusif ou conjoint et l'influence notable sont détaillés au chapitre sur le périmètre.</p>
+  <p>Fiche bâtie sur le cours de la prof (chapitre 2, V2, avec son schéma de l'obligation de consolider) et le programme 2027 (arrêté du 4 août 2025, partie 2.1). Fil rouge HÉLIA inventé : les exercices de la prof ne sont pas repris. Le contrôle exclusif ou conjoint et l'influence notable sont détaillés au chapitre sur le périmètre ; les écarts entre normes françaises et IFRS cités en section 2 sont vus en détail dans les chapitres suivants.</p>
 </footer>
 
 </div>

@@ -22,7 +22,7 @@ function foot(items) {
   return `<div class="foot">${items.map(([kind, tag, text]) => `<p class="${kind}"><span class="tag">${esc(tag)}</span>${il(text)}</p>`).join('')}</div>`;
 }
 function render(b) {
-  const z = meta.zones.split(';').map((x) => x.split('|'));
+  const z = (b.zones ?? meta.zones).split(';').map((x) => x.split('|'));
   if (b.type === 'card') {
     const zone = (i, cls, body) => `<div class="zone${cls}"><h4><b>${esc(z[i][0])}</b> ${esc(z[i][1])}</h4><div class="zbody">${body}</div></div>`;
     const paras = (l) => l.map((t) => (t.startsWith('- ') ? null : `<p>${il(t)}</p>`));
@@ -58,6 +58,19 @@ ${b.rows.map((r) => `      <tr><th>${il(r[0])}</th>${r.slice(1).map((c) => `<td>
     return `<div class="tiles${b.tiles.length === 2 || b.tiles.length === 4 ? ' two' : ''}">
 ${b.tiles.map((t) => `    <div class="tile"><h3>${il(t.title)}</h3>${t.lines.map((l) => (l.startsWith('graph:') ? graph(l.slice(6)) : l.startsWith('- ') ? `<ul><li>${il(l.slice(2))}</li></ul>` : l.startsWith('Ex. ') ? `<p class="eg"><b>Ex.</b> ${il(l.slice(4))}</p>` : `<p>${il(l)}</p>`)).join('').replace(/<\/ul><ul>/g, '')}</div>`).join('\n')}
   </div>${b.foot.length ? `\n  <div class="card">${foot(b.foot)}</div>` : ''}`;
+  }
+  if (b.type === 'box') {
+    let html = '', list = [];
+    const flush = () => { if (list.length) html += `<ul class="blist">${list.map((x) => `<li>${il(x)}</li>`).join('')}</ul>`; list = []; };
+    for (const t of b.lines) { if (t.startsWith('- ')) list.push(t.slice(2)); else { flush(); html += `<p>${il(t)}</p>`; } }
+    flush();
+    usesBox = true;
+    return `<article class="card box">
+    <header><h3>${il(b.title)}</h3>${b.core ? '<span class="core">Par cœur</span>' : ''}</header>
+    ${b.q ? `<p class="q">${il(b.q)}</p>` : ''}
+    <div class="bbody">${html}</div>
+    ${foot(b.foot)}
+  </article>`;
   }
   if (b.type === 'flow') {
     usesFlow = true;
@@ -115,6 +128,15 @@ const GRAPH_CSS = `<style>
 `;
 // A decision flow: questions down the left, outcomes on the right; one column on a phone.
 let usesFlow = false;
+let usesBox = false;
+const BOX_CSS = `<style>
+.box .bbody{padding:4px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.box .blist{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.box .blist li::marker{color:var(--h)}
+.zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.zbody ul:not(.check) li::marker{color:var(--h)}
+</style>
+`;
 const FLOW_CSS = `<style>
 .flow{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
 .flow figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
@@ -164,6 +186,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
     else if (type === 'table') block = { type, caption: rest[0], head: rest.slice(1), rows: [], foot: [] };
     else if (type === 'tiles') block = { type, tiles: [], foot: [] };
     else if (type === 'foot') block = { type, foot: [] };
+    else if (type === 'box') block = { type, title: rest[0], q: rest[1], core: rest[2] === '*', lines: [], foot: [] };
     else if (type === 'flow') block = { type, caption: rest[0], steps: [], notes: [], foot: [] };
     else throw new Error('type ' + type);
     continue;
@@ -172,6 +195,8 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   if ((m = line.match(/^([123]):\s*(.*)$/))) { block['z' + m[1]].push(m[2]); continue; }
   if (line.startsWith('| ')) { block.rows.push(line.slice(2).split('|').map((s) => s.trim())); continue; }
   if ((m = line.match(/^tile:\s*(.*)$/))) { block.tiles.push({ title: m[1], lines: [] }); continue; }
+  if (block?.type === 'card' && (m = line.match(/^zones:\s*(.*)$/))) { block.zones = m[1]; continue; }
+  if (block?.type === 'box' && (m = line.match(/^txt:\s*(.*)$/))) { block.lines.push(m[1]); continue; }
   if (block?.type === 'flow' && (m = line.match(/^(step|out|next|note):\s*(.*)$/))) {
     const f = m[2].split('|').map((x) => x.trim());
     if (m[1] === 'step') block.steps.push({ n: f[0], q: f[1], src: f[2], outs: [] });
@@ -184,7 +209,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   throw new Error('ligne non comprise : ' + line);
 }
 close();
-const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}${usesFlow ? FLOW_CSS : ''}<div class="wrap">
+const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}${usesFlow ? FLOW_CSS : ''}${BOX_CSS}<div class="wrap">
 
 <header class="top">
   <p class="eyebrow">${esc(meta.eyebrow)}</p>
