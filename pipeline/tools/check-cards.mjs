@@ -65,9 +65,7 @@ cards.forEach((c, i) => {
   if (c.type === 'cas' && !/\n\n\*\*[^\n]+\*\*$/.test(c.question ?? '')) warnings.push(`${c.id} : un cas finit par la question en gras, après une ligne vide`);
 });
 const n = cards.length;
-const essential = cards.filter((c) => c.theme !== 'plus-loin').length;
-if (!base && (essential < 60 || essential > 140)) warnings.push(`${essential} cartes essentielles (repère : 80 à 120, le reste dans « plus-loin »)`);
-if (!(data?.deck?.themes ?? []).some((t) => t.id === 'plus-loin')) warnings.push('pas de thème « plus-loin » pour les cartes secondaires');
+if (!base && (n < 60 || n > 140)) warnings.push(`${n} cartes (repère : 80 à 120, seulement l'essentiel)`);
 if (base && n === kept) warnings.push('aucune carte ajoutée');
 const casCount = cards.filter((c) => c.type === 'cas').length;
 if (!base && casCount < 6) warnings.push(`seulement ${casCount} vrais cas pratiques (repère : 6 à 10)`);
