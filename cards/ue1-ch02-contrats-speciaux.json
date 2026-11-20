@@ -48,6 +48,12 @@
     "titre": "Contrats de consommation",
     "couleur": "sarcelle",
     "ordre": 7
+   },
+   {
+    "id": "plus-loin",
+    "titre": "Pour aller plus loin",
+    "couleur": "ardoise",
+    "ordre": 99
    }
   ]
  },
@@ -87,14 +93,14 @@
   {
    "id": "ue1-ch02-005",
    "theme": "qualification",
-   "type": "cas",
+   "type": "regle",
    "question": "Un restaurant commande un comptoir fabriqué aux mesures et selon les plans de son architecte. Vente ou entreprise ?",
    "reponse": "Contrat d'entreprise : l'ouvrage est un travail spécifique, réalisé pour les besoins particuliers du client.",
    "source": "Art. 1710, 1787"
   },
   {
    "id": "ue1-ch02-006",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que le lien de subordination ?",
    "reponse": "Le pouvoir de l'employeur de donner des ordres, d'en contrôler l'exécution et de sanctionner les manquements. Il caractérise le contrat de travail.",
@@ -102,15 +108,15 @@
   },
   {
    "id": "ue1-ch02-007",
-   "theme": "qualification",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un « consultant indépendant » a des horaires imposés, reçoit des consignes quotidiennes et est sanctionné s'il refuse une mission. Quel risque ?",
    "reponse": "La requalification en contrat de travail : il existe un lien de subordination, quel que soit le titre du contrat.",
    "source": "Soc., 13 nov. 1996"
   },
   {
    "id": "ue1-ch02-008",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Pourquoi distinguer vente civile, commerciale et mixte ?",
    "reponse": "Pour la **preuve** (libre ou écrite) et le **tribunal** compétent (judiciaire ou de commerce).",
@@ -118,7 +124,7 @@
   },
   {
    "id": "ue1-ch02-009",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Comment se prouve une vente civile ?",
    "reponse": "Par écrit si elle porte sur plus de 1 500 €. En dessous, ou à 1 500 € pile, la preuve est libre.",
@@ -126,7 +132,7 @@
   },
   {
    "id": "ue1-ch02-010",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Comment se prouve une vente entre commerçants ?",
    "reponse": "Librement, par tous moyens : courriels, factures, témoins.",
@@ -134,7 +140,7 @@
   },
   {
    "id": "ue1-ch02-011",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Vente mixte : comment le particulier prouve-t-il contre le commerçant, et devant quel tribunal agit-il ?",
    "reponse": "Preuve libre contre le commerçant. Il choisit entre le tribunal judiciaire et le tribunal de commerce.",
@@ -142,7 +148,7 @@
   },
   {
    "id": "ue1-ch02-012",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Vente mixte : quelles règles quand le commerçant agit contre le particulier ?",
    "reponse": "Les règles civiles : écrit exigé au-delà de 1 500 €, et tribunal judiciaire.",
@@ -150,27 +156,19 @@
   },
   {
    "id": "ue1-ch02-013",
-   "theme": "qualification",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un concessionnaire veut réclamer en justice 9 000 € de solde à un particulier, sans contrat écrit. Que lui dire ?",
    "reponse": "Contre un non-commerçant, il doit prouver par écrit (plus de 1 500 €) et agir devant le tribunal judiciaire.",
    "source": "Art. 1359"
   },
   {
    "id": "ue1-ch02-014",
-   "theme": "qualification",
+   "theme": "plus-loin",
    "type": "memo",
    "question": "Quel réflexe pour la preuve dans un acte mixte ?",
    "reponse": "Regarde **contre qui** on prouve : librement contre le commerçant, par écrit contre le particulier.",
    "source": "C. com., L. 110-3"
-  },
-  {
-   "id": "ue1-ch02-015",
-   "theme": "qualification",
-   "type": "regle",
-   "question": "Une clause qui désigne le tribunal de commerce s'impose-t-elle au particulier dans une vente mixte ?",
-   "reponse": "Non. Une clause attributive de compétence n'est valable qu'entre commerçants.",
-   "source": "CPC, art. 48"
   },
   {
    "id": "ue1-ch02-016",
@@ -190,7 +188,7 @@
   },
   {
    "id": "ue1-ch02-018",
-   "theme": "cadre",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que prévoit souvent un contrat-cadre ?",
    "reponse": "Durée, produits, territoire, modalités de commande et de livraison, exclusivité, révision du prix, résiliation.",
@@ -231,7 +229,7 @@
   {
    "id": "ue1-ch02-023",
    "theme": "cadre",
-   "type": "cas",
+   "type": "regle",
    "question": "Un torréfacteur, autorisé par le contrat-cadre à fixer son tarif, l'augmente de 40 % pour les seuls cafés qui refusent sa nouvelle machine. Recours ?",
    "reponse": "Abus dans la fixation du prix : dommages-intérêts, voire résolution du contrat-cadre.",
    "source": "Art. 1164"
@@ -239,7 +237,7 @@
   {
    "id": "ue1-ch02-024",
    "theme": "cadre",
-   "type": "cas",
+   "type": "regle",
    "question": "Un client conteste la hausse annuelle de 3 % appliquée par son fournisseur, conforme au contrat-cadre. Que doit faire le fournisseur ?",
    "reponse": "Motiver le montant, par exemple par l'évolution de ses coûts ou d'un indice. Hausse justifiée : pas d'abus.",
    "source": "Art. 1164"
@@ -263,7 +261,7 @@
   {
    "id": "ue1-ch02-027",
    "theme": "cadre",
-   "type": "cas",
+   "type": "regle",
    "question": "Un fournisseur livre en retard une seule commande sur deux ans de relation sans incident. Le client peut-il rompre le contrat-cadre ?",
    "reponse": "En principe non : le manquement est limité à un contrat d'application et ne paraît pas assez grave pour résoudre le cadre.",
    "source": "Art. 1224"
@@ -318,7 +316,7 @@
   },
   {
    "id": "ue1-ch02-034",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que signifie « vente consensuelle » ?",
    "reponse": "Elle se forme par le seul accord des volontés, sans forme particulière.",
@@ -326,7 +324,7 @@
   },
   {
    "id": "ue1-ch02-035",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que signifie « vente commutative » ?",
    "reponse": "L'étendue des obligations de chacun est fixée dès la conclusion. Certaines ventes sont pourtant aléatoires (rente viagère).",
@@ -334,7 +332,7 @@
   },
   {
    "id": "ue1-ch02-036",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que signifie « vente translative » ?",
    "reponse": "Elle transfère la propriété de la chose à l'acheteur.",
@@ -375,14 +373,14 @@
   {
    "id": "ue1-ch02-041",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "Une machine vendue et payée brûle chez le vendeur la veille de son enlèvement, sans faute de sa part. Qui supporte la perte ?",
    "reponse": "L'acheteur, devenu propriétaire dès l'accord : les risques suivent la propriété, sauf clause ou mise en demeure du vendeur de livrer.",
    "source": "Art. 1196"
   },
   {
    "id": "ue1-ch02-042",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Vente à distance à un consommateur : quand les risques passent-ils à l'acheteur ?",
    "reponse": "Au moment où le consommateur (ou un tiers qu'il désigne) prend physiquement possession du bien.",
@@ -415,7 +413,7 @@
   {
    "id": "ue1-ch02-046",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "Un client commande 50 écrans de 27 pouces et en reçoit 50 de 24 pouces, en parfait état. Quel fondement ?",
    "reponse": "Un défaut de conformité (manquement à la délivrance), pas un vice caché : la chose est différente, pas défectueuse.",
    "source": "Art. 1604"
@@ -463,7 +461,7 @@
   {
    "id": "ue1-ch02-052",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "Six mois après avoir vendu sa boulangerie, le vendeur en rouvre une dans la même rue. Recours de l'acheteur ?",
    "reponse": "Garantie d'éviction du fait personnel : le vendeur ne peut pas reprendre la clientèle cédée. Fermeture et dommages-intérêts.",
    "source": "Art. 1626, 1628"
@@ -487,7 +485,7 @@
   {
    "id": "ue1-ch02-055",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "L'entreprise a acheté un véhicule ; son vrai propriétaire, à qui il avait été volé, le récupère. Fondement ?",
    "reponse": "La garantie d'éviction du fait d'un tiers : trouble juridique antérieur à la vente. Restitution du prix et dommages-intérêts.",
    "source": "Art. 1626, 1630"
@@ -567,7 +565,7 @@
   {
    "id": "ue1-ch02-065",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "Un camion acheté d'occasion tombe en panne après un accident survenu deux mois après la vente. Vice caché ?",
    "reponse": "Non : le défaut est postérieur à la vente. Sauf à prouver qu'il trouve sa cause dans un défaut antérieur.",
    "source": "Art. 1641"
@@ -582,7 +580,7 @@
   },
   {
    "id": "ue1-ch02-067",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le délai de deux ans des vices cachés est-il une prescription ou une forclusion ?",
    "reponse": "Une prescription : une expertise ordonnée en justice peut la suspendre.",
@@ -590,7 +588,7 @@
   },
   {
    "id": "ue1-ch02-068",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Existe-t-il un délai maximal pour agir en garantie des vices cachés ?",
    "reponse": "Oui, un délai butoir de **20 ans** à compter de la vente.",
@@ -598,8 +596,8 @@
   },
   {
    "id": "ue1-ch02-069",
-   "theme": "vente",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Une machine achetée en 2019 révèle en mars 2026 un vice, confirmé par expertise. Jusqu'à quand agir ?",
    "reponse": "Jusqu'en mars 2028 : deux ans à compter de la découverte, dans la limite du butoir de vingt ans après la vente.",
    "source": "Art. 1648 ; art. 2232"
@@ -615,7 +613,7 @@
   {
    "id": "ue1-ch02-071",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "Une imprimerie veut garder la presse affectée d'un vice caché, réparable, mais payer moins. Quelle action ?",
    "reponse": "L'action estimatoire : elle garde la machine et obtient une réduction du prix.",
    "source": "Art. 1644"
@@ -646,7 +644,7 @@
   },
   {
    "id": "ue1-ch02-075",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Tout professionnel qui vend un bien est-il un « vendeur professionnel » ?",
    "reponse": "Non. Il faut établir qu'il a la qualité de vendeur professionnel pour l'opération, par exemple qu'il vend habituellement ce type de bien.",
@@ -654,8 +652,8 @@
   },
   {
    "id": "ue1-ch02-076",
-   "theme": "vente",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Une entreprise de travaux forestiers revend son ancien broyeur, affecté d'un vice. L'acheteur réclame sa perte d'exploitation en invoquant sa qualité de professionnel. Que vérifier ?",
    "reponse": "Si elle est vendeur professionnel de ce type de matériel. Être professionnel d'un autre métier ne suffit pas à la présumer de mauvaise foi.",
    "source": "Com., 17 janv. 2024"
@@ -679,7 +677,7 @@
   {
    "id": "ue1-ch02-079",
    "theme": "vente",
-   "type": "cas",
+   "type": "regle",
    "question": "Un particulier vend sa voiture « en l'état, sans garantie ». Le moteur casse un mois après, il ignorait le défaut. L'acheteur peut-il agir ?",
    "reponse": "Non : la clause de non-garantie joue, car le vendeur non professionnel est de bonne foi.",
    "source": "Art. 1643"
@@ -702,7 +700,7 @@
   },
   {
    "id": "ue1-ch02-082",
-   "theme": "vente",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le sous-acquéreur peut-il agir contre le vendeur d'origine pour un vice caché ?",
    "reponse": "Oui : il dispose d'une action contractuelle directe contre le fabricant ou tout vendeur antérieur.",
@@ -734,7 +732,7 @@
   },
   {
    "id": "ue1-ch02-086",
-   "theme": "entreprise",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que signifie un contrat conclu intuitu personae ?",
    "reponse": "Conclu en considération de la personne du prestataire : il doit exécuter lui-même et ne peut pas sous-traiter.",
@@ -767,7 +765,7 @@
   {
    "id": "ue1-ch02-090",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Un client remet ses pièces comptables avec trois mois de retard et reproche au cabinet un bilan tardif. Que répondre ?",
    "reponse": "Le client a manqué à son obligation de coopération : il a contribué au retard, la responsabilité du cabinet est écartée ou réduite.",
    "source": "Art. 1104, 1231-1"
@@ -807,7 +805,7 @@
   {
    "id": "ue1-ch02-095",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Un cabinet chargé de déposer une déclaration de TVA oublie l'échéance. Le client paie des pénalités. Que prouver ?",
    "reponse": "Seulement l'absence de dépôt à la date : obligation de résultat. Le cabinet rembourse les pénalités.",
    "source": "Art. 1231-1"
@@ -815,14 +813,14 @@
   {
    "id": "ue1-ch02-096",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Un consultant conseille une stratégie qui n'apporte pas la hausse de ventes espérée. Le client peut-il être indemnisé ?",
    "reponse": "Seulement s'il prouve une faute : le conseil relève d'une obligation de moyens, le succès n'est pas garanti.",
    "source": "Art. 1231-1"
   },
   {
    "id": "ue1-ch02-097",
-   "theme": "entreprise",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le garagiste réparateur est-il tenu d'une obligation de moyens ou de résultat ?",
    "reponse": "De résultat pour la réparation qui lui est confiée.",
@@ -838,7 +836,7 @@
   },
   {
    "id": "ue1-ch02-099",
-   "theme": "entreprise",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce qu'un marché à forfait ?",
    "reponse": "Un prix global fixé à l'avance. Pour un bâtiment, l'entrepreneur ne peut demander de supplément que pour des changements autorisés par écrit, au prix convenu.",
@@ -846,7 +844,7 @@
   },
   {
    "id": "ue1-ch02-100",
-   "theme": "entreprise",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qui supporte la perte de l'ouvrage avant livraison si l'entrepreneur a fourni la matière ?",
    "reponse": "L'entrepreneur.",
@@ -879,7 +877,7 @@
   {
    "id": "ue1-ch02-104",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Le client signe la réception sans réserve alors qu'une fissure était visible. Peut-il ensuite la reprocher à l'entrepreneur ?",
    "reponse": "Non : un défaut apparent non réservé est couvert par la réception.",
    "source": "Art. 1792-6"
@@ -911,7 +909,7 @@
   {
    "id": "ue1-ch02-108",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Quatre ans après la réception, des infiltrations rendent un entrepôt inutilisable. Quel fondement ?",
    "reponse": "La garantie décennale : dommage qui rend l'ouvrage impropre à sa destination, dans les dix ans de la réception.",
    "source": "Art. 1792"
@@ -991,7 +989,7 @@
   {
    "id": "ue1-ch02-118",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Un charpentier sous-traitant accepté attend 18 000 €. Un mois après sa mise en demeure, l'entreprise générale n'a pas payé ; le client lui doit encore 10 000 €. Combien obtenir du client ?",
    "reponse": "10 000 € au plus : l'action directe est limitée à ce que le client doit encore à l'entrepreneur principal.",
    "source": "Loi 31 déc. 1975, art. 12, 13"
@@ -999,7 +997,7 @@
   {
    "id": "ue1-ch02-119",
    "theme": "entreprise",
-   "type": "cas",
+   "type": "regle",
    "question": "Le client a tout payé à l'entreprise générale avant de recevoir la copie de la mise en demeure du sous-traitant. Action directe ?",
    "reponse": "Elle est sans objet : le client ne doit plus rien à l'entrepreneur principal à cette date.",
    "source": "Loi 31 déc. 1975, art. 13"
@@ -1014,7 +1012,7 @@
   },
   {
    "id": "ue1-ch02-121",
-   "theme": "entreprise",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que doit faire le maître de l'ouvrage qui apprend la présence d'un sous-traitant non accepté sur le chantier ?",
    "reponse": "Mettre en demeure l'entrepreneur principal de régulariser. À défaut, il doit des dommages-intérêts au sous-traitant.",
@@ -1022,7 +1020,7 @@
   },
   {
    "id": "ue1-ch02-122",
-   "theme": "entreprise",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle garantie de paiement l'entrepreneur principal doit-il au sous-traitant ?",
    "reponse": "Une caution bancaire ou une délégation de paiement. À défaut, le sous-traité est nul, à la demande du sous-traitant.",
@@ -1046,8 +1044,8 @@
   },
   {
    "id": "ue1-ch02-125",
-   "theme": "entreprise",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un sous-traitant non accepté, que le client ignorait, n'est pas payé par l'entreprise générale en faillite. Peut-il agir contre le client ?",
    "reponse": "Non : sans acceptation, pas d'action directe, et le client qui l'ignorait n'a commis aucune faute.",
    "source": "Loi 31 déc. 1975, art. 12, 14-1"
@@ -1062,7 +1060,7 @@
   },
   {
    "id": "ue1-ch02-127",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quel est le point commun des contrats de distribution ?",
    "reponse": "Ils organisent durablement la commercialisation des produits d'un fournisseur par un distributeur indépendant, qui supporte son propre risque.",
@@ -1086,7 +1084,7 @@
   },
   {
    "id": "ue1-ch02-130",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que le savoir-faire ?",
    "reponse": "Un ensemble d'informations pratiques non brevetées, issues de l'expérience du fournisseur et testées par lui, **secret, substantiel et identifié**.",
@@ -1102,7 +1100,7 @@
   },
   {
    "id": "ue1-ch02-132",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une clause d'exclusivité suffit-elle à faire d'un contrat une franchise ?",
    "reponse": "Non. Le critère de la franchise est la transmission d'un savoir-faire réel, avec assistance et signes distinctifs.",
@@ -1111,7 +1109,7 @@
   {
    "id": "ue1-ch02-133",
    "theme": "distribution",
-   "type": "cas",
+   "type": "regle",
    "question": "Un contrat dit « de franchise » ne prévoit ni formation ni manuel, seulement l'usage d'une enseigne. Qu'en penser ?",
    "reponse": "Sans savoir-faire transmis, ce n'est pas une franchise. Le franchisé peut contester le contrat faute de contrepartie réelle.",
    "source": "Art. 1169 ; jurisprudence"
@@ -1150,7 +1148,7 @@
   },
   {
    "id": "ue1-ch02-138",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "À quelle condition la distribution sélective est-elle licite ?",
    "reponse": "Critères qualitatifs, objectifs, appliqués sans discrimination, et justifiés par la nature du produit.",
@@ -1158,15 +1156,15 @@
   },
   {
    "id": "ue1-ch02-139",
-   "theme": "distribution",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Une marque de parfums de luxe refuse de livrer une parfumerie qui remplit tous ses critères qualitatifs, sans raison. Risque ?",
    "reponse": "Une sélection discriminatoire : la distribution sélective n'est licite que si les critères sont appliqués à tous de la même façon.",
    "source": "CJCE, 25 oct. 1977, Metro"
   },
   {
    "id": "ue1-ch02-140",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle est la durée maximale d'une clause d'approvisionnement exclusif ?",
    "reponse": "Dix ans.",
@@ -1190,7 +1188,7 @@
   },
   {
    "id": "ue1-ch02-143",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que contient le document d'information précontractuelle ?",
    "reponse": "Des informations sincères sur le fournisseur, son expérience, l'état du réseau, le marché local et les comptes.",
@@ -1207,14 +1205,14 @@
   {
    "id": "ue1-ch02-145",
    "theme": "distribution",
-   "type": "cas",
+   "type": "regle",
    "question": "Un franchisé a reçu le document 8 jours avant de signer. Il découvre qu'on lui a caché la fermeture de la moitié du réseau et prouve qu'il n'aurait pas signé. Recours ?",
    "reponse": "Nullité relative pour dol (silence intentionnel déterminant), avec dommages-intérêts. Le retard seul n'aurait pas suffi.",
    "source": "C. com., L. 330-3 ; art. 1137"
   },
   {
    "id": "ue1-ch02-146",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "L'information précontractuelle garantit-elle la rentabilité du réseau ?",
    "reponse": "Non. Des résultats décevants ne suffisent pas : il faut des informations fausses, omises ou irréalistes.",
@@ -1222,7 +1220,7 @@
   },
   {
    "id": "ue1-ch02-147",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelles clauses contient habituellement un contrat de franchise ?",
    "reponse": "Délivrance du savoir-faire, assistance, marque, exclusivité territoriale, non-concurrence, confidentialité.",
@@ -1230,7 +1228,7 @@
   },
   {
    "id": "ue1-ch02-148",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le franchisé est-il automatiquement protégé par une exclusivité territoriale ?",
    "reponse": "Non : seulement si le contrat la prévoit.",
@@ -1238,7 +1236,7 @@
   },
   {
    "id": "ue1-ch02-149",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une clause de non-concurrence après la fin d'une franchise de commerce de détail est-elle valable ?",
    "reponse": "Elle est réputée non écrite, sauf si elle remplit quatre conditions cumulatives.",
@@ -1246,7 +1244,7 @@
   },
   {
    "id": "ue1-ch02-150",
-   "theme": "distribution",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelles sont les quatre conditions de validité de la non-concurrence post-contractuelle dans un réseau de détail ?",
    "reponse": "Produits concurrents ; limitée aux locaux et terrain exploités ; indispensable à la protection d'un savoir-faire substantiel et spécifique ; un an au plus.",
@@ -1254,8 +1252,8 @@
   },
   {
    "id": "ue1-ch02-151",
-   "theme": "distribution",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un contrat de franchise de supérette interdit à l'ex-franchisé toute activité alimentaire dans le département pendant trois ans. Valable ?",
    "reponse": "Non : trop longue et trop large. La clause est réputée non écrite.",
    "source": "C. com., L. 341-2"
@@ -1303,7 +1301,7 @@
   {
    "id": "ue1-ch02-157",
    "theme": "distribution",
-   "type": "cas",
+   "type": "regle",
    "question": "Après neuf ans, un fabricant réduit de 60 % ses commandes à un distributeur avec un mois de préavis. Recours ?",
    "reponse": "Rupture brutale partielle d'une relation établie : dommages-intérêts égaux à la marge perdue sur le préavis raisonnable manquant.",
    "source": "C. com., L. 442-1, II"
@@ -1350,7 +1348,7 @@
   },
   {
    "id": "ue1-ch02-163",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quels documents composent la police d'assurance ?",
    "reponse": "Proposition, conditions générales, conditions particulières, avenants, notice d'information.",
@@ -1383,7 +1381,7 @@
   {
    "id": "ue1-ch02-167",
    "theme": "assurance",
-   "type": "cas",
+   "type": "regle",
    "question": "La police exclut « les dommages résultant d'une négligence de l'assuré ». L'assureur refuse un sinistre sur ce fondement. Valable ?",
    "reponse": "Non : l'exclusion n'est ni formelle ni limitée, elle doit être écartée. L'assureur doit sa garantie.",
    "source": "C. assur., L. 113-1"
@@ -1423,14 +1421,14 @@
   {
    "id": "ue1-ch02-172",
    "theme": "assurance",
-   "type": "cas",
+   "type": "regle",
    "question": "Dommage de 12 000 €, franchise de 2 000 €, plafond de 50 000 €. Combien l'assureur verse-t-il ?",
    "reponse": "10 000 € : le dommage moins la franchise, sous le plafond.",
    "source": "Police"
   },
   {
    "id": "ue1-ch02-173",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que la règle proportionnelle de capitaux (sous-assurance) ?",
    "reponse": "Si le bien vaut plus que la somme assurée, l'indemnité est réduite dans la même proportion.",
@@ -1438,15 +1436,15 @@
   },
   {
    "id": "ue1-ch02-174",
-   "theme": "assurance",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un stock de 200 000 € est assuré pour 100 000 €. Un sinistre cause 40 000 € de dommages. Indemnité ?",
    "reponse": "20 000 € : sous-assurance de moitié, l'indemnité est réduite de moitié (sauf clause contraire).",
    "source": "C. assur., L. 121-5"
   },
   {
    "id": "ue1-ch02-175",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que le principe indemnitaire ?",
    "reponse": "En assurance de dommages, l'indemnité ne peut pas dépasser la valeur de la chose assurée : l'assuré ne doit pas s'enrichir.",
@@ -1462,7 +1460,7 @@
   },
   {
    "id": "ue1-ch02-177",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "L'assureur peut-il reprocher une information sur laquelle il n'a posé aucune question ?",
    "reponse": "Non : il ne peut invoquer que les réponses aux questions qu'il a posées.",
@@ -1495,7 +1493,7 @@
   {
    "id": "ue1-ch02-181",
    "theme": "assurance",
-   "type": "cas",
+   "type": "regle",
    "question": "Un restaurant a oublié de bonne foi de déclarer sa friteuse. Il payait 3 000 € au lieu de 4 000 €. Un incendie cause 80 000 € de dommages. Indemnité ?",
    "reponse": "60 000 € : réduction proportionnelle (3 000 / 4 000 = 75 %).",
    "source": "C. assur., L. 113-9"
@@ -1503,14 +1501,14 @@
   {
    "id": "ue1-ch02-182",
    "theme": "assurance",
-   "type": "cas",
+   "type": "regle",
    "question": "Même incendie, mais le restaurateur avait sciemment caché la friteuse pour payer moins. Que touche-t-il ?",
    "reponse": "Rien : fausse déclaration intentionnelle, contrat nul. L'assureur garde les primes.",
    "source": "C. assur., L. 113-8"
   },
   {
    "id": "ue1-ch02-183",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qui doit prouver le caractère intentionnel d'une fausse déclaration ?",
    "reponse": "L'assureur.",
@@ -1518,7 +1516,7 @@
   },
   {
    "id": "ue1-ch02-184",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Dans quel délai déclarer une aggravation du risque en cours de contrat ?",
    "reponse": "Dans les **15 jours** à compter du moment où l'assuré en a connaissance.",
@@ -1526,7 +1524,7 @@
   },
   {
    "id": "ue1-ch02-185",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Après la déclaration d'une aggravation du risque, qui choisit la suite et entre quoi ?",
    "reponse": "**L'assureur** : résilier le contrat (effet dix jours après notification) ou proposer une nouvelle prime.",
@@ -1534,7 +1532,7 @@
   },
   {
    "id": "ue1-ch02-186",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "L'assuré refuse la nouvelle prime proposée après aggravation, ou ne répond pas. Conséquence ?",
    "reponse": "Après trente jours, l'assureur peut résilier le contrat.",
@@ -1542,7 +1540,7 @@
   },
   {
    "id": "ue1-ch02-187",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le risque diminue en cours de contrat : quel droit pour l'assuré ?",
    "reponse": "Une baisse de prime. Si l'assureur refuse, l'assuré peut résilier.",
@@ -1551,14 +1549,14 @@
   {
    "id": "ue1-ch02-188",
    "theme": "assurance",
-   "type": "cas",
+   "type": "regle",
    "question": "Un entrepôt assuré se met à stocker des produits inflammables. Que doit faire l'entreprise, et que risque-t-elle ?",
    "reponse": "Déclarer l'aggravation sous 15 jours. L'assureur résiliera ou augmentera la prime. Sans déclaration : sanctions de la fausse déclaration.",
    "source": "C. assur., L. 113-2, L. 113-4"
   },
   {
    "id": "ue1-ch02-189",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que se passe-t-il si l'assuré ne paie pas sa prime ?",
    "reponse": "Mise en demeure ; garantie suspendue 30 jours après ; résiliation possible dix jours plus tard.",
@@ -1566,7 +1564,7 @@
   },
   {
    "id": "ue1-ch02-190",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Dans quel délai déclarer un sinistre ?",
    "reponse": "Dans le délai fixé par le contrat, au moins 5 jours ouvrés (2 jours ouvrés pour un vol).",
@@ -1623,14 +1621,14 @@
   {
    "id": "ue1-ch02-197",
    "theme": "assurance",
-   "type": "cas",
+   "type": "regle",
    "question": "Un incendie détruit les machines d'une usine et arrête la production trois mois. Quelles garanties mobiliser ?",
    "reponse": "L'IARD (incendie) pour les machines, la perte d'exploitation pour la marge perdue pendant l'arrêt.",
    "source": "Cours"
   },
   {
    "id": "ue1-ch02-198",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que l'assurance vie ?",
    "reponse": "L'assureur s'engage à verser un capital ou une rente au bénéficiaire au décès de l'assuré, ou à l'assuré s'il est vivant au terme.",
@@ -1638,23 +1636,15 @@
   },
   {
    "id": "ue1-ch02-199",
-   "theme": "assurance",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Dans quel délai le souscripteur d'une assurance vie peut-il renoncer au contrat ?",
    "reponse": "**30 jours** à compter du moment où il est informé que le contrat est conclu, par lettre recommandée.",
    "source": "C. assur., L. 132-5-1"
   },
   {
-   "id": "ue1-ch02-200",
-   "theme": "assurance",
-   "type": "regle",
-   "question": "Le capital d'assurance vie entre-t-il dans la succession de l'assuré ?",
-   "reponse": "Non, il est versé hors succession au bénéficiaire, sauf primes manifestement exagérées au regard des ressources du souscripteur.",
-   "source": "C. assur., L. 132-12, L. 132-13"
-  },
-  {
    "id": "ue1-ch02-201",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Pourquoi le droit de la consommation existe-t-il ?",
    "reponse": "Pour corriger le déséquilibre d'information et de puissance entre le professionnel et le consommateur.",
@@ -1670,7 +1660,7 @@
   },
   {
    "id": "ue1-ch02-203",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce qu'un non-professionnel ?",
    "reponse": "Une **personne morale** qui n'agit pas à des fins professionnelles, par exemple une association ou un syndicat de copropriétaires.",
@@ -1695,7 +1685,7 @@
   {
    "id": "ue1-ch02-206",
    "theme": "consommation",
-   "type": "cas",
+   "type": "regle",
    "question": "Un démarcheur fait signer, dans son atelier, un contrat de site internet à un menuisier sans salarié. Le menuisier peut-il se rétracter ?",
    "reponse": "Oui : contrat hors établissement, hors de son activité principale, et moins de 5 salariés. Il dispose de 14 jours.",
    "source": "C. consom., L. 221-3, L. 221-18"
@@ -1726,7 +1716,7 @@
   },
   {
    "id": "ue1-ch02-210",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle différence entre obligation d'information et obligation de conseil ?",
    "reponse": "Informer, c'est donner les éléments objectifs. Conseiller va plus loin : adapter son intervention à la situation du client et l'alerter sur les conséquences de son choix.",
@@ -1734,7 +1724,7 @@
   },
   {
    "id": "ue1-ch02-211",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle différence entre délai de réflexion et droit de rétractation ?",
    "reponse": "La réflexion se situe **avant** l'engagement : on ne peut pas accepter avant la fin du délai. La rétractation se situe **après** : on revient sur un contrat conclu.",
@@ -1742,7 +1732,7 @@
   },
   {
    "id": "ue1-ch02-212",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Donne un exemple de délai de réflexion.",
    "reponse": "Crédit immobilier : l'emprunteur ne peut accepter l'offre de prêt que dix jours après l'avoir reçue.",
@@ -1782,7 +1772,7 @@
   },
   {
    "id": "ue1-ch02-217",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Existe-t-il un droit légal de rétractation pour un achat en magasin ?",
    "reponse": "Non. Seul un geste commercial du vendeur peut le permettre.",
@@ -1791,7 +1781,7 @@
   {
    "id": "ue1-ch02-218",
    "theme": "consommation",
-   "type": "cas",
+   "type": "regle",
    "question": "Un particulier commande en ligne un canapé standard le 12 novembre, livré le 2 décembre. Jusqu'à quand peut-il se rétracter ?",
    "reponse": "Jusqu'au 16 décembre : 14 jours à compter de la réception du bien.",
    "source": "C. consom., L. 221-18"
@@ -1806,7 +1796,7 @@
   },
   {
    "id": "ue1-ch02-220",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Un DVD acheté en ligne peut-il être retourné au titre de la rétractation ?",
    "reponse": "Oui s'il est encore scellé. Non s'il a été descellé après la livraison.",
@@ -1814,7 +1804,7 @@
   },
   {
    "id": "ue1-ch02-221",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une réservation d'hôtel en ligne pour une date précise ouvre-t-elle un droit de rétractation ?",
    "reponse": "Non : l'hébergement fourni à une date déterminée est exclu.",
@@ -1822,7 +1812,7 @@
   },
   {
    "id": "ue1-ch02-222",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Un service entièrement exécuté avant la fin du délai ouvre-t-il un droit de rétractation ?",
    "reponse": "Non, s'il a été exécuté avec l'accord préalable exprès du consommateur, qui a renoncé à son droit.",
@@ -1831,14 +1821,14 @@
   {
    "id": "ue1-ch02-223",
    "theme": "consommation",
-   "type": "cas",
+   "type": "regle",
    "question": "Un client commande en ligne un costume fait à ses mesures puis veut se rétracter. Le peut-il ?",
    "reponse": "Non : un bien confectionné selon les spécifications du consommateur est exclu du droit de rétractation.",
    "source": "C. consom., L. 221-28"
   },
   {
    "id": "ue1-ch02-224",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Dans quel délai le professionnel rembourse-t-il après rétractation ?",
    "reponse": "14 jours au plus après la décision de rétractation, frais de livraison standard compris.",
@@ -1846,7 +1836,7 @@
   },
   {
    "id": "ue1-ch02-225",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qui paie les frais de retour après rétractation ?",
    "reponse": "Le consommateur, s'il en a été informé et si le professionnel ne les prend pas en charge.",
@@ -1870,7 +1860,7 @@
   },
   {
    "id": "ue1-ch02-228",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle différence entre liste noire et liste grise des clauses abusives ?",
    "reponse": "Liste noire : toujours abusives. Liste grise : présumées abusives, le professionnel peut prouver le contraire.",
@@ -1878,7 +1868,7 @@
   },
   {
    "id": "ue1-ch02-229",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le juge peut-il contrôler le prix au titre des clauses abusives ?",
    "reponse": "Non, ni l'objet principal du contrat, si la clause est rédigée de façon claire et compréhensible.",
@@ -1886,7 +1876,7 @@
   },
   {
    "id": "ue1-ch02-230",
-   "theme": "consommation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le juge peut-il écarter une clause abusive que le consommateur n'a pas invoquée ?",
    "reponse": "Oui, il doit la relever d'office.",
@@ -1895,7 +1885,7 @@
   {
    "id": "ue1-ch02-231",
    "theme": "consommation",
-   "type": "cas",
+   "type": "regle",
    "question": "Les conditions d'un vendeur en ligne prévoient : « Le vendeur n'est responsable d'aucun retard de livraison. » Le client livré avec un mois de retard peut-il agir ?",
    "reponse": "Oui : la clause supprime son droit à réparation, elle est sur liste noire et réputée non écrite.",
    "source": "C. consom., R. 212-1"
@@ -1911,7 +1901,7 @@
   {
    "id": "ue1-ch02-233",
    "theme": "consommation",
-   "type": "cas",
+   "type": "regle",
    "question": "Un magasin refuse de vendre l'unique article exposé en vitrine, en stock, sans raison. Et si le stock est vraiment épuisé ?",
    "reponse": "Sans raison : refus de vente interdit. Stock réellement épuisé : motif légitime, refus permis.",
    "source": "C. consom., L. 121-11"
@@ -1983,10 +1973,66 @@
   {
    "id": "ue1-ch02-242",
    "theme": "consommation",
-   "type": "cas",
+   "type": "regle",
    "question": "Un téléphone neuf acheté chez un revendeur s'éteint seul au bout de huit mois. Que peut exiger le particulier ?",
    "reponse": "La réparation ou le remplacement au titre de la garantie légale de conformité, sans prouver l'origine du défaut (présumé antérieur).",
    "source": "C. consom., L. 217-3, L. 217-7"
+  },
+  {
+   "id": "ue1-ch02-243",
+   "theme": "vente",
+   "type": "cas",
+   "question": "La société LOGIS, transporteur, achète à un concessionnaire spécialisé un chariot élévateur neuf, « vendu sans garantie des vices cachés ». Cinq mois plus tard, le mât se fissure ; l'expert établit un défaut de soudure d'origine qui rend le chariot inutilisable. LOGIS veut rendre le chariot et réclame aussi les 6 000 € de location d'un chariot de remplacement.\n\n**Que conseiller à LOGIS ?**",
+   "reponse": "**Problème** : l'acheteur peut-il obtenir l'anéantissement de la vente et des dommages-intérêts malgré la clause de non-garantie ?\n**Règle** : le vendeur garantit les défauts cachés, graves et antérieurs à la vente (art. 1641), à invoquer dans les 2 ans de la découverte (art. 1648). L'acheteur choisit de rendre la chose contre le prix ou de la garder avec une réduction (art. 1644). Le vendeur qui connaissait le vice doit tous les dommages-intérêts (art. 1645) ; le vendeur professionnel est présumé le connaître, et sa clause de non-garantie est inefficace face à un acheteur qui n'est pas de la même spécialité (art. 1643).\n**Application** : défaut grave (chariot inutilisable), caché (soudure interne), antérieur (d'origine, selon l'expert). Découverte récente : dans le délai. LOGIS veut rendre le chariot. Le concessionnaire est un vendeur professionnel ; LOGIS est transporteur, pas spécialiste des chariots.\n**Conclusion** : action rédhibitoire : restitution du prix contre le chariot, plus 6 000 € de dommages-intérêts. La clause de non-garantie est écartée.",
+   "source": "Art. 1641, 1643, 1644, 1645, 1648"
+  },
+  {
+   "id": "ue1-ch02-244",
+   "theme": "entreprise",
+   "type": "cas",
+   "question": "La société DÉPÔT fait construire un entrepôt. Le 15 mars N, elle signe le procès-verbal de réception sans réserve, alors qu'une fissure était visible sur un mur. En N+3, des infiltrations par la toiture rendent l'entrepôt inutilisable pour stocker des marchandises.\n\n**Que peut reprocher DÉPÔT à l'entrepreneur ?**",
+   "reponse": "**Problème** : après une réception sans réserve, de quels désordres l'entrepreneur répond-il encore ?\n**Règle** : la réception sans réserve couvre les défauts apparents non réservés (art. 1792-6). Le constructeur répond de plein droit, pendant 10 ans après la réception, des dommages qui compromettent la solidité de l'ouvrage ou le rendent impropre à sa destination (art. 1792, 1792-4-1).\n**Application** : la fissure était visible et n'a pas été réservée : elle est couverte par la réception. Les infiltrations apparaissent trois ans après la réception et rendent l'entrepôt impropre à sa destination.\n**Conclusion** : rien à réclamer pour la fissure ; garantie décennale pour les infiltrations, sans avoir à prouver une faute de l'entrepreneur.",
+   "source": "Art. 1792, 1792-4-1, 1792-6"
+  },
+  {
+   "id": "ue1-ch02-245",
+   "theme": "entreprise",
+   "type": "cas",
+   "question": "Sur un chantier, l'entreprise générale BÂTIR sous-traite l'électricité à la société VOLT, acceptée par le maître de l'ouvrage, qui a aussi agréé ses conditions de paiement. BÂTIR ne paie pas les 25 000 € dus à VOLT, puis est mise en liquidation judiciaire. VOLT a mis BÂTIR en demeure de payer il y a plus d'un mois et en a adressé copie au maître de l'ouvrage ; à cette date, celui-ci devait encore 15 000 € à BÂTIR.\n\n**Combien VOLT peut-elle obtenir du maître de l'ouvrage ?**",
+   "reponse": "**Problème** : le sous-traitant impayé peut-il agir directement contre le maître de l'ouvrage, et dans quelle limite ?\n**Règle** : le sous-traitant accepté, dont les conditions de paiement sont agréées, a une action directe contre le maître de l'ouvrage si l'entrepreneur principal ne paie pas un mois après une mise en demeure dont copie est adressée au maître de l'ouvrage (loi du 31 déc. 1975, art. 12). L'action joue même si l'entrepreneur principal est en liquidation. Le maître de l'ouvrage ne paie que ce qu'il doit encore à l'entrepreneur principal à la réception de la copie (art. 13).\n**Application** : VOLT est acceptée et agréée, la mise en demeure date de plus d'un mois et la copie a été adressée. À cette date, le maître de l'ouvrage devait encore 15 000 €.\n**Conclusion** : VOLT obtient 15 000 € du maître de l'ouvrage. Les 10 000 € restants sont une créance contre BÂTIR, dans la procédure collective.",
+   "source": "Loi du 31 déc. 1975, art. 12, 13"
+  },
+  {
+   "id": "ue1-ch02-246",
+   "theme": "distribution",
+   "type": "cas",
+   "question": "Depuis sept ans, la société FRAIS distribue les produits laitiers d'un fabricant, sans contrat écrit, avec des commandes chaque semaine. Le fabricant lui annonce par courriel qu'il cessera toute livraison dans un mois. FRAIS réalise une marge brute de 10 000 € par mois sur ces produits.\n\n**Que peut obtenir FRAIS ?**",
+   "reponse": "**Problème** : mettre fin à une relation commerciale établie avec un mois de préavis engage-t-il la responsabilité du fabricant ?\n**Règle** : engage la responsabilité de son auteur le fait de rompre brutalement, même partiellement, une relation commerciale établie, sans préavis écrit tenant compte de sa durée (C. com., art. L. 442-1, II). Un préavis de 18 mois suffit toujours. La réparation correspond en principe à la marge perdue pendant le préavis manquant.\n**Application** : sept ans de commandes hebdomadaires : la relation est stable, suivie et habituelle, donc établie, même sans écrit. Un mois de préavis est très court pour sept ans de relation. Aucune faute grave de FRAIS ni force majeure n'est évoquée.\n**Conclusion** : la rupture est brutale. FRAIS obtient la marge perdue sur le préavis manquant : si le juge retient par exemple un préavis raisonnable de 7 mois, il en manque 6, soit 60 000 €.",
+   "source": "C. com., art. L. 442-1, II"
+  },
+  {
+   "id": "ue1-ch02-247",
+   "theme": "assurance",
+   "type": "cas",
+   "question": "Un incendie endommage l'atelier de la société GRAIN, assurée en multirisque. La police prévoit une déclaration du sinistre sous 5 jours ouvrés, à peine de déchéance, et une franchise de 2 000 €. GRAIN déclare le sinistre 12 jours ouvrés après. L'assureur refuse toute indemnité à cause du retard, sans démontrer que ce retard lui a nui. Les dommages s'élèvent à 30 000 €.\n\n**L'assureur peut-il refuser sa garantie ?**",
+   "reponse": "**Problème** : une déclaration tardive du sinistre prive-t-elle automatiquement l'assuré de son indemnité ?\n**Règle** : le délai de déclaration fixé par le contrat ne peut pas être inférieur à 5 jours ouvrés. La déchéance pour déclaration tardive n'est opposable à l'assuré que si elle est prévue au contrat et si l'assureur prouve que le retard lui a causé un préjudice (C. assur., art. L. 113-2).\n**Application** : la déchéance est bien prévue, mais l'assureur ne prouve aucun préjudice dû au retard.\n**Conclusion** : la déchéance ne joue pas. L'assureur doit 28 000 € (30 000 € moins la franchise de 2 000 €), dans la limite du plafond. Si l'activité a été interrompue, vérifier aussi la garantie perte d'exploitation.",
+   "source": "C. assur., art. L. 113-2"
+  },
+  {
+   "id": "ue1-ch02-248",
+   "theme": "consommation",
+   "type": "cas",
+   "question": "Le 1er mars, Mme Lenoir commande en ligne un vélo standard sur le site d'un professionnel ; il lui est livré le 5 mars. Le site ne l'a jamais informée de son droit de rétractation. Le 20 avril, elle veut renvoyer le vélo, qui ne lui plaît pas.\n\n**Le peut-elle ?**",
+   "reponse": "**Problème** : le consommateur peut-il se rétracter après 14 jours lorsqu'il n'a pas été informé de ce droit ?\n**Règle** : pour un contrat conclu à distance, le consommateur dispose de 14 jours pour se rétracter, sans motif ; pour un bien, le délai court à compter de sa réception (C. consom., art. L. 221-18). Faute d'information sur ce droit, le délai est prolongé de 12 mois (art. L. 221-20). Le professionnel rembourse dans les 14 jours (art. L. 221-24).\n**Application** : Mme Lenoir est une consommatrice, le contrat est conclu à distance et le vélo est standard (aucune exception). Le délai normal expirait le 19 mars, mais il est prolongé de 12 mois faute d'information.\n**Conclusion** : elle peut se rétracter le 20 avril, sans motif. Le vendeur doit la rembourser dans les 14 jours, frais de livraison standard compris.",
+   "source": "C. consom., art. L. 221-18, L. 221-20, L. 221-24"
+  },
+  {
+   "id": "ue1-ch02-249",
+   "theme": "vente",
+   "type": "memo",
+   "question": "Litige après une vente : dans quel ordre raisonner ?",
+   "reponse": "**1. Les parties** : professionnel face à consommateur ? Si oui, penser aussi à la garantie légale de conformité.\n**2. Le problème** : chose différente de la commande → délivrance non conforme ; chose défectueuse → vices cachés ; trouble de droit → éviction.\n**3. Les conditions et le délai** du fondement retenu.\n**4. Ce que veut l'acheteur** : garder la chose ou la rendre.\n**5. La qualité du vendeur** : professionnel → tous les dommages-intérêts, clause de non-garantie écartée.",
+   "source": "Cours, conseils pour l'épreuve"
   }
  ]
 }

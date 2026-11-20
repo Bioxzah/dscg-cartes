@@ -30,6 +30,12 @@
     "titre": "Principes, négociation, tiers",
     "couleur": "sarcelle",
     "ordre": 4
+   },
+   {
+    "id": "plus-loin",
+    "titre": "Pour aller plus loin",
+    "couleur": "ardoise",
+    "ordre": 99
    }
   ]
  },
@@ -52,7 +58,7 @@
   },
   {
    "id": "ue1-ch01-003",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que vaut une proposition sans éléments essentiels ou sans volonté d'être lié ?",
    "reponse": "Une simple invitation à entrer en négociation, pas une offre.",
@@ -60,7 +66,7 @@
   },
   {
    "id": "ue1-ch01-004",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "« Sous réserve de l'accord de la direction » : quel risque pour la qualification d'offre ?",
    "reponse": "La réserve peut exclure la volonté d'être lié : il n'y a alors pas d'offre.",
@@ -68,7 +74,7 @@
   },
   {
    "id": "ue1-ch01-005",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une offre peut-elle être rétractée avant d'arriver à son destinataire ?",
    "reponse": "Oui, librement.",
@@ -100,7 +106,7 @@
   },
   {
    "id": "ue1-ch01-009",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelles sont les causes de caducité de l'offre ?",
    "reponse": "Fin du délai fixé ou d'un délai raisonnable, incapacité ou décès de l'offrant, décès du destinataire.",
@@ -109,7 +115,7 @@
   {
    "id": "ue1-ch01-010",
    "theme": "formation",
-   "type": "cas",
+   "type": "regle",
    "question": "Offre sans délai, réponse quatre mois plus tard. Quel réflexe ?",
    "reponse": "Vérifier si le délai raisonnable est dépassé. Si oui, l'offre est caduque et aucun contrat ne se forme.",
    "source": "Art. 1116, 1117"
@@ -132,7 +138,7 @@
   },
   {
    "id": "ue1-ch01-013",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une acceptation peut-elle être rétractée ?",
    "reponse": "Oui, tant qu'elle n'est pas parvenue à l'offrant et si la rétractation lui parvient avant elle.",
@@ -163,14 +169,6 @@
    "source": "Art. 1121"
   },
   {
-   "id": "ue1-ch01-017",
-   "theme": "formation",
-   "type": "regle",
-   "question": "En quel lieu le contrat est-il réputé conclu ?",
-   "reponse": "Au lieu où l'acceptation est parvenue.",
-   "source": "Art. 1121"
-  },
-  {
    "id": "ue1-ch01-018",
    "theme": "formation",
    "type": "regle",
@@ -180,7 +178,7 @@
   },
   {
    "id": "ue1-ch01-019",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Conditions générales contradictoires des deux parties : que deviennent les clauses incompatibles ?",
    "reponse": "Elles sont sans effet.",
@@ -188,7 +186,7 @@
   },
   {
    "id": "ue1-ch01-020",
-   "theme": "formation",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Conditions générales contre conditions particulières : laquelle prime ?",
    "reponse": "Les conditions particulières.",
@@ -197,7 +195,7 @@
   {
    "id": "ue1-ch01-021",
    "theme": "formation",
-   "type": "cas",
+   "type": "regle",
    "question": "« Je vends mon stock, prix à débattre. » Est-ce une offre ?",
    "reponse": "Non. Il manque un élément essentiel, le prix : c'est une simple invitation à négocier.",
    "source": "Art. 1114"
@@ -205,23 +203,23 @@
   {
    "id": "ue1-ch01-022",
    "theme": "formation",
-   "type": "cas",
+   "type": "regle",
    "question": "Une offre « valable 15 jours » est retirée au 5e jour. Le destinataire accepte au 10e. Y a-t-il un contrat ?",
    "reponse": "Non : le retrait empêche le contrat de se former.\nMais il est fautif : dommages-intérêts, sans les gains attendus du contrat.",
    "source": "Art. 1116"
   },
   {
    "id": "ue1-ch01-023",
-   "theme": "formation",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un fournisseur livre chaque mois un client qui ne confirme jamais ses commandes. Son silence vaut-il accord ?",
    "reponse": "Il peut valoir accord : les relations d'affaires habituelles sont une exception au principe.",
    "source": "Art. 1120"
   },
   {
    "id": "ue1-ch01-024",
-   "theme": "formation",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Des conditions générales figurent au dos d'une facture reçue après la commande. S'appliquent-elles ?",
    "reponse": "Non. Elles n'ont été ni connues ni acceptées au moment de la conclusion.",
    "source": "Art. 1119"
@@ -276,7 +274,7 @@
   },
   {
    "id": "ue1-ch01-031",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelles sont les qualités essentielles de la prestation ?",
    "reponse": "Celles expressément ou tacitement convenues et en considération desquelles les parties ont contracté.",
@@ -284,7 +282,7 @@
   },
   {
    "id": "ue1-ch01-032",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "L'acceptation d'un aléa a-t-elle un effet sur l'erreur ?",
    "reponse": "Oui : accepter un aléa sur une qualité de la prestation exclut l'erreur sur cette qualité.",
@@ -292,7 +290,7 @@
   },
   {
    "id": "ue1-ch01-033",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quand l'erreur sur les qualités du cocontractant compte-t-elle ?",
    "reponse": "Dans les contrats conclus en considération de la personne.",
@@ -324,7 +322,7 @@
   },
   {
    "id": "ue1-ch01-037",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Taire sa propre estimation de la valeur de la prestation est-il un dol ?",
    "reponse": "Non.",
@@ -348,7 +346,7 @@
   },
   {
    "id": "ue1-ch01-040",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le dol d'un tiers peut-il entraîner la nullité ?",
    "reponse": "Oui, s'il émane d'un représentant, gérant d'affaires, préposé, porte-fort, ou d'un tiers complice.",
@@ -372,7 +370,7 @@
   },
   {
    "id": "ue1-ch01-043",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "La violence d'un tiers est-elle une cause de nullité ?",
    "reponse": "Oui.",
@@ -380,7 +378,7 @@
   },
   {
    "id": "ue1-ch01-044",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "La menace d'une voie de droit est-elle une violence ?",
    "reponse": "Non, sauf si elle est détournée de son but ou utilisée pour obtenir un avantage manifestement excessif.",
@@ -395,14 +393,6 @@
    "source": "Art. 1143"
   },
   {
-   "id": "ue1-ch01-046",
-   "theme": "validite",
-   "type": "regle",
-   "question": "Faut-il un acte positif de menace pour caractériser l'abus de dépendance ?",
-   "reponse": "Non. Une vulnérabilité connue du cocontractant peut suffire à l'état de dépendance.",
-   "source": "3e civ., 4 juin 2026, n° 24-15.070"
-  },
-  {
    "id": "ue1-ch01-047",
    "theme": "validite",
    "type": "regle",
@@ -412,7 +402,7 @@
   },
   {
    "id": "ue1-ch01-048",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "D'où part le délai de nullité en cas de violence ?",
    "reponse": "Du jour où elle a cessé.",
@@ -436,7 +426,7 @@
   },
   {
    "id": "ue1-ch01-051",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quels sont les incapables de contracter visés par le Code civil ?",
    "reponse": "Les mineurs non émancipés et les majeurs protégés.",
@@ -452,23 +442,15 @@
   },
   {
    "id": "ue1-ch01-053",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Comment le contrat peut-il déroger à l'ordre public ?",
    "reponse": "Il ne le peut pas : ni par ses stipulations, ni par son but.",
    "source": "Art. 1162"
   },
   {
-   "id": "ue1-ch01-054",
-   "theme": "validite",
-   "type": "regle",
-   "question": "Un but illicite inconnu d'une partie entraîne-t-il la nullité ?",
-   "reponse": "Oui. Peu importe qu'il ait été connu ou non par toutes les parties.",
-   "source": "Art. 1162"
-  },
-  {
    "id": "ue1-ch01-055",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quand une prestation est-elle déterminable ?",
    "reponse": "Lorsqu'elle peut être déduite du contrat, des usages ou des relations antérieures, sans nouvel accord des parties.",
@@ -476,7 +458,7 @@
   },
   {
    "id": "ue1-ch01-056",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Contrat-cadre : qui peut fixer le prix unilatéralement ?",
    "reponse": "Une partie, si cela a été convenu, à charge de motiver le montant en cas de contestation.",
@@ -484,7 +466,7 @@
   },
   {
    "id": "ue1-ch01-057",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Prestation de service sans accord sur le prix avant exécution : qui peut le fixer ?",
    "reponse": "Le créancier, à charge de motiver le montant en cas de contestation.",
@@ -492,7 +474,7 @@
   },
   {
    "id": "ue1-ch01-058",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Abus dans la fixation unilatérale du prix : quelles sanctions ?",
    "reponse": "Des dommages-intérêts et, le cas échéant, la résolution du contrat.",
@@ -500,7 +482,7 @@
   },
   {
    "id": "ue1-ch01-059",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le défaut d'équivalence des prestations entraîne-t-il la nullité ?",
    "reponse": "Non, sauf si la loi en dispose autrement.",
@@ -540,7 +522,7 @@
   },
   {
    "id": "ue1-ch01-064",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle nullité sanctionne un prix dérisoire dans une vente ?",
    "reponse": "La nullité relative, car la règle protège un intérêt privé.",
@@ -556,7 +538,7 @@
   },
   {
    "id": "ue1-ch01-066",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que doit mentionner l'acte de confirmation ?",
    "reponse": "L'objet de l'obligation et le vice affectant le contrat.",
@@ -571,14 +553,6 @@
    "source": "Art. 1182"
   },
   {
-   "id": "ue1-ch01-068",
-   "theme": "validite",
-   "type": "regle",
-   "question": "Quel est le délai de l'action interrogatoire en nullité ?",
-   "reponse": "Six mois pour confirmer le contrat ou agir en nullité, à peine de forclusion.",
-   "source": "Art. 1183"
-  },
-  {
    "id": "ue1-ch01-069",
    "theme": "validite",
    "type": "regle",
@@ -588,7 +562,7 @@
   },
   {
    "id": "ue1-ch01-070",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "La victime d'une nullité peut-elle aussi obtenir réparation ?",
    "reponse": "Oui, selon le droit commun de la responsabilité extracontractuelle.",
@@ -596,19 +570,11 @@
   },
   {
    "id": "ue1-ch01-071",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une clause nulle fait-elle tomber tout le contrat ?",
    "reponse": "Seulement si elle a été déterminante du consentement d'une ou plusieurs parties.",
    "source": "Art. 1184"
-  },
-  {
-   "id": "ue1-ch01-072",
-   "theme": "validite",
-   "type": "regle",
-   "question": "L'exception de nullité se prescrit-elle ?",
-   "reponse": "Non, si elle concerne un contrat qui n'a reçu aucune exécution.",
-   "source": "Art. 1185"
   },
   {
    "id": "ue1-ch01-073",
@@ -620,18 +586,10 @@
   },
   {
    "id": "ue1-ch01-074",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quand un contrat valablement formé devient-il caduc ?",
    "reponse": "Lorsqu'un de ses éléments essentiels disparaît.",
-   "source": "Art. 1186"
-  },
-  {
-   "id": "ue1-ch01-075",
-   "theme": "validite",
-   "type": "regle",
-   "question": "Quelle condition pour la caducité de contrats interdépendants ?",
-   "reponse": "Le cocontractant visé doit avoir connu l'opération d'ensemble lorsqu'il a consenti.",
    "source": "Art. 1186"
   },
   {
@@ -652,7 +610,7 @@
   },
   {
    "id": "ue1-ch01-078",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que signifie « erreur excusable » ?",
    "reponse": "Une erreur que la victime ne pouvait pas facilement éviter.\nOn l'apprécie selon ses compétences : on excuse un profane, rarement un professionnel dans son métier.",
@@ -660,7 +618,7 @@
   },
   {
    "id": "ue1-ch01-079",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce qu'un « motif », dans les vices du consentement ?",
    "reponse": "La raison personnelle de contracter, extérieure à la prestation.\nExemple : acheter un appartement en vue d'une mutation.",
@@ -669,7 +627,7 @@
   {
    "id": "ue1-ch01-080",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Un antiquaire achète sans l'examiner un tableau qui se révèle être une copie. Nullité pour erreur ?",
    "reponse": "Probablement non : l'erreur est inexcusable pour un professionnel de ce domaine.",
    "source": "Art. 1132"
@@ -677,7 +635,7 @@
   {
    "id": "ue1-ch01-081",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Même tableau, mais le vendeur a fourni un faux certificat d'authenticité. Que change-t-il ?",
    "reponse": "C'est un dol : l'erreur provoquée est toujours excusable.\nNullité relative et dommages-intérêts, même pour un professionnel.",
    "source": "Art. 1137, 1139"
@@ -685,7 +643,7 @@
   {
    "id": "ue1-ch01-082",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Un acheteur acquiert un appartement à Lyon pour une mutation finalement annulée. Nullité ?",
    "reponse": "Non : c'est une erreur sur un simple motif.\nSauf si la mutation figurait expressément au contrat comme élément déterminant.",
    "source": "Art. 1135"
@@ -693,14 +651,14 @@
   {
    "id": "ue1-ch01-083",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Par simple oubli, un vendeur ne signale pas une information déterminante. Quelle sanction ?",
    "reponse": "Des dommages-intérêts, pour manquement au devoir d'information.\nPas de nullité pour dol : il manque l'intention de tromper.",
    "source": "Art. 1112-1, 1137"
   },
   {
    "id": "ue1-ch01-084",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Victime d'une erreur : peut-elle obtenir des dommages-intérêts ?",
    "reponse": "Seulement si l'autre partie a commis une faute, par exemple un manquement au devoir d'information.\nSinon, la nullité seule.",
@@ -716,16 +674,16 @@
   },
   {
    "id": "ue1-ch01-086",
-   "theme": "validite",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un expert indépendant, sans lien avec le vendeur, trompe l'acheteur. Nullité pour dol ?",
    "reponse": "Non : le dol d'un tiers non complice n'annule pas le contrat.\nL'acheteur demande des dommages-intérêts à ce tiers.",
    "source": "Art. 1138, 1240"
   },
   {
    "id": "ue1-ch01-087",
-   "theme": "validite",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un contrat est signé sous la menace d'un tiers, à l'insu du cocontractant. Nullité ?",
    "reponse": "Oui : la violence d'un tiers suffit, même si le cocontractant n'y est pour rien.",
    "source": "Art. 1142"
@@ -733,15 +691,15 @@
   {
    "id": "ue1-ch01-088",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Une entreprise rentable est vendue 1 €. Quelle nullité, et qui peut agir ?",
    "reponse": "Nullité relative, pour contrepartie dérisoire : la règle protège le vendeur.\nLui seul peut agir, et il peut confirmer la vente.",
    "source": "Art. 1169, 1181"
   },
   {
    "id": "ue1-ch01-089",
-   "theme": "validite",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un contrat porte sur la vente de stupéfiants. Quelle nullité, et qui peut agir ?",
    "reponse": "Nullité absolue : la règle protège l'intérêt général.\nTout intéressé et le ministère public peuvent agir. Aucune confirmation possible.",
    "source": "Art. 1162, 1180"
@@ -749,7 +707,7 @@
   {
    "id": "ue1-ch01-090",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Après avoir découvert un dol, l'acheteur continue de payer ses échéances sans réserve. Peut-il encore agir en nullité ?",
    "reponse": "Non : l'exécution volontaire en connaissance du vice vaut confirmation.",
    "source": "Art. 1182"
@@ -757,7 +715,7 @@
   {
    "id": "ue1-ch01-091",
    "theme": "validite",
-   "type": "cas",
+   "type": "regle",
    "question": "Un salarié signe un bail au nom de sa société, sans y être autorisé. Quel est le problème, et la sanction ?",
    "reponse": "Un défaut de pouvoir, pas de capacité.\nL'acte est inopposable à la société, sauf si le tiers a légitimement cru aux pouvoirs du salarié.",
    "source": "Art. 1156"
@@ -772,7 +730,7 @@
   },
   {
    "id": "ue1-ch01-093",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Les sanctions de l'inexécution peuvent-elles se cumuler ?",
    "reponse": "Oui, si elles ne sont pas incompatibles. Les dommages-intérêts peuvent toujours s'y ajouter.",
@@ -796,7 +754,7 @@
   },
   {
    "id": "ue1-ch01-096",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelles sont les conditions de l'exception préventive ?",
    "reponse": "Une inexécution manifeste à l'échéance, des conséquences suffisamment graves, et une notification rapide.",
@@ -820,7 +778,7 @@
   },
   {
    "id": "ue1-ch01-099",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Après mise en demeure, le créancier peut-il faire exécuter par un tiers ?",
    "reponse": "Oui, dans un délai et à un coût raisonnables, puis demander le remboursement au débiteur.",
@@ -836,7 +794,7 @@
   },
   {
    "id": "ue1-ch01-101",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Prix déjà payé et exécution imparfaite : comment obtenir une réduction ?",
    "reponse": "Par accord ou, à défaut, en la demandant au juge.",
@@ -852,7 +810,7 @@
   },
   {
    "id": "ue1-ch01-103",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que doit préciser une clause résolutoire ?",
    "reponse": "Les engagements dont l'inexécution entraînera la résolution.",
@@ -860,7 +818,7 @@
   },
   {
    "id": "ue1-ch01-104",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que doit contenir la mise en demeure liée à une clause résolutoire ?",
    "reponse": "La mention expresse de la clause.",
@@ -876,7 +834,7 @@
   },
   {
    "id": "ue1-ch01-106",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que doit mentionner la mise en demeure avant résolution par notification ?",
    "reponse": "Qu'à défaut d'exécution, le créancier sera en droit de résoudre le contrat.",
@@ -884,7 +842,7 @@
   },
   {
    "id": "ue1-ch01-107",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Résolution par notification contestée : qui prouve quoi ?",
    "reponse": "Le créancier doit prouver la gravité de l'inexécution.",
@@ -892,7 +850,7 @@
   },
   {
    "id": "ue1-ch01-108",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que peut décider le juge saisi d'une résolution ?",
    "reponse": "Constater ou prononcer la résolution, ordonner l'exécution avec un délai éventuel, ou allouer seulement des dommages-intérêts.",
@@ -900,7 +858,7 @@
   },
   {
    "id": "ue1-ch01-109",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quand la résolution impose-t-elle une restitution intégrale ?",
    "reponse": "Lorsque les prestations n'étaient utiles que par l'exécution complète du contrat.",
@@ -908,7 +866,7 @@
   },
   {
    "id": "ue1-ch01-110",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que la résiliation ?",
    "reponse": "Une résolution sans restitution pour la période antérieure à la dernière prestation sans contrepartie, car les prestations étaient utiles au fur et à mesure.",
@@ -916,7 +874,7 @@
   },
   {
    "id": "ue1-ch01-111",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelles clauses survivent à la résolution ?",
    "reponse": "Celles relatives au règlement des différends et celles prévues pour produire effet après elle, comme la confidentialité et la non-concurrence.",
@@ -932,7 +890,7 @@
   },
   {
    "id": "ue1-ch01-113",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une mise en demeure est-elle requise pour des dommages-intérêts ?",
    "reponse": "Oui, sauf si l'inexécution est définitive.",
@@ -956,7 +914,7 @@
   },
   {
    "id": "ue1-ch01-116",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle exception à la limite du dommage prévisible ?",
    "reponse": "La faute lourde ou dolosive.",
@@ -964,7 +922,7 @@
   },
   {
    "id": "ue1-ch01-117",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Même en cas de faute lourde, quel dommage reste exclu ?",
    "reponse": "Celui qui n'est pas une suite immédiate et directe de l'inexécution.",
@@ -980,7 +938,7 @@
   },
   {
    "id": "ue1-ch01-119",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "La force majeure exige-t-elle un événement extérieur au débiteur ?",
    "reponse": "Non. Il suffit que l'événement échappe à son contrôle.",
@@ -988,7 +946,7 @@
   },
   {
    "id": "ue1-ch01-120",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Force majeure temporaire : quel effet ?",
    "reponse": "L'exécution est suspendue, sauf si le retard justifie la résolution.",
@@ -1004,7 +962,7 @@
   },
   {
    "id": "ue1-ch01-122",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Un créancier empêché de profiter de la prestation peut-il invoquer la force majeure ?",
    "reponse": "Non : elle protège le débiteur empêché d'exécuter.",
@@ -1028,7 +986,7 @@
   },
   {
    "id": "ue1-ch01-125",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une clause pénale exige-t-elle une mise en demeure ?",
    "reponse": "Oui, sauf inexécution définitive.",
@@ -1036,7 +994,7 @@
   },
   {
    "id": "ue1-ch01-126",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle différence entre clause pénale et clause limitative ?",
    "reponse": "La première fixe une somme. La seconde plafonne la réparation.",
@@ -1060,7 +1018,7 @@
   },
   {
    "id": "ue1-ch01-129",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que précise l'arrêt Faurecia II ?",
    "reponse": "Le manquement à une obligation essentielle ne suffit pas : la clause doit contredire cette obligation.",
@@ -1084,7 +1042,7 @@
   },
   {
    "id": "ue1-ch01-132",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Sur quoi le contrôle du déséquilibre significatif ne porte-t-il pas ?",
    "reponse": "L'objet principal du contrat et l'adéquation du prix à la prestation.",
@@ -1132,7 +1090,7 @@
   },
   {
    "id": "ue1-ch01-138",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce que la résolution ?",
    "reponse": "La fin d'un contrat valable, à cause d'une inexécution suffisamment grave.",
@@ -1141,7 +1099,7 @@
   {
    "id": "ue1-ch01-139",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "La cuisine commandée n'est pas terminée. Le client veut faire pression sans rompre. Que lui conseiller ?",
    "reponse": "L'exception d'inexécution : il retient le solde tant que le menuisier n'a pas fini.\nCondition : une inexécution suffisamment grave.",
    "source": "Art. 1219"
@@ -1149,7 +1107,7 @@
   {
    "id": "ue1-ch01-140",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "Le plan de travail livré est rayé, mais le client veut garder la cuisine. Que lui conseiller ?",
    "reponse": "La réduction du prix, après mise en demeure.\nPrix non payé : il notifie sa décision. Prix déjà payé : accord ou juge.",
    "source": "Art. 1223"
@@ -1157,7 +1115,7 @@
   {
    "id": "ue1-ch01-141",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "Le menuisier refuse de finir, le client veut sa cuisine. Que lui conseiller ?",
    "reponse": "L'exécution forcée, après mise en demeure.\nOu faire terminer par un autre artisan, aux frais du premier.",
    "source": "Art. 1221, 1222"
@@ -1165,7 +1123,7 @@
   {
    "id": "ue1-ch01-142",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "Le chantier est abandonné depuis trois mois, sans clause résolutoire. Comment le client sort-il du contrat ?",
    "reponse": "Par notification : mise en demeure, puis lettre de résolution motivée, à ses risques.\nOu en demandant la résolution au juge.",
    "source": "Art. 1226, 1227"
@@ -1173,7 +1131,7 @@
   {
    "id": "ue1-ch01-143",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "La cuisine est livrée avec deux mois de retard malgré une mise en demeure. Le client a payé deux mois de loyer en plus. Que peut-il obtenir ?",
    "reponse": "Des dommages-intérêts : inexécution (retard), préjudice (loyers), lien de causalité.\nLimités au dommage prévisible à la conclusion.",
    "source": "Art. 1231-1, 1231-3"
@@ -1181,7 +1139,7 @@
   {
    "id": "ue1-ch01-144",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "Une inondation détruit l'atelier du menuisier. Doit-il des dommages-intérêts pour son retard ?",
    "reponse": "Non : c'est un cas de force majeure.\nEmpêchement temporaire : l'exécution est suspendue.",
    "source": "Art. 1218"
@@ -1189,7 +1147,7 @@
   {
    "id": "ue1-ch01-145",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "Le prix du bois augmente de 30 %. Le menuisier peut-il invoquer la force majeure ?",
    "reponse": "Non : l'exécution est plus coûteuse, pas impossible.\nIl peut seulement vérifier les conditions de l'imprévision.",
    "source": "Art. 1218, 1195"
@@ -1197,30 +1155,30 @@
   {
    "id": "ue1-ch01-146",
    "theme": "sanctions",
-   "type": "cas",
+   "type": "regle",
    "question": "Un transporteur express promet la rapidité, mais plafonne l'indemnité de retard au prix du transport. La clause est-elle efficace ?",
    "reponse": "Non : elle vide l'obligation essentielle de sa substance.\nElle est réputée non écrite.",
    "source": "Art. 1170 ; Chronopost"
   },
   {
    "id": "ue1-ch01-147",
-   "theme": "sanctions",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Un contrat prévoit 500 € de pénalité par jour de retard pour un petit marché. Que peut faire le juge ?",
    "reponse": "Réduire la pénalité, si elle est manifestement excessive.",
    "source": "Art. 1231-5"
   },
   {
    "id": "ue1-ch01-148",
-   "theme": "sanctions",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "L'opérateur peut résilier l'abonnement à tout moment, l'abonné reste engagé 24 mois. La clause est-elle valable ?",
    "reponse": "Non : dans ce contrat d'adhésion, elle crée un déséquilibre significatif.\nElle est réputée non écrite.",
    "source": "Art. 1171"
   },
   {
    "id": "ue1-ch01-149",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que recouvre la liberté contractuelle ?",
    "reponse": "Contracter ou non, choisir son cocontractant, fixer le contenu et la forme du contrat.",
@@ -1228,7 +1186,7 @@
   },
   {
    "id": "ue1-ch01-150",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle est la limite de la liberté contractuelle ?",
    "reponse": "Les règles qui intéressent l'ordre public.",
@@ -1236,7 +1194,7 @@
   },
   {
    "id": "ue1-ch01-151",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quel est le principe de la force obligatoire ?",
    "reponse": "Les contrats légalement formés tiennent lieu de loi à ceux qui les ont faits.",
@@ -1252,7 +1210,7 @@
   },
   {
    "id": "ue1-ch01-153",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "La bonne foi peut-elle être écartée par contrat ?",
    "reponse": "Non, c'est une disposition d'ordre public.",
@@ -1260,7 +1218,7 @@
   },
   {
    "id": "ue1-ch01-154",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que retient l'arrêt Les Maréchaux ?",
    "reponse": "La bonne foi sanctionne l'usage déloyal d'un droit, sans toucher à sa substance.",
@@ -1268,23 +1226,15 @@
   },
   {
    "id": "ue1-ch01-155",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle différence entre contrat synallagmatique et unilatéral ?",
    "reponse": "Dans le premier, les obligations sont réciproques. Dans le second, une seule partie s'oblige, sans engagement réciproque.",
    "source": "Art. 1106"
   },
   {
-   "id": "ue1-ch01-156",
-   "theme": "reste",
-   "type": "regle",
-   "question": "Un testament est-il un contrat unilatéral ?",
-   "reponse": "Non : c'est un acte unilatéral. La donation est un exemple de contrat unilatéral.",
-   "source": "Art. 1106"
-  },
-  {
    "id": "ue1-ch01-157",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle différence entre contrat consensuel, solennel et réel ?",
    "reponse": "Consensuel : simple accord. Solennel : formalité légale. Réel : remise d'une chose.",
@@ -1300,7 +1250,7 @@
   },
   {
    "id": "ue1-ch01-159",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce qu'un contrat-cadre ?",
    "reponse": "Un accord fixant les caractéristiques générales de relations futures, précisées par des contrats d'application.",
@@ -1332,7 +1282,7 @@
   },
   {
    "id": "ue1-ch01-163",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quels préjudices sont exclus en cas de rupture fautive des pourparlers ?",
    "reponse": "La perte des avantages attendus du contrat et la perte de chance de les obtenir.",
@@ -1356,7 +1306,7 @@
   },
   {
    "id": "ue1-ch01-166",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Dans quelle situation le créancier de l'information est-il protégé ?",
    "reponse": "S'il ignore légitimement l'information ou fait confiance à son cocontractant.",
@@ -1364,7 +1314,7 @@
   },
   {
    "id": "ue1-ch01-167",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le devoir d'information porte-t-il sur la valeur de la prestation ?",
    "reponse": "Non, l'estimation de la valeur en est exclue.",
@@ -1372,7 +1322,7 @@
   },
   {
    "id": "ue1-ch01-168",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Devoir d'information : qui prouve quoi ?",
    "reponse": "Le demandeur prouve que l'information lui était due. L'autre partie prouve qu'elle l'a fournie.",
@@ -1380,23 +1330,15 @@
   },
   {
    "id": "ue1-ch01-169",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le devoir d'information peut-il être écarté par contrat ?",
    "reponse": "Non, il est d'ordre public.",
    "source": "Art. 1112-1"
   },
   {
-   "id": "ue1-ch01-170",
-   "theme": "reste",
-   "type": "regle",
-   "question": "Que retient l'arrêt Baldus ?",
-   "reponse": "L'acheteur n'a pas d'obligation générale d'informer le vendeur de la valeur du bien.",
-   "source": "1re civ., 3 mai 2000"
-  },
-  {
    "id": "ue1-ch01-171",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Peut-on utiliser une information confidentielle reçue pendant des négociations ?",
    "reponse": "Non. L'utiliser ou la divulguer sans autorisation oblige à verser des dommages-intérêts.",
@@ -1412,7 +1354,7 @@
   },
   {
    "id": "ue1-ch01-173",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Violation du pacte : à quelles conditions obtenir nullité ou substitution ?",
    "reponse": "Le tiers devait connaître le pacte et l'intention du bénéficiaire de s'en prévaloir.",
@@ -1428,7 +1370,7 @@
   },
   {
    "id": "ue1-ch01-175",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Comment fonctionne l'action interrogatoire du pacte de préférence ?",
    "reponse": "Le tiers demande par écrit au bénéficiaire de confirmer le pacte et son intention dans un délai raisonnable.",
@@ -1436,7 +1378,7 @@
   },
   {
    "id": "ue1-ch01-176",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Bénéficiaire muet après action interrogatoire : quel effet ?",
    "reponse": "Il ne peut plus demander la nullité ni la substitution.",
@@ -1452,7 +1394,7 @@
   },
   {
    "id": "ue1-ch01-178",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Promesse unilatérale : quel effet a la révocation pendant l'option ?",
    "reponse": "Elle n'empêche pas la formation du contrat promis.",
@@ -1476,7 +1418,7 @@
   },
   {
    "id": "ue1-ch01-181",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle est la première règle d'interprétation ?",
    "reponse": "Rechercher la commune intention des parties, sans s'arrêter au sens littéral.",
@@ -1484,7 +1426,7 @@
   },
   {
    "id": "ue1-ch01-182",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Clause ambiguë d'un contrat de gré à gré : contre qui l'interpréter ?",
    "reponse": "Contre le créancier et en faveur du débiteur.",
@@ -1492,7 +1434,7 @@
   },
   {
    "id": "ue1-ch01-183",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Clause ambiguë d'un contrat d'adhésion : contre qui l'interpréter ?",
    "reponse": "Contre celui qui l'a proposé.",
@@ -1500,7 +1442,7 @@
   },
   {
    "id": "ue1-ch01-184",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Clause susceptible de deux sens : lequel préférer ?",
    "reponse": "Celui qui lui confère un effet.",
@@ -1508,7 +1450,7 @@
   },
   {
    "id": "ue1-ch01-185",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Peut-on interpréter une clause claire et précise ?",
    "reponse": "Non, sous peine de dénaturation.",
@@ -1524,7 +1466,7 @@
   },
   {
    "id": "ue1-ch01-187",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que signifie l'opposabilité ?",
    "reponse": "Les tiers doivent respecter la situation créée par le contrat et peuvent s'en prévaloir, notamment comme preuve d'un fait.",
@@ -1564,7 +1506,7 @@
   },
   {
    "id": "ue1-ch01-192",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Chaîne translative de propriété : quelle action a le sous-acquéreur ?",
    "reponse": "Une action contractuelle directe contre le vendeur initial ou le fabricant.",
@@ -1572,7 +1514,7 @@
   },
   {
    "id": "ue1-ch01-193",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le maître d'ouvrage a-t-il une action contractuelle contre le sous-traitant ?",
    "reponse": "Non : la chaîne est non translative de propriété, l'action est délictuelle.",
@@ -1580,7 +1522,7 @@
   },
   {
    "id": "ue1-ch01-194",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Un tiers peut-il invoquer un manquement contractuel ?",
    "reponse": "Oui, sur le terrain délictuel, si ce manquement lui a causé un dommage.",
@@ -1588,7 +1530,7 @@
   },
   {
    "id": "ue1-ch01-195",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Le tiers doit-il prouver une faute distincte du manquement contractuel ?",
    "reponse": "Non, s'il établit le lien de causalité avec son dommage.",
@@ -1596,7 +1538,7 @@
   },
   {
    "id": "ue1-ch01-196",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Peut-on opposer au tiers les limites de responsabilité du contrat ?",
    "reponse": "Oui.",
@@ -1604,7 +1546,7 @@
   },
   {
    "id": "ue1-ch01-197",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quel est le principe de modification du contrat ?",
    "reponse": "Il ne se modifie que par consentement mutuel ou pour les causes prévues par la loi.",
@@ -1628,7 +1570,7 @@
   },
   {
    "id": "ue1-ch01-200",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Imprévision : que peuvent faire les parties si la renégociation échoue ?",
    "reponse": "Convenir de la résolution ou demander ensemble au juge d'adapter le contrat.",
@@ -1652,7 +1594,7 @@
   },
   {
    "id": "ue1-ch01-203",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que retenait l'arrêt Canal de Craponne ?",
    "reponse": "Avant 2016, pas de révision judiciaire du contrat pour changement de circonstances.",
@@ -1660,7 +1602,7 @@
   },
   {
    "id": "ue1-ch01-204",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle faute caractérise la rupture brutale ?",
    "reponse": "Rompre, même partiellement, une relation commerciale établie sans préavis écrit suffisant.",
@@ -1668,7 +1610,7 @@
   },
   {
    "id": "ue1-ch01-205",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quel préavis protège contre le grief de durée insuffisante ?",
    "reponse": "Dix-huit mois.",
@@ -1676,7 +1618,7 @@
   },
   {
    "id": "ue1-ch01-206",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quand une rupture sans préavis reste-t-elle possible ?",
    "reponse": "En cas d'inexécution par l'autre partie ou de force majeure.",
@@ -1684,7 +1626,7 @@
   },
   {
    "id": "ue1-ch01-207",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Quelle est la nature de l'action pour rupture brutale en droit interne ?",
    "reponse": "Délictuelle.",
@@ -1692,7 +1634,7 @@
   },
   {
    "id": "ue1-ch01-208",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Que retient l'arrêt Granarolo ?",
    "reponse": "L'action relève de la matière contractuelle s'il existe une relation contractuelle au moins tacite.",
@@ -1700,7 +1642,7 @@
   },
   {
    "id": "ue1-ch01-209",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Qu'est-ce qu'un contrat solennel ?",
    "reponse": "Un contrat dont la validité exige une forme imposée par la loi.\nSans cette forme, il est nul. Exemple : la donation, par acte notarié.",
@@ -1708,7 +1650,7 @@
   },
   {
    "id": "ue1-ch01-210",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Une formalité manque : quelles sont les trois fonctions possibles d'une forme, et leurs conséquences ?",
    "reponse": "Validité : le contrat est nul.\nPreuve : il est valable, mais difficile à prouver.\nInformation des tiers : il est valable entre les parties, mais inopposable aux tiers.",
@@ -1717,7 +1659,7 @@
   {
    "id": "ue1-ch01-211",
    "theme": "reste",
-   "type": "cas",
+   "type": "regle",
    "question": "Après huit mois de négociation, l'acheteur rompt la veille de la signature pour traiter avec un concurrent contacté en secret. Que peut obtenir le vendeur ?",
    "reponse": "Des dommages-intérêts pour ses frais : la rupture est fautive.\nNi la vente forcée, ni le bénéfice espéré.",
    "source": "Art. 1112 ; Manoukian"
@@ -1725,7 +1667,7 @@
   {
    "id": "ue1-ch01-212",
    "theme": "reste",
-   "type": "cas",
+   "type": "regle",
    "question": "Paul promet de vendre sa maison à Marie, avec une option de trois mois. Il se rétracte, puis Marie lève l'option dans le délai. La vente est-elle formée ?",
    "reponse": "Oui : la rétractation du promettant est sans effet.\nMarie peut exiger l'exécution forcée de la vente.",
    "source": "Art. 1124"
@@ -1733,14 +1675,14 @@
   {
    "id": "ue1-ch01-213",
    "theme": "reste",
-   "type": "cas",
+   "type": "regle",
    "question": "Malgré un pacte de préférence, un bailleur vend son local à un tiers qui ignorait tout. Que peut faire le locataire bénéficiaire ?",
    "reponse": "Demander des dommages-intérêts au bailleur.\nNi nullité ni substitution : le tiers ne connaissait pas le pacte.",
    "source": "Art. 1123"
   },
   {
    "id": "ue1-ch01-214",
-   "theme": "reste",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Promesse unilatérale violée : pourquoi le bénéficiaire n'a-t-il pas besoin de la substitution ?",
    "reponse": "Parce que son propre contrat se forme dès qu'il lève l'option.\nIl fait annuler la vente au tiers, puis exige l'exécution de son contrat.",
@@ -1748,8 +1690,8 @@
   },
   {
    "id": "ue1-ch01-215",
-   "theme": "reste",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Après un an de tolérance, un client invoque la clause résolutoire pour un jour de retard. Que peut faire le juge ?",
    "reponse": "Écarter la clause : elle est mise en œuvre de mauvaise foi.\nIl ne peut pas, en revanche, modifier le contenu du contrat.",
    "source": "Art. 1104 ; Les Maréchaux"
@@ -1757,7 +1699,7 @@
   {
    "id": "ue1-ch01-216",
    "theme": "reste",
-   "type": "cas",
+   "type": "regle",
    "question": "Un fournisseur engagé à prix fixe sur cinq ans voit ses coûts tripler après une crise imprévisible. Que peut-il faire ?",
    "reponse": "Demander une renégociation, en continuant de livrer.\nEn cas d'échec et faute d'accord, il peut saisir le juge, qui révise le contrat ou y met fin.",
    "source": "Art. 1195"
@@ -1765,15 +1707,15 @@
   {
    "id": "ue1-ch01-217",
    "theme": "reste",
-   "type": "cas",
+   "type": "regle",
    "question": "Un dirigeant promet que sa société signera un bail. La société refuse. Quelles conséquences ?",
    "reponse": "C'est un porte-fort : le dirigeant doit des dommages-intérêts.\nLa société, elle, n'est pas engagée.",
    "source": "Art. 1204"
   },
   {
    "id": "ue1-ch01-218",
-   "theme": "reste",
-   "type": "cas",
+   "theme": "plus-loin",
+   "type": "regle",
    "question": "Des malfaçons viennent du plombier sous-traitant. Sur quel terrain le client agit-il contre lui ?",
    "reponse": "En responsabilité extracontractuelle : aucun contrat ne les lie.",
    "source": "Art. 1240 ; Besse"
@@ -1812,7 +1754,7 @@
   },
   {
    "id": "ue1-ch01-223",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Abus de dépendance : que retient l'arrêt du 4 juin 2026 ?",
    "reponse": "Pas besoin d'**actes de menace ou de pression**. La dépendance peut venir d'une **vulnérabilité connue** du cocontractant, dont il abuse pour obtenir un **avantage manifestement excessif**.",
@@ -1820,7 +1762,7 @@
   },
   {
    "id": "ue1-ch01-224",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Nullité pour dol : quel délai et quel point de départ (1re civ., 22 mars 2023) ?",
    "reponse": "**5 ans** à compter du jour où le contractant a **découvert** le dol.",
@@ -1828,7 +1770,7 @@
   },
   {
    "id": "ue1-ch01-225",
-   "theme": "validite",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Panneaux photovoltaïques vendus sur une rentabilité exagérée : quand commence la prescription de l'action pour dol (1re civ., 28 mai 2025) ?",
    "reponse": "Elle peut commencer à la **réception de la facture de rachat** d'électricité, qui révèle la rentabilité réelle, selon les circonstances.",
@@ -1836,11 +1778,83 @@
   },
   {
    "id": "ue1-ch01-226",
-   "theme": "sanctions",
+   "theme": "plus-loin",
    "type": "regle",
    "question": "Force majeure : que retient l'assemblée plénière du 14 avril 2006 ?",
    "reponse": "L'événement doit être **imprévisible** et **irrésistible** (une maladie peut l'être). Aujourd'hui l'article 1218 ajoute : un événement **échappant au contrôle** du débiteur.",
    "source": "Ass. plén., 14 avr. 2006 ; art. 1218"
+  },
+  {
+   "id": "ue1-ch01-227",
+   "theme": "reste",
+   "type": "cas",
+   "question": "La société VERDO négocie depuis six mois avec la société LUMA la construction d'un entrepôt pour LUMA. À la demande de LUMA, VERDO a payé une étude de sol de 4 000 €. La veille de la signature, LUMA rompt sans explication : elle négociait en parallèle avec un concurrent. VERDO réclame ses 4 000 € de frais et les 30 000 € de marge qu'elle espérait réaliser sur le chantier.\n\n**Que peut obtenir VERDO ?**",
+   "reponse": "**Problème** : la rupture des pourparlers engage-t-elle la responsabilité de LUMA, et quels préjudices sont réparables ?\n**Règle** : la rupture des pourparlers est libre, mais elle devient fautive si elle est déloyale : négociations avancées, rupture brutale, sans motif (art. 1112). La responsabilité est extracontractuelle (art. 1240). La perte des avantages attendus du contrat, et la perte de chance de les obtenir, ne sont jamais réparées (art. 1112, al. 2 ; Manoukian).\n**Application** : six mois de négociation, rupture la veille de la signature, sans motif, négociation cachée avec un concurrent : la rupture est fautive. L'étude de 4 000 € a été engagée à la demande de LUMA. Les 30 000 € sont le gain attendu du contrat.\n**Conclusion** : VERDO obtient 4 000 € de dommages-intérêts, mais pas les 30 000 € de marge. Elle ne peut pas non plus forcer la conclusion du contrat.",
+   "source": "Art. 1112, 1240 ; Com., 26 nov. 2003, Manoukian"
+  },
+  {
+   "id": "ue1-ch01-228",
+   "theme": "formation",
+   "type": "cas",
+   "question": "Le 2 septembre, la société TRAME offre par courriel à la société FILO deux tonnes de laine à 9 € le kilo, « offre valable jusqu'au 16 septembre ». Le 18 septembre, TRAME vend ce stock à un autre client. Le 20 septembre, FILO accepte l'offre aux conditions proposées et exige la livraison.\n\n**Un contrat est-il formé entre TRAME et FILO ?**",
+   "reponse": "**Problème** : une acceptation donnée après le délai fixé par l'offre forme-t-elle le contrat ?\n**Règle** : le contrat est conclu dès que l'acceptation parvient à l'offrant (art. 1121). L'offre devient caduque à l'expiration du délai fixé par son auteur (art. 1117). Une acceptation tardive ne forme pas le contrat ; elle peut seulement valoir nouvelle offre.\n**Application** : l'offre expirait le 16 septembre. L'acceptation du 20 septembre arrive après : l'offre était caduque. TRAME pouvait donc vendre à un autre client le 18 septembre.\n**Conclusion** : aucun contrat n'est formé. FILO ne peut exiger ni la livraison ni des dommages-intérêts ; son courriel vaut au mieux nouvelle offre, que TRAME peut refuser.",
+   "source": "Art. 1117, 1121"
+  },
+  {
+   "id": "ue1-ch01-229",
+   "theme": "validite",
+   "type": "cas",
+   "question": "En janvier N, M. Roche achète à Mme Blanc le fonds de commerce de son atelier d'imprimerie. Une semaine avant la signature, le principal client de l'atelier, qui représentait 60 % du chiffre d'affaires, avait résilié son contrat ; Mme Blanc l'a volontairement tu. M. Roche le découvre en septembre N et prouve qu'il n'aurait pas acheté s'il l'avait su.\n\n**Que peut faire M. Roche ?**",
+   "reponse": "**Problème** : le silence volontaire du vendeur sur une information déterminante permet-il d'annuler la vente ?\n**Règle** : constitue un dol la dissimulation intentionnelle d'une information dont l'auteur sait le caractère déterminant pour l'autre partie (art. 1137, al. 2). Le vice doit être déterminant (art. 1130) ; il entraîne la nullité relative (art. 1131). L'action se prescrit par 5 ans à compter de la découverte (art. 1144, 2224). La victime peut aussi obtenir des dommages-intérêts (art. 1178, al. 4).\n**Application** : la perte d'un client qui fait 60 % du chiffre d'affaires est une information déterminante ; Mme Blanc la connaissait et l'a tue volontairement ; M. Roche prouve qu'il n'aurait pas acheté. Découverte en septembre N : il est dans le délai.\n**Conclusion** : M. Roche peut demander la nullité de la vente (restitution du prix contre restitution du fonds) et des dommages-intérêts. Il peut aussi garder le fonds et demander seulement des dommages-intérêts.",
+   "source": "Art. 1130, 1131, 1137, 1144, 1178"
+  },
+  {
+   "id": "ue1-ch01-230",
+   "theme": "sanctions",
+   "type": "cas",
+   "question": "La société SALVA commande à l'imprimerie PRESSO 10 000 catalogues pour un salon professionnel qui ouvre le 3 décembre, livrables au plus tard le 1er décembre. Elle paie un acompte de 50 %. Le 1er décembre, PRESSO n'a livré que 6 000 catalogues et annonce qu'elle ne pourra pas imprimer le reste avant janvier. Faute de catalogues, SALVA a perdu des commandes pendant le salon.\n\n**Quels recours conseiller à SALVA ?**",
+   "reponse": "**Problème** : face à une inexécution partielle, quels remèdes choisir, et peuvent-ils se cumuler ?\n**Règle** : le créancier peut suspendre sa propre prestation, poursuivre l'exécution forcée, réduire le prix, provoquer la résolution et demander réparation ; les remèdes compatibles se cumulent (art. 1217). Après mise en demeure, il peut faire exécuter par un tiers aux frais du débiteur (art. 1222) ou réduire le prix à proportion (art. 1223). Les dommages-intérêts supposent une inexécution, un préjudice prévisible à la conclusion et un lien de causalité (art. 1231-1, 1231-3).\n**Application** : 4 000 catalogues manquent pour une date essentielle, que PRESSO connaissait. SALVA peut retenir le solde du prix (art. 1219), faire imprimer le reste par une autre imprimerie aux frais de PRESSO, ou réduire le prix à proportion des catalogues manquants. Les commandes perdues au salon sont un préjudice prévisible, directement lié au retard.\n**Conclusion** : mettre PRESSO en demeure, retenir le solde et réduire le prix (ou faire imprimer par un tiers), et demander des dommages-intérêts pour les commandes perdues, à condition de pouvoir les chiffrer.",
+   "source": "Art. 1217, 1219, 1222, 1223, 1231-1, 1231-3"
+  },
+  {
+   "id": "ue1-ch01-231",
+   "theme": "sanctions",
+   "type": "cas",
+   "question": "En N−1, la verrerie AZUR s'est engagée à livrer des bouteilles à prix fixe pendant trois ans à un producteur de jus. En N, après une crise que personne ne pouvait prévoir, le prix du gaz est multiplié par quatre : chaque livraison fait perdre de l'argent à AZUR. Le contrat ne dit rien de ce risque. AZUR veut arrêter de livrer en invoquant la force majeure.\n\n**Que lui conseiller ?**",
+   "reponse": "**Problème** : une hausse imprévisible des coûts libère-t-elle le débiteur, ou permet-elle seulement de revoir le contrat ?\n**Règle** : la force majeure suppose un événement qui **empêche** l'exécution (art. 1218). L'imprévision permet à une partie de demander une renégociation si un changement imprévisible de circonstances rend l'exécution excessivement onéreuse et qu'elle n'en avait pas accepté le risque ; elle continue d'exécuter pendant la renégociation ; à défaut d'accord, le juge peut réviser le contrat ou y mettre fin (art. 1195). Le contrat peut écarter ce mécanisme.\n**Application** : livrer reste possible, seulement ruineux : pas de force majeure. La crise était imprévisible, les pertes rendent l'exécution excessivement onéreuse, AZUR n'avait pas accepté ce risque et le contrat n'écarte pas l'article 1195.\n**Conclusion** : AZUR ne doit pas cesser de livrer, sinon elle engage sa responsabilité. Elle demande une renégociation en continuant d'exécuter ; en cas d'échec, les parties peuvent convenir de la résolution, ou le juge peut réviser le contrat ou y mettre fin.",
+   "source": "Art. 1195, 1218"
+  },
+  {
+   "id": "ue1-ch01-232",
+   "theme": "sanctions",
+   "type": "cas",
+   "question": "La société NOVA confie à un prestataire informatique la sauvegarde quotidienne de ses données, pour 6 000 € par an. Le contrat, rédigé par le prestataire, prévoit : « Le prestataire n'est en aucun cas responsable de la perte des données. » Aucune sauvegarde n'est faite pendant trois semaines, puis un incident efface toutes les données de NOVA, qui chiffre son préjudice à 40 000 €.\n\n**Le prestataire peut-il s'abriter derrière la clause ?**",
+   "reponse": "**Problème** : une clause qui exclut toute responsabilité sur l'obligation principale du contrat est-elle efficace ?\n**Règle** : toute clause qui prive de sa substance l'obligation essentielle du débiteur est réputée non écrite (art. 1170 ; Chronopost). La clause doit contredire la portée de cette obligation, pas seulement la limiter (Faurecia II). Une clause limitative est aussi écartée en cas de faute lourde ou dolosive.\n**Application** : sauvegarder les données est l'obligation essentielle du contrat. Exclure toute responsabilité en cas de perte de ces données vide cette obligation de sa substance. Trois semaines sans aucune sauvegarde pourraient en outre caractériser une faute lourde.\n**Conclusion** : la clause est réputée non écrite. NOVA peut obtenir réparation de son préjudice (40 000 €, s'il est prouvé) selon le droit commun de la responsabilité contractuelle.",
+   "source": "Art. 1170, 1231-1 ; Com., 22 oct. 1996, Chronopost ; Com., 29 juin 2010, Faurecia II"
+  },
+  {
+   "id": "ue1-ch01-233",
+   "theme": "reste",
+   "type": "cas",
+   "question": "La société CLÉO loue depuis cinq ans les murs de sa boutique. Le bail contient un pacte de préférence : si le bailleur vend les murs, il doit d'abord les proposer à CLÉO. L'an dernier, CLÉO a écrit au bailleur qu'elle comptait les acheter. Le bailleur vend pourtant les murs à son beau-frère, qui avait lu le bail et la lettre de CLÉO.\n\n**Que peut obtenir CLÉO ?**",
+   "reponse": "**Problème** : le bénéficiaire d'un pacte de préférence violé peut-il prendre la place de l'acquéreur ?\n**Règle** : la violation du pacte ouvre droit à des dommages-intérêts contre le promettant. Le bénéficiaire peut aussi demander la nullité du contrat conclu avec le tiers, ou sa substitution à ce tiers, si le tiers connaissait **l'existence du pacte** et **l'intention du bénéficiaire** de s'en prévaloir (art. 1123, al. 2). Ces deux conditions s'examinent séparément.\n**Application** : le beau-frère avait lu le bail : il connaissait le pacte. Il avait lu la lettre de CLÉO : il connaissait son intention d'acheter. Les deux conditions sont remplies.\n**Conclusion** : CLÉO peut demander à être substituée au beau-frère dans la vente (ou la nullité de la vente), et des dommages-intérêts au bailleur.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch01-234",
+   "theme": "reste",
+   "type": "memo",
+   "question": "Comment structurer la réponse à un cas pratique de droit ?",
+   "reponse": "**1. Problème** : la question de droit, formulée en termes juridiques, pas un résumé des faits.\n**2. Règle** (majeure) : le texte ou l'arrêt, avec **toutes** ses conditions.\n**3. Application** (mineure) : chaque condition confrontée aux faits de l'énoncé, une par une.\n**4. Conclusion** : une réponse nette, avec la sanction et un conseil au client.\nNe récite pas un arrêt : énonce la règle et applique-la tout de suite aux faits.",
+   "source": "Cours, conseils pour l'épreuve"
+  },
+  {
+   "id": "ue1-ch01-235",
+   "theme": "reste",
+   "type": "memo",
+   "question": "Quelles rubriques dans une fiche d'arrêt ?",
+   "reponse": "**Faits** : qui, quoi, quand.\n**Procédure** : décisions antérieures, auteur du pourvoi.\n**Prétentions** des parties.\n**Problème de droit** : la question posée, en termes généraux.\n**Solution** de la Cour, puis sa **portée**.",
+   "source": "Cours, méthode"
   }
  ]
 }
