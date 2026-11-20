@@ -9,6 +9,7 @@ Le modèle à reproduire est `modele/fiche-modele-ue1-ch01.html` (chapitre 1, dr
 ## Le lecteur
 
 - **Hugo**, 30 ans, en reconversion, sans les bases du DCG en droit. Il apprend vite, mais il découvre le vocabulaire juridique.
+- **Sa priorité :** d'abord maîtriser les notions principales et savoir résoudre les cas pratiques, ensuite seulement les détails. Le droit commun des contrats est un **prérequis** du DSCG (DCG) : il sert d'outil pour résoudre les cas, il n'est pas étudié pour lui-même.
 - **L'épreuve (UE 1) :** 4 heures de cas pratiques, **sans Code ni document**. Il faut connaître les règles de mémoire et les appliquer à des faits par un syllogisme.
 - **Ce qui l'aide à retenir :** les exemples concrets, les tableaux de comparaison, les moyens mnémotechniques, et le fait de se tester.
 
@@ -130,15 +131,17 @@ Format attendu par l'app de révision (voir `modele/cartes-modele.json`) :
 Règles :
 
 - **Identifiants :** `ueX-chNN-001`, `-002`, etc., dans l'ordre des thèmes. Un identifiant est définitif : si tu reprends un chapitre existant, ne modifie ni ne réutilise jamais un `id`. Ajoute les nouvelles cartes à la suite.
-- **Types :** `regle` (une règle, une condition, une définition), `cas` (un mini-cas pratique), `memo` (un moyen mnémotechnique).
+- **Types :** `regle` (une règle, une condition, une définition, ou une courte application d'une ligne), `cas` (un vrai cas pratique, voir plus bas), `memo` (un moyen mnémotechnique ou une méthode).
 - **Une seule idée par carte.** Une question qui appelle une liste de plus de quatre éléments se découpe.
-- **Question autonome :** compréhensible sans contexte, sans numéro d'article. Les cas commencent par les faits et finissent par la question.
-- **Réponse courte :** une à trois lignes. Retours à la ligne conservés, seul `**gras**` est interprété.
+- **Question autonome :** compréhensible sans contexte, sans numéro d'article.
+- **Réponse courte :** une à trois lignes (sauf les cas). Retours à la ligne conservés, seul `**gras**` est interprété.
+- **Un vrai cas pratique (`cas`)** se distingue d'une carte de règle : un énoncé de 3 à 5 phrases avec des parties nommées, des dates et des montants, comme à l'examen, puis la question, en gras, dans un dernier paragraphe séparé par une ligne vide. La réponse suit exactement quatre lignes : `**Problème** : …`, `**Règle** : …` (conditions et articles), `**Application** : …` (chaque condition confrontée aux faits), `**Conclusion** : …` (réponse nette et conseil). L'app affiche ces quatre étapes séparément. Ne reprends pas les exercices du professeur : invente des faits sur le même thème.
+- **Tri par priorité :** classe chaque carte. **Essentiel** : la règle qui tranche un cas probable à l'examen (ses conditions, sa sanction, son délai), les notions travaillées dans le cours et les exercices du professeur. **Pour aller plus loin** : nuances, arrêts secondaires, cas rares, détails hors cours ; ces cartes vont dans un dernier thème `{"id": "plus-loin", "titre": "Pour aller plus loin", "couleur": "ardoise", "ordre": 99}`, que Hugo met en pause au début. Une notion ni au cours ni au programme, sans usage pour un cas, n'a pas de carte.
 - **`source` :** l'article ou l'arrêt. C'est le seul endroit où figure le numéro d'article.
 - **Arrêts :** chaque arrêt de la fiche, et en particulier chaque arrêt d'une fiche de jurisprudence du professeur, a sa propre carte : la question nomme l'arrêt (nom ou juridiction et date), la réponse donne sa solution en une à deux lignes. Un arrêt cité seulement dans `source` ne compte pas. Si la fiche du professeur se trompe sur un arrêt (formation, date), la carte prend la référence exacte et la synthèse le signale.
-- **Couverture :** chaque condition de chaque majeure, chaque sanction, chaque piège et chaque terme défini de la fiche a au moins une carte.
-- **Proportions indicatives :** environ 70 % de `regle`, 25 % de `cas`, quelques `memo`.
-- **Volume indicatif :** 150 à 250 cartes par chapitre.
+- **Couverture :** chaque condition de chaque majeure, chaque sanction et chaque piège de la fiche a au moins une carte.
+- **Proportions indicatives :** 6 à 10 vrais `cas` par chapitre, un `memo` de méthode quand le chapitre a une démarche propre, le reste en `regle`.
+- **Volume indicatif :** 80 à 120 cartes **essentielles** par chapitre, plus le thème « Pour aller plus loin ». La couverture de la fiche vaut pour les cartes essentielles ; un détail de la fiche peut n'avoir qu'une carte « Pour aller plus loin ».
 
 ## La synthèse de fin de fiche
 

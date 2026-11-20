@@ -60,13 +60,17 @@ cards.forEach((c, i) => {
   const want = `${deckId}-${String(highest + (i - kept) + 1).padStart(3, '0')}`;
   if (c.id !== want) errors.push(`carte n°${i + 1} : identifiant « ${c.id} », attendu « ${want} » (numérotation continue${base ? ` après ${highest}` : ' à partir de 001'})`);
   if (/\b(art\.|article)\s*\d/i.test(c.question ?? '')) warnings.push(`${c.id} : numéro d'article dans la question`);
-  if ((c.reponse ?? '').split(/\s+/).length > 45) warnings.push(`${c.id} : réponse longue (${c.reponse.split(/\s+/).length} mots)`);
+  if (c.type !== 'cas' && (c.reponse ?? '').split(/\s+/).length > 45) warnings.push(`${c.id} : réponse longue (${c.reponse.split(/\s+/).length} mots)`);
+  if (c.type === 'cas' && !/^\*\*Problème\*\* : [^\n]+\n\*\*Règle\*\* : [^\n]+\n\*\*Application\*\* : [^\n]+\n\*\*Conclusion\*\* : [^\n]+$/.test(c.reponse ?? '')) warnings.push(`${c.id} : un cas répond en quatre lignes Problème / Règle / Application / Conclusion`);
+  if (c.type === 'cas' && !/\n\n\*\*[^\n]+\*\*$/.test(c.question ?? '')) warnings.push(`${c.id} : un cas finit par la question en gras, après une ligne vide`);
 });
 const n = cards.length;
-if (!base && (n < 100 || n > 260)) warnings.push(`${n} cartes (repère : 150 à 250)`);
+const essential = cards.filter((c) => c.theme !== 'plus-loin').length;
+if (!base && (essential < 60 || essential > 140)) warnings.push(`${essential} cartes essentielles (repère : 80 à 120, le reste dans « plus-loin »)`);
+if (!(data?.deck?.themes ?? []).some((t) => t.id === 'plus-loin')) warnings.push('pas de thème « plus-loin » pour les cartes secondaires');
 if (base && n === kept) warnings.push('aucune carte ajoutée');
-const share = (t) => (n ? cards.filter((c) => c.type === t).length / n : 0);
-if (share('cas') < 0.15) warnings.push(`seulement ${Math.round(share('cas') * 100)} % de cas pratiques (repère : 25 %)`);
+const casCount = cards.filter((c) => c.type === 'cas').length;
+if (!base && casCount < 6) warnings.push(`seulement ${casCount} vrais cas pratiques (repère : 6 à 10)`);
 
 for (const w of warnings) console.log(`! ${w}`);
 if (errors.length) {
