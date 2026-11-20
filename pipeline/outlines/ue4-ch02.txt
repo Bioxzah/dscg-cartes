@@ -102,10 +102,10 @@ tile: IFRS 10 : 2 exemptions
 - titres **non négociés** sur un marché public ;
 - pas d'émission de titres en préparation ;
 - sa mère ultime ou intermédiaire publie des **comptes consolidés IFRS**.
-**2. Entité d'investissement** : 3 critères ; elle évalue ses filiales à la **juste valeur** au lieu de les consolider.
-- fonds obtenus d'investisseurs pour une gestion d'investissement ;
-- objet : **plus-values ou revenus** uniquement ;
-- performance suivie à la **juste valeur**.
+**2. Entité d'investissement** (un fonds, par exemple de capital-investissement) : elle évalue ses filiales à la **juste valeur** au lieu de les consolider. 3 critères :
+- elle **gère l'argent d'investisseurs** : elle le collecte pour le faire fructifier pour eux ;
+- elle investit **uniquement pour le rendement** : des **plus-values** à la revente et des **revenus** (dividendes, intérêts), pas pour exploiter ses filiales ;
+- elle suit la performance de ses placements à la **juste valeur**.
 memo[Différence clé]: **2 exemptions de chaque côté.** La première se ressemble : la mère **déjà incluse plus haut** dans des comptes publiés est dispensée, mais IFRS 10 exige que ces comptes soient en **IFRS** et que **tous** les autres propriétaires soient informés (en normes françaises : pas d'opposition de 10 %). La seconde diffère : **intérêt négligeable** en normes françaises, **entité d'investissement** en IFRS.
 trap: Ne compte pas le **non-dépassement des seuils** comme une exemption : dans ce cas, il n'y a simplement pas d'obligation (étape 3 du schéma).
 -- card | Appliquer : la mère intermédiaire en IFRS | Dans l'énoncé, une filiale qui a elle-même des filiales est-elle dispensée de consolider en IFRS ?
@@ -119,6 +119,7 @@ fil: HÉLIA SA est rachetée à 85 % par un groupe allemand qui publie des compt
 trap: En normes françaises, la même situation relève de la **sous-consolidation** : il suffit que des associés détenant 10 % ne s'y opposent pas, et les comptes de la mère n'ont pas à être en IFRS.
 -- box | Pourquoi l'entité d'investissement ne consolide pas | Pourquoi une entité d'investissement évalue-t-elle ses filiales à la juste valeur au lieu de les consolider ?
 txt: Ses filiales sont des **placements destinés à être revendus**, pas des activités qu'elle exploite.
+txt: À l'inverse, un groupe industriel exploite ses filiales : HÉLIA rachète HÉLIA Italia pour poser ses panneaux en Italie, donc elle la consolide.
 txt: Intégrer leur chiffre d'affaires, leurs stocks ou leurs dettes n'apprendrait rien à ses investisseurs. Ce qui les intéresse, c'est la **valeur du portefeuille**, et la **juste valeur** la montre mieux.
 fil: Un fonds de capital-investissement détient 70 % d'HÉLIA Italia pour la revendre dans cinq ans. Il présente cette ligne à sa juste valeur, sans intégrer les comptes d'HÉLIA Italia.
 -- table | La date de clôture des comptes consolidés | Question | Normes françaises | IFRS 10
