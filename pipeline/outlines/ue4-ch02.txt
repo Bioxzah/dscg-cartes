@@ -89,28 +89,37 @@ txt: - **performance** : les IFRS présentent un **résultat global** (avec les 
 memo[Programme 2027]: Le programme demande d'« analyser les conséquences du référentiel de consolidation sur l'information financière ». Le cours ne le traite pas : cet encadré sert de base pour une question rédactionnelle.
 
 == 3 | t3 | exemptions | Exemptions, date de clôture, certification
--- table | Les exemptions : normes françaises ou IFRS 10 | Cas | Normes françaises (C. com., ANC 2020-01) | IFRS 10
-| Qui peut en profiter | Mère **non cotée** sur un marché réglementé, qui n'émet pas de **titres de créances négociables** | Mère dont les titres ne sont **pas négociés** sur un marché public et qui ne prépare pas d'émission
-| La mère est elle-même contrôlée | **Sous-consolidation** : sa mère l'inclut dans des comptes consolidés **publiés**, sauf opposition d'associés détenant **au moins 10 %** de son capital | **Mère intermédiaire** : sa mère ultime ou intermédiaire publie des comptes **IFRS**, et ses autres propriétaires, **informés**, ne s'y opposent pas
-| Les filiales pèsent peu | **Intérêt négligeable** de toutes les sociétés contrôlées, seules et ensemble | Pas d'exemption propre (principe général de matérialité)
-| Société de placement | Pas d'exemption propre | **Entité d'investissement** : filiales évaluées à la **juste valeur**, pas consolidées
-memo[Différence clé]: Les deux référentiels dispensent la mère **déjà incluse plus haut** dans des comptes publiés. Seul IFRS 10 connaît l'**entité d'investissement** ; seules les normes françaises font de l'**intérêt négligeable** un cas d'exemption.
--- card | IFRS 10 : la mère intermédiaire | Une mère intermédiaire est-elle dispensée de consolider en IFRS ? | *
-zones: Règle|les 4 conditions;Dans l'énoncé|à vérifier;Conclusion|à rédiger
-1: Les **quatre conditions** doivent être réunies :
-1: - elle est **filiale** à 100 %, ou partiellement détenue et ses autres propriétaires (même sans droit de vote), **informés**, **ne s'y opposent pas** ;
-1: - ses titres de dette ou de capital **ne sont pas négociés** sur un marché public, même local ou régional ;
-1: - elle n'a pas déposé, et ne dépose pas, ses états financiers auprès d'un régulateur **pour émettre des titres** sur un marché organisé ;
-1: - sa mère ultime ou une mère intermédiaire publie des **comptes consolidés IFRS** accessibles au public.
-2: Qui détient le reste du capital ? Ont-ils été informés ?
-2: Cotation ou projet de cotation de la société
-2: Qui, plus haut dans la chaîne, publie des comptes IFRS
-3: Les quatre conditions sont remplies : **exemptée**, car l'information existe déjà plus haut dans le groupe, au même standard. Une seule manque : elle consolide.
+-- tiles
+tile: Normes françaises : 2 exemptions
+Préalable : la mère n'est **pas cotée** sur un marché réglementé et n'émet pas de **titres de créances négociables**.
+**1. Sous-consolidation** : la mère est elle-même contrôlée par une entreprise qui l'inclut dans ses comptes consolidés **publiés**.
+- à condition que des associés détenant **au moins 10 %** de son capital ne s'y opposent pas.
+**2. Intérêt négligeable** : les sociétés contrôlées ne pèsent pas dans l'image fidèle.
+- à condition que ce soit vrai pour **toutes**, **seules et ensemble**.
+tile: IFRS 10 : 2 exemptions
+**1. Mère intermédiaire** : 4 conditions, toutes requises.
+- filiale à 100 %, ou autres propriétaires **informés** et **non opposés** ;
+- titres **non négociés** sur un marché public ;
+- pas d'émission de titres en préparation ;
+- sa mère ultime ou intermédiaire publie des **comptes consolidés IFRS**.
+**2. Entité d'investissement** : 3 critères ; elle évalue ses filiales à la **juste valeur** au lieu de les consolider.
+- fonds obtenus d'investisseurs pour une gestion d'investissement ;
+- objet : **plus-values ou revenus** uniquement ;
+- performance suivie à la **juste valeur**.
+memo[Différence clé]: **2 exemptions de chaque côté.** La première se ressemble : la mère **déjà incluse plus haut** dans des comptes publiés est dispensée, mais IFRS 10 exige que ces comptes soient en **IFRS** et que **tous** les autres propriétaires soient informés (en normes françaises : pas d'opposition de 10 %). La seconde diffère : **intérêt négligeable** en normes françaises, **entité d'investissement** en IFRS.
+trap: Ne compte pas le **non-dépassement des seuils** comme une exemption : dans ce cas, il n'y a simplement pas d'obligation (étape 3 du schéma).
+-- card | Appliquer : la mère intermédiaire en IFRS | Dans l'énoncé, une filiale qui a elle-même des filiales est-elle dispensée de consolider en IFRS ?
+zones: Règle|à rappeler;Dans l'énoncé|à vérifier;Conclusion|à rédiger
+1: Exemption IFRS 10 de la **mère intermédiaire** : les **4 conditions** du récapitulatif ci-dessus, **toutes** requises.
+2: Qui détient le reste du capital ? Ont-ils été **informés** ? S'y opposent-ils ?
+2: La société est-elle **cotée**, ou prépare-t-elle une émission de titres ?
+2: Qui, plus haut dans la chaîne, publie des comptes consolidés **IFRS** ?
+3: Toutes les conditions sont remplies : **exemptée**, car l'information existe déjà plus haut dans le groupe, au même standard. Une seule manque : elle **consolide**.
 fil: HÉLIA SA est rachetée à 85 % par un groupe allemand qui publie des comptes consolidés IFRS. Les 15 % restants, informés, ne s'y opposent pas, et HÉLIA SA n'est pas cotée : elle n'a plus à publier ses propres comptes consolidés.
--- box | IFRS 10 : l'entité d'investissement | Pourquoi une entité d'investissement ne consolide-t-elle pas ses filiales ?
-txt: **Définition** : une entité qui **obtient des fonds** d'investisseurs pour leur offrir une gestion d'investissement, s'engage à investir **uniquement pour des plus-values ou des revenus**, et suit la quasi-totalité de ses investissements à la **juste valeur**.
-txt: **Traitement** : elle **ne consolide pas** ses filiales ; elle les évalue à la **juste valeur**.
-txt: **Pourquoi** : ses filiales sont des **placements destinés à être revendus**. Leur chiffre d'affaires, leurs stocks ou leurs dettes n'intéressent pas ses investisseurs ; la **valeur du portefeuille** les intéresse, et la juste valeur la montre mieux.
+trap: En normes françaises, la même situation relève de la **sous-consolidation** : il suffit que des associés détenant 10 % ne s'y opposent pas, et les comptes de la mère n'ont pas à être en IFRS.
+-- box | Pourquoi l'entité d'investissement ne consolide pas | Pourquoi une entité d'investissement évalue-t-elle ses filiales à la juste valeur au lieu de les consolider ?
+txt: Ses filiales sont des **placements destinés à être revendus**, pas des activités qu'elle exploite.
+txt: Intégrer leur chiffre d'affaires, leurs stocks ou leurs dettes n'apprendrait rien à ses investisseurs. Ce qui les intéresse, c'est la **valeur du portefeuille**, et la **juste valeur** la montre mieux.
 fil: Un fonds de capital-investissement détient 70 % d'HÉLIA Italia pour la revendre dans cinq ans. Il présente cette ligne à sa juste valeur, sans intégrer les comptes d'HÉLIA Italia.
 -- table | La date de clôture des comptes consolidés | Question | Normes françaises | IFRS 10
 | Date des comptes consolidés | En général celle de la mère. Par exception, celle de la majorité des sociétés consolidées, à justifier dans l'annexe. | La même pour la mère et toutes les filiales.

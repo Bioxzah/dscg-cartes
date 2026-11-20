@@ -221,6 +221,9 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 .box .blist li::marker{color:var(--h)}
 .zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
 .zbody ul:not(.check) li::marker{color:var(--h)}
+.tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
+.tile ul li::marker{color:var(--h)}
+.tile ul+p{margin-top:8px}
 </style>
 <div class="wrap">
 
@@ -331,33 +334,27 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t3" id="exemptions">
   <h2><span class="n">3</span>Exemptions, date de clôture, certification</h2>
-  <div class="tw"><table>
-    <caption>Les exemptions : normes françaises ou IFRS 10</caption>
-    <thead><tr><th>Cas</th><th>Normes françaises (C. com., ANC 2020-01)</th><th>IFRS 10</th></tr></thead>
-    <tbody>
-      <tr><th>Qui peut en profiter</th><td>Mère <b>non cotée</b> sur un marché réglementé, qui n'émet pas de <b>titres de créances négociables</b></td><td>Mère dont les titres ne sont <b>pas négociés</b> sur un marché public et qui ne prépare pas d'émission</td></tr>
-      <tr><th>La mère est elle-même contrôlée</th><td><b>Sous-consolidation</b> : sa mère l'inclut dans des comptes consolidés <b>publiés</b>, sauf opposition d'associés détenant <b>au moins 10 %</b> de son capital</td><td><b>Mère intermédiaire</b> : sa mère ultime ou intermédiaire publie des comptes <b>IFRS</b>, et ses autres propriétaires, <b>informés</b>, ne s'y opposent pas</td></tr>
-      <tr><th>Les filiales pèsent peu</th><td><b>Intérêt négligeable</b> de toutes les sociétés contrôlées, seules et ensemble</td><td>Pas d'exemption propre (principe général de matérialité)</td></tr>
-      <tr><th>Société de placement</th><td>Pas d'exemption propre</td><td><b>Entité d'investissement</b> : filiales évaluées à la <b>juste valeur</b>, pas consolidées</td></tr>
-    </tbody>
-  </table></div>
-  <div class="card"><div class="foot"><p class="memo"><span class="tag">Différence clé</span>Les deux référentiels dispensent la mère <b>déjà incluse plus haut</b> dans des comptes publiés. Seul IFRS 10 connaît l'<b>entité d'investissement</b> ; seules les normes françaises font de l'<b>intérêt négligeable</b> un cas d'exemption.</p></div></div>
+  <div class="tiles two">
+    <div class="tile"><h3>Normes françaises : 2 exemptions</h3><p>Préalable : la mère n'est <b>pas cotée</b> sur un marché réglementé et n'émet pas de <b>titres de créances négociables</b>.</p><p><b>1. Sous-consolidation</b> : la mère est elle-même contrôlée par une entreprise qui l'inclut dans ses comptes consolidés <b>publiés</b>.</p><ul><li>à condition que des associés détenant <b>au moins 10 %</b> de son capital ne s'y opposent pas.</li></ul><p><b>2. Intérêt négligeable</b> : les sociétés contrôlées ne pèsent pas dans l'image fidèle.</p><ul><li>à condition que ce soit vrai pour <b>toutes</b>, <b>seules et ensemble</b>.</li></ul></div>
+    <div class="tile"><h3>IFRS 10 : 2 exemptions</h3><p><b>1. Mère intermédiaire</b> : 4 conditions, toutes requises.</p><ul><li>filiale à 100 %, ou autres propriétaires <b>informés</b> et <b>non opposés</b> ;</li><li>titres <b>non négociés</b> sur un marché public ;</li><li>pas d'émission de titres en préparation ;</li><li>sa mère ultime ou intermédiaire publie des <b>comptes consolidés IFRS</b>.</li></ul><p><b>2. Entité d'investissement</b> : 3 critères ; elle évalue ses filiales à la <b>juste valeur</b> au lieu de les consolider.</p><ul><li>fonds obtenus d'investisseurs pour une gestion d'investissement ;</li><li>objet : <b>plus-values ou revenus</b> uniquement ;</li><li>performance suivie à la <b>juste valeur</b>.</li></ul></div>
+  </div>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Différence clé</span><b>2 exemptions de chaque côté.</b> La première se ressemble : la mère <b>déjà incluse plus haut</b> dans des comptes publiés est dispensée, mais IFRS 10 exige que ces comptes soient en <b>IFRS</b> et que <b>tous</b> les autres propriétaires soient informés (en normes françaises : pas d'opposition de 10 %). La seconde diffère : <b>intérêt négligeable</b> en normes françaises, <b>entité d'investissement</b> en IFRS.</p><p class="trap"><span class="tag">Piège</span>Ne compte pas le <b>non-dépassement des seuils</b> comme une exemption : dans ce cas, il n'y a simplement pas d'obligation (étape 3 du schéma).</p></div></div>
 
   <article class="card">
-    <header><h3>IFRS 10 : la mère intermédiaire</h3><span class="core">Par cœur</span></header>
-    <p class="q">Une mère intermédiaire est-elle dispensée de consolider en IFRS ?</p>
+    <header><h3>Appliquer : la mère intermédiaire en IFRS</h3></header>
+    <p class="q">Dans l'énoncé, une filiale qui a elle-même des filiales est-elle dispensée de consolider en IFRS ?</p>
     <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> les 4 conditions</h4><div class="zbody"><p>Les <b>quatre conditions</b> doivent être réunies :</p><ul><li>elle est <b>filiale</b> à 100 %, ou partiellement détenue et ses autres propriétaires (même sans droit de vote), <b>informés</b>, <b>ne s'y opposent pas</b> ;</li><li>ses titres de dette ou de capital <b>ne sont pas négociés</b> sur un marché public, même local ou régional ;</li><li>elle n'a pas déposé, et ne dépose pas, ses états financiers auprès d'un régulateur <b>pour émettre des titres</b> sur un marché organisé ;</li><li>sa mère ultime ou une mère intermédiaire publie des <b>comptes consolidés IFRS</b> accessibles au public.</li></ul></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à vérifier</h4><div class="zbody"><ul class="check"><li>Qui détient le reste du capital ? Ont-ils été informés ?</li><li>Cotation ou projet de cotation de la société</li><li>Qui, plus haut dans la chaîne, publie des comptes IFRS</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Conclusion</b> à rédiger</h4><div class="zbody"><p>Les quatre conditions sont remplies : <b>exemptée</b>, car l'information existe déjà plus haut dans le groupe, au même standard. Une seule manque : elle consolide.</p></div></div>
+      <div class="zone maj hideable"><h4><b>Règle</b> à rappeler</h4><div class="zbody"><p>Exemption IFRS 10 de la <b>mère intermédiaire</b> : les <b>4 conditions</b> du récapitulatif ci-dessus, <b>toutes</b> requises.</p></div></div>
+      <div class="zone"><h4><b>Dans l'énoncé</b> à vérifier</h4><div class="zbody"><ul class="check"><li>Qui détient le reste du capital ? Ont-ils été <b>informés</b> ? S'y opposent-ils ?</li><li>La société est-elle <b>cotée</b>, ou prépare-t-elle une émission de titres ?</li><li>Qui, plus haut dans la chaîne, publie des comptes consolidés <b>IFRS</b> ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> à rédiger</h4><div class="zbody"><p>Toutes les conditions sont remplies : <b>exemptée</b>, car l'information existe déjà plus haut dans le groupe, au même standard. Une seule manque : elle <b>consolide</b>.</p></div></div>
     </div>
-    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA est rachetée à 85 % par un groupe allemand qui publie des comptes consolidés IFRS. Les 15 % restants, informés, ne s'y opposent pas, et HÉLIA SA n'est pas cotée : elle n'a plus à publier ses propres comptes consolidés.</p></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>HÉLIA SA est rachetée à 85 % par un groupe allemand qui publie des comptes consolidés IFRS. Les 15 % restants, informés, ne s'y opposent pas, et HÉLIA SA n'est pas cotée : elle n'a plus à publier ses propres comptes consolidés.</p><p class="trap"><span class="tag">Piège</span>En normes françaises, la même situation relève de la <b>sous-consolidation</b> : il suffit que des associés détenant 10 % ne s'y opposent pas, et les comptes de la mère n'ont pas à être en IFRS.</p></div>
   </article>
 
   <article class="card box">
-    <header><h3>IFRS 10 : l'entité d'investissement</h3></header>
-    <p class="q">Pourquoi une entité d'investissement ne consolide-t-elle pas ses filiales ?</p>
-    <div class="bbody"><p><b>Définition</b> : une entité qui <b>obtient des fonds</b> d'investisseurs pour leur offrir une gestion d'investissement, s'engage à investir <b>uniquement pour des plus-values ou des revenus</b>, et suit la quasi-totalité de ses investissements à la <b>juste valeur</b>.</p><p><b>Traitement</b> : elle <b>ne consolide pas</b> ses filiales ; elle les évalue à la <b>juste valeur</b>.</p><p><b>Pourquoi</b> : ses filiales sont des <b>placements destinés à être revendus</b>. Leur chiffre d'affaires, leurs stocks ou leurs dettes n'intéressent pas ses investisseurs ; la <b>valeur du portefeuille</b> les intéresse, et la juste valeur la montre mieux.</p></div>
+    <header><h3>Pourquoi l'entité d'investissement ne consolide pas</h3></header>
+    <p class="q">Pourquoi une entité d'investissement évalue-t-elle ses filiales à la juste valeur au lieu de les consolider ?</p>
+    <div class="bbody"><p>Ses filiales sont des <b>placements destinés à être revendus</b>, pas des activités qu'elle exploite.</p><p>Intégrer leur chiffre d'affaires, leurs stocks ou leurs dettes n'apprendrait rien à ses investisseurs. Ce qui les intéresse, c'est la <b>valeur du portefeuille</b>, et la <b>juste valeur</b> la montre mieux.</p></div>
     <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Un fonds de capital-investissement détient 70 % d'HÉLIA Italia pour la revendre dans cinq ans. Il présente cette ligne à sa juste valeur, sans intégrer les comptes d'HÉLIA Italia.</p></div>
   </article>
 

@@ -135,6 +135,9 @@ const BOX_CSS = `<style>
 .box .blist li::marker{color:var(--h)}
 .zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
 .zbody ul:not(.check) li::marker{color:var(--h)}
+.tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
+.tile ul li::marker{color:var(--h)}
+.tile ul+p{margin-top:8px}
 </style>
 `;
 const FLOW_CSS = `<style>
