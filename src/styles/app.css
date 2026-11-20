@@ -728,3 +728,11 @@ label.kv { cursor: pointer; }
   color: var(--surface);
   font: 700 14px/1 var(--font-display);
 }
+
+/* ---------- Case cards ---------- */
+
+.cas-facts { margin: 0 0 14px; font-size: 17px; line-height: 1.55; white-space: pre-line; }
+.cas-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.cas-steps li { display: flex; flex-direction: column; gap: 2px; }
+.cas-steps .label { color: var(--accent); }
+.cas-steps li + li { padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }

@@ -14,7 +14,7 @@ const BUTTONS: { grade: Grade; label: string; key: string; tone: string }[] = [
   { grade: 4, label: 'Facile', key: '3', tone: 'easy' },
 ];
 
-const CAS_GRID = ['Règle citée', 'Conditions vérifiées dans les faits', 'Conclusion et sanction'];
+const CAS_GRID = ['Problème posé', 'Règle et ses conditions', 'Application aux faits', 'Conclusion et conseil'];
 
 export function DailySessionScreen() {
   return <SessionScreen mode={{ kind: 'daily' }} />;
@@ -106,7 +106,7 @@ function SessionScreen({ mode }: { mode: SessionMode }) {
         {isCas && !revealed && (
           <textarea
             className="draft"
-            placeholder="Ma réponse (facultatif) : règle, application aux faits, conclusion"
+            placeholder="Ma réponse (facultatif) : problème, règle, application aux faits, conclusion"
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             rows={4}

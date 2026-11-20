@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { TYPE_LABELS } from '../cards/catalog.ts';
+import { splitCasAnswer, splitCasQuestion } from '../cards/richText.ts';
 import type { Card, Theme } from '../cards/types.ts';
 import { ficheUrl } from '../fiches/fiches.ts';
 import { FicheSheet } from './FicheSheet.tsx';
@@ -23,6 +24,9 @@ export function CardView({ card, theme, deckId, showAnswer, onReveal }: Props) {
   const fiche = ficheUrl(deckId);
   const [ficheOpen, setFicheOpen] = useState(false);
   const closeFiche = useCallback(() => setFicheOpen(false), []);
+  const isCas = card.type === 'cas';
+  const casQuestion = isCas ? splitCasQuestion(card.question) : null;
+  const casSteps = isCas ? splitCasAnswer(card.reponse) : null;
   return (
     <article
       className={`panel card${tappable ? ' tappable' : ''}`}
@@ -35,14 +39,38 @@ export function CardView({ card, theme, deckId, showAnswer, onReveal }: Props) {
           <span className="label theme-tag">{theme.titre}</span>
           {typeLabel && <span className="label">{typeLabel}</span>}
         </div>
-        <h2 className="card-question">
-          <RichText text={card.question} />
-        </h2>
+        {casQuestion ? (
+          <>
+            <p className="cas-facts">
+              <RichText text={casQuestion.facts} />
+            </p>
+            <h2 className="card-question">
+              <RichText text={casQuestion.ask} />
+            </h2>
+          </>
+        ) : (
+          <h2 className="card-question">
+            <RichText text={card.question} />
+          </h2>
+        )}
         {showAnswer && (
           <div className="answer">
-            <p>
-              <RichText text={card.reponse} />
-            </p>
+            {casSteps ? (
+              <ol className="cas-steps">
+                {casSteps.map((step) => (
+                  <li key={step.label}>
+                    <span className="label">{step.label}</span>
+                    <p>
+                      <RichText text={step.text} />
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p>
+                <RichText text={card.reponse} />
+              </p>
+            )}
             {card.source && <div className="answer-source">{card.source}</div>}
             {fiche && (
               <button className="fiche-link" onClick={() => setFicheOpen(true)}>
