@@ -92,10 +92,10 @@ memo[Programme 2027]: Le programme demande d'« analyser les conséquences du r�
 -- tiles
 tile: Normes françaises : 2 exemptions
 Préalable : la mère n'est **pas cotée** sur un marché réglementé et n'émet pas de **titres de créances négociables**.
-**1. Sous-consolidation** : la mère est elle-même contrôlée par une entreprise qui l'inclut dans ses comptes consolidés **publiés**.
+**1. Sous-consolidation** (art. L. 233-17) : la mère est elle-même contrôlée par une entreprise qui l'inclut dans ses comptes consolidés **publiés**.
 - à condition que des associés détenant **au moins 10 %** de son capital ne s'y opposent pas.
-**2. Intérêt négligeable** : les sociétés contrôlées ne pèsent pas dans l'image fidèle.
-- à condition que ce soit vrai pour **toutes**, **seules et ensemble**.
+**2. Intérêt négligeable** (art. L. 233-17-1) : les sociétés contrôlées ne pèsent pas dans l'image fidèle.
+- à condition que ce soit vrai pour **toutes**, **seules et ensemble**, avec une justification dans l'annexe.
 tile: IFRS 10 : 2 exemptions
 **1. Mère intermédiaire** : 4 conditions, toutes requises.
 - filiale à 100 %, ou autres propriétaires **informés** et **non opposés** ;
@@ -107,6 +107,8 @@ tile: IFRS 10 : 2 exemptions
 - elle investit **uniquement pour le rendement** : des **plus-values** à la revente et des **revenus** (dividendes, intérêts), pas pour exploiter ses filiales ;
 - elle suit la performance de ses placements à la **juste valeur**.
 memo[Différence clé]: **2 exemptions de chaque côté.** La première se ressemble : la mère **déjà incluse plus haut** dans des comptes publiés est dispensée, mais IFRS 10 exige que ces comptes soient en **IFRS** et que **tous** les autres propriétaires soient informés (en normes françaises : pas d'opposition de 10 %). La seconde diffère : **intérêt négligeable** en normes françaises, **entité d'investissement** en IFRS.
+trap[Pas de « négligeable » en IFRS]: IFRS 10 n'a **pas** d'exemption pour intérêt négligeable. Seul le principe général de **matérialité** permet de laisser de côté une petite filiale : c'est une question de périmètre, pas une dispense de consolider.
+trap[Exemption ou exclusion]: En normes françaises, ne confonds pas l'**exemption** (L. 233-17-1 : **toutes** les filiales sont négligeables, pas de comptes consolidés) et l'**exclusion** (L. 233-19 : **une** filiale négligeable reste hors du périmètre, les autres sont consolidées ; chapitre suivant).
 trap: Ne compte pas le **non-dépassement des seuils** comme une exemption : dans ce cas, il n'y a simplement pas d'obligation (étape 3 du schéma).
 -- card | Appliquer : la mère intermédiaire en IFRS | Dans l'énoncé, une filiale qui a elle-même des filiales est-elle dispensée de consolider en IFRS ?
 zones: Règle|à rappeler;Dans l'énoncé|à vérifier;Conclusion|à rédiger
