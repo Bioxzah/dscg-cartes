@@ -225,6 +225,27 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 .tile ul li::marker{color:var(--h)}
 .tile ul+p{margin-top:8px}
 </style>
+<style>
+.compare{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.compare figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
+.cgrid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr) minmax(0,1fr);gap:10px}
+.ctop{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--h);padding:0 4px;align-self:end}
+.crow{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.3;color:var(--h);padding:12px 12px;border-left:4px solid var(--h);background:var(--hs);border-radius:0 10px 10px 0}
+.ccell{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.ccol{display:none}
+.chead{font-weight:700;font-size:16.5px}
+.cchecks{display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cchecks li{padding-left:24px;position:relative}
+.cchecks li::before{content:"";position:absolute;left:2px;top:.35em;width:13px;height:13px;border:1.5px solid var(--h);border-radius:3px}
+.cchecks li::after{content:"";position:absolute;left:6px;top:calc(.35em + 2px);width:4px;height:7px;border:solid var(--h);border-width:0 2px 2px 0;transform:rotate(45deg)}
+@media (max-width:640px){
+  .cgrid{grid-template-columns:1fr}
+  .ccorner,.ctop{display:none}
+  .crow{margin-top:8px}
+  .ccol{display:block;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+}
+@media print{.compare{break-inside:avoid}}
+</style>
 <div class="wrap">
 
 <header class="top">
@@ -322,11 +343,16 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t3" id="exemptions">
   <h2><span class="n">3</span>Exemptions, date de clôture, certification</h2>
-  <div class="tiles two">
-    <div class="tile"><h3>Normes françaises : 2 exemptions</h3><p>Préalable : la mère n'est <b>pas cotée</b> sur un marché réglementé et n'émet pas de <b>titres de créances négociables</b>.</p><p><b>1. Sous-consolidation</b> (art. L. 233-17) : la mère est elle-même contrôlée par une entreprise qui l'inclut dans ses comptes consolidés <b>publiés</b>.</p><ul><li>à condition que des associés détenant <b>au moins 10 %</b> de son capital ne s'y opposent pas.</li></ul><p><b>2. Intérêt négligeable</b> (art. L. 233-17-1) : les sociétés contrôlées ne pèsent pas dans l'image fidèle.</p><ul><li>à condition que ce soit vrai pour <b>toutes</b>, <b>seules et ensemble</b>, avec une justification dans l'annexe.</li></ul></div>
-    <div class="tile"><h3>IFRS 10 : 2 exemptions</h3><p><b>1. Mère intermédiaire</b> : 4 conditions, toutes requises.</p><ul><li>filiale à 100 %, ou autres propriétaires <b>informés</b> et <b>non opposés</b> ;</li><li>titres <b>non négociés</b> sur un marché public ;</li><li>pas d'émission de titres en préparation ;</li><li>sa mère ultime ou intermédiaire publie des <b>comptes consolidés IFRS</b>.</li></ul><p><b>2. Entité d'investissement</b> (un fonds, par exemple de capital-investissement) : elle évalue ses filiales à la <b>juste valeur</b> au lieu de les consolider. 3 critères :</p><ul><li>elle <b>gère l'argent d'investisseurs</b> : elle le collecte pour le faire fructifier pour eux ;</li><li>elle investit <b>uniquement pour le rendement</b> : des <b>plus-values</b> à la revente et des <b>revenus</b> (dividendes, intérêts), pas pour exploiter ses filiales ;</li><li>elle suit la performance de ses placements à la <b>juste valeur</b>.</li></ul></div>
-  </div>
-  <div class="card"><div class="foot"><p class="memo"><span class="tag">Différence clé</span><b>2 exemptions de chaque côté.</b> La première se ressemble : la mère <b>déjà incluse plus haut</b> dans des comptes publiés est dispensée, mais IFRS 10 exige que ces comptes soient en <b>IFRS</b> et que <b>tous</b> les autres propriétaires soient informés (en normes françaises : pas d'opposition de 10 %). La seconde diffère : <b>intérêt négligeable</b> en normes françaises, <b>entité d'investissement</b> en IFRS.</p><p class="trap"><span class="tag">Pas de « négligeable » en IFRS</span>IFRS 10 n'a <b>pas</b> d'exemption pour intérêt négligeable. Seul le principe général de <b>matérialité</b> permet de laisser de côté une petite filiale : c'est une question de périmètre, pas une dispense de consolider.</p><p class="trap"><span class="tag">Exemption ou exclusion</span>En normes françaises, ne confonds pas l'<b>exemption</b> (L. 233-17-1 : <b>toutes</b> les filiales sont négligeables, pas de comptes consolidés) et l'<b>exclusion</b> (L. 233-19 : <b>une</b> filiale négligeable reste hors du périmètre, les autres sont consolidées ; chapitre suivant).</p><p class="trap"><span class="tag">Piège</span>Ne compte pas le <b>non-dépassement des seuils</b> comme une exemption : dans ce cas, il n'y a simplement pas d'obligation (étape 3 du schéma).</p></div></div>
+  <figure class="compare">
+    <figcaption>Les exemptions : 2 de chaque côté</figcaption>
+    <div class="cgrid">
+      <div class="ccorner"></div><div class="ctop">Normes françaises</div><div class="ctop">IFRS 10</div>
+      <div class="crow">Préalable</div><div class="ccell"><p class="ccol">Normes françaises</p><p class="chead">Mère <b>non cotée</b> sur un marché réglementé, sans <b>titres de créances négociables</b></p></div><div class="ccell"><p class="ccol">IFRS 10</p><p class="chead">Compris dans les conditions ci-dessous</p></div>
+      <div class="crow">① La mère est déjà consolidée plus haut</div><div class="ccell"><p class="ccol">Normes françaises</p><p class="chead"><b>Sous-consolidation</b> (art. L. 233-17)</p><ul class="cchecks"><li>sa mère l'inclut dans des comptes consolidés <b>publiés</b></li><li>pas d'opposition d'associés détenant <b>10 %</b></li></ul></div><div class="ccell"><p class="ccol">IFRS 10</p><p class="chead"><b>Mère intermédiaire</b></p><ul class="cchecks"><li>sa mère publie des comptes consolidés <b>IFRS</b></li><li>autres propriétaires <b>informés</b>, non opposés</li><li>titres <b>non négociés</b> sur un marché public</li><li>pas d'émission de titres en préparation</li></ul></div>
+      <div class="crow">② Le cas propre au référentiel</div><div class="ccell"><p class="ccol">Normes françaises</p><p class="chead"><b>Intérêt négligeable</b> (art. L. 233-17-1)</p><ul class="cchecks"><li><b>toutes</b> les filiales négligeables, seules et ensemble</li><li>justifié dans l'annexe</li></ul></div><div class="ccell"><p class="ccol">IFRS 10</p><p class="chead"><b>Entité d'investissement</b> (un fonds)</p><ul class="cchecks"><li>gère l'argent d'investisseurs</li><li>investit <b>pour le rendement</b> (plus-values, revenus)</li><li>suit tout à la <b>juste valeur</b> → filiales à la juste valeur, pas consolidées</li></ul></div>
+    </div>
+  </figure>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">À retenir</span><b>①</b> même idée des deux côtés (l'information existe déjà plus haut), mais IFRS 10 est plus exigeant : comptes <b>IFRS</b> au-dessus et <b>tous</b> les propriétaires informés. <b>②</b> chaque référentiel a la sienne : <b>négligeable</b> en France, <b>fonds</b> en IFRS.</p><p class="trap"><span class="tag">Pièges</span>Pas d'exemption « négligeable » en IFRS (seule la matérialité joue, sur le périmètre). <b>Exemption</b> (toutes les filiales négligeables) ≠ <b>exclusion</b> d'une seule filiale (L. 233-19, chapitre suivant). Seuils non dépassés : pas une exemption, pas d'obligation du tout.</p></div></div>
 
   <article class="card">
     <header><h3>Appliquer : la mère intermédiaire en IFRS</h3></header>

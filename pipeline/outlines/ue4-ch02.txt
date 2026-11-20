@@ -84,27 +84,12 @@ txt: - **performance** : les IFRS présentent un **résultat global** (avec les 
 memo[Programme 2027]: Le programme demande d'« analyser les conséquences du référentiel de consolidation sur l'information financière ». Le cours ne le traite pas : cet encadré sert de base pour une question rédactionnelle.
 
 == 3 | t3 | exemptions | Exemptions, date de clôture, certification
--- tiles
-tile: Normes françaises : 2 exemptions
-Préalable : la mère n'est **pas cotée** sur un marché réglementé et n'émet pas de **titres de créances négociables**.
-**1. Sous-consolidation** (art. L. 233-17) : la mère est elle-même contrôlée par une entreprise qui l'inclut dans ses comptes consolidés **publiés**.
-- à condition que des associés détenant **au moins 10 %** de son capital ne s'y opposent pas.
-**2. Intérêt négligeable** (art. L. 233-17-1) : les sociétés contrôlées ne pèsent pas dans l'image fidèle.
-- à condition que ce soit vrai pour **toutes**, **seules et ensemble**, avec une justification dans l'annexe.
-tile: IFRS 10 : 2 exemptions
-**1. Mère intermédiaire** : 4 conditions, toutes requises.
-- filiale à 100 %, ou autres propriétaires **informés** et **non opposés** ;
-- titres **non négociés** sur un marché public ;
-- pas d'émission de titres en préparation ;
-- sa mère ultime ou intermédiaire publie des **comptes consolidés IFRS**.
-**2. Entité d'investissement** (un fonds, par exemple de capital-investissement) : elle évalue ses filiales à la **juste valeur** au lieu de les consolider. 3 critères :
-- elle **gère l'argent d'investisseurs** : elle le collecte pour le faire fructifier pour eux ;
-- elle investit **uniquement pour le rendement** : des **plus-values** à la revente et des **revenus** (dividendes, intérêts), pas pour exploiter ses filiales ;
-- elle suit la performance de ses placements à la **juste valeur**.
-memo[Différence clé]: **2 exemptions de chaque côté.** La première se ressemble : la mère **déjà incluse plus haut** dans des comptes publiés est dispensée, mais IFRS 10 exige que ces comptes soient en **IFRS** et que **tous** les autres propriétaires soient informés (en normes françaises : pas d'opposition de 10 %). La seconde diffère : **intérêt négligeable** en normes françaises, **entité d'investissement** en IFRS.
-trap[Pas de « négligeable » en IFRS]: IFRS 10 n'a **pas** d'exemption pour intérêt négligeable. Seul le principe général de **matérialité** permet de laisser de côté une petite filiale : c'est une question de périmètre, pas une dispense de consolider.
-trap[Exemption ou exclusion]: En normes françaises, ne confonds pas l'**exemption** (L. 233-17-1 : **toutes** les filiales sont négligeables, pas de comptes consolidés) et l'**exclusion** (L. 233-19 : **une** filiale négligeable reste hors du périmètre, les autres sont consolidées ; chapitre suivant).
-trap: Ne compte pas le **non-dépassement des seuils** comme une exemption : dans ce cas, il n'y a simplement pas d'obligation (étape 3 du schéma).
+-- compare | Les exemptions : 2 de chaque côté | Normes françaises | IFRS 10
+row: Préalable | Mère **non cotée** sur un marché réglementé, sans **titres de créances négociables** | Compris dans les conditions ci-dessous
+row: ① La mère est déjà consolidée plus haut | **Sous-consolidation** (art. L. 233-17) ;; sa mère l'inclut dans des comptes consolidés **publiés** ;; pas d'opposition d'associés détenant **10 %** | **Mère intermédiaire** ;; sa mère publie des comptes consolidés **IFRS** ;; autres propriétaires **informés**, non opposés ;; titres **non négociés** sur un marché public ;; pas d'émission de titres en préparation
+row: ② Le cas propre au référentiel | **Intérêt négligeable** (art. L. 233-17-1) ;; **toutes** les filiales négligeables, seules et ensemble ;; justifié dans l'annexe | **Entité d'investissement** (un fonds) ;; gère l'argent d'investisseurs ;; investit **pour le rendement** (plus-values, revenus) ;; suit tout à la **juste valeur** → filiales à la juste valeur, pas consolidées
+memo[À retenir]: **①** même idée des deux côtés (l'information existe déjà plus haut), mais IFRS 10 est plus exigeant : comptes **IFRS** au-dessus et **tous** les propriétaires informés. **②** chaque référentiel a la sienne : **négligeable** en France, **fonds** en IFRS.
+trap[Pièges]: Pas d'exemption « négligeable » en IFRS (seule la matérialité joue, sur le périmètre). **Exemption** (toutes les filiales négligeables) ≠ **exclusion** d'une seule filiale (L. 233-19, chapitre suivant). Seuils non dépassés : pas une exemption, pas d'obligation du tout.
 -- card | Appliquer : la mère intermédiaire en IFRS | Dans l'énoncé, une filiale qui a elle-même des filiales est-elle dispensée de consolider en IFRS ?
 zones: Règle|à rappeler;Dans l'énoncé|à vérifier;Conclusion|à rédiger
 1: Exemption IFRS 10 de la **mère intermédiaire** : les **4 conditions** du récapitulatif ci-dessus, **toutes** requises.

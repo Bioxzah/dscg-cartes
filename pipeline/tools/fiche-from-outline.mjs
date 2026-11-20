@@ -72,6 +72,20 @@ ${b.tiles.map((t) => `    <div class="tile"><h3>${il(t.title)}</h3>${t.lines.map
     ${foot(b.foot)}
   </article>`;
   }
+  if (b.type === 'compare') {
+    usesCompare = true;
+    const cell = (txt, col) => {
+      const [head, ...items] = txt.split(' ;; ').map((x) => x.trim());
+      return `<div class="ccell"><p class="ccol">${esc(col)}</p><p class="chead">${il(head)}</p>${items.length ? `<ul class="cchecks">${items.map((x) => `<li>${il(x)}</li>`).join('')}</ul>` : ''}</div>`;
+    };
+    return `<figure class="compare">
+    <figcaption>${il(b.caption)}</figcaption>
+    <div class="cgrid">
+      <div class="ccorner"></div>${b.cols.map((c) => `<div class="ctop">${il(c)}</div>`).join('')}
+${b.rows.map((r) => `      <div class="crow">${il(r[0])}</div>${r.slice(1).map((x, i) => cell(x, b.cols[i])).join('')}`).join('\n')}
+    </div>
+  </figure>${b.foot.length ? `\n  <div class="card">${foot(b.foot)}</div>` : ''}`;
+  }
   if (b.type === 'flow') {
     usesFlow = true;
     const step = (st) => `<div class="frow">
@@ -129,6 +143,29 @@ const GRAPH_CSS = `<style>
 // A decision flow: questions down the left, outcomes on the right; one column on a phone.
 let usesFlow = false;
 let usesBox = false;
+let usesCompare = false;
+const COMPARE_CSS = `<style>
+.compare{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.compare figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
+.cgrid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr) minmax(0,1fr);gap:10px}
+.ctop{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--h);padding:0 4px;align-self:end}
+.crow{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.3;color:var(--h);padding:12px 12px;border-left:4px solid var(--h);background:var(--hs);border-radius:0 10px 10px 0}
+.ccell{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.ccol{display:none}
+.chead{font-weight:700;font-size:16.5px}
+.cchecks{display:flex;flex-direction:column;gap:4px;font-size:15px}
+.cchecks li{padding-left:24px;position:relative}
+.cchecks li::before{content:"";position:absolute;left:2px;top:.35em;width:13px;height:13px;border:1.5px solid var(--h);border-radius:3px}
+.cchecks li::after{content:"";position:absolute;left:6px;top:calc(.35em + 2px);width:4px;height:7px;border:solid var(--h);border-width:0 2px 2px 0;transform:rotate(45deg)}
+@media (max-width:640px){
+  .cgrid{grid-template-columns:1fr}
+  .ccorner,.ctop{display:none}
+  .crow{margin-top:8px}
+  .ccol{display:block;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+}
+@media print{.compare{break-inside:avoid}}
+</style>
+`;
 const BOX_CSS = `<style>
 .box .bbody{padding:4px 18px 16px;display:flex;flex-direction:column;gap:8px}
 .box .blist{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
@@ -192,6 +229,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
     else if (type === 'table') block = { type, caption: rest[0], head: rest.slice(1), rows: [], foot: [] };
     else if (type === 'tiles') block = { type, tiles: [], foot: [] };
     else if (type === 'foot') block = { type, foot: [] };
+    else if (type === 'compare') block = { type, caption: rest[0], cols: rest.slice(1), rows: [], foot: [] };
     else if (type === 'box') block = { type, title: rest[0], q: rest[1], core: rest[2] === '*', lines: [], foot: [] };
     else if (type === 'flow') block = { type, caption: rest[0], steps: [], notes: [], foot: [] };
     else throw new Error('type ' + type);
@@ -201,6 +239,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   if ((m = line.match(/^([123]):\s*(.*)$/))) { block['z' + m[1]].push(m[2]); continue; }
   if (line.startsWith('| ')) { block.rows.push(line.slice(2).split('|').map((s) => s.trim())); continue; }
   if ((m = line.match(/^tile:\s*(.*)$/))) { block.tiles.push({ title: m[1], lines: [] }); continue; }
+  if (block?.type === 'compare' && (m = line.match(/^row:\s*(.*)$/))) { block.rows.push(m[1].split(' | ').map((x) => x.trim())); continue; }
   if (block?.type === 'card' && (m = line.match(/^zones:\s*(.*)$/))) { block.zones = m[1]; continue; }
   if (block?.type === 'box' && (m = line.match(/^txt:\s*(.*)$/))) { block.lines.push(m[1]); continue; }
   if (block?.type === 'flow' && (m = line.match(/^(step|out|next|note|fact):\s*(.*)$/))) {
@@ -216,7 +255,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   throw new Error('ligne non comprise : ' + line);
 }
 close();
-const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}${usesFlow ? FLOW_CSS : ''}${BOX_CSS}<div class="wrap">
+const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}${usesFlow ? FLOW_CSS : ''}${BOX_CSS}${usesCompare ? COMPARE_CSS : ''}<div class="wrap">
 
 <header class="top">
   <p class="eyebrow">${esc(meta.eyebrow)}</p>
