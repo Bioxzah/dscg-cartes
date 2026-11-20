@@ -562,7 +562,7 @@
   },
   {
    "id": "ue1-ch01-070",
-   "theme": "plus-loin",
+   "theme": "validite",
    "type": "regle",
    "question": "La victime d'une nullité peut-elle aussi obtenir réparation ?",
    "reponse": "Oui, selon le droit commun de la responsabilité extracontractuelle.",
@@ -754,7 +754,7 @@
   },
   {
    "id": "ue1-ch01-096",
-   "theme": "plus-loin",
+   "theme": "sanctions",
    "type": "regle",
    "question": "Quelles sont les conditions de l'exception préventive ?",
    "reponse": "Une inexécution manifeste à l'échéance, des conséquences suffisamment graves, et une notification rapide.",
@@ -850,7 +850,7 @@
   },
   {
    "id": "ue1-ch01-108",
-   "theme": "plus-loin",
+   "theme": "sanctions",
    "type": "regle",
    "question": "Que peut décider le juge saisi d'une résolution ?",
    "reponse": "Constater ou prononcer la résolution, ordonner l'exécution avec un délai éventuel, ou allouer seulement des dommages-intérêts.",
@@ -914,7 +914,7 @@
   },
   {
    "id": "ue1-ch01-116",
-   "theme": "plus-loin",
+   "theme": "sanctions",
    "type": "regle",
    "question": "Quelle exception à la limite du dommage prévisible ?",
    "reponse": "La faute lourde ou dolosive.",
@@ -1042,7 +1042,7 @@
   },
   {
    "id": "ue1-ch01-132",
-   "theme": "plus-loin",
+   "theme": "sanctions",
    "type": "regle",
    "question": "Sur quoi le contrôle du déséquilibre significatif ne porte-t-il pas ?",
    "reponse": "L'objet principal du contrat et l'adéquation du prix à la prestation.",
@@ -1226,7 +1226,7 @@
   },
   {
    "id": "ue1-ch01-155",
-   "theme": "plus-loin",
+   "theme": "reste",
    "type": "regle",
    "question": "Quelle différence entre contrat synallagmatique et unilatéral ?",
    "reponse": "Dans le premier, les obligations sont réciproques. Dans le second, une seule partie s'oblige, sans engagement réciproque.",
@@ -1306,7 +1306,7 @@
   },
   {
    "id": "ue1-ch01-166",
-   "theme": "plus-loin",
+   "theme": "reste",
    "type": "regle",
    "question": "Dans quelle situation le créancier de l'information est-il protégé ?",
    "reponse": "S'il ignore légitimement l'information ou fait confiance à son cocontractant.",
@@ -1322,7 +1322,7 @@
   },
   {
    "id": "ue1-ch01-168",
-   "theme": "plus-loin",
+   "theme": "reste",
    "type": "regle",
    "question": "Devoir d'information : qui prouve quoi ?",
    "reponse": "Le demandeur prouve que l'information lui était due. L'autre partie prouve qu'elle l'a fournie.",
@@ -1330,7 +1330,7 @@
   },
   {
    "id": "ue1-ch01-169",
-   "theme": "plus-loin",
+   "theme": "reste",
    "type": "regle",
    "question": "Le devoir d'information peut-il être écarté par contrat ?",
    "reponse": "Non, il est d'ordre public.",
@@ -1855,6 +1855,22 @@
    "question": "Quelles rubriques dans une fiche d'arrêt ?",
    "reponse": "**Faits** : qui, quoi, quand.\n**Procédure** : décisions antérieures, auteur du pourvoi.\n**Prétentions** des parties.\n**Problème de droit** : la question posée, en termes généraux.\n**Solution** de la Cour, puis sa **portée**.",
    "source": "Cours, méthode"
+  },
+  {
+   "id": "ue1-ch01-236",
+   "theme": "sanctions",
+   "type": "cas",
+   "question": "Le fabricant LUXOR impose à tous ses distributeurs ses conditions générales, sans aucune négociation possible. L'une d'elles prévoit : « LUXOR pourra résilier le contrat à tout moment et sans préavis en cas de manquement du distributeur. » Les distributeurs n'ont aucun droit équivalent. Un distributeur vous demande si cette clause peut lui être opposée.\n\n**Cette clause peut-elle produire effet au regard du droit commun des contrats ?**",
+   "reponse": "**Problème** : dans un contrat aux clauses imposées, une clause qui réserve à une seule partie le droit de rompre sans préavis est-elle valable ?\n**Règle** : le contrat d'adhésion comporte un ensemble de clauses non négociables, déterminées à l'avance par l'une des parties (art. 1110). Dans un tel contrat, toute clause non négociable qui crée un déséquilibre significatif entre les droits et obligations des parties est réputée non écrite (art. 1171) ; le contrôle ne porte ni sur l'objet principal du contrat ni sur le prix. Entre professionnels, le Code de commerce sanctionne aussi le déséquilibre significatif (C. com., art. L. 442-1, I, 2°).\n**Application** : les conditions générales sont imposées sans négociation : c'est un contrat d'adhésion. La faculté de rompre sans préavis est réservée à LUXOR, sans contrepartie pour le distributeur : le déséquilibre est significatif, et la clause ne porte ni sur l'objet ni sur le prix.\n**Conclusion** : la clause est réputée non écrite ; le reste du contrat s'applique. Pour sortir du contrat, LUXOR devra passer par les règles de droit commun (résolution pour inexécution suffisamment grave, art. 1224 s.).",
+   "source": "Art. 1110, 1171 ; C. com., art. L. 442-1, I, 2°"
+  },
+  {
+   "id": "ue1-ch01-237",
+   "theme": "sanctions",
+   "type": "cas",
+   "question": "La société VELIA devait livrer 50 machines à un client avant le 1er mars ; le client a déjà payé 60 % du prix. Ayant surestimé ses capacités de production, VELIA ne livre rien au 1er mars. Le 15 avril, des grèves bloquent les ports, et VELIA invoque cet événement pour justifier son retard. Le client veut mettre fin au contrat, récupérer son acompte et être indemnisé.\n\n**Le client peut-il obtenir la résolution judiciaire du contrat, et VELIA peut-elle invoquer la force majeure ?**",
+   "reponse": "**Problème** : une inexécution totale à l'échéance justifie-t-elle la résolution, et un événement survenu après l'échéance peut-il exonérer le débiteur ?\n**Règle** : la résolution peut être demandée en justice pour une inexécution suffisamment grave (art. 1224, 1227) ; le juge peut la prononcer, accorder un délai ou n'allouer que des dommages-intérêts (art. 1228). Elle entraîne les restitutions (art. 1229, 1352 s.) et se cumule avec des dommages-intérêts (art. 1217, 1231-1). La force majeure suppose un événement échappant au contrôle du débiteur, imprévisible et irrésistible, qui **empêche** l'exécution (art. 1218).\n**Application** : aucune machine livrée à l'échéance : l'inexécution porte sur l'obligation principale, elle est suffisamment grave. Le retard vient d'une erreur de VELIA sur ses capacités, qu'elle maîtrisait ; les grèves du 15 avril sont postérieures à l'échéance et ne sont pas la cause du retard.\n**Conclusion** : pas de force majeure. Le juge devrait prononcer la résolution : VELIA restitue l'acompte et doit des dommages-intérêts pour le préjudice prévisible du client.",
+   "source": "Art. 1217, 1218, 1224, 1227, 1228, 1229, 1231-1"
   }
  ]
 }

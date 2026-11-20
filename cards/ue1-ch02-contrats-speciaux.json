@@ -1084,7 +1084,7 @@
   },
   {
    "id": "ue1-ch02-130",
-   "theme": "plus-loin",
+   "theme": "distribution",
    "type": "regle",
    "question": "Qu'est-ce que le savoir-faire ?",
    "reponse": "Un ensemble d'informations pratiques non brevetées, issues de l'expérience du fournisseur et testées par lui, **secret, substantiel et identifié**.",
@@ -1100,7 +1100,7 @@
   },
   {
    "id": "ue1-ch02-132",
-   "theme": "plus-loin",
+   "theme": "distribution",
    "type": "regle",
    "question": "Une clause d'exclusivité suffit-elle à faire d'un contrat une franchise ?",
    "reponse": "Non. Le critère de la franchise est la transmission d'un savoir-faire réel, avec assistance et signes distinctifs.",
@@ -1188,7 +1188,7 @@
   },
   {
    "id": "ue1-ch02-143",
-   "theme": "plus-loin",
+   "theme": "distribution",
    "type": "regle",
    "question": "Que contient le document d'information précontractuelle ?",
    "reponse": "Des informations sincères sur le fournisseur, son expérience, l'état du réseau, le marché local et les comptes.",
@@ -1212,7 +1212,7 @@
   },
   {
    "id": "ue1-ch02-146",
-   "theme": "plus-loin",
+   "theme": "distribution",
    "type": "regle",
    "question": "L'information précontractuelle garantit-elle la rentabilité du réseau ?",
    "reponse": "Non. Des résultats décevants ne suffisent pas : il faut des informations fausses, omises ou irréalistes.",
@@ -1444,7 +1444,7 @@
   },
   {
    "id": "ue1-ch02-175",
-   "theme": "plus-loin",
+   "theme": "assurance",
    "type": "regle",
    "question": "Qu'est-ce que le principe indemnitaire ?",
    "reponse": "En assurance de dommages, l'indemnité ne peut pas dépasser la valeur de la chose assurée : l'assuré ne doit pas s'enrichir.",
@@ -2033,6 +2033,14 @@
    "question": "Litige après une vente : dans quel ordre raisonner ?",
    "reponse": "**1. Les parties** : professionnel face à consommateur ? Si oui, penser aussi à la garantie légale de conformité.\n**2. Le problème** : chose différente de la commande → délivrance non conforme ; chose défectueuse → vices cachés ; trouble de droit → éviction.\n**3. Les conditions et le délai** du fondement retenu.\n**4. Ce que veut l'acheteur** : garder la chose ou la rendre.\n**5. La qualité du vendeur** : professionnel → tous les dommages-intérêts, clause de non-garantie écartée.",
    "source": "Cours, conseils pour l'épreuve"
+  },
+  {
+   "id": "ue1-ch02-250",
+   "theme": "distribution",
+   "type": "cas",
+   "question": "La société FOURNIL anime un réseau de franchise de boulangeries ; les franchisés doivent acheter leur farine exclusivement auprès d'elle. Elle remet à M. Dumas, 25 jours avant la signature, un document d'information avec une étude du marché local prévoyant 400 000 € de chiffre d'affaires annuel. L'étude reposait sur des chiffres de population très surestimés. M. Dumas réalise 180 000 € et accumule les pertes ; il affirme qu'il n'aurait jamais signé avec des chiffres réalistes.\n\n**M. Dumas peut-il agir contre FOURNIL, et sur quel fondement ?**",
+   "reponse": "**Problème** : des informations précontractuelles irréalistes engagent-elles la responsabilité du franchiseur, voire permettent-elles d'annuler le contrat ?\n**Règle** : celui qui met une enseigne à disposition en imposant une exclusivité doit remettre, 20 jours au moins avant la signature, un document d'information sincère (C. com., art. L. 330-3). Plus largement, chaque partie doit l'information déterminante qu'elle connaît (art. 1112-1). Le manquement engage la responsabilité extracontractuelle de son auteur (il est antérieur au contrat). La nullité suppose en plus un vice du consentement : erreur déterminante ou dol (art. 1130 s.). L'information ne garantit pas la rentabilité : il faut des données fausses, omises ou irréalistes.\n**Application** : le délai de 20 jours est respecté, mais l'étude repose sur des données fausses : l'information n'est pas sincère. L'écart (180 000 € contre 400 000 €) et l'affirmation de M. Dumas montrent son caractère déterminant ; ses pertes sont le préjudice.\n**Conclusion** : M. Dumas peut obtenir des dommages-intérêts pour manquement à l'obligation d'information, voie la plus simple. Il peut aussi demander la nullité s'il prouve une erreur déterminante ou un dol (intention de tromper), avec restitutions.",
+   "source": "C. com., art. L. 330-3 ; art. 1112-1, 1130, 1137"
   }
  ]
 }
