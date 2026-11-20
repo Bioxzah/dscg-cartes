@@ -75,7 +75,7 @@ ${b.tiles.map((t) => `    <div class="tile"><h3>${il(t.title)}</h3>${t.lines.map
   if (b.type === 'flow') {
     usesFlow = true;
     const step = (st) => `<div class="frow">
-      <div class="fstep"><p class="fn">${esc(st.n)}</p><p class="fq">${il(st.q)}</p>${st.src ? `<p class="fsrc">${il(st.src)}</p>` : ''}</div>
+      <div class="fstep"><p class="fn">${esc(st.n)}</p><p class="fq">${il(st.q)}</p>${st.facts.length ? `<ul class="ffacts">${st.facts.map((f) => `<li>${il(f)}</li>`).join('')}</ul>` : ''}${st.src ? `<p class="fsrc">${il(st.src)}</p>` : ''}</div>
       <div class="fouts">${st.outs.map((o) => `<div class="fout ${o.cls}"><span class="fchip">${esc(o.chip)}</span><p>${il(o.text)}</p></div>`).join('')}</div>
     </div>${st.next ? `\n    <div class="fnext"><div><span class="fchip">${esc(st.next)}</span></div></div>` : ''}`;
     return `<figure class="flow">
@@ -145,6 +145,9 @@ const FLOW_CSS = `<style>
 .fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden;background:var(--surface)}
 .fn{background:var(--h);color:var(--surface);font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px}
 .fq{padding:10px 12px 4px;font-weight:700}
+.ffacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 12px 6px}
+.ffacts li{background:var(--hs);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.3;text-align:center}
+.ffacts li b{display:block;font-size:19px;color:var(--h);font-family:var(--display)}
 .fsrc{padding:0 12px 10px;font-size:13.5px;color:var(--muted);font-style:italic}
 .fouts{display:flex;flex-direction:column;justify-content:center;gap:10px}
 .fout{position:relative;border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
@@ -197,9 +200,10 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   if ((m = line.match(/^tile:\s*(.*)$/))) { block.tiles.push({ title: m[1], lines: [] }); continue; }
   if (block?.type === 'card' && (m = line.match(/^zones:\s*(.*)$/))) { block.zones = m[1]; continue; }
   if (block?.type === 'box' && (m = line.match(/^txt:\s*(.*)$/))) { block.lines.push(m[1]); continue; }
-  if (block?.type === 'flow' && (m = line.match(/^(step|out|next|note):\s*(.*)$/))) {
+  if (block?.type === 'flow' && (m = line.match(/^(step|out|next|note|fact):\s*(.*)$/))) {
     const f = m[2].split('|').map((x) => x.trim());
-    if (m[1] === 'step') block.steps.push({ n: f[0], q: f[1], src: f[2], outs: [] });
+    if (m[1] === 'step') block.steps.push({ n: f[0], q: f[1], src: f[2], outs: [], facts: [] });
+    else if (m[1] === 'fact') block.steps.at(-1).facts.push(m[2]);
     else if (m[1] === 'out') block.steps.at(-1).outs.push({ cls: f[0], chip: f[1], text: f.slice(2).join('|') });
     else if (m[1] === 'next') block.steps.at(-1).next = m[2];
     else block.notes.push(m[2]);

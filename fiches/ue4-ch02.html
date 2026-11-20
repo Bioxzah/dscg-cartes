@@ -192,6 +192,9 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 .fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden;background:var(--surface)}
 .fn{background:var(--h);color:var(--surface);font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px}
 .fq{padding:10px 12px 4px;font-weight:700}
+.ffacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 12px 6px}
+.ffacts li{background:var(--hs);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.3;text-align:center}
+.ffacts li b{display:block;font-size:19px;color:var(--h);font-family:var(--display)}
 .fsrc{padding:0 12px 10px;font-size:13.5px;color:var(--muted);font-style:italic}
 .fouts{display:flex;flex-direction:column;justify-content:center;gap:10px}
 .fout{position:relative;border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
@@ -278,10 +281,10 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </div>
     <div class="fnext"><div><span class="fchip">Si non</span></div></div>
     <div class="frow">
-      <div class="fstep"><p class="fn">Étape 3</p><p class="fq">Le groupe dépasse-t-il 2 des 3 seuils sur 2 exercices consécutifs ?</p><p class="fsrc">Art. L. 233-17 et D. 230-2 C. com.</p></div>
+      <div class="fstep"><p class="fn">Étape 3</p><p class="fq">Le groupe dépasse-t-il 2 des 3 seuils sur 2 exercices consécutifs ?</p><ul class="ffacts"><li><b>30 M€</b> total du bilan</li><li><b>60 M€</b> chiffre d'affaires net HT</li><li><b>250</b> salariés (effectif moyen)</li></ul><p class="fsrc">Art. L. 233-17 et D. 230-2 C. com.</p></div>
       <div class="fouts"><div class="fout blue"><span class="fchip">Si oui</span><p><b>Comptes consolidés obligatoires</b> : règlement <b>ANC 2020-01</b> (ou, sur option, normes IFRS).</p></div><div class="fout nul"><span class="fchip">Si non</span><p><b>Pas d'obligation</b> de consolider (consolidation volontaire possible).</p></div></div>
     </div>
-    <p class="fnote"><b>Seuils (art. D. 230-2 C. com.)</b> : total du bilan <b>30 M€</b> · chiffre d'affaires net HT <b>60 M€</b> · effectif moyen <b>250 salariés</b>.</p>
+    
   </figure>
   <div class="card"><div class="foot"><p class="memo"><span class="tag">Sur la copie</span>Ce schéma tombe chaque année. Rédige dans cet ordre : <b>contrôle</b> (avec l'article), <b>cotation</b> (marché réglementé ou non), <b>seuils</b> (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'<b>obligation</b> et le <b>référentiel</b>. Pense ensuite aux <b>exemptions</b> (section 3).</p><p class="trap"><span class="tag">Piège</span><b>Euronext Growth</b> n'est pas un marché réglementé : la société passe à l'étape 3, comme une société non cotée.</p></div></div>
 

@@ -50,9 +50,11 @@ step: Étape 2 | Ses titres sont-ils admis sur un marché réglementé (ex. : Eu
 out: exe | Si oui | **Comptes consolidés obligatoires**, en normes **IFRS adoptées par l'UE**.
 next: Si non
 step: Étape 3 | Le groupe dépasse-t-il 2 des 3 seuils sur 2 exercices consécutifs ? | Art. L. 233-17 et D. 230-2 C. com.
+fact: **30 M€** total du bilan
+fact: **60 M€** chiffre d'affaires net HT
+fact: **250** salariés (effectif moyen)
 out: blue | Si oui | **Comptes consolidés obligatoires** : règlement **ANC 2020-01** (ou, sur option, normes IFRS).
 out: nul | Si non | **Pas d'obligation** de consolider (consolidation volontaire possible).
-note: **Seuils (art. D. 230-2 C. com.)** : total du bilan **30 M€** · chiffre d'affaires net HT **60 M€** · effectif moyen **250 salariés**.
 memo[Sur la copie]: Ce schéma tombe chaque année. Rédige dans cet ordre : **contrôle** (avec l'article), **cotation** (marché réglementé ou non), **seuils** (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'**obligation** et le **référentiel**. Pense ensuite aux **exemptions** (section 3).
 trap: **Euronext Growth** n'est pas un marché réglementé : la société passe à l'étape 3, comme une société non cotée.
 -- table | Seuils : faut-il consolider à la clôture du 31/12/2025 ? | 2 seuils dépassés au 31/12/2023 ? | Au 31/12/2024 ? | Obligation au 31/12/2025
