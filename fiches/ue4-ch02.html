@@ -184,6 +184,26 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 .graph text{font-family:var(--display);font-weight:600;font-size:16px;text-anchor:middle;fill:var(--ink)}
 .graph text.lb{font-family:var(--mono);font-weight:500;font-size:12px;fill:var(--muted)}
 </style>
+<style>
+.flow{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.flow figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
+.frow,.fnext{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;align-items:center}
+.fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden}
+.fn{background:var(--h);color:var(--surface);font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px}
+.fq{padding:10px 12px 4px;font-weight:700}
+.fsrc{padding:0 12px 10px;font-size:13.5px;color:var(--muted);font-style:italic}
+.fouts{display:flex;flex-direction:column;gap:10px}
+.fout{border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
+.fout p{color:var(--ink);font-size:15.5px}
+.fout.nul{background:var(--nuls);color:var(--nul)} .fout.exe{background:var(--exes);color:var(--exe)} .fout.blue{background:var(--s2s);color:var(--s2)}
+.fchip{font-family:var(--mono);font-weight:500;font-size:12px;border:1.5px solid currentColor;border-radius:6px;padding:1px 6px;white-space:nowrap;background:var(--surface)}
+.fnext>div{display:flex;flex-direction:column;align-items:center;color:var(--h)}
+.fnext>div::before,.fnext>div::after{content:"";width:2px;height:12px;background:currentColor}
+.fnext>div::after{height:14px;clip-path:polygon(0 0,100% 0,100% 60%,100% 60%,50% 100%,0 60%)}
+.fnote{margin-top:16px;background:var(--wash);border-radius:10px;padding:10px 12px;font-size:15px}
+@media (max-width:640px){.frow,.fnext{grid-template-columns:1fr;gap:8px}}
+@media print{.flow{break-inside:avoid}}
+</style>
 <div class="wrap">
 
 <header class="top">
@@ -237,6 +257,35 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t2" id="obligation">
   <h2><span class="n">2</span>L'obligation de consolider</h2>
+  <figure class="flow">
+    <figcaption>Le schéma de la prof : faut-il établir des comptes consolidés ?</figcaption>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 1</p><p class="fq">La société contrôle-t-elle une ou plusieurs sociétés, de manière exclusive ou conjointe ?</p><p class="fsrc">Art. L. 233-16 C. com.</p></div>
+      <div class="fouts"><div class="fout nul"><span class="fchip">Si non</span><p><b>Pas de consolidation</b> : pas de groupe.</p></div></div>
+    </div>
+    <div class="fnext"><div><span class="fchip">Si oui ↓</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 2</p><p class="fq">Ses titres sont-ils admis sur un marché réglementé (ex. : Euronext Paris) ?</p><p class="fsrc">Règlement (CE) n° 1606/2002</p></div>
+      <div class="fouts"><div class="fout exe"><span class="fchip">Si oui</span><p><b>Comptes consolidés obligatoires</b>, en normes <b>IFRS adoptées par l'UE</b>.</p></div></div>
+    </div>
+    <div class="fnext"><div><span class="fchip">Si non ↓</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 3</p><p class="fq">Le groupe dépasse-t-il 2 des 3 seuils sur 2 exercices consécutifs ?</p><p class="fsrc">Art. L. 233-17 et D. 230-2 C. com.</p></div>
+      <div class="fouts"><div class="fout blue"><span class="fchip">Si oui</span><p><b>Comptes consolidés obligatoires</b> : règlement <b>ANC 2020-01</b> (ou, sur option, normes IFRS).</p></div><div class="fout nul"><span class="fchip">Si non</span><p><b>Pas d'obligation</b> de consolider (consolidation volontaire possible).</p></div></div>
+    </div>
+    <p class="fnote"><b>Seuils (art. D. 230-2 C. com.)</b> : total du bilan <b>30 M€</b> · chiffre d'affaires net HT <b>60 M€</b> · effectif moyen <b>250 salariés</b>.</p>
+  </figure>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Sur la copie</span>Ce schéma tombe chaque année. Rédige dans cet ordre : <b>contrôle</b> (avec l'article), <b>cotation</b> (marché réglementé ou non), <b>seuils</b> (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'<b>obligation</b> et le <b>référentiel</b>. Pense ensuite aux <b>exemptions</b> (section 3).</p></div></div>
+
+  <div class="tw"><table>
+    <caption>Principaux règlements et normes de la consolidation</caption>
+    <thead><tr><th>Référentiel</th><th>Textes</th></tr></thead>
+    <tbody>
+      <tr><th>Normes françaises</th><td>Code de commerce · règlement CRC 99-02 (avant 2021) · <b>règlement ANC 2020-01</b> (depuis le 1er janvier 2021)</td></tr>
+      <tr><th>Normes IAS/IFRS</th><td><b>IFRS 10</b> États financiers consolidés · IFRS 3 Regroupements · IFRS 11 Partenariats · IAS 27 États financiers individuels · IAS 28 Entreprises associées et coentreprises · IFRS 12 Informations à fournir</td></tr>
+    </tbody>
+  </table></div>
+
   <article class="card">
     <header><h3>Les trois étapes</h3><span class="core">Par cœur</span></header>
     <p class="q">La société mère doit-elle consolider, et dans quel référentiel ?</p>
@@ -249,7 +298,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
   </article>
 
   <div class="tw"><table>
-    <caption>Les seuils : 2 sur 3, deux exercices de suite</caption>
+    <caption>Les seuils (art. D. 230-2 C. com.) : 2 sur 3, deux exercices de suite</caption>
     <thead><tr><th>Critère</th><th>Seuil à dépasser</th></tr></thead>
     <tbody>
       <tr><th>Total de bilan</th><td>Plus de <b>30 M€</b></td></tr>

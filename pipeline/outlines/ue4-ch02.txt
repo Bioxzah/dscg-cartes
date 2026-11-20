@@ -43,6 +43,21 @@ fil: HÉLIA SA vend 2 M€ de panneaux à HÉLIA Pose. Additionner les deux chif
 memo[Plan de réponse]: **Harmoniser, éliminer, présenter comme une seule entité.** C'est la question de cours de la prof : cite les difficultés une par une, avec un exemple chacune.
 
 == 2 | t2 | obligation | L'obligation de consolider
+-- flow | Le schéma de la prof : faut-il établir des comptes consolidés ?
+step: Étape 1 | La société contrôle-t-elle une ou plusieurs sociétés, de manière exclusive ou conjointe ? | Art. L. 233-16 C. com.
+out: nul | Si non | **Pas de consolidation** : pas de groupe.
+next: Si oui ↓
+step: Étape 2 | Ses titres sont-ils admis sur un marché réglementé (ex. : Euronext Paris) ? | Règlement (CE) n° 1606/2002
+out: exe | Si oui | **Comptes consolidés obligatoires**, en normes **IFRS adoptées par l'UE**.
+next: Si non ↓
+step: Étape 3 | Le groupe dépasse-t-il 2 des 3 seuils sur 2 exercices consécutifs ? | Art. L. 233-17 et D. 230-2 C. com.
+out: blue | Si oui | **Comptes consolidés obligatoires** : règlement **ANC 2020-01** (ou, sur option, normes IFRS).
+out: nul | Si non | **Pas d'obligation** de consolider (consolidation volontaire possible).
+note: **Seuils (art. D. 230-2 C. com.)** : total du bilan **30 M€** · chiffre d'affaires net HT **60 M€** · effectif moyen **250 salariés**.
+memo[Sur la copie]: Ce schéma tombe chaque année. Rédige dans cet ordre : **contrôle** (avec l'article), **cotation** (marché réglementé ou non), **seuils** (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'**obligation** et le **référentiel**. Pense ensuite aux **exemptions** (section 3).
+-- table | Principaux règlements et normes de la consolidation | Référentiel | Textes
+| Normes françaises | Code de commerce · règlement CRC 99-02 (avant 2021) · **règlement ANC 2020-01** (depuis le 1er janvier 2021)
+| Normes IAS/IFRS | **IFRS 10** États financiers consolidés · IFRS 3 Regroupements · IFRS 11 Partenariats · IAS 27 États financiers individuels · IAS 28 Entreprises associées et coentreprises · IFRS 12 Informations à fournir
 -- card | Les trois étapes | La société mère doit-elle consolider, et dans quel référentiel ? | *
 1: **Étape 1 : contrôle.** Contrôle-t-elle, seule ou conjointement, au moins une entreprise ? Non : pas de groupe, pas de consolidation.
 1: **Étape 2 : cotation.** Ses titres sont-ils admis sur un **marché réglementé** ? Oui : comptes consolidés en **IFRS obligatoires**, **sans condition de seuils** (droit européen).
@@ -53,7 +68,7 @@ memo[Plan de réponse]: **Harmoniser, éliminer, présenter comme une seule enti
 3: Base légale : **art. L. 233-16 C. com.** (obligation, avec un rapport sur la gestion du groupe) et **L. 233-21** (image fidèle de l'ensemble consolidé).
 3: Règles françaises : **règlement ANC 2020-01** du 6 mars 2020, applicable depuis le 1er janvier 2021 (il remplace le CRC 99-02).
 trap: Une société cotée sur **Euronext Growth** n'est pas sur un marché réglementé : elle passe à l'étape 3, comme une société non cotée.
--- table | Les seuils : 2 sur 3, deux exercices de suite | Critère | Seuil à dépasser
+-- table | Les seuils (art. D. 230-2 C. com.) : 2 sur 3, deux exercices de suite | Critère | Seuil à dépasser
 | Total de bilan | Plus de **30 M€**
 | Chiffre d'affaires hors taxes | Plus de **60 M€**
 | Effectif moyen | Plus de **250 salariés**
