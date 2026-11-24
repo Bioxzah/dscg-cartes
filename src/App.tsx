@@ -7,6 +7,7 @@ import { DecksScreen } from './screens/DecksScreen.tsx';
 import { FicheScreen } from './screens/FicheScreen.tsx';
 import { FichesScreen } from './screens/FichesScreen.tsx';
 import { NotFound } from './screens/NotFound.tsx';
+import { QuizRoute } from './screens/QuizScreen.tsx';
 import { DailySessionScreen, FreeSessionScreen } from './screens/SessionScreen.tsx';
 import { SettingsScreen } from './screens/SettingsScreen.tsx';
 import { ThemeScreen } from './screens/ThemeScreen.tsx';
@@ -35,6 +36,7 @@ const router = createHashRouter([
   { path: '/session/libre/:deckId/:themeId', element: <FreeSessionScreen /> },
   // A fiche is read full screen too.
   { path: '/fiches/:deckId', element: <FicheScreen /> },
+  { path: '/quiz/:deckId', element: <QuizRoute /> },
   {
     element: <Root />,
     children: [

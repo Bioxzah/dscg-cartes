@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import { chapterLabel } from '../cards/catalog.ts';
 import { MasteryCounts } from '../components/MasteryCounts.tsx';
 import { PauseToggle } from '../components/PauseToggle.tsx';
 import { themeStyle } from '../components/themeStyle.ts';
 import { useAppData } from '../data/AppData.tsx';
+import { QUIZ_MIN, QUIZ_SIZE, quizCards } from '../scheduler/quiz.ts';
 import { countMastery } from '../scheduler/stats.ts';
 
 const plural = (n: number) => `${n} carte${n > 1 ? 's' : ''}`;
@@ -23,11 +25,12 @@ export function DecksScreen() {
           </div>
           {ue.chapters.map((ch) => {
             const deckPaused = settings.pausedDecks.includes(ch.deck.id);
+            const quizCount = quizCards(ch.themes.flatMap((t) => t.cards)).length;
             return (
               <div key={ch.deck.id} className={`panel chapter${deckPaused ? ' paused' : ''}`}>
                 <div className="chapter-head">
                   <div>
-                    <div className="label">Chapitre {ch.deck.chapitre} · {ch.cardCount}</div>
+                    <div className="label">{chapterLabel(ch.deck.chapitre)} · {ch.cardCount}</div>
                     <h3>{ch.deck.titre}</h3>
                   </div>
                   <PauseToggle
@@ -65,6 +68,15 @@ export function DecksScreen() {
                     );
                   })}
                 </ul>
+                {quizCount >= QUIZ_MIN && (
+                  <Link className="row quiz-row" to={`/quiz/${ch.deck.id}`}>
+                    <span className="row-main">
+                      <span className="row-title">Faire un quiz</span>
+                      <span className="mastery">{Math.min(quizCount, QUIZ_SIZE)} questions tirées au hasard, avec un score</span>
+                    </span>
+                    <span className="chevron" aria-hidden="true">›</span>
+                  </Link>
+                )}
               </div>
             );
           })}

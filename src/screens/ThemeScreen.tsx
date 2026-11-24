@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { searchCards, TYPE_LABELS } from '../cards/catalog.ts';
+import { searchCards, TYPE_LABELS, chapterLabel } from '../cards/catalog.ts';
 import { MasteryCounts } from '../components/MasteryCounts.tsx';
 import { useAppData } from '../data/AppData.tsx';
 import { countMastery } from '../scheduler/stats.ts';
@@ -21,7 +21,7 @@ export function ThemeScreen() {
     <main className="screen" style={themeStyle(theme.couleur)}>
       <Link className="back" to="/paquets">‹ Paquets</Link>
       <header className="theme-head">
-        <div className="label">{deck.ue} · Chapitre {deck.chapitre} · {deck.titre}</div>
+        <div className="label">{deck.ue} · {chapterLabel(deck.chapitre)} · {deck.titre}</div>
         <h1 className="screen-title">{theme.titre}</h1>
         <MasteryCounts counts={countMastery(cards.map((c) => c.id), memory)} />
       </header>

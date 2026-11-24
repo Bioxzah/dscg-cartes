@@ -1,3 +1,4 @@
+import { chapterLabel } from '../cards/catalog.ts';
 import { Link } from 'react-router-dom';
 import { useAppData } from '../data/AppData.tsx';
 import { hasFiche } from '../fiches/fiches.ts';
@@ -22,7 +23,7 @@ export function FichesScreen() {
               <li key={f.deckId}>
                 <Link className="row" to={`/fiches/${f.deckId}`}>
                   <span className="row-main">
-                    <span className="label">Chapitre {f.chapitre}</span>
+                    <span className="label">{chapterLabel(f.chapitre)}</span>
                     <span className="row-title">{f.titre}</span>
                   </span>
                   <span className="chevron" aria-hidden="true">›</span>

@@ -1,3 +1,4 @@
+import { chapterLabel } from '../cards/catalog.ts';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { themeStyle } from '../components/themeStyle.ts';
@@ -88,7 +89,7 @@ export function FicheScreen() {
       <header className="reader-top">
         <Link className="back" to="/fiches">‹ Fiches</Link>
         <div className="reader-title">
-          {deck && <span className="label">{deck.ue} · Chapitre {deck.chapitre}</span>}
+          {deck && <span className="label">{deck.ue} · {chapterLabel(deck.chapitre)}</span>}
           <span className="ellipsis">{title}</span>
         </div>
         {sections.length > 0 && (

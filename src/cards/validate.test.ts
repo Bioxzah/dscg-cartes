@@ -17,6 +17,41 @@ const card = (id: string, extra: Record<string, unknown> = {}) => ({
 });
 
 describe('validateDeckFile', () => {
+  it('accepts a qcm and a balanced journal entry', () => {
+    const qcm = card('q1', { type: 'qcm', choix: ['Actif', 'Passif'], bonne: 1 });
+    const entry = card('e1', {
+      type: 'ecriture',
+      journal: [
+        { compte: '607', intitule: 'Achats', debit: 1000 },
+        { compte: '44566', intitule: 'TVA déductible', debit: 200 },
+        { compte: '401', intitule: 'Fournisseurs', credit: 1200 },
+      ],
+    });
+    expect(validateDeckFile({ name: 'a.json', data: deck([qcm, entry]) })).toEqual([]);
+  });
+
+  it('rejects a qcm without a valid right answer, and choices on another type', () => {
+    const errors = validateDeckFile({
+      name: 'a.json',
+      data: deck([card('q1', { type: 'qcm', choix: ['A', 'B'], bonne: 2 }), card('q2', { type: 'qcm', choix: ['A'] }), card('r1', { choix: ['A', 'B'], bonne: 0 })]),
+    }).join('\n');
+    expect(errors).toMatch(/q1.*« bonne »/);
+    expect(errors).toMatch(/q2.*de 2 à 5/);
+    expect(errors).toMatch(/r1.*réservés aux qcm/);
+  });
+
+  it('rejects an unbalanced or malformed journal entry', () => {
+    const errors = validateDeckFile({
+      name: 'a.json',
+      data: deck([
+        card('e1', { type: 'ecriture', journal: [{ compte: '512', intitule: 'Banque', debit: 100 }, { compte: '101', intitule: 'Capital', credit: 90 }] }),
+        card('e2', { type: 'ecriture', journal: [{ compte: '512', intitule: 'Banque', debit: 100, credit: 100 }, { compte: '101', intitule: 'Capital', credit: 100 }] }),
+      ]),
+    }).join('\n');
+    expect(errors).toMatch(/e1.*déséquilibrée/);
+    expect(errors).toMatch(/e2\) ligne 1.*soit « debit », soit « credit »/);
+  });
+
   it('accepts a valid file', () => {
     expect(validateDeckFile({ name: 'a.json', data: deck([card('c1'), card('c2', { source: 'Art. 1' })]) })).toEqual([]);
   });

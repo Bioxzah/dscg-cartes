@@ -12,7 +12,9 @@ const isText = (v: unknown): v is string => typeof v === 'string' && v.trim() !=
 
 const DECK_KEYS = ['id', 'ue', 'ueTitre', 'chapitre', 'titre', 'themes'];
 const THEME_KEYS = ['id', 'titre', 'couleur', 'ordre'];
-const CARD_KEYS = ['id', 'theme', 'type', 'question', 'reponse', 'source'];
+const CARD_KEYS = ['id', 'theme', 'type', 'question', 'reponse', 'source', 'choix', 'bonne', 'journal'];
+const LINE_KEYS = ['compte', 'intitule', 'debit', 'credit'];
+const isAmount = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v) && v > 0;
 
 function unknownKeys(o: Obj, allowed: string[], where: string, errors: string[]) {
   for (const k of Object.keys(o)) {
@@ -78,6 +80,39 @@ export function validateDeckFile(file: SourceFile): string[] {
       if (!isText(c.reponse)) errors.push(`${w} : « reponse » doit être un texte non vide`);
       if (c.source !== undefined && typeof c.source !== 'string') {
         errors.push(`${w} : « source » doit être un texte`);
+      }
+      if (c.type === 'qcm') {
+        const choix = Array.isArray(c.choix) ? c.choix : [];
+        const ok = choix.length >= 2 && choix.length <= 5 && choix.every(isText);
+        if (!ok) errors.push(`${w} : un qcm a de 2 à 5 « choix » non vides`);
+        else if (!Number.isInteger(c.bonne) || (c.bonne as number) < 0 || (c.bonne as number) >= choix.length) {
+          errors.push(`${w} : « bonne » doit être l'indice d'un des choix`);
+        }
+      } else if (c.choix !== undefined || c.bonne !== undefined) {
+        errors.push(`${w} : « choix » et « bonne » sont réservés aux qcm`);
+      }
+      if (c.journal !== undefined) {
+        if (c.type !== 'ecriture') errors.push(`${w} : « journal » est réservé aux écritures`);
+        if (!Array.isArray(c.journal) || c.journal.length < 2) {
+          errors.push(`${w} : « journal » doit avoir au moins deux lignes`);
+        } else {
+          let debit = 0;
+          let credit = 0;
+          c.journal.forEach((l, j) => {
+            const lw = `${w} ligne ${j + 1}`;
+            if (!isObj(l)) return errors.push(`${lw} : objet attendu`);
+            unknownKeys(l, LINE_KEYS, lw, errors);
+            if (!isText(l.compte) || !isText(l.intitule)) errors.push(`${lw} : « compte » et « intitule » sont requis`);
+            const d = l.debit !== undefined;
+            const k = l.credit !== undefined;
+            if (d === k) return errors.push(`${lw} : soit « debit », soit « credit »`);
+            const v = d ? l.debit : l.credit;
+            if (!isAmount(v)) return errors.push(`${lw} : montant positif attendu`);
+            if (d) debit += v;
+            else credit += v;
+          });
+          if (Math.abs(debit - credit) > 0.005) errors.push(`${w} : écriture déséquilibrée (débit ${debit}, crédit ${credit})`);
+        }
       }
     });
   }

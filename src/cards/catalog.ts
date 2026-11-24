@@ -86,7 +86,15 @@ export function searchCards(cards: Card[], query: string): Card[] {
 export const TYPE_LABELS: Partial<Record<Card['type'], string>> = {
   cas: 'Cas pratique',
   memo: 'Mémo',
+  qcm: 'QCM',
+  ecriture: 'Écriture',
+  calcul: 'Calcul',
 };
+
+/** "Chapitre 2", or "Bases" for a foundation deck (negative chapter number, listed first). */
+export function chapterLabel(chapitre: number): string {
+  return chapitre < 0 ? 'Bases' : `Chapitre ${chapitre}`;
+}
 
 /** Every card in catalog order (UE, chapter, theme order, file order), as the planner needs it. */
 export function plannerCards(catalog: Catalog): PlannerCard[] {

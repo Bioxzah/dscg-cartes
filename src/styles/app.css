@@ -736,3 +736,70 @@ label.kv { cursor: pointer; }
 .cas-steps li { display: flex; flex-direction: column; gap: 2px; }
 .cas-steps .label { color: var(--accent); }
 .cas-steps li + li { padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+
+/* ---------- QCM and journal entries ---------- */
+
+.qcm-choices { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.qcm-choice {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  text-align: left;
+  font-size: 17px;
+  cursor: pointer;
+}
+.qcm-choice:not(:disabled):hover { border-color: var(--accent); background: var(--accent-soft); }
+.qcm-choice:disabled { cursor: default; color: inherit; }
+.qcm-letter {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--wash);
+  font: 700 14px/1 var(--font-mono);
+}
+.qcm-text { flex: 1; min-width: 0; }
+.qcm-mark { flex: none; font: 500 11px/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
+.qcm-choice.right { border-color: var(--exe); background: var(--exe-soft); }
+.qcm-choice.right .qcm-letter { background: var(--exe); color: var(--surface); }
+.qcm-choice.right .qcm-mark { color: var(--exe); }
+.qcm-choice.wrong { border-color: var(--nul); background: var(--nul-soft); }
+.qcm-choice.wrong .qcm-letter { background: var(--nul); color: var(--surface); }
+.qcm-choice.wrong .qcm-mark { color: var(--nul); }
+.qcm-choice.faded { opacity: .55; }
+
+.journal-wrap { overflow-x: auto; margin: 0 0 12px; }
+.journal { width: 100%; border-collapse: collapse; font-size: 15px; white-space: normal; background: var(--surface); border-radius: 8px; overflow: hidden; }
+.journal th { font: 500 11px var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); text-align: left; padding: 8px 8px; }
+.journal td { padding: 7px 8px; border-top: 1px solid var(--line); vertical-align: top; }
+.journal .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.journal .acct { font: 500 14px var(--font-mono); white-space: nowrap; }
+.journal tr.cr td:nth-child(2) { padding-left: 22px; }
+.journal tfoot td { font-weight: 700; border-top: 2px solid var(--ink); }
+.qcm-hint { margin: 0; min-height: 52px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 15px; }
+
+/* ---------- Quiz ---------- */
+
+.quiz-row { background: var(--wash); }
+.quiz-row .row-title { font-weight: 700; color: var(--bleu); }
+.grades.two { grid-template-columns: repeat(2, 1fr); }
+.quiz-score { padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-score .stat-value { font-size: 40px; }
+.quiz-mistakes { list-style: none; margin: 0; padding: 0; overflow: hidden; }
+.quiz-mistakes li:first-child .row { border-top: 0; }
+@media (max-width: 520px) {
+  .journal { font-size: 14px; }
+  .journal th, .journal td { padding: 6px 4px; }
+  .journal th { font-size: 10px; letter-spacing: .02em; }
+  .journal tr.cr td:nth-child(2) { padding-left: 12px; }
+  .journal .acct { font-size: 13px; }
+}
