@@ -48,6 +48,19 @@ c: 512 | Banque (actif) | 100
 effet: Ligne 1 : une charge augmente, donc **débit**. Ligne 2 : la banque (un actif) diminue, donc **crédit**. Les deux colonnes ont le même total : c'est la **partie double**.
 memo[Méthode]: Pour chaque opération, pose-toi trois questions : **quels comptes bougent ?** Pour chacun, **augmente-t-il ou diminue-t-il ?** Et donc, **débit ou crédit** d'après le tableau ? Vérifie enfin que total débit = total crédit.
 trap: Débit et crédit ne veulent pas dire « dépense » et « recette ». Un encaissement se passe au **débit** de la banque : la trésorerie, un actif, augmente.
+-- box | Les réflexes pour trouver le sens | Comment savoir, en pratique, si un compte va au débit ou au crédit ?
+txt: **① Pars de la banque.** C'est le compte le plus sûr : l'argent qui **entre** va au **débit** du 512, l'argent qui **sort** au **crédit**. L'autre ligne va forcément de l'autre côté.
+txt: - Loyer payé : la banque baisse → crédit 512 → donc débit 613 (charge).
+txt: - Client qui règle : la banque monte → débit 512 → donc crédit 411.
+txt: **② Qui reçoit est débité, qui donne est crédité** (du point de vue du compte).
+txt: - Une machine entre dans l'entreprise : débit 2154. Le fournisseur la fournit, on lui doit le prix : crédit 404.
+txt: **③ Vérifie avec le côté normal de la classe** (tableau ci-dessous). Une charge au crédit ou un produit au débit signale une **annulation** ou une erreur.
+-- table | Le côté normal de chaque classe | Classe | Solde normal
+| 2 Immobilisations · 3 Stocks · 5 Banque · 6 Charges | **Débiteur**
+| 1 Capitaux (capitaux propres, provisions, emprunts) · 7 Produits | **Créditeur**
+| 4 Tiers | **Clients** (411) et TVA déductible (4456) : débiteurs. **Fournisseurs** (401, 404), TVA collectée (44571), État, personnel, associés : créditeurs.
+trap[Exception apparente]: Les **amortissements** (28) et **dépréciations** (29, 39, 49) sont rangés avec l'actif, mais ils sont **créditeurs** : ils viennent en **déduction** de l'actif.
+memo[Écritures types]: Retiens une quinzaine d'**écritures types** (achat, vente, paiement, encaissement, emprunt, amortissement, provision, stocks, cession) plutôt que des comptes isolés. En conso, un retraitement consiste souvent à **annuler** une écriture : on passe la même écriture à l'envers.
 -- table | Les 7 classes du PCG | Classe | Contenu | Exemples
 | 1 | Capitaux | 101 Capital, 106 Réserves, 120 Résultat, 131 Subventions, 145 Amortissements dérogatoires, 151 Provisions, 164 Emprunts
 | 2 | Immobilisations | 2154 Matériel industriel, 2183 Matériel informatique, 261 Titres de participation, 28 Amortissements
@@ -170,6 +183,7 @@ effet: Charge purement fiscale. En consolidation, elle est éliminée (avec un i
 | Actif = ? | Passif (capitaux propres + provisions + dettes).
 | Sens des comptes | Actif et charges au débit ; passif, capitaux propres et produits au crédit.
 | Moyen de retenir | Emplois au débit, ressources au crédit.
+| Trouver le sens | Partir de la banque ; qui reçoit est débité, qui donne est crédité ; vérifier le côté normal de la classe.
 | Classes du PCG | 1 capitaux · 2 immobilisations · 3 stocks · 4 tiers · 5 financiers · 6 charges · 7 produits.
 | Achat, vente | Charge et produit **HT** ; TVA à part ; tiers **TTC**.
 | Emprunt | Une dette ; seuls les intérêts sont des charges.

@@ -1211,6 +1211,261 @@
    "question": "Pourquoi ces bases comptent-elles pour la consolidation ?",
    "reponse": "Chaque retraitement de consolidation est une **écriture** : il faut savoir quel compte bouge, dans quel sens, et l'effet sur le **résultat** et les **capitaux propres**, puis l'impôt différé.\nC'est le fil de tous les chapitres de conso.",
    "source": "Programme 2027, UE 4"
+  },
+  {
+   "id": "ue4-bases-079",
+   "theme": "partie-double",
+   "type": "regle",
+   "question": "Quels réflexes pour trouver si un compte va au débit ou au crédit ?",
+   "reponse": "① **Partir de la banque** : argent qui entre = débit 512, argent qui sort = crédit 512 ; l'autre ligne va de l'autre côté.\n② **Qui reçoit est débité, qui donne est crédité.**\n③ **Vérifier le côté normal** de la classe : 2, 3, 5, 6 débiteurs ; 1, 7 créditeurs ; 4 selon le tiers.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-080",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 512 Banque a normalement un solde…",
+   "reponse": "La trésorerie est un **actif** : solde normalement **débiteur** (créditeur seulement en cas de découvert).",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-081",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 411 Clients a normalement un solde…",
+   "reponse": "Les clients **nous doivent** de l'argent : créance, actif, **débiteur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-082",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 401 Fournisseurs a normalement un solde…",
+   "reponse": "**On doit** de l'argent aux fournisseurs : dette, passif, **créditeur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-083",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 607 Achats de marchandises a normalement un solde…",
+   "reponse": "Compte de **charges** (classe 6) : **débiteur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-084",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 707 Ventes de marchandises a normalement un solde…",
+   "reponse": "Compte de **produits** (classe 7) : **créditeur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-085",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 101 Capital a normalement un solde…",
+   "reponse": "**Capitaux propres** (classe 1), au passif : **créditeur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-086",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 164 Emprunts a normalement un solde…",
+   "reponse": "Une **dette** envers la banque, au passif : **créditeur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-087",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 2154 Matériel industriel a normalement un solde…",
+   "reponse": "Une **immobilisation** (classe 2), à l'actif : **débiteur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-088",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 28154 Amortissements du matériel industriel a normalement un solde…",
+   "reponse": "Piège : rangé avec l'actif, mais **créditeur**, car il vient en **déduction** de la valeur de la machine.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-089",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 44571 TVA collectée a normalement un solde…",
+   "reponse": "TVA due à l'État : **dette**, **créditeur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-090",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 44566 TVA déductible a normalement un solde…",
+   "reponse": "TVA que l'État nous doit : **créance**, **débiteur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-091",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 491 Dépréciations des comptes clients a normalement un solde…",
+   "reponse": "Comme les amortissements, une dépréciation vient en **déduction** d'un actif : **créditeur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-092",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 37 Stocks de marchandises a normalement un solde…",
+   "reponse": "Un **stock** (classe 3), à l'actif : **débiteur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-093",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 661 Charges d'intérêts a normalement un solde…",
+   "reponse": "Compte de **charges** : **débiteur**.",
+   "source": "PCG",
+   "choix": [
+    "débiteur",
+    "créditeur"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-094",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Un loyer est payé par virement. Le compte 512 Banque est…",
+   "reponse": "L'argent **sort** de la banque : **crédit** 512. Le loyer (charge) va donc au débit.",
+   "source": "PCG",
+   "choix": [
+    "débité",
+    "crédité"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-095",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Un client règle sa facture par virement. Le compte 411 Clients est…",
+   "reponse": "La banque reçoit (débit 512) ; la créance du client s'éteint : **crédit** 411.",
+   "source": "PCG",
+   "choix": [
+    "débité",
+    "crédité"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-096",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Des marchandises sont reçues d'un fournisseur, à payer plus tard. Le compte 401 Fournisseurs est…",
+   "reponse": "Le fournisseur **donne** (il fournit, et on lui doit) : **crédit** 401.",
+   "source": "PCG",
+   "choix": [
+    "débité",
+    "crédité"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-097",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "L'entreprise rembourse 5 000 € d'emprunt. Le compte 164 Emprunts est…",
+   "reponse": "La dette **diminue** : un compte de passif diminue au **débit**. La banque est créditée.",
+   "source": "PCG",
+   "choix": [
+    "débité",
+    "crédité"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-098",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Une dotation aux amortissements est passée. Le compte 6811 est…",
+   "reponse": "C'est une **charge** qui augmente : **débit**. Le compte d'amortissement (28) est crédité.",
+   "source": "PCG",
+   "choix": [
+    "débité",
+    "crédité"
+   ],
+   "bonne": 0
   }
  ]
 }

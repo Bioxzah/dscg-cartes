@@ -295,6 +295,24 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
   </figure>
   <div class="card"><div class="foot"><p class="memo"><span class="tag">Méthode</span>Pour chaque opération, pose-toi trois questions : <b>quels comptes bougent ?</b> Pour chacun, <b>augmente-t-il ou diminue-t-il ?</b> Et donc, <b>débit ou crédit</b> d'après le tableau ? Vérifie enfin que total débit = total crédit.</p><p class="trap"><span class="tag">Piège</span>Débit et crédit ne veulent pas dire « dépense » et « recette ». Un encaissement se passe au <b>débit</b> de la banque : la trésorerie, un actif, augmente.</p></div></div>
 
+  <article class="card box">
+    <header><h3>Les réflexes pour trouver le sens</h3></header>
+    <p class="q">Comment savoir, en pratique, si un compte va au débit ou au crédit ?</p>
+    <div class="bbody"><p><b>① Pars de la banque.</b> C'est le compte le plus sûr : l'argent qui <b>entre</b> va au <b>débit</b> du 512, l'argent qui <b>sort</b> au <b>crédit</b>. L'autre ligne va forcément de l'autre côté.</p><ul class="blist"><li>Loyer payé : la banque baisse → crédit 512 → donc débit 613 (charge).</li><li>Client qui règle : la banque monte → débit 512 → donc crédit 411.</li></ul><p><b>② Qui reçoit est débité, qui donne est crédité</b> (du point de vue du compte).</p><ul class="blist"><li>Une machine entre dans l'entreprise : débit 2154. Le fournisseur la fournit, on lui doit le prix : crédit 404.</li></ul><p><b>③ Vérifie avec le côté normal de la classe</b> (tableau ci-dessous). Une charge au crédit ou un produit au débit signale une <b>annulation</b> ou une erreur.</p></div>
+    
+  </article>
+
+  <div class="tw"><table>
+    <caption>Le côté normal de chaque classe</caption>
+    <thead><tr><th>Classe</th><th>Solde normal</th></tr></thead>
+    <tbody>
+      <tr><th>2 Immobilisations · 3 Stocks · 5 Banque · 6 Charges</th><td><b>Débiteur</b></td></tr>
+      <tr><th>1 Capitaux (capitaux propres, provisions, emprunts) · 7 Produits</th><td><b>Créditeur</b></td></tr>
+      <tr><th>4 Tiers</th><td><b>Clients</b> (411) et TVA déductible (4456) : débiteurs. <b>Fournisseurs</b> (401, 404), TVA collectée (44571), État, personnel, associés : créditeurs.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="trap"><span class="tag">Exception apparente</span>Les <b>amortissements</b> (28) et <b>dépréciations</b> (29, 39, 49) sont rangés avec l'actif, mais ils sont <b>créditeurs</b> : ils viennent en <b>déduction</b> de l'actif.</p><p class="memo"><span class="tag">Écritures types</span>Retiens une quinzaine d'<b>écritures types</b> (achat, vente, paiement, encaissement, emprunt, amortissement, provision, stocks, cession) plutôt que des comptes isolés. En conso, un retraitement consiste souvent à <b>annuler</b> une écriture : on passe la même écriture à l'envers.</p></div></div>
+
   <div class="tw"><table>
     <caption>Les 7 classes du PCG</caption>
     <thead><tr><th>Classe</th><th>Contenu</th><th>Exemples</th></tr></thead>
@@ -577,6 +595,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <tr><th>Actif = ?</th><td>Passif (capitaux propres + provisions + dettes).</td></tr>
       <tr><th>Sens des comptes</th><td>Actif et charges au débit ; passif, capitaux propres et produits au crédit.</td></tr>
       <tr><th>Moyen de retenir</th><td>Emplois au débit, ressources au crédit.</td></tr>
+      <tr><th>Trouver le sens</th><td>Partir de la banque ; qui reçoit est débité, qui donne est crédité ; vérifier le côté normal de la classe.</td></tr>
       <tr><th>Classes du PCG</th><td>1 capitaux · 2 immobilisations · 3 stocks · 4 tiers · 5 financiers · 6 charges · 7 produits.</td></tr>
       <tr><th>Achat, vente</th><td>Charge et produit <b>HT</b> ; TVA à part ; tiers <b>TTC</b>.</td></tr>
       <tr><th>Emprunt</th><td>Une dette ; seuls les intérêts sont des charges.</td></tr>
