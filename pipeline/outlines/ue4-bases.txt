@@ -1,7 +1,6 @@
 @eyebrow DSCG · UE 4 · Bases de la comptabilité
 @title Bases de la comptabilité
 @lede Ce qu'il faut avoir en réflexe avant la consolidation : lire un bilan et un compte de résultat, savoir dans quel sens bouge chaque compte, passer les écritures courantes et d'inventaire, et connaître les postes que la conso retraite. Chaque écriture est donnée au journal, avec son effet sur le résultat.
-@zones Règle|le principe;Dans l'énoncé|à repérer;Effet|résultat et bilan
 @footer Fiche de remise à niveau (niveau DCG, UE 9 et 10), bâtie pour préparer les chapitres de consolidation. Numéros de comptes du plan comptable général (PCG). Montants inventés.
 
 == 1 | t2 | bilan | Bilan et compte de résultat
@@ -28,14 +27,20 @@ trap: Un emprunt n'est pas une charge, l'achat d'une machine non plus. Seuls les
 | Impôt | Impôt sur les sociétés | —
 
 == 2 | t3 | partie-double | Débit, crédit, comptes
--- card | La partie double | Dans quel sens passer chaque compte ? | *
-1: Chaque opération touche au moins deux comptes : un au **débit**, un au **crédit**, pour le même total.
-1: **Actif** et **charges** augmentent au débit. **Passif**, **capitaux propres** et **produits** augmentent au crédit.
-2: L'entreprise reçoit ou consomme quelque chose : débit
-2: La valeur vient d'un apport, d'une dette ou d'un produit : crédit
-2: Le total des débits égale celui des crédits
-3: Débit et crédit ne veulent pas dire « dépense » et « recette » : un encaissement est au **débit** de la banque.
-memo: **Emplois au débit, ressources au crédit.**
+-- tiles
+tile: Débit (colonne de gauche)
+Ce qui **augmente** au débit :
+- l'**actif** : un bien, une créance, de l'argent en banque ;
+- les **charges**.
+Ex. Achat de marchandises : débit 607 (charge).
+tile: Crédit (colonne de droite)
+Ce qui **augmente** au crédit :
+- le **passif** : une dette, une provision ;
+- les **capitaux propres** ;
+- les **produits**.
+Ex. Vente : crédit 707 (produit).
+memo[Partie double]: Chaque opération touche au moins deux comptes, au débit et au crédit, pour le **même total**. Pour retenir : **emplois au débit, ressources au crédit**.
+trap: Débit et crédit ne veulent pas dire « dépense » et « recette » : un encaissement se passe au **débit** de la banque (512), car la trésorerie, un actif, augmente.
 -- table | Les 7 classes du PCG | Classe | Contenu | Exemples
 | 1 | Capitaux | 101 Capital, 106 Réserves, 120 Résultat, 131 Subventions, 145 Amortissements dérogatoires, 151 Provisions, 164 Emprunts
 | 2 | Immobilisations | 2154 Matériel industriel, 2183 Matériel informatique, 261 Titres de participation, 28 Amortissements
