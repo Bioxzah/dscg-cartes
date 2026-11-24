@@ -72,6 +72,23 @@ ${b.tiles.map((t) => `    <div class="tile"><h3>${il(t.title)}</h3>${t.lines.map
     ${foot(b.foot)}
   </article>`;
   }
+  if (b.type === 'journal') {
+    usesJournal = true;
+    const fmt = (n) => Number(n).toLocaleString('fr-FR');
+    const total = (k) => b.lines.filter((l) => l.side === k).reduce((t, l) => t + Number(l.amount), 0);
+    if (total('d') !== total('c')) throw new Error(`écriture déséquilibrée : ${b.caption}`);
+    return `<figure class="jrnl">
+    <figcaption>${il(b.caption)}</figcaption>
+    <div class="jtw"><table>
+      <thead><tr><th>Compte</th><th>Intitulé</th><th class="n">Débit</th><th class="n">Crédit</th></tr></thead>
+      <tbody>
+${b.lines.map((l) => `        <tr class="${l.side}"><td class="a">${esc(l.acct)}</td><td>${il(l.label)}</td><td class="n">${l.side === 'd' ? fmt(l.amount) : ''}</td><td class="n">${l.side === 'c' ? fmt(l.amount) : ''}</td></tr>`).join('\n')}
+      </tbody>
+      <tfoot><tr><td colspan="2">Total</td><td class="n">${fmt(total('d'))}</td><td class="n">${fmt(total('c'))}</td></tr></tfoot>
+    </table></div>
+    ${b.effect ? `<p class="jeff"><b>Effet</b> ${il(b.effect)}</p>` : ''}
+  </figure>${b.foot.length ? `\n  <div class="card">${foot(b.foot)}</div>` : ''}`;
+  }
   if (b.type === 'compare') {
     usesCompare = true;
     const cell = (txt, col) => {
@@ -144,6 +161,24 @@ const GRAPH_CSS = `<style>
 let usesFlow = false;
 let usesBox = false;
 let usesCompare = false;
+let usesJournal = false;
+const JOURNAL_CSS = `<style>
+.jrnl{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.jrnl figcaption{font-family:var(--display);font-weight:600;font-size:17px;margin-bottom:10px}
+.jtw{overflow-x:auto}
+.jrnl table{width:100%;border-collapse:collapse;font-size:15px}
+.jrnl th{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 8px}
+.jrnl td{padding:6px 8px;border-top:1px solid var(--line)}
+.jrnl .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.jrnl .a{font-family:var(--mono);font-weight:500;white-space:nowrap;color:var(--h)}
+.jrnl tr.c td:nth-child(2){padding-left:24px}
+.jrnl tfoot td{font-weight:700;border-top:2px solid var(--ink)}
+.jeff{margin-top:10px;font-size:15px;color:var(--muted)}
+.jeff b{color:var(--h);font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:6px}
+@media (max-width:520px){.jrnl{padding:12px 10px}.jrnl table{font-size:14px}.jrnl th,.jrnl td{padding:6px 4px}.jrnl th{font-size:10.5px;letter-spacing:.02em}.jrnl tr.c td:nth-child(2){padding-left:12px}.jrnl .a{font-size:13px}}
+@media print{.jrnl{break-inside:avoid}}
+</style>
+`;
 const COMPARE_CSS = `<style>
 .compare{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
 .compare figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
@@ -229,6 +264,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
     else if (type === 'table') block = { type, caption: rest[0], head: rest.slice(1), rows: [], foot: [] };
     else if (type === 'tiles') block = { type, tiles: [], foot: [] };
     else if (type === 'foot') block = { type, foot: [] };
+    else if (type === 'journal') block = { type, caption: rest[0], lines: [], effect: '', foot: [] };
     else if (type === 'compare') block = { type, caption: rest[0], cols: rest.slice(1), rows: [], foot: [] };
     else if (type === 'box') block = { type, title: rest[0], q: rest[1], core: rest[2] === '*', lines: [], foot: [] };
     else if (type === 'flow') block = { type, caption: rest[0], steps: [], notes: [], foot: [] };
@@ -239,6 +275,8 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   if ((m = line.match(/^([123]):\s*(.*)$/))) { block['z' + m[1]].push(m[2]); continue; }
   if (line.startsWith('| ')) { block.rows.push(line.slice(2).split('|').map((s) => s.trim())); continue; }
   if ((m = line.match(/^tile:\s*(.*)$/))) { block.tiles.push({ title: m[1], lines: [] }); continue; }
+  if (block?.type === 'journal' && (m = line.match(/^([dc]):\s*(.*)$/))) { const [acct, label, amount] = m[2].split('|').map((x) => x.trim()); block.lines.push({ side: m[1], acct, label, amount: amount.replace(/\s/g, '') }); continue; }
+  if (block?.type === 'journal' && (m = line.match(/^effet:\s*(.*)$/))) { block.effect = m[1]; continue; }
   if (block?.type === 'compare' && (m = line.match(/^row:\s*(.*)$/))) { block.rows.push(m[1].split(' | ').map((x) => x.trim())); continue; }
   if (block?.type === 'card' && (m = line.match(/^zones:\s*(.*)$/))) { block.zones = m[1]; continue; }
   if (block?.type === 'box' && (m = line.match(/^txt:\s*(.*)$/))) { block.lines.push(m[1]); continue; }
@@ -255,7 +293,7 @@ for (const raw of fs.readFileSync(outlineFile, 'utf8').split('\n')) {
   throw new Error('ligne non comprise : ' + line);
 }
 close();
-const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}${usesFlow ? FLOW_CSS : ''}${BOX_CSS}${usesCompare ? COMPARE_CSS : ''}<div class="wrap">
+const html = `${head.replace(/<title>[^<]*<\/title>/, `<title>${esc(meta.title)}</title>`)}${usesGraph ? GRAPH_CSS : ''}${usesFlow ? FLOW_CSS : ''}${BOX_CSS}${usesCompare ? COMPARE_CSS : ''}${usesJournal ? JOURNAL_CSS : ''}<div class="wrap">
 
 <header class="top">
   <p class="eyebrow">${esc(meta.eyebrow)}</p>

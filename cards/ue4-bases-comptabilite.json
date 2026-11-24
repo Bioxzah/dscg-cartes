@@ -1,0 +1,1216 @@
+{
+ "schema": 1,
+ "deck": {
+  "id": "ue4-bases",
+  "ue": "UE4",
+  "ueTitre": "Comptabilité et audit",
+  "chapitre": -1,
+  "titre": "Bases de la comptabilité",
+  "themes": [
+   {
+    "id": "bilan",
+    "titre": "Bilan et compte de résultat",
+    "couleur": "bleu",
+    "ordre": 1
+   },
+   {
+    "id": "partie-double",
+    "titre": "Débit, crédit, comptes",
+    "couleur": "violet",
+    "ordre": 2
+   },
+   {
+    "id": "courantes",
+    "titre": "Opérations courantes",
+    "couleur": "sarcelle",
+    "ordre": 3
+   },
+   {
+    "id": "inventaire",
+    "titre": "Écritures d'inventaire",
+    "couleur": "vert",
+    "ordre": 4
+   },
+   {
+    "id": "conso",
+    "titre": "Postes clés pour la conso",
+    "couleur": "rouge",
+    "ordre": 5
+   }
+  ]
+ },
+ "cards": [
+  {
+   "id": "ue4-bases-001",
+   "theme": "bilan",
+   "type": "regle",
+   "question": "Que montre le bilan ?",
+   "reponse": "Le **patrimoine** de l'entreprise à une date, la clôture : ce qu'elle possède et ce qu'elle doit.\n**Actif** : les emplois (biens, créances, trésorerie). **Passif** : les ressources (capitaux propres et dettes). Toujours : actif = passif.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-002",
+   "theme": "bilan",
+   "type": "regle",
+   "question": "Que montre le compte de résultat ?",
+   "reponse": "L'activité de **l'exercice** : produits − charges = résultat.\nUn bénéfice augmente les capitaux propres, une perte les diminue.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-003",
+   "theme": "bilan",
+   "type": "regle",
+   "question": "Comment le résultat relie-t-il le compte de résultat et le bilan ?",
+   "reponse": "Le résultat de l'exercice figure aussi au bilan, dans les **capitaux propres**.\nToute charge en plus diminue le résultat, donc les capitaux propres ; tout produit en plus les augmente.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-004",
+   "theme": "bilan",
+   "type": "regle",
+   "question": "Que contiennent les capitaux propres ?",
+   "reponse": "Ce qui revient aux associés (actif − dettes − provisions) : capital, primes, réserves, report à nouveau, résultat de l'exercice, subventions d'investissement, provisions réglementées.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-005",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Le stock de marchandises figure…",
+   "reponse": "Le stock est destiné à être vendu ou consommé dans le cycle d'exploitation : **actif circulant**.",
+   "source": "PCG",
+   "choix": [
+    "à l'actif immobilisé",
+    "à l'actif circulant",
+    "au passif",
+    "au compte de résultat"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-006",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Un emprunt bancaire sur 5 ans figure…",
+   "reponse": "C'est une ressource à rembourser : une **dette**. Seuls les **intérêts** sont des charges.",
+   "source": "PCG",
+   "choix": [
+    "à l'actif immobilisé",
+    "dans les capitaux propres",
+    "dans les dettes, au passif",
+    "dans les charges"
+   ],
+   "bonne": 2
+  },
+  {
+   "id": "ue4-bases-007",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Le capital social figure…",
+   "reponse": "Le capital est l'apport des associés : **capitaux propres**, au passif.",
+   "source": "PCG",
+   "choix": [
+    "à l'actif",
+    "dans les capitaux propres",
+    "dans les dettes",
+    "dans les produits"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-008",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Une machine achetée pour servir plusieurs années est…",
+   "reponse": "Un bien destiné à servir durablement est une **immobilisation**, à l'actif. Sa consommation passera en charge par l'**amortissement**.",
+   "source": "PCG",
+   "choix": [
+    "une charge de l'exercice",
+    "une immobilisation corporelle",
+    "un stock",
+    "une créance"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-009",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Une créance sur un client figure…",
+   "reponse": "Le client doit de l'argent à l'entreprise : c'est une **créance**, à l'actif circulant.",
+   "source": "PCG",
+   "choix": [
+    "à l'actif circulant",
+    "au passif",
+    "dans les produits",
+    "dans les immobilisations financières"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-010",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Des titres d'une filiale détenus durablement (titres de participation) figurent…",
+   "reponse": "Détenus durablement pour exercer une influence ou un contrôle : **immobilisations financières** (compte 261).",
+   "source": "PCG",
+   "choix": [
+    "à l'actif immobilisé financier",
+    "à l'actif circulant",
+    "dans les capitaux propres",
+    "dans les charges"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-011",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Une provision pour un litige en cours figure…",
+   "reponse": "Elle constate une sortie de ressources probable, au montant incertain : **provision pour risques et charges**, au passif, entre capitaux propres et dettes.",
+   "source": "PCG",
+   "choix": [
+    "à l'actif",
+    "dans les capitaux propres",
+    "dans les provisions pour risques et charges, au passif",
+    "dans les produits"
+   ],
+   "bonne": 2
+  },
+  {
+   "id": "ue4-bases-012",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Au bilan, les amortissements cumulés d'une machine apparaissent…",
+   "reponse": "L'actif présente : valeur **brute** − amortissements et dépréciations = valeur **nette**.",
+   "source": "PCG",
+   "choix": [
+    "au passif",
+    "en déduction de la valeur brute, à l'actif",
+    "dans les capitaux propres",
+    "dans les dettes"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-013",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Qu'est-ce qui augmente les capitaux propres ?",
+   "reponse": "Le **bénéfice** s'ajoute aux capitaux propres. Un emprunt est une dette ; l'achat et le paiement ne font que changer la composition de l'actif et du passif.",
+   "source": "PCG",
+   "choix": [
+    "un emprunt",
+    "un bénéfice",
+    "l'achat d'une machine",
+    "le paiement d'un fournisseur"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-014",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "La TVA collectée sur les ventes, pas encore reversée, est…",
+   "reponse": "L'entreprise la collecte pour le compte de l'État : c'est une **dette** (44571), jamais un produit.",
+   "source": "PCG",
+   "choix": [
+    "une charge",
+    "un produit",
+    "une dette envers l'État",
+    "une créance sur l'État"
+   ],
+   "bonne": 2
+  },
+  {
+   "id": "ue4-bases-015",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Dans quelle partie du compte de résultat figurent les intérêts d'emprunt ?",
+   "reponse": "Les intérêts sont des **charges financières** (661).",
+   "source": "PCG",
+   "choix": [
+    "exploitation",
+    "financier",
+    "exceptionnel"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-016",
+   "theme": "bilan",
+   "type": "qcm",
+   "question": "Le prix de cession d'une machine est classé en…",
+   "reponse": "En PCG, les produits de cession d'immobilisations sont **exceptionnels** (775).",
+   "source": "PCG",
+   "choix": [
+    "produit d'exploitation",
+    "produit financier",
+    "produit exceptionnel"
+   ],
+   "bonne": 2
+  },
+  {
+   "id": "ue4-bases-017",
+   "theme": "bilan",
+   "type": "calcul",
+   "question": "Actif total 900 000 €, provisions pour risques 50 000 €, dettes 550 000 €. Montant des capitaux propres ?",
+   "reponse": "**300 000 €** : capitaux propres = actif − provisions − dettes = 900 000 − 50 000 − 550 000.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-018",
+   "theme": "partie-double",
+   "type": "regle",
+   "question": "Qu'est-ce que la partie double ?",
+   "reponse": "Chaque opération est inscrite au **débit** d'au moins un compte et au **crédit** d'au moins un autre, pour le même total.\nLe total des débits égale toujours le total des crédits.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-019",
+   "theme": "partie-double",
+   "type": "regle",
+   "question": "Dans quel sens augmentent les comptes ?",
+   "reponse": "**Actif** et **charges** augmentent au **débit**.\n**Passif**, **capitaux propres** et **produits** augmentent au **crédit**.\nIls diminuent dans l'autre sens.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-020",
+   "theme": "partie-double",
+   "type": "memo",
+   "question": "Quel moyen pour retenir le sens des comptes ?",
+   "reponse": "**Emplois au débit, ressources au crédit.**\nCe que l'entreprise reçoit ou consomme (un bien, de l'argent en banque, une charge) : débit.\nD'où vient la valeur (un apport, une dette, un produit) : crédit.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-021",
+   "theme": "partie-double",
+   "type": "regle",
+   "question": "Que contiennent les 7 classes du PCG ?",
+   "reponse": "1 Capitaux (capitaux propres, provisions, emprunts) · 2 Immobilisations · 3 Stocks · 4 Tiers (clients, fournisseurs, État) · 5 Financiers (banque, caisse) · 6 Charges · 7 Produits.\nClasses 1 à 5 : bilan. Classes 6 et 7 : compte de résultat.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-022",
+   "theme": "partie-double",
+   "type": "regle",
+   "question": "« Débit » et « crédit » veulent-ils dire « dépense » et « recette » ?",
+   "reponse": "**Non.** Ce sont les deux colonnes d'un compte : gauche (débit), droite (crédit).\nUn encaissement en banque se passe d'ailleurs au **débit** du 512.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-023",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Un compte de charges augmente…",
+   "reponse": "Les charges, comme l'actif, augmentent au **débit**.",
+   "source": "PCG",
+   "choix": [
+    "au débit",
+    "au crédit"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-024",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 411 Clients augmente…",
+   "reponse": "Une créance client est un actif : elle augmente au **débit**.",
+   "source": "PCG",
+   "choix": [
+    "au débit",
+    "au crédit"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-025",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 401 Fournisseurs augmente…",
+   "reponse": "Une dette fournisseur est un passif : elle augmente au **crédit**.",
+   "source": "PCG",
+   "choix": [
+    "au débit",
+    "au crédit"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-026",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "La banque (512) est débitée quand l'entreprise…",
+   "reponse": "Le 512 est un compte d'actif : l'argent qui **entre** l'augmente, au débit.",
+   "source": "PCG",
+   "choix": [
+    "paie",
+    "encaisse"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-027",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Lequel est un compte de produits ?",
+   "reponse": "**707** Ventes de marchandises (classe 7). 607 : achats ; 401 : fournisseurs ; 512 : banque.",
+   "source": "PCG",
+   "choix": [
+    "607",
+    "707",
+    "401",
+    "512"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-028",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Le compte 164 correspond…",
+   "reponse": "164 : **emprunts** (classe 1, au passif). Les intérêts sont au 661.",
+   "source": "PCG",
+   "choix": [
+    "aux emprunts auprès des établissements de crédit",
+    "aux titres de participation",
+    "aux clients",
+    "aux charges d'intérêts"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-029",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Les comptes 28 regroupent…",
+   "reponse": "28 : **amortissements** (ex. 28154 pour le matériel industriel). Dépréciations : 29 à 59 selon l'actif ; provisions : 15.",
+   "source": "PCG",
+   "choix": [
+    "les amortissements des immobilisations",
+    "les dépréciations des stocks",
+    "les provisions pour risques",
+    "les achats"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-030",
+   "theme": "partie-double",
+   "type": "qcm",
+   "question": "Un solde créditeur du compte 512 Banque signifie…",
+   "reponse": "Le 512 est normalement débiteur. Créditeur, il traduit un **découvert** : une dette envers la banque.",
+   "source": "PCG",
+   "choix": [
+    "de l'argent disponible",
+    "un découvert bancaire",
+    "une créance sur un client"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-031",
+   "theme": "partie-double",
+   "type": "calcul",
+   "question": "Une écriture débite 607 pour 1 000 € et 44566 pour 200 €. Combien faut-il créditer au 401 ?",
+   "reponse": "**1 200 €** : le total des crédits égale le total des débits.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-032",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Achat de marchandises à crédit : 2 000 € HT, TVA 20 %.",
+   "reponse": "Charge d'achat **HT** au débit ; TVA déductible au débit (créance sur l'État) ; dette fournisseur **TTC** au crédit.\nEffet : résultat − 2 000 € (avant la variation de stock de fin d'exercice).",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "607",
+     "intitule": "Achats de marchandises",
+     "debit": 2000
+    },
+    {
+     "compte": "44566",
+     "intitule": "TVA déductible sur autres biens et services",
+     "debit": 400
+    },
+    {
+     "compte": "401",
+     "intitule": "Fournisseurs",
+     "credit": 2400
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-033",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Vente de marchandises à crédit : 5 000 € HT, TVA 20 %.",
+   "reponse": "Créance client **TTC** au débit ; produit **HT** au crédit ; TVA collectée (dette envers l'État) au crédit.\nEffet : résultat + 5 000 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "411",
+     "intitule": "Clients",
+     "debit": 6000
+    },
+    {
+     "compte": "707",
+     "intitule": "Ventes de marchandises",
+     "credit": 5000
+    },
+    {
+     "compte": "44571",
+     "intitule": "TVA collectée",
+     "credit": 1000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-034",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Paiement d'un fournisseur par virement : 2 400 €.",
+   "reponse": "La dette s'éteint (débit 401), la banque diminue (crédit 512).\nAucun effet sur le résultat.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "401",
+     "intitule": "Fournisseurs",
+     "debit": 2400
+    },
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "credit": 2400
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-035",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Encaissement d'un client par virement : 6 000 €.",
+   "reponse": "La banque augmente, la créance s'éteint. Aucun effet sur le résultat.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "debit": 6000
+    },
+    {
+     "compte": "411",
+     "intitule": "Clients",
+     "credit": 6000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-036",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "À la création, les associés apportent 50 000 € en numéraire.",
+   "reponse": "L'argent entre en banque ; il est financé par le **capital** (capitaux propres).",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "debit": 50000
+    },
+    {
+     "compte": "101",
+     "intitule": "Capital",
+     "credit": 50000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-037",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "La banque accorde un emprunt de 30 000 €, versé sur le compte.",
+   "reponse": "La trésorerie augmente, financée par une **dette**. Aucun effet sur le résultat.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "debit": 30000
+    },
+    {
+     "compte": "164",
+     "intitule": "Emprunts auprès des établissements de crédit",
+     "credit": 30000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-038",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Échéance d'emprunt payée : 6 000 € de capital et 900 € d'intérêts.",
+   "reponse": "Le remboursement du capital diminue la dette ; seuls les **intérêts** sont une charge.\nEffet : résultat − 900 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "164",
+     "intitule": "Emprunts auprès des établissements de crédit",
+     "debit": 6000
+    },
+    {
+     "compte": "661",
+     "intitule": "Charges d'intérêts",
+     "debit": 900
+    },
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "credit": 6900
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-039",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Achat d'une machine à crédit : 12 000 € HT, TVA 20 %.",
+   "reponse": "La machine est une **immobilisation**, pas une charge. TVA sur immobilisations (44562) ; dette envers un fournisseur d'immobilisations (404).\nAucun effet sur le résultat à l'achat.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "2154",
+     "intitule": "Matériel industriel",
+     "debit": 12000
+    },
+    {
+     "compte": "44562",
+     "intitule": "TVA déductible sur immobilisations",
+     "debit": 2400
+    },
+    {
+     "compte": "404",
+     "intitule": "Fournisseurs d'immobilisations",
+     "credit": 14400
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-040",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Déclaration de TVA du mois : TVA collectée 1 000 €, TVA déductible sur achats 400 €.",
+   "reponse": "On solde la TVA collectée et la TVA déductible ; la différence est la **TVA à décaisser**, dette envers l'État.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "44571",
+     "intitule": "TVA collectée",
+     "debit": 1000
+    },
+    {
+     "compte": "44566",
+     "intitule": "TVA déductible sur autres biens et services",
+     "credit": 400
+    },
+    {
+     "compte": "44551",
+     "intitule": "TVA à décaisser",
+     "credit": 600
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-041",
+   "theme": "courantes",
+   "type": "calcul",
+   "question": "TVA collectée 8 000 €, TVA déductible sur achats 3 500 €, sur immobilisations 1 500 €. TVA à payer ?",
+   "reponse": "**3 000 €** : 8 000 − 3 500 − 1 500.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-042",
+   "theme": "courantes",
+   "type": "ecriture",
+   "question": "Paiement par virement de la prime d'assurance annuelle : 1 200 €.",
+   "reponse": "Charge de l'exercice (616). Si une partie concerne l'exercice suivant, on la régularise à la clôture (charge constatée d'avance).",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "616",
+     "intitule": "Primes d'assurance",
+     "debit": 1200
+    },
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "credit": 1200
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-043",
+   "theme": "courantes",
+   "type": "qcm",
+   "question": "Le montant HT d'une vente de marchandises se passe…",
+   "reponse": "La vente est un **produit** : crédit du 707, pour le montant **HT**.",
+   "source": "PCG",
+   "choix": [
+    "au crédit du 707",
+    "au débit du 707",
+    "au crédit du 411"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-044",
+   "theme": "courantes",
+   "type": "qcm",
+   "question": "La TVA sur un achat de marchandises se passe…",
+   "reponse": "TVA **déductible** sur biens et services : débit du 44566 (créance sur l'État).",
+   "source": "PCG",
+   "choix": [
+    "au débit du 44566",
+    "au crédit du 44571",
+    "au débit du 607"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-045",
+   "theme": "courantes",
+   "type": "qcm",
+   "question": "Un ordinateur de 1 800 € HT, utilisé 3 ans, est…",
+   "reponse": "Il sert durablement : **immobilisation** (2183), amortie sur 3 ans.",
+   "source": "PCG",
+   "choix": [
+    "une charge de l'exercice",
+    "une immobilisation (matériel informatique)",
+    "un stock"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-046",
+   "theme": "inventaire",
+   "type": "regle",
+   "question": "Que sont les écritures d'inventaire ?",
+   "reponse": "Les écritures de **clôture** qui rendent le bilan et le résultat fidèles : amortissements, dépréciations, provisions, variation des stocks, charges et produits constatés d'avance.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-047",
+   "theme": "inventaire",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un amortissement ?",
+   "reponse": "La constatation de la **consommation** d'une immobilisation sur sa durée d'utilisation.\nCharge **calculée** : elle diminue le résultat sans sortie de trésorerie.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-048",
+   "theme": "inventaire",
+   "type": "regle",
+   "question": "Amortissement ou dépréciation : quelle différence ?",
+   "reponse": "**Amortissement** : usure prévue et **irréversible** d'une immobilisation.\n**Dépréciation** : perte de valeur **probable et réversible** d'un actif (créance, stock, titres) ; elle peut être reprise.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-049",
+   "theme": "inventaire",
+   "type": "regle",
+   "question": "Qu'est-ce que la valeur nette comptable (VNC) ?",
+   "reponse": "Valeur **brute** − amortissements cumulés − dépréciations.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-050",
+   "theme": "inventaire",
+   "type": "calcul",
+   "question": "Machine de 12 000 € HT mise en service le 1er avril N, amortie en linéaire sur 5 ans. Dotation de N (clôture au 31/12) ?",
+   "reponse": "**1 800 €** : 12 000 / 5 = 2 400 € par an, × 9/12 (d'avril à décembre).",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-051",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Dotation aux amortissements de l'exercice pour une machine : 1 800 €.",
+   "reponse": "Charge au débit (6811) ; amortissement cumulé au crédit (28154), qui diminue la valeur nette de la machine.\nEffet : résultat − 1 800 €, sans trésorerie.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "6811",
+     "intitule": "Dotations aux amortissements des immobilisations",
+     "debit": 1800
+    },
+    {
+     "compte": "28154",
+     "intitule": "Amortissements du matériel industriel",
+     "credit": 1800
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-052",
+   "theme": "inventaire",
+   "type": "calcul",
+   "question": "Machine de 12 000 € : 1 800 € d'amortissement en N, 2 400 € en N+1. VNC au 31/12/N+1 ?",
+   "reponse": "**7 800 €** : 12 000 − (1 800 + 2 400).",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-053",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Créance douteuse de 6 000 € TTC (TVA 20 %) : on estime la perte à 50 %.",
+   "reponse": "La dépréciation se calcule sur le **HT** (5 000 €) : la TVA sera récupérée si le client ne paie pas. 5 000 × 50 % = 2 500 €.\nEffet : résultat − 2 500 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "6817",
+     "intitule": "Dotations aux dépréciations des actifs circulants",
+     "debit": 2500
+    },
+    {
+     "compte": "491",
+     "intitule": "Dépréciations des comptes clients",
+     "credit": 2500
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-054",
+   "theme": "inventaire",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une provision pour risques et charges ?",
+   "reponse": "Un passif à l'échéance ou au montant **incertain** (litige, garantie, restructuration).\nOn la comptabilise si une **obligation** existe à la clôture et qu'une sortie de ressources est **probable**.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-055",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Litige en cours : l'entreprise estime probable une indemnité de 8 000 €.",
+   "reponse": "Charge au débit ; provision au passif.\nEffet : résultat − 8 000 €, sans trésorerie tant que rien n'est payé.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "6815",
+     "intitule": "Dotations aux provisions d'exploitation",
+     "debit": 8000
+    },
+    {
+     "compte": "151",
+     "intitule": "Provisions pour risques",
+     "credit": 8000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-056",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Clôture : stock initial de marchandises 5 000 €, stock final 7 000 €.",
+   "reponse": "On annule le stock initial, puis on constate le stock final.\nLa variation (stock initial − stock final = − 2 000 €) diminue les charges : ce qui reste en stock n'a pas été consommé.\nEffet : résultat + 2 000 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "6037",
+     "intitule": "Variation des stocks de marchandises",
+     "debit": 5000
+    },
+    {
+     "compte": "37",
+     "intitule": "Stocks de marchandises",
+     "credit": 5000
+    },
+    {
+     "compte": "37",
+     "intitule": "Stocks de marchandises",
+     "debit": 7000
+    },
+    {
+     "compte": "6037",
+     "intitule": "Variation des stocks de marchandises",
+     "credit": 7000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-057",
+   "theme": "inventaire",
+   "type": "qcm",
+   "question": "Le stock final est plus élevé que le stock initial. Effet sur le résultat ?",
+   "reponse": "La variation de stock (initial − final) est négative : elle **réduit les charges**, donc augmente le résultat.",
+   "source": "PCG",
+   "choix": [
+    "il augmente",
+    "il diminue",
+    "aucun effet"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-058",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Le 1er octobre N, une assurance annuelle de 1 200 € a été payée et passée en charge. Clôture au 31/12/N.",
+   "reponse": "9 mois concernent N+1 : 1 200 × 9/12 = 900 € sortent des charges de N.\nEffet : résultat N + 900 €. L'écriture est contrepassée au début de N+1.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "486",
+     "intitule": "Charges constatées d'avance",
+     "debit": 900
+    },
+    {
+     "compte": "616",
+     "intitule": "Primes d'assurance",
+     "credit": 900
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-059",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Le 1er novembre N, l'entreprise a facturé 3 000 € HT de maintenance pour 6 mois (novembre à avril), passés en produit. Clôture au 31/12/N.",
+   "reponse": "4 mois (janvier à avril) concernent N+1 : 3 000 × 4/6 = 2 000 € sortent des produits de N.\nEffet : résultat N − 2 000 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "706",
+     "intitule": "Prestations de services",
+     "debit": 2000
+    },
+    {
+     "compte": "487",
+     "intitule": "Produits constatés d'avance",
+     "credit": 2000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-060",
+   "theme": "inventaire",
+   "type": "qcm",
+   "question": "Une charge constatée d'avance figure au bilan…",
+   "reponse": "C'est un « droit » à une prestation déjà payée : **actif** (486). Un produit constaté d'avance est au passif (487).",
+   "source": "PCG",
+   "choix": [
+    "à l'actif",
+    "au passif"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-061",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Cession d'une machine encaissée 4 000 € (hors TVA pour simplifier). Valeur brute 10 000 €, amortissements cumulés 7 000 € à la date de cession.",
+   "reponse": "Le prix est un produit (775). La machine sort du bilan : on solde ses amortissements et sa valeur brute ; sa **VNC** (3 000 €) passe en charge (675).\nPlus-value : 4 000 − 3 000 = 1 000 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "debit": 4000
+    },
+    {
+     "compte": "775",
+     "intitule": "Produits des cessions d'éléments d'actif",
+     "credit": 4000
+    },
+    {
+     "compte": "28154",
+     "intitule": "Amortissements du matériel industriel",
+     "debit": 7000
+    },
+    {
+     "compte": "675",
+     "intitule": "Valeurs comptables des éléments d'actif cédés",
+     "debit": 3000
+    },
+    {
+     "compte": "2154",
+     "intitule": "Matériel industriel",
+     "credit": 10000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-062",
+   "theme": "inventaire",
+   "type": "calcul",
+   "question": "Prix de cession 4 000 €, valeur brute 10 000 €, amortissements cumulés 7 000 €. Résultat de cession ?",
+   "reponse": "**+ 1 000 €** de plus-value : prix (4 000) − VNC (10 000 − 7 000 = 3 000).",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-063",
+   "theme": "inventaire",
+   "type": "ecriture",
+   "question": "Impôt sur les sociétés de l'exercice : 12 000 €.",
+   "reponse": "Charge d'impôt au débit ; dette envers l'État au crédit.\nEffet : résultat net − 12 000 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "695",
+     "intitule": "Impôts sur les bénéfices",
+     "debit": 12000
+    },
+    {
+     "compte": "444",
+     "intitule": "État – impôts sur les bénéfices",
+     "credit": 12000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-064",
+   "theme": "conso",
+   "type": "regle",
+   "question": "Qu'est-ce que le crédit-bail ?",
+   "reponse": "Une location d'un bien (machine, immeuble) avec une **option d'achat** en fin de contrat.\nTant qu'elle n'a pas levé l'option, l'entreprise n'est pas propriétaire.",
+   "source": "PCG"
+  },
+  {
+   "id": "ue4-bases-065",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Comptes sociaux : loyer annuel de crédit-bail d'une machine, 10 000 € HT, TVA 20 %, payé par virement.",
+   "reponse": "Dans les comptes sociaux, le crédit-bail est une simple **location** : le loyer est une charge (6122) et la machine **n'est pas à l'actif**.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "6122",
+     "intitule": "Crédit-bail mobilier",
+     "debit": 10000
+    },
+    {
+     "compte": "44566",
+     "intitule": "TVA déductible sur autres biens et services",
+     "debit": 2000
+    },
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "credit": 12000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-066",
+   "theme": "conso",
+   "type": "regle",
+   "question": "Comment la consolidation traite-t-elle le crédit-bail ?",
+   "reponse": "Comme un **achat financé par un emprunt** : la machine entre à l'actif (puis est amortie) et la dette au passif.\nLe loyer est annulé et remplacé par une **dotation aux amortissements** et des **charges d'intérêts**.",
+   "source": "ANC 2020-01 ; IFRS 16"
+  },
+  {
+   "id": "ue4-bases-067",
+   "theme": "conso",
+   "type": "qcm",
+   "question": "En consolidation, que devient le loyer de crédit-bail ?",
+   "reponse": "Le bien est traité comme acheté à crédit : **amortissement** du bien + **intérêts** de la dette.",
+   "source": "ANC 2020-01 ; IFRS 16",
+   "choix": [
+    "il reste une charge de location",
+    "il est remplacé par un amortissement et des intérêts",
+    "il devient un produit"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-068",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Une société achète 30 % d'une autre société pour 60 000 €, payés par virement, afin de la détenir durablement.",
+   "reponse": "Les titres sont une **immobilisation financière**. En consolidation, ce compte est éliminé contre la quote-part de capitaux propres de la société détenue.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "261",
+     "intitule": "Titres de participation",
+     "debit": 60000
+    },
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "credit": 60000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-069",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Chez la mère : la filiale lui verse un dividende de 5 000 € par virement.",
+   "reponse": "Produit **financier** chez la mère. En consolidation, ce dividende interne est **éliminé** : le groupe ne s'enrichit pas en se payant lui-même.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "debit": 5000
+    },
+    {
+     "compte": "761",
+     "intitule": "Produits de participations",
+     "credit": 5000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-070",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Affectation du bénéfice de 40 000 € : 30 000 € en réserves, 10 000 € de dividendes à verser.",
+   "reponse": "On répartit le bénéfice entre **réserves** (capitaux propres) et **dette** envers les associés.\nAucun effet sur le résultat de l'exercice suivant.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "120",
+     "intitule": "Résultat de l'exercice (bénéfice)",
+     "debit": 40000
+    },
+    {
+     "compte": "1068",
+     "intitule": "Autres réserves",
+     "credit": 30000
+    },
+    {
+     "compte": "457",
+     "intitule": "Associés – dividendes à payer",
+     "credit": 10000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-071",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Subvention d'investissement de 20 000 € reçue par virement pour financer une machine.",
+   "reponse": "La subvention d'investissement est classée en **capitaux propres** ; elle sera reprise en résultat au rythme de l'amortissement du bien.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "512",
+     "intitule": "Banque",
+     "debit": 20000
+    },
+    {
+     "compte": "131",
+     "intitule": "Subventions d'équipement",
+     "credit": 20000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-072",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Quote-part de la subvention d'investissement virée au résultat de l'exercice : 4 000 €.",
+   "reponse": "Le produit (777) compense la charge d'amortissement du bien subventionné.\nEffet : résultat + 4 000 €.",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "139",
+     "intitule": "Subventions d'investissement inscrites au compte de résultat",
+     "debit": 4000
+    },
+    {
+     "compte": "777",
+     "intitule": "Quote-part des subventions d'investissement virée au résultat",
+     "credit": 4000
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-073",
+   "theme": "conso",
+   "type": "ecriture",
+   "question": "Amortissement dérogatoire de l'exercice : 1 500 €.",
+   "reponse": "Supplément d'amortissement **purement fiscal**, classé en provisions réglementées (capitaux propres).\nEn consolidation, il est **éliminé** (avec un impôt différé).",
+   "source": "PCG",
+   "journal": [
+    {
+     "compte": "6872",
+     "intitule": "Dotations aux provisions réglementées (immobilisations)",
+     "debit": 1500
+    },
+    {
+     "compte": "145",
+     "intitule": "Amortissements dérogatoires",
+     "credit": 1500
+    }
+   ]
+  },
+  {
+   "id": "ue4-bases-074",
+   "theme": "conso",
+   "type": "qcm",
+   "question": "Les amortissements dérogatoires figurent au bilan…",
+   "reponse": "Ce sont des **provisions réglementées**, dans les capitaux propres (145).",
+   "source": "PCG",
+   "choix": [
+    "dans les capitaux propres (provisions réglementées)",
+    "en déduction de l'actif",
+    "dans les dettes"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-075",
+   "theme": "conso",
+   "type": "qcm",
+   "question": "En consolidation, un amortissement dérogatoire…",
+   "reponse": "Il n'a qu'une raison **fiscale** : la consolidation l'**élimine** et constate un impôt différé.",
+   "source": "PCG",
+   "choix": [
+    "est conservé tel quel",
+    "est éliminé",
+    "devient une dette fiscale"
+   ],
+   "bonne": 1
+  },
+  {
+   "id": "ue4-bases-076",
+   "theme": "conso",
+   "type": "qcm",
+   "question": "Une subvention d'investissement figure au bilan…",
+   "reponse": "Elle est en **capitaux propres** (13), puis reprise peu à peu en résultat (777).",
+   "source": "PCG",
+   "choix": [
+    "dans les capitaux propres",
+    "dans les dettes",
+    "en produit immédiat"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-077",
+   "theme": "conso",
+   "type": "qcm",
+   "question": "Chez la mère, un dividende reçu d'une filiale est…",
+   "reponse": "**Produit financier** (761) dans les comptes sociaux de la mère ; éliminé en consolidation.",
+   "source": "PCG",
+   "choix": [
+    "un produit financier",
+    "une augmentation de capital",
+    "un produit d'exploitation"
+   ],
+   "bonne": 0
+  },
+  {
+   "id": "ue4-bases-078",
+   "theme": "conso",
+   "type": "memo",
+   "question": "Pourquoi ces bases comptent-elles pour la consolidation ?",
+   "reponse": "Chaque retraitement de consolidation est une **écriture** : il faut savoir quel compte bouge, dans quel sens, et l'effet sur le **résultat** et les **capitaux propres**, puis l'impôt différé.\nC'est le fil de tous les chapitres de conso.",
+   "source": "Programme 2027, UE 4"
+  }
+ ]
+}

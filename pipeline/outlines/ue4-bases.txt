@@ -1,0 +1,167 @@
+@eyebrow DSCG · UE 4 · Bases de la comptabilité
+@title Bases de la comptabilité
+@lede Ce qu'il faut avoir en réflexe avant la consolidation : lire un bilan et un compte de résultat, savoir dans quel sens bouge chaque compte, passer les écritures courantes et d'inventaire, et connaître les postes que la conso retraite. Chaque écriture est donnée au journal, avec son effet sur le résultat.
+@zones Règle|le principe;Dans l'énoncé|à repérer;Effet|résultat et bilan
+@footer Fiche de remise à niveau (niveau DCG, UE 9 et 10), bâtie pour préparer les chapitres de consolidation. Numéros de comptes du plan comptable général (PCG). Montants inventés.
+
+== 1 | t2 | bilan | Bilan et compte de résultat
+-- tiles
+tile: Le bilan : une photo
+Le **patrimoine** à la date de clôture.
+- **Actif** : les emplois (ce que l'entreprise possède ou contrôle).
+- **Passif** : les ressources (capitaux propres et dettes).
+Toujours : **actif = passif**.
+tile: Le compte de résultat : un film
+L'activité de **l'exercice**.
+- **Produits** − **charges** = **résultat**.
+Un bénéfice augmente les capitaux propres, une perte les diminue.
+-- table | Le bilan, simplifié | Actif (emplois) | Passif (ressources)
+| Actif immobilisé : incorporel, corporel (machines, immeubles), financier (titres de participation) | Capitaux propres : capital, réserves, **résultat**, subventions d'investissement, provisions réglementées
+| Actif circulant : stocks, créances clients, trésorerie | Provisions pour risques et charges
+| Charges constatées d'avance | Dettes : emprunts, fournisseurs, dettes fiscales et sociales ; produits constatés d'avance
+memo[Le lien]: Le **résultat** du compte de résultat figure aussi au bilan, dans les capitaux propres. Toute charge en plus diminue le résultat **et** les capitaux propres : c'est le raisonnement de chaque retraitement de conso.
+trap: Un emprunt n'est pas une charge, l'achat d'une machine non plus. Seuls les **intérêts** et l'**amortissement** passent en charges.
+-- table | Le compte de résultat (PCG) | Niveau | Exemples de charges | Exemples de produits
+| Exploitation | Achats, variation de stock, services extérieurs, salaires, dotations aux amortissements et provisions | Ventes, prestations, production stockée, reprises
+| Financier | Intérêts d'emprunt | Dividendes reçus, intérêts reçus
+| Exceptionnel | Valeur nette des immobilisations cédées, dotations aux amortissements dérogatoires | Prix de cession des immobilisations, quote-part de subvention virée au résultat
+| Impôt | Impôt sur les sociétés | —
+
+== 2 | t3 | partie-double | Débit, crédit, comptes
+-- card | La partie double | Dans quel sens passer chaque compte ? | *
+1: Chaque opération touche au moins deux comptes : un au **débit**, un au **crédit**, pour le même total.
+1: **Actif** et **charges** augmentent au débit. **Passif**, **capitaux propres** et **produits** augmentent au crédit.
+2: L'entreprise reçoit ou consomme quelque chose : débit
+2: La valeur vient d'un apport, d'une dette ou d'un produit : crédit
+2: Le total des débits égale celui des crédits
+3: Débit et crédit ne veulent pas dire « dépense » et « recette » : un encaissement est au **débit** de la banque.
+memo: **Emplois au débit, ressources au crédit.**
+-- table | Les 7 classes du PCG | Classe | Contenu | Exemples
+| 1 | Capitaux | 101 Capital, 106 Réserves, 120 Résultat, 131 Subventions, 145 Amortissements dérogatoires, 151 Provisions, 164 Emprunts
+| 2 | Immobilisations | 2154 Matériel industriel, 2183 Matériel informatique, 261 Titres de participation, 28 Amortissements
+| 3 | Stocks | 37 Stocks de marchandises
+| 4 | Tiers | 401 Fournisseurs, 404 Fournisseurs d'immobilisations, 411 Clients, 444 État – IS, 4456 TVA déductible, 44571 TVA collectée, 457 Dividendes à payer, 486 / 487 Charges / produits constatés d'avance
+| 5 | Financiers | 512 Banque
+| 6 | Charges | 607 Achats, 6037 Variation de stock, 612 Crédit-bail, 616 Assurances, 661 Intérêts, 675 VNC des actifs cédés, 681 Dotations, 6872 Dotations aux provisions réglementées, 695 IS
+| 7 | Produits | 706 Prestations, 707 Ventes, 761 Dividendes reçus, 775 Prix de cession, 777 Quote-part de subvention
+memo[Repère]: Classes **1 à 5** : bilan. Classes **6 et 7** : compte de résultat.
+
+== 3 | t1 | courantes | Opérations courantes
+-- journal | Achat de marchandises à crédit : 2 000 € HT, TVA 20 %
+d: 607 | Achats de marchandises | 2000
+d: 44566 | TVA déductible sur biens et services | 400
+c: 401 | Fournisseurs | 2400
+effet: Résultat − 2 000 € (charge HT). La TVA est une créance sur l'État, pas une charge.
+-- journal | Vente de marchandises à crédit : 5 000 € HT, TVA 20 %
+d: 411 | Clients | 6000
+c: 707 | Ventes de marchandises | 5000
+c: 44571 | TVA collectée | 1000
+effet: Résultat + 5 000 € (produit HT). La TVA collectée est une dette envers l'État.
+-- journal | Règlements : paiement d'un fournisseur, encaissement d'un client
+d: 401 | Fournisseurs | 2400
+c: 512 | Banque | 2400
+d: 512 | Banque | 6000
+c: 411 | Clients | 6000
+effet: Aucun effet sur le résultat : une dette et une créance s'éteignent contre de la trésorerie.
+-- journal | Achat d'une machine à crédit : 12 000 € HT, TVA 20 %
+d: 2154 | Matériel industriel | 12000
+d: 44562 | TVA déductible sur immobilisations | 2400
+c: 404 | Fournisseurs d'immobilisations | 14400
+effet: Aucun effet sur le résultat à l'achat : la machine est à l'actif. Elle passera en charge par l'amortissement.
+-- journal | Emprunt de 30 000 €, puis une échéance : 6 000 € de capital et 900 € d'intérêts
+d: 512 | Banque | 30000
+c: 164 | Emprunts | 30000
+d: 164 | Emprunts | 6000
+d: 661 | Charges d'intérêts | 900
+c: 512 | Banque | 6900
+effet: Seuls les intérêts (900 €) diminuent le résultat. Le capital remboursé diminue la dette.
+-- journal | Déclaration de TVA : collectée 1 000 €, déductible 400 €
+d: 44571 | TVA collectée | 1000
+c: 44566 | TVA déductible sur biens et services | 400
+c: 44551 | TVA à décaisser | 600
+effet: Aucun effet sur le résultat : la TVA ne fait que transiter par l'entreprise.
+
+== 4 | t4 | inventaire | Écritures d'inventaire
+-- tiles
+tile: Amortissement
+Consommation **prévue et irréversible** d'une immobilisation, sur sa durée d'utilisation.
+Ex. Machine de 12 000 € sur 5 ans, mise en service le 1er avril : 2 400 € par an, 1 800 € la première année (9/12).
+tile: Dépréciation
+Perte de valeur **probable et réversible** d'un actif : créance douteuse, stock, titres. Elle peut être reprise.
+Ex. Créance de 6 000 € TTC, perte estimée à 50 % : 2 500 € (sur le HT).
+tile: Provision
+Passif au montant ou à l'échéance **incertain** : litige, garantie. Une obligation existe à la clôture et une sortie est probable.
+-- journal | Dotation aux amortissements : 1 800 €
+d: 6811 | Dotations aux amortissements | 1800
+c: 28154 | Amortissements du matériel industriel | 1800
+effet: Résultat − 1 800 €, sans trésorerie. Valeur nette de la machine : 12 000 − 1 800 = 10 200 €.
+-- journal | Dépréciation d'une créance douteuse et provision pour litige
+d: 6817 | Dotations aux dépréciations des actifs circulants | 2500
+c: 491 | Dépréciations des comptes clients | 2500
+d: 6815 | Dotations aux provisions d'exploitation | 8000
+c: 151 | Provisions pour risques | 8000
+effet: Résultat − 10 500 €, sans trésorerie.
+-- journal | Stocks : stock initial 5 000 €, stock final 7 000 €
+d: 6037 | Variation des stocks de marchandises | 5000
+c: 37 | Stocks de marchandises | 5000
+d: 37 | Stocks de marchandises | 7000
+c: 6037 | Variation des stocks de marchandises | 7000
+effet: Variation = initial − final = − 2 000 € : moins de charges, résultat + 2 000 €. Stock qui monte = résultat qui monte.
+-- journal | Charge constatée d'avance : assurance annuelle de 1 200 € payée le 1er octobre
+d: 486 | Charges constatées d'avance | 900
+c: 616 | Primes d'assurance | 900
+effet: 9 mois sur 12 concernent l'exercice suivant : résultat + 900 €. Écriture contrepassée au début de l'exercice suivant.
+-- journal | Cession d'une machine : prix 4 000 €, brut 10 000 €, amortissements 7 000 €
+d: 512 | Banque | 4000
+c: 775 | Produits des cessions d'éléments d'actif | 4000
+d: 28154 | Amortissements du matériel industriel | 7000
+d: 675 | Valeurs comptables des éléments d'actif cédés | 3000
+c: 2154 | Matériel industriel | 10000
+effet: Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €.
+trap: Avant la cession, on passe la dotation aux amortissements de l'exercice jusqu'à la date de vente.
+
+== 5 | t5 | conso | Les postes que la consolidation retraite
+-- compare | Crédit-bail : comptes sociaux ou consolidation | Comptes sociaux (PCG) | Consolidation (ANC 2020-01, IFRS 16)
+row: Le bien | **Pas à l'actif** : l'entreprise n'est pas propriétaire | **À l'actif**, comme s'il avait été acheté, puis amorti
+row: Le financement | Rien au bilan | Une **dette** au passif, remboursée au fil des loyers
+row: Chaque loyer | **Charge de location** (612) | Annulé ;; remplacé par une **dotation aux amortissements** ;; et des **charges d'intérêts**
+memo[Pourquoi]: La consolidation privilégie la **réalité économique** (le groupe utilise le bien et le finance à crédit) sur la forme juridique (une location).
+-- journal | Loyer annuel de crédit-bail dans les comptes sociaux : 10 000 € HT
+d: 6122 | Crédit-bail mobilier | 10000
+d: 44566 | TVA déductible sur biens et services | 2000
+c: 512 | Banque | 12000
+effet: Résultat − 10 000 €. En consolidation, ce loyer est annulé et remplacé par amortissement + intérêts.
+-- journal | Titres et dividendes : achat de 30 % d'une société, puis dividende reçu
+d: 261 | Titres de participation | 60000
+c: 512 | Banque | 60000
+d: 512 | Banque | 5000
+c: 761 | Produits de participations | 5000
+effet: En consolidation, les titres sont éliminés contre la quote-part de capitaux propres, et le dividende interne est éliminé.
+-- journal | Affectation du bénéfice de 40 000 €
+d: 120 | Résultat de l'exercice | 40000
+c: 1068 | Autres réserves | 30000
+c: 457 | Associés – dividendes à payer | 10000
+effet: Le bénéfice devient réserves (capitaux propres) et dette envers les associés.
+-- journal | Subvention d'investissement reçue (20 000 €), puis quote-part de l'exercice (4 000 €)
+d: 512 | Banque | 20000
+c: 131 | Subventions d'équipement | 20000
+d: 139 | Subventions inscrites au compte de résultat | 4000
+c: 777 | Quote-part virée au résultat | 4000
+effet: La subvention est en capitaux propres, puis reprise en résultat au rythme de l'amortissement du bien.
+-- journal | Amortissement dérogatoire de l'exercice : 1 500 €
+d: 6872 | Dotations aux provisions réglementées | 1500
+c: 145 | Amortissements dérogatoires | 1500
+effet: Charge purement fiscale. En consolidation, elle est éliminée (avec un impôt différé) : voir la fiche Prérequis.
+
+== 6 | t0 | reciter | À réciter
+-- table | | Question | Réponse
+| Actif = ? | Passif (capitaux propres + provisions + dettes).
+| Sens des comptes | Actif et charges au débit ; passif, capitaux propres et produits au crédit.
+| Moyen de retenir | Emplois au débit, ressources au crédit.
+| Classes du PCG | 1 capitaux · 2 immobilisations · 3 stocks · 4 tiers · 5 financiers · 6 charges · 7 produits.
+| Achat, vente | Charge et produit **HT** ; TVA à part ; tiers **TTC**.
+| Emprunt | Une dette ; seuls les intérêts sont des charges.
+| Amortissement / dépréciation | Usure irréversible / perte de valeur réversible.
+| Stock qui augmente | Résultat qui augmente.
+| VNC | Brut − amortissements − dépréciations.
+| Crédit-bail en conso | Bien à l'actif + dette ; loyer remplacé par amortissement + intérêts.
