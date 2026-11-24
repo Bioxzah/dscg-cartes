@@ -86,7 +86,7 @@ ${b.lines.map((l) => `        <tr class="${l.side}"><td class="a">${esc(l.acct)}
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">${fmt(total('d'))}</td><td class="n">${fmt(total('c'))}</td></tr></tfoot>
     </table></div>
-    ${b.effect ? `<p class="jeff"><b>Effet</b> ${il(b.effect)}</p>` : ''}
+    ${b.effect ? `<p class="jeff"><span class="jl">Effet</span>${il(b.effect)}</p>` : ''}
   </figure>${b.foot.length ? `\n  <div class="card">${foot(b.foot)}</div>` : ''}`;
   }
   if (b.type === 'compare') {
@@ -174,7 +174,8 @@ const JOURNAL_CSS = `<style>
 .jrnl tr.c td:nth-child(2){padding-left:24px}
 .jrnl tfoot td{font-weight:700;border-top:2px solid var(--ink)}
 .jeff{margin-top:10px;font-size:15px;color:var(--muted)}
-.jeff b{color:var(--h);font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:6px}
+.jeff b{color:var(--ink)}
+.jeff .jl{color:var(--h);font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:8px}
 @media (max-width:520px){.jrnl{padding:12px 10px}.jrnl table{font-size:14px}.jrnl th,.jrnl td{padding:6px 4px}.jrnl th{font-size:10.5px;letter-spacing:.02em}.jrnl tr.c td:nth-child(2){padding-left:12px}.jrnl .a{font-size:13px}}
 @media print{.jrnl{break-inside:avoid}}
 </style>
@@ -210,6 +211,7 @@ const BOX_CSS = `<style>
 .tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
 .tile ul li::marker{color:var(--h)}
 .tile ul+p{margin-top:8px}
+@media (max-width:760px){.tw table:not(:has(tr>:nth-child(3))){min-width:0}}
 </style>
 `;
 const FLOW_CSS = `<style>

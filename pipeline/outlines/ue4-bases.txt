@@ -28,19 +28,26 @@ trap: Un emprunt n'est pas une charge, l'achat d'une machine non plus. Seuls les
 
 == 2 | t3 | partie-double | Débit, crédit, comptes
 -- tiles
-tile: Débit (colonne de gauche)
-Ce qui **augmente** au débit :
-- l'**actif** : un bien, une créance, de l'argent en banque ;
-- les **charges**.
-Ex. Achat de marchandises : débit 607 (charge).
-tile: Crédit (colonne de droite)
-Ce qui **augmente** au crédit :
-- le **passif** : une dette, une provision ;
-- les **capitaux propres** ;
-- les **produits**.
-Ex. Vente : crédit 707 (produit).
-memo[Partie double]: Chaque opération touche au moins deux comptes, au débit et au crédit, pour le **même total**. Pour retenir : **emplois au débit, ressources au crédit**.
-trap: Débit et crédit ne veulent pas dire « dépense » et « recette » : un encaissement se passe au **débit** de la banque (512), car la trésorerie, un actif, augmente.
+tile: ① Le bilan a deux côtés
+À **gauche**, l'**actif** (ce que l'entreprise possède). À **droite**, le **passif** (capitaux propres et dettes).
+En comptabilité, la colonne de gauche s'appelle **débit**, celle de droite **crédit**.
+**Règle : un compte de bilan augmente du côté où il se trouve.** Actif : au débit. Passif et capitaux propres : au crédit.
+tile: ② Charges et produits suivent le résultat
+Le résultat est dans les capitaux propres, donc à **droite** : il augmente au crédit.
+Un **produit** augmente le résultat : il va au **crédit**, comme lui.
+Une **charge** diminue le résultat : elle va au **débit**, à l'opposé.
+-- table | Le sens de chaque famille de comptes (elle diminue de l'autre côté) | Famille | Augmente au…
+| Actif : banque, clients, stocks, machines | **Débit** · ex. un client paie : la banque augmente → débit 512
+| Dettes : fournisseurs, emprunts | **Crédit** · ex. une facture fournisseur arrive → crédit 401
+| Capitaux propres : capital, réserves | **Crédit** · ex. les associés apportent du capital → crédit 101
+| Produits : ventes, prestations | **Crédit** · ex. une vente → crédit 707
+| Charges : achats, loyers, salaires | **Débit** · ex. un achat → débit 607
+-- journal | Exemple : achat de fournitures 100 €, payé tout de suite par virement
+d: 606 | Achats non stockés (charge) | 100
+c: 512 | Banque (actif) | 100
+effet: Ligne 1 : une charge augmente, donc **débit**. Ligne 2 : la banque (un actif) diminue, donc **crédit**. Les deux colonnes ont le même total : c'est la **partie double**.
+memo[Méthode]: Pour chaque opération, pose-toi trois questions : **quels comptes bougent ?** Pour chacun, **augmente-t-il ou diminue-t-il ?** Et donc, **débit ou crédit** d'après le tableau ? Vérifie enfin que total débit = total crédit.
+trap: Débit et crédit ne veulent pas dire « dépense » et « recette ». Un encaissement se passe au **débit** de la banque : la trésorerie, un actif, augmente.
 -- table | Les 7 classes du PCG | Classe | Contenu | Exemples
 | 1 | Capitaux | 101 Capital, 106 Réserves, 120 Résultat, 131 Subventions, 145 Amortissements dérogatoires, 151 Provisions, 164 Emprunts
 | 2 | Immobilisations | 2154 Matériel industriel, 2183 Matériel informatique, 261 Titres de participation, 28 Amortissements

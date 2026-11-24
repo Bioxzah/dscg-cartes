@@ -184,6 +184,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 .tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
 .tile ul li::marker{color:var(--h)}
 .tile ul+p{margin-top:8px}
+@media (max-width:760px){.tw table:not(:has(tr>:nth-child(3))){min-width:0}}
 </style>
 <style>
 .compare{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
@@ -218,7 +219,8 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 .jrnl tr.c td:nth-child(2){padding-left:24px}
 .jrnl tfoot td{font-weight:700;border-top:2px solid var(--ink)}
 .jeff{margin-top:10px;font-size:15px;color:var(--muted)}
-.jeff b{color:var(--h);font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:6px}
+.jeff b{color:var(--ink)}
+.jeff .jl{color:var(--h);font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:8px}
 @media (max-width:520px){.jrnl{padding:12px 10px}.jrnl table{font-size:14px}.jrnl th,.jrnl td{padding:6px 4px}.jrnl th{font-size:10.5px;letter-spacing:.02em}.jrnl tr.c td:nth-child(2){padding-left:12px}.jrnl .a{font-size:13px}}
 @media print{.jrnl{break-inside:avoid}}
 </style>
@@ -263,10 +265,35 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 <section class="stage t3" id="partie-double">
   <h2><span class="n">2</span>Débit, crédit, comptes</h2>
   <div class="tiles two">
-    <div class="tile"><h3>Débit (colonne de gauche)</h3><p>Ce qui <b>augmente</b> au débit :</p><ul><li>l'<b>actif</b> : un bien, une créance, de l'argent en banque ;</li><li>les <b>charges</b>.</li></ul><p class="eg"><b>Ex.</b> Achat de marchandises : débit 607 (charge).</p></div>
-    <div class="tile"><h3>Crédit (colonne de droite)</h3><p>Ce qui <b>augmente</b> au crédit :</p><ul><li>le <b>passif</b> : une dette, une provision ;</li><li>les <b>capitaux propres</b> ;</li><li>les <b>produits</b>.</li></ul><p class="eg"><b>Ex.</b> Vente : crédit 707 (produit).</p></div>
+    <div class="tile"><h3>① Le bilan a deux côtés</h3><p>À <b>gauche</b>, l'<b>actif</b> (ce que l'entreprise possède). À <b>droite</b>, le <b>passif</b> (capitaux propres et dettes).</p><p>En comptabilité, la colonne de gauche s'appelle <b>débit</b>, celle de droite <b>crédit</b>.</p><p><b>Règle : un compte de bilan augmente du côté où il se trouve.</b> Actif : au débit. Passif et capitaux propres : au crédit.</p></div>
+    <div class="tile"><h3>② Charges et produits suivent le résultat</h3><p>Le résultat est dans les capitaux propres, donc à <b>droite</b> : il augmente au crédit.</p><p>Un <b>produit</b> augmente le résultat : il va au <b>crédit</b>, comme lui.</p><p>Une <b>charge</b> diminue le résultat : elle va au <b>débit</b>, à l'opposé.</p></div>
   </div>
-  <div class="card"><div class="foot"><p class="memo"><span class="tag">Partie double</span>Chaque opération touche au moins deux comptes, au débit et au crédit, pour le <b>même total</b>. Pour retenir : <b>emplois au débit, ressources au crédit</b>.</p><p class="trap"><span class="tag">Piège</span>Débit et crédit ne veulent pas dire « dépense » et « recette » : un encaissement se passe au <b>débit</b> de la banque (512), car la trésorerie, un actif, augmente.</p></div></div>
+
+  <div class="tw"><table>
+    <caption>Le sens de chaque famille de comptes (elle diminue de l'autre côté)</caption>
+    <thead><tr><th>Famille</th><th>Augmente au…</th></tr></thead>
+    <tbody>
+      <tr><th>Actif : banque, clients, stocks, machines</th><td><b>Débit</b> · ex. un client paie : la banque augmente → débit 512</td></tr>
+      <tr><th>Dettes : fournisseurs, emprunts</th><td><b>Crédit</b> · ex. une facture fournisseur arrive → crédit 401</td></tr>
+      <tr><th>Capitaux propres : capital, réserves</th><td><b>Crédit</b> · ex. les associés apportent du capital → crédit 101</td></tr>
+      <tr><th>Produits : ventes, prestations</th><td><b>Crédit</b> · ex. une vente → crédit 707</td></tr>
+      <tr><th>Charges : achats, loyers, salaires</th><td><b>Débit</b> · ex. un achat → débit 607</td></tr>
+    </tbody>
+  </table></div>
+
+  <figure class="jrnl">
+    <figcaption>Exemple : achat de fournitures 100 €, payé tout de suite par virement</figcaption>
+    <div class="jtw"><table>
+      <thead><tr><th>Compte</th><th>Intitulé</th><th class="n">Débit</th><th class="n">Crédit</th></tr></thead>
+      <tbody>
+        <tr class="d"><td class="a">606</td><td>Achats non stockés (charge)</td><td class="n">100</td><td class="n"></td></tr>
+        <tr class="c"><td class="a">512</td><td>Banque (actif)</td><td class="n"></td><td class="n">100</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Total</td><td class="n">100</td><td class="n">100</td></tr></tfoot>
+    </table></div>
+    <p class="jeff"><span class="jl">Effet</span>Ligne 1 : une charge augmente, donc <b>débit</b>. Ligne 2 : la banque (un actif) diminue, donc <b>crédit</b>. Les deux colonnes ont le même total : c'est la <b>partie double</b>.</p>
+  </figure>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Méthode</span>Pour chaque opération, pose-toi trois questions : <b>quels comptes bougent ?</b> Pour chacun, <b>augmente-t-il ou diminue-t-il ?</b> Et donc, <b>débit ou crédit</b> d'après le tableau ? Vérifie enfin que total débit = total crédit.</p><p class="trap"><span class="tag">Piège</span>Débit et crédit ne veulent pas dire « dépense » et « recette ». Un encaissement se passe au <b>débit</b> de la banque : la trésorerie, un actif, augmente.</p></div></div>
 
   <div class="tw"><table>
     <caption>Les 7 classes du PCG</caption>
@@ -297,7 +324,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">2 400</td><td class="n">2 400</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Résultat − 2 000 € (charge HT). La TVA est une créance sur l'État, pas une charge.</p>
+    <p class="jeff"><span class="jl">Effet</span>Résultat − 2 000 € (charge HT). La TVA est une créance sur l'État, pas une charge.</p>
   </figure>
 
   <figure class="jrnl">
@@ -311,7 +338,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">6 000</td><td class="n">6 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Résultat + 5 000 € (produit HT). La TVA collectée est une dette envers l'État.</p>
+    <p class="jeff"><span class="jl">Effet</span>Résultat + 5 000 € (produit HT). La TVA collectée est une dette envers l'État.</p>
   </figure>
 
   <figure class="jrnl">
@@ -326,7 +353,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">8 400</td><td class="n">8 400</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Aucun effet sur le résultat : une dette et une créance s'éteignent contre de la trésorerie.</p>
+    <p class="jeff"><span class="jl">Effet</span>Aucun effet sur le résultat : une dette et une créance s'éteignent contre de la trésorerie.</p>
   </figure>
 
   <figure class="jrnl">
@@ -340,7 +367,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">14 400</td><td class="n">14 400</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Aucun effet sur le résultat à l'achat : la machine est à l'actif. Elle passera en charge par l'amortissement.</p>
+    <p class="jeff"><span class="jl">Effet</span>Aucun effet sur le résultat à l'achat : la machine est à l'actif. Elle passera en charge par l'amortissement.</p>
   </figure>
 
   <figure class="jrnl">
@@ -356,7 +383,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">36 900</td><td class="n">36 900</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Seuls les intérêts (900 €) diminuent le résultat. Le capital remboursé diminue la dette.</p>
+    <p class="jeff"><span class="jl">Effet</span>Seuls les intérêts (900 €) diminuent le résultat. Le capital remboursé diminue la dette.</p>
   </figure>
 
   <figure class="jrnl">
@@ -370,7 +397,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">1 000</td><td class="n">1 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Aucun effet sur le résultat : la TVA ne fait que transiter par l'entreprise.</p>
+    <p class="jeff"><span class="jl">Effet</span>Aucun effet sur le résultat : la TVA ne fait que transiter par l'entreprise.</p>
   </figure>
 </section>
 
@@ -392,7 +419,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">1 800</td><td class="n">1 800</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Résultat − 1 800 €, sans trésorerie. Valeur nette de la machine : 12 000 − 1 800 = 10 200 €.</p>
+    <p class="jeff"><span class="jl">Effet</span>Résultat − 1 800 €, sans trésorerie. Valeur nette de la machine : 12 000 − 1 800 = 10 200 €.</p>
   </figure>
 
   <figure class="jrnl">
@@ -407,7 +434,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">10 500</td><td class="n">10 500</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Résultat − 10 500 €, sans trésorerie.</p>
+    <p class="jeff"><span class="jl">Effet</span>Résultat − 10 500 €, sans trésorerie.</p>
   </figure>
 
   <figure class="jrnl">
@@ -422,7 +449,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">12 000</td><td class="n">12 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Variation = initial − final = − 2 000 € : moins de charges, résultat + 2 000 €. Stock qui monte = résultat qui monte.</p>
+    <p class="jeff"><span class="jl">Effet</span>Variation = initial − final = − 2 000 € : moins de charges, résultat + 2 000 €. Stock qui monte = résultat qui monte.</p>
   </figure>
 
   <figure class="jrnl">
@@ -435,7 +462,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">900</td><td class="n">900</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> 9 mois sur 12 concernent l'exercice suivant : résultat + 900 €. Écriture contrepassée au début de l'exercice suivant.</p>
+    <p class="jeff"><span class="jl">Effet</span>9 mois sur 12 concernent l'exercice suivant : résultat + 900 €. Écriture contrepassée au début de l'exercice suivant.</p>
   </figure>
 
   <figure class="jrnl">
@@ -451,7 +478,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">14 000</td><td class="n">14 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €.</p>
+    <p class="jeff"><span class="jl">Effet</span>Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €.</p>
   </figure>
   <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Avant la cession, on passe la dotation aux amortissements de l'exercice jusqu'à la date de vente.</p></div></div>
 </section>
@@ -480,7 +507,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">12 000</td><td class="n">12 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Résultat − 10 000 €. En consolidation, ce loyer est annulé et remplacé par amortissement + intérêts.</p>
+    <p class="jeff"><span class="jl">Effet</span>Résultat − 10 000 €. En consolidation, ce loyer est annulé et remplacé par amortissement + intérêts.</p>
   </figure>
 
   <figure class="jrnl">
@@ -495,7 +522,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">65 000</td><td class="n">65 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> En consolidation, les titres sont éliminés contre la quote-part de capitaux propres, et le dividende interne est éliminé.</p>
+    <p class="jeff"><span class="jl">Effet</span>En consolidation, les titres sont éliminés contre la quote-part de capitaux propres, et le dividende interne est éliminé.</p>
   </figure>
 
   <figure class="jrnl">
@@ -509,7 +536,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">40 000</td><td class="n">40 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Le bénéfice devient réserves (capitaux propres) et dette envers les associés.</p>
+    <p class="jeff"><span class="jl">Effet</span>Le bénéfice devient réserves (capitaux propres) et dette envers les associés.</p>
   </figure>
 
   <figure class="jrnl">
@@ -524,7 +551,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">24 000</td><td class="n">24 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> La subvention est en capitaux propres, puis reprise en résultat au rythme de l'amortissement du bien.</p>
+    <p class="jeff"><span class="jl">Effet</span>La subvention est en capitaux propres, puis reprise en résultat au rythme de l'amortissement du bien.</p>
   </figure>
 
   <figure class="jrnl">
@@ -537,7 +564,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">1 500</td><td class="n">1 500</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><b>Effet</b> Charge purement fiscale. En consolidation, elle est éliminée (avec un impôt différé) : voir la fiche Prérequis.</p>
+    <p class="jeff"><span class="jl">Effet</span>Charge purement fiscale. En consolidation, elle est éliminée (avec un impôt différé) : voir la fiche Prérequis.</p>
   </figure>
 </section>
 
