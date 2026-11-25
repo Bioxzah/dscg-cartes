@@ -643,6 +643,14 @@
    "source": "Cours"
   },
   {
+   "id": "ue1-ch01-238",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Inexécution : par quelles causes le débiteur peut-il s'exonérer ?",
+   "reponse": "1. **Force majeure** : exonération totale.\n2. **Fait du créancier** qui a contribué à l'inexécution : exonération partielle (partage de responsabilité), totale seulement s'il a les caractères de la force majeure.\n3. **Accord du créancier** : le contrat a été modifié d'un commun accord, ou le créancier a renoncé à son droit de façon non équivoque. Le silence ne vaut pas renonciation.",
+   "source": "Art. 1218, 1193"
+  },
+  {
    "id": "ue1-ch01-135",
    "theme": "sanctions",
    "type": "memo",
@@ -897,6 +905,14 @@
    "question": "Stipulation pour autrui : quel droit a le bénéficiaire ?",
    "reponse": "Un droit direct contre le promettant.",
    "source": "Art. 1206"
+  },
+  {
+   "id": "ue1-ch01-197",
+   "theme": "reste",
+   "type": "regle",
+   "question": "Quel est le principe de modification du contrat ?",
+   "reponse": "Il ne se modifie que par consentement mutuel ou pour les causes prévues par la loi.",
+   "source": "Art. 1193"
   },
   {
    "id": "ue1-ch01-198",

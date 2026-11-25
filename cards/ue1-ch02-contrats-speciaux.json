@@ -623,7 +623,7 @@
    "theme": "entreprise",
    "type": "regle",
    "question": "Obligation de résultat : que doit prouver le client ?",
-   "reponse": "Seulement que le résultat promis n'est pas atteint. Le prestataire ne s'exonère que par la force majeure.",
+   "reponse": "Seulement que le résultat promis n'est pas atteint. Le prestataire ne s'exonère qu'en prouvant une cause d'exonération : force majeure, ou fait du client qui a contribué au dommage (partage de responsabilité).",
    "source": "Art. 1231-1"
   },
   {
