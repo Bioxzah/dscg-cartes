@@ -1777,6 +1777,62 @@
    "question": "En 2023, la SCI HANGAR consent à sa voisine, la société ROUTEX, un pacte de préférence sur son entrepôt. En janvier 2026, ROUTEX écrit au gérant de la société STOCKA pour l'informer de ce pacte et lui annoncer qu'elle achètera l'entrepôt dès qu'il sera mis en vente. Le 2 mars 2026, la SCI vend l'entrepôt 600 000 € à STOCKA sans l'avoir proposé à ROUTEX.\n\n**ROUTEX peut-elle obtenir l'entrepôt à la place de STOCKA ?**",
    "reponse": "**Problème** : le bénéficiaire d'un pacte de préférence violé peut-il se substituer au tiers acquéreur ?\n**Règle** : le promettant qui contracte avec un tiers en violation du pacte doit des dommages-intérêts. Si le tiers connaissait l'existence du pacte et l'intention du bénéficiaire de s'en prévaloir, le bénéficiaire peut aussi agir en nullité ou demander au juge de le substituer au tiers (art. 1123 ; Ch. mixte, 26 mai 2006). Le bénéficiaire prouve cette double connaissance.\n**Application** : il existe un pacte et la SCI a vendu sans proposer d'abord à ROUTEX. Le courrier de janvier 2026 prouve que le gérant de STOCKA connaissait le pacte et l'intention de ROUTEX d'acheter. STOCKA n'a pas utilisé l'action interrogatoire.\n**Conclusion** : ROUTEX peut demander au juge de prendre la place de STOCKA, aux conditions de la vente (600 000 €), ou la nullité de la vente, et des dommages-intérêts contre la SCI. Conseil : conserver le courrier de janvier, preuve décisive.",
    "source": "Art. 1123 ; Ch. mixte, 26 mai 2006"
+  },
+  {
+   "id": "ue1-ch02-281",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que juge la chambre commerciale le 19 mars 2025 sur les actes préparatoires d'un franchisé ?",
+   "reponse": "Le franchisé peut préparer une activité concurrente (créer une société, déposer une marque) sans violer sa clause de non-concurrence ni la loyauté et la bonne foi, si l'activité ne **débute effectivement** qu'après la fin du contrat et de son engagement de non-concurrence.",
+   "source": "Com., 19 mars 2025, n° 23-22.925"
+  },
+  {
+   "id": "ue1-ch02-282",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Où passe la frontière entre acte préparatoire permis et violation de la clause de non-concurrence d'un franchisé ?",
+   "reponse": "Préparer est permis : créer une société, déposer une marque, signer un bail pour l'après-contrat. Il y a violation dès que l'activité concurrente **commence réellement** avant la fin du contrat ou de l'engagement de non-concurrence. C'est au franchiseur de le prouver.",
+   "source": "Com., 19 mars 2025, n° 23-22.925 ; art. 1353"
+  },
+  {
+   "id": "ue1-ch02-283",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que risque le franchiseur qui résilie immédiatement le contrat pour de simples actes préparatoires du franchisé ?",
+   "reponse": "La résiliation est injustifiée, faute d'inexécution grave : ses demandes d'indemnité sont rejetées et, la résolution unilatérale étant à ses risques, il doit réparer le préjudice causé au franchisé (**dommages-intérêts** ; dans l'arrêt, 5 000 € pour la coupure brutale des outils informatiques).",
+   "source": "Art. 1224, 1226 ; Com., 19 mars 2025"
+  },
+  {
+   "id": "ue1-ch02-284",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Une clause de non-concurrence pendant la durée d'une franchise est-elle valable ?",
+   "reponse": "Oui, si elle est **proportionnée** à la protection des intérêts légitimes du franchiseur (son savoir-faire, l'identité du réseau).",
+   "source": "Jurisprudence ; Com., 19 mars 2025, n° 23-22.925 (motifs de la cour d'appel non critiqués)"
+  },
+  {
+   "id": "ue1-ch02-285",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que vaut une clause qui limite l'activité de l'ancien franchisé après la fin d'un contrat de distribution de commerce de détail ?",
+   "reponse": "Elle est **réputée non écrite**, sauf si celui qui l'invoque prouve qu'elle remplit quatre conditions cumulatives. Sinon elle tombe en entier.",
+   "source": "C. com., L. 341-2 ; Com., 5 juin 2024"
+  },
+  {
+   "id": "ue1-ch02-286",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Quelles sont les quatre conditions de validité d'une clause de non-concurrence après la fin d'un contrat de distribution de commerce de détail ?",
+   "reponse": "1. Biens ou services **concurrents** de ceux du contrat.\n2. Limitée aux **terrains et locaux** exploités pendant le contrat.\n3. **Indispensable** à la protection d'un savoir-faire substantiel, spécifique et secret.\n4. **Un an** au plus après la fin du contrat.",
+   "source": "C. com., L. 341-2"
+  },
+  {
+   "id": "ue1-ch02-287",
+   "theme": "distribution",
+   "type": "cas",
+   "question": "La société VÉLIA anime un réseau de franchise de magasins de vélos. M. Roux exploite une franchise VÉLIA à Tours jusqu'au 30 juin 2026 ; le contrat lui interdit toute activité concurrente pendant sa durée, mais ne prévoit aucune clause pour l'après-contrat. En mars 2026, il crée la société ROUE LIBRE, dépose la marque « Roue libre » et signe un bail pour un magasin qui ouvrira le 1er juillet 2026. Le 10 avril 2026, VÉLIA résilie le contrat avec effet immédiat pour violation de la non-concurrence et de la loyauté.\n\n**VÉLIA pouvait-elle résilier le contrat pour ce motif ?**",
+   "reponse": "**Problème** : un franchisé qui prépare une activité concurrente avant la fin de son contrat viole-t-il sa clause de non-concurrence au point de justifier une résiliation immédiate ?\n**Règle** : le franchisé peut, sans violer la clause de non-concurrence ni ses obligations de loyauté et de bonne foi, accomplir des actes préparatoires à une activité concurrente, si celle-ci ne débute effectivement qu'après l'expiration du contrat et de son engagement de non-concurrence (Com., 19 mars 2025). La résiliation unilatérale suppose une inexécution suffisamment grave (art. 1224, 1226) ; sinon elle est fautive.\n**Application** : créer une société, déposer une marque et signer un bail sont des actes préparatoires. Le magasin ouvre le 1er juillet 2026, après la fin du contrat, et aucune clause ne joue après le contrat. Aucune activité concurrente n'a commencé avant le 30 juin.\n**Conclusion** : non. Il n'y a pas de manquement : la résiliation est injustifiée et VÉLIA doit indemniser M. Roux, notamment de la marge perdue du 10 avril au 30 juin 2026. Conseil à VÉLIA : surveiller la date réelle d'ouverture et, pour l'avenir, prévoir une clause après contrat respectant les quatre conditions légales.",
+   "source": "Com., 19 mars 2025, n° 23-22.925 ; art. 1224, 1226"
   }
  ]
 }
