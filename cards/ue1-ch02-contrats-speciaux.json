@@ -48,6 +48,12 @@
     "titre": "Contrats de consommation",
     "couleur": "sarcelle",
     "ordre": 7
+   },
+   {
+    "id": "mecanismes",
+    "titre": "Pacte de préférence et stipulation pour autrui",
+    "couleur": "sarcelle",
+    "ordre": 8
    }
   ]
  },
@@ -1531,6 +1537,246 @@
    "question": "La société FOURNIL anime un réseau de franchise de boulangeries ; les franchisés doivent acheter leur farine exclusivement auprès d'elle. Elle remet à M. Dumas, 25 jours avant la signature, un document d'information avec une étude du marché local prévoyant 400 000 € de chiffre d'affaires annuel. L'étude reposait sur des chiffres de population très surestimés. M. Dumas réalise 180 000 € et accumule les pertes ; il affirme qu'il n'aurait jamais signé avec des chiffres réalistes.\n\n**M. Dumas peut-il agir contre FOURNIL, et sur quel fondement ?**",
    "reponse": "**Problème** : des informations précontractuelles irréalistes engagent-elles la responsabilité du franchiseur, voire permettent-elles d'annuler le contrat ?\n**Règle** : celui qui met une enseigne à disposition en imposant une exclusivité doit remettre, 20 jours au moins avant la signature, un document d'information sincère (C. com., art. L. 330-3). Plus largement, chaque partie doit l'information déterminante qu'elle connaît (art. 1112-1). Le manquement engage la responsabilité extracontractuelle de son auteur (il est antérieur au contrat). La nullité suppose en plus un vice du consentement : erreur déterminante ou dol (art. 1130 s.). L'information ne garantit pas la rentabilité : il faut des données fausses, omises ou irréalistes.\n**Application** : le délai de 20 jours est respecté, mais l'étude repose sur des données fausses : l'information n'est pas sincère. L'écart (180 000 € contre 400 000 €) et l'affirmation de M. Dumas montrent son caractère déterminant ; ses pertes sont le préjudice.\n**Conclusion** : M. Dumas peut obtenir des dommages-intérêts pour manquement à l'obligation d'information, voie la plus simple. Il peut aussi demander la nullité s'il prouve une erreur déterminante ou un dol (intention de tromper), avec restitutions.",
    "source": "C. com., art. L. 330-3 ; art. 1112-1, 1130, 1137"
+  },
+  {
+   "id": "ue1-ch02-251",
+   "theme": "cadre",
+   "type": "regle",
+   "question": "Que décide l'Assemblée plénière le 1er décembre 1995 sur le prix des contrats-cadres ?",
+   "reponse": "Un prix non fixé à la conclusion n'entraîne pas la nullité du contrat-cadre. Seul l'abus dans la fixation du prix est sanctionné : dommages-intérêts ou résiliation.",
+   "source": "Ass. plén., 1er déc. 1995"
+  },
+  {
+   "id": "ue1-ch02-252",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que décide la chambre mixte le 21 juillet 2023 sur le délai de l'action en garantie des vices cachés ?",
+   "reponse": "Le délai de **2 ans** à compter de la découverte est une prescription (une expertise judiciaire la suspend). L'action reste enfermée dans un butoir de **20 ans** à compter de la vente.",
+   "source": "Ch. mixte, 21 juill. 2023"
+  },
+  {
+   "id": "ue1-ch02-253",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que retient la chambre commerciale le 17 janvier 2024 sur le vendeur professionnel ?",
+   "reponse": "Il est irréfragablement présumé connaître le vice et doit tous les dommages-intérêts. Mais il faut d'abord vérifier qu'il vend **habituellement** ce type de bien : être un professionnel ne suffit pas.",
+   "source": "Com., 17 janv. 2024, n° 21-23.909"
+  },
+  {
+   "id": "ue1-ch02-254",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que décide la 3e chambre civile le 5 juin 2025 sur la clause de non-garantie des vices cachés ?",
+   "reponse": "Le vendeur qui connaissait le vice lors de la conclusion de la vente ne peut pas se prévaloir de la clause de non-garantie.",
+   "source": "3e civ., 5 juin 2025, n° 23-14.619 ; art. 1643"
+  },
+  {
+   "id": "ue1-ch02-255",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que décide la 1re chambre civile le 3 septembre 2025 sur l'action du sous-acquéreur contre le vendeur originaire ?",
+   "reponse": "La connaissance du vice s'apprécie dans la personne du **premier acquéreur**, à la date de la première vente : le sous-acquéreur exerce l'action de celui-ci.",
+   "source": "1re civ., 3 sept. 2025, n° 24-11.383"
+  },
+  {
+   "id": "ue1-ch02-256",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Le dernier acheteur d'une machine revendue deux fois peut-il agir en garantie des vices cachés contre le fabricant qui l'a vendue en premier ?",
+   "reponse": "Oui : l'action en garantie suit la chose. Le sous-acquéreur dispose d'une action contractuelle directe contre le vendeur originaire.",
+   "source": "Jurisprudence constante (Ass. plén., 7 févr. 1986)"
+  },
+  {
+   "id": "ue1-ch02-257",
+   "theme": "entreprise",
+   "type": "regle",
+   "question": "Que définit l'arrêt Société générale (chambre sociale, 13 novembre 1996) ?",
+   "reponse": "Le **lien de subordination** : travail sous l'autorité d'un employeur qui donne des ordres, en contrôle l'exécution et sanctionne les manquements. C'est ce qui sépare le salarié du prestataire.",
+   "source": "Soc., 13 nov. 1996, Société générale"
+  },
+  {
+   "id": "ue1-ch02-258",
+   "theme": "entreprise",
+   "type": "regle",
+   "question": "Que décide l'arrêt Besse (Assemblée plénière, 12 juillet 1991) ?",
+   "reponse": "Le sous-traitant n'est pas lié par contrat au maître de l'ouvrage : celui-ci agit contre lui en responsabilité **extracontractuelle**.",
+   "source": "Ass. plén., 12 juill. 1991, Besse"
+  },
+  {
+   "id": "ue1-ch02-259",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que décide l'arrêt Metro (CJCE, 25 octobre 1977) ?",
+   "reponse": "La distribution sélective est licite si les revendeurs sont choisis sur des critères **qualitatifs, objectifs**, fixés de manière uniforme et appliqués **sans discrimination**.",
+   "source": "CJCE, 25 oct. 1977, Metro, aff. 26/76"
+  },
+  {
+   "id": "ue1-ch02-260",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que juge la chambre commerciale le 7 mars 2018 sur l'information d'un franchisé déçu par son prévisionnel ?",
+   "reponse": "Pas de manquement du franchiseur : le compte prévisionnel avait été établi par l'expert-comptable du franchisé, à partir de chiffres exacts fournis par le franchiseur. Pourvoi rejeté.",
+   "source": "Com., 7 mars 2018, n° 16-25.654 (inédit)"
+  },
+  {
+   "id": "ue1-ch02-261",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Le Code européen de déontologie de la franchise s'impose-t-il au franchiseur ?",
+   "reponse": "Pas par lui-même : c'est un recueil de bonnes pratiques de la profession, pas un usage ayant force obligatoire. Il ne s'impose que si le contrat y renvoie.",
+   "source": "Doctrine ; fiche du professeur (Com., 7 mars 2018)"
+  },
+  {
+   "id": "ue1-ch02-262",
+   "theme": "assurance",
+   "type": "regle",
+   "question": "Que décide la chambre mixte le 7 février 2014 sur la fausse déclaration du risque ?",
+   "reponse": "L'assureur ne peut invoquer une fausse déclaration que si elle répond à une **question précise** qu'il a posée lors de la souscription.",
+   "source": "Ch. mixte, 7 févr. 2014"
+  },
+  {
+   "id": "ue1-ch02-263",
+   "theme": "assurance",
+   "type": "regle",
+   "question": "Que doit remettre l'assureur avant la conclusion du contrat d'assurance ?",
+   "reponse": "Une **fiche d'information sur le prix et les garanties** (sauf assurance vie), et un exemplaire du projet de contrat et de ses annexes, ou une notice qui décrit précisément les **garanties et leurs exclusions** ainsi que les obligations de l'assuré.",
+   "source": "C. assur., L. 112-2"
+  },
+  {
+   "id": "ue1-ch02-264",
+   "theme": "assurance",
+   "type": "regle",
+   "question": "L'assureur peut-il opposer une exclusion dont l'assuré n'a jamais eu connaissance avant le sinistre ?",
+   "reponse": "Non : une clause d'exclusion que l'assuré n'a pas connue et acceptée lui est **inopposable**. L'assureur doit prouver cette connaissance.",
+   "source": "C. assur., L. 112-2 ; jurisprudence"
+  },
+  {
+   "id": "ue1-ch02-265",
+   "theme": "consommation",
+   "type": "regle",
+   "question": "Quand un commerçant peut-il organiser des soldes ?",
+   "reponse": "Pendant les deux périodes annuelles dont les dates et la durée sont fixées par arrêté (entre trois et six semaines ; **quatre semaines** aujourd'hui). Le mot « soldes » est réservé à ces opérations.",
+   "source": "C. com., L. 310-3 ; arrêté du 27 mai 2019, art. 3"
+  },
+  {
+   "id": "ue1-ch02-266",
+   "theme": "consommation",
+   "type": "regle",
+   "question": "Quels produits peuvent être vendus en soldes ?",
+   "reponse": "Seulement ceux proposés à la vente et payés depuis **au moins un mois** au début des soldes. Sinon : amende.",
+   "source": "C. com., L. 310-3, L. 310-5"
+  },
+  {
+   "id": "ue1-ch02-267",
+   "theme": "consommation",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une liquidation de stock ?",
+   "reponse": "Une vente à prix réduits annoncée par publicité, pour écouler le stock à la suite d'une cessation ou d'un changement d'activité. Depuis le 28 mai 2026, elle n'a plus de régime spécial : seule l'interdiction des pratiques commerciales trompeuses l'encadre.",
+   "source": "Loi n° 2026-403 du 26 mai 2026 (abrogation de C. com., L. 310-1) ; C. consom., L. 121-2"
+  },
+  {
+   "id": "ue1-ch02-268",
+   "theme": "consommation",
+   "type": "regle",
+   "question": "Quelles formalités encadrent une liquidation, et quelle sanction si elles manquent ?",
+   "reponse": "**Aucune depuis le 28 mai 2026** : déclaration en mairie, inventaire, durée de deux mois au plus et amende de 15 000 € sont supprimés. Une fausse liquidation reste une **pratique commerciale trompeuse** (2 ans d'emprisonnement et 300 000 € d'amende).",
+   "source": "Loi n° 2026-403 du 26 mai 2026 ; C. consom., L. 121-2, L. 132-2"
+  },
+  {
+   "id": "ue1-ch02-269",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un pacte de préférence ?",
+   "reponse": "Le contrat par lequel une partie s'engage à proposer **prioritairement** au bénéficiaire de traiter avec lui, pour le cas où elle déciderait de contracter.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-270",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Quelle différence entre pacte de préférence et promesse unilatérale de vente ?",
+   "reponse": "Dans le pacte, le promettant reste libre de vendre ou non : il promet seulement une priorité. Dans la promesse, il a déjà consenti à vendre ; le bénéficiaire n'a plus qu'à lever l'option.",
+   "source": "Art. 1123, 1124"
+  },
+  {
+   "id": "ue1-ch02-271",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Le promettant vend à un tiers sans proposer d'abord au bénéficiaire du pacte de préférence. Que doit-il au bénéficiaire ?",
+   "reponse": "Des **dommages-intérêts** pour le préjudice subi, que le tiers ait connu ou non le pacte.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-272",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "À quelles conditions le bénéficiaire d'un pacte de préférence violé obtient-il la nullité du contrat conclu avec le tiers ou sa substitution ?",
+   "reponse": "Le tiers devait connaître, en contractant, l'**existence du pacte** et l'**intention du bénéficiaire** de s'en prévaloir. Les deux conditions sont cumulatives.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-273",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Qui doit prouver que le tiers connaissait le pacte de préférence et l'intention du bénéficiaire ?",
+   "reponse": "Le bénéficiaire qui demande la nullité ou la substitution. Connaître le pacte ne fait pas présumer la connaissance de son intention.",
+   "source": "Art. 1353 ; 3e civ., 3 nov. 2011"
+  },
+  {
+   "id": "ue1-ch02-274",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Que décide la chambre mixte le 26 mai 2006 sur le pacte de préférence ?",
+   "reponse": "Le bénéficiaire peut obtenir la nullité du contrat conclu avec le tiers et sa substitution, à condition que le tiers ait connu l'existence du pacte et l'intention du bénéficiaire de s'en prévaloir.",
+   "source": "Ch. mixte, 26 mai 2006, n° 03-19.376"
+  },
+  {
+   "id": "ue1-ch02-275",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Comment le tiers qui veut acheter peut-il se protéger contre un pacte de préférence ?",
+   "reponse": "Par l'**action interrogatoire** : il demande par écrit au bénéficiaire de confirmer, dans un délai raisonnable qu'il fixe, l'existence du pacte et s'il entend s'en prévaloir.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-276",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Le bénéficiaire d'un pacte de préférence, interrogé par écrit par le tiers, ne répond pas dans le délai. Conséquence ?",
+   "reponse": "Il ne peut plus agir en nullité ni en substitution, si l'écrit l'en avait averti. Il garde ses dommages-intérêts contre le promettant.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-277",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une stipulation pour autrui ?",
+   "reponse": "Le mécanisme par lequel une partie, le **stipulant**, obtient de l'autre, le **promettant**, l'engagement d'accomplir une prestation au profit d'un **tiers bénéficiaire**.",
+   "source": "Art. 1205"
+  },
+  {
+   "id": "ue1-ch02-278",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Quels sont les droits du tiers bénéficiaire d'une stipulation pour autrui ?",
+   "reponse": "Il a dès la stipulation un **droit direct** contre le promettant. Le stipulant peut révoquer tant que le bénéficiaire n'a pas accepté ; après acceptation, c'est irrévocable.",
+   "source": "Art. 1206"
+  },
+  {
+   "id": "ue1-ch02-279",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Pourquoi l'assurance vie au profit d'un proche est-elle une stipulation pour autrui ?",
+   "reponse": "Le souscripteur (stipulant) obtient de l'assureur (promettant) le versement d'un capital à un tiers bénéficiaire, qui a un droit direct contre l'assureur.",
+   "source": "Art. 1205 ; C. assur., L. 132-8, L. 132-9"
+  },
+  {
+   "id": "ue1-ch02-280",
+   "theme": "mecanismes",
+   "type": "cas",
+   "question": "En 2023, la SCI HANGAR consent à sa voisine, la société ROUTEX, un pacte de préférence sur son entrepôt. En janvier 2026, ROUTEX écrit au gérant de la société STOCKA pour l'informer de ce pacte et lui annoncer qu'elle achètera l'entrepôt dès qu'il sera mis en vente. Le 2 mars 2026, la SCI vend l'entrepôt 600 000 € à STOCKA sans l'avoir proposé à ROUTEX.\n\n**ROUTEX peut-elle obtenir l'entrepôt à la place de STOCKA ?**",
+   "reponse": "**Problème** : le bénéficiaire d'un pacte de préférence violé peut-il se substituer au tiers acquéreur ?\n**Règle** : le promettant qui contracte avec un tiers en violation du pacte doit des dommages-intérêts. Si le tiers connaissait l'existence du pacte et l'intention du bénéficiaire de s'en prévaloir, le bénéficiaire peut aussi agir en nullité ou demander au juge de le substituer au tiers (art. 1123 ; Ch. mixte, 26 mai 2006). Le bénéficiaire prouve cette double connaissance.\n**Application** : il existe un pacte et la SCI a vendu sans proposer d'abord à ROUTEX. Le courrier de janvier 2026 prouve que le gérant de STOCKA connaissait le pacte et l'intention de ROUTEX d'acheter. STOCKA n'a pas utilisé l'action interrogatoire.\n**Conclusion** : ROUTEX peut demander au juge de prendre la place de STOCKA, aux conditions de la vente (600 000 €), ou la nullité de la vente, et des dommages-intérêts contre la SCI. Conseil : conserver le courrier de janvier, preuve décisive.",
+   "source": "Art. 1123 ; Ch. mixte, 26 mai 2006"
   }
  ]
 }
