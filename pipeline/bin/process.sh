@@ -84,6 +84,11 @@ new_work() {
   mkdir -p "$work/entrees" "$work/modele"
   cp "$PIPE/CONVENTIONS.md" "$work/"
   cp "$PIPE/modele/"* "$work/modele/"
+  # Everything Hugo already has, so cards are planned against it: every deck in the app, and the
+  # cards removed on purpose (pipeline/archive), which must not come back as new cards.
+  mkdir -p "$work/existant/archive"
+  cp "$REPO/cards/"*.json "$work/existant/" 2>/dev/null || true
+  cp "$PIPE/archive/"*.json "$work/existant/archive/" 2>/dev/null || true
   echo "$work"
 }
 
@@ -273,7 +278,7 @@ process_update() {
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent pas le contrôle. Journal : $work"; return
   fi
-  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans le bloc « Mise à jour » de la fiche avec la correction proposée." " --extends cartes-actuelles.json" \
+  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans le bloc « Mise à jour » de la fiche avec la correction proposée. Supprime aussi toute carte ajoutée qui fait doublon avec existant/ (autres paquets) ou existant/archive/ (cartes retirées par Hugo), puis renumérote les cartes ajoutées restantes à la suite, sans trou." " --extends cartes-actuelles.json" \
     || { retry_later "Chapitre $num"; return; }
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent plus le contrôle après vérification. Journal : $work"; return

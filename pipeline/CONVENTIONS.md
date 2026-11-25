@@ -111,6 +111,8 @@ Les classes `t0` à `t5` donnent la couleur d'une section : `t0` ardoise (princi
 
 ## Les cartes
 
+**D'abord l'existant, ensuite la stratégie.** Avant d'écrire une carte, parcours `existant/` (tous les paquets de l'app) et `existant/archive/` (les cartes retirées par Hugo). Ne crée pas de doublon, même reformulé, même dans un autre chapitre, et ne recrée pas une carte archivée. Décide ensuite combien de cartes la matière justifie vraiment, en visant la résolution des cas d'examen, puis rédige.
+
 Format attendu par l'app de révision (voir `modele/cartes-modele.json`) :
 
 ```json
@@ -138,7 +140,7 @@ Règles :
 - **Un vrai cas pratique (`cas`)** se distingue d'une carte de règle : un énoncé de 3 à 5 phrases avec des parties nommées, des dates et des montants, comme à l'examen, puis la question, en gras, dans un dernier paragraphe séparé par une ligne vide. La réponse suit exactement quatre lignes : `**Problème** : …`, `**Règle** : …` (conditions et articles), `**Application** : …` (chaque condition confrontée aux faits), `**Conclusion** : …` (réponse nette et conseil). L'app affiche ces quatre étapes séparément. Calque la forme des questions des annales (« Peut-il engager la responsabilité… ? », « Cette clause peut-elle produire effet… ? »), mais invente les faits ; ne reprends ni les annales ni les exercices du professeur.
 - **Tri par priorité :** classe chaque carte. **Essentiel** : la règle qui tranche un cas probable à l'examen (ses conditions, sa sanction, son délai), et ce que les **annales du DSCG UE 1** demandent (les rappels de droit commun des contrats y tombent : devoir d'information, vices du consentement, résolution, force majeure, exception d'inexécution, déséquilibre significatif, définitions et qualification des contrats). Les exercices du professeur, parfois volontairement simples, ne suffisent pas à juger. Les nuances, arrêts secondaires, cas rares et détails hors cours restent dans la fiche, **sans carte** : Hugo ajoutera lui-même des cartes en révision s'il en a besoin. Une notion ni au cours ni au programme, sans usage pour un cas, n'a pas de carte.
 - **`source` :** l'article ou l'arrêt. C'est le seul endroit où figure le numéro d'article.
-- **Arrêts :** chaque arrêt de la fiche, et en particulier chaque arrêt d'une fiche de jurisprudence du professeur, a sa propre carte : la question nomme l'arrêt (nom ou juridiction et date), la réponse donne sa solution en une à deux lignes. Un arrêt cité seulement dans `source` ne compte pas. Si la fiche du professeur se trompe sur un arrêt (formation, date), la carte prend la référence exacte et la synthèse le signale.
+- **Arrêts :** un arrêt important (en particulier d'une fiche de jurisprudence du professeur) a sa propre carte, **sauf si sa règle a déjà une carte** dans un paquet de l'app ou dans l'archive : il est alors seulement cité dans la fiche. La question nomme l'arrêt (nom ou juridiction et date), la réponse donne sa solution en une à deux lignes. Si la fiche du professeur se trompe sur un arrêt (formation, date), la carte prend la référence exacte et la synthèse le signale.
 - **Couverture :** chaque condition de chaque majeure, chaque sanction et chaque piège de la fiche a au moins une carte.
 - **Proportions indicatives :** 6 à 10 vrais `cas` par chapitre, un `memo` de méthode quand le chapitre a une démarche propre, le reste en `regle`.
 - **Volume indicatif :** 80 à 120 cartes par chapitre, toutes essentielles. Un détail de la fiche peut ne pas avoir de carte.

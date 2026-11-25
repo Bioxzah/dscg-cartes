@@ -1,5 +1,5 @@
 {
- "note": "Cartes retirées de l'app le 2026-11-20 (tri sur les annales). Pour en remettre une : la recopier telle quelle dans le paquet, avec le même id ; la progression revient.",
+ "note": "Cartes retirées de l'app le 2026-11-20 (tri sur les annales). Pour en remettre une : la recopier telle quelle dans le paquet, avec le même id ; la progression revient. Ajout le 2026-11-25 : doublons et détails des mises à jour du pipeline (cartes 251 à 285).",
  "deck": "ue1-ch02",
  "cards": [
   {
@@ -505,6 +505,158 @@
    "question": "Le juge peut-il écarter une clause abusive que le consommateur n'a pas invoquée ?",
    "reponse": "Oui, il doit la relever d'office.",
    "source": "C. consom., R. 632-1"
+  },
+  {
+   "id": "ue1-ch02-251",
+   "theme": "cadre",
+   "type": "regle",
+   "question": "Que décide l'Assemblée plénière le 1er décembre 1995 sur le prix des contrats-cadres ?",
+   "reponse": "Un prix non fixé à la conclusion n'entraîne pas la nullité du contrat-cadre. Seul l'abus dans la fixation du prix est sanctionné : dommages-intérêts ou résiliation.",
+   "source": "Ass. plén., 1er déc. 1995"
+  },
+  {
+   "id": "ue1-ch02-252",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que décide la chambre mixte le 21 juillet 2023 sur le délai de l'action en garantie des vices cachés ?",
+   "reponse": "Le délai de **2 ans** à compter de la découverte est une prescription (une expertise judiciaire la suspend). L'action reste enfermée dans un butoir de **20 ans** à compter de la vente.",
+   "source": "Ch. mixte, 21 juill. 2023"
+  },
+  {
+   "id": "ue1-ch02-253",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que retient la chambre commerciale le 17 janvier 2024 sur le vendeur professionnel ?",
+   "reponse": "Il est irréfragablement présumé connaître le vice et doit tous les dommages-intérêts. Mais il faut d'abord vérifier qu'il vend **habituellement** ce type de bien : être un professionnel ne suffit pas.",
+   "source": "Com., 17 janv. 2024, n° 21-23.909"
+  },
+  {
+   "id": "ue1-ch02-255",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Que décide la 1re chambre civile le 3 septembre 2025 sur l'action du sous-acquéreur contre le vendeur originaire ?",
+   "reponse": "La connaissance du vice s'apprécie dans la personne du **premier acquéreur**, à la date de la première vente : le sous-acquéreur exerce l'action de celui-ci.",
+   "source": "1re civ., 3 sept. 2025, n° 24-11.383"
+  },
+  {
+   "id": "ue1-ch02-256",
+   "theme": "vente",
+   "type": "regle",
+   "question": "Le dernier acheteur d'une machine revendue deux fois peut-il agir en garantie des vices cachés contre le fabricant qui l'a vendue en premier ?",
+   "reponse": "Oui : l'action en garantie suit la chose. Le sous-acquéreur dispose d'une action contractuelle directe contre le vendeur originaire.",
+   "source": "Jurisprudence constante (Ass. plén., 7 févr. 1986)"
+  },
+  {
+   "id": "ue1-ch02-257",
+   "theme": "entreprise",
+   "type": "regle",
+   "question": "Que définit l'arrêt Société générale (chambre sociale, 13 novembre 1996) ?",
+   "reponse": "Le **lien de subordination** : travail sous l'autorité d'un employeur qui donne des ordres, en contrôle l'exécution et sanctionne les manquements. C'est ce qui sépare le salarié du prestataire.",
+   "source": "Soc., 13 nov. 1996, Société générale"
+  },
+  {
+   "id": "ue1-ch02-258",
+   "theme": "entreprise",
+   "type": "regle",
+   "question": "Que décide l'arrêt Besse (Assemblée plénière, 12 juillet 1991) ?",
+   "reponse": "Le sous-traitant n'est pas lié par contrat au maître de l'ouvrage : celui-ci agit contre lui en responsabilité **extracontractuelle**.",
+   "source": "Ass. plén., 12 juill. 1991, Besse"
+  },
+  {
+   "id": "ue1-ch02-261",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Le Code européen de déontologie de la franchise s'impose-t-il au franchiseur ?",
+   "reponse": "Pas par lui-même : c'est un recueil de bonnes pratiques de la profession, pas un usage ayant force obligatoire. Il ne s'impose que si le contrat y renvoie.",
+   "source": "Doctrine ; fiche du professeur (Com., 7 mars 2018)"
+  },
+  {
+   "id": "ue1-ch02-269",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un pacte de préférence ?",
+   "reponse": "Le contrat par lequel une partie s'engage à proposer **prioritairement** au bénéficiaire de traiter avec lui, pour le cas où elle déciderait de contracter.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-270",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Quelle différence entre pacte de préférence et promesse unilatérale de vente ?",
+   "reponse": "Dans le pacte, le promettant reste libre de vendre ou non : il promet seulement une priorité. Dans la promesse, il a déjà consenti à vendre ; le bénéficiaire n'a plus qu'à lever l'option.",
+   "source": "Art. 1123, 1124"
+  },
+  {
+   "id": "ue1-ch02-271",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Le promettant vend à un tiers sans proposer d'abord au bénéficiaire du pacte de préférence. Que doit-il au bénéficiaire ?",
+   "reponse": "Des **dommages-intérêts** pour le préjudice subi, que le tiers ait connu ou non le pacte.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-272",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "À quelles conditions le bénéficiaire d'un pacte de préférence violé obtient-il la nullité du contrat conclu avec le tiers ou sa substitution ?",
+   "reponse": "Le tiers devait connaître, en contractant, l'**existence du pacte** et l'**intention du bénéficiaire** de s'en prévaloir. Les deux conditions sont cumulatives.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-273",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Qui doit prouver que le tiers connaissait le pacte de préférence et l'intention du bénéficiaire ?",
+   "reponse": "Le bénéficiaire qui demande la nullité ou la substitution. Connaître le pacte ne fait pas présumer la connaissance de son intention.",
+   "source": "Art. 1353 ; 3e civ., 3 nov. 2011"
+  },
+  {
+   "id": "ue1-ch02-274",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Que décide la chambre mixte le 26 mai 2006 sur le pacte de préférence ?",
+   "reponse": "Le bénéficiaire peut obtenir la nullité du contrat conclu avec le tiers et sa substitution, à condition que le tiers ait connu l'existence du pacte et l'intention du bénéficiaire de s'en prévaloir.",
+   "source": "Ch. mixte, 26 mai 2006, n° 03-19.376"
+  },
+  {
+   "id": "ue1-ch02-276",
+   "theme": "mecanismes",
+   "type": "regle",
+   "question": "Le bénéficiaire d'un pacte de préférence, interrogé par écrit par le tiers, ne répond pas dans le délai. Conséquence ?",
+   "reponse": "Il ne peut plus agir en nullité ni en substitution, si l'écrit l'en avait averti. Il garde ses dommages-intérêts contre le promettant.",
+   "source": "Art. 1123"
+  },
+  {
+   "id": "ue1-ch02-280",
+   "theme": "mecanismes",
+   "type": "cas",
+   "question": "En 2023, la SCI HANGAR consent à sa voisine, la société ROUTEX, un pacte de préférence sur son entrepôt. En janvier 2026, ROUTEX écrit au gérant de la société STOCKA pour l'informer de ce pacte et lui annoncer qu'elle achètera l'entrepôt dès qu'il sera mis en vente. Le 2 mars 2026, la SCI vend l'entrepôt 600 000 € à STOCKA sans l'avoir proposé à ROUTEX.\n\n**ROUTEX peut-elle obtenir l'entrepôt à la place de STOCKA ?**",
+   "reponse": "**Problème** : le bénéficiaire d'un pacte de préférence violé peut-il se substituer au tiers acquéreur ?\n**Règle** : le promettant qui contracte avec un tiers en violation du pacte doit des dommages-intérêts. Si le tiers connaissait l'existence du pacte et l'intention du bénéficiaire de s'en prévaloir, le bénéficiaire peut aussi agir en nullité ou demander au juge de le substituer au tiers (art. 1123 ; Ch. mixte, 26 mai 2006). Le bénéficiaire prouve cette double connaissance.\n**Application** : il existe un pacte et la SCI a vendu sans proposer d'abord à ROUTEX. Le courrier de janvier 2026 prouve que le gérant de STOCKA connaissait le pacte et l'intention de ROUTEX d'acheter. STOCKA n'a pas utilisé l'action interrogatoire.\n**Conclusion** : ROUTEX peut demander au juge de prendre la place de STOCKA, aux conditions de la vente (600 000 €), ou la nullité de la vente, et des dommages-intérêts contre la SCI. Conseil : conserver le courrier de janvier, preuve décisive.",
+   "source": "Art. 1123 ; Ch. mixte, 26 mai 2006"
+  },
+  {
+   "id": "ue1-ch02-281",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que juge la chambre commerciale le 19 mars 2025 sur les actes préparatoires d'un franchisé ?",
+   "reponse": "Le franchisé peut préparer une activité concurrente (créer une société, déposer une marque) sans violer sa clause de non-concurrence ni la loyauté et la bonne foi, si l'activité ne **débute effectivement** qu'après la fin du contrat et de son engagement de non-concurrence.",
+   "source": "Com., 19 mars 2025, n° 23-22.925"
+  },
+  {
+   "id": "ue1-ch02-283",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que risque le franchiseur qui résilie immédiatement le contrat pour de simples actes préparatoires du franchisé ?",
+   "reponse": "La résiliation est injustifiée, faute d'inexécution grave : ses demandes d'indemnité sont rejetées et, la résolution unilatérale étant à ses risques, il doit réparer le préjudice causé au franchisé (**dommages-intérêts** ; dans l'arrêt, 5 000 € pour la coupure brutale des outils informatiques).",
+   "source": "Art. 1224, 1226 ; Com., 19 mars 2025"
+  },
+  {
+   "id": "ue1-ch02-285",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Que vaut une clause qui limite l'activité de l'ancien franchisé après la fin d'un contrat de distribution de commerce de détail ?",
+   "reponse": "Elle est **réputée non écrite**, sauf si celui qui l'invoque prouve qu'elle remplit quatre conditions cumulatives. Sinon elle tombe en entier.",
+   "source": "C. com., L. 341-2 ; Com., 5 juin 2024"
   }
  ]
 }
