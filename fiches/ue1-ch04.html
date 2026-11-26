@@ -1,0 +1,513 @@
+<title>Fiche UE1 Ch4 Commerce électronique</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout : chaque notion est une bande à trois colonnes fixes, Majeure | Mineure | Conclusion.
+   La position ne change jamais, pour que la mémoire spatiale aide. Une teinte par étape de la vie du contrat. */
+:root{
+  --bg:#f4f6fa; --surface:#ffffff; --ink:#172033; --muted:#566178; --line:#dce1ea; --wash:#eef1f6;
+  --s0:#44506a; --s0s:#e9ecf2;
+  --s1:#0b7a75; --s1s:#dff3f1;
+  --s2:#2a5bd7; --s2s:#e3ebfd;
+  --s3:#7440c4; --s3s:#efe6fb;
+  --s4:#33793a; --s4s:#e3f2e4;
+  --s5:#bf3350; --s5s:#fbe5ea;
+  --nul:#b3261e; --nuls:#fde7e5; --di:#8a5a00; --dis:#fdf0d0; --exe:#1f6f43; --exes:#def3e6; --cl:#5b3fb5; --cls:#ebe6fb;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding-block:28px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:36px}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--s2);outline-offset:2px;border-radius:4px}
+
+/* En-tête */
+.top{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.lede{max-width:62ch;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px;color:var(--muted)}
+
+/* Pastilles de sanction : la couleur dit la famille */
+.chip{display:inline-block;font-weight:700;font-size:13.5px;line-height:1.25;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.chip.nul{background:var(--nuls);color:var(--nul)}
+.chip.di{background:var(--dis);color:var(--di)}
+.chip.exe{background:var(--exes);color:var(--exe)}
+.chip.cl{background:var(--cls);color:var(--cl)}
+.art{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.stage:not(#arrets) .art{display:none}
+.core{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--h);border:1.5px solid var(--h);border-radius:4px;padding:1px 6px;white-space:nowrap}
+
+/* Parcours : les 4 questions */
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.path a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;border-top:5px solid var(--h)}
+.path b{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2}
+.path span{font-size:13.5px;color:var(--muted)}
+.path .no{color:var(--h);font-weight:700}
+
+/* Méthode */
+.method{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.method li{padding:12px 14px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.method li:first-child{border-left:0}
+.method b{font-family:var(--display);font-weight:600;font-size:16px}
+.method span{font-size:13.5px;color:var(--muted)}
+.method i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Étapes */
+.stage{display:flex;flex-direction:column;gap:16px;--h:var(--s0);--hs:var(--s0s)}
+.t0{--h:var(--s0);--hs:var(--s0s)} .t1{--h:var(--s1);--hs:var(--s1s)} .t2{--h:var(--s2);--hs:var(--s2s)}
+.t3{--h:var(--s3);--hs:var(--s3s)} .t4{--h:var(--s4);--hs:var(--s4s)} .t5{--h:var(--s5);--hs:var(--s5s)}
+.stage>h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.01em;line-height:1.1}
+.stage>h2 .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--h);color:var(--surface);font-size:20px}
+.stage>h2 small{font-family:var(--body);font-weight:400;font-size:14px;color:var(--muted);letter-spacing:0}
+
+/* Carte syllogisme */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card>header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 18px 0}
+.card h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;margin-right:auto}
+.q{padding:6px 18px 14px;font-size:17px;color:var(--h);font-weight:700}
+.syl{display:grid;grid-template-columns:1.25fr 1fr 1fr;border-top:1px solid var(--line)}
+.zone{padding:14px 18px 16px;min-width:0;border-left:1px solid var(--line);position:relative}
+.zone:first-child{border-left:0}
+.zone h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.zone h4 b{color:var(--h);font-weight:500}
+.maj{background:var(--hs)}
+.zbody{display:flex;flex-direction:column;gap:8px}
+.zbody ul{display:flex;flex-direction:column;gap:6px}
+.check li{padding-left:26px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.28em;width:15px;height:15px;border:2px solid var(--h);border-radius:3px}
+.dots li{padding-left:16px;position:relative}
+.dots li::before{content:"";position:absolute;left:2px;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--h)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.never{color:var(--muted);font-size:15px}
+.foot{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.ex,.trap,.memo{padding:10px 18px;font-size:15.5px}
+.ex+.trap,.ex+.memo,.trap+.memo,.memo+.ex,.memo+.trap,.trap+.ex{border-top:1px dashed var(--line)}
+.tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:8px;padding:1px 6px;border-radius:4px;background:var(--wash);color:var(--muted)}
+.trap .tag{background:var(--nuls);color:var(--nul)}
+.memo .tag{background:var(--hs);color:var(--h)}
+.memo b{font-family:var(--display);font-weight:800;letter-spacing:.04em;color:var(--h)}
+
+/* Tuiles */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tiles.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tile h3{font-family:var(--display);font-weight:600;font-size:19px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.tile p{font-size:15.5px}
+
+/* Tableaux de comparaison */
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+caption{caption-side:top;text-align:left;padding:12px 16px 10px;font-family:var(--display);font-weight:600;font-size:19px}
+th,td{text-align:left;vertical-align:top;padding:9px 14px;border-top:1px solid var(--line)}
+thead th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--hs)}
+tbody th{font-weight:700;min-width:8.5em;color:var(--h)}
+td .chip{margin:1px 0}
+td .art{margin-left:2px}
+
+.eg{font-size:14.5px;color:var(--muted)}
+.eg b{color:var(--h)}
+td.eg{font-size:14.5px;color:var(--muted);min-width:11em}
+.note{font-size:15.5px;color:var(--muted);max-width:75ch}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+footer a{text-decoration:underline;text-underline-offset:2px}
+
+/* Mode test : on cache la règle et la sanction, on récite, on touche pour vérifier */
+#toggle{position:fixed;z-index:20;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));font:700 16px var(--body);color:var(--surface);background:var(--ink);border:0;border-radius:999px;padding:12px 20px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#toggle[aria-pressed="true"]{background:var(--s5);color:var(--surface)}
+body.test .hideable{cursor:pointer}
+body.test .hideable:not(.shown)>.zbody{visibility:hidden}
+body.test .zone.hideable:not(.shown)::after{content:"Récite, puis touche pour vérifier";position:absolute;inset:38px 18px auto 18px;font-size:14.5px;color:var(--muted);border:1.5px dashed var(--h);border-radius:8px;padding:10px 12px;background:var(--surface)}
+body.test tbody tr{cursor:pointer}
+body.test tbody tr:not(.shown) td{color:transparent}
+body.test tbody tr:not(.shown) td *{visibility:hidden}
+body.test tbody tr:not(.shown) td{background:repeating-linear-gradient(135deg,transparent 0 7px,var(--wash) 7px 9px)}
+body.test .hid:not(.shown){cursor:pointer}
+body.test .hid:not(.shown) .v{visibility:hidden}
+.teststate{display:none}
+body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;color:var(--muted)}
+
+@media (max-width:820px){
+  .path{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .method{grid-template-columns:1fr}
+  .method li{border-left:0;border-top:1px solid var(--line);flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .method li:first-child{border-top:0}
+  .syl{grid-template-columns:1fr}
+  .zone{border-left:0;border-top:1px solid var(--line)}
+  .zone:first-child{border-top:0}
+  .tiles,.tiles.two{grid-template-columns:1fr}
+  .tw table{min-width:620px}
+}
+@media (max-width:460px){ .path{grid-template-columns:1fr} }
+@media print{
+  #toggle,.teststate{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .wrap{gap:18px;padding-block:0}
+  .card,.tile,.tw,.path a,.method{break-inside:avoid}
+  .stage>h2{break-after:avoid}
+  body.test .hideable>.zbody,body.test td *{visibility:visible!important}
+}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">DSCG · UE 1 · Chapitre 4</p>
+  <h1>Commerce électronique</h1>
+  <p class="lede">Le contrat conclu en ligne, la preuve électronique, le nom de domaine et les droits sur le site, la responsabilité de l'hébergeur et de l'éditeur. Chaque notion est rédigée comme à l'examen : la règle à gauche, ce qu'il faut chercher dans les faits au milieu, la solution à droite.</p>
+  <div class="legend">
+    <span>Sanctions :</span>
+    <span class="chip nul">Le contrat ou l'acte disparaît</span>
+    <span class="chip di">De l'argent</span>
+    <span class="chip exe">Le contrat est maintenu</span>
+    <span class="chip cl">Une clause ou un acte est neutralisé</span>
+    <span class="core" style="--h:var(--s0)">Par cœur</span>
+  </div>
+</header>
+
+<nav class="path" aria-label="Les quatre questions">
+  <a class="t2" href="#commande"><span class="no">Question 1</span><b>La commande en ligne est-elle valable ?</b><span>Double clic, bouton de paiement, preuve.</span></a>
+  <a class="t3" href="#apres"><span class="no">Question 2</span><b>Le client peut-il en sortir ?</b><span>Livraison, rétractation, résiliation.</span></a>
+  <a class="t4" href="#domaine"><span class="no">Question 3</span><b>Le nom ou le site est-il protégé ?</b><span>Marque, droit d'auteur, concurrence déloyale.</span></a>
+  <a class="t5" href="#site"><span class="no">Question 4</span><b>Qui répond d'un contenu en ligne ?</b><span>Hébergeur ou éditeur.</span></a>
+</nav>
+
+<ol class="method" aria-label="Le syllogisme en cinq étapes">
+  <li><i>1</i><b>Faits</b><span>Parties, contrat, dates.</span></li>
+  <li><i>2</i><b>Problème</b><span>La question de droit, en une phrase.</span></li>
+  <li><i>3</i><b>Majeure</b><span>La règle, l'article, les conditions.</span></li>
+  <li><i>4</i><b>Mineure</b><span>Chaque condition face aux faits.</span></li>
+  <li><i>5</i><b>Conclusion</b><span>La réponse, puis la sanction.</span></li>
+</ol>
+
+<!-- 1 -->
+<section class="stage t2" id="commande">
+  <h2><span class="n">1</span>Conclure un contrat en ligne</h2>
+  <div class="card"><div class="foot">
+    <p class="memo"><span class="tag">Réflexe</span>Le contrat en ligne reste un contrat : <b>3 C</b> du droit commun (consentement, capacité, contenu). Les règles du numérique <b>s'ajoutent</b>. Qualifie d'abord les parties : <b>consommateur</b> (personne physique hors de son activité) ou <b>professionnel</b> ? Le Code de la consommation ne joue que dans le premier cas.</p>
+  </div></div>
+
+  <article class="card">
+    <header><h3>Double clic et bouton de paiement</h3><span class="core">Par cœur</span></header>
+    <p class="q">Le client est-il engagé par la commande qu'il a passée sur le site ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le contrat électronique n'est <b>valablement conclu</b> que si le client a pu <b>vérifier</b> le détail et le prix total de sa commande, et <b>corriger</b> ses erreurs, avant de la <b>confirmer</b> (double clic).</p><p>Face à un consommateur, le bouton final doit indiquer clairement l'<b>obligation de payer</b> : « commande avec obligation de paiement » ou formule analogue.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Récapitulatif avant validation ?</li><li>Possibilité de corriger ?</li><li>Libellé exact du bouton final</li><li>Accusé de réception envoyé sans délai ?</li><li>Contrat entre professionnels ou par simples courriels ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip nul">Contrat non valablement conclu</span></div><p>Le client conteste son engagement et récupère ce qu'il a payé.</p><div class="chips"><span class="chip di">Amende administrative</span></div><p>Jusqu'à 15 000 € (personne physique) ou 75 000 € (société), prononcée par la DGCCRF.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un site de cours en ligne fait valider l'abonnement par un bouton « Continuer », puis débite 240 €. Le consommateur n'a pas reconnu son obligation de payer : il peut contester.</p>
+      <p class="trap"><span class="tag">Piège</span>Entre <b>professionnels</b>, une clause peut écarter le double clic et les informations sur les étapes de la commande. De même pour un contrat conclu <b>uniquement par courriels</b>. Jamais face à un consommateur sur un site.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Le parcours de commande, étape par étape</caption>
+    <thead><tr><th>Étape</th><th>Ce que doit le professionnel</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Avant</th><td>Informations précontractuelles lisibles : caractéristiques, prix, délai de livraison, identité, garanties, <b>droit de rétractation</b> (ou son absence) et coût du renvoi. Moyens de paiement et restrictions de livraison <b>au plus tard au début de la commande</b>.</td><td class="eg">« Livraison en France métropolitaine uniquement. Carte bancaire et virement. »</td></tr>
+      <tr><th>Conditions du contrat</th><td>Les mettre à disposition d'une façon qui permet de les <b>conserver et reproduire</b>. Indiquer les étapes, les moyens de corriger ses erreurs, les langues, l'archivage.</td><td class="eg">CGV téléchargeables en PDF.</td></tr>
+      <tr><th>Juste avant de valider</th><td>Rappeler caractéristiques essentielles, prix, durée du contrat et durée minimale d'engagement.</td><td class="eg">« Abonnement 12 mois, 20 € / mois, engagement minimal 12 mois. »</td></tr>
+      <tr><th>Validation</th><td>Double clic, puis bouton « commande avec obligation de paiement ».</td><td class="eg">Récapitulatif modifiable, puis « Commander et payer ».</td></tr>
+      <tr><th>Juste après</th><td><b>Accusé de réception</b> électronique, sans délai injustifié. Il est reçu dès que le client peut y accéder.</td><td class="eg">Courriel automatique « Nous avons bien reçu votre commande ».</td></tr>
+      <tr><th>Confirmation</th><td>Sur <b>support durable</b>, au plus tard à la livraison ou avant le début du service, avec le formulaire de rétractation.</td><td class="eg">Courriel avec le contrat en PDF joint.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot">
+    <p class="ex"><span class="tag">Support durable</span>Tout moyen qui permet de stocker une information adressée personnellement, de s'y reporter et de la <b>reproduire à l'identique</b> : courriel, PDF. Une page web que le vendeur peut modifier n'en est pas un.</p>
+    <p class="trap"><span class="tag">Preuve</span>C'est au <b>professionnel</b> de prouver qu'il a donné l'information. Conseil : garder les traces du parcours de commande (captures horodatées, journaux).</p>
+  </div></div>
+</section>
+
+<!-- 2 -->
+<section class="stage t1" id="preuve">
+  <h2><span class="n">2</span>Écrit et signature électroniques</h2>
+  <article class="card">
+    <header><h3>La signature électronique</h3><span class="core">Par cœur</span></header>
+    <p class="q">Le client peut-il prouver l'engagement signé en ligne par son cocontractant, qui le conteste ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>L'écrit électronique a la <b>même force probante</b> que le papier si son auteur est <b>identifié</b> et son <b>intégrité</b> garantie.</p><p>La signature identifie l'auteur et exprime son consentement. Électronique, elle doit reposer sur un <b>procédé fiable</b> d'identification, lié à l'acte. La fiabilité est <b>présumée</b> pour la seule signature <b>qualifiée</b>.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quel procédé : case, image, certificat ?</li><li>Niveau : simple, avancé, qualifié</li><li>Traces : horodatage, code SMS, journal de preuve</li><li>Le document a-t-il pu être modifié ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la preuve</h4><div class="zbody"><p><b>Qualifiée</b> : présumée fiable, c'est à l'adversaire de prouver le contraire.</p><p><b>Simple ou avancée</b> : recevable, mais celui qui l'invoque prouve sa fiabilité.</p></div></div>
+    </div>
+    <div class="foot"><p class="ex"><span class="tag">Exemple</span>Un loueur produit un PDF portant l'image de la signature de son client, apposée via un lien SMS. Signature simple : il doit prouver par d'autres traces que c'est bien le client qui a signé.</p></div>
+  </article>
+  <div class="tw"><table>
+    <caption>Trois niveaux de signature (règlement européen eIDAS)</caption>
+    <thead><tr><th>Niveau</th><th>Définition</th><th>Valeur</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Simple</th><td>Tout procédé électronique de signature.</td><td>Recevable, fiabilité à prouver.</td><td class="eg">Case « J'accepte », signature scannée.</td></tr>
+      <tr><th>Avancée</th><td>Liée au signataire, l'identifie, créée sous son seul contrôle, révèle toute modification ultérieure.</td><td>Fiabilité plus facile à prouver, mais non présumée.</td><td class="eg">Plateforme de signature avec code reçu par SMS.</td></tr>
+      <tr><th>Qualifiée</th><td>Avancée, créée avec un dispositif qualifié et un certificat qualifié délivré par un prestataire agréé.</td><td>Fiabilité <b>présumée</b>, équivalente à la signature manuscrite.</td><td class="eg">Clé ou carte de signature certifiée.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section class="stage t3" id="apres">
+  <h2><span class="n">3</span>Après la commande : livraison, rétractation, résiliation</h2>
+  <div class="tiles">
+    <div class="tile"><h3>Livraison</h3><p>Sans date convenue : au plus tard <b>30 jours</b> après le contrat. Retard : le consommateur fixe un délai supplémentaire raisonnable, puis <span class="chip nul">Résolution</span> par écrit. Remboursement sous 14 jours.</p><p class="eg"><b>Ex.</b> Canapé promis « sous 3 semaines », toujours absent après mise en demeure : le client résout la vente.</p></div>
+    <div class="tile"><h3>Conservation</h3><p>Contrat en ligne d'au moins <b>120 €</b> : le professionnel le conserve <b>10 ans</b> et le donne au client sur demande. C'est une obligation de preuve, pas une condition de validité.</p><p class="eg"><b>Ex.</b> Une cuisine à 9 000 € livrée dans 2 mois : conservation jusqu'à la livraison, puis 10 ans.</p></div>
+    <div class="tile"><h3>Résiliation en ligne</h3><p>Un abonnement souscrit en ligne se résilie par une <b>fonctionnalité gratuite</b> « résilier votre contrat », facile d'accès. Le professionnel confirme la date de fin. Sinon : <span class="chip di">Amende administrative</span></p><p class="eg"><b>Ex.</b> Une salle de sport en ligne impose un courrier recommandé pour résilier : interdit.</p></div>
+  </div>
+
+  <article class="card">
+    <header><h3>Droit de rétractation</h3><span class="core">Par cœur</span></header>
+    <p class="q">Le consommateur peut-il revenir sur son achat en ligne, et que récupère-t-il ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le <b>consommateur</b> qui contracte à distance avec un professionnel a <b>14 jours</b> pour se rétracter, <b>sans motif</b> ni pénalité. Délai à compter de la <b>réception</b> du bien, ou de la <b>conclusion</b> du contrat de service.</p><p>Faute d'information sur ce droit : délai prolongé de <b>12 mois</b>. Nombreuses <b>exceptions</b>.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Consommateur face à un professionnel ?</li><li>Bien ou service ? Date de réception ou de conclusion</li><li>Information donnée sur ce droit ?</li><li>Une exception joue-t-elle ?</li><li>Service commencé à sa demande ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> les effets</h4><div class="zbody"><div class="chips"><span class="chip nul">Contrat anéanti</span></div><ul class="dots"><li>Renvoi du bien sous 14 jours après sa décision</li><li><span class="chip di">Remboursement</span> sous 14 jours, livraison standard comprise</li><li>Service entamé à sa demande : il paie la part fournie</li></ul></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Formation en ligne de 20 séances à 600 €, commencée à la demande de la cliente. Elle se rétracte après 5 séances, dans le délai : elle paie 150 €, on lui rend 450 €.</p>
+      <p class="trap"><span class="tag">Piège</span>Une <b>société</b> qui achète en ligne pour son activité n'a <b>pas</b> de droit de rétractation. L'extension aux entreprises de 5 salariés au plus ne vaut que pour les contrats conclus <b>hors établissement</b> (démarchage).</p>
+      <p class="memo"><span class="tag">Réflexe</span>Ne conclus jamais au droit de rétractation sans avoir <b>cherché l'exception</b>.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Exercice et effets de la rétractation</caption>
+    <thead><tr><th>Question</th><th>Règle</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Comment se rétracter</th><td>Formulaire type, toute déclaration sans ambiguïté, ou la <b>fonctionnalité de rétractation</b> en ligne, gratuite, que tout site doit proposer depuis le 19 juin 2026. Le consommateur prouve qu'il s'est rétracté.</td><td class="eg">Un bouton « Renoncer au contrat ici » dans l'espace client, avec accusé de réception daté.</td></tr>
+      <tr><th>Remboursement</th><td>Sous 14 jours. Pour un bien, le professionnel peut attendre sa <b>récupération</b> ou la <b>preuve de son expédition</b>. Retard : sommes majorées.</td><td class="eg">Le client poste le colis le 5 et envoie le récépissé : remboursement dû sans attendre l'arrivée.</td></tr>
+      <tr><th>Frais de renvoi</th><td>À la charge du consommateur s'il en a été informé, sauf si le professionnel les prend en charge.</td><td class="eg">CGV : « retour à vos frais ».</td></tr>
+      <tr><th>Usure du bien</th><td>Le consommateur répond de la dépréciation due à un usage au-delà du simple essai.</td><td class="eg">Une robe portée à une soirée, puis renvoyée : le vendeur retient la perte de valeur.</td></tr>
+      <tr><th>Exceptions</th><td>Bien sur mesure ou périssable, contenu numérique téléchargé avec accord exprès et renonciation, service pleinement exécuté avec renonciation, loisir ou hébergement à date fixe, etc.</td><td class="eg">Jeu vidéo téléchargé après avoir coché « je renonce à mon droit de rétractation » : pas de rétractation.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section class="stage t4" id="domaine">
+  <h2><span class="n">4</span>Nom de domaine, marque et concurrence déloyale</h2>
+  <article class="card">
+    <header><h3>Nom de domaine contre marque</h3><span class="core">Par cœur</span></header>
+    <p class="q">Le titulaire d'une marque peut-il récupérer le nom de domaine qui la reprend ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le nom de domaine s'attribue au <b>premier demandeur</b>, mais il ne neutralise pas les <b>droits antérieurs</b>.</p><p>Il peut être supprimé ou transféré s'il porte atteinte à une marque, sauf <b>intérêt légitime</b> et <b>bonne foi</b> de son titulaire. Utiliser sans autorisation un signe identique ou similaire à une marque, pour des produits identiques ou similaires avec risque de confusion, est une <b>contrefaçon</b>.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Marque déposée, et avant le nom ?</li><li>Produits désignés : mêmes ou similaires ?</li><li>Signe identique ou proche ?</li><li>Activité réelle du titulaire du nom ?</li><li>Offre de revente, publicité pour des concurrents : mauvaise foi</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip cl">Transfert ou suppression du nom</span></div><p>Auprès de l'AFNIC (procédure rapide, hors tribunal) pour le « .fr », ou devant le juge.</p><div class="chips"><span class="chip di">Dommages-intérêts</span></div><p>Avec interdiction d'usage, par l'action en contrefaçon.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un particulier sans activité enregistre le nom de la marque d'un pâtissier, puis lui propose de le racheter 15 000 € : mauvaise foi, transfert ordonné.</p>
+      <p class="trap"><span class="tag">Piège</span>La marque est protégée seulement pour les produits et services <b>désignés au dépôt</b> (spécialité). Exception : la marque <b>renommée</b>, protégée au-delà.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Trois droits, à ne pas confondre</caption>
+    <thead><tr><th>Critère</th><th>Nom de domaine</th><th>Marque</th><th>Droit d'auteur</th></tr></thead>
+    <tbody>
+      <tr><th>Ce qui est protégé</th><td>Une adresse de site.</td><td>Un signe qui distingue des produits ou services.</td><td>Une œuvre de l'esprit <b>originale</b> (empreinte de la personnalité de l'auteur).</td></tr>
+      <tr><th>Comment naît le droit</th><td>Enregistrement, premier arrivé, premier servi.</td><td>Dépôt à l'INPI : signe distinctif, licite, disponible.</td><td>Par la seule création. Aucun dépôt.</td></tr>
+      <tr><th>Durée</th><td>Durée d'enregistrement, renouvelable.</td><td>10 ans, renouvelable sans limite.</td><td>Vie de l'auteur + 70 ans. Droit moral perpétuel.</td></tr>
+      <tr><th>Atteinte</th><td>Pas de monopole propre : il faut un autre fondement.</td><td>Contrefaçon.</td><td>Contrefaçon.</td></tr>
+      <tr><th>Exemple</th><td class="eg">« fleurs-lyon.fr »</td><td class="eg">Le nom « Brioline » déposé pour des pâtisseries.</td><td class="eg">Les photos et la maquette graphique originales du site.</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="card">
+    <header><h3>Concurrence déloyale et parasitisme</h3></header>
+    <p class="q">L'entreprise peut-elle agir contre un concurrent qui imite son site ou profite de ses efforts, sans droit privatif ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Sur le fondement de la <b>responsabilité civile</b> : une <b>faute</b> contraire aux usages loyaux du commerce, un <b>préjudice</b>, un <b>lien de causalité</b>.</p><p><b>Parasitisme</b> : se placer dans le sillage d'autrui pour profiter de ses efforts. Il faut une <b>valeur économique individualisée</b> et la <b>volonté</b> d'en profiter. Ni confusion ni concurrence exigées.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Imitation créant une confusion ?</li><li>Dénigrement, désorganisation ?</li><li>Valeur précise reprise (investissements, notoriété) ?</li><li>Préjudice chiffrable</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip di">Dommages-intérêts</span></div><p>Et cessation des agissements. Avec la contrefaçon si le même acte atteint aussi une marque : préjudice distinct, sans double indemnisation.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un vendeur de matériel de ski copie la présentation et les fiches d'un comparateur de séjours qui y a investi 200 000 €. Aucune confusion possible, mais parasitisme.</p>
+      <p class="memo"><span class="tag">Mémo</span>Quatre formes : <b>C D D P</b> : <b>C</b>onfusion, <b>D</b>énigrement, <b>D</b>ésorganisation, <b>P</b>arasitisme.</p>
+      <p class="memo"><span class="tag">Réflexe</span>Désigne le <b>droit atteint</b> : marque → contrefaçon ; nom de domaine, nom commercial, présentation du site → concurrence déloyale ; efforts d'autrui repris sans confusion → parasitisme.</p>
+    </div>
+  </article>
+</section>
+
+<!-- 5 -->
+<section class="stage t5" id="site">
+  <h2><span class="n">5</span>Le site : CGV, hébergeur, éditeur, droits sur le site</h2>
+  <div class="tw"><table>
+    <caption>Les documents du site</caption>
+    <thead><tr><th>Document</th><th>Règle</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>CGV entre professionnels</th><td>Communiquées à tout acheteur professionnel qui les demande, sur support durable. <b>Socle unique</b> de la négociation. Refus : <span class="chip di">Amende administrative</span></td><td class="eg">Un grossiste en ligne réserve ses tarifs aux clients identifiés, mais doit envoyer ses CGV à tout pro qui les demande.</td></tr>
+      <tr><th>CGV face au consommateur</th><td>Opposables seulement si <b>connues et acceptées</b> avant la commande. Clause abusive : <span class="chip cl">Réputée non écrite</span></td><td class="eg">Case non précochée « J'accepte les CGV » avec lien : bien. Simple lien en pied de page : insuffisant.</td></tr>
+      <tr><th>CGU</th><td>Règles d'usage d'un service ou d'une plateforme : compte, comportements interdits, modération, sanctions.</td><td class="eg">Une place de marché : CGU pour le compte, CGV pour chaque vente.</td></tr>
+      <tr><th>Mentions légales</th><td>Identité de l'éditeur, directeur de la publication, hébergeur. Omission : délit.</td><td class="eg">Une boutique en ligne sans raison sociale ni adresse.</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="card">
+    <header><h3>Responsabilité de l'hébergeur</h3><span class="core">Par cœur</span></header>
+    <p class="q">La plateforme répond-elle d'un contenu illicite publié par un utilisateur ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>L'<b>hébergeur</b> stocke des contenus fournis par d'autres. Il n'a <b>aucune obligation générale de surveillance</b>.</p><p>Il n'est pas responsable s'il n'avait <b>pas connaissance</b> du contenu illicite, ou si, dès qu'il en a eu connaissance, il a agi <b>promptement</b> pour le retirer ou le rendre inaccessible. Un <b>signalement précis</b> lui en donne connaissance.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Hébergeur ou éditeur : qui choisit le contenu ?</li><li>Contenu illicite, voire manifestement ?</li><li>Signalement : adresse exacte, motifs, identité</li><li>Délai de réaction</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><p>Réaction prompte : pas de responsabilité.</p><p>Inaction après signalement :</p><div class="chips"><span class="chip di">Dommages-intérêts</span><span class="chip cl">Retrait ou blocage ordonné</span></div></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un site d'annonces laisse en ligne sept semaines une annonce de copies de photos d'art, signalée avec son adresse exacte : il perd la protection et indemnise le photographe.</p>
+      <p class="trap"><span class="tag">Piège</span>Modérer ne fait pas perdre la qualité d'hébergeur. Il faut un <b>rôle actif</b> sur le contenu (choisir, rédiger, mettre en avant) pour devenir éditeur.</p>
+      <p class="trap"><span class="tag">À côté</span>On ne peut pas exiger de l'hébergeur qu'il empêche par avance toute remise en ligne : chaque nouvelle mise en ligne demande un <b>nouveau signalement</b> (1re civ., 12 juillet 2012).</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Hébergeur ou éditeur ?</caption>
+    <thead><tr><th>Critère</th><th>Hébergeur</th><th>Éditeur</th></tr></thead>
+    <tbody>
+      <tr><th>Rôle</th><td>Fournit le stockage technique des contenus de tiers.</td><td>Détermine ou contrôle le contenu publié.</td></tr>
+      <tr><th>Responsabilité</th><td>Limitée : seulement s'il n'agit pas après avoir eu connaissance.</td><td>Pleine : civile et pénale, pour tout ce qu'il publie.</td></tr>
+      <tr><th>Exemple</th><td class="eg">Forum, plateforme d'annonces, service d'hébergement de sites.</td><td class="eg">L'entreprise qui rédige les articles de son blog, un journal en ligne.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Contrat</span>Vis-à-vis de <b>son client</b>, l'hébergeur doit aussi exécuter son contrat : disponibilité du site, sauvegardes, sécurité. C'est la responsabilité contractuelle, à séparer du régime légal envers les tiers.</p></div></div>
+
+  <article class="card">
+    <header><h3>Qui détient les droits sur le site ?</h3></header>
+    <p class="q">L'entreprise peut-elle exploiter et modifier librement le site qu'elle a fait créer ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le site original (graphisme, textes, photos, code) est protégé au profit de son <b>auteur</b>. Le client n'acquiert les droits patrimoniaux que par une <b>cession écrite</b>, qui mentionne chaque droit cédé, son étendue, sa destination, son lieu et sa durée.</p><p>Le contrat de travail ne cède pas les droits du salarié, sauf pour le <b>logiciel</b> créé dans ses fonctions et l'<b>œuvre collective</b>. Le <b>droit moral</b> reste à l'auteur.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Création originale ?</li><li>Créateur : prestataire ou salarié ?</li><li>Clause de cession : droits listés, usages, durée ?</li><li>Partie en cause : code ou graphisme ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><p>Exploitation ou modification non couverte par la cession :</p><div class="chips"><span class="chip di">Contrefaçon : dommages-intérêts</span></div><p>Conseil : un avenant de cession détaillé.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>« Le client devient propriétaire du site » : clause trop vague. Le client ne peut pas reprendre les illustrations sur ses catalogues papier sans accord de l'agence.</p>
+      <p class="trap"><span class="tag">Piège</span>Pour le <b>code</b> (logiciel), l'auteur ne peut s'opposer à une modification que si elle nuit à son honneur ou à sa réputation. Le droit au respect est plus fort pour le <b>graphisme</b>.</p>
+    </div>
+  </article>
+  <div class="tw"><table>
+    <caption>Le créateur du site</caption>
+    <thead><tr><th>Créateur</th><th>Droits patrimoniaux</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Agence ou freelance</th><td>Contrat d'entreprise. Droits à l'auteur, sauf cession écrite détaillée. Le prestataire doit aussi informer et conseiller son client.</td><td class="eg">L'agence garde les droits sur une maquette non cédée.</td></tr>
+      <tr><th>Salarié : logiciel</th><td>Dévolus <b>automatiquement</b> à l'employeur, sans écrit.</td><td class="eg">Le développeur salarié code le site marchand : l'employeur exploite le code.</td></tr>
+      <tr><th>Salarié : autres œuvres</th><td>Restent au salarié, sauf cession expresse.</td><td class="eg">Les photos originales prises par ce développeur restent à lui.</td></tr>
+      <tr><th>Œuvre collective</th><td>Créée à l'initiative de l'entreprise, divulguée sous son nom, contributions fondues dans l'ensemble : l'entreprise est investie des droits.</td><td class="eg">Un site éditorial rédigé par une équipe sous la direction de l'entreprise.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section class="stage t0" id="regulation">
+  <h2><span class="n">6</span>Régulation du numérique</h2>
+  <div class="tiles">
+    <div class="tile"><h3>DSA</h3><p>Règlement européen sur les services numériques, applicable depuis le <b>17 février 2024</b>. Fixe la responsabilité des hébergeurs, le signalement des contenus, la transparence et des obligations renforcées pour les très grandes plateformes.</p><p class="eg"><b>Ex.</b> Une place de marché doit offrir un outil simple pour signaler une annonce illicite.</p></div>
+    <div class="tile"><h3>Loi SREN (21 mai 2024)</h3><p>Suspension des comptes du cyberharceleur jusqu'à <b>6 mois</b>. Blocage des sites pornographiques sans vérification d'âge. Hébergeur qui ne retire pas en <b>24 h</b> un contenu pédopornographique signalé : 1 an et 250 000 €. Filtre anti-arnaque.</p></div>
+    <div class="tile"><h3>ARCOM</h3><p>Autorité née en 2022 (CSA + Hadopi). Elle coordonne l'application du DSA en France, avec des pouvoirs renforcés par la loi SREN.</p></div>
+  </div>
+  <div class="tw"><table>
+    <caption>Le règlement européen sur l'IA : une approche par les risques</caption>
+    <thead><tr><th>Risque</th><th>Régime</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Inacceptable</th><td><span class="chip nul">Interdit</span> depuis le 2 février 2025.</td><td class="eg">Notation sociale, exploitation de la vulnérabilité, identification biométrique en temps réel dans l'espace public (sauf exceptions répressives).</td></tr>
+      <tr><th>Élevé</th><td>Autorisé sous conditions strictes : gestion des risques, qualité des données, contrôle humain. Obligations reportées au 2 décembre 2027.</td><td class="eg">Tri automatique des CV, notation de crédit, examens.</td></tr>
+      <tr><th>Limité</th><td>Transparence : dire qu'on parle à une IA, signaler les contenus générés.</td><td class="eg">Chatbot du service client, image générée.</td></tr>
+      <tr><th>Minimal</th><td>Libre.</td><td class="eg">Filtre anti-spam, IA d'un jeu vidéo.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="trap"><span class="tag">À côté</span>Les opérateurs et hébergeurs doivent aussi conserver un an certaines données de connexion, sur injonction annuelle du Premier ministre (sécurité nationale). C'est sans lien avec leur responsabilité sur les contenus.</p></div></div>
+</section>
+
+<!-- 7 -->
+<section class="stage t0" id="arrets">
+  <h2><span class="n">7</span>Arrêts à connaître</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Arrêt</th><th>Règle</th></tr></thead>
+    <tbody>
+      <tr><th>1re civ. <span class="art">12 juillet 2012</span></th><td>Pas d'obligation générale de surveillance : on ne peut pas imposer à l'hébergeur de bloquer toute remise en ligne future sans nouveau signalement.</td></tr>
+      <tr><th>1re civ. <span class="art">23 novembre 2022</span></th><td>Un site proposant la GPA à un public français est manifestement illicite : l'hébergeur informé devait le rendre inaccessible en France.</td></tr>
+      <tr><th>Com. <span class="art">26 juin 2024</span></th><td>Parasitisme : la victime doit identifier une valeur économique individualisée et la volonté du tiers de s'inscrire dans son sillage.</td></tr>
+      <tr><th>Com. <span class="art">26 mars 2025</span> Meta c/ Cargo Media</th><td>Un même acte peut être contrefaçon de marque et concurrence déloyale s'il atteint aussi le nom de domaine ou le nom commercial. Préjudice distinct, pas de double indemnisation.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Cite l'arrêt à l'appui de la majeure, sans le raconter.</p>
+</section>
+
+<!-- 8 -->
+<section class="stage t0" id="changements">
+  <h2><span class="n">8</span>Ce qui change par rapport au cours</h2>
+  <div class="tw"><table>
+    <caption>Corrigé par rapport au cours</caption>
+    <thead><tr><th>Point</th><th>Le cours disait</th><th>Ce qui est juste</th></tr></thead>
+    <tbody>
+      <tr><th>Conservation du contrat</th><td>L'écrit est exigé « sous peine de nullité » pour les contrats d'au moins 120 €.</td><td>Non : c'est une <b>obligation de conservation</b> pendant 10 ans (point de départ décalé si livraison différée), pas une condition de validité. <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226994/">L. 213-1</a>, <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032807208">D. 213-1</a></td></tr>
+      <tr><th>Droit d'auteur</th><td>Il naît de la création originale « et de l'investissement humain et/ou matériel ».</td><td>Seule l'<b>originalité</b> compte ; l'investissement n'est pas une condition (CPI, L. 111-1, L. 112-1).</td></tr>
+      <tr><th>Site créé par un salarié</th><td>Le salarié doit toujours signer un avenant de cession.</td><td>Vrai pour les œuvres classiques, mais les droits sur le <b>code</b> (logiciel) passent <b>automatiquement</b> à l'employeur. <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039279818">L. 113-9</a></td></tr>
+      <tr><th>Modification du site</th><td>Toute clause permettant au client de modifier seul le site est nulle.</td><td>Trop absolu : pour le logiciel, l'auteur ne s'oppose qu'aux modifications qui nuisent à son honneur ou sa réputation. <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278899">L. 121-7</a></td></tr>
+      <tr><th>Hébergeur</th><td>Notification encadrée par « l'article 6-I-5 LCEN ».</td><td>Depuis la loi SREN, le régime renvoie au <b>DSA</b> (art. 6 : responsabilité ; art. 16 : signalement ; art. 8 : pas de surveillance générale).</td></tr>
+      <tr><th>IA à haut risque</th><td>Calendrier non précisé.</td><td>Obligations reportées au 2 décembre 2027 (règlement « omnibus » 2026/1744).</td></tr>
+      <tr><th>Accusé de réception</th><td>Fiche d'articles : prévu à l'article 1127-3.</td><td>Il figure à l'article 1127-2 ; 1127-3 prévoit les exceptions (courriels, contrats entre professionnels). <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032007506">1127-2</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tiles two">
+    <div class="tile"><h3>Ajouté</h3><p>Règles du double clic et accusé de réception du Code civil ; délai de livraison par défaut (30 jours) et résolution pour retard ; fonctionnalité de résiliation en ligne ; fonctionnalité de rétractation (19 juin 2026) ; amende administrative (15 000 € / 75 000 €) ; cession écrite des droits d'auteur ; procédure de transfert d'un nom de domaine (AFNIC).</p><p><b>Stratégie des cartes</b> : 93 cartes, dont 8 cas. Pas de nouvelle carte sur ce que le chapitre 2 couvre déjà (définition du consommateur, délai de 14 jours et son point de départ, prolongation de 12 mois, liste des exceptions), ni sur les cartes retirées (remboursement en 14 jours, frais de retour, CG au dos d'une facture). Les cartes visent ce que le chapitre apporte : commande en ligne, preuve, nom de domaine, hébergeur, droits sur le site.</p></div>
+    <div class="tile"><h3>À vérifier</h3><p>Fonctionnalité de rétractation : texte de l'ordonnance du 5 janvier 2026 vu seulement via des sources secondaires. Article 6 LCEN modifié le 26 août 2026 (loi sur les mineurs et les réseaux sociaux) : contenu exact non vérifié. Peine pour défaut de mentions légales (1 an, 75 000 €), sanction civile exacte d'un bouton de paiement irrégulier, renouvellement du décret de conservation des données (2026) : non confirmés sur Légifrance.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>En cas d'écart avec le support de cours, cette fiche prime sur la conservation du contrat, le droit d'auteur du salarié et la responsabilité de l'hébergeur. Les numéros d'articles sont volontairement absents. Pour vérifier une règle, consulte <a href="https://www.legifrance.gouv.fr/">Légifrance</a>.</p>
+  <p>Sources : <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032007506">art. 1127-2</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032226854">C. consom., L. 221-14</a> · <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032221825/">L. 242-10</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046190107">L. 215-1-1</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042623549">CPCE, L. 45-2</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032042977">CPI, L. 131-2</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038414469">C. com., L. 441-1</a> · <a href="https://www.labase-lextenso.fr/jp-commente/cc/2022-11/21-10-220-CC-23112022-21_10220">1re civ., 23 nov. 2022</a> · <a href="https://www.dalloz-actualite.fr/document/civ-1re-12-juill-2012-fs-pbi-n-11-13666">1re civ., 12 juill. 2012</a> · <a href="https://www.dalloz-actualite.fr/document/com-26-juin-2024-fs-br-n-23-13535">Com., 26 juin 2024</a> · <a href="https://www.labase-lextenso.fr/jurisprudence/CC-26032025-23_13589">Com., 26 mars 2025</a></p>
+</footer>
+
+</div>
+
+<button id="toggle" type="button" aria-pressed="false">Me tester</button>
+<p class="teststate" aria-live="polite">Récite la règle et la sanction, puis touche la zone pour vérifier.</p>
+
+<script>
+(function(){
+  var btn=document.getElementById('toggle');
+  function reveal(el){ el.classList.add('shown'); }
+  btn.addEventListener('click',function(){
+    var on=!document.body.classList.contains('test');
+    document.body.classList.toggle('test',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+    btn.textContent=on?'Tout afficher':'Me tester';
+    document.querySelectorAll('.shown').forEach(function(e){e.classList.remove('shown')});
+    document.querySelectorAll('.hideable, tbody tr').forEach(function(e){
+      if(on){e.setAttribute('tabindex','0')}else{e.removeAttribute('tabindex')}
+    });
+  });
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    var t=ev.target.closest('.hideable, tbody tr');
+    if(t)reveal(t);
+  });
+  document.addEventListener('keydown',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    if(ev.key!=='Enter'&&ev.key!==' ')return;
+    var t=ev.target.closest&&ev.target.closest('.hideable, tbody tr');
+    if(t&&t===ev.target){ev.preventDefault();reveal(t)}
+  });
+})();
+</script>

@@ -1,0 +1,794 @@
+{
+ "schema": 1,
+ "deck": {
+  "id": "ue1-ch04",
+  "ue": "UE1",
+  "ueTitre": "Gestion juridique, fiscale et sociale",
+  "chapitre": 4,
+  "titre": "Commerce électronique",
+  "themes": [
+   {
+    "id": "commande",
+    "titre": "Conclure un contrat en ligne",
+    "couleur": "bleu",
+    "ordre": 1
+   },
+   {
+    "id": "preuve",
+    "titre": "Écrit et signature électroniques",
+    "couleur": "sarcelle",
+    "ordre": 2
+   },
+   {
+    "id": "apres",
+    "titre": "Après la commande : livraison, rétractation, résiliation",
+    "couleur": "violet",
+    "ordre": 3
+   },
+   {
+    "id": "domaine",
+    "titre": "Nom de domaine, marque, concurrence déloyale",
+    "couleur": "vert",
+    "ordre": 4
+   },
+   {
+    "id": "site",
+    "titre": "Le site : CGV, hébergeur, éditeur, droits sur le site",
+    "couleur": "rouge",
+    "ordre": 5
+   },
+   {
+    "id": "regulation",
+    "titre": "Régulation du numérique : SREN, DSA, IA",
+    "couleur": "ardoise",
+    "ordre": 6
+   }
+  ]
+ },
+ "cards": [
+  {
+   "id": "ue1-ch04-001",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un contrat conclu à distance ?",
+   "reponse": "Un contrat entre un professionnel et un consommateur, conclu **sans leur présence physique simultanée**, par une ou plusieurs techniques de communication à distance, dans un système organisé de vente à distance.",
+   "source": "C. consom., L. 221-1"
+  },
+  {
+   "id": "ue1-ch04-002",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Le contrat conclu sur internet échappe-t-il au droit commun des contrats ?",
+   "reponse": "Non. Consentement, capacité, contenu licite et certain, force obligatoire restent exigés. Le Code civil et le Code de la consommation **ajoutent** des règles propres à la voie électronique.",
+   "source": "Art. 1127-1 s. ; C. consom., L. 221-1 s."
+  },
+  {
+   "id": "ue1-ch04-003",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Que doit indiquer celui qui propose un contrat par voie électronique, selon le Code civil ?",
+   "reponse": "Les étapes de conclusion, les moyens de repérer et corriger ses erreurs de saisie, les langues proposées, l'archivage éventuel du contrat, les règles professionnelles applicables.",
+   "source": "Art. 1127-1"
+  },
+  {
+   "id": "ue1-ch04-004",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Sous quelle forme le vendeur en ligne doit-il mettre ses conditions contractuelles à disposition ?",
+   "reponse": "D'une manière qui permet au client de les **conserver et de les reproduire**, par exemple un PDF téléchargeable.",
+   "source": "Art. 1127-1"
+  },
+  {
+   "id": "ue1-ch04-005",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Qu'exige la règle du « double clic » pour qu'un contrat électronique soit valablement conclu ?",
+   "reponse": "Avant de confirmer, le client doit avoir pu **vérifier le détail de sa commande et son prix total**, et **corriger ses erreurs**. Il confirme ensuite pour exprimer son acceptation définitive.",
+   "source": "Art. 1127-2"
+  },
+  {
+   "id": "ue1-ch04-006",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Un site enregistre la commande en un clic, sans récapitulatif ni possibilité de correction. Conséquence ?",
+   "reponse": "Le contrat n'est **pas valablement conclu** : la vérification et la correction sont une condition de validité du contrat électronique.",
+   "source": "Art. 1127-2"
+  },
+  {
+   "id": "ue1-ch04-007",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Que doit faire le vendeur en ligne une fois la commande reçue ?",
+   "reponse": "En **accuser réception** par voie électronique, **sans délai injustifié**.",
+   "source": "Art. 1127-2"
+  },
+  {
+   "id": "ue1-ch04-008",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Quand une commande ou un accusé de réception électronique est-il considéré comme reçu ?",
+   "reponse": "Dès que son destinataire **peut y avoir accès**, même s'il ne l'a pas encore lu.",
+   "source": "Art. 1127-2"
+  },
+  {
+   "id": "ue1-ch04-009",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Deux sociétés concluent un contrat sur une plateforme en ligne. Peuvent-elles écarter les règles du double clic et d'information ?",
+   "reponse": "Oui : **entre professionnels**, une convention peut y déroger. Jamais face à un consommateur.",
+   "source": "Art. 1127-3"
+  },
+  {
+   "id": "ue1-ch04-010",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Un contrat conclu uniquement par échange de courriels est-il soumis au double clic ?",
+   "reponse": "Non : les contrats conclus **exclusivement par courriels** échappent aux informations sur les étapes et au double clic.",
+   "source": "Art. 1127-3"
+  },
+  {
+   "id": "ue1-ch04-011",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Avant la commande en ligne, que doit rappeler le professionnel au consommateur ?",
+   "reponse": "Les **caractéristiques essentielles**, le **prix**, la **durée** du contrat et, s'il y a lieu, la durée minimale d'engagement. De façon lisible et compréhensible.",
+   "source": "C. consom., L. 221-14"
+  },
+  {
+   "id": "ue1-ch04-012",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Que doit indiquer le bouton qui valide une commande en ligne d'un consommateur ?",
+   "reponse": "Une mention claire : « **commande avec obligation de paiement** » ou une formule analogue, sans ambiguïté. Le consommateur doit reconnaître explicitement qu'il s'engage à payer.",
+   "source": "C. consom., L. 221-14"
+  },
+  {
+   "id": "ue1-ch04-013",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Un bouton « Continuer » ou « Valider » suffit-il à engager le consommateur à payer ?",
+   "reponse": "Non : il ne lui fait pas comprendre que le clic déclenche un paiement. Il faut « Payer », « Commander et payer » ou une formule analogue.",
+   "source": "C. consom., L. 221-14"
+  },
+  {
+   "id": "ue1-ch04-014",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Quand le site doit-il afficher les moyens de paiement acceptés et les restrictions de livraison ?",
+   "reponse": "Clairement et lisiblement, **au plus tard au début du processus de commande**.",
+   "source": "C. consom., L. 221-14"
+  },
+  {
+   "id": "ue1-ch04-015",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Dans un contrat à distance, quelles informations le professionnel ajoute-t-il aux informations générales dues à tout consommateur ?",
+   "reponse": "L'existence du **droit de rétractation** (conditions, délai, formulaire type) ou son absence, le coût du renvoi du bien à la charge du consommateur, et ses coordonnées complètes.",
+   "source": "C. consom., L. 221-5"
+  },
+  {
+   "id": "ue1-ch04-016",
+   "theme": "commande",
+   "type": "regle",
+   "question": "Quelle sanction encourt le professionnel qui manque aux obligations d'information, de bouton de paiement ou de confirmation du contrat à distance ?",
+   "reponse": "Une **amende administrative** (DGCCRF) de 15 000 € au plus pour une personne physique, 75 000 € pour une personne morale. S'y ajoutent les sanctions civiles propres à chaque règle.",
+   "source": "C. consom., L. 242-10"
+  },
+  {
+   "id": "ue1-ch04-017",
+   "theme": "commande",
+   "type": "memo",
+   "question": "Dans quel ordre reconstituer un achat en ligne dans un cas pratique ?",
+   "reponse": "**Information → commande (double clic, bouton de paiement) → accusé de réception → confirmation sur support durable → livraison → rétractation.**\nÀ chaque étape : le professionnel a-t-il fait ce qu'il devait, et peut-il le prouver ?",
+   "source": "Cours"
+  },
+  {
+   "id": "ue1-ch04-018",
+   "theme": "commande",
+   "type": "cas",
+   "question": "Le 3 février N, M. Ferrand, particulier, commande sur le site de la société TECHNEO un abonnement annuel de logiciel de retouche photo à 240 €. Le site lui présente un récapitulatif, puis un bouton intitulé « Continuer ». Après ce clic, il reçoit un courriel « Merci pour votre paiement de 240 € ». Il conteste devoir cette somme.\n\n**M. Ferrand est-il tenu de payer ?**",
+   "reponse": "**Problème** : un consommateur est-il engagé par une commande validée par un bouton qui ne mentionne pas l'obligation de payer ?\n**Règle** : le professionnel doit faire reconnaître explicitement au consommateur son obligation de paiement : le bouton de validation porte la mention « commande avec obligation de paiement » ou une formule analogue sans ambiguïté (C. consom., art. L. 221-14). Le contrat électronique n'est valablement conclu que si le client a pu vérifier et corriger sa commande avant de la confirmer (art. 1127-2).\n**Application** : M. Ferrand est un consommateur, le contrat est conclu à distance. Le récapitulatif respecte le double clic, mais « Continuer » ne dit pas que le clic déclenche un paiement.\n**Conclusion** : son consentement à payer n'est pas établi : il peut contester l'engagement et demander le remboursement des 240 €. TECHNEO s'expose aussi à une amende administrative (art. L. 242-10).",
+   "source": "C. consom., L. 221-14, L. 242-10 ; art. 1127-2"
+  },
+  {
+   "id": "ue1-ch04-019",
+   "theme": "preuve",
+   "type": "regle",
+   "question": "Quelle est la valeur d'un écrit électronique comme preuve ?",
+   "reponse": "La **même force probante** que l'écrit papier, si l'on peut identifier la personne dont il émane et s'il est conservé de façon à en garantir l'**intégrité**.",
+   "source": "Art. 1366"
+  },
+  {
+   "id": "ue1-ch04-020",
+   "theme": "preuve",
+   "type": "regle",
+   "question": "À quoi sert la signature d'un acte ?",
+   "reponse": "Elle **identifie** son auteur et **manifeste son consentement** aux obligations qui découlent de l'acte.",
+   "source": "Art. 1367"
+  },
+  {
+   "id": "ue1-ch04-021",
+   "theme": "preuve",
+   "type": "regle",
+   "question": "À quelle condition une signature électronique est-elle valable ?",
+   "reponse": "Elle doit reposer sur un **procédé fiable d'identification** garantissant son **lien avec l'acte** auquel elle s'attache.",
+   "source": "Art. 1367"
+  },
+  {
+   "id": "ue1-ch04-022",
+   "theme": "preuve",
+   "type": "memo",
+   "question": "Quels sont les trois niveaux de signature électronique du règlement eIDAS ?",
+   "reponse": "**Simple** : case cochée, image de signature.\n**Avancée** : liée au signataire, l'identifie, sous son contrôle, détecte toute modification.\n**Qualifiée** : avancée + dispositif qualifié + certificat qualifié.",
+   "source": "Règl. (UE) 910/2014, art. 3 et 26"
+  },
+  {
+   "id": "ue1-ch04-023",
+   "theme": "preuve",
+   "type": "regle",
+   "question": "Quand la fiabilité d'une signature électronique est-elle présumée ?",
+   "reponse": "Quand c'est une signature **qualifiée**. La présomption tombe devant la preuve contraire.",
+   "source": "Art. 1367 ; décret 2017-1416 du 28 sept. 2017, art. 1er"
+  },
+  {
+   "id": "ue1-ch04-024",
+   "theme": "preuve",
+   "type": "regle",
+   "question": "Une signature électronique simple (case cochée, signature scannée) est-elle sans valeur ?",
+   "reponse": "Non, elle est recevable. Mais faute de présomption, **celui qui l'invoque doit prouver** la fiabilité du procédé.",
+   "source": "Art. 1367 ; règl. eIDAS, art. 25"
+  },
+  {
+   "id": "ue1-ch04-025",
+   "theme": "preuve",
+   "type": "cas",
+   "question": "La société LOCAPRO loue du matériel de chantier. Le 12 avril N, M. Viala, artisan, signe en ligne un contrat de location de 18 mois à 900 € par mois, via un simple lien reçu par SMS qui lui fait apposer l'image de sa signature. En septembre N, il cesse de payer et nie avoir signé. LOCAPRO dispose seulement du PDF portant l'image de la signature.\n\n**LOCAPRO peut-elle prouver l'engagement de M. Viala ?**",
+   "reponse": "**Problème** : une signature électronique simple permet-elle de prouver l'engagement d'un cocontractant qui le conteste ?\n**Règle** : l'écrit électronique a la même force probante que l'écrit papier si son auteur est identifié et son intégrité garantie (art. 1366). La signature électronique doit reposer sur un procédé fiable d'identification (art. 1367). La fiabilité n'est présumée que pour la signature qualifiée (décret du 28 sept. 2017) ; sinon, celui qui invoque la signature prouve sa fiabilité.\n**Application** : l'image d'une signature apposée via un lien SMS est une signature simple. Aucune présomption : LOCAPRO doit prouver que c'est bien M. Viala qui a signé et que le PDF n'a pas été modifié. Le seul PDF ne le démontre pas ; un journal de preuve (horodatage, numéro de téléphone, code reçu) pourrait aider.\n**Conclusion** : sans éléments complémentaires, la preuve est fragile. Conseil : réunir ces traces et, à l'avenir, utiliser une signature avancée ou qualifiée.",
+   "source": "Art. 1366, 1367 ; décret 2017-1416"
+  },
+  {
+   "id": "ue1-ch04-026",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Quand le professionnel doit-il confirmer au consommateur un contrat conclu à distance ?",
+   "reponse": "Sur un **support durable**, dans un délai raisonnable, **au plus tard à la livraison** du bien ou **avant le début** du service. Avec le formulaire type de rétractation s'il y a lieu.",
+   "source": "C. consom., L. 221-13"
+  },
+  {
+   "id": "ue1-ch04-027",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un support durable ?",
+   "reponse": "Tout instrument qui permet de **stocker** des informations personnellement adressées, de s'y reporter et de les **reproduire à l'identique**. Ex. : courriel, PDF ; pas une page web modifiable.",
+   "source": "C. consom., art. liminaire"
+  },
+  {
+   "id": "ue1-ch04-028",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Le site n'a donné aucune date de livraison. Quand doit-il livrer ?",
+   "reponse": "Sans retard injustifié et **au plus tard 30 jours** après la conclusion du contrat.",
+   "source": "C. consom., L. 216-1"
+  },
+  {
+   "id": "ue1-ch04-029",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Le bien commandé en ligne n'est pas livré à la date prévue. Comment le consommateur peut-il sortir du contrat ?",
+   "reponse": "Il enjoint au professionnel de livrer dans un **délai supplémentaire raisonnable** ; faute de livraison, il **résout** le contrat par écrit. Résolution immédiate si la date était essentielle. Remboursement sous 14 jours.",
+   "source": "C. consom., L. 216-6, L. 216-7"
+  },
+  {
+   "id": "ue1-ch04-030",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Un contrat en ligne d'au moins 120 € : quelle obligation de conservation pèse sur le professionnel ?",
+   "reponse": "Conserver l'écrit qui constate le contrat **10 ans** et en garantir l'**accès** au consommateur à tout moment, sur demande.",
+   "source": "C. consom., L. 213-1, D. 213-1"
+  },
+  {
+   "id": "ue1-ch04-031",
+   "theme": "apres",
+   "type": "regle",
+   "question": "D'où part le délai de conservation de 10 ans d'un contrat en ligne ?",
+   "reponse": "De la conclusion si la livraison est immédiate. Sinon, conservation jusqu'à la livraison ou l'exécution, **puis 10 ans** à compter de celle-ci.",
+   "source": "C. consom., D. 213-1, D. 213-2"
+  },
+  {
+   "id": "ue1-ch04-032",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Le défaut de conservation d'un contrat en ligne de 500 € entraîne-t-il sa nullité ?",
+   "reponse": "Non : l'écrit n'est **pas une condition de validité** de la vente (consensualisme). La conservation est une obligation du professionnel, qui sert la preuve.",
+   "source": "Art. 1172 ; C. consom., L. 213-1"
+  },
+  {
+   "id": "ue1-ch04-033",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Comment le consommateur exerce-t-il son droit de rétractation ?",
+   "reponse": "Avant la fin du délai, par le **formulaire type** ou toute autre **déclaration dénuée d'ambiguïté**, et, pour un contrat conclu en ligne, par la **fonctionnalité de rétractation** du site. Il prouve l'avoir exercé.",
+   "source": "C. consom., L. 221-21, L. 221-22"
+  },
+  {
+   "id": "ue1-ch04-034",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Depuis le 19 juin 2026, que doit proposer un site marchand pour la rétractation ?",
+   "reponse": "Une **fonctionnalité de rétractation** en ligne, **gratuite**, facile d'accès pendant tout le délai, avec un accusé de réception sur support durable.",
+   "source": "C. consom., L. 221-21 (ord. 2026-2 du 5 janv. 2026)"
+  },
+  {
+   "id": "ue1-ch04-035",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Après sa rétractation, dans quel délai le consommateur renvoie-t-il le bien ?",
+   "reponse": "Au plus tard **14 jours** après avoir communiqué sa décision, sauf si le professionnel propose de venir le chercher.",
+   "source": "C. consom., L. 221-23"
+  },
+  {
+   "id": "ue1-ch04-036",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Le professionnel peut-il attendre avant de rembourser un bien dont le consommateur s'est rétracté ?",
+   "reponse": "Oui : jusqu'à **récupération du bien** ou jusqu'à la **preuve de son expédition**, la date retenue étant la première des deux.",
+   "source": "C. consom., L. 221-24"
+  },
+  {
+   "id": "ue1-ch04-037",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Le consommateur qui se rétracte répond-il de l'usure du bien ?",
+   "reponse": "Oui, de la **dépréciation** due à des manipulations autres que celles nécessaires pour établir sa nature, ses caractéristiques et son bon fonctionnement.",
+   "source": "C. consom., L. 221-23"
+  },
+  {
+   "id": "ue1-ch04-038",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Un service commencé, à la demande expresse du consommateur, pendant le délai de rétractation : que doit-il s'il se rétracte ensuite ?",
+   "reponse": "Un montant **proportionnel** au service fourni jusqu'à sa rétractation.",
+   "source": "C. consom., L. 221-25"
+  },
+  {
+   "id": "ue1-ch04-039",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Un consommateur télécharge un jeu vidéo acheté en ligne. Peut-il se rétracter ?",
+   "reponse": "Non, si le téléchargement a commencé avec son **accord préalable exprès** et sa **renonciation** au droit de rétractation (contenu numérique sans support matériel).",
+   "source": "C. consom., L. 221-28, 13°"
+  },
+  {
+   "id": "ue1-ch04-040",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Une société commande en ligne des fournitures pour son activité. A-t-elle un droit de rétractation ?",
+   "reponse": "Non : à distance, la rétractation protège le seul **consommateur**. L'extension aux petites entreprises (5 salariés au plus) vise seulement les contrats **hors établissement**.",
+   "source": "C. consom., L. 221-3, L. 221-18"
+  },
+  {
+   "id": "ue1-ch04-041",
+   "theme": "apres",
+   "type": "regle",
+   "question": "Un abonnement souscrit en ligne : comment le consommateur doit-il pouvoir le résilier ?",
+   "reponse": "Par une **fonctionnalité gratuite** de résiliation en ligne (« résilier votre contrat »), facile d'accès. Le professionnel confirme la réception et la date de fin. Sanction : amende administrative.",
+   "source": "C. consom., L. 215-1-1"
+  },
+  {
+   "id": "ue1-ch04-042",
+   "theme": "apres",
+   "type": "cas",
+   "question": "Le 2 mars N, Mme Okafor, particulière, s'inscrit en ligne à une formation d'anglais de 20 séances à distance, pour 600 €. À sa demande expresse, les séances commencent dès le 4 mars. Après 5 séances, le 10 mars, elle utilise la fonctionnalité « Renoncer au contrat » du site. L'organisme refuse tout remboursement, au motif que la formation a commencé.\n\n**Mme Okafor peut-elle se rétracter, et que lui doit-on ?**",
+   "reponse": "**Problème** : le consommateur peut-il se rétracter d'un service commencé à sa demande pendant le délai, et que doit-il alors ?\n**Règle** : pour un service conclu à distance, le consommateur dispose de 14 jours à compter de la conclusion pour se rétracter sans motif (C. consom., art. L. 221-18). S'il a demandé que le service commence pendant ce délai, il peut encore se rétracter mais paie un montant proportionnel au service fourni (art. L. 221-25). Seul un service pleinement exécuté avant la fin du délai, avec renonciation expresse, échappe à la rétractation (art. L. 221-28). Le professionnel rembourse dans les 14 jours (art. L. 221-24).\n**Application** : contrat conclu le 2 mars, rétractation le 10 mars : dans le délai. La formation n'est pas pleinement exécutée (5 séances sur 20). Les 5 séances suivies représentent 5/20 du prix.\n**Conclusion** : la rétractation est valable. Mme Okafor doit 150 € ; l'organisme lui rembourse 450 € dans les 14 jours.",
+   "source": "C. consom., L. 221-18, L. 221-24, L. 221-25, L. 221-28"
+  },
+  {
+   "id": "ue1-ch04-043",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un nom de domaine ?",
+   "reponse": "L'**adresse lisible** d'un site internet, qui correspond à une adresse IP. Il comporte un nom et une extension : « entreprise.fr ».",
+   "source": "CPCE, L. 45"
+  },
+  {
+   "id": "ue1-ch04-044",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Selon quelle règle un nom de domaine est-il attribué ?",
+   "reponse": "**Premier arrivé, premier servi**, auprès d'un bureau d'enregistrement, pour une durée renouvelable. Un même nom ne peut avoir qu'un titulaire par extension. Pour le « .fr » : l'**AFNIC**.",
+   "source": "CPCE, L. 45-1 s."
+  },
+  {
+   "id": "ue1-ch04-045",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Quand un nom de domaine en « .fr » peut-il être refusé ou supprimé ?",
+   "reponse": "Notamment s'il risque de porter atteinte à un **droit de propriété intellectuelle** ou de la **personnalité**, sauf si le demandeur a un **intérêt légitime** et agit de **bonne foi**.",
+   "source": "CPCE, L. 45-2"
+  },
+  {
+   "id": "ue1-ch04-046",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Comment le titulaire d'une marque obtient-il la suppression ou le transfert d'un nom de domaine « .fr » qui la reprend ?",
+   "reponse": "Auprès de l'**AFNIC** (procédure extrajudiciaire, rapide) ou devant le juge, s'il démontre son intérêt à agir et une atteinte sans intérêt légitime ni bonne foi du titulaire.",
+   "source": "CPCE, L. 45-6"
+  },
+  {
+   "id": "ue1-ch04-047",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Enregistrer un nom de domaine donne-t-il un droit opposable au titulaire d'une marque antérieure ?",
+   "reponse": "Non. L'enregistrement ne neutralise pas les **droits antérieurs** : il faut faire une recherche d'antériorité avant de choisir son nom.",
+   "source": "CPI, L. 713-2 ; CPCE, L. 45-2"
+  },
+  {
+   "id": "ue1-ch04-048",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une marque ?",
+   "reponse": "Un signe servant à **distinguer** les produits ou services d'une personne de ceux d'autres personnes, et représentable clairement et précisément dans le registre.",
+   "source": "CPI, L. 711-1"
+  },
+  {
+   "id": "ue1-ch04-049",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Quelles conditions un signe doit-il remplir pour être déposé comme marque ?",
+   "reponse": "Être **distinctif** (pas le nom générique du produit), **licite** (ni trompeur ni contraire à l'ordre public) et **disponible** (pas de droit antérieur).",
+   "source": "CPI, L. 711-2, L. 711-3"
+  },
+  {
+   "id": "ue1-ch04-050",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Que confère l'enregistrement d'une marque à l'INPI, et pour combien de temps ?",
+   "reponse": "Un **droit exclusif** d'exploitation pour les produits et services désignés, pendant **10 ans**, renouvelable indéfiniment.",
+   "source": "CPI, L. 712-1, L. 713-1"
+  },
+  {
+   "id": "ue1-ch04-051",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Qu'est-ce que le principe de spécialité de la marque ?",
+   "reponse": "La marque n'est protégée que pour les **produits et services désignés** au dépôt et ceux similaires. Exception : la **marque renommée**, protégée au-delà.",
+   "source": "CPI, L. 713-2, L. 713-3"
+  },
+  {
+   "id": "ue1-ch04-052",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Quand l'usage d'un nom de domaine constitue-t-il une contrefaçon de marque ?",
+   "reponse": "Usage, dans la vie des affaires et sans autorisation, d'un signe **identique** pour des produits identiques, ou **similaire** avec un **risque de confusion**. Sanction : interdiction, dommages-intérêts, transfert ou suppression du nom.",
+   "source": "CPI, L. 713-2, L. 716-4"
+  },
+  {
+   "id": "ue1-ch04-053",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "À quelle condition une création est-elle protégée par le droit d'auteur ?",
+   "reponse": "Être une **œuvre de l'esprit originale** : une forme qui porte l'empreinte de la personnalité de son auteur. Aucun dépôt : le droit naît du seul fait de la création.",
+   "source": "CPI, L. 111-1, L. 112-1"
+  },
+  {
+   "id": "ue1-ch04-054",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Un gros investissement financier suffit-il à protéger une création par le droit d'auteur ?",
+   "reponse": "Non : seule l'**originalité** compte. Ni le mérite, ni le coût, ni le travail fourni ne suffisent.",
+   "source": "CPI, L. 112-1"
+  },
+  {
+   "id": "ue1-ch04-055",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Combien de temps durent les droits d'auteur ?",
+   "reponse": "Droits **patrimoniaux** (exploiter, céder) : la vie de l'auteur plus **70 ans**. Droits **moraux** (paternité, respect de l'œuvre) : perpétuels, inaliénables.",
+   "source": "CPI, L. 121-1, L. 123-1"
+  },
+  {
+   "id": "ue1-ch04-056",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Quelles sont les conditions de l'action en concurrence déloyale ?",
+   "reponse": "Une **faute** (acte contraire aux usages loyaux du commerce), un **préjudice**, un **lien de causalité**. Elle protège même sans droit privatif (marque, droit d'auteur).",
+   "source": "Art. 1240"
+  },
+  {
+   "id": "ue1-ch04-057",
+   "theme": "domaine",
+   "type": "memo",
+   "question": "Quelles sont les quatre grandes formes de concurrence déloyale ?",
+   "reponse": "**Confusion** (imiter les signes d'un concurrent), **dénigrement**, **désorganisation** (débauchage massif, détournement de fichiers), **parasitisme**.",
+   "source": "Art. 1240 ; jurisprudence"
+  },
+  {
+   "id": "ue1-ch04-058",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Qu'est-ce que le parasitisme économique ?",
+   "reponse": "Se placer **dans le sillage** d'un autre pour profiter, sans rien dépenser, de ses efforts, de son savoir-faire, de sa notoriété ou de ses investissements.",
+   "source": "Art. 1240 ; jurisprudence"
+  },
+  {
+   "id": "ue1-ch04-059",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Le parasitisme suppose-t-il un risque de confusion ou une situation de concurrence ?",
+   "reponse": "Non, ni l'un ni l'autre. Il faut une **valeur économique individualisée** et la **volonté** de se placer dans le sillage d'autrui.",
+   "source": "Art. 1240 ; Com., 26 juin 2024"
+  },
+  {
+   "id": "ue1-ch04-060",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Que retient la chambre commerciale le 26 juin 2024 sur le parasitisme ?",
+   "reponse": "Celui qui se dit victime doit d'abord **identifier la valeur économique individualisée** qu'il invoque, puis prouver la volonté du tiers de s'inscrire dans son sillage.",
+   "source": "Com., 26 juin 2024, n° 23-13.535 et n° 22-17.647"
+  },
+  {
+   "id": "ue1-ch04-061",
+   "theme": "domaine",
+   "type": "regle",
+   "question": "Que retient la chambre commerciale le 26 mars 2025 (Meta c/ Cargo Media, « Facebook ») ?",
+   "reponse": "Un même acte peut être à la fois une **contrefaçon de marque** et une **concurrence déloyale** s'il atteint aussi le nom commercial ou le nom de domaine. Préjudice distinct réparé, sans double indemnisation.",
+   "source": "Com., 26 mars 2025, n° 23-13.589"
+  },
+  {
+   "id": "ue1-ch04-062",
+   "theme": "domaine",
+   "type": "memo",
+   "question": "Un concurrent reprend votre nom sur internet : quel fondement choisir ?",
+   "reponse": "Marque déposée et atteinte au signe → **contrefaçon**.\nPas de marque, ou atteinte distincte (nom de domaine, nom commercial, imitation du site) → **concurrence déloyale**.\nProfit tiré de vos efforts sans confusion → **parasitisme**.",
+   "source": "CPI, L. 713-2 ; art. 1240"
+  },
+  {
+   "id": "ue1-ch04-063",
+   "theme": "domaine",
+   "type": "cas",
+   "question": "La société BRIOLINE fabrique des pâtisseries et a déposé la marque « Brioline » à l'INPI en N-6 pour ces produits. En janvier N, M. Castel, qui n'a aucune activité, enregistre « brioline.fr » et propose à BRIOLINE de lui céder le nom pour 15 000 €. Faute de réponse, il y affiche des publicités pour des pâtisseries concurrentes.\n\n**BRIOLINE peut-elle récupérer le nom de domaine ?**",
+   "reponse": "**Problème** : le titulaire d'une marque peut-il obtenir le transfert d'un nom de domaine qui la reproduit, enregistré par un tiers ?\n**Règle** : un nom de domaine en « .fr » peut être supprimé ou transféré s'il porte atteinte à un droit de propriété intellectuelle, sauf intérêt légitime et bonne foi du titulaire (CPCE, art. L. 45-2 et L. 45-6). L'usage sans autorisation d'un signe identique pour des produits identiques est une contrefaçon (CPI, art. L. 713-2).\n**Application** : la marque est antérieure et désigne des pâtisseries ; le nom reproduit la marque à l'identique. M. Castel n'a aucune activité : pas d'intérêt légitime. Proposer de revendre le nom au titulaire de la marque révèle la mauvaise foi. Les publicités pour des pâtisseries concurrentes utilisent le signe pour des produits identiques.\n**Conclusion** : BRIOLINE peut obtenir le transfert du nom auprès de l'AFNIC (voie rapide) ou du juge, et agir en contrefaçon pour obtenir des dommages-intérêts.",
+   "source": "CPCE, L. 45-2, L. 45-6 ; CPI, L. 713-2"
+  },
+  {
+   "id": "ue1-ch04-064",
+   "theme": "domaine",
+   "type": "cas",
+   "question": "La société ALTIVA, sans marque déposée, a investi 200 000 € en trois ans pour créer un comparateur en ligne de séjours en montagne, reconnu pour son code couleur et ses fiches « 5 critères ». En N, la société KIMO, qui vend du matériel de ski, lance un site reprenant la même présentation et les mêmes fiches. Personne ne confond les deux sociétés.\n\n**ALTIVA peut-elle agir contre KIMO ?**",
+   "reponse": "**Problème** : une entreprise sans droit privatif peut-elle agir contre celui qui reprend ses efforts sans créer de confusion ?\n**Règle** : le parasitisme, faute sanctionnée sur le fondement de la responsabilité civile (art. 1240), consiste à se placer dans le sillage d'autrui pour profiter de ses efforts. Il n'exige ni risque de confusion ni concurrence. La victime doit identifier une valeur économique individualisée et prouver la volonté de s'inscrire dans son sillage (Com., 26 juin 2024).\n**Application** : ALTIVA n'a pas de marque, mais elle peut identifier une valeur économique précise : la présentation et les fiches nées de 200 000 € d'investissement. KIMO les reprend à l'identique, sans effort propre : volonté de profiter du travail d'ALTIVA. L'absence de confusion et d'activité concurrente est indifférente.\n**Conclusion** : ALTIVA peut agir en parasitisme et obtenir des dommages-intérêts et la cessation des agissements.",
+   "source": "Art. 1240 ; Com., 26 juin 2024"
+  },
+  {
+   "id": "ue1-ch04-065",
+   "theme": "site",
+   "type": "regle",
+   "question": "Entre professionnels, quand le vendeur doit-il communiquer ses conditions générales de vente ?",
+   "reponse": "À **tout acheteur professionnel qui les demande**, sur support durable. Elles sont le **socle unique** de la négociation commerciale. Refus : amende administrative (15 000 € / 75 000 €).",
+   "source": "C. com., L. 441-1"
+  },
+  {
+   "id": "ue1-ch04-066",
+   "theme": "site",
+   "type": "regle",
+   "question": "Un lien « CGV » en bas de page suffit-il à les rendre opposables à l'acheteur en ligne ?",
+   "reponse": "Pas forcément : il faut prouver qu'il les a **connues et acceptées**. Bonne pratique : une **case non précochée** « J'accepte les CGV », avec un lien accessible avant la commande.",
+   "source": "Art. 1119, 1127-1"
+  },
+  {
+   "id": "ue1-ch04-067",
+   "theme": "site",
+   "type": "regle",
+   "question": "Quelle différence entre CGV et CGU ?",
+   "reponse": "**CGV** : les conditions d'une vente ou d'une prestation (prix, livraison, garanties).\n**CGU** : les règles d'utilisation d'un service ou d'une plateforme (compte, comportements interdits, modération). Un site peut avoir les deux.",
+   "source": "Cours"
+  },
+  {
+   "id": "ue1-ch04-068",
+   "theme": "site",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un hébergeur ?",
+   "reponse": "Le prestataire qui **stocke** des contenus fournis par des utilisateurs, sans les choisir ni les contrôler. Ex. : une plateforme d'annonces, un forum, un service de stockage.",
+   "source": "LCEN, art. 6 ; règl. (UE) 2022/2065 (DSA), art. 3"
+  },
+  {
+   "id": "ue1-ch04-069",
+   "theme": "site",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un éditeur de site ?",
+   "reponse": "Celui qui **détermine ou contrôle** le contenu publié : il choisit ce qui est mis en ligne. Ex. : l'entreprise qui rédige les articles de son blog.",
+   "source": "LCEN ; jurisprudence"
+  },
+  {
+   "id": "ue1-ch04-070",
+   "theme": "site",
+   "type": "regle",
+   "question": "À quelles conditions l'hébergeur n'est-il pas responsable d'un contenu illicite stocké à la demande d'un utilisateur ?",
+   "reponse": "S'il n'en avait **pas effectivement connaissance**, ou si, dès qu'il en a eu connaissance, il a agi **promptement** pour le retirer ou en bloquer l'accès.",
+   "source": "DSA, art. 6 ; LCEN, art. 6"
+  },
+  {
+   "id": "ue1-ch04-071",
+   "theme": "site",
+   "type": "regle",
+   "question": "Un hébergeur doit-il surveiller en permanence tous les contenus qu'il stocke ?",
+   "reponse": "Non : **aucune obligation générale de surveillance** ni de recherche active des contenus illicites. Il réagit aux signalements.",
+   "source": "DSA, art. 8 ; LCEN, art. 6"
+  },
+  {
+   "id": "ue1-ch04-072",
+   "theme": "site",
+   "type": "regle",
+   "question": "Que retient la 1re chambre civile le 12 juillet 2012 (Google, Bac Films) sur l'hébergeur ?",
+   "reponse": "On ne peut pas lui imposer d'empêcher toute remise en ligne future d'un contenu déjà retiré : ce serait une **surveillance générale**. Chaque nouvelle mise en ligne exige une **nouvelle notification**.",
+   "source": "1re civ., 12 juill. 2012, n° 11-13.666 et 11-13.669"
+  },
+  {
+   "id": "ue1-ch04-073",
+   "theme": "site",
+   "type": "regle",
+   "question": "Que doit contenir un signalement pour donner à l'hébergeur connaissance d'un contenu illicite ?",
+   "reponse": "L'**emplacement exact** du contenu (URL), les **raisons** de son caractère illicite, l'identité du notifiant et une déclaration de bonne foi : assez précis pour que l'illicéité apparaisse sans examen juridique approfondi.",
+   "source": "DSA, art. 16"
+  },
+  {
+   "id": "ue1-ch04-074",
+   "theme": "site",
+   "type": "regle",
+   "question": "Que retient la 1re chambre civile le 23 novembre 2022 (site espagnol de GPA) ?",
+   "reponse": "Un site qui propose à un public français l'accès à la **GPA**, interdite en France, est **manifestement illicite**. Informé, l'hébergeur devait le rendre promptement inaccessible en France : il engage sa responsabilité.",
+   "source": "1re civ., 23 nov. 2022, n° 21-10.220"
+  },
+  {
+   "id": "ue1-ch04-075",
+   "theme": "site",
+   "type": "regle",
+   "question": "Une plateforme qui modère les commentaires perd-elle la qualité d'hébergeur ?",
+   "reponse": "Non : la modération ne suffit pas. Elle devient éditeur seulement si elle joue un **rôle actif** sur le contenu (choix, rédaction, mise en avant éditoriale).",
+   "source": "DSA, art. 6 et 7 ; jurisprudence"
+  },
+  {
+   "id": "ue1-ch04-076",
+   "theme": "site",
+   "type": "regle",
+   "question": "De quoi répond l'éditeur d'un site ?",
+   "reponse": "De **tout le contenu** qu'il publie ou contrôle, sans le régime protecteur de l'hébergeur : responsabilité **civile** (dommages-intérêts) et **pénale** (diffamation, contrefaçon, pratique commerciale trompeuse).",
+   "source": "Art. 1240 ; loi 29 juill. 1881"
+  },
+  {
+   "id": "ue1-ch04-077",
+   "theme": "site",
+   "type": "regle",
+   "question": "Quelles mentions légales un site professionnel doit-il afficher ?",
+   "reponse": "L'identité de l'éditeur (dénomination, siège, téléphone, RCS, capital), le **directeur de la publication** et l'identité de l'**hébergeur**. Omission : délit puni d'un an d'emprisonnement et 75 000 € d'amende.",
+   "source": "LCEN, art. 1-1 et 19"
+  },
+  {
+   "id": "ue1-ch04-078",
+   "theme": "site",
+   "type": "cas",
+   "question": "La société TROCADO exploite un site de petites annonces entre particuliers. Le 3 mai N, M. Benali lui signale par le formulaire du site, avec l'adresse exacte de l'annonce, qu'un utilisateur vend des copies de ses photographies d'art en se présentant comme leur auteur. TROCADO ne réagit pas. Le 20 juin, l'annonce est toujours en ligne et M. Benali a perdu deux ventes.\n\n**TROCADO engage-t-elle sa responsabilité ?**",
+   "reponse": "**Problème** : l'hébergeur qui laisse en ligne un contenu illicite après signalement engage-t-il sa responsabilité ?\n**Règle** : l'hébergeur n'a pas d'obligation générale de surveillance (DSA, art. 8). Il n'est pas responsable des contenus stockés s'il n'en a pas connaissance, ou si, dès qu'il en a connaissance, il agit promptement pour les retirer (DSA, art. 6 ; LCEN, art. 6). Une notification précise, situant le contenu et expliquant son illicéité, lui en donne connaissance (DSA, art. 16 ; 1re civ., 23 nov. 2022).\n**Application** : TROCADO stocke les annonces de ses utilisateurs : elle est hébergeur. Le signalement du 3 mai donne l'adresse exacte et le motif (contrefaçon de droit d'auteur) : TROCADO a donc eu connaissance. Sept semaines sans réaction ne sont pas une réaction prompte. Deux ventes perdues : préjudice en lien avec le maintien en ligne.\n**Conclusion** : TROCADO perd la protection de l'hébergeur et doit des dommages-intérêts à M. Benali. Il doit exiger le retrait immédiat et peut agir aussi contre l'auteur de l'annonce.",
+   "source": "DSA, art. 6, 8, 16 ; LCEN, art. 6 ; 1re civ., 23 nov. 2022"
+  },
+  {
+   "id": "ue1-ch04-079",
+   "theme": "site",
+   "type": "regle",
+   "question": "Qui est titulaire des droits d'auteur sur un site original créé par une agence web pour un client ?",
+   "reponse": "L'**agence**, auteur. Le client n'acquiert les droits patrimoniaux que par une **cession écrite**, qui mentionne chaque droit cédé et précise son étendue, sa destination, son lieu et sa durée.",
+   "source": "CPI, L. 131-2, L. 131-3"
+  },
+  {
+   "id": "ue1-ch04-080",
+   "theme": "site",
+   "type": "regle",
+   "question": "Le client qui a acquis les droits patrimoniaux sur son site peut-il le modifier librement ?",
+   "reponse": "Pas pour la partie graphique : le **droit au respect de l'œuvre** reste à l'auteur, inaliénable. Pour le code (logiciel), l'auteur ne peut s'opposer qu'aux modifications qui nuisent à son **honneur** ou sa **réputation**.",
+   "source": "CPI, L. 121-1, L. 121-7"
+  },
+  {
+   "id": "ue1-ch04-081",
+   "theme": "site",
+   "type": "regle",
+   "question": "Le contrat de travail transfère-t-il à l'employeur les droits d'auteur du salarié ?",
+   "reponse": "Non, en principe : il faut une **cession expresse** (avenant). Exceptions : le **logiciel** créé dans les fonctions et l'**œuvre collective**.",
+   "source": "CPI, L. 111-1 al. 3"
+  },
+  {
+   "id": "ue1-ch04-082",
+   "theme": "site",
+   "type": "regle",
+   "question": "Un salarié développe dans ses fonctions le code du site marchand de son employeur. À qui reviennent les droits patrimoniaux ?",
+   "reponse": "À l'**employeur**, automatiquement, sans cession écrite : les droits sur un logiciel créé dans les fonctions ou sur ses instructions lui sont dévolus (sauf stipulation contraire).",
+   "source": "CPI, L. 113-9"
+  },
+  {
+   "id": "ue1-ch04-083",
+   "theme": "site",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une œuvre collective, et à qui appartient-elle ?",
+   "reponse": "Une œuvre créée à l'**initiative** d'une personne qui l'édite et la divulgue sous son nom, où les apports des auteurs se fondent dans l'ensemble. Elle appartient à cette personne, investie des droits d'auteur.",
+   "source": "CPI, L. 113-2, L. 113-5"
+  },
+  {
+   "id": "ue1-ch04-084",
+   "theme": "site",
+   "type": "cas",
+   "question": "En N-1, la société VIVAFLOR, fleuriste, fait créer son site par l'agence PIXEL pour 8 000 €. Le contrat prévoit seulement : « Le client devient propriétaire du site. » La maquette, très originale, est l'œuvre d'une graphiste de PIXEL. En N, VIVAFLOR fait refondre les illustrations par un autre prestataire et les décline sur ses catalogues papier. PIXEL proteste.\n\n**VIVAFLOR pouvait-elle procéder ainsi ?**",
+   "reponse": "**Problème** : le client qui a commandé un site original peut-il le modifier et l'exploiter librement sans cession détaillée des droits d'auteur ?\n**Règle** : une œuvre originale est protégée dès sa création (CPI, art. L. 111-1). La cession des droits patrimoniaux doit être écrite et mentionner chaque droit cédé, son étendue, sa destination, son lieu et sa durée (art. L. 131-2 et L. 131-3). Le droit au respect de l'œuvre est inaliénable (art. L. 121-1).\n**Application** : la maquette originale est une œuvre, dont les droits restent du côté de l'agence et de sa graphiste. La clause « propriétaire du site » ne précise ni les droits cédés ni l'exploitation sur papier : la cession est insuffisante. La refonte des illustrations touche au droit au respect.\n**Conclusion** : VIVAFLOR ne pouvait ni décliner les illustrations sur ses catalogues ni les faire modifier sans accord : elle risque une action en contrefaçon. Conseil : négocier un avenant de cession détaillé.",
+   "source": "CPI, L. 111-1, L. 121-1, L. 131-2, L. 131-3"
+  },
+  {
+   "id": "ue1-ch04-085",
+   "theme": "site",
+   "type": "cas",
+   "question": "M. Garnier, salarié de la société NOVAPLAST comme développeur web, crée en N le site de vente en ligne de son employeur : le code, mais aussi les photographies originales des produits, prises sur son temps de travail. Son contrat de travail ne dit rien des droits d'auteur. Licencié en N+1, il exige que NOVAPLAST cesse d'utiliser le code et les photos.\n\n**Que peut-il obtenir ?**",
+   "reponse": "**Problème** : l'employeur est-il titulaire des droits d'auteur sur les créations de son salarié en l'absence de clause de cession ?\n**Règle** : le contrat de travail n'emporte pas cession des droits d'auteur (CPI, art. L. 111-1 al. 3) : il faut une cession écrite (art. L. 131-2). Exception : les droits patrimoniaux sur un logiciel créé par un salarié dans ses fonctions sont dévolus à l'employeur (art. L. 113-9).\n**Application** : le code est un logiciel créé dans ses fonctions : NOVAPLAST en détient les droits patrimoniaux sans cession. Les photographies originales sont des œuvres hors logiciel : sans cession écrite, M. Garnier en reste titulaire, même prises pendant le travail.\n**Conclusion** : il ne peut rien exiger pour le code ; il peut interdire l'usage des photos ou en négocier la cession. Conseil à NOVAPLAST : prévoir des clauses de cession dans les contrats de travail.",
+   "source": "CPI, L. 111-1, L. 113-9, L. 131-2"
+  },
+  {
+   "id": "ue1-ch04-086",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Qu'est-ce que le Digital Services Act (DSA) ?",
+   "reponse": "Le règlement (UE) 2022/2065 sur les services numériques, applicable à tous les intermédiaires depuis le **17 février 2024** : responsabilité des hébergeurs, signalement des contenus illicites, transparence, obligations renforcées des très grandes plateformes.",
+   "source": "Règl. (UE) 2022/2065"
+  },
+  {
+   "id": "ue1-ch04-087",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Quelle autorité régule les plateformes en France ?",
+   "reponse": "L'**ARCOM**, née en 2022 de la fusion du CSA et de la Hadopi. Elle coordonne l'application du DSA en France et ses pouvoirs ont été renforcés par la loi SREN.",
+   "source": "Loi 2021-1382 ; loi 2024-449 (SREN)"
+  },
+  {
+   "id": "ue1-ch04-088",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Que risque l'hébergeur qui ne retire pas en 24 heures un contenu pédopornographique signalé par les autorités ?",
+   "reponse": "**Un an d'emprisonnement et 250 000 € d'amende** (loi SREN du 21 mai 2024).",
+   "source": "Loi 2024-449 du 21 mai 2024 (SREN)"
+  },
+  {
+   "id": "ue1-ch04-089",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Quelle peine complémentaire la loi SREN prévoit-elle contre l'auteur de cyberharcèlement ?",
+   "reponse": "La **suspension de ses comptes** sur les réseaux sociaux, jusqu'à **6 mois** (1 an en récidive).",
+   "source": "C. pén., 131-35-1 (loi SREN)"
+  },
+  {
+   "id": "ue1-ch04-090",
+   "theme": "regulation",
+   "type": "memo",
+   "question": "Quels sont les quatre niveaux de risque du règlement européen sur l'IA ?",
+   "reponse": "**Inacceptable** → interdit.\n**Élevé** → autorisé sous conditions strictes.\n**Limité** → obligation de transparence.\n**Minimal** → libre.",
+   "source": "Règl. (UE) 2024/1689 (AI Act)"
+  },
+  {
+   "id": "ue1-ch04-091",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Donne trois exemples d'IA à risque inacceptable, donc interdites.",
+   "reponse": "La **notation sociale**, l'exploitation de la **vulnérabilité** des personnes, l'identification biométrique à distance **en temps réel** dans l'espace public à des fins répressives (sauf exceptions). Interdites depuis le 2 février 2025.",
+   "source": "AI Act, art. 5"
+  },
+  {
+   "id": "ue1-ch04-092",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Qu'impose le règlement sur l'IA pour un chatbot ou une IA générative (risque limité) ?",
+   "reponse": "La **transparence** : informer l'utilisateur qu'il échange avec une IA et signaler les contenus générés ou manipulés (hypertrucages).",
+   "source": "AI Act, art. 50"
+  },
+  {
+   "id": "ue1-ch04-093",
+   "theme": "regulation",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une IA à haut risque, et quand ses obligations s'appliquent-elles ?",
+   "reponse": "Une IA à fort impact sur la santé, la sécurité ou les droits fondamentaux (recrutement, éducation, crédit, justice). Obligations (gestion des risques, contrôle humain) reportées au **2 décembre 2027** par l'omnibus de 2026.",
+   "source": "AI Act, art. 6 ; règl. (UE) 2026/1744"
+  }
+ ]
+}
