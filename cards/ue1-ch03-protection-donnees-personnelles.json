@@ -1,0 +1,746 @@
+{
+ "schema": 1,
+ "deck": {
+  "id": "ue1-ch03",
+  "ue": "UE1",
+  "ueTitre": "Gestion juridique, fiscale et sociale",
+  "chapitre": 3,
+  "titre": "Protection des données personnelles",
+  "themes": [
+   {
+    "id": "champ",
+    "titre": "Champ d'application",
+    "couleur": "sarcelle",
+    "ordre": 1
+   },
+   {
+    "id": "licite",
+    "titre": "Licéité du traitement",
+    "couleur": "bleu",
+    "ordre": 2
+   },
+   {
+    "id": "droits",
+    "titre": "Droits des personnes",
+    "couleur": "violet",
+    "ordre": 3
+   },
+   {
+    "id": "conformite",
+    "titre": "Obligations du responsable",
+    "couleur": "vert",
+    "ordre": 4
+   },
+   {
+    "id": "sanctions",
+    "titre": "CNIL et sanctions",
+    "couleur": "rouge",
+    "ordre": 5
+   },
+   {
+    "id": "methode",
+    "titre": "Méthode et preuve",
+    "couleur": "ardoise",
+    "ordre": 6
+   }
+  ]
+ },
+ "cards": [
+  {
+   "id": "ue1-ch03-001",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une donnée à caractère personnel ?",
+   "reponse": "Toute information se rapportant à une **personne physique identifiée ou identifiable**, directement ou indirectement : nom, numéro client, identifiant en ligne, localisation, photo.",
+   "source": "RGPD, art. 4, 1)"
+  },
+  {
+   "id": "ue1-ch03-002",
+   "theme": "champ",
+   "type": "regle",
+   "question": "La raison sociale et le numéro SIREN d'une société sont-ils des données personnelles ? Et l'e-mail prenom.nom@societe.fr ?",
+   "reponse": "Les données d'une **personne morale** ne sont pas protégées par le RGPD.\nL'e-mail nominatif d'un salarié l'est : il identifie une personne physique.",
+   "source": "RGPD, art. 4, 1) ; consid. 14"
+  },
+  {
+   "id": "ue1-ch03-003",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Une donnée pseudonymisée reste-t-elle soumise au RGPD ? Et une donnée anonymisée ?",
+   "reponse": "Pseudonymisée (nom remplacé par un code, correspondance conservée) : **oui**, la personne reste identifiable.\nAnonymisée (ré-identification impossible) : **non**.",
+   "source": "RGPD, art. 4, 5) ; consid. 26"
+  },
+  {
+   "id": "ue1-ch03-004",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un traitement de données personnelles ?",
+   "reponse": "**Toute opération**, automatisée ou non : collecte, enregistrement, conservation, consultation, transmission, effacement.\nLe simple stockage suffit, sans usage commercial.",
+   "source": "RGPD, art. 4, 2)"
+  },
+  {
+   "id": "ue1-ch03-005",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Quel traitement de données personnelles échappe au RGPD par nature ?",
+   "reponse": "Celui fait par une personne physique pour une activité **strictement personnelle ou domestique** : le carnet d'adresses familial, les photos de vacances.",
+   "source": "RGPD, art. 2, 2, c)"
+  },
+  {
+   "id": "ue1-ch03-006",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Qui est le responsable du traitement ?",
+   "reponse": "Celui qui détermine les **finalités** (le pourquoi) et les **moyens** (le comment) du traitement. C'est lui qui répond de la conformité.",
+   "source": "RGPD, art. 4, 7) et 24"
+  },
+  {
+   "id": "ue1-ch03-007",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Qu'est-ce qu'un sous-traitant au sens du RGPD ?",
+   "reponse": "Celui qui traite les données **pour le compte** du responsable, sur ses instructions. Un **contrat écrit** est obligatoire.\nEx. : l'hébergeur du logiciel de paie.",
+   "source": "RGPD, art. 4, 8) et 28"
+  },
+  {
+   "id": "ue1-ch03-008",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Que retient l'arrêt Wirtschaftsakademie (CJUE, 5 juin 2018) ?",
+   "reponse": "La notion de responsable est **large** : l'administrateur d'une page sur un réseau social est **responsable conjoint** avec le réseau des données de ses visiteurs.",
+   "source": "CJUE, 5 juin 2018, C-210/16 ; RGPD, art. 26"
+  },
+  {
+   "id": "ue1-ch03-009",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Une entreprise établie en France fait traiter ses fichiers sur des serveurs aux États-Unis. Le RGPD s'applique-t-il ?",
+   "reponse": "Oui. Le critère est l'**établissement** du responsable ou du sous-traitant dans l'Union, peu importe où le traitement a lieu.",
+   "source": "RGPD, art. 3, 1"
+  },
+  {
+   "id": "ue1-ch03-010",
+   "theme": "champ",
+   "type": "regle",
+   "question": "Quand le RGPD s'applique-t-il à une entreprise établie hors de l'Union ?",
+   "reponse": "Quand elle **offre des biens ou services**, même gratuits, à des personnes dans l'Union, ou **suit leur comportement** dans l'Union (critère du ciblage).",
+   "source": "RGPD, art. 3, 2"
+  },
+  {
+   "id": "ue1-ch03-011",
+   "theme": "champ",
+   "type": "cas",
+   "question": "La société TRAILGEAR, établie au Canada, sans filiale ni bureau en Europe, vend des chaussures de randonnée en ligne. Son site existe en français, affiche les prix en euros et livre en France ; des traceurs analysent la navigation des visiteurs. Le 5 mai N, M. Garnier, client lyonnais, lui demande la copie de ses données. TRAILGEAR répond qu'en tant que société canadienne elle n'est pas concernée par le RGPD.\n\n**Cet argument est-il fondé ?**",
+   "reponse": "**Problème** : une entreprise établie hors de l'Union est-elle soumise au RGPD pour les données de ses clients français ?\n**Règle** : le RGPD s'applique au responsable établi hors de l'Union lorsque le traitement est lié à l'offre de biens ou services à des personnes dans l'Union, ou au suivi de leur comportement dans l'Union (art. 3, 2). La personne a alors un droit d'accès (art. 15), à satisfaire dans un mois (art. 12).\n**Application** : TRAILGEAR n'a pas d'établissement dans l'Union, mais elle cible la France : site en français, prix en euros, livraison en France. Elle suit aussi la navigation des visiteurs européens. Les deux critères de ciblage sont réunis.\n**Conclusion** : l'argument est infondé. TRAILGEAR doit fournir la copie au plus tard le 5 juin N et désigner un représentant dans l'Union ; à défaut, M. Garnier saisit la CNIL.",
+   "source": "RGPD, art. 3, 2 ; 12 ; 15 ; 27"
+  },
+  {
+   "id": "ue1-ch03-012",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que faut-il pour qu'un traitement de données soit licite ?",
+   "reponse": "Une **finalité** déterminée, explicite et légitime, et l'une des **six bases légales** du RGPD, choisie avant le traitement.",
+   "source": "RGPD, art. 5, 1, b) et 6"
+  },
+  {
+   "id": "ue1-ch03-013",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quelles sont les trois bases légales tirées de la volonté de la personne ou de la loi ?",
+   "reponse": "Le **consentement** de la personne.\nL'exécution d'un **contrat** (ou de mesures précontractuelles) auquel elle est partie.\nUne **obligation légale** du responsable.",
+   "source": "RGPD, art. 6, 1, a) à c)"
+  },
+  {
+   "id": "ue1-ch03-014",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quelles sont les trois autres bases légales d'un traitement ?",
+   "reponse": "La sauvegarde des **intérêts vitaux** d'une personne.\nUne **mission d'intérêt public**.\nLes **intérêts légitimes** du responsable, sauf si les droits de la personne prévalent.",
+   "source": "RGPD, art. 6, 1, d) à f)"
+  },
+  {
+   "id": "ue1-ch03-015",
+   "theme": "licite",
+   "type": "regle",
+   "question": "À quelle condition un responsable peut-il invoquer son intérêt légitime ?",
+   "reponse": "Un intérêt réel (sécurité, prévention de la fraude…), mis en **balance** avec les droits de la personne et ses attentes raisonnables. Il est écarté si ces droits prévalent.",
+   "source": "RGPD, art. 6, 1, f)"
+  },
+  {
+   "id": "ue1-ch03-016",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Un employeur doit-il obtenir le consentement de ses salariés pour gérer leur paie ?",
+   "reponse": "Non. Le traitement repose sur le **contrat** de travail et sur des **obligations légales** (déclarations sociales). Le consentement n'est qu'une base parmi six.",
+   "source": "RGPD, art. 6, 1, b) et c)"
+  },
+  {
+   "id": "ue1-ch03-017",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que signifie le principe de limitation des finalités ?",
+   "reponse": "Le but de la collecte est fixé **avant** ou au moment de la collecte. Les données ne peuvent pas être réutilisées pour un but **incompatible**.\nEx. : adresses de livraison revendues à un annonceur.",
+   "source": "RGPD, art. 5, 1, b)"
+  },
+  {
+   "id": "ue1-ch03-018",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que signifie le principe de minimisation ?",
+   "reponse": "Seulement les données **adéquates, pertinentes et nécessaires** à la finalité. Il vaut aussi en interne : seuls ceux qui en ont besoin y accèdent.",
+   "source": "RGPD, art. 5, 1, c)"
+  },
+  {
+   "id": "ue1-ch03-019",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que signifie le principe d'exactitude ?",
+   "reponse": "Les données sont **exactes** et, si nécessaire, tenues à jour. Les données inexactes sont rectifiées ou effacées sans tarder.",
+   "source": "RGPD, art. 5, 1, d)"
+  },
+  {
+   "id": "ue1-ch03-020",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Combien de temps une entreprise peut-elle conserver des données personnelles ?",
+   "reponse": "Pas plus que nécessaire à la **finalité**. Ensuite : suppression, anonymisation, ou archivage si la loi l'impose. Jamais une conservation illimitée.",
+   "source": "RGPD, art. 5, 1, e)"
+  },
+  {
+   "id": "ue1-ch03-021",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que recouvre le principe d'intégrité et de confidentialité ?",
+   "reponse": "La **sécurité** : des mesures techniques et organisationnelles contre l'accès non autorisé, la perte, la destruction ou l'altération des données.",
+   "source": "RGPD, art. 5, 1, f) et 32"
+  },
+  {
+   "id": "ue1-ch03-022",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Qu'est-ce que le principe d'accountability ?",
+   "reponse": "Le responsable doit respecter le RGPD **et pouvoir le démontrer** : documentation, registre, analyses d'impact, contrats.",
+   "source": "RGPD, art. 5, 2 et 24"
+  },
+  {
+   "id": "ue1-ch03-023",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Qu'exigent la loyauté et la transparence d'un traitement ?",
+   "reponse": "Pas de collecte cachée. Une information **concise, claire et aisément accessible** : une longue politique de confidentialité éparpillée ne suffit pas.",
+   "source": "RGPD, art. 5, 1, a) et 12"
+  },
+  {
+   "id": "ue1-ch03-024",
+   "theme": "licite",
+   "type": "memo",
+   "question": "Quel moyen mnémotechnique pour les six principes du traitement ?",
+   "reponse": "**L F M E C S** : « Le Fichier Minimal Est Court et Sûr ».\nLicéité-loyauté-transparence, Finalité, Minimisation, Exactitude, Conservation, Sécurité. Et l'accountability : il faut le prouver.",
+   "source": "RGPD, art. 5"
+  },
+  {
+   "id": "ue1-ch03-025",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quelles sont les qualités d'un consentement valable au sens du RGPD ?",
+   "reponse": "**Libre, spécifique, éclairé et univoque**, exprimé par une **déclaration** ou un **acte positif clair** (cocher, cliquer). Le silence ou l'inaction ne valent pas consentement.",
+   "source": "RGPD, art. 4, 11) ; consid. 32"
+  },
+  {
+   "id": "ue1-ch03-026",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Qui doit prouver que le consentement a été donné ?",
+   "reponse": "Le **responsable du traitement**.",
+   "source": "RGPD, art. 7, 1"
+  },
+  {
+   "id": "ue1-ch03-027",
+   "theme": "licite",
+   "type": "regle",
+   "question": "La personne peut-elle retirer son consentement, et avec quel effet ?",
+   "reponse": "Oui, **à tout moment**, aussi simplement qu'elle l'a donné. Le retrait vaut pour l'avenir : il ne rend pas illicite le traitement antérieur.",
+   "source": "RGPD, art. 7, 3"
+  },
+  {
+   "id": "ue1-ch03-028",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quand un consentement n'est-il pas libre ?",
+   "reponse": "Quand le service ou le contrat est **subordonné** à un consentement inutile à son exécution, ou en cas de **déséquilibre** marqué (employeur face au salarié).",
+   "source": "RGPD, art. 7, 4 ; consid. 43"
+  },
+  {
+   "id": "ue1-ch03-029",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que retient l'arrêt Planet49 (CJUE, 1er octobre 2019) ?",
+   "reponse": "Une **case précochée** ne permet pas de recueillir un consentement valable : il faut un acte actif de la personne.",
+   "source": "CJUE, 1er oct. 2019, C-673/17"
+  },
+  {
+   "id": "ue1-ch03-030",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que retient la décision Google LLC (Conseil d'État, 19 juin 2020) ?",
+   "reponse": "Elle confirme l'amende CNIL de **50 M€** : information éparpillée et peu accessible, consentement à la publicité ciblée ni spécifique ni univoque (cases précochées, accord global).",
+   "source": "CE, 19 juin 2020, n° 430810"
+  },
+  {
+   "id": "ue1-ch03-031",
+   "theme": "licite",
+   "type": "regle",
+   "question": "À partir de quel âge un mineur peut-il consentir seul au traitement de ses données par un service en ligne ?",
+   "reponse": "**15 ans**. Avant, il faut le consentement conjoint du mineur et du titulaire de l'autorité parentale.",
+   "source": "Loi 78-17, art. 45 ; RGPD, art. 8"
+  },
+  {
+   "id": "ue1-ch03-032",
+   "theme": "licite",
+   "type": "cas",
+   "question": "La société BELLEMAISON vend des meubles en ligne. Son formulaire de commande demande l'e-mail du client pour la livraison, sous une case précochée « J'accepte de recevoir les offres de vos partenaires ». En mars N, elle transmet 40 000 adresses à un courtier publicitaire. Mme Roux, cliente depuis janvier N, reçoit depuis des publicités de marques inconnues.\n\n**Cette transmission est-elle licite ?**",
+   "reponse": "**Problème** : des données collectées pour une livraison peuvent-elles être cédées à des fins de prospection sur la foi d'une case précochée ?\n**Règle** : un traitement exige une finalité déterminée et une base légale (art. 5 et 6). Le consentement doit être libre, spécifique, éclairé et univoque, par un acte positif (art. 4, 11) ; une case précochée ne vaut pas consentement (Planet49). La prospection électronique de particuliers suppose leur consentement.\n**Application** : la finalité annoncée est la livraison ; la cession au courtier est une finalité nouvelle et incompatible. Le contrat de vente ne la justifie pas. Le seul « consentement » est une case précochée : pas d'acte positif.\n**Conclusion** : transmission illicite. Mme Roux peut s'opposer à la prospection, demander l'effacement, saisir la CNIL (amende jusqu'à 20 M€ ou 4 % du CA) et demander réparation de son préjudice. Conseil à BELLEMAISON : case non cochée et distincte pour chaque finalité.",
+   "source": "RGPD, art. 4, 5, 6, 7, 21, 83 ; CPCE, art. L. 34-5 ; CJUE, Planet49"
+  },
+  {
+   "id": "ue1-ch03-033",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quel est le régime des données sensibles ?",
+   "reponse": "**Interdiction de principe**, sauf exceptions limitatives : consentement **explicite**, obligations du droit du travail, intérêts vitaux, données **manifestement** rendues publiques par la personne, défense en justice, médecine du travail…",
+   "source": "RGPD, art. 9"
+  },
+  {
+   "id": "ue1-ch03-034",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quelles données sensibles touchent aux opinions et aux appartenances ?",
+   "reponse": "L'origine raciale ou ethnique, les opinions politiques, les convictions religieuses ou philosophiques, l'appartenance syndicale.",
+   "source": "RGPD, art. 9, 1"
+  },
+  {
+   "id": "ue1-ch03-035",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Quelles données sensibles touchent au corps et à l'intimité ?",
+   "reponse": "Les données génétiques, biométriques (pour identifier une personne), de santé, et celles sur la vie ou l'orientation sexuelle.",
+   "source": "RGPD, art. 9, 1"
+  },
+  {
+   "id": "ue1-ch03-036",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Une entreprise peut-elle tenir un fichier des condamnations pénales de ses clients ?",
+   "reponse": "Non, sauf texte. Ces données ne sont pas « sensibles », mais leur traitement n'est possible que sous le **contrôle de l'autorité publique** ou si la **loi** l'autorise.",
+   "source": "RGPD, art. 10"
+  },
+  {
+   "id": "ue1-ch03-037",
+   "theme": "licite",
+   "type": "cas",
+   "question": "La SAS LOGIPACK, entrepôt de 60 salariés, installe en janvier N une pointeuse par empreinte digitale pour contrôler les horaires. Chaque salarié a signé un formulaire « J'accepte l'enregistrement de mon empreinte ». Le délégué syndical conteste le dispositif, en soulignant qu'un badge suffirait.\n\n**Ce dispositif est-il licite ?**",
+   "reponse": "**Problème** : un employeur peut-il traiter les empreintes digitales de ses salariés pour contrôler leurs horaires, avec leur accord écrit ?\n**Règle** : les données biométriques d'identification sont sensibles : leur traitement est interdit sauf exception, comme le consentement explicite (art. 9). Le consentement doit être libre (art. 4, 11 et 7, 4). Les données doivent être limitées au nécessaire (art. 5, 1, c).\n**Application** : l'empreinte est une donnée biométrique. Le consentement d'un salarié face à son employeur n'est pas libre. Aucune obligation du droit du travail n'impose la biométrie pour pointer ; un badge atteint le même but : le dispositif n'est pas nécessaire.\n**Conclusion** : dispositif illicite. LOGIPACK doit le remplacer par un badge et effacer les empreintes. Sinon, la CNIL peut lui enjoindre de cesser et lui infliger une amende jusqu'à 20 M€ ou 4 % du CA.",
+   "source": "RGPD, art. 4, 5, 7, 9, 83"
+  },
+  {
+   "id": "ue1-ch03-038",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Quelles informations donner à la personne lors de la collecte de ses données ?",
+   "reponse": "L'identité du responsable, les finalités et la base légale, les destinataires et la durée de conservation, ses droits (dont la réclamation à la CNIL).\nCollecte indirecte : dans un délai d'un mois au plus.",
+   "source": "RGPD, art. 13 et 14"
+  },
+  {
+   "id": "ue1-ch03-039",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Que permet le droit d'accès ?",
+   "reponse": "Savoir si des données sont traitées, en obtenir une **copie** et connaître les finalités, destinataires, durée de conservation et origine des données.",
+   "source": "RGPD, art. 15"
+  },
+  {
+   "id": "ue1-ch03-040",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Dans quel délai et à quel prix le responsable répond-il à une demande d'exercice d'un droit ?",
+   "reponse": "**Un mois**, prolongeable de **deux mois** si la demande est complexe, en prévenant la personne dans le premier mois. **Gratuitement**, sauf demande manifestement infondée ou excessive.",
+   "source": "RGPD, art. 12, 3 et 5"
+  },
+  {
+   "id": "ue1-ch03-041",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Que permet le droit de rectification ?",
+   "reponse": "Faire **corriger** sans tarder les données inexactes et **compléter** les données incomplètes.",
+   "source": "RGPD, art. 16"
+  },
+  {
+   "id": "ue1-ch03-042",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Dans quels cas principaux peut-on obtenir l'effacement de ses données ?",
+   "reponse": "Données **plus nécessaires** ; **consentement retiré** sans autre base ; **opposition** fondée ; traitement **illicite**.",
+   "source": "RGPD, art. 17, 1"
+  },
+  {
+   "id": "ue1-ch03-043",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Quand le responsable peut-il refuser l'effacement ?",
+   "reponse": "Si la conservation est nécessaire à la liberté d'expression et d'information, au respect d'une **obligation légale**, à des archives ou à la recherche, ou à la **défense de droits en justice**.",
+   "source": "RGPD, art. 17, 3"
+  },
+  {
+   "id": "ue1-ch03-044",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Que retient l'arrêt Google Spain (CJUE, 13 mai 2014) ?",
+   "reponse": "Un moteur de recherche peut devoir **déréférencer** des liens affichés sur le nom d'une personne, après mise en balance avec le droit du public à l'information : le droit à l'oubli.",
+   "source": "CJUE, 13 mai 2014, C-131/12"
+  },
+  {
+   "id": "ue1-ch03-045",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Qu'est-ce que le droit à la limitation du traitement ?",
+   "reponse": "Faire **geler** les données : conservées mais plus utilisées, le temps de vérifier leur exactitude ou une opposition, ou à la place d'un effacement.",
+   "source": "RGPD, art. 18"
+  },
+  {
+   "id": "ue1-ch03-046",
+   "theme": "droits",
+   "type": "regle",
+   "question": "À quelles conditions joue le droit à la portabilité ?",
+   "reponse": "Traitement **automatisé** fondé sur le **consentement** ou le **contrat**, et données que la personne a **elle-même fournies**. Elle les reçoit dans un format lisible par machine et peut les faire transmettre à un autre responsable.",
+   "source": "RGPD, art. 20"
+  },
+  {
+   "id": "ue1-ch03-047",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Comment s'opposer à un traitement fondé sur l'intérêt légitime du responsable ?",
+   "reponse": "Pour un motif tenant à sa **situation particulière**. Le responsable ne continue que s'il prouve des motifs légitimes **impérieux** qui prévalent, ou la défense de droits en justice.",
+   "source": "RGPD, art. 21, 1"
+  },
+  {
+   "id": "ue1-ch03-048",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Un client peut-il s'opposer à recevoir de la prospection commerciale ?",
+   "reponse": "Oui, **à tout moment et sans motif** : le droit est absolu. Le traitement à cette fin doit cesser.",
+   "source": "RGPD, art. 21, 2 et 3"
+  },
+  {
+   "id": "ue1-ch03-049",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Une personne peut-elle subir une décision prise uniquement par un algorithme ?",
+   "reponse": "Non si elle produit des effets juridiques ou importants, sauf **contrat**, **loi** ou **consentement explicite**. En cas de contrat ou de consentement, elle a droit à une **intervention humaine** et peut contester.",
+   "source": "RGPD, art. 22"
+  },
+  {
+   "id": "ue1-ch03-050",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Que retient l'arrêt SCHUFA (CJUE, 7 décembre 2023) ?",
+   "reponse": "Le calcul d'un **score de solvabilité** est une décision automatisée encadrée lorsqu'il joue un **rôle déterminant** dans l'octroi d'un crédit par un tiers.",
+   "source": "CJUE, 7 déc. 2023, C-634/21 ; RGPD, art. 22"
+  },
+  {
+   "id": "ue1-ch03-051",
+   "theme": "droits",
+   "type": "cas",
+   "question": "M. Petit a résilié son abonnement à la salle de sport FITCITY en N-3. Le 10 janvier N, il lui demande par écrit la copie de ses données, puis leur effacement complet. Sans réponse au 1er mars N, il relance. FITCITY répond qu'elle conserve tout « pour ses statistiques », y compris ses factures, et refuse.\n\n**M. Petit peut-il obtenir gain de cause ?**",
+   "reponse": "**Problème** : le responsable peut-il ignorer une demande d'accès et refuser l'effacement des données d'un ancien client ?\n**Règle** : le responsable répond dans un mois, prolongeable de deux mois s'il prévient la personne (art. 12, 3). La personne obtient une copie de ses données (art. 15) et leur effacement si elles ne sont plus nécessaires (art. 17, 1), sauf obligation légale de conservation (art. 17, 3) ; les pièces comptables se gardent 10 ans (C. com., L. 123-22).\n**Application** : demande du 10 janvier, aucune réponse ni prolongation au 10 février : délai dépassé. Le contrat a pris fin en N-3 : les données ne sont plus nécessaires. Les statistiques peuvent se faire sur données anonymisées. Seules les factures relèvent d'une obligation légale.\n**Conclusion** : oui, en partie. M. Petit obtient la copie et l'effacement de tout sauf les factures, archivées jusqu'à la fin du délai légal. À défaut, il saisit la CNIL, qui peut enjoindre FITCITY sous astreinte et la sanctionner.",
+   "source": "RGPD, art. 12, 15, 17 ; C. com., L. 123-22"
+  },
+  {
+   "id": "ue1-ch03-052",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Que signifie la protection des données dès la conception et par défaut ?",
+   "reponse": "Intégrer la protection **dès le projet** (pseudonymisation, minimisation), et ne traiter **par défaut** que les données nécessaires, sans action de l'utilisateur.\nEx. : géolocalisation désactivée par défaut.",
+   "source": "RGPD, art. 25"
+  },
+  {
+   "id": "ue1-ch03-053",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Qu'est-ce que le registre des activités de traitement ?",
+   "reponse": "La liste écrite des traitements : finalités, données et personnes concernées, destinataires, durées, sécurité. Tenu par le responsable et le sous-traitant ; en pratique, presque toutes les entreprises y sont soumises.",
+   "source": "RGPD, art. 30"
+  },
+  {
+   "id": "ue1-ch03-054",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Que doit faire le responsable pour la sécurité des données ?",
+   "reponse": "Prendre des mesures techniques et organisationnelles **adaptées au risque** : chiffrement, pseudonymisation, habilitations, sauvegardes, tests réguliers. Le manquement existe même sans fuite.",
+   "source": "RGPD, art. 32"
+  },
+  {
+   "id": "ue1-ch03-055",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Que doit prévoir le contrat entre le responsable et son sous-traitant ?",
+   "reponse": "Traitement sur **instructions** documentées ; **confidentialité** ; **sécurité** ; restitution ou destruction des données en **fin de contrat**.",
+   "source": "RGPD, art. 28, 3"
+  },
+  {
+   "id": "ue1-ch03-056",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Qu'est-ce qu'une violation de données personnelles ?",
+   "reponse": "Une atteinte à la sécurité qui entraîne la **destruction**, la **perte**, l'**altération**, la **divulgation** ou l'**accès non autorisé** à des données.\nEx. : piratage, ordinateur volé, e-mail mal adressé.",
+   "source": "RGPD, art. 4, 12)"
+  },
+  {
+   "id": "ue1-ch03-057",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Quand et dans quel délai notifier une violation de données à la CNIL ?",
+   "reponse": "Sauf si elle est **peu susceptible** d'engendrer un risque, dans les **72 heures** après en avoir pris connaissance. Au-delà, le retard doit être motivé.",
+   "source": "RGPD, art. 33, 1"
+  },
+  {
+   "id": "ue1-ch03-058",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Que doit faire le sous-traitant qui découvre une violation de données ?",
+   "reponse": "Prévenir le **responsable du traitement** dans les meilleurs délais. C'est le responsable qui notifie la CNIL.",
+   "source": "RGPD, art. 33, 2"
+  },
+  {
+   "id": "ue1-ch03-059",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Quand faut-il informer les personnes touchées par une violation, et quand en est-on dispensé ?",
+   "reponse": "En cas de **risque élevé**, sans tarder. Dispense : données chiffrées, risque neutralisé, ou efforts disproportionnés (alors communication publique).",
+   "source": "RGPD, art. 34"
+  },
+  {
+   "id": "ue1-ch03-060",
+   "theme": "conformite",
+   "type": "memo",
+   "question": "Quel moyen mnémotechnique pour réagir à une violation de données ?",
+   "reponse": "**D N I** : **D**ocumenter toujours, **N**otifier la CNIL en 72 h sauf risque improbable, **I**nformer les personnes si risque élevé.",
+   "source": "RGPD, art. 33 et 34"
+  },
+  {
+   "id": "ue1-ch03-061",
+   "theme": "conformite",
+   "type": "cas",
+   "question": "La clinique SAINT-ROCH découvre le lundi 3 février N à 9 h qu'un pirate a copié son fichier de 12 000 patients : noms, téléphones et motifs d'hospitalisation, stockés sans chiffrement. Son directeur veut attendre la fin de l'enquête interne, prévue trois semaines plus tard, avant de prévenir qui que ce soit.\n\n**Ce choix est-il conforme au RGPD ?**",
+   "reponse": "**Problème** : un responsable peut-il différer la notification et l'information des personnes après une violation de données ?\n**Règle** : toute violation est documentée ; elle est notifiée à la CNIL dans les 72 heures, sauf risque improbable (art. 33). Si le risque est élevé, les personnes sont informées sans tarder, sauf données chiffrées (art. 34).\n**Application** : la copie par un pirate est un accès non autorisé : violation. Les données de santé de 12 000 personnes, non chiffrées : risque élevé. Connaissance le 3 février à 9 h : notification au plus tard le 6 février à 9 h, quitte à la compléter ensuite.\n**Conclusion** : non conforme. La clinique doit notifier la CNIL avant le 6 février 9 h et prévenir les patients. Sinon : amende jusqu'à 10 M€ ou 2 % du CA, délit de non-notification (5 ans, 300 000 €) et dommages-intérêts aux patients.",
+   "source": "RGPD, art. 33, 34, 83 ; C. pén., art. 226-17-1"
+  },
+  {
+   "id": "ue1-ch03-062",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Quand une analyse d'impact (AIPD) est-elle obligatoire ?",
+   "reponse": "Avant un traitement à **risque élevé**, notamment : profilage produisant des effets importants ; données sensibles ou pénales à **grande échelle** ; surveillance systématique à grande échelle d'un lieu public.",
+   "source": "RGPD, art. 35, 1 et 3"
+  },
+  {
+   "id": "ue1-ch03-063",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Que contient une AIPD, et que faire si le risque reste élevé ?",
+   "reponse": "Description, nécessité et proportionnalité, évaluation des risques, mesures prévues. Risque résiduel élevé : **consulter la CNIL avant** de lancer le traitement.",
+   "source": "RGPD, art. 35, 7 et 36"
+  },
+  {
+   "id": "ue1-ch03-064",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Quand la désignation d'un délégué à la protection des données (DPO) est-elle obligatoire ?",
+   "reponse": "Autorité ou organisme **public** ; activité de base de **suivi régulier et systématique** à grande échelle ; données **sensibles ou pénales** à grande échelle.",
+   "source": "RGPD, art. 37, 1"
+  },
+  {
+   "id": "ue1-ch03-065",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Quelles sont les missions et les garanties du DPO ?",
+   "reponse": "Informer, conseiller (dont sur les AIPD), contrôler la conformité, coopérer avec la CNIL. Il est **indépendant** : pas d'instructions, pas de sanction pour ses missions.",
+   "source": "RGPD, art. 38 et 39"
+  },
+  {
+   "id": "ue1-ch03-066",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Le DPO est-il responsable de la conformité de l'entreprise ?",
+   "reponse": "Non. Le **responsable du traitement** reste seul responsable. Le DPO conseille et contrôle.",
+   "source": "RGPD, art. 24 et 39"
+  },
+  {
+   "id": "ue1-ch03-067",
+   "theme": "conformite",
+   "type": "cas",
+   "question": "La société VITALAB exploite 40 laboratoires d'analyses médicales et reçoit 850 000 patients par an. Elle n'a pas de DPO. En septembre N, elle veut lancer une application qui calcule automatiquement, à partir des résultats d'analyses, un score de risque cardiaque envoyé aux patients et à des partenaires assureurs.\n\n**Quelles obligations VITALAB doit-elle respecter avant le lancement ?**",
+   "reponse": "**Problème** : quelles démarches préalables impose le RGPD pour un traitement de données de santé à grande échelle avec profilage ?\n**Règle** : un DPO est obligatoire si l'activité de base porte sur des données sensibles à grande échelle (art. 37). Une AIPD précède tout traitement à risque élevé, notamment le profilage et les données sensibles à grande échelle (art. 35) ; si le risque résiduel reste élevé, la CNIL est consultée avant (art. 36). Les données de santé exigent une exception (art. 9).\n**Application** : données de santé de 850 000 patients par an : grande échelle et cœur de l'activité. Le score est un profilage. La transmission aux assureurs est une finalité nouvelle, qui exige une base propre, en pratique le consentement explicite.\n**Conclusion** : VITALAB doit désigner un DPO, réaliser une AIPD, consulter la CNIL si le risque persiste, et recueillir le consentement explicite pour l'envoi aux assureurs. Sinon : amende jusqu'à 10 M€ ou 2 % (DPO, AIPD), voire 20 M€ ou 4 % (données sensibles).",
+   "source": "RGPD, art. 9, 35, 36, 37, 83"
+  },
+  {
+   "id": "ue1-ch03-068",
+   "theme": "conformite",
+   "type": "regle",
+   "question": "Sur quels mécanismes peut reposer un transfert de données hors de l'Espace économique européen ?",
+   "reponse": "Une **décision d'adéquation** de la Commission ; des **garanties appropriées** (clauses contractuelles types, règles d'entreprise contraignantes) ; à défaut, des **dérogations** limitées (consentement explicite, exécution d'un contrat).",
+   "source": "RGPD, art. 44 à 49"
+  },
+  {
+   "id": "ue1-ch03-069",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Qu'est-ce que la CNIL, et quelles sont ses missions ?",
+   "reponse": "Une **autorité administrative indépendante**, autorité de contrôle française du RGPD. Elle informe et protège, accompagne et conseille, contrôle et sanctionne, anticipe les innovations.",
+   "source": "Loi 78-17, art. 8"
+  },
+  {
+   "id": "ue1-ch03-070",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quelle différence entre une mise en demeure de la CNIL et une sanction ?",
+   "reponse": "La **mise en demeure**, décidée par le président de la CNIL, ordonne de se conformer dans un délai : ce n'est pas une sanction. La **sanction** est prononcée par la formation restreinte.",
+   "source": "Loi 78-17, art. 20"
+  },
+  {
+   "id": "ue1-ch03-071",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quelles mesures la formation restreinte de la CNIL peut-elle prononcer ?",
+   "reponse": "Rappel à l'ordre ; **injonction** sous astreinte (jusqu'à 100 000 € par jour) ; **limitation ou interdiction** du traitement ; **amende** administrative.",
+   "source": "Loi 78-17, art. 20"
+  },
+  {
+   "id": "ue1-ch03-072",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quels manquements sont punis jusqu'à 10 M€ ou 2 % du chiffre d'affaires mondial ?",
+   "reponse": "Les obligations d'organisation : registre, sécurité, notification de violation, AIPD, DPO, sous-traitance. Le montant le plus élevé des deux est retenu.",
+   "source": "RGPD, art. 83, 4"
+  },
+  {
+   "id": "ue1-ch03-073",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quels manquements sont punis jusqu'à 20 M€ ou 4 % du chiffre d'affaires mondial ?",
+   "reponse": "Principes, base légale, consentement, données sensibles, **droits des personnes**, transferts, non-respect d'une injonction. Le montant le plus élevé est retenu.",
+   "source": "RGPD, art. 83, 5 et 6"
+  },
+  {
+   "id": "ue1-ch03-074",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Comment la CNIL fixe-t-elle le montant d'une amende ?",
+   "reponse": "Selon la **gravité** et la **durée** du manquement, le nombre de personnes touchées, son caractère **intentionnel ou négligent**, et les mesures prises pour réduire le dommage et coopérer.",
+   "source": "RGPD, art. 83, 2"
+  },
+  {
+   "id": "ue1-ch03-075",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Qu'est-ce que la procédure de sanction simplifiée de la CNIL ?",
+   "reponse": "Pour les affaires simples : rappel à l'ordre, amende jusqu'à **20 000 €**, astreinte jusqu'à 100 € par jour (**100 000 €** et 500 € par jour si le CA mondial dépasse 50 M€). La sanction n'est pas rendue publique.",
+   "source": "Loi 78-17, art. 22-1"
+  },
+  {
+   "id": "ue1-ch03-076",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quelle autorité est compétente pour un traitement transfrontalier dans l'Union ?",
+   "reponse": "L'autorité de l'**établissement principal** du responsable, dite **chef de file** (guichet unique). Elle coopère avec les autres autorités concernées.",
+   "source": "RGPD, art. 56 et 60"
+  },
+  {
+   "id": "ue1-ch03-077",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "À quelles conditions la victime d'une violation du RGPD obtient-elle des dommages-intérêts ?",
+   "reponse": "Une **violation du RGPD**, un **dommage** matériel ou moral, un **lien de causalité**. Le responsable s'exonère s'il prouve que le dommage ne lui est pas imputable.",
+   "source": "RGPD, art. 82"
+  },
+  {
+   "id": "ue1-ch03-078",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Que retient l'arrêt Österreichische Post (CJUE, 4 mai 2023) ?",
+   "reponse": "La simple violation du RGPD **ne suffit pas** : il faut prouver un dommage. Mais le dommage moral n'a pas à atteindre un **seuil de gravité**.",
+   "source": "CJUE, 4 mai 2023, C-300/21"
+  },
+  {
+   "id": "ue1-ch03-079",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quand le sous-traitant doit-il réparer le dommage causé par un traitement ?",
+   "reponse": "S'il a manqué à ses **obligations propres** (sécurité, notification au responsable…) ou agi **hors des instructions** du responsable.",
+   "source": "RGPD, art. 82, 2"
+  },
+  {
+   "id": "ue1-ch03-080",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Une personne peut-elle confier la défense de ses droits à une association ?",
+   "reponse": "Oui : elle **mandate** une association à but non lucratif active dans la protection des données pour réclamer auprès de la CNIL, agir en justice et demander réparation.",
+   "source": "RGPD, art. 80"
+  },
+  {
+   "id": "ue1-ch03-081",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Quelle peine encourt l'auteur d'une collecte de données par un moyen frauduleux, déloyal ou illicite ?",
+   "reponse": "**5 ans d'emprisonnement et 300 000 € d'amende**. Une société encourt une amende cinq fois plus élevée (1,5 M€).",
+   "source": "C. pén., art. 226-18 et 131-38"
+  },
+  {
+   "id": "ue1-ch03-082",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Le détournement de la finalité d'un fichier est-il pénalement sanctionné ?",
+   "reponse": "Oui : utiliser les données pour un autre but que celui déclaré ou prévu est un délit puni de **5 ans et 300 000 €**.",
+   "source": "C. pén., art. 226-21"
+  },
+  {
+   "id": "ue1-ch03-083",
+   "theme": "sanctions",
+   "type": "regle",
+   "question": "Hors RGPD, quel texte protège la vie privée, et avec quelles sanctions ?",
+   "reponse": "Le Code civil : chacun a droit au **respect de sa vie privée**. Le juge ordonne toute mesure pour faire cesser l'atteinte, et accorde des dommages-intérêts.",
+   "source": "C. civ., art. 9"
+  },
+  {
+   "id": "ue1-ch03-084",
+   "theme": "sanctions",
+   "type": "cas",
+   "question": "La boutique en ligne MODALIA stocke sans chiffrement les coordonnées bancaires de ses clients. En avril N, un pirate les copie. Le 20 avril, Mme Duval subit un prélèvement frauduleux de 900 € qu'elle ne récupère pas, et vit depuis dans la crainte d'autres fraudes. MODALIA soutient que seule la CNIL peut la sanctionner.\n\n**Mme Duval peut-elle obtenir réparation de MODALIA ?**",
+   "reponse": "**Problème** : la victime d'une fuite de données peut-elle obtenir des dommages-intérêts du responsable du traitement ?\n**Règle** : toute personne ayant subi un dommage matériel ou moral du fait d'une violation du RGPD obtient réparation du responsable (art. 82). La violation seule ne suffit pas, mais aucun seuil de gravité n'est exigé (Österreichische Post). Le responsable doit assurer une sécurité adaptée au risque (art. 32).\n**Application** : stocker des données bancaires en clair viole l'obligation de sécurité. Dommage matériel : 900 € ; dommage moral : la crainte d'un usage abusif. Le prélèvement découle directement de la copie des données.\n**Conclusion** : oui. Mme Duval agit devant le juge judiciaire contre MODALIA pour 900 € plus son préjudice moral. L'action CNIL (amende au Trésor) ne l'indemnise pas, mais elle peut la saisir en parallèle.",
+   "source": "RGPD, art. 32, 82 ; CJUE, Österreichische Post"
+  },
+  {
+   "id": "ue1-ch03-085",
+   "theme": "methode",
+   "type": "memo",
+   "question": "Quelle démarche suivre face à un cas pratique de protection des données ?",
+   "reponse": "**Qualifier** (donnée personnelle ? sensible ?), **identifier** (responsable, sous-traitant), **justifier** (finalité, base légale), **contrôler** (principes, droits, obligations), **sanctionner** (CNIL, réparation, pénal).",
+   "source": "RGPD, art. 4, 5, 6"
+  },
+  {
+   "id": "ue1-ch03-086",
+   "theme": "methode",
+   "type": "regle",
+   "question": "Que retient l'arrêt de la chambre sociale du 25 novembre 2020 sur l'adresse IP ?",
+   "reponse": "L'adresse IP est une **donnée personnelle** et sa collecte un traitement. La preuve illicite n'est pas écartée d'office : retenue si **indispensable** et l'atteinte **proportionnée**.",
+   "source": "Cass. soc., 25 nov. 2020, n° 17-19.523"
+  },
+  {
+   "id": "ue1-ch03-087",
+   "theme": "methode",
+   "type": "regle",
+   "question": "Que retient l'arrêt Norra Stockholm Bygg (CJUE, 2 mars 2023) ?",
+   "reponse": "Produire des données personnelles dans un procès est un traitement : le juge vérifie la **nécessité** et la **proportionnalité** de la communication (minimisation).",
+   "source": "CJUE, 2 mars 2023, C-268/21"
+  }
+ ]
+}

@@ -1,0 +1,588 @@
+<title>Fiche UE1 Ch3 Données</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout : chaque notion est une bande à trois colonnes fixes, Majeure | Mineure | Conclusion.
+   La position ne change jamais, pour que la mémoire spatiale aide. Une teinte par étape de la vie du contrat. */
+:root{
+  --bg:#f4f6fa; --surface:#ffffff; --ink:#172033; --muted:#566178; --line:#dce1ea; --wash:#eef1f6;
+  --s0:#44506a; --s0s:#e9ecf2;
+  --s1:#0b7a75; --s1s:#dff3f1;
+  --s2:#2a5bd7; --s2s:#e3ebfd;
+  --s3:#7440c4; --s3s:#efe6fb;
+  --s4:#33793a; --s4s:#e3f2e4;
+  --s5:#bf3350; --s5s:#fbe5ea;
+  --nul:#b3261e; --nuls:#fde7e5; --di:#8a5a00; --dis:#fdf0d0; --exe:#1f6f43; --exes:#def3e6; --cl:#5b3fb5; --cls:#ebe6fb;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#10141c; --surface:#181d28; --ink:#e9edf5; --muted:#9ba6bb; --line:#2b3344; --wash:#1f2532;
+  --s0:#aab4c8; --s0s:#232a38;
+  --s1:#4fd0c8; --s1s:#12302f;
+  --s2:#86a8ff; --s2s:#1a2747;
+  --s3:#c19bff; --s3s:#2a1f45;
+  --s4:#7fd088; --s4s:#182f1c;
+  --s5:#ff8fa5; --s5s:#3d1a24;
+  --nul:#ff9a92; --nuls:#3f1b19; --di:#f2c261; --dis:#3a2c0c; --exe:#7fd9a4; --exes:#143021; --cl:#bfaaff; --cls:#2a2148;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding-block:28px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:36px}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--s2);outline-offset:2px;border-radius:4px}
+
+/* En-tête */
+.top{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,54px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.lede{max-width:62ch;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:14px;color:var(--muted)}
+
+/* Pastilles de sanction : la couleur dit la famille */
+.chip{display:inline-block;font-weight:700;font-size:13.5px;line-height:1.25;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.chip.nul{background:var(--nuls);color:var(--nul)}
+.chip.di{background:var(--dis);color:var(--di)}
+.chip.exe{background:var(--exes);color:var(--exe)}
+.chip.cl{background:var(--cls);color:var(--cl)}
+.art{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.stage:not(#arrets) .art{display:none}
+.core{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--h);border:1.5px solid var(--h);border-radius:4px;padding:1px 6px;white-space:nowrap}
+
+/* Parcours : les 4 questions */
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.path a{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;border-top:5px solid var(--h)}
+.path b{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2}
+.path span{font-size:13.5px;color:var(--muted)}
+.path .no{color:var(--h);font-weight:700}
+
+/* Méthode */
+.method{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.method li{padding:12px 14px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.method li:first-child{border-left:0}
+.method b{font-family:var(--display);font-weight:600;font-size:16px}
+.method span{font-size:13.5px;color:var(--muted)}
+.method i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Étapes */
+.stage{display:flex;flex-direction:column;gap:16px;--h:var(--s0);--hs:var(--s0s)}
+.t0{--h:var(--s0);--hs:var(--s0s)} .t1{--h:var(--s1);--hs:var(--s1s)} .t2{--h:var(--s2);--hs:var(--s2s)}
+.t3{--h:var(--s3);--hs:var(--s3s)} .t4{--h:var(--s4);--hs:var(--s4s)} .t5{--h:var(--s5);--hs:var(--s5s)}
+.stage>h2{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.01em;line-height:1.1}
+.stage>h2 .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--h);color:var(--surface);font-size:20px}
+.stage>h2 small{font-family:var(--body);font-weight:400;font-size:14px;color:var(--muted);letter-spacing:0}
+
+/* Carte syllogisme */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card>header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 18px 0}
+.card h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.2;margin-right:auto}
+.q{padding:6px 18px 14px;font-size:17px;color:var(--h);font-weight:700}
+.syl{display:grid;grid-template-columns:1.25fr 1fr 1fr;border-top:1px solid var(--line)}
+.zone{padding:14px 18px 16px;min-width:0;border-left:1px solid var(--line);position:relative}
+.zone:first-child{border-left:0}
+.zone h4{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.zone h4 b{color:var(--h);font-weight:500}
+.maj{background:var(--hs)}
+.zbody{display:flex;flex-direction:column;gap:8px}
+.zbody ul{display:flex;flex-direction:column;gap:6px}
+.check li{padding-left:26px;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.28em;width:15px;height:15px;border:2px solid var(--h);border-radius:3px}
+.dots li{padding-left:16px;position:relative}
+.dots li::before{content:"";position:absolute;left:2px;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--h)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.never{color:var(--muted);font-size:15px}
+.foot{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.ex,.trap,.memo{padding:10px 18px;font-size:15.5px}
+.ex+.trap,.ex+.memo,.trap+.memo,.memo+.ex,.memo+.trap,.trap+.ex{border-top:1px dashed var(--line)}
+.tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:8px;padding:1px 6px;border-radius:4px;background:var(--wash);color:var(--muted)}
+.trap .tag{background:var(--nuls);color:var(--nul)}
+.memo .tag{background:var(--hs);color:var(--h)}
+.memo b{font-family:var(--display);font-weight:800;letter-spacing:.04em;color:var(--h)}
+
+/* Tuiles */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tiles.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tile h3{font-family:var(--display);font-weight:600;font-size:19px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.tile p{font-size:15.5px}
+
+/* Tableaux de comparaison */
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+caption{caption-side:top;text-align:left;padding:12px 16px 10px;font-family:var(--display);font-weight:600;font-size:19px}
+th,td{text-align:left;vertical-align:top;padding:9px 14px;border-top:1px solid var(--line)}
+thead th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--hs)}
+tbody th{font-weight:700;min-width:8.5em;color:var(--h)}
+td .chip{margin:1px 0}
+td .art{margin-left:2px}
+
+.eg{font-size:14.5px;color:var(--muted)}
+.eg b{color:var(--h)}
+td.eg{font-size:14.5px;color:var(--muted);min-width:11em}
+.note{font-size:15.5px;color:var(--muted);max-width:75ch}
+.note b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+footer a{text-decoration:underline;text-underline-offset:2px}
+
+/* Mode test : on cache la règle et la sanction, on récite, on touche pour vérifier */
+#toggle{position:fixed;z-index:20;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));font:700 16px var(--body);color:var(--surface);background:var(--ink);border:0;border-radius:999px;padding:12px 20px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#toggle[aria-pressed="true"]{background:var(--s5);color:var(--surface)}
+body.test .hideable{cursor:pointer}
+body.test .hideable:not(.shown)>.zbody{visibility:hidden}
+body.test .zone.hideable:not(.shown)::after{content:"Récite, puis touche pour vérifier";position:absolute;inset:38px 18px auto 18px;font-size:14.5px;color:var(--muted);border:1.5px dashed var(--h);border-radius:8px;padding:10px 12px;background:var(--surface)}
+body.test tbody tr{cursor:pointer}
+body.test tbody tr:not(.shown) td{color:transparent}
+body.test tbody tr:not(.shown) td *{visibility:hidden}
+body.test tbody tr:not(.shown) td{background:repeating-linear-gradient(135deg,transparent 0 7px,var(--wash) 7px 9px)}
+body.test .hid:not(.shown){cursor:pointer}
+body.test .hid:not(.shown) .v{visibility:hidden}
+.teststate{display:none}
+body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14px;color:var(--muted)}
+
+@media (max-width:820px){
+  .path{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .method{grid-template-columns:1fr}
+  .method li{border-left:0;border-top:1px solid var(--line);flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .method li:first-child{border-top:0}
+  .syl{grid-template-columns:1fr}
+  .zone{border-left:0;border-top:1px solid var(--line)}
+  .zone:first-child{border-top:0}
+  .tiles,.tiles.two{grid-template-columns:1fr}
+  .tw table{min-width:620px}
+}
+@media (max-width:460px){ .path{grid-template-columns:1fr} }
+@media print{
+  #toggle,.teststate{display:none!important}
+  body{background:#fff;font-size:11.5pt}
+  .wrap{gap:18px;padding-block:0}
+  .card,.tile,.tw,.path a,.method{break-inside:avoid}
+  .stage>h2{break-after:avoid}
+  body.test .hideable>.zbody,body.test td *{visibility:visible!important}
+}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">DSCG · UE 1 · Chapitre 3</p>
+  <h1>Protection des données personnelles</h1>
+  <p class="lede">Chaque notion est rédigée comme à l'examen : la règle à gauche, ce qu'il faut chercher dans les faits au milieu, la solution à droite. Le RGPD (règlement européen directement applicable) et la loi Informatique et Libertés forment un seul bloc : raisonne toujours dans l'ordre qualifier, justifier, contrôler, sanctionner.</p>
+  <div class="legend">
+    <span>Sanctions :</span>
+    <span class="chip nul">Le traitement cesse</span>
+    <span class="chip di">De l'argent</span>
+    <span class="chip exe">Mise en conformité</span>
+    <span class="chip cl">Un acte est neutralisé</span>
+    <span class="core" style="--h:var(--s0)">Par cœur</span>
+  </div>
+</header>
+
+<nav class="path" aria-label="Les quatre questions">
+  <a class="t1" href="#champ"><span class="no">Question 1</span><b>Le RGPD s'applique-t-il ?</b><span>Donnée personnelle, traitement, territoire.</span></a>
+  <a class="t2" href="#licite"><span class="no">Question 2</span><b>Le traitement est-il licite ?</b><span>Base légale, principes, consentement.</span></a>
+  <a class="t3" href="#droits"><span class="no">Question 3</span><b>Droits et obligations respectés ?</b><span>Droits des personnes, sécurité, violation.</span></a>
+  <a class="t5" href="#sanctions"><span class="no">Question 4</span><b>Quelles sanctions ?</b><span>CNIL, réparation, juge pénal.</span></a>
+</nav>
+
+<ol class="method" aria-label="Le syllogisme en cinq étapes">
+  <li><i>1</i><b>Faits</b><span>Parties, contrat, dates.</span></li>
+  <li><i>2</i><b>Problème</b><span>La question de droit, en une phrase.</span></li>
+  <li><i>3</i><b>Majeure</b><span>La règle, l'article, les conditions.</span></li>
+  <li><i>4</i><b>Mineure</b><span>Chaque condition face aux faits.</span></li>
+  <li><i>5</i><b>Conclusion</b><span>La réponse, puis la sanction.</span></li>
+</ol>
+
+<!-- 1 -->
+<section class="stage t1" id="champ">
+  <h2><span class="n">1</span>Le champ d'application</h2>
+
+  <article class="card">
+    <header><h3>Le RGPD s'applique-t-il ?</h3><span class="core">Par cœur</span></header>
+    <p class="q">L'entreprise de votre client est-elle soumise au RGPD pour ce fichier ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le RGPD s'applique à tout <b>traitement</b> (toute opération : collecte, conservation, consultation, transmission, effacement…) de <b>données à caractère personnel</b> : toute information sur une <b>personne physique identifiée ou identifiable</b>, directement ou indirectement.</p><p>Il est exclu pour une activité <b>strictement personnelle ou domestique</b>.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Une personne physique peut-elle être identifiée, même par recoupement ?</li><li>Une opération est faite sur ces données (le simple stockage suffit)</li><li>Un usage professionnel, pas familial</li><li>Un lien avec l'Union (voir le tableau territorial)</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la solution</h4><div class="zbody"><p>RGPD applicable : identifie ensuite le <b>responsable du traitement</b>, débiteur des obligations.</p><p class="never">Données d'une société, données vraiment anonymes : pas de RGPD.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un cabinet range les CV reçus dans son logiciel RH et les laisse consulter par ses associés : c'est un traitement de données personnelles, même sans usage commercial.</p>
+      <p class="trap"><span class="tag">Piège</span>Une donnée <b>pseudonymisée</b> (le nom remplacé par un code, la table de correspondance conservée) reste personnelle. Seule une donnée <b>anonymisée</b> (ré-identification impossible) sort du RGPD.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Les qualifications à poser</caption>
+    <thead><tr><th>Notion</th><th>Définition</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Donnée personnelle</th><td>Information sur une personne physique identifiable, même indirectement.</td><td class="eg">Nom, e-mail nominatif, numéro client, adresse IP, géolocalisation, photo.</td></tr>
+      <tr><th>Traitement</th><td>Toute opération, automatisée ou non, sur ces données.</td><td class="eg">Collecter, enregistrer, consulter, transmettre, effacer.</td></tr>
+      <tr><th>Responsable du traitement</th><td>Celui qui fixe les <b>finalités</b> (le pourquoi) et les <b>moyens</b> (le comment). Il répond de la conformité.</td><td class="eg">Le commerçant qui tient son fichier clients.</td></tr>
+      <tr><th>Responsables conjoints</th><td>Plusieurs acteurs fixent ensemble finalités et moyens. Ils répartissent leurs obligations par accord.</td><td class="eg">Une entreprise qui exploite une page sur un réseau social, avec le réseau (Wirtschaftsakademie).</td></tr>
+      <tr><th>Sous-traitant</th><td>Il traite les données <b>pour le compte</b> du responsable, sur ses instructions. Un contrat écrit est obligatoire.</td><td class="eg">L'éditeur du logiciel de paie hébergé, le prestataire d'e-mailing.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <caption>Le champ territorial</caption>
+    <thead><tr><th>Situation</th><th>RGPD ?</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Établissement dans l'Union</th><td>Oui, même si les données sont traitées ailleurs.</td><td class="eg">Une PME lyonnaise qui héberge ses fichiers aux États-Unis.</td></tr>
+      <tr><th>Hors Union, qui cible l'Union</th><td>Oui, si elle offre des biens ou services (même gratuits) à des personnes dans l'Union, ou suit leur comportement dans l'Union. Elle désigne un représentant dans l'Union.</td><td class="eg">Un site américain qui vend en euros et livre en France.</td></tr>
+      <tr><th>Hors Union, sans ciblage</th><td>Non.</td><td class="eg">Un restaurant de New York qui enregistre un touriste français.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 2 -->
+<section class="stage t2" id="licite">
+  <h2><span class="n">2</span>La licéité du traitement</h2>
+
+  <article class="card">
+    <header><h3>La base légale</h3><span class="core">Par cœur</span></header>
+    <p class="q">L'entreprise avait-elle le droit de traiter ces données ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Un traitement n'est licite que s'il repose sur <b>une des six bases légales</b>, choisie avant le traitement pour une finalité précise :</p><ul class="dots"><li><b>consentement</b> de la personne</li><li>exécution d'un <b>contrat</b> ou de mesures précontractuelles</li><li><b>obligation légale</b></li><li>sauvegarde des <b>intérêts vitaux</b></li><li><b>mission d'intérêt public</b></li><li><b>intérêts légitimes</b> du responsable, sauf si les droits de la personne prévalent</li></ul></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quelle est la finalité exacte ?</li><li>Un contrat ou une loi l'impose-t-il ?</li><li>Sinon : intérêt légitime mis en balance, ou consentement</li><li>Consentement invoqué : est-il valable ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><p>Sans base légale, le traitement est illicite :</p><div class="chips"><span class="chip nul">Interdiction du traitement</span><span class="chip nul">Effacement</span><span class="chip di">Amende jusqu'à 20 M€ ou 4 %</span></div></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>L'adresse de livraison : base contractuelle. La conservation des factures : obligation légale. La même adresse réutilisée pour envoyer des publicités par e-mail à un particulier : il faut son consentement.</p>
+      <p class="trap"><span class="tag">Piège</span>Le consentement n'est qu'<b>une</b> base parmi six. N'écris pas « il faut le consentement » pour tout traitement : un employeur gère la paie sans consentement, au titre du contrat et de la loi.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <header><h3>Le consentement valable</h3><span class="core">Par cœur</span></header>
+    <p class="q">Le consentement recueilli par l'entreprise est-il valable ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le consentement est une manifestation de volonté <b>libre</b>, <b>spécifique</b> (par finalité), <b>éclairée</b> et <b>univoque</b>, exprimée par une <b>déclaration</b> ou un <b>acte positif clair</b>.</p><p>Le responsable doit pouvoir le <b>prouver</b>. La personne peut le <b>retirer</b> à tout moment, aussi simplement qu'elle l'a donné.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Case précochée, silence, inaction : pas d'acte positif</li><li>Un « oui » global pour plusieurs finalités : pas spécifique</li><li>Service refusé sans ce consentement inutile au contrat : pas libre</li><li>Information claire avant le clic ?</li><li>Mineur de moins de 15 ans : accord parental aussi</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip cl">Consentement inopérant</span></div><p>Le traitement n'a plus de base légale, donc il est illicite. Le retrait ne rend pas illicite ce qui a été fait avant.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un site d'e-commerce coche par défaut « J'accepte de recevoir les offres des partenaires » : pas de consentement valable (Planet49).</p>
+      <p class="memo"><span class="tag">Mémo</span><b>L S E U</b> : <b>L</b>ibre, <b>S</b>pécifique, <b>É</b>clairé, <b>U</b>nivoque. Et toujours un geste : cocher, cliquer.</p>
+      <p class="trap"><span class="tag">Piège</span>Informer n'est pas obtenir un consentement. Et un salarié consent rarement librement face à son employeur : préfère une autre base.</p>
+    </div>
+  </article>
+
+  <article class="card">
+    <header><h3>Les principes du traitement</h3><span class="core">Par cœur</span></header>
+    <p class="q">Le traitement mis en place respecte-t-il les principes du RGPD ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Les données doivent être traitées de manière <b>licite, loyale et transparente</b>, pour des <b>finalités</b> déterminées, explicites et légitimes. Elles sont <b>minimisées</b>, <b>exactes</b>, <b>conservées</b> pour une durée limitée et <b>sécurisées</b>.</p><p>Le responsable doit pouvoir <b>démontrer</b> sa conformité (<b>accountability</b>, ou responsabilité).</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Les personnes savaient-elles ?</li><li>Réutilisation pour un autre but ?</li><li>Données inutiles collectées ?</li><li>Durée de conservation fixée ?</li><li>Accès et protection maîtrisés ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip exe">Injonction de mise en conformité</span><span class="chip di">Amende jusqu'à 20 M€ ou 4 %</span></div><p>Selon le manquement : <span class="chip nul">Effacement</span> des données inutiles ou trop anciennes.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="memo"><span class="tag">Mémo</span><b>L F M E C S</b> : <b>L</b>icéité, <b>F</b>inalité, <b>M</b>inimisation, <b>E</b>xactitude, <b>C</b>onservation, <b>S</b>écurité. « Le Fichier Minimal Est Court et Sûr », et il faut le prouver.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>La grille de contrôle, principe par principe</caption>
+    <thead><tr><th>Principe</th><th>Ce qu'il exige</th><th>Manquement type</th></tr></thead>
+    <tbody>
+      <tr><th>Licéité, loyauté, transparence</th><td>Une base légale, pas de collecte cachée, une information claire et accessible.</td><td class="eg">Une politique de confidentialité de 40 pages, dispersée en plusieurs liens.</td></tr>
+      <tr><th>Finalité</th><td>Un but fixé avant la collecte. Pas de réutilisation incompatible.</td><td class="eg">Les adresses de livraison revendues à un partenaire publicitaire.</td></tr>
+      <tr><th>Minimisation</th><td>Seulement les données nécessaires, et accès réservé à ceux qui en ont besoin.</td><td class="eg">Demander la situation familiale pour une simple newsletter.</td></tr>
+      <tr><th>Exactitude</th><td>Données exactes et tenues à jour. Les erreurs sont corrigées ou effacées.</td><td class="eg">Un client toujours signalé « mauvais payeur » après avoir soldé sa dette.</td></tr>
+      <tr><th>Conservation limitée</th><td>Durée fixée selon la finalité. Ensuite : suppression, anonymisation ou archivage justifié.</td><td class="eg">Garder sans limite les CV des candidats écartés.</td></tr>
+      <tr><th>Sécurité</th><td>Mesures techniques et organisationnelles adaptées au risque.</td><td class="eg">Un fichier clients en accès libre, mots de passe stockés en clair.</td></tr>
+    </tbody>
+  </table></div>
+
+  <article class="card">
+    <header><h3>Les données sensibles</h3></header>
+    <p class="q">L'entreprise peut-elle traiter cette donnée de santé, syndicale ou religieuse ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Le traitement des <b>catégories particulières</b> est <b>interdit par principe</b> : origine raciale ou ethnique, opinions politiques, convictions religieuses ou philosophiques, appartenance syndicale, données génétiques, biométriques d'identification, santé, vie ou orientation sexuelle.</p><p>Exceptions : consentement <b>explicite</b>, obligations du droit du travail, intérêts vitaux, données <b>manifestement</b> rendues publiques par la personne, défense en justice, médecine du travail…</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>La donnée entre-t-elle dans la liste ?</li><li>Une exception précise est-elle réunie ?</li><li>Grande échelle : AIPD et DPO ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip nul">Interdiction</span><span class="chip di">Amende jusqu'à 20 M€ ou 4 %</span></div><p>Et un délit (5 ans et 300 000 €) pour l'origine, les opinions, l'appartenance syndicale, la santé ou l'orientation sexuelle conservées sans consentement exprès. Les données biométriques et génétiques ne sont pas visées par ce délit.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un employeur installe une pointeuse par empreinte digitale pour de simples horaires : donnée biométrique, aucune exception, traitement interdit.</p>
+      <p class="trap"><span class="tag">À côté</span>Les données sur les <b>condamnations et infractions</b> ne sont pas « sensibles », mais leur traitement n'est possible que sous le contrôle de l'autorité publique ou si la loi l'autorise.</p>
+    </div>
+  </article>
+</section>
+
+<!-- 3 -->
+<section class="stage t3" id="droits">
+  <h2><span class="n">3</span>Les droits des personnes</h2>
+
+  <article class="card">
+    <header><h3>Exercer un droit</h3><span class="core">Par cœur</span></header>
+    <p class="q">Votre client peut-il obliger l'entreprise à lui répondre ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>La personne dispose de droits d'<b>information</b>, d'<b>accès</b>, de <b>rectification</b>, d'<b>effacement</b>, de <b>limitation</b>, de <b>portabilité</b> et d'<b>opposition</b>, chacun avec ses conditions.</p><p>Le responsable répond <b>gratuitement</b>, dans <b>un mois</b>, prolongeable de deux mois si la demande est complexe, en prévenant la personne. Un refus est motivé.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quel droit est exactement demandé ?</li><li>Ses conditions sont-elles remplies ?</li><li>Une exception joue-t-elle ?</li><li>Date de la demande, date de la réponse</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><p>Pas de réponse ou refus injustifié : réclamation à la CNIL ou action en justice.</p><div class="chips"><span class="chip exe">Injonction, sous astreinte</span><span class="chip di">Amende jusqu'à 20 M€ ou 4 %</span></div></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un ancien client demande le 2 mars la copie de ses données. Sans réponse ni prolongation annoncée au 2 avril, l'entreprise est en faute.</p>
+      <p class="trap"><span class="tag">Piège</span>Une demande manifestement infondée ou excessive (répétitive) peut être refusée, ou donner lieu à des frais raisonnables. C'est au responsable de le prouver.</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Les droits, côte à côte</caption>
+    <thead><tr><th>Droit</th><th>Contenu et conditions</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Information</th><td>À la collecte : identité du responsable, finalités, base légale, destinataires, durée, droits, réclamation possible à la CNIL.</td><td class="eg">Les mentions sous un formulaire d'inscription.</td></tr>
+      <tr><th>Accès</th><td>Savoir si des données sont traitées, en obtenir une <b>copie</b> et les informations sur le traitement.</td><td class="eg">Un salarié demande la copie de son dossier RH.</td></tr>
+      <tr><th>Rectification</th><td>Faire corriger ou compléter des données inexactes.</td><td class="eg">Une adresse erronée sur un fichier de recouvrement.</td></tr>
+      <tr><th>Effacement</th><td>Données inutiles, consentement retiré, opposition, traitement illicite. Exceptions : obligation légale, liberté d'information, défense en justice, archives.</td><td class="eg">Un candidat écarté demande la suppression de son CV.</td></tr>
+      <tr><th>Limitation</th><td>Geler les données, sans les effacer, le temps d'une vérification (exactitude contestée, opposition en cours).</td><td class="eg">Le client conteste son impayé : données gelées pendant l'examen.</td></tr>
+      <tr><th>Portabilité</th><td>Recevoir ses données dans un format lisible par machine et les transmettre à un autre responsable. Seulement pour les données que la personne a <b>fournies</b>, si la base est le <b>consentement</b> ou le <b>contrat</b>, et le traitement automatisé.</td><td class="eg">Récupérer son historique pour changer de banque en ligne.</td></tr>
+      <tr><th>Opposition</th><td>Intérêt légitime ou mission publique : pour un motif tenant à sa situation, sauf motifs impérieux du responsable. <b>Prospection</b> : droit absolu, sans motif.</td><td class="eg">« Je ne veux plus recevoir vos publicités » : arrêt immédiat.</td></tr>
+      <tr><th>Décision automatisée</th><td>Ne pas subir une décision prise <b>uniquement</b> par un algorithme et produisant des effets juridiques ou importants, sauf contrat, loi ou consentement explicite. En cas de contrat ou de consentement : droit à une intervention humaine et à contester.</td><td class="eg">Un crédit refusé sur la seule base d'un score (SCHUFA).</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="card"><div class="foot">
+    <p class="ex"><span class="tag">Oubli</span>Le droit à l'effacement permet aussi le <b>déréférencement</b> : un moteur de recherche peut devoir retirer des liens affichés sur le nom d'une personne, après mise en balance avec le droit du public à l'information (Google Spain).</p>
+    <p class="memo"><span class="tag">Réflexe</span>Avant tout droit, vérifie la <b>base légale</b> : elle commande la portabilité (consentement, contrat) et l'opposition (intérêt légitime, prospection).</p>
+  </div></div>
+</section>
+
+<!-- 4 -->
+<section class="stage t4" id="conformite">
+  <h2><span class="n">4</span>Les obligations du responsable</h2>
+
+  <article class="card">
+    <header><h3>La violation de données</h3><span class="core">Par cœur</span></header>
+    <p class="q">Après cette fuite ou ce piratage, que doit faire l'entreprise, et dans quel délai ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Une <b>violation</b> est une atteinte à la sécurité qui entraîne la destruction, la perte, l'altération, la divulgation ou l'accès non autorisé à des données.</p><ul class="dots"><li>Toujours : la <b>documenter</b> en interne</li><li>Sauf risque improbable : la <b>notifier à la CNIL</b> dans les <b>72 heures</b> après en avoir eu connaissance</li><li>Risque <b>élevé</b> : <b>informer les personnes</b> sans tarder</li></ul></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Date de la découverte, date de la notification</li><li>Nature et volume des données touchées</li><li>Risque : aucun, réel ou élevé ?</li><li>Données chiffrées, donc illisibles ?</li><li>Le sous-traitant a-t-il prévenu le responsable sans délai ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip di">Amende jusqu'à 10 M€ ou 2 %</span></div><p>Défaut de notification : délit, 5 ans et 300 000 €. Plus des <span class="chip di">Dommages-intérêts</span> aux victimes.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Un rançongiciel chiffre le fichier de 8 000 patients d'une clinique le lundi. Notification à la CNIL au plus tard le jeudi, et information des patients : données de santé, risque élevé.</p>
+      <p class="memo"><span class="tag">Mémo</span><b>D N I</b> : <b>D</b>ocumenter toujours, <b>N</b>otifier la CNIL en 72 h si risque, <b>I</b>nformer les personnes si risque élevé.</p>
+      <p class="trap"><span class="tag">Piège</span>Pas besoin d'informer les personnes si les données étaient chiffrées, si le risque a été neutralisé, ou si l'information individuelle exige des efforts disproportionnés (une communication publique suffit alors).</p>
+    </div>
+  </article>
+
+  <div class="tiles two">
+    <div class="tile"><h3>Accountability</h3><p>Le responsable prouve sa conformité : documentation, politiques internes, protection des données <b>dès la conception</b> et <b>par défaut</b> (seules les données nécessaires sont traitées sans réglage).</p><p class="eg"><b>Ex.</b> Une appli dont le partage de localisation est désactivé par défaut.</p></div>
+    <div class="tile"><h3>Registre des traitements</h3><p>La liste écrite des traitements : finalités, catégories de données et de personnes, destinataires, durées, mesures de sécurité. Le sous-traitant tient aussi le sien.</p><p class="eg"><b>Ex.</b> Une ligne « paie », une ligne « prospection », une ligne « vidéosurveillance ».</p></div>
+    <div class="tile"><h3>Sécurité</h3><p>Des mesures adaptées au risque : chiffrement, pseudonymisation, habilitations, sauvegardes, tests réguliers.</p><p class="eg"><b>Ex.</b> Des mots de passe stockés en clair : manquement, même sans fuite.</p></div>
+    <div class="tile"><h3>Contrat de sous-traitance</h3><p>Écrit et obligatoire : le sous-traitant n'agit que sur instruction, assure la confidentialité et la sécurité, aide le responsable, rend ou détruit les données en fin de contrat.</p><p class="eg"><b>Ex.</b> Le contrat avec l'hébergeur du logiciel de paie.</p></div>
+  </div>
+
+  <div class="tw"><table>
+    <caption>AIPD ou DPO ?</caption>
+    <thead><tr><th>Critère</th><th>AIPD (analyse d'impact)</th><th>DPO (délégué à la protection des données)</th></tr></thead>
+    <tbody>
+      <tr><th>Ce que c'est</th><td>Une étude des risques d'un traitement, faite <b>avant</b> sa mise en œuvre : description, nécessité, proportionnalité, risques, mesures.</td><td>Une personne, interne ou externe, chargée d'informer, conseiller, contrôler la conformité, et de coopérer avec la CNIL.</td></tr>
+      <tr><th>Obligatoire quand</th><td>Risque élevé, notamment : profilage produisant des effets importants, données sensibles ou pénales à grande échelle, surveillance systématique à grande échelle d'un lieu public.</td><td>Autorité ou organisme public ; activité de base de suivi régulier et systématique à grande échelle ; données sensibles <b>ou</b> pénales à grande échelle.</td></tr>
+      <tr><th>Ensuite</th><td>Risque résiduel élevé : consulter la CNIL avant de lancer le traitement.</td><td>Indépendant : pas d'instructions, pas de sanction pour ses missions. Il n'est pas responsable de la conformité : le responsable l'est.</td></tr>
+      <tr><th>Exemple</th><td class="eg">Une chaîne de magasins installe la reconnaissance faciale à l'entrée.</td><td class="eg">Une mutuelle santé, un réseau de cliniques, une mairie.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <caption>Transférer hors de l'Espace économique européen</caption>
+    <thead><tr><th>Mécanisme</th><th>Règle</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Décision d'adéquation</th><td>La Commission reconnaît une protection équivalente : transfert libre.</td><td class="eg">Royaume-Uni, Japon, entreprises américaines certifiées au cadre de 2023.</td></tr>
+      <tr><th>Garanties appropriées</th><td>Clauses contractuelles types de la Commission, règles internes d'entreprise approuvées.</td><td class="eg">Un hébergeur indien signe les clauses types.</td></tr>
+      <tr><th>Dérogations</th><td>Exceptionnelles : consentement explicite, exécution d'un contrat avec la personne, défense en justice…</td><td class="eg">Réserver un hôtel au Brésil pour un client.</td></tr>
+      <tr><th>Rien de tout cela</th><td><span class="chip nul">Suspension des flux</span> <span class="chip di">Amende jusqu'à 20 M€ ou 4 %</span></td><td class="eg">Une sauvegarde chez un prestataire hors EEE, sans contrat adapté.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section class="stage t5" id="sanctions">
+  <h2><span class="n">5</span>La CNIL et les sanctions</h2>
+
+  <article class="card">
+    <header><h3>La réponse de la CNIL</h3><span class="core">Par cœur</span></header>
+    <p class="q">Que risque l'entreprise après ce contrôle de la CNIL ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>La <b>CNIL</b>, autorité administrative indépendante, informe, accompagne, contrôle et sanctionne. Après un <b>contrôle</b> (sur place, sur pièces, en ligne, sur audition), elle choisit une réponse <b>graduée</b> selon la gravité, la durée, l'intention ou la négligence, la coopération et les mesures prises.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quel manquement, à quel principe ou obligation ?</li><li>Grave, durable, volontaire ?</li><li>Nombre de personnes touchées</li><li>Chiffre d'affaires mondial</li><li>L'entreprise a-t-elle corrigé et coopéré ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip exe">Mise en demeure</span><span class="chip exe">Injonction sous astreinte</span><span class="chip nul">Limitation ou interdiction</span><span class="chip di">Amende</span></div><p>Recours contre une sanction : Conseil d'État.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="trap"><span class="tag">Piège</span>Distingue le <b>manquement</b> (la règle violée), la <b>mesure correctrice</b> (mise en demeure : corriger dans un délai) et la <b>sanction</b> (amende, prononcée par la formation restreinte).</p>
+    </div>
+  </article>
+
+  <div class="tw"><table>
+    <caption>Qui décide quoi</caption>
+    <thead><tr><th>Autorité</th><th>Mesures</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Président de la CNIL</th><td><span class="chip exe">Avertissement</span> (pour un projet de traitement) <span class="chip exe">Mise en demeure</span> de se conformer dans un délai. Il peut saisir la formation restreinte.</td><td class="eg">Mise en demeure de fixer une durée de conservation sous 3 mois.</td></tr>
+      <tr><th>Formation restreinte</th><td>Rappel à l'ordre, <span class="chip exe">Injonction</span> avec astreinte jusqu'à 100 000 € par jour, <span class="chip nul">Limitation ou interdiction</span>, suspension des flux, <span class="chip di">Amende</span>. Décision publiable.</td><td class="eg">Amende et injonction de recueillir un vrai consentement aux cookies.</td></tr>
+      <tr><th>Procédure simplifiée</th><td>Affaires simples : rappel à l'ordre, amende jusqu'à 20 000 €, astreinte jusqu'à 100 € par jour (100 000 € et 500 € par jour si le CA mondial dépasse 50 M€). Non publique.</td><td class="eg">Un petit commerce sans réponse aux demandes d'accès.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <caption>Les deux plafonds d'amende (le montant le plus élevé est retenu)</caption>
+    <thead><tr><th>Plafond</th><th>Manquements visés</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>10 M€ ou 2 % du CA mondial</th><td>Obligations de l'organisation : registre, sécurité, notification de violation, AIPD, DPO, sous-traitance, protection dès la conception.</td><td class="eg">Une fuite non notifiée à la CNIL.</td></tr>
+      <tr><th>20 M€ ou 4 % du CA mondial</th><td>Principes, base légale, consentement, données sensibles, droits des personnes, transferts, non-respect d'une injonction.</td><td class="eg">Une prospection sans consentement, des demandes d'accès ignorées.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Calcul</span>Groupe au chiffre d'affaires mondial de 2 Md€ : 4 % = 80 M€, plus élevé que 20 M€, donc plafond de 80 M€. Pour une PME à 5 M€ de CA : 4 % = 200 000 €, le plafond reste 20 M€.</p></div></div>
+
+  <article class="card">
+    <header><h3>La réparation du préjudice</h3><span class="core">Par cœur</span></header>
+    <p class="q">La victime de la fuite peut-elle obtenir des dommages-intérêts ?</p>
+    <div class="syl">
+      <div class="zone maj hideable"><h4><b>Majeure</b> la règle</h4><div class="zbody"><p>Toute personne qui subit un <b>dommage matériel ou moral</b> du fait d'une <b>violation du RGPD</b> a droit à réparation, s'il existe un <b>lien de causalité</b>.</p><p>La simple violation ne suffit pas, mais aucun <b>seuil de gravité</b> n'est exigé (Österreichische Post). Le sous-traitant ne répond que de ses obligations propres ou s'il sort des instructions.</p></div></div>
+      <div class="zone"><h4><b>Mineure</b> dans les faits</h4><div class="zbody"><ul class="check"><li>Quelle règle du RGPD est violée ?</li><li>Quel dommage : perte d'argent, crainte d'un usage abusif, atteinte à la réputation ?</li><li>Le dommage vient-il de cette violation ?</li><li>Responsable, sous-traitant, ou les deux ?</li></ul></div></div>
+      <div class="zone hideable"><h4><b>Conclusion</b> la sanction</h4><div class="zbody"><div class="chips"><span class="chip di">Dommages-intérêts</span></div><p>Devant le juge judiciaire. Le responsable s'exonère seulement s'il prouve que le dommage ne lui est pas imputable.</p></div></div>
+    </div>
+    <div class="foot">
+      <p class="ex"><span class="tag">Exemple</span>Les coordonnées bancaires de clients d'une boutique en ligne fuitent faute de chiffrement ; un client subit un prélèvement frauduleux de 900 €. Il obtient réparation de la boutique.</p>
+      <p class="trap"><span class="tag">Piège</span>L'amende CNIL va au Trésor, pas à la victime. Pour être indemnisée, la victime agit elle-même devant le juge.</p>
+    </div>
+  </article>
+
+  <div class="tiles">
+    <div class="tile"><h3>Action collective</h3><p>La personne peut <b>mandater</b> une association à but non lucratif active dans la protection des données pour réclamer, agir en justice et demander réparation. Une action de groupe existe aussi en droit français.</p><p class="eg"><b>Ex.</b> Une association agit pour 30 000 abonnés d'un opérateur après une fuite.</p></div>
+    <div class="tile"><h3>Juge pénal</h3><p>Délits punis de <b>5 ans et 300 000 €</b> (5 fois plus pour une société) : collecte frauduleuse, déloyale ou illicite, détournement de finalité, certaines données sensibles sans consentement exprès, défaut de sécurité, violation non notifiée, divulgation à un tiers non autorisé.</p><p class="eg"><b>Ex.</b> Aspirer en cachette les e-mails d'un forum pour les revendre.</p></div>
+    <div class="tile"><h3>Vie privée</h3><p>Hors RGPD, chacun a droit au respect de sa <b>vie privée</b> : le juge peut ordonner toute mesure pour faire cesser l'atteinte, avec dommages-intérêts.</p><p class="eg"><b>Ex.</b> Un magazine publie l'adresse et la photo du domicile d'un dirigeant.</p></div>
+  </div>
+
+  <div class="tw"><table>
+    <caption>Guichet unique : quelle autorité est compétente ?</caption>
+    <thead><tr><th>Situation</th><th>Règle</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><th>Traitement purement national</th><td>L'autorité du pays : la CNIL en France.</td><td class="eg">Une PME française qui ne vend qu'en France.</td></tr>
+      <tr><th>Traitement transfrontalier</th><td>L'autorité de l'<b>établissement principal</b> (là où se prennent les décisions) est <b>chef de file</b>. Elle coopère avec les autorités concernées. Le Comité européen de la protection des données veille à la cohérence.</td><td class="eg">Un réseau social établi en Irlande : l'autorité irlandaise mène l'enquête, la CNIL y participe.</td></tr>
+      <tr><th>Pas d'établissement principal dans l'Union</th><td>Pas de guichet unique : chaque autorité concernée est compétente.</td><td class="eg">La CNIL a pu sanctionner Google en 2019 (Conseil d'État, 2020).</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Réflexe</span>Trois voies cumulables : <b>administrative</b> (CNIL, amende), <b>civile</b> (victime, dommages-intérêts), <b>pénale</b> (procureur, prison et amende). Dis toujours laquelle tu ouvres.</p></div></div>
+</section>
+
+<!-- 6 -->
+<section class="stage t0" id="preuve">
+  <h2><span class="n">6</span>Méthode et preuve</h2>
+  <ol class="method" aria-label="La démarche RGPD en cinq étapes">
+    <li><i>1</i><b>Qualifier</b><span>Donnée personnelle ? sensible ? traitement ?</span></li>
+    <li><i>2</i><b>Identifier</b><span>Responsable, sous-traitant.</span></li>
+    <li><i>3</i><b>Justifier</b><span>Finalité, puis base légale.</span></li>
+    <li><i>4</i><b>Contrôler</b><span>Principes, droits, obligations.</span></li>
+    <li><i>5</i><b>Sanctionner</b><span>CNIL, réparation, pénal.</span></li>
+  </ol>
+  <div class="card"><div class="foot">
+    <p class="ex"><span class="tag">Preuve</span>Un employeur prouve une faute grâce aux journaux de connexion (adresses IP) collectés sans respecter les règles de protection des données : la preuve est <b>illicite</b>. Elle n'est pas écartée d'office : le juge la retient si elle est <b>indispensable</b> au droit à la preuve et l'atteinte à la vie privée <b>proportionnée</b> au but (Cass. soc., 25 nov. 2020).</p>
+    <p class="trap"><span class="tag">Piège</span>Une donnée produite en justice reste une donnée personnelle : le juge vérifie la nécessité et la proportionnalité de sa communication (Norra Stockholm Bygg).</p>
+  </div></div>
+</section>
+
+<!-- 7 -->
+<section class="stage t0" id="arrets">
+  <h2><span class="n">7</span>Arrêts à connaître</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Arrêt</th><th>Règle</th></tr></thead>
+    <tbody>
+      <tr><th>Google Spain <span class="art">CJUE, 13 mai 2014</span></th><td>Un moteur de recherche peut devoir déréférencer des liens sur le nom d'une personne : droit à l'oubli.</td></tr>
+      <tr><th>Wirtschaftsakademie <span class="art">CJUE, 5 juin 2018</span></th><td>La notion de responsable est large : l'exploitant d'une page sur un réseau social est responsable conjoint avec le réseau.</td></tr>
+      <tr><th>Planet49 <span class="art">CJUE, 1er oct. 2019</span></th><td>Une case précochée ne vaut pas consentement.</td></tr>
+      <tr><th>Google LLC <span class="art">CE, 19 juin 2020</span></th><td>Sanction CNIL de 50 M€ confirmée : information dispersée, consentement ni spécifique ni univoque.</td></tr>
+      <tr><th>Cass. soc. <span class="art">25 nov. 2020</span></th><td>L'adresse IP est une donnée personnelle ; la preuve illicite peut être retenue si elle est indispensable et proportionnée.</td></tr>
+      <tr><th>Norra Stockholm Bygg <span class="art">CJUE, 2 mars 2023</span></th><td>Produire des données personnelles en justice exige un contrôle de nécessité et de proportionnalité.</td></tr>
+      <tr><th>Österreichische Post <span class="art">CJUE, 4 mai 2023</span></th><td>Réparation : la violation seule ne suffit pas, il faut un dommage, sans seuil de gravité.</td></tr>
+      <tr><th>SCHUFA <span class="art">CJUE, 7 déc. 2023</span></th><td>Un score de solvabilité qui détermine l'octroi d'un crédit est une décision automatisée encadrée.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Cite l'arrêt à l'appui de la majeure, sans le raconter.</p>
+</section>
+
+<!-- 8 -->
+<section class="stage t0" id="changements">
+  <h2><span class="n">8</span>Ce qui change par rapport au cours</h2>
+  <div class="tw"><table>
+    <caption>Corrigé par rapport au cours</caption>
+    <thead><tr><th>Le cours dit</th><th>Ce qui est juste</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><th>Le traitement doit être justifié par « un objectif légal » ; titre « consentement explicite »</th><td>Il faut une finalité précise <b>et</b> l'une des <b>six bases légales</b>. Le consentement n'en est qu'une ; il doit être univoque, et <b>explicite</b> seulement pour les données sensibles, les décisions automatisées et certains transferts.</td><td><a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2">RGPD, art. 6, 7, 9</a></td></tr>
+      <tr><th>Article 5 : « cinq exigences »</th><td>Six principes : il manque la <b>sécurité</b> (intégrité, confidentialité). S'y ajoute l'<b>accountability</b>.</td><td><a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre2">RGPD, art. 5</a></td></tr>
+      <tr><th>DPO : deux cas, dont « données sensibles » et pénales mêlées</th><td>Trois cas : organisme <b>public</b>, suivi systématique à grande échelle, données sensibles <b>ou</b> pénales à grande échelle.</td><td><a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4">RGPD, art. 37</a></td></tr>
+      <tr><th>« Droit à notification » des violations</th><td>C'est une <b>obligation</b> du responsable : documenter toujours, notifier en 72 h sauf risque improbable, informer les personnes si risque élevé.</td><td><a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4">RGPD, art. 33, 34</a></td></tr>
+      <tr><th>CNIL : « 4 missions », trois listées</th><td>Informer et protéger les droits, accompagner et conseiller, contrôler et sanctionner, anticiper (innovation).</td><td><a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049578536">Loi du 6 janv. 1978, art. 8 et 20</a></td></tr>
+      <tr><th>Adresse IP : « Cour de cassation »</th><td>Chambre sociale, n° 17-19.523. Elle ajoute que la preuve illicite n'est pas écartée d'office (mise en balance).</td><td><a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000042619590">Cass. soc., 25 nov. 2020</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tw"><table>
+    <caption>Ajouté</caption>
+    <thead><tr><th>Point</th><th>En une ligne</th></tr></thead>
+    <tbody>
+      <tr><th>Acteurs</th><td>Responsable, responsables conjoints, sous-traitant et contrat de sous-traitance ; donnée pseudonymisée ou anonymisée.</td></tr>
+      <tr><th>Droits</th><td>Délai de réponse d'un mois (+2), portabilité limitée au consentement et au contrat, opposition absolue à la prospection, décision automatisée (SCHUFA), mineur de 15 ans.</td></tr>
+      <tr><th>Obligations</th><td>Registre, sécurité, protection dès la conception, cas d'AIPD obligatoire, consultation préalable de la CNIL.</td></tr>
+      <tr><th>Sanctions</th><td>Répartition des deux plafonds d'amende, astreinte de 100 000 € par jour, procédure simplifiée (20 000 €, ou 100 000 € au-delà de 50 M€ de CA), recours au Conseil d'État, autres délits pénaux (5 ans, 300 000 €), vie privée.</td></tr>
+      <tr><th>Réparation</th><td>Österreichische Post : dommage nécessaire, sans seuil de gravité ; place du sous-traitant.</td></tr>
+      <tr><th>Cartes</th><td>Aucune notion de ce chapitre n'existe dans les paquets de l'app ni dans l'archive : pas de doublon possible. 87 cartes, resserrées sur ce qui tranche un cas : qualification, base légale, principes, consentement, droits, violation, AIPD et DPO, sanctions, réparation. 7 cas pratiques, 3 mémos, une carte par arrêt de la fiche du professeur (plus Österreichische Post). Transferts, guichet unique et procédure simplifiée : une carte chacun, le détail reste dans la fiche.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tw"><table>
+    <caption>À vérifier</caption>
+    <thead><tr><th>Point</th><th>Pourquoi</th></tr></thead>
+    <tbody>
+      <tr><th>Action de groupe</th><td>Le régime unifié par la loi du 30 avril 2025 couvre bien les données personnelles (actions engagées depuis le 3 mai 2025). Ses conditions précises (qui peut agir, procédure) n'ont pas été relues article par article : la fiche reste générale, à compléter si un cas porte dessus.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <p>En cas d'écart avec le support de cours, cette fiche prime sur la base légale, le consentement, les principes, le DPO, la notification des violations et les missions de la CNIL. Les numéros d'articles sont volontairement absents. Pour vérifier une règle, consulte <a href="https://www.legifrance.gouv.fr/">Légifrance</a> ou le <a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees">texte du RGPD sur le site de la CNIL</a>.</p>
+  <p>Sources : <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX%3A32016R0679">RGPD (EUR-Lex)</a> · <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049578536">Loi du 6 janv. 1978, art. 20</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037823135">Loi du 6 janv. 1978, art. 45</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037825500">C. pén., art. 226-17-1</a> · <a href="https://www.cnil.fr/fr/cnil-direct/question/sanctions-quelles-sanctions-peuvent-etre-prononcees-par-la-cnil">CNIL, sanctions</a> · <a href="https://www.cnil.fr/fr/reforme-des-procedures-correctrices-de-la-cnil-vers-une-action-repressive-simplifiee">CNIL, procédure simplifiée</a> · <a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000042619590">Cass. soc., 25 nov. 2020</a> · <a href="https://curia.europa.eu/jcms/jcms/p1_3952018/da">CJUE, Österreichische Post</a></p>
+</footer>
+
+</div>
+
+<button id="toggle" type="button" aria-pressed="false">Me tester</button>
+<p class="teststate" aria-live="polite">Récite la règle et la sanction, puis touche la zone pour vérifier.</p>
+
+<script>
+(function(){
+  var btn=document.getElementById('toggle');
+  function reveal(el){ el.classList.add('shown'); }
+  btn.addEventListener('click',function(){
+    var on=!document.body.classList.contains('test');
+    document.body.classList.toggle('test',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+    btn.textContent=on?'Tout afficher':'Me tester';
+    document.querySelectorAll('.shown').forEach(function(e){e.classList.remove('shown')});
+    document.querySelectorAll('.hideable, tbody tr').forEach(function(e){
+      if(on){e.setAttribute('tabindex','0')}else{e.removeAttribute('tabindex')}
+    });
+  });
+  document.addEventListener('click',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    var t=ev.target.closest('.hideable, tbody tr');
+    if(t)reveal(t);
+  });
+  document.addEventListener('keydown',function(ev){
+    if(!document.body.classList.contains('test'))return;
+    if(ev.key!=='Enter'&&ev.key!==' ')return;
+    var t=ev.target.closest&&ev.target.closest('.hideable, tbody tr');
+    if(t&&t===ev.target){ev.preventDefault();reveal(t)}
+  });
+})();
+</script>
