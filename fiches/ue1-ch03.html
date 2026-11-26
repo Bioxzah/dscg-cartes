@@ -243,6 +243,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <tr><th>Établissement dans l'Union</th><td>Oui, même si les données sont traitées ailleurs.</td><td class="eg">Une PME lyonnaise qui héberge ses fichiers aux États-Unis.</td></tr>
       <tr><th>Hors Union, qui cible l'Union</th><td>Oui, si elle offre des biens ou services (même gratuits) à des personnes dans l'Union, ou suit leur comportement dans l'Union. Elle désigne un représentant dans l'Union.</td><td class="eg">Un site américain qui vend en euros et livre en France.</td></tr>
       <tr><th>Hors Union, sans ciblage</th><td>Non.</td><td class="eg">Un restaurant de New York qui enregistre un touriste français.</td></tr>
+      <tr><th>Autorité d'un État tiers</th><td>En principe non : elle agit pour ses missions, sans établissement dans l'Union ni offre commerciale. C'est son propre droit qui s'applique. L'intermédiaire établi en France qui collecte pour elle reste soumis au RGPD.</td><td class="eg">Le ministère étranger qui recueille en ligne les demandes de visa : en principe hors RGPD. L'agence de voyages française qui remplit le dossier : RGPD.</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -306,6 +307,18 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </tbody>
   </table></div>
 
+  <div class="tw"><table>
+    <caption>Contrôler un formulaire de collecte, champ par champ</caption>
+    <thead><tr><th>Le champ est…</th><th>Ce qu'il faut faire</th><th>Exemple (adhésion à une salle de sport)</th></tr></thead>
+    <tbody>
+      <tr><th>Nécessaire au contrat ou imposé par la loi</th><td>Il peut être <b>obligatoire</b>, signalé comme tel (un astérisque), avec la conséquence d'un refus : « sans ces données, l'inscription est impossible ».</td><td class="eg">Nom, e-mail, coordonnées bancaires.</td></tr>
+      <tr><th>Utile, mais pas nécessaire</th><td><b>Facultatif</b>, avec une finalité précise annoncée. Refuser de répondre ne doit rien coûter, sinon le consentement n'est pas libre.</td><td class="eg">Le téléphone portable pour des rappels de séance par SMS.</td></tr>
+      <tr><th>Sans lien avec la finalité</th><td>À <b>supprimer</b> (minimisation). « Mieux connaître nos clients » n'est pas une finalité déterminée.</td><td class="eg">Situation familiale, profession du conjoint, numéro de sécurité sociale (sa collecte n'est permise que dans les cas fixés par décret : jamais pour une salle de sport).</td></tr>
+      <tr><th>Sensible</th><td>Interdit sauf exception, en pratique le consentement <b>explicite</b>, et seulement si c'est vraiment nécessaire.</td><td class="eg">Un questionnaire de santé pour un coaching sportif encadré.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Une donnée nécessaire à l'exécution du contrat n'a pas besoin du consentement. Une donnée inutile au contrat ne devient pas licite parce que le client a « accepté » de la donner pour pouvoir s'inscrire : son consentement n'était pas libre.</p></div></div>
+
   <article class="card">
     <header><h3>Les données sensibles</h3></header>
     <p class="q">L'entreprise peut-elle traiter cette donnée de santé, syndicale ou religieuse ?</p>
@@ -316,6 +329,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </div>
     <div class="foot">
       <p class="ex"><span class="tag">Exemple</span>Un employeur installe une pointeuse par empreinte digitale pour de simples horaires : donnée biométrique, aucune exception, traitement interdit.</p>
+      <p class="trap"><span class="tag">Piège</span>Une donnée banale devient <b>sensible</b> si elle permet de <b>déduire</b> une donnée sensible : le nom du conjoint peut révéler l'orientation sexuelle (CJUE, OT, 1er août 2022). À l'inverse, une <b>photo</b> n'est biométrique que si un procédé technique l'utilise pour identifier la personne (reconnaissance faciale). La situation familiale, l'adresse ou les pays visités ne sont pas sensibles en eux-mêmes.</p>
       <p class="trap"><span class="tag">À côté</span>Les données sur les <b>condamnations et infractions</b> ne sont pas « sensibles », mais leur traitement n'est possible que sous le contrôle de l'autorité publique ou si la loi l'autorise.</p>
     </div>
   </article>
@@ -403,7 +417,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     <tbody>
       <tr><th>Décision d'adéquation</th><td>La Commission reconnaît une protection équivalente : transfert libre.</td><td class="eg">Royaume-Uni, Japon, entreprises américaines certifiées au cadre de 2023.</td></tr>
       <tr><th>Garanties appropriées</th><td>Clauses contractuelles types de la Commission, règles internes d'entreprise approuvées.</td><td class="eg">Un hébergeur indien signe les clauses types.</td></tr>
-      <tr><th>Dérogations</th><td>Exceptionnelles : consentement explicite, exécution d'un contrat avec la personne, défense en justice…</td><td class="eg">Réserver un hôtel au Brésil pour un client.</td></tr>
+      <tr><th>Dérogations</th><td>Exceptionnelles : consentement explicite, exécution d'un contrat avec la personne, défense en justice…</td><td class="eg">Réserver un hôtel au Brésil pour un client ; transmettre son dossier de visa aux autorités d'un pays tiers.</td></tr>
       <tr><th>Rien de tout cela</th><td><span class="chip nul">Suspension des flux</span> <span class="chip di">Amende jusqu'à 20 M€ ou 4 %</span></td><td class="eg">Une sauvegarde chez un prestataire hors EEE, sans contrat adapté.</td></tr>
     </tbody>
   </table></div>
@@ -505,6 +519,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <tr><th>Planet49 <span class="art">CJUE, 1er oct. 2019</span></th><td>Une case précochée ne vaut pas consentement.</td></tr>
       <tr><th>Google LLC <span class="art">CE, 19 juin 2020</span></th><td>Sanction CNIL de 50 M€ confirmée : information dispersée, consentement ni spécifique ni univoque.</td></tr>
       <tr><th>Cass. soc. <span class="art">25 nov. 2020</span></th><td>L'adresse IP est une donnée personnelle ; la preuve illicite peut être retenue si elle est indispensable et proportionnée.</td></tr>
+      <tr><th>OT <span class="art">CJUE, gr. ch., 1er août 2022</span></th><td>Une donnée qui permet de déduire une donnée sensible (le nom du conjoint, qui révèle l'orientation sexuelle) est elle-même sensible.</td></tr>
       <tr><th>Norra Stockholm Bygg <span class="art">CJUE, 2 mars 2023</span></th><td>Produire des données personnelles en justice exige un contrôle de nécessité et de proportionnalité.</td></tr>
       <tr><th>Österreichische Post <span class="art">CJUE, 4 mai 2023</span></th><td>Réparation : la violation seule ne suffit pas, il faut un dommage, sans seuil de gravité.</td></tr>
       <tr><th>SCHUFA <span class="art">CJUE, 7 déc. 2023</span></th><td>Un score de solvabilité qui détermine l'octroi d'un crédit est une décision automatisée encadrée.</td></tr>
@@ -545,13 +560,28 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     <thead><tr><th>Point</th><th>Pourquoi</th></tr></thead>
     <tbody>
       <tr><th>Action de groupe</th><td>Le régime unifié par la loi du 30 avril 2025 couvre bien les données personnelles (actions engagées depuis le 3 mai 2025). Ses conditions précises (qui peut agir, procédure) n'ont pas été relues article par article : la fiche reste générale, à compléter si un cas porte dessus.</td></tr>
+      <tr><th>Autorité d'un État tiers</th><td>Aucun texte ni arrêt ne tranche expressément le cas d'un ministère étranger qui collecte des données pour un visa. La fiche retient prudemment « en principe hors RGPD » (pas d'établissement dans l'Union, pas d'offre de biens ou services). Le cas d'un consulat étranger situé en France (immunités des conventions de Vienne) reste lui aussi incertain. À l'examen, raisonne surtout sur l'intermédiaire établi en France.</td></tr>
+      <tr><th>Dérogation « nécessaire au contrat » au transfert</th><td>Le CEPD la réserve aux transferts occasionnels. L'envoi d'un dossier de visa pour chaque voyage semble entrer dans ce cadre, mais ce n'est pas tranché.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <caption>Mise à jour du 26/11/2026</caption>
+    <thead><tr><th>Point</th><th>En une ligne</th></tr></thead>
+    <tbody>
+      <tr><th>Apport : formulaire de collecte</th><td>Minimisation appliquée champ par champ : obligatoire, facultatif, à supprimer, sensible. Nouveau tableau en section 2, avec l'obligation d'indiquer les réponses obligatoires et les conséquences d'un refus.</td></tr>
+      <tr><th>Apport : qualifier chaque donnée</th><td>Une donnée qui révèle indirectement une donnée sensible l'est aussi (CJUE, OT, 1er août 2022, ajouté aux arrêts) ; une photo n'est biométrique que traitée techniquement pour identifier ; situation familiale, adresse, pays visités ne sont pas sensibles en eux-mêmes.</td></tr>
+      <tr><th>Apport : collecte pour un État tiers</th><td>Ligne ajoutée au champ territorial (autorité étrangère, en principe hors RGPD ; intermédiaire français soumis) et exemple du dossier de visa dans les dérogations au transfert.</td></tr>
+      <tr><th>Stratégie de cartes</th><td>Les exercices apportent peu de règles nouvelles : <b>5 cartes</b> (088 à 092) au lieu des 10 possibles. Deux vrais cas : 088 (formulaire d'adhésion excessif : minimisation, consentement non libre) et 092 (agence de voyages : données de santé, transfert hors EEE, sécurité, conservation). Trois règles : 089 (signaler les champs obligatoires), 090 (arrêt OT), 091 (photo et biométrie).</td></tr>
+      <tr><th>Laissé sans carte</th><td>Déjà couvert par les cartes en place : minimisation (018), liste des données sensibles et exceptions (033 à 035), champ territorial et ciblage (009 à 011), consentement non libre (028), mécanismes de transfert (068), sécurité (054). L'autorité d'un État tiers reste dans la fiche : règle incertaine et peu probable à l'examen. Aucune notion du chapitre ne figure dans les autres paquets ni dans l'archive.</td></tr>
+      <tr><th>Désaccords</th><td>La fiche d'exercices porte l'en-tête « Chapitre 3 – Les contrats spéciaux » alors qu'elle traite des données personnelles (erreur de titre, le contenu est bien celui du chapitre 3). Le texte extrait répète le mini-cas du visa (exercices 3 et 4) et les exercices 1 et 2 sont vides : rien d'autre n'a pu être exploité. Aucune carte en place n'est contredite ; la procédure simplifiée (carte 075 : 20 000 €, ou 100 000 € au-delà de 50 M€ de CA) a été revérifiée et reste exacte.</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <footer>
   <p>En cas d'écart avec le support de cours, cette fiche prime sur la base légale, le consentement, les principes, le DPO, la notification des violations et les missions de la CNIL. Les numéros d'articles sont volontairement absents. Pour vérifier une règle, consulte <a href="https://www.legifrance.gouv.fr/">Légifrance</a> ou le <a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees">texte du RGPD sur le site de la CNIL</a>.</p>
-  <p>Sources : <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX%3A32016R0679">RGPD (EUR-Lex)</a> · <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049578536">Loi du 6 janv. 1978, art. 20</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037823135">Loi du 6 janv. 1978, art. 45</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037825500">C. pén., art. 226-17-1</a> · <a href="https://www.cnil.fr/fr/cnil-direct/question/sanctions-quelles-sanctions-peuvent-etre-prononcees-par-la-cnil">CNIL, sanctions</a> · <a href="https://www.cnil.fr/fr/reforme-des-procedures-correctrices-de-la-cnil-vers-une-action-repressive-simplifiee">CNIL, procédure simplifiée</a> · <a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000042619590">Cass. soc., 25 nov. 2020</a> · <a href="https://curia.europa.eu/jcms/jcms/p1_3952018/da">CJUE, Österreichische Post</a></p>
+  <p>Sources : <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX%3A32016R0679">RGPD (EUR-Lex)</a> · <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049578536">Loi du 6 janv. 1978, art. 20</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037823135">Loi du 6 janv. 1978, art. 45</a> · <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037825500">C. pén., art. 226-17-1</a> · <a href="https://www.cnil.fr/fr/cnil-direct/question/sanctions-quelles-sanctions-peuvent-etre-prononcees-par-la-cnil">CNIL, sanctions</a> · <a href="https://www.cnil.fr/fr/reforme-des-procedures-correctrices-de-la-cnil-vers-une-action-repressive-simplifiee">CNIL, procédure simplifiée</a> · <a href="https://www.legifrance.gouv.fr/juri/id/JURITEXT000042619590">Cass. soc., 25 nov. 2020</a> · <a href="https://curia.europa.eu/jcms/jcms/p1_3952018/da">CJUE, Österreichische Post</a> · <a href="https://curia.europa.eu/jcms/upload/docs/application/pdf/2022-08/cp220133fr.pdf">CJUE, OT, 1er août 2022 (communiqué)</a> · <a href="https://www.cnil.fr/fr/exemples-de-formulaire-de-collecte-de-donnees-caractere-personnel">CNIL, formulaires de collecte</a> · <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049578558">Loi du 6 janv. 1978, art. 22-1</a></p>
 </footer>
 
 </div>

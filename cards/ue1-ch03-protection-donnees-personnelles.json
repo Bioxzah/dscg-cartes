@@ -741,6 +741,46 @@
    "question": "Que retient l'arrêt Norra Stockholm Bygg (CJUE, 2 mars 2023) ?",
    "reponse": "Produire des données personnelles dans un procès est un traitement : le juge vérifie la **nécessité** et la **proportionnalité** de la communication (minimisation).",
    "source": "CJUE, 2 mars 2023, C-268/21"
+  },
+  {
+   "id": "ue1-ch03-088",
+   "theme": "licite",
+   "type": "cas",
+   "question": "La SAS NOMADESK loue des postes de travail dans trois espaces de coworking. Depuis le 1er septembre N, l'adhésion se fait en ligne : nom, e-mail et carte bancaire sont demandés, mais aussi, de façon obligatoire, le numéro de sécurité sociale, la situation familiale, le nombre d'enfants et la profession du conjoint, « pour mieux connaître nos membres ». Mme Leroy, freelance, refuse de remplir ces champs et ne peut donc pas s'inscrire.\n\n**NOMADESK peut-elle exiger ces informations ?**",
+   "reponse": "**Problème** : un responsable peut-il rendre obligatoires, pour conclure un contrat, des données sans lien avec son exécution ?\n**Règle** : les données doivent être adéquates, pertinentes et limitées à ce qui est nécessaire à la finalité (minimisation, art. 5, 1, c). La base contractuelle ne couvre que ce qui est nécessaire au contrat (art. 6, 1, b). Le consentement n'est pas libre si le contrat est subordonné à un traitement inutile à son exécution (art. 7, 4). Le formulaire indique quelles réponses sont obligatoires et ce qu'entraîne un refus (art. 13, 2, e).\n**Application** : la location d'un poste exige l'identité, un contact et un moyen de paiement. Le numéro de sécurité sociale, la situation familiale, les enfants et la profession du conjoint n'ont aucun lien avec ce contrat ; « mieux connaître nos membres » n'est pas une finalité déterminée. Bloquer l'adhésion sans ces champs prive le consentement de toute liberté.\n**Conclusion** : non. NOMADESK doit supprimer le numéro de sécurité sociale (sa collecte n'est permise que dans les cas fixés par décret, dont le coworking ne fait pas partie). Les autres champs sont à supprimer, ou à rendre facultatifs avec une finalité précise et un consentement distinct. Les données déjà collectées sont à effacer. À défaut, la CNIL peut l'enjoindre de se conformer et prononcer une amende jusqu'à 20 M€ ou 4 % du CA.",
+   "source": "RGPD, art. 5, 1, c) ; 6 ; 7, 4 ; 13, 2, e) ; 83, 5 ; Loi 78-17, art. 30"
+  },
+  {
+   "id": "ue1-ch03-089",
+   "theme": "droits",
+   "type": "regle",
+   "question": "Que doit indiquer un formulaire de collecte sur les réponses obligatoires ?",
+   "reponse": "Quelles données sont **obligatoires** (exigées par la loi ou par le contrat) et les **conséquences d'un refus** de les fournir. En pratique : un astérisque sur chaque champ obligatoire, les autres étant facultatifs.",
+   "source": "RGPD, art. 13, 2, e)"
+  },
+  {
+   "id": "ue1-ch03-090",
+   "theme": "licite",
+   "type": "regle",
+   "question": "Que retient l'arrêt OT (CJUE, 1er août 2022) sur les données sensibles ?",
+   "reponse": "Une donnée banale qui permet de **déduire** une donnée sensible est elle-même sensible.\nEx. : le nom du conjoint, qui révèle l'orientation sexuelle.",
+   "source": "CJUE, gr. ch., 1er août 2022, C-184/20 ; RGPD, art. 9, 1"
+  },
+  {
+   "id": "ue1-ch03-091",
+   "theme": "licite",
+   "type": "regle",
+   "question": "La photo d'une personne est-elle une donnée biométrique, donc sensible ?",
+   "reponse": "Pas en soi : c'est une donnée personnelle ordinaire. Elle devient **biométrique** si un **traitement technique spécifique** l'utilise pour identifier la personne de façon unique (reconnaissance faciale).",
+   "source": "RGPD, art. 4, 14) ; consid. 51"
+  },
+  {
+   "id": "ue1-ch03-092",
+   "theme": "conformite",
+   "type": "cas",
+   "question": "La SARL CAP HORIZON, agence de voyages à Bordeaux, organise des séjours dans un pays hors de l'Union qui exige un visa. Pour chaque client, elle collecte en ligne le passeport et un questionnaire médical (maladies chroniques, vaccinations) exigé par les autorités de ce pays, qu'elle leur transmet par e-mail non chiffré. Les dossiers restent ensuite sans limite de durée sur un disque partagé par les 8 salariés. Le 12 mars N, M. Faure, client, s'en inquiète.\n\n**CAP HORIZON traite-t-elle ces données conformément au RGPD ?**",
+   "reponse": "**Problème** : à quelles conditions une agence établie en France peut-elle collecter des données de santé et les transmettre à un État tiers ?\n**Règle** : le RGPD s'applique au responsable établi dans l'Union (art. 3, 1). Les données de santé sont interdites sauf exception, comme le consentement explicite (art. 9). Un transfert hors EEE sans adéquation ni garanties est possible par dérogation s'il est nécessaire au contrat avec la personne (art. 49, 1, b). Les données sont minimisées, conservées pour une durée limitée et sécurisées (art. 5 et 32).\n**Application** : agence bordelaise : RGPD applicable. Le questionnaire médical est une donnée de santé : il faut le consentement explicite de chaque client. L'envoi aux autorités du pays est nécessaire à l'obtention du visa, donc au contrat de voyage. En revanche, l'e-mail non chiffré, l'accès de tous les salariés et la conservation illimitée violent la sécurité, la minimisation et la conservation limitée.\n**Conclusion** : collecte et transfert possibles, mais traitement non conforme en l'état. Conseil : consentement explicite, envoi chiffré, accès réservé au conseiller du dossier, effacement après le voyage. Sinon : amende jusqu'à 20 M€ ou 4 % du CA, et réparation si un client subit un dommage.",
+   "source": "RGPD, art. 3, 5, 9, 32, 49, 82, 83"
   }
  ]
 }
