@@ -1681,6 +1681,46 @@
    "question": "La société VÉLIA anime un réseau de franchise de magasins de vélos. M. Roux exploite une franchise VÉLIA à Tours jusqu'au 30 juin 2026 ; le contrat lui interdit toute activité concurrente pendant sa durée, mais ne prévoit aucune clause pour l'après-contrat. En mars 2026, il crée la société ROUE LIBRE, dépose la marque « Roue libre » et signe un bail pour un magasin qui ouvrira le 1er juillet 2026. Le 10 avril 2026, VÉLIA résilie le contrat avec effet immédiat pour violation de la non-concurrence et de la loyauté.\n\n**VÉLIA pouvait-elle résilier le contrat pour ce motif ?**",
    "reponse": "**Problème** : un franchisé qui prépare une activité concurrente avant la fin de son contrat viole-t-il sa clause de non-concurrence au point de justifier une résiliation immédiate ?\n**Règle** : le franchisé peut, sans violer la clause de non-concurrence ni ses obligations de loyauté et de bonne foi, accomplir des actes préparatoires à une activité concurrente, si celle-ci ne débute effectivement qu'après l'expiration du contrat et de son engagement de non-concurrence (Com., 19 mars 2025). La résiliation unilatérale suppose une inexécution suffisamment grave (art. 1224, 1226) ; sinon elle est fautive.\n**Application** : créer une société, déposer une marque et signer un bail sont des actes préparatoires. Le magasin ouvre le 1er juillet 2026, après la fin du contrat, et aucune clause ne joue après le contrat. Aucune activité concurrente n'a commencé avant le 30 juin.\n**Conclusion** : non. Il n'y a pas de manquement : la résiliation est injustifiée et VÉLIA doit indemniser M. Roux, notamment de la marge perdue du 10 avril au 30 juin 2026. Conseil à VÉLIA : surveiller la date réelle d'ouverture et, pour l'avenir, prévoir une clause après contrat respectant les quatre conditions légales.",
    "source": "Com., 19 mars 2025, n° 23-22.925 ; art. 1224, 1226"
+  },
+  {
+   "id": "ue1-ch02-288",
+   "theme": "distribution",
+   "type": "regle",
+   "question": "Hors réseau de magasins de commerce de détail, à quelles conditions une clause de non-concurrence après la fin d'un contrat de distribution est-elle valable ?",
+   "reponse": "Elle doit être limitée dans le **temps** et dans l'**espace**, et **proportionnée** aux intérêts légitimes à protéger (le réseau, la clientèle du territoire). Sinon, elle est nulle.",
+   "source": "Jurisprudence constante de la chambre commerciale"
+  },
+  {
+   "id": "ue1-ch02-289",
+   "theme": "distribution",
+   "type": "cas",
+   "question": "La société SOLARIS, grossiste, revend exclusivement aux installateurs professionnels les panneaux solaires du fabricant TERRASOL, dont elle est concessionnaire exclusive pour les Pays de la Loire. Le contrat, conclu en 2021, prend fin le 31 décembre 2026. Une clause interdit à SOLARIS, pendant deux ans après la fin du contrat, de distribuer des panneaux concurrents dans les Pays de la Loire. SOLARIS veut distribuer une marque concurrente dès janvier 2027.\n\n**Cette clause peut-elle être opposée à SOLARIS ?**",
+   "reponse": "**Problème** : une clause de non-concurrence de deux ans, sur une région, après la fin d'une concession exclusive, est-elle valable ?\n**Règle** : dans un réseau de magasins de commerce de détail, la clause qui restreint l'activité de l'exploitant après le contrat est réputée non écrite, sauf si elle porte sur des biens concurrents, se limite aux terrains et locaux exploités, est indispensable à la protection d'un savoir-faire substantiel, spécifique et secret, et dure un an au plus (C. com., art. L. 341-1 et L. 341-2). Hors de ce champ, la clause est valable si elle est limitée dans le temps et dans l'espace et proportionnée aux intérêts légitimes à protéger (jurisprudence).\n**Application** : SOLARIS vend en gros à des professionnels : elle n'exploite pas un magasin de commerce de détail, la loi spéciale ne joue pas. La clause est limitée à deux ans et au seul territoire concédé ; elle protège le réseau de TERRASOL dans la région où SOLARIS a développé sa clientèle grâce à l'exclusivité.\n**Conclusion** : la clause paraît valable, sous l'appréciation du juge sur la proportionnalité. SOLARIS ne peut pas distribuer de panneaux concurrents dans les Pays de la Loire avant le 1er janvier 2029 ; elle le peut ailleurs. Si elle tenait un magasin de détail, la clause (deux ans, toute une région) serait réputée non écrite.",
+   "source": "C. com., art. L. 341-1, L. 341-2 ; jurisprudence"
+  },
+  {
+   "id": "ue1-ch02-290",
+   "theme": "distribution",
+   "type": "cas",
+   "question": "La société CARGO est concessionnaire exclusive du fabricant TRUCKA pour ses pièces détachées de poids lourds en Bretagne, de 2024 à 2029 ; en contrepartie, elle doit s'approvisionner exclusivement auprès de TRUCKA. Le contrat fixe aussi un « objectif annuel indicatif » de 2 M€ de ventes. Au premier semestre 2026, CARGO achète 30 % de son stock chez un fabricant concurrent et n'atteint que 80 % de l'objectif. Le 1er juillet 2026, TRUCKA la met en demeure de cesser ces achats sous quinze jours, faute de quoi elle résoudra le contrat. CARGO continue ; le 20 juillet, TRUCKA lui notifie la résolution.\n\n**TRUCKA pouvait-elle mettre fin au contrat ?**",
+   "reponse": "**Problème** : le concédant peut-il résoudre unilatéralement la concession pour violation de l'exclusivité d'approvisionnement et pour objectifs non atteints ?\n**Règle** : le créancier peut, à ses risques, résoudre le contrat par notification en cas d'inexécution suffisamment grave, après une mise en demeure restée sans effet dans un délai raisonnable ; le débiteur peut contester, et le créancier doit alors prouver la gravité (art. 1224, 1226). Dans une concession, l'approvisionnement exclusif est la contrepartie de l'exclusivité territoriale : c'est une obligation essentielle. Des objectifs non atteints ne sont une faute que si le contrat en fait une obligation et que les objectifs sont réalistes (art. 1104).\n**Application** : acheter 30 % du stock chez un concurrent viole une obligation essentielle : l'inexécution est grave. La mise en demeure mentionnait la résolution et laissait quinze jours ; CARGO a persisté. En revanche, l'objectif n'est qu'« indicatif » : le manquer n'est pas une faute.\n**Conclusion** : oui, la résolution est justifiée, mais par la seule violation de l'exclusivité d'approvisionnement ; TRUCKA ne doit pas invoquer les objectifs. Faute grave de CARGO : aucun préavis n'est dû, et TRUCKA peut demander des dommages-intérêts.",
+   "source": "Art. 1104, 1224, 1226 ; C. com., art. L. 442-1, II"
+  },
+  {
+   "id": "ue1-ch02-291",
+   "theme": "assurance",
+   "type": "regle",
+   "question": "En cours de contrat, l'assuré doit-il déclarer à son assureur tout changement qui augmente le risque ?",
+   "reponse": "Non : seulement les circonstances nouvelles qui aggravent le risque ou en créent un nouveau **et rendent inexactes ou caduques les réponses** faites à l'assureur lors de la souscription.",
+   "source": "C. assur., L. 113-2, 3°"
+  },
+  {
+   "id": "ue1-ch02-292",
+   "theme": "assurance",
+   "type": "cas",
+   "question": "La société LUMEN, grossiste en luminaires, est assurée contre le vol depuis 2024 ; au questionnaire de souscription, elle a déclaré un stock de 100 000 € au plus. En février 2026, elle triple son stock pour un nouveau client, sans prévenir l'assureur. En octobre 2026, 180 000 € de marchandises sont volées ; le procès-verbal de police relève des traces d'outil sur la serrure. L'assureur refuse de payer : il invoque la clause excluant « les vols commis sans effraction ni violence », et le défaut de déclaration du stock. LUMEN payait 4 000 € de prime par an ; avec le stock réel, la prime aurait été de 10 000 €.\n\n**L'assureur peut-il refuser toute indemnité ?**",
+   "reponse": "**Problème** : l'assureur peut-il opposer une exclusion de garantie et l'absence de déclaration d'une aggravation du risque pour refuser toute indemnité ?\n**Règle** : l'assureur qui invoque une exclusion doit prouver que ses conditions de fait sont réunies (art. 1353 ; C. assur., art. L. 113-1). L'assuré doit déclarer dans les 15 jours les circonstances nouvelles qui aggravent le risque et rendent inexactes ses réponses (art. L. 113-2, 3°). Omission de mauvaise foi, prouvée par l'assureur : nullité (art. L. 113-8). De bonne foi, après sinistre : indemnité réduite en proportion de la prime payée sur la prime due (art. L. 113-9).\n**Application** : la police a constaté des traces d'effraction ; l'assureur ne prouve pas un vol sans effraction : l'exclusion ne joue pas. Même si le juge y voyait une condition de garantie (preuve à la charge de l'assuré), ces traces suffiraient. Le stock triplé rend inexacte la réponse sur sa valeur : LUMEN devait le déclarer. Rien ne montre une intention de tromper : elle est de bonne foi.\n**Conclusion** : non. L'assureur doit une indemnité réduite : 180 000 € × 4 000 / 10 000 = 72 000 €, avant franchise et dans la limite du plafond. Conseil : déclarer désormais toute hausse durable du stock.",
+   "source": "Art. 1353 ; C. assur., art. L. 113-1, L. 113-2, L. 113-8, L. 113-9"
   }
  ]
 }
