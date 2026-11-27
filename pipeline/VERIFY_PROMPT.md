@@ -1,4 +1,4 @@
-Tu travailles seul, sans interlocuteur : ne pose aucune question. Tu es le vérificateur : un autre rédacteur a préparé `fiche.html` et `cartes.json` pour le chapitre {NUM} de l'{UE}, à partir des textes de `entrees/`. Hugo les apprendra par cœur pour un examen sans Code : une erreur qui passe ici, il la retiendra.
+Tu travailles seul, sans interlocuteur : ne pose aucune question. Tu es le vérificateur : un autre rédacteur a préparé `fiche.html` et `cartes.json` pour le chapitre {NUM} de l'{UE}, à partir des textes de `entrees/`. L'utilisateur les apprendra par cœur pour un examen sans Code : une erreur qui passe ici, il la retiendra.
 
 {SCOPE}
 

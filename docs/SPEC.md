@@ -1,6 +1,6 @@
 # DSCG Cartes : cahier des charges
 
-Web app personnelle de révision par répétition espacée pour le DSCG. Elle remplace AnkiWeb pour un seul utilisateur, Hugo, sur iPhone et Mac. Examen visé : octobre 2027 (UE 1, UE 4).
+Web app personnelle de révision par répétition espacée pour le DSCG. Elle remplace AnkiWeb pour un seul utilisateur, sur iPhone et Mac. Examen visé : octobre 2027 (UE 1, UE 4).
 
 ## 1. Objectif
 
@@ -209,7 +209,7 @@ La logique de planification et de composition de session est un module pur, sans
 
 - Le dépôt est public. Ne jamais y mettre la clé `service_role` de Supabase, ni aucun mot de passe.
 - L'URL du projet et la clé publique (`anon`) de Supabase sont des variables du dépôt, injectées au build (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`). Elles sont publiques par nature : la protection repose sur la sécurité par ligne.
-- Les inscriptions sont désactivées dans Supabase une fois le compte de Hugo créé.
+- Les inscriptions sont désactivées dans Supabase une fois le compte de l'utilisateur créé.
 - Sans variables Supabase, l'app fonctionne en mode local seul.
 - GitHub Actions : à chaque push sur `main`, validation des cartes, tests, build, déploiement sur Pages. Le chemin de base est celui du dépôt.
 - Une tâche planifiée hebdomadaire interroge Supabase pour éviter la mise en pause du projet gratuit.

@@ -4,7 +4,7 @@ Web app personnelle de révision par répétition espacée, pour préparer le DS
 
 ## Contexte
 
-- **Utilisateur unique : Hugo**, 30 ans, en reconversion vers l'expertise comptable. Ancien consultant data et IA : il lit le code, mais il veut avancer vite et garder un outil simple.
+- **Utilisateur unique.** Il lit le code, mais il veut avancer vite et garder un outil simple.
 - **Examen :** DSCG, session d'octobre 2027. UE 1 (droit et fiscalité, épreuve sans Code) et UE 4 (comptabilité et audit).
 - **Rythme :** environ 15 à 20 minutes de révision par jour, souvent sur iPhone dans les transports, parfois sur Mac.
 - **Les cartes** sont rédigées et vérifiées avec Claude, dans un autre outil, puis déposées dans `cards/` sous forme de fichiers JSON. Un fichier par chapitre. Le premier fichier, `cards/ue1-ch01-contrats.json`, contient 218 cartes.
@@ -13,7 +13,7 @@ Web app personnelle de révision par répétition espacée, pour préparer le DS
 
 Elle repose sur deux techniques d'apprentissage validées : le **test de mémoire** (chercher la réponse avant de la voir) et la **répétition espacée** (revoir une notion juste avant de l'oublier). Chaque choix d'interface doit servir ces deux techniques :
 
-- La réponse reste cachée tant que Hugo ne l'a pas demandée.
+- La réponse reste cachée tant que l'utilisateur ne l'a pas demandée.
 - L'auto-évaluation est rapide : trois boutons, à portée de pouce.
 - Une session doit démarrer en un geste et ne jamais attendre le réseau.
 - Rien ne doit distraire pendant une session : pas d'animation lente, pas de navigation visible.
@@ -26,7 +26,7 @@ N'ajoute pas de dépendance sans demander.
 
 ## Façon de travailler
 
-- Avance **jalon par jalon** (section 10 de `docs/SPEC.md`). Ne commence pas un jalon avant que le précédent soit déployé et validé par Hugo.
+- Avance **jalon par jalon** (section 10 de `docs/SPEC.md`). Ne commence pas un jalon avant que le précédent soit déployé et validé par l'utilisateur.
 - En début de jalon, propose un plan court et attends son accord.
 - En fin de jalon, donne la liste de ce qu'il doit vérifier à la main, sur iPhone et sur Mac.
 - Si le cahier des charges est flou ou contradictoire, demande plutôt que de deviner.

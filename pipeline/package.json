@@ -1,7 +1,7 @@
 {
   "name": "dscg-pipeline",
   "private": true,
-  "description": "Course PDF to fiche PDF and cards, run on Hugo's Mac. See README.md.",
+  "description": "Course PDF to fiche PDF and cards, run on the user's Mac. See README.md.",
   "dependencies": {
     "playwright-core": "1.48.2"
   }

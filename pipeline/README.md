@@ -1,6 +1,6 @@
 # Pipeline cours → fiche → cartes
 
-Sur le Mac de Hugo : quand un cours (PDF) arrive dans `Mon Drive > DSCG > UE 1 - droit`, la fiche et les cartes se font seules.
+Sur le Mac de l'utilisateur : quand un cours (PDF) arrive dans `Mon Drive > DSCG > UE 1 - droit`, la fiche et les cartes se font seules.
 
 1. `.build/dscg-watch` (agent `launchd`, priorité arrière-plan) surveille le dossier avec FSEvents. Après un dépôt et 30 s de calme, il lance `bin/process.sh`. Il le lance aussi au démarrage et toutes les 6 h.
 2. `bin/process.sh` cherche les dossiers `Chap N…` qui contiennent un PDF mais pas de `Fiche - Chapitre N - ….pdf`, ainsi que les PDF déposés directement dans le dossier de l'UE (il crée alors `Chap N - <Titre>` et y range le cours).

@@ -1,14 +1,14 @@
 # Fiches de droit DSCG : conventions
 
-> Version automatique du kit de fiches (dscg-fiches-kit). Ce fichier est lu par Claude Code lancé sans interface par `pipeline/bin/process.sh`, quand Hugo dépose un cours dans son Google Drive. Personne ne répond pendant le traitement : ne pose aucune question, décide, et signale tes doutes dans la synthèse de fin de fiche.
+> Version automatique du kit de fiches (dscg-fiches-kit). Ce fichier est lu par Claude Code lancé sans interface par `pipeline/bin/process.sh`, quand l'utilisateur dépose un cours dans son Google Drive. Personne ne répond pendant le traitement : ne pose aucune question, décide, et signale tes doutes dans la synthèse de fin de fiche.
 
-Tu transformes un cours brut de droit (PDF du professeur) en livrables de révision pour Hugo, qui prépare le DSCG (session d'octobre 2027) : une fiche visuelle (dont le script tire le PDF) et un paquet de cartes de révision.
+Tu transformes un cours brut de droit (PDF du professeur) en livrables de révision pour l'utilisateur, qui prépare le DSCG (session d'octobre 2027) : une fiche visuelle (dont le script tire le PDF) et un paquet de cartes de révision.
 
 Le modèle à reproduire est `modele/fiche-modele-ue1-ch01.html` (chapitre 1, droit des contrats). Reprends son HTML, son CSS et son script tels quels, et change seulement le contenu.
 
 ## Le lecteur
 
-- **Hugo**, 30 ans, en reconversion, sans les bases du DCG en droit. Il apprend vite, mais il découvre le vocabulaire juridique.
+- **L'utilisateur** n'a pas les bases du DCG en droit. Il apprend vite, mais il découvre le vocabulaire juridique.
 - **Sa priorité :** d'abord maîtriser les notions principales et savoir résoudre les cas pratiques, ensuite seulement les détails. Le droit commun des contrats est un **prérequis** du DSCG (DCG) : il sert d'outil pour résoudre les cas, il n'est pas étudié pour lui-même.
 - **L'épreuve (UE 1) :** 4 heures de cas pratiques, **sans Code ni document**. Il faut connaître les règles de mémoire et les appliquer à des faits par un syllogisme.
 - **Ce qui l'aide à retenir :** les exemples concrets, les tableaux de comparaison, les moyens mnémotechniques, et le fait de se tester.
@@ -42,8 +42,8 @@ Si une règle reste incertaine après recherche, ne l'invente pas : écris-la pr
 ### Principes
 
 - **Une fiche à apprendre, pas un cours.** Vise 8 à 10 pages en PDF. Les détails secondaires vont dans les cartes, pas dans la fiche.
-- **Tout en syllogisme.** Chaque notion importante est présentée comme Hugo doit la rédiger à l'examen.
-- **Pas de numéros d'articles.** Hugo ne les apprend pas. Écris la règle et ses conditions. Seuls les arrêts gardent leur nom et leur date.
+- **Tout en syllogisme.** Chaque notion importante est présentée comme l'utilisateur doit la rédiger à l'examen.
+- **Pas de numéros d'articles.** L'utilisateur ne les apprend pas. Écris la règle et ses conditions. Seuls les arrêts gardent leur nom et leur date.
 - **Toujours la conséquence.** Chaque règle se termine par sa sanction : nullité (absolue ou relative), dommages-intérêts, délai, qui peut agir.
 - **Des exemples partout** : c'est ce qui l'aide le plus.
 
@@ -90,7 +90,7 @@ Utilise toujours la même couleur pour la même famille :
 - **Un exemple par règle**, concret et court : des entreprises, des clients de cabinet, des montants plausibles.
 - **Un cas fil rouge** quand une notion a plusieurs branches (au chapitre 1, un menuisier qui doit poser une cuisine illustre toutes les sanctions de l'inexécution).
 - Montre aussi le **contre-exemple** quand une limite est fréquente (« un prix bas n'est pas forcément dérisoire »).
-- **Ne reprends jamais les énoncés des exercices du professeur**, pour ne pas donner les réponses à Hugo.
+- **Ne reprends jamais les énoncés des exercices du professeur**, pour ne pas donner les réponses à l'utilisateur.
 
 ### Pièges et mémos
 
@@ -111,7 +111,7 @@ Les classes `t0` à `t5` donnent la couleur d'une section : `t0` ardoise (princi
 
 ## Les cartes
 
-**D'abord l'existant, ensuite la stratégie.** Avant d'écrire une carte, parcours `existant/` (tous les paquets de l'app) et `existant/archive/` (les cartes retirées par Hugo). Ne crée pas de doublon, même reformulé, même dans un autre chapitre, et ne recrée pas une carte archivée. Décide ensuite combien de cartes la matière justifie vraiment, en visant la résolution des cas d'examen, puis rédige.
+**D'abord l'existant, ensuite la stratégie.** Avant d'écrire une carte, parcours `existant/` (tous les paquets de l'app) et `existant/archive/` (les cartes retirées par l'utilisateur). Ne crée pas de doublon, même reformulé, même dans un autre chapitre, et ne recrée pas une carte archivée. Décide ensuite combien de cartes la matière justifie vraiment, en visant la résolution des cas d'examen, puis rédige.
 
 Format attendu par l'app de révision (voir `modele/cartes-modele.json`) :
 
@@ -138,7 +138,7 @@ Règles :
 - **Question autonome :** compréhensible sans contexte, sans numéro d'article.
 - **Réponse courte :** une à trois lignes (sauf les cas). Retours à la ligne conservés, seul `**gras**` est interprété.
 - **Un vrai cas pratique (`cas`)** se distingue d'une carte de règle : un énoncé de 3 à 5 phrases avec des parties nommées, des dates et des montants, comme à l'examen, puis la question, en gras, dans un dernier paragraphe séparé par une ligne vide. La réponse suit exactement quatre lignes : `**Problème** : …`, `**Règle** : …` (conditions et articles), `**Application** : …` (chaque condition confrontée aux faits), `**Conclusion** : …` (réponse nette et conseil). L'app affiche ces quatre étapes séparément. Calque la forme des questions des annales (« Peut-il engager la responsabilité… ? », « Cette clause peut-elle produire effet… ? »), mais invente les faits ; ne reprends ni les annales ni les exercices du professeur.
-- **Tri par priorité :** classe chaque carte. **Essentiel** : la règle qui tranche un cas probable à l'examen (ses conditions, sa sanction, son délai), et ce que les **annales du DSCG UE 1** demandent (les rappels de droit commun des contrats y tombent : devoir d'information, vices du consentement, résolution, force majeure, exception d'inexécution, déséquilibre significatif, définitions et qualification des contrats). Les exercices du professeur, parfois volontairement simples, ne suffisent pas à juger. Les nuances, arrêts secondaires, cas rares et détails hors cours restent dans la fiche, **sans carte** : Hugo ajoutera lui-même des cartes en révision s'il en a besoin. Une notion ni au cours ni au programme, sans usage pour un cas, n'a pas de carte.
+- **Tri par priorité :** classe chaque carte. **Essentiel** : la règle qui tranche un cas probable à l'examen (ses conditions, sa sanction, son délai), et ce que les **annales du DSCG UE 1** demandent (les rappels de droit commun des contrats y tombent : devoir d'information, vices du consentement, résolution, force majeure, exception d'inexécution, déséquilibre significatif, définitions et qualification des contrats). Les exercices du professeur, parfois volontairement simples, ne suffisent pas à juger. Les nuances, arrêts secondaires, cas rares et détails hors cours restent dans la fiche, **sans carte** : L'utilisateur ajoutera lui-même des cartes en révision s'il en a besoin. Une notion ni au cours ni au programme, sans usage pour un cas, n'a pas de carte.
 - **`source` :** l'article ou l'arrêt. C'est le seul endroit où figure le numéro d'article.
 - **Arrêts :** un arrêt important (en particulier d'une fiche de jurisprudence du professeur) a sa propre carte, **sauf si sa règle a déjà une carte** dans un paquet de l'app ou dans l'archive : il est alors seulement cité dans la fiche. La question nomme l'arrêt (nom ou juridiction et date), la réponse donne sa solution en une à deux lignes. Si la fiche du professeur se trompe sur un arrêt (formation, date), la carte prend la référence exacte et la synthèse le signale.
 - **Couverture :** chaque condition de chaque majeure, chaque sanction et chaque piège de la fiche a au moins une carte.
@@ -147,13 +147,13 @@ Règles :
 
 ## La synthèse de fin de fiche
 
-Hugo relit chaque fiche après coup : cette section lui dit où regarder. Elle est courte (une demi-page au plus) et ne garde que l'important, en trois blocs :
+L'utilisateur relit chaque fiche après coup : cette section lui dit où regarder. Elle est courte (une demi-page au plus) et ne garde que l'important, en trois blocs :
 
 1. **Corrigé par rapport au cours :** ce que disait le cours, ce qui est juste, et la source (lien Légifrance ou arrêt).
 2. **Ajouté :** les notions du programme absentes du cours, ou une règle complétée (une ligne chacune).
 3. **À vérifier :** ce que tu n'as pas pu confirmer avec certitude. S'il n'y a rien, écris-le.
 
-Pas de détail cosmétique (reformulation, mise en forme) : seulement ce qui change ce qu'Hugo doit savoir.
+Pas de détail cosmétique (reformulation, mise en forme) : seulement ce qui change ce que l'utilisateur doit savoir.
 
 ## Le PDF et le rangement
 

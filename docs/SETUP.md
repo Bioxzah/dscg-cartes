@@ -1,6 +1,6 @@
 # Mise en place
 
-Ce que Hugo fait à la main. Le reste est fait par Claude Code.
+Ce que l'utilisateur fait à la main. Le reste est fait par Claude Code.
 
 ## Avant le jalon 1
 
