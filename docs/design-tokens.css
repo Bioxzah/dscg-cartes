@@ -21,7 +21,7 @@
   --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 
-  --radius-card: 12px;
+  --radius-card: 16px;
   --radius-pill: 999px;
 }
 

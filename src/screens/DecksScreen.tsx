@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { chapterLabel } from '../cards/catalog.ts';
 import { MasteryCounts } from '../components/MasteryCounts.tsx';
+import { PageHeader } from '../components/PageHeader.tsx';
+import { UeMeter } from '../components/UeMeter.tsx';
+import { ueLabel, ueStyle } from '../components/ueColor.ts';
 import { PauseToggle } from '../components/PauseToggle.tsx';
 import { themeStyle } from '../components/themeStyle.ts';
 import { useAppData } from '../data/AppData.tsx';
@@ -15,13 +18,17 @@ export function DecksScreen() {
 
   return (
     <main className="screen">
-      <h1 className="screen-title">Paquets</h1>
+      <PageHeader eyebrow={`Bibliothèque · ${plural(catalog.tree.reduce((n, u) => n + u.cardCount, 0))}`} title="Paquets" />
       <p className="muted small intro">Coupe l’interrupteur pour mettre un thème en pause : il ne donne plus de nouvelles cartes, mais ses révisions continuent.</p>
       {catalog.tree.map((ue) => (
-        <section key={ue.ue} className="ue">
-          <div className="ue-head">
-            <div className="label">{ue.ue} · {plural(ue.cardCount)}</div>
-            <h2>{ue.ueTitre}</h2>
+        <section key={ue.ue} className="ue" style={ueStyle(catalog.tree, ue.ue)}>
+          <div className="panel ue-card">
+            <div className="ue-head">
+              <span className="ue-tag">{ueLabel(ue.ue)}</span>
+              <span className="label">{plural(ue.cardCount)}</span>
+              <h2>{ue.ueTitre}</h2>
+            </div>
+            <UeMeter counts={countMastery(ue.chapters.flatMap((ch) => ch.themes.flatMap((t) => t.cards.map((c) => c.id))), memory)} />
           </div>
           {ue.chapters.map((ch) => {
             const deckPaused = settings.pausedDecks.includes(ch.deck.id);
@@ -30,7 +37,7 @@ export function DecksScreen() {
               <div key={ch.deck.id} className={`panel chapter${deckPaused ? ' paused' : ''}`}>
                 <div className="chapter-head">
                   <div>
-                    <div className="label">{chapterLabel(ch.deck.chapitre)} · {ch.cardCount}</div>
+                    <div className="label"><span className="chap-pill">{chapterLabel(ch.deck.chapitre)}</span>{plural(ch.cardCount)}</div>
                     <h3>{ch.deck.titre}</h3>
                   </div>
                   <PauseToggle
@@ -70,6 +77,7 @@ export function DecksScreen() {
                 </ul>
                 {quizCount >= QUIZ_MIN && (
                   <Link className="row quiz-row" to={`/quiz/${ch.deck.id}`}>
+                    <span className="quiz-icon" aria-hidden="true">?</span>
                     <span className="row-main">
                       <span className="row-title">Faire un quiz</span>
                       <span className="mastery">{Math.min(quizCount, QUIZ_SIZE)} questions tirées au hasard, avec un score</span>

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { themeStyle } from '../components/themeStyle.ts';
+import { PageHeader } from '../components/PageHeader.tsx';
 import { useAppData, useNow, type AppData } from '../data/AppData.tsx';
 import { useProjection } from '../data/useProjection.ts';
 import {
@@ -30,7 +31,7 @@ export function DashboardScreen() {
 
   return (
     <main className="screen dashboard">
-      <h1 className="screen-title">Tableau de bord</h1>
+      <PageHeader eyebrow="Ta progression" title="Tableau de bord" />
       <ProjectionPanel data={data} />
       <LoadPanel data={data} ids={ids} now={now} />
       <ActivityPanel data={data} now={now} />

@@ -7,6 +7,8 @@ import { formatDuration } from '../scheduler/format.ts';
 import { dayUsage, isPaused } from '../scheduler/plan.ts';
 import { countMastery, nextDue, weekProgress, type WeekProgress } from '../scheduler/stats.ts';
 import type { UeNode } from '../cards/catalog.ts';
+import { UeMeter } from '../components/UeMeter.tsx';
+import { ueLabel, ueStyle } from '../components/ueColor.ts';
 
 const dayFmt = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
 const dateFmt = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
@@ -14,7 +16,6 @@ const nextFmt = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeri
 
 /** Seconds per answer when there is no history yet today. */
 const DEFAULT_ANSWER_MS = 15_000;
-const UE_COLORS = ['violet', 'sarcelle', 'bleu', 'vert', 'rouge', 'ardoise'] as const;
 
 function greeting(now: Date): string {
   const h = now.getHours();
@@ -101,8 +102,8 @@ export function TodayScreen() {
 
       <section className="home-progress" aria-labelledby="progress-title">
         <h2 id="progress-title" className="home-h2">Ta progression</h2>
-        {data.catalog.tree.map((ue, i) => (
-          <UeProgress key={ue.ue} ue={ue} color={UE_COLORS[i % UE_COLORS.length] ?? 'bleu'} />
+        {data.catalog.tree.map((ue) => (
+          <UeProgress key={ue.ue} ue={ue} />
         ))}
       </section>
     </main>
@@ -127,30 +128,21 @@ function Ring({ value, label, sub }: { value: number; label: string; sub: string
   );
 }
 
-function UeProgress({ ue, color }: { ue: UeNode; color: string }) {
+function UeProgress({ ue }: { ue: UeNode }) {
   const data = useAppData();
   const ids = ue.chapters.flatMap((ch) => ch.themes.flatMap((t) => t.cards.map((c) => c.id)));
   const m = countMastery(ids, data.memory);
-  const n = ids.length || 1;
   const seen = m.learning + m.mastered;
   return (
-    <Link className="panel ue-progress" to="/paquets" style={{ ['--c' as string]: `var(--${color})`, ['--cs' as string]: `var(--${color}-soft)` }}>
+    <Link className="panel ue-progress" to="/paquets" style={ueStyle(data.catalog.tree, ue.ue)}>
       <div className="ue-progress-head">
         <span className="ue-progress-name">
-          <span className="ue-progress-tag">{ue.ue.replace(/^UE\s*/, 'UE ')}</span>
+          <span className="ue-tag">{ueLabel(ue.ue)}</span>
           {ue.ueTitre}
         </span>
-        <span className="ue-progress-pct">{Math.round((seen / n) * 100)} %</span>
+        <span className="ue-progress-pct">{Math.round((seen / (ids.length || 1)) * 100)} %</span>
       </div>
-      <div className="ue-bar" aria-hidden="true">
-        <span className="ue-bar-mastered" style={{ width: `${(m.mastered / n) * 100}%` }} />
-        <span className="ue-bar-learning" style={{ width: `${(m.learning / n) * 100}%` }} />
-      </div>
-      <div className="ue-progress-legend muted small">
-        <span><i className="ue-dot mastered" />{m.mastered} maîtrisée{m.mastered > 1 ? 's' : ''}</span>
-        <span><i className="ue-dot learning" />{m.learning} en cours</span>
-        <span><i className="ue-dot new" />{m.new} à découvrir</span>
-      </div>
+      <UeMeter counts={m} />
     </Link>
   );
 }

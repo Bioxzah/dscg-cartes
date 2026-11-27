@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AccountPanel } from '../components/AccountPanel.tsx';
 import { BackupPanel } from '../components/BackupPanel.tsx';
+import { PageHeader } from '../components/PageHeader.tsx';
 import { useAppData } from '../data/AppData.tsx';
 import type { Appearance } from '../scheduler/types.ts';
 
@@ -32,7 +33,7 @@ export function SettingsScreen() {
 
   return (
     <main className="screen">
-      <h1 className="screen-title">Réglages</h1>
+      <PageHeader eyebrow="Ton app" title="Réglages" />
 
       <h2 className="section-title">Compte et synchronisation</h2>
       <AccountPanel />

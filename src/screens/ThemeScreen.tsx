@@ -20,14 +20,14 @@ export function ThemeScreen() {
   return (
     <main className="screen" style={themeStyle(theme.couleur)}>
       <Link className="back" to="/paquets">‹ Paquets</Link>
-      <header className="theme-head">
-        <div className="label">{deck.ue} · {chapterLabel(deck.chapitre)} · {deck.titre}</div>
-        <h1 className="screen-title">{theme.titre}</h1>
+      <header className="theme-hero">
+        <p className="theme-hero-eyebrow">{deck.ue.replace(/^UE\s*/, 'UE ')} · {chapterLabel(deck.chapitre)} · {deck.titre}</p>
+        <h1 className="theme-hero-title">{theme.titre}</h1>
         <MasteryCounts counts={countMastery(cards.map((c) => c.id), memory)} />
+        <Link className="theme-hero-go" to={`/session/libre/${deck.id}/${theme.id}`}>
+          Session libre sur ce thème <span aria-hidden="true">→</span>
+        </Link>
       </header>
-      <Link className="secondary block" to={`/session/libre/${deck.id}/${theme.id}`}>
-        Session libre sur ce thème
-      </Link>
       <p className="muted small hint">20 cartes au plus : celles que tu risques le plus d’avoir oubliées, puis des nouvelles. Ne compte pas dans tes limites du jour.</p>
       <input
         className="search"
