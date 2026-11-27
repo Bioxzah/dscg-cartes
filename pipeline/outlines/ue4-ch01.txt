@@ -1,14 +1,15 @@
 @eyebrow DSCG · UE 4 · IFRS et consolidation · Chapitre 1
 @title Introduction aux normes IFRS
 @lede Qui fait les normes IFRS, comment l'Europe les adopte, le cadre conceptuel de l'IASB et les états financiers. La consolidation commence au chapitre 2, qui a sa propre fiche. Fil rouge : le groupe ORVAL.
-@footer Fiche bâtie sur le cours de la prof (chapitre 1) et le programme 2027. Fil rouge ORVAL inventé : les exercices de la prof ne sont pas repris.
+@footer Fiche bâtie sur le cours de la prof (chapitre 1) et le programme 2027. Fil rouge ORVAL inventé : les exercices de la prof ne sont pas repris. Mise à jour du 27 novembre 2026 : IFRS 18 (règlement UE 2026/338).
 
 == 1 | t0 | normalisation | La normalisation internationale
 -- table | De l'IASC à l'IASB | Date | Événement | À retenir
 | 1973 | Création de l'IASC par des organisations comptables nationales | Premières normes : les IAS. Application volontaire, faible pouvoir.
 | 2001 | L'IASB remplace l'IASC, à Londres, sous la Fondation IFRS | Organisme privé et indépendant. Nouvelles normes : les IFRS.
 | 2005 | Règlement européen de 2002 en vigueur | Comptes consolidés des sociétés cotées sur un marché réglementé en IFRS.
-| 2021 | Création de l'ISSB | Normes de durabilité IFRS S1 (principes généraux) et S2 (climat).
+| 2021 | Création de l'ISSB | Normes de durabilité IFRS S1 (principes généraux) et S2 (climat), publiées en 2023.
+| 2024 | L'IASB publie **IFRS 18** | Remplace IAS 1 pour les exercices ouverts à compter du **1er janvier 2027**. Adoptée par l'UE en février 2026.
 -- table | Qui fait quoi dans la Fondation IFRS | Organe | Rôle
 | Monitoring Board | Autorités publiques (Commission européenne, SEC…). Veille à l'intérêt général, approuve la nomination des trustees.
 | Fondation IFRS (22 trustees) | Stratégie, financement, nomination des membres de l'IASB et de l'IFRIC.
@@ -78,6 +79,13 @@ trap[Débat]: Coût historique : stable mais déconnecté du marché. Juste vale
 | État des variations des capitaux propres | Résultat, dividendes, augmentations de capital, changements de méthode.
 | État des flux de trésorerie (IAS 7) | Flux opérationnels, d'investissement, de financement ; méthode directe ou indirecte.
 | Notes annexes | Méthodes comptables, jugements, détails chiffrés.
+-- box | IFRS 18 : la nouvelle présentation, à partir de 2027 | Que change IFRS 18, qui remplace IAS 1 ?
+txt: **Le compte de résultat** est rangé en catégories : **exploitation**, **investissement**, **financement** (plus l'impôt et les activités abandonnées).
+txt: **Deux sous-totaux obligatoires** : le **résultat d'exploitation**, et le résultat avant financement et impôt.
+txt: **Les indicateurs de la direction** (« EBITDA ajusté », par exemple) doivent être expliqués et rapprochés des sous-totaux IFRS dans l'annexe.
+txt: **Ce qui ne change pas** : le bilan, le résultat global et ses autres éléments, et le résultat net lui-même. IFRS 18 change la **présentation**, pas les montants.
+txt: Adoptée par l'UE par le règlement (UE) 2026/338, applicable aux exercices ouverts à compter du **1er janvier 2027**, avec retraitement des comparatifs.
+trap[Examen 2027]: Le cours et le programme parlent d'IAS 1. Demande au prof s'il faut connaître IFRS 18 pour la session d'octobre 2027.
 -- card | Résultat net et résultat global | Quelle différence entre résultat net et résultat global ? | *
 1: **Résultat global = résultat net + autres éléments du résultat global (OCI)**.
 1: Les OCI sont comptabilisés directement en capitaux propres : écarts de conversion, réévaluations d'actifs, écarts actuariels sur retraites, couvertures de flux.

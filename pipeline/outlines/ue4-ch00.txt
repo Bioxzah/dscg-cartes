@@ -2,7 +2,7 @@
 @title Prérequis DCG pour la consolidation
 @lede La liste donnée par la prof, plus l'impôt différé qui les relie tous. Pour chaque poste : l'écriture dans les comptes de la société, où on la voit au bilan et au compte de résultat, puis ce qu'en fait la consolidation. Pas le détail du DCG : l'impact. Fil rouge : LUMEN, filiale d'un groupe, taux d'IS de 25 %.
 @zones Comptes sociaux|l'écriture;Bilan · résultat|où le voir;En consolidation|retraitement et impôt
-@footer Fiche bâtie sur la liste de prérequis de la prof et le programme 2027 (guide pédagogique de l'UE 4, thème 2). Fil rouge LUMEN inventé. Les traitements d'impôt différé marqués « vu en cours » seront précisés avec le cours.
+@footer Fiche bâtie sur la liste de prérequis de la prof et le programme 2027 (guide pédagogique de l'UE 4, thème 2). Fil rouge LUMEN inventé. Les traitements d'impôt différé marqués « vu en cours » seront précisés avec le cours. Mise à jour du 27 novembre 2026 : règlements ANC 2020-01 (crédit-bail, écarts de conversion) et 2022-06 (nouveau PCG).
 
 == 1 | t0 | id | La clé : l'impôt différé
 -- card | L'impôt différé | Pourquoi chaque retraitement de consolidation crée-t-il un impôt différé ? | *
@@ -25,6 +25,7 @@ trap: Les impôts différés ne sont jamais actualisés, en normes françaises c
 3: **On l'élimine** : le 145 rejoint les réserves, la dotation de l'année est annulée (résultat +).
 3: Impôt : **IDP** sur le solde annulé.
 fil: Solde 145 de LUMEN : 40 000, dont 8 000 dotés cette année. Réserves + 24 000 (32 000 − 25 %), résultat + 6 000 (8 000 − 25 %), IDP 10 000.
+trap[Nouveau PCG]: La réforme du PCG (exercices ouverts depuis le 1er janvier 2025) laisse les provisions réglementées et les amortissements dérogatoires en **résultat exceptionnel** : rien ne change ici.
 memo[Programme]: C'est le seul retraitement « fiscal » exigé : les provisions réglementées, en normes françaises et en IFRS.
 -- card | Provision pour hausse des prix | Comment traiter la provision pour hausse des prix ?
 1: Provision réglementée, fiscale, qui permet de déduire une partie de la hausse du coût des stocks.
@@ -65,7 +66,7 @@ memo: En IFRS, acheter coûte : les frais d'acquisition ne grossissent jamais le
 2: Bilan : rien (engagement en annexe)
 2: Résultat : charge de loyer
 3: On fait comme si le groupe avait **acheté à crédit** : actif (droit d'utilisation) et dette. Le loyer est remplacé par un **amortissement + des intérêts**.
-3: IFRS 16 : presque toutes les locations. Normes françaises : les locations-financements (crédit-bail).
+3: IFRS 16 : presque toutes les locations. Normes françaises : les locations-financements (crédit-bail), retraitement **obligatoire** depuis le règlement ANC 2020-01.
 3: Impôt : sur l'écart de résultat.
 fil: Machine de 50 000 en crédit-bail sur 5 ans, loyer 12 000. Retraitée : amortissement 10 000 + intérêts environ 3 200 = 13 200. Résultat − 1 200, IDA 300.
 memo[Principe]: C'est l'exemple type de la **substance sur la forme** : économiquement, le groupe contrôle la machine.
@@ -97,6 +98,7 @@ fil: Subvention de 30 000 pour une machine amortie sur 5 ans. Après un an : 24 
 3: IFRS : gains et pertes latents **passent en résultat**. On supprime 476, 477 et la provision.
 3: Impôt : en général aucun, le fisc tenant déjà compte de ces écarts.
 trap: En PCG, la prudence empêche de compter un gain latent. En IFRS, gain et perte sont traités de la même façon.
+trap[Normes françaises]: Depuis le règlement **ANC 2020-01** (2021), la consolidation française n'a plus l'option de passer les écarts de change latents en résultat : elle garde 476, 477 et la provision, **comme les comptes sociaux**. Seules les IFRS les passent en résultat.
 
 == 5 | t4 | base | Les bases à maîtriser
 -- card | Stocks et variation de stock | Comment le stock passe-t-il du bilan au compte de résultat ?

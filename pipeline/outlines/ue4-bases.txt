@@ -1,7 +1,7 @@
 @eyebrow DSCG · UE 4 · Bases de la comptabilité
 @title Bases de la comptabilité
 @lede Ce qu'il faut avoir en réflexe avant la consolidation : lire un bilan et un compte de résultat, savoir dans quel sens bouge chaque compte, passer les écritures courantes et d'inventaire, et connaître les postes que la conso retraite. Chaque écriture est donnée au journal, avec son effet sur le résultat.
-@footer Fiche de remise à niveau (niveau DCG, UE 9 et 10), bâtie pour préparer les chapitres de consolidation. Numéros de comptes du plan comptable général (PCG). Montants inventés.
+@footer Fiche de remise à niveau (niveau DCG, UE 9 et 10), bâtie pour préparer les chapitres de consolidation. Numéros de comptes du plan comptable général (PCG) en vigueur depuis 2025 (règlement ANC 2022-06). Montants inventés.
 
 == 1 | t2 | bilan | Bilan et compte de résultat
 -- tiles
@@ -67,9 +67,10 @@ memo[Écritures types]: Retiens une quinzaine d'**écritures types** (achat, ven
 | 3 | Stocks | 37 Stocks de marchandises
 | 4 | Tiers | 401 Fournisseurs, 404 Fournisseurs d'immobilisations, 411 Clients, 444 État – IS, 4456 TVA déductible, 44571 TVA collectée, 457 Dividendes à payer, 486 / 487 Charges / produits constatés d'avance
 | 5 | Financiers | 512 Banque
-| 6 | Charges | 607 Achats, 6037 Variation de stock, 612 Crédit-bail, 616 Assurances, 661 Intérêts, 675 VNC des actifs cédés, 681 Dotations, 6872 Dotations aux provisions réglementées, 695 IS
-| 7 | Produits | 706 Prestations, 707 Ventes, 761 Dividendes reçus, 775 Prix de cession, 777 Quote-part de subvention
+| 6 | Charges | 607 Achats, 6037 Variation de stock, 612 Crédit-bail, 616 Assurances, 657 Valeur comptable des immobilisations cédées, 661 Intérêts, 681 Dotations, 6872 Dotations aux provisions réglementées, 695 IS
+| 7 | Produits | 706 Prestations, 707 Ventes, 747 Quote-part de subvention, 757 Prix de cession, 761 Dividendes reçus
 memo[Repère]: Classes **1 à 5** : bilan. Classes **6 et 7** : compte de résultat.
+trap[Nouveau PCG]: Depuis les exercices ouverts au **1er janvier 2025** (règlement ANC 2022-06), le résultat exceptionnel est resserré. Les cessions d'immobilisations passent en **exploitation** : **757** (prix) et **657** (valeur comptable), au lieu de 775 et 675. La quote-part de subvention passe de 777 à **747**. Les manuels anciens donnent encore les vieux comptes.
 
 == 3 | t1 | courantes | Opérations courantes
 -- journal | Achat de marchandises à crédit : 2 000 € HT, TVA 20 %
@@ -138,11 +139,11 @@ c: 616 | Primes d'assurance | 900
 effet: 9 mois sur 12 concernent l'exercice suivant : résultat + 900 €. Écriture contrepassée au début de l'exercice suivant.
 -- journal | Cession d'une machine : prix 4 000 €, brut 10 000 €, amortissements 7 000 €
 d: 512 | Banque | 4000
-c: 775 | Produits des cessions d'éléments d'actif | 4000
+c: 757 | Produits des cessions d'immobilisations | 4000
 d: 28154 | Amortissements du matériel industriel | 7000
-d: 675 | Valeurs comptables des éléments d'actif cédés | 3000
+d: 657 | Valeur comptable des immobilisations cédées | 3000
 c: 2154 | Matériel industriel | 10000
-effet: Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €.
+effet: Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €, en résultat d'exploitation (nouveau PCG).
 trap: Avant la cession, on passe la dotation aux amortissements de l'exercice jusqu'à la date de vente.
 
 == 5 | t5 | conso | Les postes que la consolidation retraite
@@ -171,7 +172,7 @@ effet: Le bénéfice devient réserves (capitaux propres) et dette envers les as
 d: 512 | Banque | 20000
 c: 131 | Subventions d'équipement | 20000
 d: 139 | Subventions inscrites au compte de résultat | 4000
-c: 777 | Quote-part virée au résultat | 4000
+c: 747 | Quote-part des subventions d'investissement virée au résultat | 4000
 effet: La subvention est en capitaux propres, puis reprise en résultat au rythme de l'amortissement du bien.
 -- journal | Amortissement dérogatoire de l'exercice : 1 500 €
 d: 6872 | Dotations aux provisions réglementées | 1500

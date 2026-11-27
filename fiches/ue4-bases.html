@@ -322,11 +322,11 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <tr><th>3</th><td>Stocks</td><td>37 Stocks de marchandises</td></tr>
       <tr><th>4</th><td>Tiers</td><td>401 Fournisseurs, 404 Fournisseurs d'immobilisations, 411 Clients, 444 État – IS, 4456 TVA déductible, 44571 TVA collectée, 457 Dividendes à payer, 486 / 487 Charges / produits constatés d'avance</td></tr>
       <tr><th>5</th><td>Financiers</td><td>512 Banque</td></tr>
-      <tr><th>6</th><td>Charges</td><td>607 Achats, 6037 Variation de stock, 612 Crédit-bail, 616 Assurances, 661 Intérêts, 675 VNC des actifs cédés, 681 Dotations, 6872 Dotations aux provisions réglementées, 695 IS</td></tr>
-      <tr><th>7</th><td>Produits</td><td>706 Prestations, 707 Ventes, 761 Dividendes reçus, 775 Prix de cession, 777 Quote-part de subvention</td></tr>
+      <tr><th>6</th><td>Charges</td><td>607 Achats, 6037 Variation de stock, 612 Crédit-bail, 616 Assurances, 657 Valeur comptable des immobilisations cédées, 661 Intérêts, 681 Dotations, 6872 Dotations aux provisions réglementées, 695 IS</td></tr>
+      <tr><th>7</th><td>Produits</td><td>706 Prestations, 707 Ventes, 747 Quote-part de subvention, 757 Prix de cession, 761 Dividendes reçus</td></tr>
     </tbody>
   </table></div>
-  <div class="card"><div class="foot"><p class="memo"><span class="tag">Repère</span>Classes <b>1 à 5</b> : bilan. Classes <b>6 et 7</b> : compte de résultat.</p></div></div>
+  <div class="card"><div class="foot"><p class="memo"><span class="tag">Repère</span>Classes <b>1 à 5</b> : bilan. Classes <b>6 et 7</b> : compte de résultat.</p><p class="trap"><span class="tag">Nouveau PCG</span>Depuis les exercices ouverts au <b>1er janvier 2025</b> (règlement ANC 2022-06), le résultat exceptionnel est resserré. Les cessions d'immobilisations passent en <b>exploitation</b> : <b>757</b> (prix) et <b>657</b> (valeur comptable), au lieu de 775 et 675. La quote-part de subvention passe de 777 à <b>747</b>. Les manuels anciens donnent encore les vieux comptes.</p></div></div>
 </section>
 
 <section class="stage t1" id="courantes">
@@ -489,14 +489,14 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <thead><tr><th>Compte</th><th>Intitulé</th><th class="n">Débit</th><th class="n">Crédit</th></tr></thead>
       <tbody>
         <tr class="d"><td class="a">512</td><td>Banque</td><td class="n">4 000</td><td class="n"></td></tr>
-        <tr class="c"><td class="a">775</td><td>Produits des cessions d'éléments d'actif</td><td class="n"></td><td class="n">4 000</td></tr>
+        <tr class="c"><td class="a">757</td><td>Produits des cessions d'immobilisations</td><td class="n"></td><td class="n">4 000</td></tr>
         <tr class="d"><td class="a">28154</td><td>Amortissements du matériel industriel</td><td class="n">7 000</td><td class="n"></td></tr>
-        <tr class="d"><td class="a">675</td><td>Valeurs comptables des éléments d'actif cédés</td><td class="n">3 000</td><td class="n"></td></tr>
+        <tr class="d"><td class="a">657</td><td>Valeur comptable des immobilisations cédées</td><td class="n">3 000</td><td class="n"></td></tr>
         <tr class="c"><td class="a">2154</td><td>Matériel industriel</td><td class="n"></td><td class="n">10 000</td></tr>
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">14 000</td><td class="n">14 000</td></tr></tfoot>
     </table></div>
-    <p class="jeff"><span class="jl">Effet</span>Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €.</p>
+    <p class="jeff"><span class="jl">Effet</span>Plus-value = prix − valeur nette = 4 000 − 3 000 = + 1 000 €, en résultat d'exploitation (nouveau PCG).</p>
   </figure>
   <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Avant la cession, on passe la dotation aux amortissements de l'exercice jusqu'à la date de vente.</p></div></div>
 </section>
@@ -565,7 +565,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
         <tr class="d"><td class="a">512</td><td>Banque</td><td class="n">20 000</td><td class="n"></td></tr>
         <tr class="c"><td class="a">131</td><td>Subventions d'équipement</td><td class="n"></td><td class="n">20 000</td></tr>
         <tr class="d"><td class="a">139</td><td>Subventions inscrites au compte de résultat</td><td class="n">4 000</td><td class="n"></td></tr>
-        <tr class="c"><td class="a">777</td><td>Quote-part virée au résultat</td><td class="n"></td><td class="n">4 000</td></tr>
+        <tr class="c"><td class="a">747</td><td>Quote-part des subventions d'investissement virée au résultat</td><td class="n"></td><td class="n">4 000</td></tr>
       </tbody>
       <tfoot><tr><td colspan="2">Total</td><td class="n">24 000</td><td class="n">24 000</td></tr></tfoot>
     </table></div>
@@ -608,7 +608,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 </section>
 
 <footer>
-  <p>Fiche de remise à niveau (niveau DCG, UE 9 et 10), bâtie pour préparer les chapitres de consolidation. Numéros de comptes du plan comptable général (PCG). Montants inventés.</p>
+  <p>Fiche de remise à niveau (niveau DCG, UE 9 et 10), bâtie pour préparer les chapitres de consolidation. Numéros de comptes du plan comptable général (PCG) en vigueur depuis 2025 (règlement ANC 2022-06). Montants inventés.</p>
 </footer>
 
 </div>

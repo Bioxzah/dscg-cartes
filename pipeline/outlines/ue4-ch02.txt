@@ -57,6 +57,7 @@ out: blue | Si oui | **Comptes consolidés obligatoires** : règlement **ANC 202
 out: nul | Si non | **Pas d'obligation** de consolider (consolidation volontaire possible).
 memo[Sur la copie]: Ce schéma tombe chaque année. Rédige dans cet ordre : **contrôle** (avec l'article), **cotation** (marché réglementé ou non), **seuils** (2 sur 3, deux exercices, sur l'ensemble contrôlé), puis conclus sur l'**obligation** et le **référentiel**. Pense ensuite aux **exemptions** (section 3).
 trap[Seuils]: Il faut dépasser 2 des 3 seuils sur les **deux derniers exercices** (N−2 et N−1, jamais N). Un seul exercice ne suffit pas.
+trap[Seuils récents]: Les seuils de bilan et de CA ont été relevés par le **décret du 28 février 2024** (avant : 24 M€ et 48 M€). L'effectif reste à 250. Les anciens chiffres traînent encore dans les manuels.
 trap: **Euronext Growth** n'est pas un marché réglementé : la société passe à l'étape 3, comme une société non cotée.
 -- card | Quelles sociétés compter dans les seuils ? | Dans l'organigramme, quelles sociétés additionner pour tester les seuils ?
 zones: Règle|le principe;Dans l'organigramme|qui compter;Conclusion|à rédiger

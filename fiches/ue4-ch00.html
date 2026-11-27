@@ -175,6 +175,17 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 }
 </style>
 
+<style>
+.box .bbody{padding:4px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.box .blist{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.box .blist li::marker{color:var(--h)}
+.zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.zbody ul:not(.check) li::marker{color:var(--h)}
+.tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
+.tile ul li::marker{color:var(--h)}
+.tile ul+p{margin-top:8px}
+@media (max-width:760px){.tw table:not(:has(tr>:nth-child(3))){min-width:0}}
+</style>
 <div class="wrap">
 
 <header class="top">
@@ -207,7 +218,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <div class="zone"><h4><b>Bilan · résultat</b> où le voir</h4><div class="zbody"><ul class="check"><li>Bilan : 145 dans les capitaux propres, en « provisions réglementées »</li><li>Résultat : charge exceptionnelle, donc résultat et impôt plus faibles</li></ul></div></div>
       <div class="zone hideable"><h4><b>En consolidation</b> retraitement et impôt</h4><div class="zbody"><p><b>On l'élimine</b> : le 145 rejoint les réserves, la dotation de l'année est annulée (résultat +).</p><p>Impôt : <b>IDP</b> sur le solde annulé.</p></div></div>
     </div>
-    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Solde 145 de LUMEN : 40 000, dont 8 000 dotés cette année. Réserves + 24 000 (32 000 − 25 %), résultat + 6 000 (8 000 − 25 %), IDP 10 000.</p><p class="memo"><span class="tag">Programme</span>C'est le seul retraitement « fiscal » exigé : les provisions réglementées, en normes françaises et en IFRS.</p></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Solde 145 de LUMEN : 40 000, dont 8 000 dotés cette année. Réserves + 24 000 (32 000 − 25 %), résultat + 6 000 (8 000 − 25 %), IDP 10 000.</p><p class="trap"><span class="tag">Nouveau PCG</span>La réforme du PCG (exercices ouverts depuis le 1er janvier 2025) laisse les provisions réglementées et les amortissements dérogatoires en <b>résultat exceptionnel</b> : rien ne change ici.</p><p class="memo"><span class="tag">Programme</span>C'est le seul retraitement « fiscal » exigé : les provisions réglementées, en normes françaises et en IFRS.</p></div>
   </article>
 
   <article class="card">
@@ -263,7 +274,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     <div class="syl">
       <div class="zone maj hideable"><h4><b>Comptes sociaux</b> l'écriture</h4><div class="zbody"><p>Dans les comptes sociaux, le bien loué n'est pas au bilan. Les loyers sont une charge.</p><p>Débit 612 Redevances de crédit-bail / Crédit 512.</p></div></div>
       <div class="zone"><h4><b>Bilan · résultat</b> où le voir</h4><div class="zbody"><ul class="check"><li>Bilan : rien (engagement en annexe)</li><li>Résultat : charge de loyer</li></ul></div></div>
-      <div class="zone hideable"><h4><b>En consolidation</b> retraitement et impôt</h4><div class="zbody"><p>On fait comme si le groupe avait <b>acheté à crédit</b> : actif (droit d'utilisation) et dette. Le loyer est remplacé par un <b>amortissement + des intérêts</b>.</p><p>IFRS 16 : presque toutes les locations. Normes françaises : les locations-financements (crédit-bail).</p><p>Impôt : sur l'écart de résultat.</p></div></div>
+      <div class="zone hideable"><h4><b>En consolidation</b> retraitement et impôt</h4><div class="zbody"><p>On fait comme si le groupe avait <b>acheté à crédit</b> : actif (droit d'utilisation) et dette. Le loyer est remplacé par un <b>amortissement + des intérêts</b>.</p><p>IFRS 16 : presque toutes les locations. Normes françaises : les locations-financements (crédit-bail), retraitement <b>obligatoire</b> depuis le règlement ANC 2020-01.</p><p>Impôt : sur l'écart de résultat.</p></div></div>
     </div>
     <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Machine de 50 000 en crédit-bail sur 5 ans, loyer 12 000. Retraitée : amortissement 10 000 + intérêts environ 3 200 = 13 200. Résultat − 1 200, IDA 300.</p><p class="memo"><span class="tag">Principe</span>C'est l'exemple type de la <b>substance sur la forme</b> : économiquement, le groupe contrôle la machine.</p></div>
   </article>
@@ -301,7 +312,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
       <div class="zone"><h4><b>Bilan · résultat</b> où le voir</h4><div class="zbody"><ul class="check"><li>Bilan : 476 et 477 en comptes de régularisation, provision pour perte de change</li><li>Résultat : la perte (par la provision), jamais le gain</li></ul></div></div>
       <div class="zone hideable"><h4><b>En consolidation</b> retraitement et impôt</h4><div class="zbody"><p>IFRS : gains et pertes latents <b>passent en résultat</b>. On supprime 476, 477 et la provision.</p><p>Impôt : en général aucun, le fisc tenant déjà compte de ces écarts.</p></div></div>
     </div>
-    <div class="foot"><p class="trap"><span class="tag">Piège</span>En PCG, la prudence empêche de compter un gain latent. En IFRS, gain et perte sont traités de la même façon.</p></div>
+    <div class="foot"><p class="trap"><span class="tag">Piège</span>En PCG, la prudence empêche de compter un gain latent. En IFRS, gain et perte sont traités de la même façon.</p><p class="trap"><span class="tag">Normes françaises</span>Depuis le règlement <b>ANC 2020-01</b> (2021), la consolidation française n'a plus l'option de passer les écarts de change latents en résultat : elle garde 476, 477 et la provision, <b>comme les comptes sociaux</b>. Seules les IFRS les passent en résultat.</p></div>
   </article>
 </section>
 
@@ -363,7 +374,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 </section>
 
 <footer>
-  <p>Fiche bâtie sur la liste de prérequis de la prof et le programme 2027 (guide pédagogique de l'UE 4, thème 2). Fil rouge LUMEN inventé. Les traitements d'impôt différé marqués « vu en cours » seront précisés avec le cours.</p>
+  <p>Fiche bâtie sur la liste de prérequis de la prof et le programme 2027 (guide pédagogique de l'UE 4, thème 2). Fil rouge LUMEN inventé. Les traitements d'impôt différé marqués « vu en cours » seront précisés avec le cours. Mise à jour du 27 novembre 2026 : règlements ANC 2020-01 (crédit-bail, écarts de conversion) et 2022-06 (nouveau PCG).</p>
 </footer>
 
 </div>
