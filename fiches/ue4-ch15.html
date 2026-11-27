@@ -175,6 +175,48 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 }
 </style>
 
+<style>
+.flow{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.flow figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
+.frow,.fnext{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:44px}
+.frow{align-items:stretch}
+.fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden;background:var(--surface)}
+.fn{background:var(--h);color:var(--surface);font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px}
+.fq{padding:10px 12px 4px;font-weight:700}
+.ffacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 12px 6px}
+.ffacts li{background:var(--hs);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.3;text-align:center}
+.ffacts li b{display:block;font-size:19px;color:var(--h);font-family:var(--display)}
+.fsrc{padding:0 12px 10px;font-size:13.5px;color:var(--muted);font-style:italic}
+.fouts{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.fout{position:relative;border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
+.fout::before{content:"";position:absolute;right:100%;top:50%;width:44px;height:2px;margin-top:-1px;background:currentColor}
+.fout::after{content:"";position:absolute;right:100%;top:50%;margin-top:-6px;border-left:9px solid currentColor;border-block:6px solid transparent}
+.fout p{color:var(--ink);font-size:15.5px}
+.fout.nul{background:var(--nuls);color:var(--nul)} .fout.exe{background:var(--exes);color:var(--exe)} .fout.blue{background:var(--s2s);color:var(--s2)}
+.fchip{font-family:var(--mono);font-weight:500;font-size:12px;border:1.5px solid currentColor;border-radius:6px;padding:1px 6px;white-space:nowrap;background:var(--surface)}
+.fnext>div{display:flex;flex-direction:column;align-items:center;padding-top:14px;color:var(--h);background:linear-gradient(currentColor,currentColor) center top/2px calc(100% - 8px) no-repeat}
+.fnext>div::after{content:"";margin-top:6px;border-top:9px solid currentColor;border-inline:6px solid transparent}
+.fnote{margin-top:16px;background:var(--wash);border-radius:10px;padding:10px 12px;font-size:15px}
+@media (max-width:640px){
+  .frow,.fnext{grid-template-columns:1fr}
+  .fouts{margin-top:20px}
+  .fout::before,.fout::after{display:none}
+  .fout:first-child::before{display:block;right:auto;left:31px;top:auto;bottom:100%;width:2px;height:20px;margin:0 0 1px}
+  .fout:first-child::after{display:block;right:auto;left:26px;top:auto;bottom:100%;margin:0;border:0;border-top:9px solid currentColor;border-inline:6px solid transparent}
+}
+@media print{.flow{break-inside:avoid}}
+</style>
+<style>
+.box .bbody{padding:4px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.box .blist{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.box .blist li::marker{color:var(--h)}
+.zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.zbody ul:not(.check) li::marker{color:var(--h)}
+.tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
+.tile ul li::marker{color:var(--h)}
+.tile ul+p{margin-top:8px}
+@media (max-width:760px){.tw table:not(:has(tr>:nth-child(3))){min-width:0}}
+</style>
 <div class="wrap">
 
 <header class="top">
@@ -185,7 +227,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t0" id="restructurations">
   <h2><span class="n">1</span>Les restructurations</h2>
-  <div class="tiles">
+  <div class="tiles two">
     <div class="tile"><h3>Fusion</h3><p>Une société transmet <b>tout son patrimoine</b> à une autre, existante ou nouvelle. Elle <b>disparaît</b>. Ses associés reçoivent des titres de la société qui absorbe.</p></div>
     <div class="tile"><h3>Scission</h3><p>Une société transmet son patrimoine à <b>plusieurs</b> sociétés. Elle <b>disparaît</b>. Ses associés reçoivent des titres de chacune.</p></div>
     <div class="tile"><h3>Apport partiel d'actif</h3><p>Une société apporte une <b>branche d'activité</b> à une autre et reçoit <b>elle-même</b> les titres en échange. Elle continue d'exister.</p></div>
@@ -201,7 +243,7 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t1" id="formes">
   <h2><span class="n">2</span>Les formes de fusion</h2>
-  <div class="tiles">
+  <div class="tiles two">
     <div class="tile"><h3>Fusion-création (réunion)</h3><p>A et B disparaissent toutes les deux. Une société nouvelle C reçoit les deux patrimoines et donne ses titres aux associés de A et de B.</p></div>
     <div class="tile"><h3>Fusion-absorption simple</h3><p>A et B n'ont <b>aucun lien de capital</b>. A crée des titres pour tous les associés de B : ils sont payés à 100 % en titres A. C'est le cas d'ANNA BELLA.</p></div>
     <div class="tile"><h3>Fusion-renonciation</h3><p><b>A détient déjà x % de B</b>. A ne peut pas se payer elle-même : elle renonce à recevoir des titres pour sa part et n'en crée que pour les autres associés de B (100 − x %). Cas de POLY KROME.</p></div>
@@ -209,16 +251,25 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
   </div>
   <div class="card"><div class="foot"><p class="memo"><span class="tag">Mémo</span>Regarde le sens de la flèche de participation. A détient B : renonciation. B détient A : réduction de capital. Les deux à la fois (participations croisées) : on applique les deux mécanismes.</p><p class="trap"><span class="tag">Piège</span>Le nom « renonciation » vient de l'ancienne pratique. Aujourd'hui, la loi <b>interdit</b> d'échanger les titres de B détenus par A : ce n'est pas un choix.</p></div></div>
 
-  <article class="card">
-    <header><h3>Sens de la fusion</h3><span class="core">Par cœur</span></header>
-    <p class="q">À quelle valeur la société qui absorbe reprend-elle les biens de l'absorbée ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>La valeur d'apport dépend du <b>contrôle</b> :</p><ul><li>sociétés sous <b>contrôle commun</b> (même groupe) : <b>valeur comptable</b></li><li>contrôle distinct, fusion <b>à l'endroit</b> : <b>valeur réelle</b></li><li>contrôle distinct, fusion <b>à l'envers</b> : <b>valeur comptable</b></li></ul></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Les deux sociétés ont-elles le même actionnaire de contrôle ?</li><li>Après la fusion, qui contrôle l'absorbante : ses anciens associés (à l'endroit) ou ceux de l'absorbée (à l'envers) ?</li><li>L'énoncé impose-t-il une valeur ?</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Une valeur d'apport : comptable ou réelle.</p><p>Elle sert à calculer la <b>prime de fusion</b>, pas la parité.</p></div></div>
+  <figure class="flow">
+    <figcaption>Sens de la fusion : à quelle valeur reprendre les apports ?</figcaption>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 1</p><p class="fq">L'énoncé impose-t-il la valeur d'apport ?</p></div>
+      <div class="fouts"><div class="fout exe"><span class="fchip">Si oui</span><p><b>Suis l'énoncé</b> (ANNA BELLA : « valeur d'usage »).</p></div></div>
     </div>
-    <div class="foot"><p class="ex"><span class="tag">Exemple</span>Une PME absorbe une société plus grosse ; après l'opération, les anciens associés de la grosse société détiennent 70 % de la PME. C'est une fusion à l'envers : apports à la valeur comptable.</p><p class="trap"><span class="tag">Piège</span>Si l'énoncé précise la valeur d'apport (comme ANNA BELLA : « valeur d'usage »), suis l'énoncé.</p></div>
-  </article>
+    <div class="fnext"><div><span class="fchip">Si non</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 2</p><p class="fq">Les deux sociétés sont-elles sous contrôle commun (même groupe) ?</p></div>
+      <div class="fouts"><div class="fout blue"><span class="fchip">Si oui</span><p><b>Valeur comptable</b>.</p></div></div>
+    </div>
+    <div class="fnext"><div><span class="fchip">Si non</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 3</p><p class="fq">Après la fusion, qui contrôle l'absorbante ?</p></div>
+      <div class="fouts"><div class="fout exe"><span class="fchip">Ses anciens associés</span><p>Fusion <b>à l'endroit</b> : <b>valeur réelle</b>.</p></div><div class="fout blue"><span class="fchip">Ceux de l'absorbée</span><p>Fusion <b>à l'envers</b> : <b>valeur comptable</b>.</p></div></div>
+    </div>
+    <p class="fnote">La valeur d'apport sert à calculer la <b>prime de fusion</b>, <b>pas la parité</b> : la parité se calcule toujours en valeurs réelles.</p>
+  </figure>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Exemple</span>Une PME absorbe une société plus grosse ; après l'opération, les anciens associés de la grosse société détiennent 70 % de la PME. C'est une fusion à l'envers : apports à la valeur comptable.</p></div></div>
 </section>
 
 <section class="stage t2" id="evaluations">
@@ -234,55 +285,57 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </tbody>
   </table></div>
 
-  <article class="card">
+  <article class="card box">
     <header><h3>Actif net corrigé et VMI</h3><span class="core">Par cœur</span></header>
     <p class="q">Combien vaut une action de chaque société ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>ANC = capitaux propres + plus-values − moins-values − actifs fictifs</b></p><p><b>VMI = ANC ÷ nombre d'actions</b></p><p>ANC : actif net corrigé, ce que vaut vraiment la société. VMI : valeur mathématique intrinsèque, la part d'ANC d'une action.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Les capitaux propres après répartition du résultat</li><li>Chaque plus-value ou moins-value du rapport d'expert</li><li>Les actifs sans valeur : frais d'établissement, charges à répartir</li><li>Des impôts différés à déduire ?</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>ALPHA : 3 000 000 + 600 000 = 3 600 000, VMI = <b>360 €</b></p><p>BETA : 1 000 000 − 40 000 + 120 000 = 1 080 000, VMI = <b>270 €</b></p></div></div>
-    </div>
-    <div class="foot"><p class="trap"><span class="tag">Piège</span>On évalue <b>les deux sociétés</b>, l'absorbante comprise. Si on oublie la plus-value d'ALPHA, sa VMI tombe à 300 € et les associés de BETA reçoivent trop de titres.</p><p class="trap"><span class="tag">Piège</span>Si l'énoncé donne des impôts différés passif sur les plus-values, retire-les de l'ANC (cas POLY KROME).</p><p class="memo"><span class="tag">Ordre</span>Évalue d'abord la société détenue, puis celle qui la détient : la valeur de la seconde comprend les titres de la première.</p><p class="memo"><span class="tag">Méthodes</span>Pour l'absorbée, méthode complète : actifs à leur valeur réelle − dettes à leur valeur réelle. Pour l'absorbante, méthode rapide : capitaux propres ± plus et moins-values. Les deux donnent l'ANC.</p><p class="memo"><span class="tag">À venir</span>Autres méthodes : valeur de rendement, goodwill par la rente (POLY KROME). On les combine parfois en moyenne.</p></div>
+    <div class="bbody"><p><b>Principe</b> : on évalue <b>les deux sociétés</b>, l'absorbante comprise, à leur valeur réelle.</p><p><b>ANC = capitaux propres + plus-values − moins-values − actifs fictifs</b></p><p><b>VMI = ANC ÷ nombre d'actions</b></p><p>ANC : actif net corrigé, ce que vaut vraiment la société. VMI : valeur mathématique intrinsèque, la part d'ANC d'une action.</p><p><b>Méthode</b>, ligne par ligne :</p><ul class="blist"><li>capitaux propres <b>après répartition</b> du résultat ;</li><li>chaque plus-value ou moins-value du rapport d'expert ;</li><li>moins les actifs sans valeur : frais d'établissement, charges à répartir ;</li><li>moins les impôts différés, si l'énoncé les donne (cas POLY KROME).</li></ul></div>
+    <div class="foot"><p class="memo"><span class="tag">Méthodes</span>Pour l'absorbée, méthode complète : actifs à leur valeur réelle − dettes à leur valeur réelle. Pour l'absorbante, méthode rapide : capitaux propres ± plus et moins-values. Les deux donnent l'ANC.</p><p class="memo"><span class="tag">Ordre</span>Évalue d'abord la société détenue, puis celle qui la détient : la valeur de la seconde comprend les titres de la première.</p></div>
   </article>
+
+  <div class="tw"><table>
+    <caption>Le calcul, sur le fil rouge</caption>
+    <thead><tr><th>Ligne</th><th>ALPHA</th><th>BETA</th></tr></thead>
+    <tbody>
+      <tr><th>Capitaux propres</th><td>3 000 000</td><td>1 000 000</td></tr>
+      <tr><th>+ Plus-values</th><td>+ 600 000 (terrain)</td><td>+ 120 000 (fonds commercial)</td></tr>
+      <tr><th>− Actifs fictifs</th><td>—</td><td>− 40 000 (frais d'établissement)</td></tr>
+      <tr><th><b>= ANC</b></th><td><b>3 600 000</b></td><td><b>1 080 000</b></td></tr>
+      <tr><th>÷ Nombre d'actions</th><td>10 000</td><td>4 000</td></tr>
+      <tr><th><b>= VMI</b></th><td><b>360 €</b></td><td><b>270 €</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Si on oublie la plus-value d'ALPHA, sa VMI tombe à 300 € et les associés de BETA reçoivent trop de titres.</p><p class="memo"><span class="tag">À venir</span>Autres méthodes : valeur de rendement, goodwill par la rente (POLY KROME). On les combine parfois en moyenne.</p></div></div>
 </section>
 
 <section class="stage t3" id="parite">
   <h2><span class="n">4</span>Parité et soulte</h2>
-  <article class="card">
+  <article class="card box">
     <header><h3>La parité d'échange</h3><span class="core">Par cœur</span></header>
     <p class="q">Combien de titres A un associé de B reçoit-il pour ses titres B ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>Parité = valeur d'un titre B ÷ valeur d'un titre A</b></p><p>On la simplifie en fraction de nombres entiers : « x titres A pour y titres B ».</p><p>Elle se calcule avec les <b>valeurs réelles</b>, que les apports soient repris à la valeur comptable ou non.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>La méthode imposée par le traité (VMI, moyenne de méthodes…)</li><li>Mettre l'absorbée au numérateur</li><li>Simplifier, puis vérifier à la calculatrice</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>270 ÷ 360 = 0,75 = 3/4 : <b>3 ALPHA pour 4 BETA</b>.</p></div></div>
-    </div>
-    <div class="foot"><p class="memo"><span class="tag">Mémo</span>On paie l'absorbée, donc elle est en haut : « ce que je donne (B) sur ce avec quoi je paie (A) ».</p><p class="ex"><span class="tag">Équité</span>Vérifie par un produit en croix : 4 BETA × 270 = 1 080 = 3 ALPHA × 360. Les deux côtés sont égaux : l'échange est équitable.</p><p class="memo"><span class="tag">Astuce</span>Quotient difficile à mettre en fraction ? Calcule l'inverse. 125/275 = 0,4545… mais 275/125 = 2,2 = 11/5, donc la parité vaut 5/11.</p><p class="trap"><span class="tag">Piège</span>Vérifie toujours une simplification en divisant : 140/112 = 1,25 = 5/4. Une parité fausse fausse tout le reste du cas.</p></div>
+    <div class="bbody"><p><b>Parité = valeur d'un titre B ÷ valeur d'un titre A</b></p><p><b>Principe</b> : on paie l'absorbée, donc elle est en haut. Les <b>valeurs réelles</b> servent toujours, que les apports soient repris à la valeur comptable ou non.</p><p><b>Méthode</b> :</p><ul class="blist"><li>prendre la méthode d'évaluation imposée par le traité (VMI, moyenne de méthodes…) ;</li><li>diviser : absorbée au numérateur ;</li><li>simplifier en fraction de nombres entiers : « x titres A pour y titres B » ;</li><li>vérifier à la calculatrice.</li></ul></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>270 ÷ 360 = 0,75 = 3/4 : <b>3 ALPHA pour 4 BETA</b>.</p><p class="ex"><span class="tag">Équité</span>Vérifie par un produit en croix : 4 BETA × 270 = 1 080 = 3 ALPHA × 360. Les deux côtés sont égaux : l'échange est équitable.</p><p class="memo"><span class="tag">Astuce</span>Quotient difficile à mettre en fraction ? Calcule l'inverse. 125/275 = 0,4545… mais 275/125 = 2,2 = 11/5, donc la parité vaut 5/11.</p><p class="trap"><span class="tag">Piège</span>Vérifie toujours une simplification en divisant : 140/112 = 1,25 = 5/4. Une parité fausse fausse tout le reste du cas.</p></div>
   </article>
 
-  <article class="card">
+  <article class="card box">
     <header><h3>La soulte</h3></header>
     <p class="q">Comment payer l'écart quand la parité ne tombe pas juste ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Une <b>soulte</b> est un complément versé <b>en argent</b> aux associés de l'absorbée, pour arrondir la parité.</p><p>Elle ne peut pas dépasser <b>10 % de la valeur nominale</b> des titres remis.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Une parité arrondie imposée par le traité</li><li>Calculer l'écart par groupe de titres</li><li>Comparer à 10 % de la valeur nominale des titres A remis</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Variante : si la VMI de BETA valait 275 € : 4 BETA = 1 100 € contre 3 ALPHA = 1 080 €.</p><p>Soulte = 20 € par lot de 4 BETA. Limite : 10 % × 3 × 100 € = 30 €. Respectée.</p></div></div>
-    </div>
-    <div class="foot"><p class="memo"><span class="tag">Méthode du prof</span>Une parité « excluante » (59 titres pour 25, par exemple) écarte les petits porteurs. On l'arrondit à une fraction simple, et la soulte paie l'écart. Soulte unitaire = écart ÷ titres B du lot (ici 20 ÷ 4 = 5 € par titre BETA). Soulte globale = soulte unitaire × titres B échangés (5 × 4 000 = 20 000 €).</p><p class="trap"><span class="tag">Piège</span>La soulte vient en déduction de la valeur des apports pour calculer la prime de fusion : elle sort de la trésorerie.</p></div>
+    <div class="bbody"><p><b>Principe</b> : une <b>soulte</b> est un complément versé <b>en argent</b> aux associés de l'absorbée, pour arrondir la parité. Elle ne peut pas dépasser <b>10 % de la valeur nominale</b> des titres remis.</p><p><b>Méthode</b> :</p><ul class="blist"><li>partir de la parité arrondie imposée par le traité ;</li><li>calculer l'écart de valeur par lot de titres ;</li><li>comparer à 10 % du nominal des titres A remis ;</li><li>soulte unitaire = écart ÷ titres B du lot ; soulte globale = soulte unitaire × titres B échangés.</li></ul></div>
+    <div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Variante : si la VMI de BETA valait 275 €, 4 BETA = 1 100 € contre 3 ALPHA = 1 080 €. Écart : 20 € par lot de 4 BETA, sous la limite de 10 % × 3 × 100 € = 30 €. Soulte unitaire 20 ÷ 4 = 5 € par titre BETA ; globale 5 × 4 000 = 20 000 €.</p><p class="memo"><span class="tag">Méthode du prof</span>Une parité « excluante » (59 titres pour 25, par exemple) écarte les petits porteurs. On l'arrondit à une fraction simple, et la soulte paie l'écart.</p><p class="trap"><span class="tag">Piège</span>La soulte vient en déduction de la valeur des apports pour calculer la prime de fusion : elle sort de la trésorerie.</p></div>
   </article>
 </section>
 
 <section class="stage t4" id="titres">
   <h2><span class="n">5</span>Titres à créer, capital, prime</h2>
-  <article class="card">
-    <header><h3>Du nombre de titres à la prime</h3><span class="core">Par cœur</span></header>
-    <p class="q">Combien de titres A créer, de combien augmente le capital, et quelle est la prime de fusion ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>Titres à créer = titres B échangés × parité</b></p><p><b>Augmentation de capital = titres créés × nominal de A</b></p><p><b>Prime de fusion = valeur des apports rémunérés − augmentation de capital (− soulte)</b></p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Titres B échangés : tous, sauf ceux que A détient déjà</li><li>Le nominal de A, jamais celui de B</li><li>La valeur des apports retenue (comptable ou réelle)</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>4 000 × 3/4 = <b>3 000 titres</b></p><p>3 000 × 100 € = <b>300 000 €</b></p><p>1 080 000 − 300 000 = <b>780 000 €</b></p></div></div>
-    </div>
-    <div class="foot"><p class="memo"><span class="tag">Contrôle</span>Titres créés × VMI de A = valeur des apports : 3 000 × 360 = 1 080 000. Si ça ne tombe pas juste, une étape est fausse.</p><p class="ex"><span class="tag">Équité</span>Après la fusion, ALPHA vaut 3 600 000 + 1 080 000 = 4 680 000 pour 13 000 actions : 360 €, comme avant. Une parité calculée sur les VMI ne lèse personne.</p></div>
-  </article>
+  <div class="tw"><table>
+    <caption>Du nombre de titres à la prime</caption>
+    <thead><tr><th>Étape</th><th>Formule</th><th>Fil rouge</th></tr></thead>
+    <tbody>
+      <tr><th>1. Titres à créer</th><td>Titres B échangés × parité</td><td>4 000 × 3/4 = <b>3 000 titres</b></td></tr>
+      <tr><th>2. Augmentation de capital</th><td>Titres créés × <b>nominal de A</b></td><td>3 000 × 100 € = <b>300 000 €</b></td></tr>
+      <tr><th>3. Prime de fusion</th><td>Valeur des apports rémunérés − augmentation de capital (− soulte)</td><td>1 080 000 − 300 000 = <b>780 000 €</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="card"><div class="foot"><p class="trap"><span class="tag">Piège</span>Titres B échangés : <b>tous, sauf ceux que A détient déjà</b>. Nominal : celui de <b>A</b>, jamais celui de B. Apports : la valeur retenue au sens de la fusion (comptable ou réelle).</p><p class="memo"><span class="tag">Contrôle</span>Titres créés × VMI de A = valeur des apports : 3 000 × 360 = 1 080 000. Si ça ne tombe pas juste, une étape est fausse.</p><p class="ex"><span class="tag">Équité</span>Après la fusion, ALPHA vaut 3 600 000 + 1 080 000 = 4 680 000 pour 13 000 actions : 360 €, comme avant. Une parité calculée sur les VMI ne lèse personne.</p></div></div>
 </section>
 
 <section class="stage t5" id="participations">
@@ -297,15 +350,11 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
     </tbody>
   </table></div>
 
-  <article class="card">
+  <article class="card box">
     <header><h3>Participations croisées : le système</h3></header>
     <p class="q">Comment évaluer A et B quand chacune détient des titres de l'autre ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p><b>a × NA = ANC A hors titres B + nB × b</b></p><p><b>b × NB = ANC B hors titres A + nA × a</b></p><p>a et b : valeur d'un titre A et d'un titre B. N : nombre total de titres. nB : titres B détenus par A. nA : titres A détenus par B.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Le nombre de titres détenus de chaque côté</li><li>L'ANC sans la ligne « titres de participation »</li><li>Résoudre par substitution</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Les valeurs a et b, puis la parité b ÷ a.</p><p>Ensuite : renonciation pour les titres B de A, réduction de capital pour les titres A de B.</p></div></div>
-    </div>
-    
+    <div class="bbody"><p><b>Principe</b> : la valeur de chaque société dépend de celle de l'autre. On pose deux équations :</p><p><b>a × NA = ANC A hors titres B + nB × b</b></p><p><b>b × NB = ANC B hors titres A + nA × a</b></p><p>a et b : valeur d'un titre A et d'un titre B. N : nombre total de titres. nB : titres B détenus par A. nA : titres A détenus par B.</p><p><b>Méthode</b> :</p><ul class="blist"><li>relever le nombre de titres détenus de chaque côté ;</li><li>prendre l'ANC <b>sans</b> la ligne « titres de participation » ;</li><li>résoudre par substitution : a et b, puis la parité b ÷ a.</li></ul></div>
+    <div class="foot"><p class="memo"><span class="tag">Ensuite</span>Renonciation pour les titres B détenus par A, réduction de capital pour les titres A détenus par B.</p></div>
   </article>
 </section>
 

@@ -4,14 +4,14 @@
 @footer Fiche bâtie sur tes notes de la séance du 6 novembre, tes plans détaillés sur la H2A et le comité d'audit, le plan du prof (« 13 Plan AUDIT & CAC 2027 ») et le programme 2027. Le fil rouge VERDIER est inventé. Seuils du rapport de durabilité ajoutés le 19 novembre 2026 (C. com. L. 232-6-3, L. 230-1, D. 230-1 ; loi 2025-391 ; directive 2026/470).
 
 == 1 | t2 | notion | La notion d'audit
--- card | Définir l'audit | Qu'est-ce qu'un audit, en une phrase ? | *
-1: L'audit est un **examen**, mené par un **professionnel indépendant**, pour donner une **opinion** sur la conformité de l'objet examiné à un **référentiel**.
-1: Audit des comptes : obtenir l'**assurance raisonnable** que les comptes, pris dans leur ensemble, ne contiennent pas d'**anomalies significatives**.
-2: Commencer par le nom commun précis : « un examen »
-2: Puis les qualificatifs : critique, sélectif, progressif
-2: Nommer le référentiel : PCG pour les comptes sociaux
-3: Le CAC certifie que les comptes sont **réguliers, sincères** et donnent une **image fidèle**.
-3: Il peut aussi certifier avec réserves, refuser de certifier ou être dans l'impossibilité de certifier.
+-- box | Définir l'audit | Qu'est-ce qu'un audit, en une phrase ? | *
+txt: L'audit est un **examen** critique, sélectif et progressif, mené par un **professionnel indépendant**, pour donner une **opinion** sur la conformité de l'objet examiné à un **référentiel**.
+txt: **Audit des comptes** : obtenir l'**assurance raisonnable** que les comptes, pris dans leur ensemble, ne contiennent pas d'**anomalies significatives**. Référentiel : le PCG pour les comptes sociaux.
+txt: **L'opinion du CAC** :
+txt: - certification **sans réserve** : les comptes sont **réguliers, sincères** et donnent une **image fidèle** ;
+txt: - certification **avec réserves** ;
+txt: - **refus** de certifier ;
+txt: - **impossibilité** de certifier.
 memo[Méthode du prof]: Nom commun, puis qualificatifs. « L'audit est un examen critique, sélectif et progressif… »
 trap[Vocabulaire]: **Sélectif** : l'auditeur choisit ce qu'il contrôle, il ne vérifie pas tout. **Progressif** : le travail s'étale dans le temps, une partie avant la clôture, une partie après. **Anomalie significative** : une erreur ou une omission assez importante pour influencer la décision d'un lecteur des comptes.
 -- table | La mission en trois temps | Étape | Ce que fait l'auditeur | Normes (NEP)
@@ -79,18 +79,25 @@ memo[Devoir]: Fiches A4 sur la H2A et sur le comité d'audit pour le 27 novembre
 fil: Le cabinet FAUVEL tient la comptabilité de VERDIER : il ne peut pas en être le CAC. Il certifierait des comptes qu'il a lui-même établis.
 memo: L'EC fait les comptes, le CAC les certifie, l'auditeur de durabilité certifie le rapport de durabilité. Un seul gendarme pour les deux derniers : la H2A.
 trap: Le programme n'exige pas l'organisation détaillée des instances, ni les formalités d'inscription. Retiens les noms, les rôles et les conditions d'accès.
--- card | Obligation de nommer un CAC | La société doit-elle nommer un commissaire aux comptes ? | *
-1: Une société commerciale doit nommer un CAC si elle dépasse **2 des 3 seuils** :
-1: - **5 M€** de total de bilan
-1: - **10 M€** de chiffre d'affaires hors taxes
-1: - **50 salariés**
-1: Société d'un groupe : 2,5 M€, 5 M€, 25 salariés. Comptes consolidés : deux CAC.
-2: Les trois chiffres à la clôture
-2: L'appartenance à un groupe
-2: L'obligation d'établir des comptes consolidés
-2: Une demande d'associés (10 % du capital peuvent demander au juge un CAC)
-3: VERDIER dépasse le chiffre d'affaires (12 M€) et l'effectif (62). Le bilan (4,8 M€) reste sous 5 M€.
-3: **2 seuils sur 3 : CAC obligatoire**.
+-- flow | Faut-il nommer un commissaire aux comptes ?
+step: Étape 1 | La société commerciale dépasse-t-elle 2 des 3 seuils à la clôture ? | Seuils relevés en 2024
+fact: **5 M€** total du bilan
+fact: **10 M€** chiffre d'affaires HT
+fact: **50** salariés
+out: exe | Si oui | **CAC obligatoire**, nommé par l'assemblée des associés pour **6 exercices**.
+next: Si non
+step: Étape 2 | Elle appartient à un groupe : dépasse-t-elle 2 des 3 seuils réduits ?
+fact: **2,5 M€** total du bilan
+fact: **5 M€** chiffre d'affaires HT
+fact: **25** salariés
+out: exe | Si oui | **CAC obligatoire**.
+next: Si non
+step: Étape 3 | Des associés détenant 10 % du capital demandent-ils un CAC au juge ?
+out: blue | Si oui | **CAC nommé** à la demande des associés.
+out: nul | Si non | **Pas d'obligation** (nomination volontaire possible).
+note: **Comptes consolidés** : au moins **deux CAC**, quelle que soit la réponse aux étapes ci-dessus.
+fil: VERDIER dépasse le chiffre d'affaires (12 M€ > 10 M€) et l'effectif (62 > 50) ; le bilan (4,8 M€) reste sous 5 M€. **2 seuils sur 3 dès l'étape 1 : CAC obligatoire.**
+memo[Sur la copie]: Cite les trois seuils, compare chiffre par chiffre, conclus « 2 sur 3 : nomination obligatoire ». Pense ensuite au groupe et aux comptes consolidés.
 trap: Les anciens seuils (4 M€ et 8 M€) traînent encore dans les manuels. Ils ont été relevés en 2024.
 
 == 5 | t4 | missions | Les missions d'audit
@@ -111,18 +118,23 @@ fil: Le CAC de VERDIER écrit directement à la banque pour confirmer le solde d
 trap[Hors sujet ici]: Procédure d'alerte, révélation des faits délictueux et conventions réglementées : vus en UE 1. Contrôle interne et gestion des risques : vus en UE 3.
 
 == 6 | t5 | durabilite | La nouveauté : le reporting de durabilité
--- card | Rapport de durabilité et sa certification | L'entreprise doit-elle publier et faire certifier un rapport de durabilité ?
-1: La directive européenne CSRD, transposée en 2023, impose aux **grandes entreprises** de publier des informations environnementales, sociales et de gouvernance selon les normes européennes **ESRS**.
-1: Grande entreprise : dépasse **2 des 3 seuils** : **250 salariés**, **50 M€** de chiffre d'affaires, **25 M€** de total de bilan.
-1: Calendrier : entités d'intérêt public de plus de 500 salariés depuis l'exercice 2024 ; autres grandes entreprises reportées aux exercices ouverts en **2027** (loi du 30 avril 2025).
-1: Ces informations sont certifiées par un CAC ou un OTI, avec une **assurance limitée**.
-2: Effectif, chiffre d'affaires et total de bilan
-2: Société cotée ou non, entité d'intérêt public ou non
-2: La date de la réglementation retenue par le sujet
-3: VERDIER (62 salariés, 12 M€ de CA, 4,8 M€ de bilan) ne dépasse aucun seuil.
-3: **Pas de rapport de durabilité obligatoire**. Elle peut publier un rapport volontaire simplifié (norme VSME).
-trap[Attention]: La directive **Omnibus I**, en vigueur depuis le 18 mars 2026, réserve l'obligation aux entreprises de **plus de 1 000 salariés et plus de 450 M€** de chiffre d'affaires (deux critères cumulés). À transposer avant le 19 mars 2027 : pas encore fait en France. Demande au prof quels seuils retenir pour l'examen.
+-- box | Le rapport de durabilité | D'où vient l'obligation, et qui la certifie ?
+txt: La directive européenne **CSRD**, transposée en 2023, impose aux **grandes entreprises** de publier des informations environnementales, sociales et de gouvernance selon les normes européennes **ESRS**.
+txt: Ces informations sont **certifiées** par un CAC ou un OTI, avec une **assurance limitée**.
 memo[Vocabulaire]: **Double matérialité** : on regarde à la fois l'impact de l'entreprise sur l'environnement et la société, et l'impact de ces enjeux sur ses finances. Sera vue plus tard.
+-- flow | L'entreprise doit-elle publier un rapport de durabilité ?
+step: Étape 1 | Est-elle une grande entreprise : dépasse-t-elle 2 des 3 seuils ? | C. com. L. 232-6-3, L. 230-1, D. 230-1
+fact: **25 M€** total du bilan
+fact: **50 M€** chiffre d'affaires
+fact: **250** salariés
+out: nul | Si non | **Pas de rapport obligatoire**. Rapport volontaire simplifié possible (norme **VSME**).
+next: Si oui
+step: Étape 2 | Est-ce une entité d'intérêt public de plus de 500 salariés ? | Loi du 30 avril 2025 (report)
+out: exe | Si oui | Rapport obligatoire **depuis l'exercice 2024**.
+out: blue | Si non | Rapport reporté aux exercices ouverts en **2027**.
+note: Dans tous les cas, le rapport est **certifié** (CAC ou OTI, assurance limitée). Note la date de la réglementation retenue par le sujet.
+fil: VERDIER (62 salariés, 12 M€ de CA, 4,8 M€ de bilan) ne dépasse aucun seuil : pas de rapport de durabilité obligatoire. Elle peut publier un rapport volontaire (VSME).
+trap[Attention]: La directive **Omnibus I**, en vigueur depuis le 18 mars 2026, réserve l'obligation aux entreprises de **plus de 1 000 salariés et plus de 450 M€** de chiffre d'affaires (deux critères cumulés). À transposer avant le 19 mars 2027 : pas encore fait en France. Demande au prof quels seuils retenir pour l'examen.
 
 == 7 | t0 | reciter | À réciter
 -- table | | Question | Réponse

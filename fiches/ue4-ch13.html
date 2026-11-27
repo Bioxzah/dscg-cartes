@@ -175,6 +175,48 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 }
 </style>
 
+<style>
+.flow{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.flow figcaption{font-family:var(--display);font-weight:600;font-size:19px;margin-bottom:14px}
+.frow,.fnext{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:44px}
+.frow{align-items:stretch}
+.fstep{border:2px solid var(--h);border-radius:10px;overflow:hidden;background:var(--surface)}
+.fn{background:var(--h);color:var(--surface);font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px}
+.fq{padding:10px 12px 4px;font-weight:700}
+.ffacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:8px 12px 6px}
+.ffacts li{background:var(--hs);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.3;text-align:center}
+.ffacts li b{display:block;font-size:19px;color:var(--h);font-family:var(--display)}
+.fsrc{padding:0 12px 10px;font-size:13.5px;color:var(--muted);font-style:italic}
+.fouts{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.fout{position:relative;border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:baseline;border:1.5px solid currentColor}
+.fout::before{content:"";position:absolute;right:100%;top:50%;width:44px;height:2px;margin-top:-1px;background:currentColor}
+.fout::after{content:"";position:absolute;right:100%;top:50%;margin-top:-6px;border-left:9px solid currentColor;border-block:6px solid transparent}
+.fout p{color:var(--ink);font-size:15.5px}
+.fout.nul{background:var(--nuls);color:var(--nul)} .fout.exe{background:var(--exes);color:var(--exe)} .fout.blue{background:var(--s2s);color:var(--s2)}
+.fchip{font-family:var(--mono);font-weight:500;font-size:12px;border:1.5px solid currentColor;border-radius:6px;padding:1px 6px;white-space:nowrap;background:var(--surface)}
+.fnext>div{display:flex;flex-direction:column;align-items:center;padding-top:14px;color:var(--h);background:linear-gradient(currentColor,currentColor) center top/2px calc(100% - 8px) no-repeat}
+.fnext>div::after{content:"";margin-top:6px;border-top:9px solid currentColor;border-inline:6px solid transparent}
+.fnote{margin-top:16px;background:var(--wash);border-radius:10px;padding:10px 12px;font-size:15px}
+@media (max-width:640px){
+  .frow,.fnext{grid-template-columns:1fr}
+  .fouts{margin-top:20px}
+  .fout::before,.fout::after{display:none}
+  .fout:first-child::before{display:block;right:auto;left:31px;top:auto;bottom:100%;width:2px;height:20px;margin:0 0 1px}
+  .fout:first-child::after{display:block;right:auto;left:26px;top:auto;bottom:100%;margin:0;border:0;border-top:9px solid currentColor;border-inline:6px solid transparent}
+}
+@media print{.flow{break-inside:avoid}}
+</style>
+<style>
+.box .bbody{padding:4px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.box .blist{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.box .blist li::marker{color:var(--h)}
+.zbody ul:not(.check){list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.zbody ul:not(.check) li::marker{color:var(--h)}
+.tile ul{list-style:disc;padding-left:1.2em;display:flex;flex-direction:column;gap:3px;font-size:15px}
+.tile ul li::marker{color:var(--h)}
+.tile ul+p{margin-top:8px}
+@media (max-width:760px){.tw table:not(:has(tr>:nth-child(3))){min-width:0}}
+</style>
 <div class="wrap">
 
 <header class="top">
@@ -185,14 +227,10 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t2" id="notion">
   <h2><span class="n">1</span>La notion d'audit</h2>
-  <article class="card">
+  <article class="card box">
     <header><h3>Définir l'audit</h3><span class="core">Par cœur</span></header>
     <p class="q">Qu'est-ce qu'un audit, en une phrase ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>L'audit est un <b>examen</b>, mené par un <b>professionnel indépendant</b>, pour donner une <b>opinion</b> sur la conformité de l'objet examiné à un <b>référentiel</b>.</p><p>Audit des comptes : obtenir l'<b>assurance raisonnable</b> que les comptes, pris dans leur ensemble, ne contiennent pas d'<b>anomalies significatives</b>.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Commencer par le nom commun précis : « un examen »</li><li>Puis les qualificatifs : critique, sélectif, progressif</li><li>Nommer le référentiel : PCG pour les comptes sociaux</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>Le CAC certifie que les comptes sont <b>réguliers, sincères</b> et donnent une <b>image fidèle</b>.</p><p>Il peut aussi certifier avec réserves, refuser de certifier ou être dans l'impossibilité de certifier.</p></div></div>
-    </div>
+    <div class="bbody"><p>L'audit est un <b>examen</b> critique, sélectif et progressif, mené par un <b>professionnel indépendant</b>, pour donner une <b>opinion</b> sur la conformité de l'objet examiné à un <b>référentiel</b>.</p><p><b>Audit des comptes</b> : obtenir l'<b>assurance raisonnable</b> que les comptes, pris dans leur ensemble, ne contiennent pas d'<b>anomalies significatives</b>. Référentiel : le PCG pour les comptes sociaux.</p><p><b>L'opinion du CAC</b> :</p><ul class="blist"><li>certification <b>sans réserve</b> : les comptes sont <b>réguliers, sincères</b> et donnent une <b>image fidèle</b> ;</li><li>certification <b>avec réserves</b> ;</li><li><b>refus</b> de certifier ;</li><li><b>impossibilité</b> de certifier.</li></ul></div>
     <div class="foot"><p class="memo"><span class="tag">Méthode du prof</span>Nom commun, puis qualificatifs. « L'audit est un examen critique, sélectif et progressif… »</p><p class="trap"><span class="tag">Vocabulaire</span><b>Sélectif</b> : l'auditeur choisit ce qu'il contrôle, il ne vérifie pas tout. <b>Progressif</b> : le travail s'étale dans le temps, une partie avant la clôture, une partie après. <b>Anomalie significative</b> : une erreur ou une omission assez importante pour influencer la décision d'un lecteur des comptes.</p></div>
   </article>
 
@@ -284,16 +322,25 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
   </table></div>
   <div class="card"><div class="foot"><p class="ex"><span class="tag">Fil rouge</span>Le cabinet FAUVEL tient la comptabilité de VERDIER : il ne peut pas en être le CAC. Il certifierait des comptes qu'il a lui-même établis.</p><p class="memo"><span class="tag">Mémo</span>L'EC fait les comptes, le CAC les certifie, l'auditeur de durabilité certifie le rapport de durabilité. Un seul gendarme pour les deux derniers : la H2A.</p><p class="trap"><span class="tag">Piège</span>Le programme n'exige pas l'organisation détaillée des instances, ni les formalités d'inscription. Retiens les noms, les rôles et les conditions d'accès.</p></div></div>
 
-  <article class="card">
-    <header><h3>Obligation de nommer un CAC</h3><span class="core">Par cœur</span></header>
-    <p class="q">La société doit-elle nommer un commissaire aux comptes ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>Une société commerciale doit nommer un CAC si elle dépasse <b>2 des 3 seuils</b> :</p><ul><li><b>5 M€</b> de total de bilan</li><li><b>10 M€</b> de chiffre d'affaires hors taxes</li><li><b>50 salariés</b></li></ul><p>Société d'un groupe : 2,5 M€, 5 M€, 25 salariés. Comptes consolidés : deux CAC.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Les trois chiffres à la clôture</li><li>L'appartenance à un groupe</li><li>L'obligation d'établir des comptes consolidés</li><li>Une demande d'associés (10 % du capital peuvent demander au juge un CAC)</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>VERDIER dépasse le chiffre d'affaires (12 M€) et l'effectif (62). Le bilan (4,8 M€) reste sous 5 M€.</p><p><b>2 seuils sur 3 : CAC obligatoire</b>.</p></div></div>
+  <figure class="flow">
+    <figcaption>Faut-il nommer un commissaire aux comptes ?</figcaption>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 1</p><p class="fq">La société commerciale dépasse-t-elle 2 des 3 seuils à la clôture ?</p><ul class="ffacts"><li><b>5 M€</b> total du bilan</li><li><b>10 M€</b> chiffre d'affaires HT</li><li><b>50</b> salariés</li></ul><p class="fsrc">Seuils relevés en 2024</p></div>
+      <div class="fouts"><div class="fout exe"><span class="fchip">Si oui</span><p><b>CAC obligatoire</b>, nommé par l'assemblée des associés pour <b>6 exercices</b>.</p></div></div>
     </div>
-    <div class="foot"><p class="trap"><span class="tag">Piège</span>Les anciens seuils (4 M€ et 8 M€) traînent encore dans les manuels. Ils ont été relevés en 2024.</p></div>
-  </article>
+    <div class="fnext"><div><span class="fchip">Si non</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 2</p><p class="fq">Elle appartient à un groupe : dépasse-t-elle 2 des 3 seuils réduits ?</p><ul class="ffacts"><li><b>2,5 M€</b> total du bilan</li><li><b>5 M€</b> chiffre d'affaires HT</li><li><b>25</b> salariés</li></ul></div>
+      <div class="fouts"><div class="fout exe"><span class="fchip">Si oui</span><p><b>CAC obligatoire</b>.</p></div></div>
+    </div>
+    <div class="fnext"><div><span class="fchip">Si non</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 3</p><p class="fq">Des associés détenant 10 % du capital demandent-ils un CAC au juge ?</p></div>
+      <div class="fouts"><div class="fout blue"><span class="fchip">Si oui</span><p><b>CAC nommé</b> à la demande des associés.</p></div><div class="fout nul"><span class="fchip">Si non</span><p><b>Pas d'obligation</b> (nomination volontaire possible).</p></div></div>
+    </div>
+    <p class="fnote"><b>Comptes consolidés</b> : au moins <b>deux CAC</b>, quelle que soit la réponse aux étapes ci-dessus.</p>
+  </figure>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Fil rouge</span>VERDIER dépasse le chiffre d'affaires (12 M€ &gt; 10 M€) et l'effectif (62 &gt; 50) ; le bilan (4,8 M€) reste sous 5 M€. <b>2 seuils sur 3 dès l'étape 1 : CAC obligatoire.</b></p><p class="memo"><span class="tag">Sur la copie</span>Cite les trois seuils, compare chiffre par chiffre, conclus « 2 sur 3 : nomination obligatoire ». Pense ensuite au groupe et aux comptes consolidés.</p><p class="trap"><span class="tag">Piège</span>Les anciens seuils (4 M€ et 8 M€) traînent encore dans les manuels. Ils ont été relevés en 2024.</p></div></div>
 </section>
 
 <section class="stage t4" id="missions">
@@ -319,16 +366,27 @@ body.test .teststate{display:block;position:fixed;z-index:20;left:calc(16px + en
 
 <section class="stage t5" id="durabilite">
   <h2><span class="n">6</span>La nouveauté : le reporting de durabilité</h2>
-  <article class="card">
-    <header><h3>Rapport de durabilité et sa certification</h3></header>
-    <p class="q">L'entreprise doit-elle publier et faire certifier un rapport de durabilité ?</p>
-    <div class="syl">
-      <div class="zone maj hideable"><h4><b>Règle</b> le principe</h4><div class="zbody"><p>La directive européenne CSRD, transposée en 2023, impose aux <b>grandes entreprises</b> de publier des informations environnementales, sociales et de gouvernance selon les normes européennes <b>ESRS</b>.</p><p>Grande entreprise : dépasse <b>2 des 3 seuils</b> : <b>250 salariés</b>, <b>50 M€</b> de chiffre d'affaires, <b>25 M€</b> de total de bilan.</p><p>Calendrier : entités d'intérêt public de plus de 500 salariés depuis l'exercice 2024 ; autres grandes entreprises reportées aux exercices ouverts en <b>2027</b> (loi du 30 avril 2025).</p><p>Ces informations sont certifiées par un CAC ou un OTI, avec une <b>assurance limitée</b>.</p></div></div>
-      <div class="zone"><h4><b>Dans l'énoncé</b> à chercher</h4><div class="zbody"><ul class="check"><li>Effectif, chiffre d'affaires et total de bilan</li><li>Société cotée ou non, entité d'intérêt public ou non</li><li>La date de la réglementation retenue par le sujet</li></ul></div></div>
-      <div class="zone hideable"><h4><b>Résultat</b> la réponse</h4><div class="zbody"><p>VERDIER (62 salariés, 12 M€ de CA, 4,8 M€ de bilan) ne dépasse aucun seuil.</p><p><b>Pas de rapport de durabilité obligatoire</b>. Elle peut publier un rapport volontaire simplifié (norme VSME).</p></div></div>
-    </div>
-    <div class="foot"><p class="trap"><span class="tag">Attention</span>La directive <b>Omnibus I</b>, en vigueur depuis le 18 mars 2026, réserve l'obligation aux entreprises de <b>plus de 1 000 salariés et plus de 450 M€</b> de chiffre d'affaires (deux critères cumulés). À transposer avant le 19 mars 2027 : pas encore fait en France. Demande au prof quels seuils retenir pour l'examen.</p><p class="memo"><span class="tag">Vocabulaire</span><b>Double matérialité</b> : on regarde à la fois l'impact de l'entreprise sur l'environnement et la société, et l'impact de ces enjeux sur ses finances. Sera vue plus tard.</p></div>
+  <article class="card box">
+    <header><h3>Le rapport de durabilité</h3></header>
+    <p class="q">D'où vient l'obligation, et qui la certifie ?</p>
+    <div class="bbody"><p>La directive européenne <b>CSRD</b>, transposée en 2023, impose aux <b>grandes entreprises</b> de publier des informations environnementales, sociales et de gouvernance selon les normes européennes <b>ESRS</b>.</p><p>Ces informations sont <b>certifiées</b> par un CAC ou un OTI, avec une <b>assurance limitée</b>.</p></div>
+    <div class="foot"><p class="memo"><span class="tag">Vocabulaire</span><b>Double matérialité</b> : on regarde à la fois l'impact de l'entreprise sur l'environnement et la société, et l'impact de ces enjeux sur ses finances. Sera vue plus tard.</p></div>
   </article>
+
+  <figure class="flow">
+    <figcaption>L'entreprise doit-elle publier un rapport de durabilité ?</figcaption>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 1</p><p class="fq">Est-elle une grande entreprise : dépasse-t-elle 2 des 3 seuils ?</p><ul class="ffacts"><li><b>25 M€</b> total du bilan</li><li><b>50 M€</b> chiffre d'affaires</li><li><b>250</b> salariés</li></ul><p class="fsrc">C. com. L. 232-6-3, L. 230-1, D. 230-1</p></div>
+      <div class="fouts"><div class="fout nul"><span class="fchip">Si non</span><p><b>Pas de rapport obligatoire</b>. Rapport volontaire simplifié possible (norme <b>VSME</b>).</p></div></div>
+    </div>
+    <div class="fnext"><div><span class="fchip">Si oui</span></div></div>
+    <div class="frow">
+      <div class="fstep"><p class="fn">Étape 2</p><p class="fq">Est-ce une entité d'intérêt public de plus de 500 salariés ?</p><p class="fsrc">Loi du 30 avril 2025 (report)</p></div>
+      <div class="fouts"><div class="fout exe"><span class="fchip">Si oui</span><p>Rapport obligatoire <b>depuis l'exercice 2024</b>.</p></div><div class="fout blue"><span class="fchip">Si non</span><p>Rapport reporté aux exercices ouverts en <b>2027</b>.</p></div></div>
+    </div>
+    <p class="fnote">Dans tous les cas, le rapport est <b>certifié</b> (CAC ou OTI, assurance limitée). Note la date de la réglementation retenue par le sujet.</p>
+  </figure>
+  <div class="card"><div class="foot"><p class="ex"><span class="tag">Fil rouge</span>VERDIER (62 salariés, 12 M€ de CA, 4,8 M€ de bilan) ne dépasse aucun seuil : pas de rapport de durabilité obligatoire. Elle peut publier un rapport volontaire (VSME).</p><p class="trap"><span class="tag">Attention</span>La directive <b>Omnibus I</b>, en vigueur depuis le 18 mars 2026, réserve l'obligation aux entreprises de <b>plus de 1 000 salariés et plus de 450 M€</b> de chiffre d'affaires (deux critères cumulés). À transposer avant le 19 mars 2027 : pas encore fait en France. Demande au prof quels seuils retenir pour l'examen.</p></div></div>
 </section>
 
 <section class="stage t0" id="reciter">
