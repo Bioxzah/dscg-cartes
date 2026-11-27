@@ -307,6 +307,92 @@ label.kv { cursor: pointer; }
 .tile { padding: 14px 12px; min-width: 0; }
 .tile-value { font: 800 24px/1.2 var(--font-display); margin: 4px 0 2px; white-space: nowrap; }
 
+/* ---------- Home (redesign) ---------- */
+
+.home-head { margin: 4px 0 16px; }
+.home-date { margin: 0; font: 500 12px/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.home-hello { margin: 2px 0 0; font: 800 34px/1.1 var(--font-display); letter-spacing: -.02em; }
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 20px 20px;
+  border-radius: 20px;
+  color: var(--surface);
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--violet) 85%, transparent), transparent 60%),
+    linear-gradient(135deg, var(--bleu), var(--violet));
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: auto -40px -60px auto;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: color-mix(in srgb, var(--surface) 10%, transparent);
+  pointer-events: none;
+}
+.hero:active { transform: scale(.99); }
+.hero.done { background: linear-gradient(135deg, var(--sarcelle), var(--vert)); }
+.hero-body { min-width: 0; position: relative; z-index: 1; }
+.hero-label { margin: 0; font: 500 12px/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
+.hero-title { margin: 4px 0 2px; font: 800 34px/1.05 var(--font-display); letter-spacing: -.02em; }
+.hero-meta { margin: 0; font-size: 15px; opacity: .9; }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.hero-chip {
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface) 18%, transparent);
+  font-size: 14px; line-height: 1.2; white-space: nowrap;
+}
+.hero-more { display: inline-block; margin-top: 12px; color: inherit; font-weight: 700; font-size: 15px; text-underline-offset: 3px; min-height: 44px; line-height: 44px; }
+.hero-go {
+  position: absolute; right: 16px; bottom: 12px;
+  font: 700 20px/1 var(--font-body); opacity: .8;
+}
+
+.ring { position: relative; width: 96px; height: 96px; z-index: 1; flex: none; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring circle { fill: none; stroke-width: 7; }
+.ring-track { stroke: color-mix(in srgb, var(--surface) 25%, transparent); }
+.ring-fill { stroke: var(--surface); stroke-linecap: round; transition: stroke-dashoffset .4s ease; }
+.ring-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ring-num { font: 800 28px/1 var(--font-display); }
+.ring-sub { font: 500 11px/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; opacity: .85; margin-top: 2px; }
+
+.home-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.home-tiles .tile { border-radius: 16px; }
+.exam-tile .tile-value { color: var(--violet); }
+
+.home-h2 { font: 700 20px/1.25 var(--font-display); margin: 28px 0 10px; }
+.ue-progress { display: block; padding: 14px 16px; border-radius: 16px; color: inherit; text-decoration: none; }
+.ue-progress + .ue-progress { margin-top: 10px; }
+.ue-progress-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.ue-progress-name { font-weight: 700; min-width: 0; }
+.ue-progress-tag {
+  display: inline-block; margin-right: 8px; padding: 2px 8px; border-radius: var(--radius-pill);
+  background: var(--cs); color: var(--c); font: 500 12px/1.4 var(--font-mono); letter-spacing: .04em;
+}
+.ue-progress-pct { font: 800 22px/1 var(--font-display); color: var(--c); flex: none; }
+.ue-bar { display: flex; height: 10px; margin: 12px 0 8px; border-radius: var(--radius-pill); background: var(--wash); overflow: hidden; }
+.ue-bar-mastered { background: var(--c); }
+.ue-bar-learning { background: color-mix(in srgb, var(--c) 40%, var(--surface)); }
+.ue-progress-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.ue-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.ue-dot.mastered { background: var(--c); }
+.ue-dot.learning { background: color-mix(in srgb, var(--c) 40%, var(--surface)); }
+.ue-dot.new { background: var(--line); }
+
+@media (max-width: 360px) {
+  .ring { width: 80px; height: 80px; }
+  .hero-title, .home-hello { font-size: 30px; }
+}
+@media (prefers-reduced-motion: reduce) { .ring-fill { transition: none; } .hero:active { transform: none; } }
+
 /* ---------- Session ---------- */
 
 .session {
