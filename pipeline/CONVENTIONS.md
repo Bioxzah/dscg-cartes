@@ -31,11 +31,11 @@ Les textes du cours et des documents du professeur sont dans `entrees/` (extrait
 2. **Compare avec le programme 2027 de l'UE 1.** Repère ce qui manque et ce qui est hors programme.
 3. **Vérifie le droit.** Chaque règle, condition, délai, sanction et arrêt doit être contrôlé sur une source fiable : Légifrance en priorité, puis la doctrine ou les sites spécialisés. Les cours contiennent des erreurs : ne les recopie jamais. Légifrance refuse la lecture directe : interroge-le avec WebSearch limité au domaine `legifrance.gouv.fr`. Cite toujours le numéro d'article **en vigueur** (plusieurs codes ont été renumérotés). Une seconde passe indépendante vérifiera ensuite ton travail.
 4. **Arrête ton plan** : sections, notions traitées en cartes syllogisme, tableaux, corrections importantes. Personne ne le valide : il doit tenir seul.
-5. **Rédige la fiche**, puis les cartes, puis la synthèse de fin de fiche.
+5. **Rédige la fiche**, puis les cartes, puis `rapport.md` (voir « Le rapport, hors de la fiche »).
 6. **Vérifie les cartes** avec `node <pipeline>/tools/check-cards.mjs cartes.json` (le chemin exact t'est donné dans la consigne) et corrige jusqu'à ce qu'il n'y ait plus d'erreur.
 7. **Fais la relecture finale** (voir la liste en bas).
 
-Si une règle reste incertaine après recherche, ne l'invente pas : écris-la prudemment et signale-la dans la synthèse de fin de fiche.
+Si une règle reste incertaine après recherche, ne l'invente pas : écris-la prudemment et signale-la dans `rapport.md`, jamais dans la fiche.
 
 ## La fiche
 
@@ -54,7 +54,7 @@ Si une règle reste incertaine après recherche, ne l'invente pas : écris-la pr
 3. **Rappel de méthode :** les cinq étapes du syllogisme (faits, problème, majeure, mineure, conclusion). Identique dans toutes les fiches.
 4. **Sections numérotées** dans l'ordre logique du chapitre, une couleur de thème chacune.
 5. **Arrêts à connaître :** nom ou juridiction, date, règle en une ligne.
-6. **Ce qui change par rapport au cours** (dernière section, juste avant le pied de page, classe `t0`) : la synthèse des points importants corrigés ou ajoutés. Voir « La synthèse de fin de fiche ».
+6. **Ce qui change par rapport au cours** (dernière section, juste avant le pied de page, classe `t0`) : uniquement le tableau des erreurs du cours. Voir « La synthèse de fin de fiche ».
 7. **Pied de page :** limites et sources consultées.
 
 ### La carte syllogisme (bloc principal)
@@ -147,13 +147,11 @@ Règles :
 
 ## La synthèse de fin de fiche
 
-L'utilisateur relit chaque fiche après coup : cette section lui dit où regarder. Elle est courte (une demi-page au plus) et ne garde que l'important, en trois blocs :
+La fiche est un support de révision, pas un journal de travail. Sa dernière section ne contient **qu'un seul tableau**, « Corrigé par rapport au cours » : ce que disait le cours (ou un document du professeur), ce qui est juste, et la source. Rien d'autre : pas de bloc « Ajouté », « À vérifier », « Mise à jour du… », pas de stratégie de cartes, pas de numéro de carte, pas de désaccord sans conséquence pour l'examen. S'il n'y a aucune erreur du cours, la section est omise.
 
-1. **Corrigé par rapport au cours :** ce que disait le cours, ce qui est juste, et la source (lien Légifrance ou arrêt).
-2. **Ajouté :** les notions du programme absentes du cours, ou une règle complétée (une ligne chacune).
-3. **À vérifier :** ce que tu n'as pas pu confirmer avec certitude. S'il n'y a rien, écris-le.
+### Le rapport, hors de la fiche
 
-Pas de détail cosmétique (reformulation, mise en forme) : seulement ce qui change ce que l'utilisateur doit savoir.
+Tout le reste va dans `rapport.md`, dans le dossier courant : notions ajoutées, stratégie de cartes (combien, lesquelles, ce qui est laissé sans carte), cartes en place à corriger (identifiant et correction proposée), désaccords et nuances avec les documents du professeur, points restés incertains. Le script le range à côté de la fiche, dans le Drive.
 
 ## Le PDF et le rangement
 
@@ -161,7 +159,7 @@ Tu ne t'en occupes pas : le script tire le PDF A4 de `fiche.html` (polices embar
 
 ## Relecture finale
 
-- [ ] Toutes les règles ont été vérifiées sur une source fiable, ou signalées dans la synthèse de fin de fiche.
+- [ ] Toutes les règles ont été vérifiées sur une source fiable, ou signalées dans `rapport.md`.
 - [ ] Aucune erreur du cours n'est reprise.
 - [ ] Chaque notion importante est en carte syllogisme, avec une sanction et un exemple.
 - [ ] Aucun numéro d'article dans la fiche, sauf les dates d'arrêts.
@@ -170,6 +168,6 @@ Tu ne t'en occupes pas : le script tire le PDF A4 de `fiche.html` (polices embar
 - [ ] Le mode « Me tester » masque bien majeures, conclusions et tableaux.
 - [ ] La page s'affiche correctement sur téléphone et en mode sombre.
 - [ ] Les cartes sont valides : `check-cards.mjs` ne signale aucune erreur.
-- [ ] La synthèse « Ce qui change par rapport au cours » est la dernière section, avant le pied de page.
+- [ ] « Ce qui change par rapport au cours » est la dernière section, et ne contient que le tableau des erreurs du cours. Aucun journal de travail dans la fiche.
 - [ ] `meta.json` est rempli.
 - [ ] Chaque condition, sanction et terme de la fiche a sa carte.

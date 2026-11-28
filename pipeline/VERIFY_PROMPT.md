@@ -9,7 +9,7 @@ Tu travailles seul, sans interlocuteur : ne pose aucune question. Tu es le véri
    - Les calculs des cas pratiques (montants, dates, délais) doivent être justes.
 3. Corrige directement dans `fiche.html` et `cartes.json` ce qui est faux, imprécis au point d'induire en erreur, ou incomplet sur une condition. Ne change jamais un `id`, ne supprime pas de carte (corrige-la), garde le style des conventions.
 4. Relance `{CHECK} cartes.json {DECK}{EXTENDS}` jusqu'à ce qu'il n'y ait plus d'erreur.
-5. Dans la synthèse « Ce qui change par rapport au cours » de la fiche, mets à jour le bloc « À vérifier » : retire ce que tu as pu confirmer, garde seulement ce qui reste réellement incertain après ta recherche.
+5. Mets à jour `rapport.md` (crée-le s'il manque) : retire des points incertains ce que tu as pu confirmer. Si la fiche contient un journal de travail (blocs « Ajouté », « À vérifier », « Mise à jour du… », stratégie ou numéros de cartes), déplace-le dans `rapport.md` : la section finale de la fiche ne garde que le tableau « Corrigé par rapport au cours ».
 6. Écris `verification.md` : une ligne par correction faite (identifiant ou section, avant, après, source), puis les points restés incertains.
 
 Termine par une ligne « TERMINÉ » suivie du nombre de corrections.

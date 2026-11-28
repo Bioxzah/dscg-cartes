@@ -218,6 +218,8 @@ process_new() {
     fail "$key" "$sig" "Fiche non générée" "Chapitre $num : le PDF n'a pas pu être créé. Journal : $work"; return
   fi
   cp "$work/$pdfname" "$dest/$pdfname"
+  # Working notes (added notions, card strategy, doubts) stay out of the fiche, next to it in the Drive.
+  [ -s "$work/rapport.md" ] && cp "$work/rapport.md" "$dest/Notes du pipeline - Chapitre $num - $(date '+%Y-%m-%d').md"
   log "Fiche rangée : $dest/$pdfname"
 
   local cardfile="cards/$deck-$slug.json"
@@ -278,7 +280,7 @@ process_update() {
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent pas le contrôle. Journal : $work"; return
   fi
-  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans le bloc « Mise à jour » de la fiche avec la correction proposée. Supprime aussi toute carte ajoutée qui fait doublon avec existant/ (autres paquets) ou existant/archive/ (cartes retirées par l'utilisateur), puis renumérote les cartes ajoutées restantes à la suite, sans trou." " --extends cartes-actuelles.json" \
+  verify "$work" "$ue" "$num" "$deck" "C'est une mise à jour : vérifie les ajouts de la fiche (comparés à fiche-actuelle.html) et les cartes ajoutées après celles de cartes-actuelles.json. Les cartes existantes ne doivent pas changer d'un caractère : si l'une est fausse, signale-la dans rapport.md avec la correction proposée, jamais dans la fiche. Supprime aussi toute carte ajoutée qui fait doublon avec existant/ (autres paquets) ou existant/archive/ (cartes retirées par l'utilisateur), puis renumérote les cartes ajoutées restantes à la suite, sans trou." " --extends cartes-actuelles.json" \
     || { retry_later "Chapitre $num"; return; }
   if ! check_cards "$work" "$deck" --extends cartes-actuelles.json; then
     fail "$key" "$sig" "Mise à jour refusée" "Chapitre $num : les nouvelles cartes ne passent plus le contrôle après vérification. Journal : $work"; return
@@ -288,6 +290,7 @@ process_update() {
   fi
   # Same file name: Google Drive keeps the previous fiche in the file's version history.
   cp "$work/$pdfname" "$folder/$pdfname"
+  [ -s "$work/rapport.md" ] && cp "$work/rapport.md" "$folder/Notes du pipeline - Chapitre $num - $(date '+%Y-%m-%d').md"
   log "Fiche mise à jour : $folder/$pdfname"
 
   local before after
